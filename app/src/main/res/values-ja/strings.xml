@@ -55,7 +55,7 @@
     <string name="dialog_toggle_reload">再読込</string>
     <string name="dialog_title_hint">タイトル:</string>
     <string name="dialog_url_hint">URL:</string>
-    <string name="dialog_extension_hint">Extension (for example: \".jpg\"):</string>
+    <string name="dialog_extension_hint">拡張子 (例: \".jpg\"):</string>
     <string name="dialog_sign_in_username">ユーザー名</string>
     <string name="dialog_sign_in_password">パスワード</string>
     <string name="dialog_title_download">ファイルをダウンロードしますか?</string>
@@ -68,13 +68,12 @@
     <string name="setting_label">設定</string>
     <!-- browser setting -->
     <string name="setting_title_browser">ブラウザ設定</string>
-    <string name="setting_title_clear_control">Data Control</string>
-    <string name="setting_title_start_control">Start Control</string>
-    <string name="setting_summary_clear_control">Clear your browser data or decide what data will be cleared when you leave
-    the application.</string>
-    <string name="setting_summary_start_control">Decide which components of the browser will be enabled on start.</string>
-    <string name="setting_title_search_engine">Search Engine</string>
-    <string name="setting_summary_search_engine">Here you can choose your preferred search engine or set a custom one.</string>
+    <string name="setting_title_clear_control">データコントロール</string>
+    <string name="setting_title_start_control">スタートコントロール</string>
+    <string name="setting_summary_clear_control">アプリを終了する時にブラウザのデータを消去するか、消去するデータを決定する。</string>
+    <string name="setting_summary_start_control">開始時にブラウザのどのコンポーネントを有効化するか決定する</string>
+    <string name="setting_title_search_engine">検索エンジン</string>
+    <string name="setting_summary_search_engine">ここでおすすめの検索エンジンや独自の検索エンジンを選択できます</string>
     <string name="setting_summary_search_engine_google">Google</string>
     <string name="setting_summary_search_engine_duckduckgo">DuckDuckGo</string>
     <string name="setting_summary_search_engine_startpage">StartPage</string>
@@ -84,12 +83,11 @@
     <string name="setting_summary_search_engine_searx">Searx</string>
     <string name="setting_summary_search_engine_qwant">Qwant</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
-    <string name="setting_title_inverted">Inverted colors</string>
-    <string name="setting_summary_inverted">If checked, content will be rendered in a inverted grey scale mode. This
-    is a kind of \"night mode\".</string>
+    <string name="setting_title_inverted">色を反転</string>
+    <string name="setting_summary_inverted">チェックすると、コンテンツは反転したグレースケースで表示されます。これは一種の「ダークモード」です。</string>
     <string name="setting_title_font">フォントサイズ</string>
-    <string name="setting_summary_font">Change the font size for displaying websites.</string>
-    <string name="setting_title_remote">Remote content</string>
+    <string name="setting_summary_font">表示中のウェブサイトに合わせてフォントサイズを変更</string>
+    <string name="setting_title_remote">リモートコンテンツ</string>
     <string name="setting_summary_remote">Enable remote content, which is not directly from the website you are visiting.
         Disabling this is more secure, faster and saves data volume. But some content will not be displayed anymore.</string>
     <string name="setting_title_save_data">Request \'Save Data\'</string>

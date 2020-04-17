@@ -46,15 +46,15 @@
     <string name="menu_save_as">Enregistrer sous …</string>
     <string name="menu_save_pdf">Enregistrer en PDF</string>
     <string name="menu_share_pdf">Partager PDF</string>
-    <string name="menu_shareClipboard">Copy to clipboard</string>
+    <string name="menu_shareClipboard">Copier dans le presse-papiers</string>
     <string name="menu_other_searchSite">Rechercher sur le site</string>
-    <string name="menu_other_fileManager">Open file manager</string>
-    <string name="menu_other_info">About \"FOSS Browser\"</string>
+    <string name="menu_other_fileManager">Ouvrir le gestionnaire de fichiers</string>
+    <string name="menu_other_info">À propos de \"FOSS Browser\"</string>
     <string name="menu_other_help">Aide</string>
     <!-- Dialog -->
     <string name="dialog_toggle_reload">Recharger</string>
     <string name="dialog_title_hint">Titre:</string>
-    <string name="dialog_url_hint">Url:</string>
+    <string name="dialog_url_hint">Url :</string>
     <string name="dialog_extension_hint">Extension (par exemple: \".jpg\"):</string>
     <string name="dialog_sign_in_username">Nom d\'utilisateur</string>
     <string name="dialog_sign_in_password">Mot de passe</string>
@@ -63,7 +63,7 @@
     <string name="dialog_content_ssl_error">Le certificat du site n\'est pas fiable. Continuez quand même?</string>
     <string name="dialog_sortName">Trier par nom</string>
     <string name="dialog_sortIcon">Trier par icône</string>
-    <string name="dialog_sortDate">Sort by date</string>
+    <string name="dialog_sortDate">Trier par date</string>
     <!-- Settings -->
     <string name="setting_label">Réglages</string>
     <!-- browser setting -->
@@ -115,15 +115,15 @@
     <string name="setting_summary_adblock">Activez AdBlock pour bloquer les pubs ennuyeuses. Les sites se chargent plus rapidement quand activé.</string>
     <string name="setting_title_whitelist">AdBlock liste blanche</string>
     <string name="setting_summary_whitelist">Autoriser ces sites à diffuser des pubs. Certains sites ne fonctionnent pas lorsque AdBlock est activé.</string>
-    <string name="setting_title_location">Location</string>
+    <string name="setting_title_location">Localisation</string>
     <string name="setting_summary_location">Autoriser les sites Web à accéder à votre emplacement. Quelques sites web (comme Google maps pour la navigation)
         besoin d\'être activé.</string>
     <string name="setting_title_history">Historique</string>
     <string name="setting_summary_history">Sauvegarder l\'historique des sites visités.</string>
     <!-- browser clear -->
-    <string name="data_summary">All files will be exported to the \"Android/data/de.baumann.browser/files/browser_backup/\"
-        directory of your sd-card. This directory will be DELETED, if you uninstall \"FOSS Browser\". So make a backup regularly on a save
-        place.</string>
+    <string name="data_summary">Tous les fichiers seront exportés dans le répertoire \"Android/data/de.baumann.browser/files/browser_backup/\"
+        de votre carte SD. Ce répertoire sera SUPPRIME, si vous désinstallez \"FOSS Browser\". Faites donc une sauvegarde régulièrement sur une place
+        d\'économie.</string>
     <string name="clear_menu_done_all">Tout fini</string>
     <string name="clear_title_quit">Effacer à la fermeture</string>
     <string name="clear_summary_quit">Chaque fois que vous quittez \"FOSS Browser\" toutes les données cochées ci-dessus seront supprimées.</string>
@@ -139,30 +139,30 @@
     <string name="setting_title_data">Sauvegarde</string>
     <string name="setting_summary_ui">Changez le comportement et l\'interface utilisateur de l\'application en fonction de vos préférences.</string>
     <string name="setting_summary_data">Importer et exporter plusieurs données d\'applications (listes blanches, signets).</string>
-    <string name="setting_filter">Bookmark filter</string>
-    <string name="setting_filter_summary">To show the filter dialog long press on the bookmark icon in the overview. Decide which
-        filters you will use.</string>
-    <string name="setting_title_fav">Favorite</string>
-    <string name="setting_summary_fav">Here you can change the default website which loads on start of \"FOSS Browser\".
-    Enter \"about:blank\" to get an emty start site.</string>
-    <string name="setting_title_searchEngine">Custom search engine</string>
-    <string name="setting_summary_searchEngine">Here you can enter a custom search URL. Also choose \"Custom search engine\" as search
-    provider.</string>
-    <string name="setting_title_userAgent">Custom user agent</string>
-    <string name="setting_summary_userAgent">Here you can enter a custom user agent. Let empty to use default one.</string>
+    <string name="setting_filter">Filtre de signet</string>
+    <string name="setting_filter_summary">Pour afficher la boîte de dialogue de filtre, appuyez longuement sur l\'icône de signet dans la vue d\'ensemble. Décidez quels filtres
+        vous utiliserez.</string>
+    <string name="setting_title_fav">Favoris</string>
+    <string name="setting_summary_fav">Ici, vous pouvez changer le site par défaut qui se charge au démarrage de \"FOSS Browser\".
+    Entrez \"about:blank\" pour obtenir un site emty de démarrage.</string>
+    <string name="setting_title_searchEngine">Moteur de recherche personnalisé</string>
+    <string name="setting_summary_searchEngine">Ici vous pouvez entrer une URL de recherche personnalisée. Choisissez également \"Moteur de recherche personnalisé\" comme fournisseur de recherche
+.</string>
+    <string name="setting_title_userAgent">Agent utilisateur personnalisé</string>
+    <string name="setting_summary_userAgent">Ici vous pouvez entrer un agent utilisateur personnalisé. Laissez vide pour utiliser celui par défaut.</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">Cacher barre d\'outils</string>
     <string name="setting_summary_hide">Utiliser la totalité de l\'écran lorsque vous visitez des sites web. Si vous appuyez sur le bouton Précédent, 
         vous quitterez le mode plein écran..</string>
-    <string name="setting_theme">Theme</string>
-    <string name="setting_theme_summary">Set the app theme.</string>
-    <string name="setting_theme_system">System theme</string>
-    <string name="setting_theme_light">Light theme</string>
-    <string name="setting_theme_dark">Dark theme</string>
+    <string name="setting_theme">Thème</string>
+    <string name="setting_theme_summary">Définir le thème de l\'application.</string>
+    <string name="setting_theme_system">Thème système</string>
+    <string name="setting_theme_light">Thème clair</string>
+    <string name="setting_theme_dark">Thème sombre</string>
     <string name="setting_title_theme">UI</string>
-    <string name="setting_title_behavior">Behavior</string>
-    <string name="setting_summary_toolbarShow">Pressing back will make the toolbar visible, before going back in history.</string>
-    <string name="setting_title_toolbarShow">First toolbar</string>
+    <string name="setting_title_behavior">Comportement</string>
+    <string name="setting_summary_toolbarShow">Appuyer sur retour rendra la barre d\'outils visible, avant de revenir dans l\'historique.</string>
+    <string name="setting_title_toolbarShow">Première barre d\'outils</string>
     <string name="setting_title_nav">Bouton de navigation</string>
     <string name="setting_title_nav_pos">Position</string>
     <string name="setting_summary_nav_pos">Décidez où le \"Bouton de navigation\" sera placé.</string>
@@ -177,7 +177,7 @@
     <string name="setting_overView">Vue d\'ensemble</string>
     <string name="setting_overView_onStart_title">Montrer au démarrage</string>
     <string name="setting_overView_onStart_summary">Ouvrir \"vue d\'ensemble\" à chaque démarrage de l\'application.</string>
-    <string name="setting_overView_hide_title">Hide tab previews</string>
+    <string name="setting_overView_hide_title">Masquer les aperçus des onglets</string>
     <string name="setting_overView_hide_summary">In expanded overview the tab preview will hide. Then you have more place for your
     bookmarks.</string>
     <string name="setting_gestures">Gestes</string>
@@ -211,7 +211,7 @@
     <string name="setting_title_export_whitelistCookie">Exporter la liste blanche des cookies</string>
     <string name="setting_title_import_whitelistCookie">Importer une liste blanche de cookies</string>
     <string name="export_whitelistCookie">export_whitelist_Cookie</string>
-    <string name="setting_title_export_appData">Export app data</string>
+    <string name="setting_title_export_appData">Exporter les données de l\'application</string>
     <string name="setting_title_import_appData">Import app data</string>
     <string name="setting_summary_export_appData">Export app data (Startpage + previews, History, Bookmarks)
         and your personal settings.</string>

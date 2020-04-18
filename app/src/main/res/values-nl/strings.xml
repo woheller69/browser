@@ -183,22 +183,22 @@
     <string name="setting_gestures_use_title">Gebaren gebruiken</string>
     <string name="setting_gestures_use_summary">Gebruik gebaren op de werkbalk en de \"Navigatieknop\".</string>
     <string name="setting_title_reopenLastTab">Reopen last tab</string>
-    <string name="setting_summary_reopenLastTab">Reopen a new tab when the last tab is closed instead of exiting the browser.</string>
+    <string name="setting_summary_reopenLastTab">Heropen een nieuwe tab als het laatste tabblad is gesloten in plaats van de browser te sluiten.</string>
     <!-- gestures -->
-    <string name="setting_title_toolbar">Toolbar</string>
-    <string name="setting_gesture_up">Swipe up</string>
-    <string name="setting_gesture_down">Swipe down</string>
-    <string name="setting_gesture_left">Swipe left</string>
-    <string name="setting_gesture_right">Swipe right</string>
-    <string name="setting_gesture_01">Nothing</string>
-    <string name="setting_gesture_02">Forward in history</string>
-    <string name="setting_gesture_03">Back in history</string>
-    <string name="setting_gesture_04">Scroll to top</string>
-    <string name="setting_gesture_05">Scroll to bottom</string>
-    <string name="setting_gesture_06">Switch to left tab</string>
-    <string name="setting_gesture_07">Switch to right tab</string>
-    <string name="setting_gesture_08">Show overview</string>
-    <string name="setting_gesture_09">Open new tab</string>
+    <string name="setting_title_toolbar">Werkbalk</string>
+    <string name="setting_gesture_up">Veeg omhoog</string>
+    <string name="setting_gesture_down">Omlaag vegen</string>
+    <string name="setting_gesture_left">Naar links vegen</string>
+    <string name="setting_gesture_right">Veeg rechts</string>
+    <string name="setting_gesture_01">Geen</string>
+    <string name="setting_gesture_02">Vooruit in geschiedenis</string>
+    <string name="setting_gesture_03">Terug in geschiedenis</string>
+    <string name="setting_gesture_04">Scroll naar boven</string>
+    <string name="setting_gesture_05">Scroll naar beneden</string>
+    <string name="setting_gesture_06">Wisselen naar links tabblad</string>
+    <string name="setting_gesture_07">Schakel over naar het rechtertabblad</string>
+    <string name="setting_gesture_08">Overzicht weergeven</string>
+    <string name="setting_gesture_09">Nieuw tabblad openen</string>
     <string name="setting_gesture_10">Tabblad sluiten</string>
     <!-- Data -->
     <string name="setting_title_export_whitelist">Advertentieblokkering - witte lijst exporteren</string>
@@ -210,11 +210,11 @@
     <string name="setting_title_export_whitelistCookie">Cookies - witte lijst exporteren</string>
     <string name="setting_title_import_whitelistCookie">Cookies - witte lijst importeren</string>
     <string name="export_whitelistCookie">export_whitelist_Cookie</string>
-    <string name="setting_title_export_appData">Export app data</string>
-    <string name="setting_title_import_appData">Import app data</string>
-    <string name="setting_summary_export_appData">Export app data (Startpage + previews, History, Bookmarks)
-        and your personal settings.</string>
-    <string name="title_appData">App data</string>
+    <string name="setting_title_export_appData">App-gegevens exporteren</string>
+    <string name="setting_title_import_appData">App-gegevens importeren</string>
+    <string name="setting_summary_export_appData">Exporteer app data (Startpagina + previews, geschiedenis, bladwijzers)
+        en je persoonlijke instellingen.</string>
+    <string name="title_appData">App gegevens</string>
     <string name="hint_database">Dit verwijdert al je huidige instellingen en gegevens. Wil je doorgaan?</string>
     <!-- Others setting -->
     <string name="setting_title_others">Overig</string>
@@ -292,25 +292,26 @@
         There are three parts: the Startsite, your Bookmarks and your History. If you long click an entry
         a menu with more options will appear.
     </string>
-    <string name="dialogHelp_filterText">        You can tag your bookmarks with filters. In this way you can group your bookmarks. You can open the filter dialog by
-        long pressing the bookmark icon. If you activate an entry a dialog will appear, where you can edit the name of the filter.
+    <string name="dialogHelp_filterText">        Je kunt je bladwijzers labelen met filters. Op deze manier kan je je bladwijzers groeperen. U kunt het filterdialoogvenster openen door
+        lang op het bladwijzerpictogram te drukken. Als u een item activeert, verschijnt er een dialoogvenster, waar u de naam van het filter kunt bewerken.
     </string>
     <!-- Dialog changelog -->
-    <string name="changelog_dialog">        Your language isn\'t supported yet? You want to translate FOSS Browser? Or make improvements to existing translations?
-        Feel free to join us on Crowdin: https://crowdin.com/project/foss-browser.&lt;br&gt;&lt;br&gt;
+    <string name="changelog_dialog">        Uw taal wordt nog niet ondersteund? Wilt u de FOSS-browser vertalen? Of verbeteringen aanbrengen in bestaande vertalingen?
+        Voel je vrij om mee te doen op Crowdin: https://crowdin. om/project/foss-browser.&lt;br&gt;&lt;br&gt;
 
-        &lt;b&gt;On the following sites you have access to all important information about \"FOSS Browser\".
-        Please read also the help dialog within the app.&lt;/b&gt;&lt;br&gt;&lt;br&gt;
+        &lt;b&gt;op de volgende sites heeft u toegang tot alle belangrijke informatie over \"FOSS Browser\".
+        Lees ook het help-dialoogvenster in de app.&lt;/b&gt;&lt;br&gt;&lt;br&gt;
 
-        \u25AA &lt;i&gt;Project site:&lt;/i&gt; https://github.com/scoute-dich/Browser&lt;br&gt;
-        \u25AA &lt;i&gt;Changelog:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/CHANGELOG.md&lt;br&gt;
-        \u25AA &lt;i&gt;FAQ:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/FAQs.md&lt;br&gt;
-        \u25AA &lt;i&gt;License:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/LICENSE.md&lt;br&gt;
-        \u25AA &lt;i&gt;Privacy:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/PRIVACY.md
+        \u25AA &lt;i&gt;Projectsite:&lt;/i&gt; https://github. om/scoute-dich/Browser&lt;br&gt;
+        
+        \u25AA &lt;i&gt;Changelog:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/CHANGELOG. d&lt;br&gt;
+        \u25AA &lt;i&gt;FAQ:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/FAQs. d&lt;br&gt;
+        \u25AA &lt;i&gt;Licentie:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/LICENSE. d&lt;br&gt;
+        \u25AA &lt;i&gt;Privacy:&lt;/i&gt; https://github. om/scoute-dich/browser/blob/master/PRIVACY.md
 
     </string>
     <!-- License changelog -->
-    <string name="license_title">Copyright © 2017  by Gaukler Faun</string>
+    <string name="license_title">Copyright © 2017 door Gaukler Faun</string>
     <string name="license_dialog">        &lt;i&gt;For more information visit the project site on Github: https://github.com/scoute-dich/Browser&lt;/i&gt;&lt;br&gt;&lt;br&gt;
 
         This program is free software: you can redistribute it and/or modify

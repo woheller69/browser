@@ -80,7 +80,7 @@
     <string name="setting_summary_search_engine_bing">Bing</string>
     <string name="setting_summary_search_engine_baidu">Baidu</string>
     <string name="setting_summary_search_engine_startpage_de">StartPage (de)</string>
-    <string name="setting_summary_search_engine_searx">Searx</string>
+    <string name="setting_summary_search_engine_searx">Chercher</string>
     <string name="setting_summary_search_engine_qwant">Qwant</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_title_inverted">Couleurs inversées</string>
@@ -178,8 +178,7 @@
     <string name="setting_overView_onStart_title">Montrer au démarrage</string>
     <string name="setting_overView_onStart_summary">Ouvrir \"vue d\'ensemble\" à chaque démarrage de l\'application.</string>
     <string name="setting_overView_hide_title">Masquer les aperçus des onglets</string>
-    <string name="setting_overView_hide_summary">In expanded overview the tab preview will hide. Then you have more place for your
-    bookmarks.</string>
+    <string name="setting_overView_hide_summary">Dans la vue d\'ensemble élargie, l\'aperçu de l\'onglet sera masqué. Vous avez alors plus de place pour vos signets.</string>
     <string name="setting_gestures">Gestes</string>
     <string name="setting_gestures_use_title">Utiliser des gestes</string>
     <string name="setting_gestures_use_summary">Utilisez des gestes dans barre d’outils et le \"Bouton de navigation\".</string>
@@ -212,10 +211,10 @@
     <string name="setting_title_import_whitelistCookie">Importer une liste blanche de cookies</string>
     <string name="export_whitelistCookie">export_whitelist_Cookie</string>
     <string name="setting_title_export_appData">Exporter les données de l\'application</string>
-    <string name="setting_title_import_appData">Import app data</string>
-    <string name="setting_summary_export_appData">Export app data (Startpage + previews, History, Bookmarks)
-        and your personal settings.</string>
-    <string name="title_appData">App data</string>
+    <string name="setting_title_import_appData">Importer les données de l\'application</string>
+    <string name="setting_summary_export_appData">Exporter les données de l\'application (page d\'accueil + aperçus, historique, signets)
+        et vos paramètres personnels.</string>
+    <string name="title_appData">Données de l\'application</string>
     <string name="hint_database">Cela supprimera tous vos paramètres et données actuels. Allez-vous procéder?</string>
     <!-- Others setting -->
     <string name="setting_title_others">Autres</string>
@@ -252,10 +251,10 @@
     <string name="toast_edit_successful">Enregistré avec succès</string>
     <string name="toast_webview_forward">Impossible de charger le site</string>
     <string name="toast_clear">Voulez-vous vraiment effacer?</string>
-    <string name="toast_permission_sdCard">\"FOSS Browser\" needs the permission to \"read and write on your storage\". This
-        is needed to download files, taking screenshots and making backups of your data.</string>
-    <string name="toast_permission_loc">\"FOSS Browser\" needs the permission to \"access your location\". This is requested from some
-        websites for example when they offer some kind of navigation.</string>
+    <string name="toast_permission_sdCard">\"FOSS Browser\" a besoin de la permission de \"lire et écrire sur votre stockage\". Ce
+        est nécessaire pour télécharger des fichiers, prendre des captures d\'écran et faire des sauvegardes de vos données.</string>
+    <string name="toast_permission_loc">\"FOSS Browser\" a besoin de la permission de \"accéder à votre emplacement\". Ceci est demandé à partir de certains sites web
+        par exemple lorsqu\'ils offrent une certaine forme de navigation.</string>
     <string name="toast_restart">Vous devez redémarrer \"FOSS Browser\" pour appliquer les modifications. Fermer maintenant?</string>
     <string name="toast_quit">Voulez-vous quitter \"FOSS Browser\"?</string>
     <string name="toast_close_tab">Voulez-vous fermer l’onglet actuel?</string>
@@ -269,15 +268,15 @@
     <string name="whitelist_edit_hint">Domaine</string>
     <string name="whitelist_add">Ajouté</string>
     <!-- Dialog help -->
-    <string name="dialogHelp_tipTitle">Tips</string>
-    <string name="dialogHelp_tipText">        &lt;b&gt;Menus and dialogs&lt;/b&gt;&lt;br&gt;
-        All menus and dialogs are opened at the bottom of the screen. If the dialog is large you will first see only
-        the upper part. If you swipe it up, the rest will get visible.&lt;br&gt;
-        You can close them by pressing the back button, swiping them down or by clicking outside&lt;br&gt;&lt;br&gt;
+    <string name="dialogHelp_tipTitle">Conseils</string>
+    <string name="dialogHelp_tipText">        &lt;b&gt;Menus et dialogues&lt;/b&gt;&lt;br&gt;
+        Tous les menus et boîtes de dialogue sont ouverts au bas de l\'écran. Si la boîte de dialogue est grande, vous ne verrez que
+        la partie supérieure. Si vous glissez vers le haut, le reste sera visible.&lt;br&gt;
+        Vous pouvez les fermer en appuyant sur le bouton arrière, glisser vers le bas ou en cliquant en dehors de&lt;br&gt;&lt;br&gt;
 
-        &lt;b&gt;Long press&lt;/b&gt;&lt;br&gt;
-        If you long press the menu icon or the \"Navigation button\", the \"Fast toggle dialog\" will show. If you long
-        press the \"Bookmark icon\", the \"Filter dialog\" will show.
+        &lt;b&gt;appui long&lt;/b&gt;&lt;br&gt;
+        Si vous appuyez longuement sur l\'icône de menu ou sur le \"bouton de navigation\", la boîte de dialogue \"Bascule rapide\" s\'affiche. Si vous faites long
+        appuyez sur l\'icône \"Marque-page\", la boîte de dialogue \"Filtre\" s\'affiche.
     </string>
     <string name="dialogHelp_overviewTitle">Vue d\'ensemble</string>
     <string name="dialogHelp_overviewText">        There are two parts in the \"Overview\" (tab preview and personal data). There is an extra menu. In the settings
@@ -291,25 +290,25 @@
         There are three parts: the Startsite, your Bookmarks and your History. If you long click an entry
         a menu with more options will appear.
     </string>
-    <string name="dialogHelp_filterText">        You can tag your bookmarks with filters. In this way you can group your bookmarks. You can open the filter dialog by
-        long pressing the bookmark icon. If you activate an entry a dialog will appear, where you can edit the name of the filter.
+    <string name="dialogHelp_filterText">        Vous pouvez étiqueter vos signets avec des filtres. De cette façon, vous pouvez regrouper vos signets. Vous pouvez ouvrir la boîte de dialogue de filtre en appuyant longuement
+        sur l\'icône de signet . Si vous activez une entrée une boîte de dialogue apparaît, où vous pouvez modifier le nom du filtre.
     </string>
     <!-- Dialog changelog -->
-    <string name="changelog_dialog">        Your language isn\'t supported yet? You want to translate FOSS Browser? Or make improvements to existing translations?
-        Feel free to join us on Crowdin: https://crowdin.com/project/foss-browser.&lt;br&gt;&lt;br&gt;
+    <string name="changelog_dialog">        Votre langue n\'est pas encore prise en charge ? Vous voulez traduire FOSS Browser? Ou apportez des améliorations aux traductions existantes ?
+        N\'hésitez pas à nous rejoindre sur Crowdin : https://crowdin. om/project/foss-browser.&lt;br&gt;&lt;br&gt;
 
-        &lt;b&gt;On the following sites you have access to all important information about \"FOSS Browser\".
-        Please read also the help dialog within the app.&lt;/b&gt;&lt;br&gt;&lt;br&gt;
+        &lt;b&gt;Sur les sites suivants, vous avez accès à toutes les informations importantes sur \"Navigateur FOSS\".
+        Veuillez lire aussi la boîte de dialogue d\'aide dans l\'application.&lt;/b&gt;&lt;br&gt;&lt;br&gt;
 
-        \u25AA &lt;i&gt;Project site:&lt;/i&gt; https://github.com/scoute-dich/Browser&lt;br&gt;
-        \u25AA &lt;i&gt;Changelog:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/CHANGELOG.md&lt;br&gt;
-        \u25AA &lt;i&gt;FAQ:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/FAQs.md&lt;br&gt;
-        \u25AA &lt;i&gt;License:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/LICENSE.md&lt;br&gt;
-        \u25AA &lt;i&gt;Privacy:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/PRIVACY.md
+        \u25AA &lt;i&gt;Site du projet :&lt;/i&gt; https://github. om/scoute-dich/Browser&lt;br&gt;
+        \u25AA &lt;i&gt;Changelog:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/CHANGELOG. d&lt;br&gt;
+        \u25AA &lt;i&gt;FAQ:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/FAQs. d&lt;br&gt;
+        \u25AA &lt;i&gt;Licence :&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/LICENSE. d&lt;br&gt;
+        \u25AA &lt;i&gt;Confidentialité :&lt;/i&gt; https://github. om/scoute-dich/browser/blob/master/PRIVACY.md
 
     </string>
     <!-- License changelog -->
-    <string name="license_title">Copyright © 2017  by Gaukler Faun</string>
+    <string name="license_title">Copyright © 2017 par Gaukler Faun</string>
     <string name="license_dialog">        &lt;i&gt;Pour plus d\'informations, visitez le site du projet sur Github: https://github.com/scoute-dich/Browser&lt;/i&gt;&lt;br&gt;&lt;br&gt;
 
         Ce programme est un logiciel libre : vous pouvez le redistribuer et/ou le modifier
@@ -341,27 +340,27 @@
         Apache License Version 2.0&lt;br&gt;
         hummatli&lt;br&gt;
         &lt;i&gt;https://github.com/hummatli/SimpleEncryptionLib</string>
-    <string name="cont_dialog">        &lt;i&gt;First I would like to thank all people who contributed in any way on this project. They submitted issues,
-        translated or helped in any other way. On following sites you can become a active member of this
-        great community:&lt;/i&gt;&lt;br&gt;&lt;br&gt;
+    <string name="cont_dialog">        &lt;i&gt;Tout d\'abord, je voudrais remercier toutes les personnes qui ont contribué de quelque manière que ce soit à ce projet. Ils ont soumis des problèmes,
+        traduits ou aidés de toute autre manière. Sur les sites suivants, vous pouvez devenir un membre actif de cette
+        grande communauté :&lt;/i&gt;&lt;br&gt;&lt;br&gt;
 
-        &lt;b&gt;Crowdin:&lt;/b&gt;&lt;br&gt;
-        Crowdin is an online plattform to translate applications in other languages. A big thanks to all translators. You can
-        also help.&lt;br&gt;
-        &lt;i&gt;https://crowdin.com/project/foss-browser&lt;/i&gt;&lt;br&gt;&lt;br&gt;
+        &lt;b&gt;Crowdin :&lt;/b&gt;&lt;br&gt;
+        Crowdin est un plattform en ligne pour traduire des applications dans d\'autres langues. Un grand merci à tous les traducteurs. Vous pouvez
+        aussi aider.&lt;br&gt;
+        &lt;i&gt;https://crowdin. om/project/foss-browser&lt;/i&gt;&lt;br&gt;&lt;br&gt;
 
 
         &lt;b&gt;XDA-thread:&lt;/b&gt;&lt;br&gt;
-        XDA is a great community for developers and smartphone enthusiasts. Here you can report issues, ask for new features
-        and everything other related to \"FOSS Browser\".&lt;br&gt;
-        &lt;i&gt;https://forum.xda-developers.com/android/apps-games/app-browser-t3500091&lt;/i&gt;&lt;br&gt;&lt;br&gt;
+        XDA est une excellente communauté pour les développeurs et les passionnés de smartphone. Ici, vous pouvez rapporter des problèmes, demander de nouvelles fonctionnalités
+        et tout autre lien avec \"FOSS Browser\".&lt;br&gt;
+        &lt;i&gt;https://forum.xda-developers. om/android/apps-games/app-browser-t3500091&lt;/i&gt;&lt;br&gt;&lt;br&gt;
 
-        &lt;b&gt;Github:&lt;/b&gt;&lt;br&gt;
-        On Github you can see the source code of \"FOSS Browser\". This is the more technical solution: open issues, ask for new
-        features or even help developing or translating.&lt;br&gt;
-        &lt;i&gt;https://github.com/scoute-dich/browser&lt;/i&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+        &lt;b&gt;Github :&lt;/b&gt;&lt;br&gt;
+        Sur Github, vous pouvez voir le code source de \"FOSS Browser\". C\'est la solution la plus technique: les problèmes ouverts, demander de nouvelles
+        fonctionnalités ou même aider au développement ou à la traduction.&lt;br&gt;
+        &lt;i&gt;https://github. om/scoute-dich/browser&lt;/i&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
 
 
-        &lt;i&gt;Following people contributed at this project. If I have forgotten anybody, please contact me:&lt;/i&gt;
+        &lt;i&gt;Les personnes suivantes ont contribué à ce projet. Si j\'ai oublié quelqu\'un, veuillez me contacter :&lt;/i&gt;
     </string>
 </resources>

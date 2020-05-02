@@ -1,3 +1,8 @@
+### v 7.0 (WIP)
+- updated translations (es, fr, ja, nl, pl, pt, sv)
+- fix: leave video fullscreen with back key
+- fix: create windows inside webview
+
 ### v 6.9
 - fix: custom search engine
 - new: Italian translation

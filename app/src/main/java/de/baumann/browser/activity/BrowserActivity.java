@@ -30,6 +30,8 @@ import android.os.Environment;
 import android.os.Handler;
 
 import androidx.preference.PreferenceManager;
+
+import android.os.Message;
 import android.print.PrintAttributes;
 import android.print.PrintDocumentAdapter;
 import android.print.PrintManager;
@@ -494,9 +496,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             case KeyEvent.KEYCODE_BACK:
                 hideKeyboard(activity);
                 hideOverview();
-                if (fullscreenHolder != null || customView != null || videoView != null) {
-                    return onHideCustomView();
-                } else if (omnibox.getVisibility() == View.GONE && sp.getBoolean("sp_toolbarShow", true)) {
+                if (omnibox.getVisibility() == View.GONE && sp.getBoolean("sp_toolbarShow", true)) {
                     showOmnibox();
                 } else {
                     if (ninjaWebView.canGoBack()) {
@@ -614,8 +614,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 break;
 
             case R.id.menu_closeTab:
-                hideBottomSheetDialog ();
                 removeAlbum(currentAlbumController);
+                hideBottomSheetDialog ();
                 break;
 
             case R.id.menu_tabPreview:
@@ -2448,6 +2448,16 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         bottomSheetDialog.setContentView(dialogView);
         bottomSheetDialog.show();
         HelperUnit.setBottomSheetBehavior(bottomSheetDialog, dialogView, BottomSheetBehavior.STATE_EXPANDED);
+    }
+
+    @Override
+    public void onCreateView(WebView view, final Message resultMsg) {
+        if (resultMsg != null) {
+            final WebView webView = new WebView(context);
+            WebView.WebViewTransport transport = (WebView.WebViewTransport) resultMsg.obj;
+            transport.setWebView(webView);
+            resultMsg.sendToTarget();
+        }
     }
 
     @Override

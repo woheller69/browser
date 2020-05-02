@@ -84,10 +84,6 @@ public class NinjaWebView extends WebView implements AlbumController {
         return cookieHosts;
     }
 
-    public Javascript getJavaHosts() {
-        return javaHosts;
-    }
-
     private SharedPreferences sp;
     private WebSettings webSettings;
 

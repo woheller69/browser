@@ -55,7 +55,7 @@
     <string name="dialog_toggle_reload">再読込</string>
     <string name="dialog_title_hint">タイトル:</string>
     <string name="dialog_url_hint">URL:</string>
-    <string name="dialog_extension_hint">Extension (for example: \".jpg\"):</string>
+    <string name="dialog_extension_hint">拡張子 (例: \".jpg\"):</string>
     <string name="dialog_sign_in_username">ユーザー名</string>
     <string name="dialog_sign_in_password">パスワード</string>
     <string name="dialog_title_download">ファイルをダウンロードしますか?</string>
@@ -68,13 +68,12 @@
     <string name="setting_label">設定</string>
     <!-- browser setting -->
     <string name="setting_title_browser">ブラウザ設定</string>
-    <string name="setting_title_clear_control">Data Control</string>
-    <string name="setting_title_start_control">Start Control</string>
-    <string name="setting_summary_clear_control">Clear your browser data or decide what data will be cleared when you leave
-    the application.</string>
-    <string name="setting_summary_start_control">Decide which components of the browser will be enabled on start.</string>
-    <string name="setting_title_search_engine">Search Engine</string>
-    <string name="setting_summary_search_engine">Here you can choose your preferred search engine or set a custom one.</string>
+    <string name="setting_title_clear_control">データコントロール</string>
+    <string name="setting_title_start_control">スタートコントロール</string>
+    <string name="setting_summary_clear_control">アプリを終了する時にブラウザのデータを消去するか、消去するデータを決定する。</string>
+    <string name="setting_summary_start_control">開始時にブラウザのどのコンポーネントを有効化するか決定する</string>
+    <string name="setting_title_search_engine">検索エンジン</string>
+    <string name="setting_summary_search_engine">ここでおすすめの検索エンジンや独自の検索エンジンを選択できます</string>
     <string name="setting_summary_search_engine_google">Google</string>
     <string name="setting_summary_search_engine_duckduckgo">DuckDuckGo</string>
     <string name="setting_summary_search_engine_startpage">StartPage</string>
@@ -84,28 +83,22 @@
     <string name="setting_summary_search_engine_searx">Searx</string>
     <string name="setting_summary_search_engine_qwant">Qwant</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
-    <string name="setting_title_inverted">Inverted colors</string>
-    <string name="setting_summary_inverted">If checked, content will be rendered in a inverted grey scale mode. This
-    is a kind of \"night mode\".</string>
+    <string name="setting_title_inverted">色を反転</string>
+    <string name="setting_summary_inverted">チェックすると、コンテンツは反転したグレースケースで表示されます。これは一種の「ダークモード」です。</string>
     <string name="setting_title_font">フォントサイズ</string>
-    <string name="setting_summary_font">Change the font size for displaying websites.</string>
-    <string name="setting_title_remote">Remote content</string>
-    <string name="setting_summary_remote">Enable remote content, which is not directly from the website you are visiting.
-        Disabling this is more secure, faster and saves data volume. But some content will not be displayed anymore.</string>
-    <string name="setting_title_save_data">Request \'Save Data\'</string>
-    <string name="setting_summary_save_data">Tell websites that you would prefer to save data. Supported websites will load faster.</string>
+    <string name="setting_summary_font">表示中のウェブサイトに合わせてフォントサイズを変更</string>
+    <string name="setting_title_remote">リモートコンテンツ</string>
+    <string name="setting_summary_remote">アクセスしている Web サイトから直接ではないリモートコンテンツを有効にします。これを無効にすると、より安全で高速になりデータ量が節約されます。ただし一部のコンテンツは表示されなくなります。</string>
+    <string name="setting_title_save_data">「データを保存」のリクエスト</string>
+    <string name="setting_summary_save_data">ウェブサイトにデータを保存したいことを伝えます。サポートされる Web サイトはより高速にロードされます。</string>
     <!-- browser start -->
-    <string name="setting_title_images">Images</string>
-    <string name="setting_summary_images">Enable Network images. Disabling could be useful to save mobile data and to load
-    websites faster.</string>
-    <string name="setting_title_cookie">Cookies</string>
-    <string name="setting_summary_cookie_delete">If enabled, all cookies will be deleted. Also the Cookies of trusted websites.</string>
-    <string name="setting_summary_cookie">Enable Cookies. Cookies are small text files, which are stored on your device. Websites
-    use them for example to store user settings (for example search settings). But they could also be used to collect personal
-        user data. Third party cookies (they collect user data for advertising) are always disabled.</string>
-    <string name="setting_title_whitelistCookie">Cookie whitelist</string>
-    <string name="setting_summary_whitelistCookie">If you disable Cookies, you can use this whitelist to allow sites you
-        trust to use save cookies.</string>
+    <string name="setting_title_images">画像</string>
+    <string name="setting_summary_images">ネットワークの画像を有効にします。無効にすると、モバイルデータを削減し Web サイトをより速く読み込めます。</string>
+    <string name="setting_title_cookie">クッキー</string>
+    <string name="setting_summary_cookie_delete">有効にすると、信頼できる Web サイトも含め全てのクッキーが削除されます。</string>
+    <string name="setting_summary_cookie">クッキーを有効にします。クッキーは小さなテキストファイルで、端末に保存されます。Web サイトは、例えばユーザー設定 (検索設定など) を保存するために使用します。ただし、個人データの収集にも使用できます。サードパーティのクッキー (広告用の個人データを収集している) は常に無効になっています。</string>
+    <string name="setting_title_whitelistCookie">クッキーのホワイトリスト</string>
+    <string name="setting_summary_whitelistCookie">クッキーを無効にすると、このホワイトリストを使用して信頼できるサイトでクッキーの保存を使用できるようになります。</string>
     <string name="setting_title_javascript">JavaScript</string>
     <string name="setting_summary_javascript">Enable JavaScript. Many websites need JavaScript for their functionality (menus,
         loading and displaying images, …). But they are also a risk and can be used for attacks.</string>

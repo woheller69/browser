@@ -24,7 +24,7 @@ browser with a nice looking user interface.
 - [Privacy](https://github.com/scoute-dich/browser/blob/master/PRIVACY.md)
 - [License](https://github.com/scoute-dich/browser/blob/master/LICENSE.md)
 - [Code of conduct](https://github.com/scoute-dich/browser/blob/master/CODE_OF_CONDUCT.md)
-- [Screenshots](https://github.com/scoute-dich/browser/blob/master/SCREENSHOTS.md)
+- [Contributing](https://github.com/scoute-dich/browser/blob/master/CONTRIBUTING.md)
 - [XDA - Link](http://forum.xda-developers.com/android/apps-games/app-browser-t3500091)
 
 
@@ -64,3 +64,16 @@ browser with a nice looking user interface.
 - screenshots of the whole website
 - share/save as PDF
 - open links in other apps (for example YouTube)
+
+
+![1](https://github.com/scoute-dich/browser/blob/master/fastlane/metadata/android/de-DE/images/phoneScreenshots/1.jpg)
+
+![2](https://github.com/scoute-dich/browser/blob/master/fastlane/metadata/android/de-DE/images/phoneScreenshots/2.jpg)
+
+![3](https://github.com/scoute-dich/browser/blob/master/fastlane/metadata/android/de-DE/images/phoneScreenshots/3.jpg)
+
+![4](https://github.com/scoute-dich/browser/blob/master/fastlane/metadata/android/de-DE/images/phoneScreenshots/4.jpg)
+
+![5](https://github.com/scoute-dich/browser/blob/master/fastlane/metadata/android/de-DE/images/phoneScreenshots/5.jpg)
+
+![6](https://github.com/scoute-dich/browser/blob/master/fastlane/metadata/android/de-DE/images/phoneScreenshots/6.jpg)

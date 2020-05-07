@@ -198,7 +198,7 @@ public class HelperUnit {
                 Intent installer = new Intent();
                 installer.putExtra("android.intent.extra.shortcut.INTENT", i);
                 installer.putExtra("android.intent.extra.shortcut.NAME", title);
-                installer.putExtra(Intent.EXTRA_SHORTCUT_ICON_RESOURCE, Intent.ShortcutIconResource.fromContext(context.getApplicationContext(), R.drawable.qc_bookmarks));
+                installer.putExtra(Intent.EXTRA_SHORTCUT_ICON_RESOURCE, Intent.ShortcutIconResource.fromContext(context.getApplicationContext(), R.mipmap.qc_bookmarks));
                 installer.setAction("com.android.launcher.action.INSTALL_SHORTCUT");
                 context.sendBroadcast(installer);
             } else {
@@ -209,7 +209,7 @@ public class HelperUnit {
                             new ShortcutInfo.Builder(context, url)
                                     .setShortLabel(title)
                                     .setLongLabel(title)
-                                    .setIcon(Icon.createWithResource(context, R.drawable.qc_bookmarks))
+                                    .setIcon(Icon.createWithResource(context, R.mipmap.qc_bookmarks))
                                     .setIntent(new Intent(Intent.ACTION_VIEW, Uri.parse(url)))
                                     .build();
                     shortcutManager.requestPinShortcut(pinShortcutInfo, null);

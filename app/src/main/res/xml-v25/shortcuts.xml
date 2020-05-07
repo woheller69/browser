@@ -3,7 +3,7 @@
     <shortcut
         android:shortcutId="sc_startPage"
         android:enabled="true"
-        android:icon="@drawable/qc_start"
+        android:icon="@mipmap/qc_start"
         android:shortcutShortLabel="@string/album_title_files"
         android:shortcutLongLabel="@string/album_title_home"
         android:shortcutDisabledMessage="@string/album_title_home">
@@ -17,7 +17,7 @@
     <shortcut
         android:shortcutId="sc_bookmark"
         android:enabled="true"
-        android:icon="@drawable/qc_bookmarks"
+        android:icon="@mipmap/qc_bookmarks"
         android:shortcutShortLabel="@string/album_title_bookmarks"
         android:shortcutLongLabel="@string/album_title_bookmarks"
         android:shortcutDisabledMessage="@string/album_title_bookmarks">
@@ -31,7 +31,7 @@
     <shortcut
         android:shortcutId="sc_history"
         android:enabled="true"
-        android:icon="@drawable/qc_history"
+        android:icon="@mipmap/qc_history"
         android:shortcutShortLabel="@string/album_title_history"
         android:shortcutLongLabel="@string/album_title_history"
         android:shortcutDisabledMessage="@string/album_title_history">

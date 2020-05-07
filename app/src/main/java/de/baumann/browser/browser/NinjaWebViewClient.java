@@ -30,6 +30,7 @@ import android.widget.TextView;
 
 import java.io.ByteArrayInputStream;
 import java.net.URISyntaxException;
+import java.util.Objects;
 
 import de.baumann.browser.database.Record;
 import de.baumann.browser.database.RecordAction;

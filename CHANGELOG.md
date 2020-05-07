@@ -1,7 +1,8 @@
-### v 7.0 (WIP)
-- updated translations (es, fr, ja, nl, pl, pt, sv)
+### v 7.0
+- new: F-Droid description
+- updated: many translations (BIG THANKS TO ALL CROWDIN translators
 - fix: leave video fullscreen with back key
-- fix: create windows inside webview
+- fix: create windows inside webView
 
 ### v 6.9
 - fix: custom search engine

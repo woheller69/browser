@@ -1,9 +1,11 @@
 ### v 7.1
+
 - updated: bookmark management (sorry for removing password saving)
 - updated: menus and dialogs
 - updated: overview
 - new: hide overflow button
-
+- many stability improvements removed 5000 lines of code!)
+- reduced apk size
 
 ### v 7.0
 - new: F-Droid description

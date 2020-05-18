@@ -6,12 +6,11 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import de.baumann.browser.unit.RecordUnit;
 
-@SuppressWarnings("WeakerAccess")
 public class RecordHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "Ninja4.db";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 3;
 
-    public RecordHelper(Context context) {
+    RecordHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
@@ -22,9 +21,19 @@ public class RecordHelper extends SQLiteOpenHelper {
         database.execSQL(RecordUnit.CREATE_JAVASCRIPT);
         database.execSQL(RecordUnit.CREATE_COOKIE);
         database.execSQL(RecordUnit.CREATE_GRID);
+        database.execSQL(RecordUnit.CREATE_BOOKMARK);
+        database.execSQL(RecordUnit.CREATE_REMOTE);
     }
 
     // UPGRADE ATTENTION!!!
     @Override
-    public void onUpgrade(SQLiteDatabase database, int oldVersion, int newVersion) {}
+    public void onUpgrade(SQLiteDatabase database, int oldVersion, int newVersion) {
+        switch(oldVersion) {
+            case 1:
+                database.execSQL(RecordUnit.CREATE_BOOKMARK);
+            case 2:
+                database.execSQL(RecordUnit.CREATE_REMOTE);
+                // we want both updates, so no break statement here...
+        }
+    }
 }

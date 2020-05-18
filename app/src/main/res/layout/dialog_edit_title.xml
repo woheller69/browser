@@ -1,55 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?android:attr/colorBackground"
-    android:paddingEnd="20dp"
-    android:paddingStart="20dp"
-    android:paddingTop="15dp"
-    tools:ignore="Autofill">
+    android:padding="8dp"
+    tools:ignore="Autofill,Overdraw">
 
-    <com.google.android.material.textfield.TextInputLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_toStartOf="@+id/action_ok">
 
-        <EditText
-            android:id="@+id/dialog_edit"
-            android:selectAllOnFocus="true"
+        <ImageView
+            android:id="@+id/edit_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:gravity="center_vertical"
+            android:contentDescription="@null"
+            android:scaleType="fitCenter"
+            android:src="@drawable/circle_red_big" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/edit_title"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:includeFontPadding="false"
-            android:imeOptions="actionDone"
-            android:inputType="text"
-            android:hint="@string/dialog_title_hint" />
+            android:layout_height="wrap_content" >
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <EditText
+                android:id="@+id/pass_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:inputType="text"
+                android:hint="@string/dialog_title_hint" />
 
-    <RelativeLayout
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp">
+        android:layout_toStartOf="@+id/action_ok"
+        android:layout_alignParentStart="true"
+        android:orientation="vertical"
+        android:layout_margin="8dp">
 
-        <Button
-            android:id="@+id/action_ok"
-            android:layout_width="wrap_content"
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:includeFontPadding="false"
-            android:background="?attr/selectableItemBackground"
-            android:textColor="?android:attr/colorAccent"
-            android:text="@string/app_ok"/>
+            app:passwordToggleEnabled="false" >
 
-        <Button android:id="@+id/action_cancel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:includeFontPadding="false"
-            android:layout_toStartOf="@+id/action_ok"
-            android:background="?attr/selectableItemBackground"
-            android:textColor="?android:attr/colorAccent"
-            android:text="@string/app_cancel"/>
+            <EditText
+                android:visibility="gone"
+                android:id="@+id/edit_userName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:inputType="text"
+                android:hint="@string/dialog_sign_in_username" />
 
-    </RelativeLayout>
+        </com.google.android.material.textfield.TextInputLayout>
 
-</LinearLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <EditText
+                android:visibility="gone"
+                android:id="@+id/edit_PW"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:inputType="textPassword"
+                android:hint="@string/dialog_sign_in_password" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/action_ok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerInParent="true"
+        android:background="?attr/selectableItemBackground"
+        android:text="@string/app_ok"
+        android:textColor="?android:attr/colorAccent" />
+
+</RelativeLayout>

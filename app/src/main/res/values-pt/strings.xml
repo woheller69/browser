@@ -38,23 +38,17 @@
     <string name="menu_sc">Atalho no ecrã inicial</string>
     <string name="menu_sort">Ordenar por…</string>
     <string name="menu_filter">Filtrar por…</string>
-    <string name="menu_share_screenshot">Partilhar captura de ecrã</string>
     <string name="menu_share_link">Partilhar ligação</string>
-    <string name="menu_save_screenshot">Guardar captura de ecrã</string>
     <string name="menu_save_home">Guardar em Início</string>
     <string name="menu_save_bookmark">Guardar como marcador</string>
     <string name="menu_save_as">Guardar como…</string>
     <string name="menu_save_pdf">Guardar como PDF</string>
-    <string name="menu_share_pdf">Partilhar PDF</string>
     <string name="menu_shareClipboard">Copiar para a área de transferência</string>
     <string name="menu_other_searchSite">Pesquisar no site</string>
-    <string name="menu_other_fileManager">Abrir gestor de ficheiros</string>
     <string name="menu_other_info">Acerca de \"FOSS Browser\"</string>
     <string name="menu_other_help">Ajuda</string>
     <!-- Dialog -->
-    <string name="dialog_toggle_reload">Recarregar</string>
     <string name="dialog_title_hint">Título:</string>
-    <string name="dialog_url_hint">URL:</string>
     <string name="dialog_extension_hint">Extensão (por exemplo: \".jpg\"):</string>
     <string name="dialog_sign_in_username">Nome do utilizador</string>
     <string name="dialog_sign_in_password">Palavra-passe</string>
@@ -98,22 +92,18 @@
     <string name="setting_summary_cookie_delete">Se ativar a opção, todos os cookies serão apagados. Os cookies de sites fiáveis também serão apagados.</string>
     <string name="setting_summary_cookie">Ativa a utilização de cookies. Os cookies são pequenos ficheiros de texto guardados no seu dispositivo. Os sites podem utilizar cookies para guardar definições do utilizador (por exemplo, nas pesquisas web). Mas os cookies também podem ser utilizados para obter dados pessoais e privados. Os cookies de terceiros (recolhem dados para mostrar anúncios) estarão sempre desativados.</string>
     <string name="setting_title_whitelistCookie">Cookies permitidos</string>
-    <string name="setting_summary_whitelistCookie">Se desativar os cookies, pode utilizar esta lista para permitir que os sites por si definidos possam guardar cookies.</string>
     <string name="setting_title_javascript">JavaScript</string>
-    <string name="setting_summary_javascript">Ativa a utilização de JavaScript. Alguns sites necessitam de executar JavaScript para as suas funcionalidades (menus, carregamento e exibição de imagens...). Mas são também um risco e podem ser utilizados para ataques.</string>
+    <string name="setting_summary_javascript">Ativa a utilização de JavaScript. Alguns sites necessitam de executar JavaScript para as suas funcionalidades (menus, carregamento e exibição de imagens…). Mas são também um risco e podem ser utilizados para ataques.</string>
     <string name="setting_title_whitelistJS">Lista branca JavaScript</string>
-    <string name="setting_summary_whitelistJS">Se desativar os Javascripts, pode utilizar esta lista para permitir que os sites por si definidos possam utilizar JavaScript.</string>
     <string name="setting_title_adblock">AdBlock</string>
     <string name="setting_summary_adblock">Ativar AdBlock para bloquear os anúncios. Se ativa, os sites são carregados mais rapidamente.</string>
     <string name="setting_title_whitelist">Anúncios permitidos</string>
-    <string name="setting_summary_whitelist">Permitir que estes sites mostrem anúncios. Alguns sites não funcionam se AdBlock estiver ativado.</string>
     <string name="setting_title_location">Localização</string>
     <string name="setting_summary_location">Permitir as sites acederem à localização. Alguns sites (como Google Mapspara navegação) necessitam desta opção ativa.</string>
     <string name="setting_title_history">Histórico</string>
     <string name="setting_summary_history">Guardar histórico dos sites visitados.</string>
     <!-- browser clear -->
     <string name="data_summary">Todos os ficheiros serão exportados para o diretório \"Android/data/de.baumann.browser/files/browser_backup/\" do seu cartão SD. Este diretório será apagado se desinstalar a aplicação. Aconselhamos que efetue regularmente os backups para outro diretório.</string>
-    <string name="clear_menu_done_all">Terminar</string>
     <string name="clear_title_quit">Limpar ao sair da aplicação</string>
     <string name="clear_summary_quit">Sempre que sair da aplicação, os dados assinalados serão apagados.</string>
     <string name="clear_title_cache">Limpar cache</string>
@@ -162,8 +152,6 @@
     <string name="setting_overView">Vista global</string>
     <string name="setting_overView_onStart_title">Mostrar ao iniciar</string>
     <string name="setting_overView_onStart_summary">Abrir \"Vista global\" ao iniciar a aplicação.</string>
-    <string name="setting_overView_hide_title">Não pré-visualizar separadores</string>
-    <string name="setting_overView_hide_summary">Na vista global expandida, a pré-visualização de separadores estará ocultada. Assim, terá mais espaço para os seus marcadores.</string>
     <string name="setting_gestures">Gestos</string>
     <string name="setting_gestures_use_title">Utilizar gestos</string>
     <string name="setting_gestures_use_summary">Utilizar gestos na barra de ferramentas e no botão de navegação.</string>
@@ -202,7 +190,6 @@
     <string name="hint_database">Está prestes a apagar todos os dados da aplicação. Tem a certeza?</string>
     <!-- Others setting -->
     <string name="setting_title_others">Outras</string>
-    <string name="setting_title_license">Licença</string>
     <string name="setting_title_appSettings">Definições da aplicação</string>
     <string name="setting_summary_appSettings">Abrir definições do sistema para \"FOSS Browser\". Nas definições, conforme a versão Android utilizada, conceder permissões, limpar os dados da aplicação e ver outras informações.</string>
     <string name="setting_title_community">Participar</string>
@@ -225,15 +212,7 @@
     <string name="toast_share_failed">Não é possível partilhar esta página</string>
     <string name="toast_start_download">Descarga iniciada</string>
     <string name="toast_wait_a_minute">Aguarde um pouco</string>
-    <string name="toast_titleConfirm_delete">Tem certeza de que deseja apagar esta entrada?</string>
-    <string name="toast_titleConfirm_paste">Copiar para a área de transferência?</string>
-    <string name="toast_titleConfirm_pasteUN">Nome do utilizador</string>
-    <string name="toast_titleConfirm_pastePW">Palavra-passe</string>
-    <string name="toast_error">Algo errado aconteceu.</string>
-    <string name="toast_newTitle">Entrada existente. Escolha outro título.</string>
-    <string name="toast_edit_successful">Adicionado com sucesso</string>
     <string name="toast_webview_forward">Não foi possível carregar o site</string>
-    <string name="toast_clear">Tem a certeza de que deseja limpar?</string>
     <string name="toast_permission_sdCard">\"FOSS Browser\" necessita da permissão \"read and write on your storage\". Esta permissão é necessária para descarregar ficheiros, tirar capturas de ecrã e para efetuar o backup dos seus dados.</string>
     <string name="toast_permission_loc">\"FOSS Browser\" necessita da permissão \"aceder à localização\". Esta permissão é necessária para que alguns sites mostrem os dados de navegação (exemplo: Google Maps).</string>
     <string name="toast_restart">Tem que reiniciar a aplicação para aplicar as alterações. Fechar agora?</string>
@@ -256,15 +235,6 @@
         &lt;b&gt;Toque longo&lt;/b&gt;&lt;br&gt;
         Se tocar longamente no ícone Menu ou no \"Botão de navegação\", será mostrado o diálogo \"Fast toggle\". Se tocar longamente no ícone \"Marcador\", será mostrado o diálogo \"Filtro\".
     </string>
-    <string name="dialogHelp_overviewTitle">Vista global</string>
-    <string name="dialogHelp_overviewText">        Existem duas áreas na \"Vista global\" (pré-visualização de separadores e dados pessoais). Existe também um menu extra. Nas definições pode alterar o comportamento da \"Vista global\".&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;Pré-visualização de separadores&lt;/b&gt;&lt;br&gt;
-        Está na parte superior da \"Vista global\". Para trocar de separadores, basta tocar na sua pré-visualização. Para fechar um separador, toque longo na pré-visualização. Se deslizar a pré-visualização para cima, será aberto o seu conteúdo pessoal.&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;Conteúdo pessoal&lt;/b&gt;&lt;br&gt;
-        Está dividido em três partes: página inicial, marcadores e histórico. Se tocar longamente numa entrada, surgirá um menu com mais opções.
-    </string>
     <string name="dialogHelp_filterText">Pode associar os seus marcadores a filtros. Desta forma, consegue agrupar os separadores facilmente. Assim que o fizer, pode abrir o diálogo com um toque longo no ícone Marcadores. Se ativar uma entrada surge um diálogo, no qual pode editar o nome do filtro.    </string>
     <!-- Dialog changelog -->
     <string name="changelog_dialog">        A aplicação não está disponível no seu idioma? Quer ajudar a traduzir \"FOSS Browser\"? Ou talvez melhorar a tradução existente?
@@ -281,38 +251,6 @@
 
     </string>
     <!-- License changelog -->
-    <string name="license_title">Copyright © 2017-2020  by Gaukler Faun</string>
-    <string name="license_dialog">        &lt;i&gt;Para obter mais informações, aceda à nossa página Github: https://github.com/scoute-dich/Browser&lt;/i&gt;&lt;br&gt;&lt;br&gt;
-
-        This program is free software: you can redistribute it and/or modify
-        it under the terms of the GNU General Public License as published by
-        the Free Software Foundation, either version 3 of the License, or
-        (at your option) any later version.
-
-        This program is distributed in the hope that it will be useful,
-        but WITHOUT ANY WARRANTY; without even the implied warranty of
-        MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-        GNU General Public License for more details.
-
-        You should have received a copy of the GNU General Public License
-        along with this program.  If not, see http://www.gnu.org/licenses.&lt;br&gt;&lt;br&gt;
-
-        &lt;i&gt;Esta aplicação utiliza as bibliotecas e/ou projetos Open Source abaixo indicados:&lt;/i&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;Material Design Icons&lt;/b&gt;&lt;br&gt;
-        SIL Open Font License, Version 1.1.&lt;br&gt;
-        Templarian&lt;br&gt;
-        &lt;i&gt;https://github.com/Templarian/MaterialDesign&lt;/i&gt;&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;Ninja&lt;/b&gt;&lt;br&gt;
-        Apache License Version 2.0&lt;br&gt;
-        Matthew Lee&lt;br&gt;
-        &lt;i&gt;http://git.io/vUrEh&lt;/i&gt;&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;SimpleEncryptionLib&lt;/b&gt;&lt;br&gt;
-        Apache License Version 2.0&lt;br&gt;
-        hummatli&lt;br&gt;
-        &lt;i&gt;https://github.com/hummatli/SimpleEncryptionLib</string>
     <string name="cont_dialog">        &lt;i&gt;Gostaria agradecer a todas as pessoas que, de alguma forma, participaram no desenvolvimento desta aplicação. O meu obrigado às pessoas que comunicaram os erros encontrados, às pessoas que ajudaram a traduzir e a todas as pessoas que de alguma forma ajudaram a tornar esta aplicação melhor. Nos sites indicados abaixo, pode obter informações sobre com se tornar parte ativa deste projeto:&lt;/i&gt;&lt;br&gt;&lt;br&gt;
 
         &lt;b&gt;Crowdin:&lt;/b&gt;&lt;br&gt;

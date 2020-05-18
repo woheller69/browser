@@ -1,8 +1,8 @@
 package de.baumann.browser.browser;
 
 import android.annotation.TargetApi;
-import android.app.Activity;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -26,18 +26,18 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.io.ByteArrayInputStream;
 import java.net.URISyntaxException;
-import java.util.Objects;
 
 import de.baumann.browser.database.Record;
 import de.baumann.browser.database.RecordAction;
 import de.baumann.browser.Ninja.R;
 import de.baumann.browser.unit.BrowserUnit;
 import de.baumann.browser.unit.HelperUnit;
-import de.baumann.browser.unit.IntentUnit;
+import de.baumann.browser.unit.RecordUnit;
 import de.baumann.browser.view.NinjaToast;
 import de.baumann.browser.view.NinjaWebView;
 
@@ -73,11 +73,11 @@ public class NinjaWebViewClient extends WebViewClient {
         if (sp.getBoolean("saveHistory", true)) {
             RecordAction action = new RecordAction(context);
             action.open(true);
-            if (action.checkHistory(url)) {
-                action.deleteHistoryItemByURL(url);
-                action.addHistory(new Record(ninjaWebView.getTitle(), url, System.currentTimeMillis()));
+            if (action.checkUrl(url, RecordUnit.TABLE_HISTORY)) {
+                action.deleteURL(url, RecordUnit.TABLE_HISTORY);
+                action.addHistory(new Record(ninjaWebView.getTitle(), url, System.currentTimeMillis(), 0));
             } else {
-                action.addHistory(new Record(ninjaWebView.getTitle(), url, System.currentTimeMillis()));
+                action.addHistory(new Record(ninjaWebView.getTitle(), url, System.currentTimeMillis(), 0));
             }
             action.close();
         }
@@ -197,13 +197,8 @@ public class NinjaWebViewClient extends WebViewClient {
 
     @Override
     public void onFormResubmission(WebView view, @NonNull final Message doNotResend, final Message resend) {
-        Context holder = IntentUnit.getContext();
-        if (!(holder instanceof Activity)) {
-            return;
-        }
-
-        final BottomSheetDialog dialog = new BottomSheetDialog(holder);
-        View dialogView = View.inflate(holder, R.layout.dialog_action, null);
+        final BottomSheetDialog dialog = new BottomSheetDialog(context);
+        View dialogView = View.inflate(context, R.layout.dialog_action, null);
         TextView textView = dialogView.findViewById(R.id.dialog_text);
         textView.setText(R.string.dialog_content_resubmission);
         Button action_ok = dialogView.findViewById(R.id.action_ok);
@@ -214,10 +209,9 @@ public class NinjaWebViewClient extends WebViewClient {
                 dialog.cancel();
             }
         });
-        Button action_cancel = dialogView.findViewById(R.id.action_cancel);
-        action_cancel.setOnClickListener(new View.OnClickListener() {
+        dialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
             @Override
-            public void onClick(View view) {
+            public void onCancel(DialogInterface dialog) {
                 doNotResend.sendToTarget();
                 dialog.cancel();
             }
@@ -265,10 +259,9 @@ public class NinjaWebViewClient extends WebViewClient {
                 dialog.cancel();
             }
         });
-        Button action_cancel = dialogView.findViewById(R.id.action_cancel);
-        action_cancel.setOnClickListener(new View.OnClickListener() {
+        dialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
             @Override
-            public void onClick(View view) {
+            public void onCancel(DialogInterface dialog) {
                 handler.cancel();
                 dialog.cancel();
             }
@@ -282,13 +275,17 @@ public class NinjaWebViewClient extends WebViewClient {
     public void onReceivedHttpAuthRequest(WebView view, @NonNull final HttpAuthHandler handler, String host, String realm) {
 
         final BottomSheetDialog dialog = new BottomSheetDialog(context);
-        View dialogView = View.inflate(context, R.layout.dialog_edit_bookmark, null);
+        View dialogView = View.inflate(context, R.layout.dialog_edit_title, null);
 
-        final EditText pass_userNameET = dialogView.findViewById(R.id.pass_userName);
-        final EditText pass_userPWET = dialogView.findViewById(R.id.pass_userPW);
+        final EditText pass_userNameET = dialogView.findViewById(R.id.edit_userName);
+        final EditText pass_userPWET = dialogView.findViewById(R.id.edit_PW);
+        pass_userNameET.setVisibility(View.VISIBLE);
+        pass_userNameET.setVisibility(View.VISIBLE);
 
-        TextInputLayout login_title = dialogView.findViewById(R.id.login_title);
+        TextInputLayout login_title = dialogView.findViewById(R.id.edit_title);
         login_title.setVisibility(View.GONE);
+        ImageView ib_icon = dialogView.findViewById(R.id.edit_icon);
+        ib_icon.setVisibility(View.GONE);
 
         Button action_ok = dialogView.findViewById(R.id.action_ok);
         action_ok.setOnClickListener(new View.OnClickListener() {
@@ -300,10 +297,9 @@ public class NinjaWebViewClient extends WebViewClient {
                 dialog.cancel();
             }
         });
-        Button action_cancel = dialogView.findViewById(R.id.action_cancel);
-        action_cancel.setOnClickListener(new View.OnClickListener() {
+        dialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
             @Override
-            public void onClick(View view) {
+            public void onCancel(DialogInterface dialog) {
                 handler.cancel();
                 dialog.cancel();
             }

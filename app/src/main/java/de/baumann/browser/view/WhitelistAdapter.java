@@ -14,12 +14,12 @@ import java.util.List;
 import de.baumann.browser.browser.Javascript;
 import de.baumann.browser.Ninja.R;
 
-public class Adapter_Whitelist extends ArrayAdapter<String> {
+public class WhitelistAdapter extends ArrayAdapter<String> {
     private final Context context;
     private final int layoutResId;
     private final List<String> list;
 
-    public Adapter_Whitelist(Context context, List<String> list){
+    public WhitelistAdapter(Context context, List<String> list){
         super(context, R.layout.whitelist_item, list);
         this.context = context;
         this.layoutResId = R.layout.whitelist_item;

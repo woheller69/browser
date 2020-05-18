@@ -1,12 +1,6 @@
 package de.baumann.browser.activity;
 
 import android.os.Bundle;
-import com.google.android.material.bottomsheet.BottomSheetDialog;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatDelegate;
-import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,23 +11,30 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
+import androidx.appcompat.widget.Toolbar;
+
+import com.google.android.material.bottomsheet.BottomSheetDialog;
+
 import java.util.List;
 import java.util.Objects;
 
-import de.baumann.browser.browser.Javascript;
-import de.baumann.browser.database.RecordAction;
 import de.baumann.browser.Ninja.R;
+import de.baumann.browser.browser.Remote;
+import de.baumann.browser.database.RecordAction;
 import de.baumann.browser.unit.BrowserUnit;
 import de.baumann.browser.unit.HelperUnit;
 import de.baumann.browser.unit.RecordUnit;
 import de.baumann.browser.view.WhitelistAdapter;
 import de.baumann.browser.view.NinjaToast;
 
-public class Whitelist_Javascript extends AppCompatActivity {
+public class Whitelist_Remote extends AppCompatActivity {
 
     private WhitelistAdapter adapter;
     private List<String> list;
-    private Javascript javascript;
+    private Remote remote;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -46,11 +47,11 @@ public class Whitelist_Javascript extends AppCompatActivity {
         setSupportActionBar(toolbar);
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
-        javascript = new Javascript(Whitelist_Javascript.this);
+        remote = new Remote(Whitelist_Remote.this);
 
         RecordAction action = new RecordAction(this);
         action.open(false);
-        list = action.listDomains(RecordUnit.TABLE_JAVASCRIPT);
+        list = action.listDomains(RecordUnit.TABLE_REMOTE);
         action.close();
 
         ListView listView = findViewById(R.id.whitelist);
@@ -64,10 +65,10 @@ public class Whitelist_Javascript extends AppCompatActivity {
                 whitelist_item_cancel.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        javascript.removeDomain(list.get(position));
+                        remote.removeDomain(list.get(position));
                         list.remove(position);
                         notifyDataSetChanged();
-                        NinjaToast.show(Whitelist_Javascript.this, R.string.toast_delete_successful);
+                        NinjaToast.show(Whitelist_Remote.this, R.string.toast_delete_successful);
                     }
                 });
                 return v;
@@ -83,20 +84,19 @@ public class Whitelist_Javascript extends AppCompatActivity {
                 EditText editText = findViewById(R.id.whitelist_edit);
                 String domain = editText.getText().toString().trim();
                 if (domain.isEmpty()) {
-                    NinjaToast.show(Whitelist_Javascript.this, R.string.toast_input_empty);
+                    NinjaToast.show(Whitelist_Remote.this, R.string.toast_input_empty);
                 } else if (!BrowserUnit.isURL(domain)) {
-                    NinjaToast.show(Whitelist_Javascript.this, R.string.toast_invalid_domain);
+                    NinjaToast.show(Whitelist_Remote.this, R.string.toast_invalid_domain);
                 } else {
-                    RecordAction action = new RecordAction(Whitelist_Javascript.this);
+                    RecordAction action = new RecordAction(Whitelist_Remote.this);
                     action.open(true);
-                    if (action.checkDomain(domain, RecordUnit.TABLE_JAVASCRIPT)) {
-                        NinjaToast.show(Whitelist_Javascript.this, R.string.toast_domain_already_exists);
+                    if (action.checkDomain(domain, RecordUnit.TABLE_REMOTE)) {
+                        NinjaToast.show(Whitelist_Remote.this, R.string.toast_domain_already_exists);
                     } else {
-                        Javascript adBlock = new Javascript(Whitelist_Javascript.this);
-                        adBlock.addDomain(domain.trim());
+                        remote.addDomain(domain.trim());
                         list.add(0, domain.trim());
                         adapter.notifyDataSetChanged();
-                        NinjaToast.show(Whitelist_Javascript.this, R.string.toast_add_whitelist_successful);
+                        NinjaToast.show(Whitelist_Remote.this, R.string.toast_add_whitelist_successful);
                     }
                     action.close();
                 }
@@ -117,16 +117,16 @@ public class Whitelist_Javascript extends AppCompatActivity {
                 finish();
                 break;
             case R.id.menu_clear:
-                final BottomSheetDialog dialog = new BottomSheetDialog(Whitelist_Javascript.this);
-                View dialogView = View.inflate(Whitelist_Javascript.this, R.layout.dialog_action, null);
+                final BottomSheetDialog dialog = new BottomSheetDialog(Whitelist_Remote.this);
+                View dialogView = View.inflate(Whitelist_Remote.this, R.layout.dialog_action, null);
                 TextView textView = dialogView.findViewById(R.id.dialog_text);
                 textView.setText(R.string.hint_database);
                 Button action_ok = dialogView.findViewById(R.id.action_ok);
                 action_ok.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Javascript javaScript = new Javascript(Whitelist_Javascript.this);
-                        javaScript.clearDomains();
+                        Remote remote = new Remote(Whitelist_Remote.this);
+                        remote.clearDomains();
                         list.clear();
                         adapter.notifyDataSetChanged();
                         dialog.cancel();
@@ -134,7 +134,6 @@ public class Whitelist_Javascript extends AppCompatActivity {
                 });
                 dialog.setContentView(dialogView);
                 dialog.show();
-
                 break;
             default:
                 break;

@@ -8,15 +8,14 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import de.baumann.browser.Ninja.R;
-import de.baumann.browser.unit.BrowserUnit;
-
 import java.util.List;
+
+import de.baumann.browser.Ninja.R;
 
 public class GridAdapter extends BaseAdapter {
     private static class Holder {
         TextView title;
-        ImageView cover;
+        ImageView icon;
     }
 
     private final List<GridItem> list;
@@ -34,10 +33,10 @@ public class GridAdapter extends BaseAdapter {
         View view = convertView;
 
         if (view == null) {
-            view = LayoutInflater.from(context).inflate(R.layout.grid_item, parent, false);
+            view = LayoutInflater.from(context).inflate(R.layout.list_item, parent, false);
             holder = new Holder();
-            holder.title = view.findViewById(R.id.grid_item_title);
-            holder.cover = view.findViewById(R.id.grid_item_cover);
+            holder.title = view.findViewById(R.id.record_item_title);
+            holder.icon = view.findViewById(R.id.record_item_icon);
             view.setTag(holder);
         } else {
             holder = (Holder) view.getTag();
@@ -45,31 +44,25 @@ public class GridAdapter extends BaseAdapter {
 
         GridItem item = list.get(position);
         holder.title.setText(item.getTitle());
-        holder.cover.setImageBitmap(BrowserUnit.file2Bitmap(context, item.getFilename()));
+        holder.icon.setVisibility(View.VISIBLE);
+        holder.icon.setImageResource(item.getIcon());
 
         return view;
     }
 
-
-
     @Override
     public int getCount() {
-        // TODO Auto-generated method stub
         return list.size();
-        //return 0;
     }
 
     @Override
     public Object getItem(int arg0) {
-        // TODO Auto-generated method stub
         return list.get(arg0);
 
     }
 
     @Override
     public long getItemId(int arg0) {
-        // TODO Auto-generated method stub
         return arg0;
-
     }
 }

@@ -17,10 +17,10 @@ import java.util.Set;
 import de.baumann.browser.database.RecordAction;
 import de.baumann.browser.unit.RecordUnit;
 
-public class Javascript {
-    private static final String FILE = "javaHosts.txt";
-    private static final Set<String> hostsJS = new HashSet<>();
-    private static final List<String> whitelistJS = new ArrayList<>();
+public class Remote {
+    private static final String FILE = "remoteHosts.txt";
+    private static final Set<String> hostsRemote = new HashSet<>();
+    private static final List<String> whitelistRemote = new ArrayList<>();
     @SuppressLint("ConstantLocale")
     private static final Locale locale = Locale.getDefault();
 
@@ -33,7 +33,7 @@ public class Javascript {
                     BufferedReader reader = new BufferedReader(new InputStreamReader(manager.open(FILE)));
                     String line;
                     while ((line = reader.readLine()) != null) {
-                        hostsJS.add(line.toLowerCase(locale));
+                        hostsRemote.add(line.toLowerCase(locale));
                     }
                 } catch (IOException i) {
                     Log.w("browser", "Error loading hosts");
@@ -46,24 +46,24 @@ public class Javascript {
     private synchronized static void loadDomains(Context context) {
         RecordAction action = new RecordAction(context);
         action.open(false);
-        whitelistJS.clear();
-        whitelistJS.addAll(action.listDomains(RecordUnit.TABLE_JAVASCRIPT));
+        whitelistRemote.clear();
+        whitelistRemote.addAll(action.listDomains(RecordUnit.TABLE_REMOTE));
         action.close();
     }
 
     private final Context context;
 
-    public Javascript(Context context) {
+    public Remote(Context context) {
         this.context = context;
 
-        if (hostsJS.isEmpty()) {
+        if (hostsRemote.isEmpty()) {
             loadHosts(context);
         }
         loadDomains(context);
     }
 
     public boolean isWhite(String url) {
-        for (String domain : whitelistJS) {
+        for (String domain : whitelistRemote) {
             if (url != null && url.contains(domain)) {
                 return true;
             }
@@ -74,24 +74,24 @@ public class Javascript {
     public synchronized void addDomain(String domain) {
         RecordAction action = new RecordAction(context);
         action.open(true);
-        action.addDomain(domain, RecordUnit.TABLE_JAVASCRIPT);
+        action.addDomain(domain, RecordUnit.TABLE_REMOTE);
         action.close();
-        whitelistJS.add(domain);
+        whitelistRemote.add(domain);
     }
 
     public synchronized void removeDomain(String domain) {
         RecordAction action = new RecordAction(context);
         action.open(true);
-        action.deleteDomain(domain, RecordUnit.TABLE_JAVASCRIPT);
+        action.deleteDomain(domain, RecordUnit.TABLE_REMOTE);
         action.close();
-        whitelistJS.remove(domain);
+        whitelistRemote.remove(domain);
     }
 
     public synchronized void clearDomains() {
         RecordAction action = new RecordAction(context);
         action.open(true);
-        action.clearTable(RecordUnit.TABLE_JAVASCRIPT);
+        action.clearTable(RecordUnit.TABLE_REMOTE);
         action.close();
-        whitelistJS.clear();
+        whitelistRemote.clear();
     }
 }

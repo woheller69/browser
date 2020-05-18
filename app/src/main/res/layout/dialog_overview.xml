@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+    android:background="?android:attr/colorBackground"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:ignore="ContentDescription,Overdraw"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:id="@+id/titleBar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:listPreferredItemHeight"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_alignParentTop="true">
+
+        <TextView
+            android:id="@+id/overview_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toStartOf="@+id/open_menu"
+            android:layout_marginEnd="8dp"
+            android:ellipsize="end"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:text="@string/app_name"
+            android:gravity="center_vertical"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Title"
+            android:textStyle="bold" />
+
+        <ImageButton android:id="@+id/open_menu"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/icon_overflow"
+            android:background="?attr/actionBarItemBackground"
+            tools:ignore="ContentDescription" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_below="@+id/titleBar"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:background="@drawable/shadow_below"/>
+
+    <RelativeLayout
+        android:layout_below="@+id/titleBar"
+        android:layout_above="@+id/home_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ScrollView
+            android:layout_alignParentBottom="true"
+            android:id="@+id/listTabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp" >
+
+            <LinearLayout
+                android:stackFromBottom="true"
+                android:id="@+id/tab_container"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </ScrollView>
+
+        <ListView
+            android:layout_alignParentBottom="true"
+            android:stackFromBottom="true"
+            android:fastScrollEnabled="true"
+            android:divider="@null"
+            android:dividerHeight="0dp"
+            android:id="@+id/listRecord"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:gravity="center"/>
+
+        <View
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:background="@drawable/shadow_above"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:id="@+id/home_buttons"
+        android:layout_width="fill_parent"
+        android:layout_height="56dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:minHeight="56dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_marginEnd="6dp"
+            android:layout_marginStart="6dp"
+            android:orientation="vertical"
+            android:layout_width="42dp"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/open_tabView"
+                android:layout_width="42dp"
+                android:layout_height="2dp"
+                android:background="?android:attr/colorAccent"
+                android:visibility="visible"/>
+
+            <ImageButton
+                android:id="@+id/open_tab"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_marginEnd="2dp"
+                android:layout_marginStart="2dp"
+                android:background="?attr/actionBarItemBackground"
+                android:src="@drawable/icon_preview" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginEnd="6dp"
+            android:layout_marginStart="6dp"
+            android:orientation="vertical"
+            android:layout_width="42dp"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/open_startSiteView"
+                android:layout_width="42dp"
+                android:layout_height="2dp"
+                android:background="?android:attr/colorAccent"
+                android:visibility="visible"/>
+
+            <ImageButton
+                android:id="@+id/open_startSite"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_marginEnd="2dp"
+                android:layout_marginStart="2dp"
+                android:background="?attr/actionBarItemBackground"
+                android:src="@drawable/icon_earth" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginEnd="6dp"
+            android:layout_marginStart="6dp"
+            android:orientation="vertical"
+            android:layout_width="42dp"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/open_bookmarkView"
+                android:layout_width="42dp"
+                android:layout_height="2dp"
+                android:background="?android:attr/colorAccent"
+                android:visibility="visible" />
+
+            <ImageButton
+                android:id="@+id/open_bookmark_2"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_marginEnd="2dp"
+                android:layout_marginStart="2dp"
+                android:background="?attr/actionBarItemBackground"
+                android:src="@drawable/icon_bookmark" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginEnd="6dp"
+            android:layout_marginStart="6dp"
+            android:orientation="vertical"
+            android:layout_width="42dp"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/open_historyView"
+                android:layout_width="42dp"
+                android:layout_height="2dp"
+                android:background="?android:attr/colorAccent"
+                android:visibility="visible" />
+
+            <ImageButton
+                android:id="@+id/open_history_2"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_marginEnd="2dp"
+                android:layout_marginStart="2dp"
+                android:background="?attr/actionBarItemBackground"
+                android:src="@drawable/ic_action_history" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

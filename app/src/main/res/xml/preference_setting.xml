@@ -105,11 +105,6 @@
             android:title="@string/menu_other_help"/>
 
         <Preference
-            android:key="settings_license"
-            android:icon="@drawable/icon_copyright"
-            android:title="@string/setting_title_license"/>
-
-        <Preference
             android:key="settings_info"
             android:icon="@drawable/icon_info"
             android:title="@string/menu_other_info"/>

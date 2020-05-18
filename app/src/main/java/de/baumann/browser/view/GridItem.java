@@ -1,49 +1,30 @@
 package de.baumann.browser.view;
 
 public class GridItem {
-    private String title;
+    private final String title;
     public String getTitle() {
         return title;
     }
-    public void setTitle(String title) {
-        this.title = title;
-    }
 
-    private String url;
+    private final String url;
     public String getURL() {
         return url;
     }
-    public void setURL(String url) {
-        this.url = url;
+
+    private final int icon;
+    public int getIcon() {
+        return icon;
     }
 
-    private String filename;
-    public String getFilename() {
-        return filename;
-    }
-    public void setFilename(String filename) {
-        this.filename = filename;
+    private final int data;
+    public int getData() {
+        return data;
     }
 
-    private int ordinal;
-    public int getOrdinal() {
-        return ordinal;
-    }
-    public void setOrdinal(int ordinal) {
-        this.ordinal = ordinal;
-    }
-
-    public GridItem() {
-        this.title = null;
-        this.url = null;
-        this.filename = null;
-        this.ordinal = -1;
-    }
-
-    public GridItem(String title, String url, String filename, int ordinal) {
+    public GridItem(int icon, String title, String url, int data) {
         this.title = title;
         this.url = url;
-        this.filename = filename;
-        this.ordinal = ordinal;
+        this.icon = icon;
+        this.data = data;
     }
 }

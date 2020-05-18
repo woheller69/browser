@@ -64,13 +64,6 @@ public class Settings_ClearActivity extends AppCompatActivity {
                         dialog.cancel();
                     }
                 });
-                Button action_cancel = dialogView.findViewById(R.id.action_cancel);
-                action_cancel.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        dialog.cancel();
-                    }
-                });
                 dialog.setContentView(dialogView);
                 dialog.show();
                 HelperUnit.setBottomSheetBehavior(dialog, dialogView, BottomSheetBehavior.STATE_EXPANDED);

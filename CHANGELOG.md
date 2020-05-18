@@ -1,3 +1,10 @@
+### v 7.1
+- updated: bookmark management (sorry for removing password saving)
+- updated: menus and dialogs
+- updated: overview
+- new: hide overflow button
+
+
 ### v 7.0
 - new: F-Droid description
 - updated: many translations (BIG THANKS TO ALL CROWDIN translators

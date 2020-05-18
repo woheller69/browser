@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
@@ -158,31 +159,26 @@ public class Fragment_settings_Filter extends PreferenceFragmentCompat {
         });
     }
 
-    private void editFilterNames (final String string_spName_icon_01, final String string_spNameDefault, final Preference preference) {
+    private void editFilterNames (final String filter, final String filterDefault, final Preference preference) {
 
         final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(Objects.requireNonNull(getActivity()));
         View dialogView = View.inflate(getActivity(), R.layout.dialog_edit_title, null);
 
-        final EditText editText = dialogView.findViewById(R.id.dialog_edit);
+        final EditText editText = dialogView.findViewById(R.id.pass_title);
         final SharedPreferences sp = getPreferenceScreen().getSharedPreferences();
+        ImageView edit_icon = dialogView.findViewById(R.id.edit_icon);
+        edit_icon.setVisibility(View.GONE);
 
         editText.setHint(R.string.dialog_title_hint);
-        editText.setText(sp.getString(string_spName_icon_01, string_spNameDefault));
+        editText.setText(sp.getString(filter, filterDefault));
 
         Button action_ok = dialogView.findViewById(R.id.action_ok);
         action_ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String text = editText.getText().toString().trim();
-                sp.edit().putString(string_spName_icon_01, text).apply();
-                Objects.requireNonNull(preference).setTitle(sp.getString(string_spName_icon_01, string_spNameDefault));
-                bottomSheetDialog.cancel();
-            }
-        });
-        Button action_cancel = dialogView.findViewById(R.id.action_cancel);
-        action_cancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+                sp.edit().putString(filter, text).apply();
+                Objects.requireNonNull(preference).setTitle(sp.getString(filter, filterDefault));
                 bottomSheetDialog.cancel();
             }
         });

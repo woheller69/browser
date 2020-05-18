@@ -170,8 +170,8 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
         if (view == null) {
             view = LayoutInflater.from(context).inflate(layoutResId, null, false);
             holder = new Holder();
-            holder.titleView = view.findViewById(R.id.complete_item_title);
-            holder.urlView = view.findViewById(R.id.complete_item_url);
+            holder.titleView = view.findViewById(R.id.record_item_title);
+            holder.urlView = view.findViewById(R.id.record_item_time);
             view.setTag(holder);
         } else {
             holder = (Holder) view.getTag();
@@ -179,6 +179,7 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
 
         CompleteItem item = resultList.get(position);
         holder.titleView.setText(item.title);
+        holder.urlView.setVisibility(View.GONE);
         holder.urlView.setText(item.url);
 
         return view;

@@ -1,6 +1,7 @@
 package de.baumann.browser.database;
 
 public class Record {
+
     private String title;
     public String getTitle() {
         return title;
@@ -25,15 +26,22 @@ public class Record {
         this.time = time;
     }
 
-    public Record() {
+    private int ordinal;
+    public int getOrdinal() {
+        return ordinal;
+    }
+
+    Record() {
         this.title = null;
         this.url = null;
         this.time = 0L;
+        this.ordinal = -1;
     }
 
-    public Record(String title, String url, long time) {
+    public Record(String title, String url, long time, int ordinal) {
         this.title = title;
         this.url = url;
         this.time = time;
+        this.ordinal = ordinal;
     }
 }

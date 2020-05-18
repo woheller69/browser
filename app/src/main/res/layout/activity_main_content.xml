@@ -65,4 +65,9 @@
         app:srcCompat="@drawable/icon_overflow_fab"
         tools:ignore="RelativeOverlap" />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_imageButtonNav_null"
+        android:layout_width="0dp"
+        android:layout_height="0dp" />
+
 </RelativeLayout>

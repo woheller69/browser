@@ -38,23 +38,17 @@
     <string name="menu_sc">Ana ekranda kısayol</string>
     <string name="menu_sort">Sırala …</string>
     <string name="menu_filter">Renge göre filtrele…</string>
-    <string name="menu_share_screenshot">Ekran görüntüsünü paylaş</string>
     <string name="menu_share_link">Bağlantıyı paylaş</string>
-    <string name="menu_save_screenshot">Ekran görüntüsünü kaydet</string>
     <string name="menu_save_home">Başlangıca kaydet</string>
     <string name="menu_save_bookmark">Yer imi olarak kaydet</string>
     <string name="menu_save_as">Kaydet…</string>
     <string name="menu_save_pdf">PDF olarak kaydet</string>
-    <string name="menu_share_pdf">PDF paylaş</string>
     <string name="menu_shareClipboard">Panoya kopyala</string>
     <string name="menu_other_searchSite">Sitede ara</string>
-    <string name="menu_other_fileManager">Dosya yöneticisini aç</string>
     <string name="menu_other_info">\"Foss Browser\" hakkında</string>
     <string name="menu_other_help">Yardım</string>
     <!-- Dialog -->
-    <string name="dialog_toggle_reload">Yeniden yükle</string>
     <string name="dialog_title_hint">Başlık:</string>
-    <string name="dialog_url_hint">URL:</string>
     <string name="dialog_extension_hint">Uzantı (örneğin: \".jpg\"):</string>
     <string name="dialog_sign_in_username">Kullancı adı</string>
     <string name="dialog_sign_in_password">Parola</string>
@@ -104,18 +98,13 @@
 	bunları örneğin kullanıcı ayarlarını saklamak için kullanır (örneğin, arama ayarları). Ancak kişisel kullanıcı verilerini toplamak 
 	için de kullanılabilirler.  Üçüncü taraf çerezleri (reklam için kullanıcı verilerini toplar) her zaman devre dışı bırakılır.</string>
     <string name="setting_title_whitelistCookie">Çerez beyaz listesi</string>
-    <string name="setting_summary_whitelistCookie">Çerezleri devre dışı bırakırsanız, bu beyaz listeyi, çerezleri kaydetmek için
-	güvendiğiniz sitelere izin vermek için kullanabilirsiniz.</string>
     <string name="setting_title_javascript">JavaScript</string>
     <string name="setting_summary_javascript">JavaScript\'i etkinleştirin. Birçok web sitesinin işlevselliği için Javascript\'e ihtiyacı vardır 
 	(menüler, resimler yükleme ve görüntüleme, …). Ancak bunlar aynı zamanda bir risktir ve saldırılar için kullanılabilir.</string>
     <string name="setting_title_whitelistJS">JavaScript beyaz listesi</string>
-    <string name="setting_summary_whitelistJS">JavaScript\'i devre dışı bırakırsanız, bu beyaz listeyi, güvendiğiniz sitelerin JavaScript kullanmasına 
-	izin vermek için kullanabilirsiniz.</string>
     <string name="setting_title_adblock">Reklam Engelleyici</string>
     <string name="setting_summary_adblock">Can sıkıcı reklamları engellemek için Reklam Engelleyiciyi etkinleştirin. Siteler de etkinleştirildiğinde daha hızlı yüklenir.</string>
     <string name="setting_title_whitelist">Reklam Engelleyici beyaz listesi</string>
-    <string name="setting_summary_whitelist">Bu sitelerin reklam göstermesine izin verin. Reklam Engelleyici etkinleştirildiğinde bazı siteler çalışmaz.</string>
     <string name="setting_title_location">Konum</string>
     <string name="setting_summary_location">Web sitelerinin konumunuza erişmesine izin verin. Bazı web siteleri (navigasyon için Google maps gibi)
 	için bunun etkin olması gerekir.</string>
@@ -125,7 +114,6 @@
     <string name="data_summary">Tüm dosyalar SD kartınızın \"Android/data/de.baumann.browser/files/browser_backup/\"
         dizinine aktarılacaktır. Eğer \"FOSS Browser\"ı kaldırırsanız dizin SİLİNECEKTİR. Bu yüzden düzenli olarak bir yere yedekleme
         alın.</string>
-    <string name="clear_menu_done_all">Hepsi bitti</string>
     <string name="clear_title_quit">Uygulamadan çıkışta temizle</string>
     <string name="clear_summary_quit">\"FOSS Tarayıcısı\"ndan her çıkışta  yukarıdaki tüm kontrol edilen veriler silinecektir.</string>
     <string name="clear_title_cache">Önbelleği Temizle</string>
@@ -178,9 +166,6 @@
     <string name="setting_overView">Genel Bakış</string>
     <string name="setting_overView_onStart_title">Başlangıçta göster</string>
     <string name="setting_overView_onStart_summary">Her uygulama başlangıcında \"Genel Bakış\" açılır.</string>
-    <string name="setting_overView_hide_title">Sekme önizlemelerini gizle</string>
-    <string name="setting_overView_hide_summary">Genişletilmiş bakışta, sekme önizlemesi gizlenir.  O zaman yer imleriniz için daha fazla
-    yeriniz olur.</string>
     <string name="setting_gestures">Hareketler</string>
     <string name="setting_gestures_use_title">Hareketleri kullan</string>
     <string name="setting_gestures_use_summary">Araç çubuğunda ve \"Gezinme düğmesi\" üzerinde hareketleri kullanın.</string>
@@ -220,7 +205,6 @@
     <string name="hint_database">Bu, mevcut tüm ayarlarınızı ve verilerinizi silecektir. Devam edilsin mi?</string>
     <!-- Others setting -->
     <string name="setting_title_others">Diğer</string>
-    <string name="setting_title_license">Lisans</string>
     <string name="setting_title_appSettings">Uygulama ayarları</string>
     <string name="setting_summary_appSettings">\"FOSS Tarayıcı\" için sistem uygulama ayarlarını açın. Burada Android
 	sürümü izin verme izninize bağlı olarak, uygulama verilerini temizleyebilirsiniz.</string>
@@ -244,15 +228,7 @@
     <string name="toast_share_failed">Bu sayfa paylaşılamıyor</string>
     <string name="toast_start_download">İndirmeye başla</string>
     <string name="toast_wait_a_minute">Lütfen biraz bekleyin</string>
-    <string name="toast_titleConfirm_delete">Girişi gerçekten silmek istiyor musunuz?</string>
-    <string name="toast_titleConfirm_paste">Veriler panoya kopyalansın mı?</string>
-    <string name="toast_titleConfirm_pasteUN">Kullanıcı adı</string>
-    <string name="toast_titleConfirm_pastePW">Şifre</string>
-    <string name="toast_error">Hata. Bir şeyler yanlış gitti.</string>
-    <string name="toast_newTitle">Giriş zaten mevcut. Lütfen yeni bir başlık girin.</string>
-    <string name="toast_edit_successful">Başarıyla kaydedildi</string>
     <string name="toast_webview_forward">Bir sonraki site yüklenemiyor</string>
-    <string name="toast_clear">Gerçekten temizlemek istiyor musunuz?</string>
     <string name="toast_permission_sdCard">\"FOSS Tarayıcı\" \"depolama alanınızı okuma ve yazma\" iznine ihtiyaç duyar. Bu, dosyaları
 	indirmek, dosya yöneticisi oluşturmak ve ekran görüntüleri almak için gereklidir. Henüz izin vermediyseniz, daha sonra ayarlardan yapabilirsiniz.</string>
     <string name="toast_permission_loc">\"FOSS Tarayıcı\" \"konumunuza erişim\" iznine ihtiyaç duyar. Bu, bazı web sitelerinden,
@@ -280,18 +256,6 @@
         Menü simgesine veya \"Gezinme düğmesi\"ne uzun basarsanız, \"Hızlı aç/kapa iletişim kutusu\" görünecektir.
         \"Yer imi simgesi\"ne uzun basarsanız, \"Filtre iletişim kutusu\" görünecektir.
     </string>
-    <string name="dialogHelp_overviewTitle">Genel Bakış</string>
-    <string name="dialogHelp_overviewText">        There are two parts in the \"Overview\" (tab preview and personal data). There is an extra menu. In the settings
-        you can change the behavior of the \"Overview\".&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;Tab preview&lt;/b&gt;&lt;br&gt;
-        It is the upper part of the \"Overview\". To change tabs just click the preview. To close a tab long press the
-        preview. If you swipe the tab preview up, your personal content will open.&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;Personal content&lt;/b&gt;&lt;br&gt;
-        There are three parts: the Startsite, your Bookmarks and your History. If you long click an entry
-        a menu with more options will appear.
-    </string>
     <string name="dialogHelp_filterText">        Yer imlerinizi filtrelerle etiketleyebilirsiniz. Bu şekilde yer imlerinizi gruplandırabilirsiniz. Filtre iletişim kutusunu yer imleri
         simgesine uzun basarak açabilirsiniz. Bir girişi aktifleştirirseniz, filtrenin adını düzenleyebileceğiniz bir iletişim kutusu görünecektir.    </string>
     <!-- Dialog changelog -->
@@ -309,38 +273,6 @@
 
     </string>
     <!-- License changelog -->
-    <string name="license_title">Copyright © 2019  Gaukler Faun tarafından</string>
-    <string name="license_dialog">        &lt;i&gt;For more information visit the project site on Github: https://github.com/scoute-dich/Browser&lt;/i&gt;&lt;br&gt;&lt;br&gt;
-
-        This program is free software: you can redistribute it and/or modify
-        it under the terms of the GNU General Public License as published by
-        the Free Software Foundation, either version 3 of the License, or
-        (at your option) any later version.
-
-        This program is distributed in the hope that it will be useful,
-        but WITHOUT ANY WARRANTY; without even the implied warranty of
-        MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-        GNU General Public License for more details.
-
-        You should have received a copy of the GNU General Public License
-        along with this program.  If not, see http://www.gnu.org/licenses.&lt;br&gt;&lt;br&gt;
-
-        &lt;i&gt;Following open source libraries or projects are used within this software:&lt;/i&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;Material Design Icons&lt;/b&gt;&lt;br&gt;
-        SIL Open Font License, Version 1.1.&lt;br&gt;
-        Templarian&lt;br&gt;
-        &lt;i&gt;https://github.com/Templarian/MaterialDesign&lt;/i&gt;&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;Ninja&lt;/b&gt;&lt;br&gt;
-        Apache License Version 2.0&lt;br&gt;
-        Matthew Lee&lt;br&gt;
-        &lt;i&gt;http://git.io/vUrEh&lt;/i&gt;&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;SimpleEncryptionLib&lt;/b&gt;&lt;br&gt;
-        Apache License Version 2.0&lt;br&gt;
-        hummatli&lt;br&gt;
-        &lt;i&gt;https://github.com/hummatli/SimpleEncryptionLib</string>
     <string name="cont_dialog">        &lt;i&gt;Öncelikle bu projeye herhangi bir şekilde katkıda bulunan herkese teşekkür etmek istiyorum. Sorunlar bildirdiler,
         çeviri yaptılar ya da herhangi bir şekilde yardımcı oldular. Aşağıdaki sitelerde bu harika topluluğun aktif bir
         üyesi olabilirsiniz:&lt;/i&gt;&lt;br&gt;&lt;br&gt;

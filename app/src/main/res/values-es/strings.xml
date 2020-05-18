@@ -38,23 +38,17 @@
     <string name="menu_sc">Agregar a la pantalla principal</string>
     <string name="menu_sort">Ordenar por …</string>
     <string name="menu_filter">Filtrar por …</string>
-    <string name="menu_share_screenshot">Compartir captura</string>
     <string name="menu_share_link">Compartir enlace</string>
-    <string name="menu_save_screenshot">Guardar captura</string>
     <string name="menu_save_home">Guardar en inicio</string>
     <string name="menu_save_bookmark">Guardar como marcador</string>
     <string name="menu_save_as">Guardar como …</string>
     <string name="menu_save_pdf">Guardar como PDF</string>
-    <string name="menu_share_pdf">Compartir PDF</string>
     <string name="menu_shareClipboard">Copiar al portapapeles</string>
     <string name="menu_other_searchSite">Buscar en sitio web</string>
-    <string name="menu_other_fileManager">Abrir gestor de archivos</string>
     <string name="menu_other_info">Acerca de \"Navegador FOSS\"</string>
     <string name="menu_other_help">Ayuda</string>
     <!-- Dialog -->
-    <string name="dialog_toggle_reload">Recargar</string>
     <string name="dialog_title_hint">Título de entrada</string>
-    <string name="dialog_url_hint">URL:</string>
     <string name="dialog_extension_hint">Extensión (por ejemplo: \".jpg\"):</string>
     <string name="dialog_sign_in_username">Usuario</string>
     <string name="dialog_sign_in_password">Contraseña</string>
@@ -98,15 +92,12 @@
     <string name="setting_summary_cookie_delete">Si está activado, se borrarán todas las cookies. Incluyendo las de sitios web de confianza.</string>
     <string name="setting_summary_cookie">Habilitar cookies. Son archivos de texto pequeños, que se almacenan en el dispositivo. Los sitios web pueden utilizarlas para almacenar la configuración del usuario (ej. conf. de búsqueda). Pero también para recopilar datos personales. Las cookies de terceros (publicitarias) siempre están deshabilitadas.</string>
     <string name="setting_title_whitelistCookie">Lista blanca de cookies</string>
-    <string name="setting_summary_whitelistCookie">Si deshabilita las cookies, puede utilizar esta lista para permitir que algunos sitios las guarden.</string>
     <string name="setting_title_javascript">JavaScript</string>
     <string name="setting_summary_javascript">Activar JavaScript. Muchos sitios web lo necesitan (ej. menús, carga y visualización de imágenes). Pero también puede ser utilizado para explotar vulnerabilidades.</string>
     <string name="setting_title_whitelistJS">Lista blanca de JavaScript</string>
-    <string name="setting_summary_whitelistJS">Si deshabilita JavaScript, puede utilizar esta lista para permitir que algunos sitios lo utilicen.</string>
     <string name="setting_title_adblock">Bloqueador de anuncios</string>
     <string name="setting_summary_adblock">Activar para bloquear anuncios molestos. También provocará que los sitios se carguen más rápido.</string>
     <string name="setting_title_whitelist">Lista blanca de anuncios</string>
-    <string name="setting_summary_whitelist">Permitir que estos sitios muestren anuncios. El bloqueador de anuncios puede provocar errores en algunos sitios web.</string>
     <string name="setting_title_location">Ubicación</string>
     <string name="setting_summary_location">Permitir que los sitios web accedan a su ubicación. Algunos lo necesitan (como Google Maps para la navegación).</string>
     <string name="setting_title_history">Historial</string>
@@ -114,7 +105,6 @@
     <!-- browser clear -->
     <string name="data_summary">Todos los archivos se exportarán al directorio \"Android/data/de.baumann.browser/files/browser_backup/\".
 Si desinstala la aplicación, el mismo será eliminado. Por tanto se recomienda realizar copias de seguridad de este directorio.</string>
-    <string name="clear_menu_done_all">Todo listo</string>
     <string name="clear_title_quit">Limpiar al salir de la aplicación</string>
     <string name="clear_summary_quit">Cada vez quesalga del \"Navegador FOSS\", se borrarán todos los ítems tildados anteriormente.</string>
     <string name="clear_title_cache">Borrar caché</string>
@@ -164,8 +154,6 @@ Puede disponer una página en blanco escribiendo \"about:blank\".</string>
     <string name="setting_overView">Vista general</string>
     <string name="setting_overView_onStart_title">Mostrar al inicio</string>
     <string name="setting_overView_onStart_summary">Abrir la vista general en cada inicio de la aplicación.</string>
-    <string name="setting_overView_hide_title">Ocultar previsualización de pestañas</string>
-    <string name="setting_overView_hide_summary">En la vista general ampliada, se ocultará la previsualización de pestañas. Lo cual genera más espacio para sus marcadores.</string>
     <string name="setting_gestures">Gestos</string>
     <string name="setting_gestures_use_title">Usar gestos</string>
     <string name="setting_gestures_use_summary">Usar gestos en la barra de herramientas y en el \"botón de navegación\".</string>
@@ -204,7 +192,6 @@ Puede disponer una página en blanco escribiendo \"about:blank\".</string>
     <string name="hint_database">Esto borrará todas sus configuraciones y datos actuales. ¿Quiere proceder?</string>
     <!-- Others setting -->
     <string name="setting_title_others">Otros</string>
-    <string name="setting_title_license">Licencia</string>
     <string name="setting_title_appSettings">Configuración de la aplicación</string>
     <string name="setting_summary_appSettings">Abrir la configuración de la aplicación del sistema para \"Navegador FOSS\". Allí puede, dependiendo de su versión de Android, conceder permisos o borrar los datos de la aplicación entre otros.</string>
     <string name="setting_title_community">Contribuyentes</string>
@@ -227,15 +214,7 @@ Puede disponer una página en blanco escribiendo \"about:blank\".</string>
     <string name="toast_share_failed">No se puede compartir esta página</string>
     <string name="toast_start_download">Iniciando descarga</string>
     <string name="toast_wait_a_minute">Por favor, espere un momento</string>
-    <string name="toast_titleConfirm_delete">¿Realmente desea eliminar?</string>
-    <string name="toast_titleConfirm_paste">¿Copiar datos en el portapapeles?</string>
-    <string name="toast_titleConfirm_pasteUN">Usuario</string>
-    <string name="toast_titleConfirm_pastePW">Contraseña</string>
-    <string name="toast_error">Uuups. Algo salió mal.</string>
-    <string name="toast_newTitle">La entrada ya existe. Por favor ingrese un nuevo título.</string>
-    <string name="toast_edit_successful">Guardado con éxito</string>
     <string name="toast_webview_forward">No se puede cargar el sitio</string>
-    <string name="toast_clear">¿Está seguro de querer borrar?</string>
     <string name="toast_permission_sdCard">\"Navegador FOSS\" necesita permisos para \"leer y escribir en almacenamiento\". Esto es necesario para descargar archivos, capturas de pantalla y realizar respaldos.</string>
     <string name="toast_permission_loc">\"Navegador FOSS\" necesita permisos para \"acceder a su ubicación\". Esto se solicita desde algunos sitios web, cuando por ej. ofrecen algún servicio de navegación.</string>
     <string name="toast_restart">Debe reiniciar \"Navegador FOSS\" para aplicar cambios. ¿Cerrar ahora?</string>
@@ -260,14 +239,6 @@ Puede disponer una página en blanco escribiendo \"about:blank\".</string>
         Si mantiene pulsado el icono del menú o el \"botón de navegación\", el cuadro de diálogo \"Cambio rápido\" se mostrará. Si mantiene pulsado
         pulsa el \"icono de marcador\", se mostrará el cuadro de diálogo \"Filtro\".
     </string>
-    <string name="dialogHelp_overviewTitle">Vista general</string>
-    <string name="dialogHelp_overviewText">Hay dos partes en la vista general - Previsualización de pestañas y contenido personal. En la configuración puede cambiar el comportamiento de la vista general.&lt;br&gt;&lt;br&gt;
-
-&lt;b&gt;Previsualización de pestañas&lt;/b&gt;&lt;br&gt;
-Es la parte superior de la vista general. Para cambiar pestañas, solo presione sobre la previsualización. Para cerrarla, mantenga pulsada la pestaña. Si se desplaza hacia arriba, se mostrará su contenido personal.&lt;br&gt;&lt;br&gt;
-
-&lt;b&gt;Contenido personal&lt;/b&gt;&lt;br&gt;
-Tiene tres partes: la página de inicio, sus marcadores y el historial. Si mantiene presionado sobre una de estas entradas, aparecerá un menú con más opciones.</string>
     <string name="dialogHelp_filterText">        You can tag your bookmarks with filters. In this way you can group your bookmarks. You can open the filter dialog by
         long pressing the bookmark icon. If you activate an entry a dialog will appear, where you can edit the name of the filter.
     </string>
@@ -286,38 +257,6 @@ Tiene tres partes: la página de inicio, sus marcadores y el historial. Si manti
 
     </string>
     <!-- License changelog -->
-    <string name="license_title">Copyright © 2017 de Gaukler Faun</string>
-    <string name="license_dialog">        &lt;i&gt;For more information visit the project site on Github: https://github.com/scoute-dich/Browser&lt;/i&gt;&lt;br&gt;&lt;br&gt;
-
-        This program is free software: you can redistribute it and/or modify
-        it under the terms of the GNU General Public License as published by
-        the Free Software Foundation, either version 3 of the License, or
-        (at your option) any later version.
-
-        This program is distributed in the hope that it will be useful,
-        but WITHOUT ANY WARRANTY; without even the implied warranty of
-        MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-        GNU General Public License for more details.
-
-        You should have received a copy of the GNU General Public License
-        along with this program.  If not, see http://www.gnu.org/licenses.&lt;br&gt;&lt;br&gt;
-
-        &lt;i&gt;Following open source libraries or projects are used within this software:&lt;/i&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;Material Design Icons&lt;/b&gt;&lt;br&gt;
-        SIL Open Font License, Version 1.1.&lt;br&gt;
-        Templarian&lt;br&gt;
-        &lt;i&gt;https://github.com/Templarian/MaterialDesign&lt;/i&gt;&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;Ninja&lt;/b&gt;&lt;br&gt;
-        Apache License Version 2.0&lt;br&gt;
-        Matthew Lee&lt;br&gt;
-        &lt;i&gt;http://git.io/vUrEh&lt;/i&gt;&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;SimpleEncryptionLib&lt;/b&gt;&lt;br&gt;
-        Apache License Version 2.0&lt;br&gt;
-        hummatli&lt;br&gt;
-        &lt;i&gt;https://github.com/hummatli/SimpleEncryptionLib</string>
     <string name="cont_dialog">        &lt;i&gt;First I would like to thank all people who contributed in any way on this project. They submitted issues,
         translated or helped in any other way. On following sites you can become a active member of this
         great community:&lt;/i&gt;&lt;br&gt;&lt;br&gt;

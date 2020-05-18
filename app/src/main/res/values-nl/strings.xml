@@ -38,23 +38,17 @@
     <string name="menu_sc">Snelkoppeling op startscherm</string>
     <string name="menu_sort">Sorteren op …</string>
     <string name="menu_filter">Filter op …</string>
-    <string name="menu_share_screenshot">Schermafdruk delen</string>
     <string name="menu_share_link">Link delen</string>
-    <string name="menu_save_screenshot">Schermafdruk opslaan</string>
     <string name="menu_save_home">Opslaan op beginscherm</string>
     <string name="menu_save_bookmark">Opslaan als bladwijzer</string>
     <string name="menu_save_as">Opslaan als…</string>
     <string name="menu_save_pdf">Opslaan als PDF-bestand</string>
-    <string name="menu_share_pdf">PDF-bestand delen</string>
     <string name="menu_shareClipboard">Kopiëren naar klembord</string>
     <string name="menu_other_searchSite">Website doorzoeken</string>
-    <string name="menu_other_fileManager">Bestandsbeheer openen</string>
     <string name="menu_other_info">Over \"FOSS Browser\"</string>
     <string name="menu_other_help">Hulp</string>
     <!-- Dialog -->
-    <string name="dialog_toggle_reload">Reload</string>
     <string name="dialog_title_hint">Titel:</string>
-    <string name="dialog_url_hint">Url:</string>
     <string name="dialog_extension_hint">Extensie (bijv.: \".jpg\"):</string>
     <string name="dialog_sign_in_username">Gebruikersnaam</string>
     <string name="dialog_sign_in_password">Wachtwoord</string>
@@ -102,18 +96,13 @@
     gebruiken die om bijv. je gebruikersinstellingen op te slaan (zoals je zoekinstellingen). Maar ze kunnen ook worden gebruikt om
         persoonlijke gegevens te verzamelen. Cookies van derde partijen (die persoonlijke gegevens verzamelen voor reclamedoeleinden) zijn altijd uitgeschakeld.</string>
     <string name="setting_title_whitelistCookie">Witte lijst</string>
-    <string name="setting_summary_whitelistCookie">Als je cookies uitschakelt, dan kun je deze witte lijst gebruiken om websites die je
-        vertrouwt cookies te laten opslaan.</string>
     <string name="setting_title_javascript">JavaScript</string>
     <string name="setting_summary_javascript">JavaScript inschakelen. Veel websites gebruiken JavaScript voor functionaliteit (menu\'s\',
         het laden en tonen van afbeeldingen, etc.). Maar JavaScript is ook risicovol en kan worden gebruikt voor aanvallen.</string>
     <string name="setting_title_whitelistJS">Wite lijst</string>
-    <string name="setting_summary_whitelistJS">Als je JavaScript uitschakelt, dan kun je deze witte lijst gebruiken om websites die je
-        vertrouwt JavaScript te laten gebruiken.</string>
     <string name="setting_title_adblock">Advertentieblokkering</string>
     <string name="setting_summary_adblock">Schakel advertentieblokkering in om vervelende reclame te blokkeren. Websites laden hierdoor ook sneller.</string>
     <string name="setting_title_whitelist">Wiite lijst</string>
-    <string name="setting_summary_whitelist">Laat deze websites reclame tonen. Sommige sites werken niet als advertentieblokkering is ingeschakeld.</string>
     <string name="setting_title_location">Locatie</string>
     <string name="setting_summary_location">Sta websites toe om je locatie op te vragen. Sommige websites (zoals Google Maps voor navigatie)
         hebben dit nodig.</string>
@@ -123,7 +112,6 @@
     <string name="data_summary">Alle bestanden worden geëxporteerd naar de \"Android/data/de.baumann.browser/files/browser_backup/\"
         map van uw sd-card. Deze map zal DELETED zijn, als je \"FOSS-browser\" verwijdert. Maak dus regelmatig een reservekopie op een save
         plaats.</string>
-    <string name="clear_menu_done_all">Alles voltooid</string>
     <string name="clear_title_quit">Wissen bij afsluiten</string>
     <string name="clear_summary_quit">Elke keer als je \"FOSS-browser\" afsluit, dan worden alle hierboven aangevinkte gegevens gewist.</string>
     <string name="clear_title_cache">Cache leegmaken</string>
@@ -176,9 +164,6 @@
     <string name="setting_overView">Overview</string>
     <string name="setting_overView_onStart_title">Toon bij start</string>
     <string name="setting_overView_onStart_summary">Open het \"Overzicht\" bij elke app start.</string>
-    <string name="setting_overView_hide_title">Tabblad voorbeelden verbergen</string>
-    <string name="setting_overView_hide_summary">In het uitgebreide overzicht wordt de tab preview verstopt. Dan heb je meer plaats voor je
-    bladwijzers.</string>
     <string name="setting_gestures">Vingerbewegingen</string>
     <string name="setting_gestures_use_title">Gebaren gebruiken</string>
     <string name="setting_gestures_use_summary">Gebruik gebaren op de werkbalk en de \"Navigatieknop\".</string>
@@ -218,7 +203,6 @@
     <string name="hint_database">Dit verwijdert al je huidige instellingen en gegevens. Wil je doorgaan?</string>
     <!-- Others setting -->
     <string name="setting_title_others">Overig</string>
-    <string name="setting_title_license">Licentie</string>
     <string name="setting_title_appSettings">App-instellingen</string>
     <string name="setting_summary_appSettings">Opent de app-instellingen voor \"FOSS-browser\". Daar kun je,
         afhankelijk van je Android-versie, machtigingen verlenen, de appgegevens wissen, enz.</string>
@@ -242,15 +226,7 @@
     <string name="toast_share_failed">Deze pagina kan niet worden gedeeld</string>
     <string name="toast_start_download">Bezig met starten van download…</string>
     <string name="toast_wait_a_minute">Even geduld…</string>
-    <string name="toast_titleConfirm_delete">Weet je zeker dat je het item wilt verwijderen?</string>
-    <string name="toast_titleConfirm_paste">Wil je de gegevens kopiëren naar het klembord?</string>
-    <string name="toast_titleConfirm_pasteUN">Gebruikersnaam</string>
-    <string name="toast_titleConfirm_pastePW">Wachtwoord</string>
-    <string name="toast_error">Oeps, er is iets misgegaan.</string>
-    <string name="toast_newTitle">Het item bestaat al; voer een nieuwe titel in.</string>
-    <string name="toast_edit_successful">Opgeslagen</string>
     <string name="toast_webview_forward">Volgende site kan niet worden geladen</string>
-    <string name="toast_clear">Weet je zeker dat je wilt wissen?</string>
     <string name="toast_permission_sdCard">\"FOSS-browser\" heeft de machtiging \"opslag lezen en schrijven\" nodig om bestanden te
     downloaden en schermafdrukken te kunnen maken. Als je de machtiging nu niet verleent, dan kun je dit
     later nog doen via de instellingen.</string>
@@ -280,18 +256,6 @@
         If you long press the menu icon or the \"Navigation button\", the \"Fast toggle dialog\" will show. If you long
         press the \"Bookmark icon\", the \"Filter dialog\" will show.
     </string>
-    <string name="dialogHelp_overviewTitle">Overview</string>
-    <string name="dialogHelp_overviewText">        There are two parts in the \"Overview\" (tab preview and personal data). There is an extra menu. In the settings
-        you can change the behavior of the \"Overview\".&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;Tab preview&lt;/b&gt;&lt;br&gt;
-        It is the upper part of the \"Overview\". To change tabs just click the preview. To close a tab long press the
-        preview. If you swipe the tab preview up, your personal content will open.&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;Personal content&lt;/b&gt;&lt;br&gt;
-        There are three parts: the Startsite, your Bookmarks and your History. If you long click an entry
-        a menu with more options will appear.
-    </string>
     <string name="dialogHelp_filterText">        Je kunt je bladwijzers labelen met filters. Op deze manier kan je je bladwijzers groeperen. U kunt het filterdialoogvenster openen door
         lang op het bladwijzerpictogram te drukken. Als u een item activeert, verschijnt er een dialoogvenster, waar u de naam van het filter kunt bewerken.
     </string>
@@ -311,38 +275,6 @@
 
     </string>
     <!-- License changelog -->
-    <string name="license_title">Copyright © 2017 door Gaukler Faun</string>
-    <string name="license_dialog">        &lt;i&gt;For more information visit the project site on Github: https://github.com/scoute-dich/Browser&lt;/i&gt;&lt;br&gt;&lt;br&gt;
-
-        This program is free software: you can redistribute it and/or modify
-        it under the terms of the GNU General Public License as published by
-        the Free Software Foundation, either version 3 of the License, or
-        (at your option) any later version.
-
-        This program is distributed in the hope that it will be useful,
-        but WITHOUT ANY WARRANTY; without even the implied warranty of
-        MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-        GNU General Public License for more details.
-
-        You should have received a copy of the GNU General Public License
-        along with this program.  If not, see http://www.gnu.org/licenses.&lt;br&gt;&lt;br&gt;
-
-        &lt;i&gt;Following open source libraries or projects are used within this software:&lt;/i&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;Material Design Icons&lt;/b&gt;&lt;br&gt;
-        SIL Open Font License, Version 1.1.&lt;br&gt;
-        Templarian&lt;br&gt;
-        &lt;i&gt;https://github.com/Templarian/MaterialDesign&lt;/i&gt;&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;Ninja&lt;/b&gt;&lt;br&gt;
-        Apache License Version 2.0&lt;br&gt;
-        Matthew Lee&lt;br&gt;
-        &lt;i&gt;http://git.io/vUrEh&lt;/i&gt;&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;SimpleEncryptionLib&lt;/b&gt;&lt;br&gt;
-        Apache License Version 2.0&lt;br&gt;
-        hummatli&lt;br&gt;
-        &lt;i&gt;https://github.com/hummatli/SimpleEncryptionLib</string>
     <string name="cont_dialog">        &lt;i&gt;First I would like to thank all people who contributed in any way on this project. They submitted issues,
         translated or helped in any other way. On following sites you can become a active member of this
         great community:&lt;/i&gt;&lt;br&gt;&lt;br&gt;

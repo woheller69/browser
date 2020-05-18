@@ -38,23 +38,17 @@
     <string name="menu_sc">Shortcut on home screen</string>
     <string name="menu_sort">Сортувати за…</string>
     <string name="menu_filter">Фільтр за кольором…</string>
-    <string name="menu_share_screenshot">Поділитися скріншотом</string>
     <string name="menu_share_link">Поділитися посиланням</string>
-    <string name="menu_save_screenshot">Зберегти скріншот</string>
     <string name="menu_save_home">Зберегти на головній</string>
     <string name="menu_save_bookmark">Зберегти як закладку</string>
     <string name="menu_save_as">Зберегти як …</string>
     <string name="menu_save_pdf">Зберегти в PDF</string>
-    <string name="menu_share_pdf">Поділитися PDF</string>
     <string name="menu_shareClipboard">Copy to clipboard</string>
     <string name="menu_other_searchSite">Пошук по сайту</string>
-    <string name="menu_other_fileManager">Open file manager</string>
     <string name="menu_other_info">About \"FOSS Browser\"</string>
     <string name="menu_other_help">Допомога</string>
     <!-- Dialog -->
-    <string name="dialog_toggle_reload">Reload</string>
     <string name="dialog_title_hint">Заголовок:</string>
-    <string name="dialog_url_hint">Url:</string>
     <string name="dialog_extension_hint">Розширення (наприклад: \".jpg\"):</string>
     <string name="dialog_sign_in_username">Ім\'я користувача</string>
     <string name="dialog_sign_in_password">Пароль</string>
@@ -98,15 +92,12 @@
     <string name="setting_summary_cookie_delete">Якщо увімкнено, всі cookies будуть видалені. Також файли cookie надійних веб-сайтів.</string>
     <string name="setting_summary_cookie">Увімкнути файли cookie. Файли cookie являють собою невеликі текстові файли, які зберігаються на вашому пристрої. Веб-сайти використовують їх, наприклад, для зберігання користувацьких налаштувань (наприклад, налаштувань пошуку). Але вони також можуть бути використані для збору особистих даних користувача. Сторонні файли cookie (вони збирають дані користувача для реклами) завжди вимкнені.</string>
     <string name="setting_title_whitelistCookie">Білий список куки</string>
-    <string name="setting_summary_whitelistCookie">Якщо ви вимкнете Cookies, Ви можете використовувати цей білий список, щоб дозволити сайтам, яким ви довіряєте, використовувати збережені файли cookie.</string>
     <string name="setting_title_javascript">JavaScript</string>
     <string name="setting_summary_javascript">Увімкнути JavaScript. Багатьом веб-сайтам потрібен JavaScript для їх функціональності (меню, завантаження і відображення зображень). Але вони також являють собою ризик і можуть бути використані для атак.</string>
     <string name="setting_title_whitelistJS">Білий список JavaScript</string>
-    <string name="setting_summary_whitelistJS">Якщо ви вимкнете JavaScript, ви можете використовувати цей білий список, щоб дозволити сайтам, яким ви довіряєте використовувати javascript.</string>
     <string name="setting_title_adblock">AdBlock</string>
     <string name="setting_summary_adblock">Увімкніть AdBlock, щоб заблокувати дратівливу рекламу. Сайти завантажуються швидше при включенні.</string>
     <string name="setting_title_whitelist">Білий список AdBlock</string>
-    <string name="setting_summary_whitelist">Дозволити цим сайтам показувати рекламу. Деякі сайти не працюють, коли AdBlock увімкнений.</string>
     <string name="setting_title_location">Місце розташування</string>
     <string name="setting_summary_location">Дозволити веб-сайтам доступ до вашого місця розташування. Деякі веб-сайти (наприклад, Карти Google) потребують цього.</string>
     <string name="setting_title_history">Історія</string>
@@ -115,7 +106,6 @@
     <string name="data_summary">All files will be exported to the \"Android/data/de.baumann.browser/files/browser_backup/\"
         directory of your sd-card. This directory will be DELETED, if you uninstall \"FOSS Browser\". So make a backup regularly on a save
         place.</string>
-    <string name="clear_menu_done_all">Все зроблено</string>
     <string name="clear_title_quit">Очистити при виході з програми</string>
     <string name="clear_summary_quit">Кожен раз при виході з \"Foss Browser\" всі перераховані вище перевірені дані будуть видалятися.</string>
     <string name="clear_title_cache">Очистити кеш</string>
@@ -167,9 +157,6 @@
     <string name="setting_overView">Огляд</string>
     <string name="setting_overView_onStart_title">Показувати при запуску</string>
     <string name="setting_overView_onStart_summary">Відкрити \"Огляд\" при запуску додатка.</string>
-    <string name="setting_overView_hide_title">Hide tab previews</string>
-    <string name="setting_overView_hide_summary">In expanded overview the tab preview will hide. Then you have more place for your
-    bookmarks.</string>
     <string name="setting_gestures">Жести</string>
     <string name="setting_gestures_use_title">Використовувати жести</string>
     <string name="setting_gestures_use_summary">Використовуйте жести на панелі інструментів і кнопку Навігація.</string>
@@ -209,7 +196,6 @@
     <string name="hint_database">Це призведе до видалення всіх поточних налаштувань і даних. Продовжити?</string>
     <!-- Others setting -->
     <string name="setting_title_others">Інший</string>
-    <string name="setting_title_license">Ліцензія</string>
     <string name="setting_title_appSettings">Налаштування</string>
     <string name="setting_summary_appSettings">Відкрийте системні налаштування \"FOSS Browser\". Там ви можете надати дозволи, очистити дані програми і так далі.</string>
     <string name="setting_title_community">Підтримка</string>
@@ -232,15 +218,7 @@
     <string name="toast_share_failed">Не вдається поділитися цією сторінкою</string>
     <string name="toast_start_download">Початок завантаження</string>
     <string name="toast_wait_a_minute">Будь ласка, зачекайте</string>
-    <string name="toast_titleConfirm_delete">Хочете видалити запис?</string>
-    <string name="toast_titleConfirm_paste">Копіювати дані в буфер обміну?</string>
-    <string name="toast_titleConfirm_pasteUN">Ім\'я користувача</string>
-    <string name="toast_titleConfirm_pastePW">Пароль</string>
-    <string name="toast_error">Щось пішло не так.</string>
-    <string name="toast_newTitle">Запис вже існує. Введіть нову назву.</string>
-    <string name="toast_edit_successful">Успішно збережено</string>
     <string name="toast_webview_forward">Не вдається завантажити наступний сайт</string>
-    <string name="toast_clear">Дійсно хочете очистити?</string>
     <string name="toast_permission_sdCard">\"FOSS Browser\" needs the permission to \"read and write on your storage\". This
         is needed to download files, taking screenshots and making backups of your data.</string>
     <string name="toast_permission_loc">\"FOSS Browser\" needs the permission to \"access your location\". This is requested from some
@@ -267,18 +245,6 @@
         If you long press the menu icon or the \"Navigation button\", the \"Fast toggle dialog\" will show. If you long
         press the \"Bookmark icon\", the \"Filter dialog\" will show.
     </string>
-    <string name="dialogHelp_overviewTitle">Огляд</string>
-    <string name="dialogHelp_overviewText">        There are two parts in the \"Overview\" (tab preview and personal data). There is an extra menu. In the settings
-        you can change the behavior of the \"Overview\".&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;Tab preview&lt;/b&gt;&lt;br&gt;
-        It is the upper part of the \"Overview\". To change tabs just click the preview. To close a tab long press the
-        preview. If you swipe the tab preview up, your personal content will open.&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;Personal content&lt;/b&gt;&lt;br&gt;
-        There are three parts: the Startsite, your Bookmarks and your History. If you long click an entry
-        a menu with more options will appear.
-    </string>
     <string name="dialogHelp_filterText">        You can tag your bookmarks with filters. In this way you can group your bookmarks. You can open the filter dialog by
         long pressing the bookmark icon. If you activate an entry a dialog will appear, where you can edit the name of the filter.
     </string>
@@ -297,8 +263,6 @@
 
     </string>
     <!-- License changelog -->
-    <string name="license_title">Copyright © 2017 by Gaukler Faun</string>
-    <string name="license_dialog">&lt;i&gt;Для отримання додаткової інформації відвідайте сайт проекту на Github: https://github.com/scoute-dich/Browser&lt;/i&gt;&lt;br&gt;&lt;br&gt; This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with this program. If not, see http://www.gnu.org/licenses.&lt;br&gt;&lt;br&gt; &lt;i&gt;Following open source libraries or projects are used within this software:&lt;/i&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt; &lt;b&gt;Android Sliding Up Panel&lt;/b&gt;&lt;br&gt; Apache License Version 2.0&lt;br&gt; Umano: News Read To You&lt;br&gt; &lt;i&gt;http://git.io/vUruG&lt;/i&gt;&lt;br&gt;&lt;br&gt; &lt;b&gt;Android Swipe-to-Dismiss&lt;/b&gt;&lt;br&gt; Apache License Version 2.0&lt;br&gt; Roman Nurik&lt;br&gt; &lt;i&gt;http://git.io/vUruO&lt;/i&gt;&lt;br&gt;&lt;br&gt; &lt;b&gt;DynamicGrid&lt;/b&gt;&lt;br&gt; Apache License Version 2.0&lt;br&gt; askerov&lt;br&gt; &lt;i&gt;http://git.io/vTHZH&lt;/i&gt;&lt;br&gt;&lt;br&gt; &lt;b&gt;Lightning Browser&lt;/b&gt;&lt;br&gt; Mozilla Public License Version 2.0&lt;br&gt; Anthony Restaino&lt;br&gt; &lt;i&gt;http://git.io/vUruk&lt;/i&gt;&lt;br&gt;&lt;br&gt; &lt;b&gt;Material Design Icons&lt;/b&gt;&lt;br&gt; SIL Open Font License, Version 1.1.&lt;br&gt; Templarian&lt;br&gt; &lt;i&gt;https://github.com/Templarian/MaterialDesign&lt;/i&gt;&lt;br&gt;&lt;br&gt; &lt;b&gt;Ninja&lt;/b&gt;&lt;br&gt; Apache License Version 2.0&lt;br&gt; Matthew Lee&lt;br&gt; &lt;i&gt;http://git.io/vUrEh&lt;/i&gt;&lt;br&gt;&lt;br&gt; &lt;b&gt;SimpleEncryptionLib&lt;/b&gt;&lt;br&gt; Apache License Version 2.0&lt;br&gt; hummatli&lt;br&gt; &lt;i&gt;https://github.com/hummatli/SimpleEncryptionLib</string>
     <string name="cont_dialog">        &lt;i&gt;First I would like to thank all people who contributed in any way on this project. They submitted issues,
         translated or helped in any other way. On following sites you can become a active member of this
         great community:&lt;/i&gt;&lt;br&gt;&lt;br&gt;

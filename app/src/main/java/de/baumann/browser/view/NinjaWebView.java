@@ -4,9 +4,7 @@ import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.graphics.Bitmap;
 import android.os.Build;
-import android.os.Handler;
 import android.os.Message;
 
 import androidx.preference.PreferenceManager;
@@ -20,7 +18,6 @@ import android.webkit.WebView;
 import de.baumann.browser.browser.*;
 import de.baumann.browser.Ninja.R;
 import de.baumann.browser.unit.BrowserUnit;
-import de.baumann.browser.unit.ViewUnit;
 
 import java.util.HashMap;
 import java.util.Objects;
@@ -61,10 +58,8 @@ public class NinjaWebView extends WebView implements AlbumController {
     }
 
     private Context context;
-    private int dimen144dp;
-    private int dimen108dp;
 
-    private Album album;
+    private AlbumItem album;
     private NinjaWebViewClient webViewClient;
     private NinjaWebChromeClient webChromeClient;
     private NinjaDownloadListener downloadListener;
@@ -72,13 +67,13 @@ public class NinjaWebView extends WebView implements AlbumController {
     private GestureDetector gestureDetector;
 
     private AdBlock adBlock;
-
     public AdBlock getAdBlock() {
         return adBlock;
     }
 
     private Javascript javaHosts;
     private Cookie cookieHosts;
+    private Remote remoteHosts;
 
     public Cookie getCookieHosts() {
         return cookieHosts;
@@ -108,14 +103,13 @@ public class NinjaWebView extends WebView implements AlbumController {
         super(context); // Cannot create a dialog, the WebView context is not an activity
 
         this.context = context;
-        this.dimen144dp = getResources().getDimensionPixelSize(R.dimen.layout_width_144dp);
-        this.dimen108dp = getResources().getDimensionPixelSize(R.dimen.layout_height_108dp);
         this.foreground = false;
 
         this.adBlock = new AdBlock(this.context);
         this.javaHosts = new Javascript(this.context);
         this.cookieHosts = new Cookie(this.context);
-        this.album = new Album(this.context, this, this.browserController);
+        this.remoteHosts = new Remote(this.context);
+        this.album = new AlbumItem(this.context, this, this.browserController);
         this.webViewClient = new NinjaWebViewClient(this);
         this.webChromeClient = new NinjaWebChromeClient(this);
         this.downloadListener = new NinjaDownloadListener(this.context);
@@ -180,7 +174,6 @@ public class NinjaWebView extends WebView implements AlbumController {
     }
 
     private synchronized void initAlbum() {
-        album.setAlbumCover(null);
         album.setAlbumTitle(context.getString(R.string.app_name));
         album.setBrowserController(browserController);
     }
@@ -212,6 +205,17 @@ public class NinjaWebView extends WebView implements AlbumController {
                     webSettings.setJavaScriptEnabled(false);
                 }
             }
+            if (!sp.getBoolean("sp_remote", true)) {
+                if (remoteHosts.isWhite(url)) {
+                    webSettings.setAllowFileAccessFromFileURLs(true);
+                    webSettings.setAllowUniversalAccessFromFileURLs(true);
+                    webSettings.setDomStorageEnabled(true);
+                } else {
+                    webSettings.setAllowFileAccessFromFileURLs(false);
+                    webSettings.setAllowUniversalAccessFromFileURLs(false);
+                    webSettings.setDomStorageEnabled(false);
+                }
+            }
         }
         super.loadUrl(BrowserUnit.queryWrapper(context, url.trim()), getRequestHeaders());
     }
@@ -219,16 +223,6 @@ public class NinjaWebView extends WebView implements AlbumController {
     @Override
     public View getAlbumView() {
         return album.getAlbumView();
-    }
-
-    @Override
-    public void setAlbumCover(Bitmap bitmap) {
-        album.setAlbumCover(bitmap);
-    }
-
-    @Override
-    public String getAlbumTitle() {
-        return album.getAlbumTitle();
     }
 
     @Override
@@ -255,16 +249,7 @@ public class NinjaWebView extends WebView implements AlbumController {
             browserController.updateProgress(progress);
         }
         if (isLoadFinish()) {
-            new Handler().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    setAlbumCover(ViewUnit.capture(NinjaWebView.this, dimen144dp, dimen108dp, Bitmap.Config.RGB_565));
-                }
-            }, 250);
-
-            if (prepareRecord()) {
-                browserController.updateAutoComplete();
-            }
+            browserController.updateAutoComplete();
         }
     }
 

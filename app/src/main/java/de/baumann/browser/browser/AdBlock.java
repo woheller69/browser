@@ -114,7 +114,7 @@ public class AdBlock {
     public synchronized void clearDomains() {
         RecordAction action = new RecordAction(context);
         action.open(true);
-        action.clearDomains();
+        action.clearTable(RecordUnit.TABLE_WHITELIST);
         action.close();
         whitelist.clear();
     }

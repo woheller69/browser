@@ -11,6 +11,7 @@ import de.baumann.browser.activity.Whitelist_Cookie;
 import de.baumann.browser.activity.Whitelist_Javascript;
 import de.baumann.browser.activity.Whitelist_AdBlock;
 import de.baumann.browser.Ninja.R;
+import de.baumann.browser.activity.Whitelist_Remote;
 
 public class Fragment_settings_start extends PreferenceFragmentCompat {
 
@@ -38,6 +39,14 @@ public class Fragment_settings_start extends PreferenceFragmentCompat {
             @Override
             public boolean onPreferenceClick(androidx.preference.Preference preference) {
                 Intent intent = new Intent(getActivity(), Whitelist_Cookie.class);
+                Objects.requireNonNull(getActivity()).startActivity(intent);
+                return false;
+            }
+        });
+        Objects.requireNonNull(findPreference("start_remote")).setOnPreferenceClickListener(new androidx.preference.Preference.OnPreferenceClickListener() {
+            @Override
+            public boolean onPreferenceClick(androidx.preference.Preference preference) {
+                Intent intent = new Intent(getActivity(), Whitelist_Remote.class);
                 Objects.requireNonNull(getActivity()).startActivity(intent);
                 return false;
             }

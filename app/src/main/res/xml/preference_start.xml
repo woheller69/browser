@@ -22,12 +22,6 @@
         android:title="@string/setting_title_history"
         android:summary="@string/setting_summary_history"/>
 
-    <CheckBoxPreference android:key="sp_remote"
-        android:icon="@drawable/icon_remote"
-        android:defaultValue="false"
-        android:title="@string/setting_title_remote"
-        android:summary="@string/setting_summary_remote"/>
-
     <CheckBoxPreference android:key="@string/sp_location"
         android:icon="@drawable/icon_location"
         android:defaultValue="false"
@@ -38,7 +32,7 @@
 
         <CheckBoxPreference
             android:key="@string/sp_ad_block"
-            android:icon="@drawable/icon_block"
+            android:icon="@drawable/icon_adblock"
             android:defaultValue="true"
             android:title="@string/setting_title_adblock"
             android:summary="@string/setting_summary_adblock"/>
@@ -46,8 +40,7 @@
         <Preference
             android:key="start_AdBlock"
             android:title="@string/setting_title_whitelist"
-            android:icon="@drawable/icon_list"
-            android:summary="@string/setting_summary_whitelist"/>
+            android:icon="@drawable/icon_list"/>
 
     </PreferenceCategory>
 
@@ -63,8 +56,7 @@
         <Preference
             android:key="start_java"
             android:title="@string/setting_title_whitelistJS"
-            android:icon="@drawable/icon_list"
-            android:summary="@string/setting_summary_whitelistJS"/>
+            android:icon="@drawable/icon_list"/>
 
     </PreferenceCategory>
 
@@ -80,8 +72,23 @@
         <Preference
             android:key="start_cookie"
             android:title="@string/setting_title_whitelistCookie"
-            android:icon="@drawable/icon_list"
-            android:summary="@string/setting_summary_whitelistCookie"/>
+            android:icon="@drawable/icon_list"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/setting_title_remote">
+
+        <CheckBoxPreference
+            android:key="sp_remote"
+            android:icon="@drawable/icon_remote"
+            android:defaultValue="true"
+            android:title="@string/setting_title_remote"
+            android:summary="@string/setting_summary_remote"/>
+
+        <Preference
+            android:key="start_remote"
+            android:title="@string/setting_title_whitelistRemote"
+            android:icon="@drawable/icon_list"/>
 
     </PreferenceCategory>
 

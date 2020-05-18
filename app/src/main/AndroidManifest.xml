@@ -66,8 +66,16 @@
                 <action android:name="sc_startPage" />
                 <action android:name="sc_bookmark" />
                 <action android:name="sc_history" />
-                <action android:name="notification" />
             </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="http" />
+                <data android:scheme="https" />
+            </intent-filter>
+
             <meta-data android:name="android.app.searchable"
                        android:resource="@xml/searchable"/>
             <meta-data android:name="android.app.shortcuts"
@@ -89,6 +97,10 @@
 
         <activity android:name="de.baumann.browser.activity.Whitelist_Cookie"
             android:label="@string/setting_title_whitelistCookie"
+            android:theme="@style/AppTheme"/>
+
+        <activity android:name="de.baumann.browser.activity.Whitelist_Remote"
+            android:label="@string/setting_title_whitelistRemote"
             android:theme="@style/AppTheme"/>
 
         <activity android:name="de.baumann.browser.activity.Settings_ClearActivity"

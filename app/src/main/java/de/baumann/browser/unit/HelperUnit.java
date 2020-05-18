@@ -27,7 +27,6 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.pm.ShortcutInfo;
 import android.content.pm.ShortcutManager;
-import android.graphics.Color;
 import android.graphics.ColorMatrix;
 import android.graphics.ColorMatrixColorFilter;
 import android.graphics.Paint;
@@ -37,29 +36,39 @@ import android.os.Build;
 
 import androidx.annotation.RequiresApi;
 import androidx.preference.PreferenceManager;
-import android.provider.Settings;
 import androidx.annotation.NonNull;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import android.text.Html;
 import android.text.SpannableString;
-import android.text.TextUtils;
 import android.text.util.Linkify;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
 
 import de.baumann.browser.Ninja.R;
+import de.baumann.browser.view.GridItem;
 import de.baumann.browser.view.NinjaToast;
 
 public class HelperUnit {
+
+    public static void bound (Context context, View view) {
+        int windowWidth = context.getResources().getDisplayMetrics().widthPixels;
+        int windowHeight = context.getResources().getDisplayMetrics().heightPixels;
+
+        int widthSpec = View.MeasureSpec.makeMeasureSpec(windowWidth, View.MeasureSpec.EXACTLY);
+        int heightSpec = View.MeasureSpec.makeMeasureSpec(windowHeight, View.MeasureSpec.EXACTLY);
+
+        view.measure(widthSpec, heightSpec);
+        view.layout(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight());
+    }
 
     private static final int REQUEST_CODE_ASK_PERMISSIONS = 123;
     private static final int REQUEST_CODE_ASK_PERMISSIONS_1 = 1234;
@@ -81,19 +90,6 @@ public class HelperUnit {
                         public void onClick(View view) {
                             activity.requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
                                     REQUEST_CODE_ASK_PERMISSIONS);
-                            bottomSheetDialog.cancel();
-                        }
-                    });
-                    Button action_cancel = dialogView.findViewById(R.id.action_cancel);
-                    action_cancel.setText(R.string.setting_label);
-                    action_cancel.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            Intent intent = new Intent();
-                            intent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
-                            Uri uri = Uri.fromParts("package", activity.getPackageName(), null);
-                            intent.setData(uri);
-                            activity.startActivity(intent);
                             bottomSheetDialog.cancel();
                         }
                     });
@@ -125,19 +121,6 @@ public class HelperUnit {
                         bottomSheetDialog.cancel();
                     }
                 });
-                Button action_cancel = dialogView.findViewById(R.id.action_cancel);
-                action_cancel.setText(R.string.setting_label);
-                action_cancel.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Intent intent = new Intent();
-                        intent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
-                        Uri uri = Uri.fromParts("package", activity.getPackageName(), null);
-                        intent.setData(uri);
-                        activity.startActivity(intent);
-                        bottomSheetDialog.cancel();
-                    }
-                });
                 bottomSheetDialog.setContentView(dialogView);
                 bottomSheetDialog.show();
                 HelperUnit.setBottomSheetBehavior(bottomSheetDialog, dialogView, BottomSheetBehavior.STATE_EXPANDED);
@@ -151,9 +134,6 @@ public class HelperUnit {
         switch (showNavButton) {
             case "0":
                 context.setTheme(R.style.AppTheme_system);
-                break;
-            case "1":
-                context.setTheme(R.style.AppTheme);
                 break;
             case "2":
                 context.setTheme(R.style.AppTheme_dark);
@@ -176,7 +156,7 @@ public class HelperUnit {
     public static void setBottomSheetBehavior (final BottomSheetDialog dialog, final View view, int beh) {
         BottomSheetBehavior mBehavior = BottomSheetBehavior.from((View) view.getParent());
         mBehavior.setState(beh);
-        mBehavior.setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
+        mBehavior.addBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
             @Override
             public void onStateChanged(@NonNull View bottomSheet, int newState) {
                 if (newState == BottomSheetBehavior.STATE_HIDDEN) {
@@ -222,89 +202,11 @@ public class HelperUnit {
         }
     }
 
-    public static void show_dialogHelp(final Context context) {
-
-        final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(context);
-        View dialogView = View.inflate(context, R.layout.dialog_help, null);
-        ImageButton dialogHelp_tip = dialogView.findViewById(R.id.dialogHelp_tip);
-        ImageButton dialogHelp_overview = dialogView.findViewById(R.id.dialogHelp_overview);
-        final View dialogHelp_tipView = dialogView.findViewById(R.id.dialogHelp_tipView);
-        final View dialogHelp_overviewView = dialogView.findViewById(R.id.dialogHelp_overviewView);
-        final TextView dialogHelp_tv_title = dialogView.findViewById(R.id.dialogHelp_title);
-        final TextView dialogHelp_tv_text = dialogView.findViewById(R.id.dialogHelp_tv);
-        dialogHelp_tv_title.setText(HelperUnit.textSpannable(context.getResources().getString(R.string.dialogHelp_tipTitle)));
-        dialogHelp_tv_text.setText(HelperUnit.textSpannable(context.getResources().getString(R.string.dialogHelp_tipText)));
-
-        dialogHelp_tip.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialogHelp_tipView.setVisibility(View.VISIBLE);
-                dialogHelp_overviewView.setVisibility(View.GONE);
-                dialogHelp_tv_title.setText(HelperUnit.textSpannable(context.getResources().getString(R.string.dialogHelp_tipTitle)));
-                dialogHelp_tv_text.setText(HelperUnit.textSpannable(context.getResources().getString(R.string.dialogHelp_tipText)));
-            }
-        });
-
-        dialogHelp_overview.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialogHelp_tipView.setVisibility(View.GONE);
-                dialogHelp_overviewView.setVisibility(View.VISIBLE);
-                dialogHelp_tv_title.setText(HelperUnit.textSpannable(context.getResources().getString(R.string.dialogHelp_overviewTitle)));
-                dialogHelp_tv_text.setText(HelperUnit.textSpannable(context.getResources().getString(R.string.dialogHelp_overviewText)));
-            }
-        });
-
-        bottomSheetDialog.setContentView(dialogView);
-        bottomSheetDialog.show();
-        HelperUnit.setBottomSheetBehavior(bottomSheetDialog, dialogView, BottomSheetBehavior.STATE_EXPANDED);
-    }
-
-    public static void switchIcon (Activity activity, String string, String fieldDB, ImageView be) {
-        sp = PreferenceManager.getDefaultSharedPreferences(activity);
-        assert be != null;
-        switch (string) {
-            case "02":be.setImageResource(R.drawable.circle_pink_big);
-                sp.edit().putString(fieldDB, "02").apply();break;
-            case "03":be.setImageResource(R.drawable.circle_purple_big);
-                sp.edit().putString(fieldDB, "03").apply();break;
-            case "04":be.setImageResource(R.drawable.circle_blue_big);
-                sp.edit().putString(fieldDB, "04").apply();break;
-            case "05":be.setImageResource(R.drawable.circle_teal_big);
-                sp.edit().putString(fieldDB, "05").apply();break;
-            case "06":be.setImageResource(R.drawable.circle_green_big);
-                sp.edit().putString(fieldDB, "06").apply();break;
-            case "07":be.setImageResource(R.drawable.circle_lime_big);
-                sp.edit().putString(fieldDB, "07").apply();break;
-            case "08":be.setImageResource(R.drawable.circle_yellow_big);
-                sp.edit().putString(fieldDB, "08").apply();break;
-            case "09":be.setImageResource(R.drawable.circle_orange_big);
-                sp.edit().putString(fieldDB, "09").apply();break;
-            case "10":be.setImageResource(R.drawable.circle_brown_big);
-                sp.edit().putString(fieldDB, "10").apply();break;
-            case "11":be.setImageResource(R.drawable.circle_grey_big);
-                sp.edit().putString(fieldDB, "11").apply();break;
-            case "01":
-            default:
-                be.setImageResource(R.drawable.circle_red_big);
-                sp.edit().putString(fieldDB, "01").apply();
-                break;
-        }
-    }
-
     public static String fileName (String url) {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss", Locale.getDefault());
         String currentTime = sdf.format(new Date());
         String domain = Objects.requireNonNull(Uri.parse(url).getHost()).replace("www.", "").trim();
         return domain.replace(".", "_").trim() + "_" + currentTime.trim();
-    }
-
-    public static String secString (String string) {
-        if(TextUtils.isEmpty(string)){
-            return "";
-        }else {
-            return  string.replaceAll("'", "\'\'");
-        }
     }
 
     public static String domain (String url) {
@@ -330,20 +232,6 @@ public class HelperUnit {
         return s;
     }
 
-    public static boolean isDarkColor(int color) {
-        if (android.R.color.transparent == color)
-            return false;
-
-        boolean rtnValue = false;
-        int[] rgb = { Color.red(color), Color.green(color), Color.blue(color) };
-        int brightness = (int) Math.sqrt(rgb[0] * rgb[0] * .241 + rgb[1] * rgb[1] * .691 + rgb[2] * rgb[2] * .068);
-        // color is light
-        if (brightness >= 200) {
-            rtnValue = true;
-        }
-        return !rtnValue;
-    }
-
     private static final float[] NEGATIVE_COLOR = {
             -1.0f, 0, 0, 0, 255, // Red
             0, -1.0f, 0, 0, 255, // Green
@@ -366,6 +254,59 @@ public class HelperUnit {
             view.setLayerType(View.LAYER_TYPE_HARDWARE, paint);
         } else {
             view.setLayerType(View.LAYER_TYPE_HARDWARE, null);
+        }
+    }
+
+    @SuppressWarnings("unchecked")
+    public static void addFilterItems (Activity activity, List gridList) {
+        GridItem item_01 = new GridItem(R.drawable.circle_red_big, sp.getString("icon_01", activity.getResources().getString(R.string.color_red)), null, 11);
+        GridItem item_02 = new GridItem(R.drawable.circle_pink_big, sp.getString("icon_02", activity.getResources().getString(R.string.color_pink)), null, 10);
+        GridItem item_03 = new GridItem(R.drawable.circle_purple_big, sp.getString("icon_03", activity.getResources().getString(R.string.color_purple)), null, 9);
+        GridItem item_04 = new GridItem(R.drawable.circle_blue_big, sp.getString("icon_04", activity.getResources().getString(R.string.color_blue)), null, 8);
+        GridItem item_05 = new GridItem(R.drawable.circle_teal_big, sp.getString("icon_05", activity.getResources().getString(R.string.color_teal)), null, 7);
+        GridItem item_06 = new GridItem(R.drawable.circle_green_big, sp.getString("icon_06", activity.getResources().getString(R.string.color_green)), null, 6);
+        GridItem item_07 = new GridItem(R.drawable.circle_lime_big, sp.getString("icon_07", activity.getResources().getString(R.string.color_lime)), null, 5);
+        GridItem item_08 = new GridItem(R.drawable.circle_yellow_big, sp.getString("icon_08", activity.getResources().getString(R.string.color_yellow)), null, 4);
+        GridItem item_09 = new GridItem(R.drawable.circle_orange_big, sp.getString("icon_09", activity.getResources().getString(R.string.color_orange)), null, 3);
+        GridItem item_10 = new GridItem(R.drawable.circle_brown_big, sp.getString("icon_10", activity.getResources().getString(R.string.color_brown)), null, 2);
+        GridItem item_11 = new GridItem(R.drawable.circle_grey_big, sp.getString("icon_11", activity.getResources().getString(R.string.color_grey)), null, 1);
+
+        if (sp.getBoolean("filter_01", true)){ gridList.add(gridList.size(), item_01); }
+        if (sp.getBoolean("filter_02", true)){ gridList.add(gridList.size(), item_02); }
+        if (sp.getBoolean("filter_03", true)){ gridList.add(gridList.size(), item_03); }
+        if (sp.getBoolean("filter_04", true)){ gridList.add(gridList.size(), item_04); }
+        if (sp.getBoolean("filter_05", true)){ gridList.add(gridList.size(), item_05); }
+        if (sp.getBoolean("filter_06", true)){ gridList.add(gridList.size(), item_06); }
+        if (sp.getBoolean("filter_07", true)){ gridList.add(gridList.size(), item_07); }
+        if (sp.getBoolean("filter_08", true)){ gridList.add(gridList.size(), item_08); }
+        if (sp.getBoolean("filter_09", true)){ gridList.add(gridList.size(), item_09); }
+        if (sp.getBoolean("filter_10", true)){ gridList.add(gridList.size(), item_10); }
+        if (sp.getBoolean("filter_11", true)){ gridList.add(gridList.size(), item_11); }
+    }
+
+    public static void setFilterIcons (ImageView ib_icon, long newIcon) {
+        if (newIcon == 11) {
+            ib_icon.setImageResource(R.drawable.circle_red_big);
+        } else if (newIcon == 10) {
+            ib_icon.setImageResource(R.drawable.circle_pink_big);
+        } else if (newIcon == 9) {
+            ib_icon.setImageResource(R.drawable.circle_purple_big);
+        } else if (newIcon == 8) {
+            ib_icon.setImageResource(R.drawable.circle_blue_big);
+        } else if (newIcon == 7) {
+            ib_icon.setImageResource(R.drawable.circle_teal_big);
+        } else if (newIcon == 6) {
+            ib_icon.setImageResource(R.drawable.circle_green_big);
+        } else if (newIcon == 5) {
+            ib_icon.setImageResource(R.drawable.circle_lime_big);
+        } else if (newIcon == 4) {
+            ib_icon.setImageResource(R.drawable.circle_yellow_big);
+        } else if (newIcon == 3) {
+            ib_icon.setImageResource(R.drawable.circle_orange_big);
+        } else if (newIcon == 2) {
+            ib_icon.setImageResource(R.drawable.circle_brown_big);
+        } else if (newIcon == 1) {
+            ib_icon.setImageResource(R.drawable.circle_grey_big);
         }
     }
 }

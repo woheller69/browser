@@ -19,7 +19,6 @@
 
 package de.baumann.browser.database;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.database.Cursor;
@@ -67,31 +66,6 @@ public class BookmarkList {
         sqlDb = dbHelper.getWritableDatabase();
     }
 
-    //insert data
-    @SuppressWarnings("SameParameterValue")
-    public void insert(String pass_title, String pass_content, String pass_icon, String pass_attachment, String pass_creation) {
-        if(!isExist(pass_content)) {
-            sqlDb.execSQL("INSERT INTO pass (pass_title, pass_content, pass_icon, pass_attachment, pass_creation) VALUES('" + pass_title + "','" + pass_content + "','" + pass_icon + "','" + pass_attachment + "','" + pass_creation + "')");
-        }
-    }
-    //check entry already in database or not
-    public boolean isExist(String pass_content){
-        String query = "SELECT pass_title FROM pass WHERE pass_content='"+pass_content+"' LIMIT 1";
-        @SuppressLint("Recycle") Cursor row = sqlDb.rawQuery(query, null);
-        return row.moveToFirst();
-    }
-
-    //edit data
-    public void update(int id,String pass_title,String pass_content,String pass_icon,String pass_attachment, String pass_creation) {
-        sqlDb.execSQL("UPDATE "+dbTable+" SET pass_title='"+pass_title+"', pass_content='"+pass_content+"', pass_icon='"+pass_icon+"', pass_attachment='"+pass_attachment+"', pass_creation='"+pass_creation+"'   WHERE _id=" + id);
-    }
-
-    //delete data
-    public void delete(int id) {
-        sqlDb.execSQL("DELETE FROM "+dbTable+" WHERE _id="+id);
-    }
-
-
     //fetch data
     public Cursor fetchAllData(Context activity) {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(activity);
@@ -106,27 +80,5 @@ public class BookmarkList {
             }
         }
         return null;
-    }
-
-    //fetch data
-    public Cursor fetchAllForSearch() {
-        String[] columns = new String[]{"pass_title", "pass_content", "pass_icon","pass_attachment","pass_creation"};
-        return sqlDb.query(dbTable, columns, null, null, null, null, "pass_title" + " COLLATE NOCASE DESC;");
-    }
-
-    //fetch data by filter
-    public Cursor fetchDataByFilter(String inputText,String filterColumn) throws SQLException {
-        Cursor row;
-        String query = "SELECT * FROM "+dbTable;
-        if (inputText == null  ||  inputText.length () == 0)  {
-            row = sqlDb.rawQuery(query, null);
-        }else {
-            query = "SELECT * FROM "+dbTable+" WHERE "+filterColumn+" like '%"+inputText+"%'";
-            row = sqlDb.rawQuery(query, null);
-        }
-        if (row != null) {
-            row.moveToFirst();
-        }
-        return row;
     }
 }

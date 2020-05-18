@@ -38,23 +38,17 @@
     <string name="menu_sc">Raccourci sur l\'écran d\'accueil</string>
     <string name="menu_sort">Trier par …</string>
     <string name="menu_filter">Filtrer par …</string>
-    <string name="menu_share_screenshot">Partager capture d’écran</string>
     <string name="menu_share_link">Partager le lien</string>
-    <string name="menu_save_screenshot">Enregistrer capture d’écran</string>
     <string name="menu_save_home">Enregistrer à l\'Accueil</string>
     <string name="menu_save_bookmark">Enregistrer comme signet</string>
     <string name="menu_save_as">Enregistrer sous …</string>
     <string name="menu_save_pdf">Enregistrer en PDF</string>
-    <string name="menu_share_pdf">Partager PDF</string>
     <string name="menu_shareClipboard">Copier dans le presse-papiers</string>
     <string name="menu_other_searchSite">Rechercher sur le site</string>
-    <string name="menu_other_fileManager">Ouvrir le gestionnaire de fichiers</string>
     <string name="menu_other_info">À propos de \"FOSS Browser\"</string>
     <string name="menu_other_help">Aide</string>
     <!-- Dialog -->
-    <string name="dialog_toggle_reload">Recharger</string>
     <string name="dialog_title_hint">Titre:</string>
-    <string name="dialog_url_hint">Url :</string>
     <string name="dialog_extension_hint">Extension (par exemple: \".jpg\"):</string>
     <string name="dialog_sign_in_username">Nom d\'utilisateur</string>
     <string name="dialog_sign_in_password">Mot de passe</string>
@@ -103,18 +97,13 @@
     utilisent par exemple pour stocker les paramètres utilisateur (par exemple, les paramètres de recherche). Mais ils pourraient aussi être utilisés pour collecter des infos personnelles
         ou données d\'utilisateur. Les cookies tiers (ils collectent les données des utilisateurs pour la publicité) sont toujours désactivés.</string>
     <string name="setting_title_whitelistCookie">Cookie liste blanche</string>
-    <string name="setting_summary_whitelistCookie">Si vous désactivez les cookies, vous pouvez utiliser cette liste blanche pour autoriser les sites que vous
-        faites confiance à sauvegarder les cookies.</string>
     <string name="setting_title_javascript">JavaScript</string>
     <string name="setting_summary_javascript">Activer JavaScript. De nombreux sites Web ont besoin de JavaScript pour fonctionner (menus,
         chargement et affichage d\'images, …). Mais ils sont aussi un risque et peuvent être utilisés pour des attaques.</string>
     <string name="setting_title_whitelistJS">JavaScript liste blanche</string>
-    <string name="setting_summary_whitelistJS">Si vous désactivez JavaScript, vous pouvez utiliser cette liste blanche pour autoriser les sites de confiance 
-        à utiliser javascript.</string>
     <string name="setting_title_adblock">AdBlock</string>
     <string name="setting_summary_adblock">Activez AdBlock pour bloquer les pubs ennuyeuses. Les sites se chargent plus rapidement quand activé.</string>
     <string name="setting_title_whitelist">AdBlock liste blanche</string>
-    <string name="setting_summary_whitelist">Autoriser ces sites à diffuser des pubs. Certains sites ne fonctionnent pas lorsque AdBlock est activé.</string>
     <string name="setting_title_location">Localisation</string>
     <string name="setting_summary_location">Autoriser les sites Web à accéder à votre emplacement. Quelques sites web (comme Google maps pour la navigation)
         besoin d\'être activé.</string>
@@ -124,7 +113,6 @@
     <string name="data_summary">Tous les fichiers seront exportés dans le répertoire \"Android/data/de.baumann.browser/files/browser_backup/\"
         de votre carte SD. Ce répertoire sera SUPPRIME, si vous désinstallez \"FOSS Browser\". Faites donc une sauvegarde régulièrement sur une place
         d\'économie.</string>
-    <string name="clear_menu_done_all">Tout fini</string>
     <string name="clear_title_quit">Effacer à la fermeture</string>
     <string name="clear_summary_quit">Chaque fois que vous quittez \"FOSS Browser\" toutes les données cochées ci-dessus seront supprimées.</string>
     <string name="clear_title_cache">Vider le cache</string>
@@ -177,8 +165,6 @@
     <string name="setting_overView">Vue d\'ensemble</string>
     <string name="setting_overView_onStart_title">Montrer au démarrage</string>
     <string name="setting_overView_onStart_summary">Ouvrir \"vue d\'ensemble\" à chaque démarrage de l\'application.</string>
-    <string name="setting_overView_hide_title">Masquer les aperçus des onglets</string>
-    <string name="setting_overView_hide_summary">Dans la vue d\'ensemble élargie, l\'aperçu de l\'onglet sera masqué. Vous avez alors plus de place pour vos signets.</string>
     <string name="setting_gestures">Gestes</string>
     <string name="setting_gestures_use_title">Utiliser des gestes</string>
     <string name="setting_gestures_use_summary">Utilisez des gestes dans barre d’outils et le \"Bouton de navigation\".</string>
@@ -218,7 +204,6 @@
     <string name="hint_database">Cela supprimera tous vos paramètres et données actuels. Allez-vous procéder?</string>
     <!-- Others setting -->
     <string name="setting_title_others">Autres</string>
-    <string name="setting_title_license">Licence</string>
     <string name="setting_title_appSettings">Paramètres</string>
     <string name="setting_summary_appSettings">Ouvrir les paramètres système de l’application pour \"FOSS Browser\". Là, vous pouvez,
         en fonction de votre version Android accorder des autorisations, effacer les données de l’application et ainsi de suite.</string>
@@ -242,15 +227,7 @@
     <string name="toast_share_failed">Impossible de partager cette page</string>
     <string name="toast_start_download">Démarrage du téléchargement</string>
     <string name="toast_wait_a_minute">SVP attendez un moment</string>
-    <string name="toast_titleConfirm_delete">Voulez-vous vraiment supprimer l\'entrée?</string>
-    <string name="toast_titleConfirm_paste">Copier les données dans le presse papier?</string>
-    <string name="toast_titleConfirm_pasteUN">Nom d\'utilisateur</string>
-    <string name="toast_titleConfirm_pastePW">Mot de passe</string>
-    <string name="toast_error">Oups. Quelque chose a mal tourné.</string>
-    <string name="toast_newTitle">L\'entrée existe déjà. Veuillez entrer un nouveau titre.</string>
-    <string name="toast_edit_successful">Enregistré avec succès</string>
     <string name="toast_webview_forward">Impossible de charger le site</string>
-    <string name="toast_clear">Voulez-vous vraiment effacer?</string>
     <string name="toast_permission_sdCard">\"FOSS Browser\" a besoin de la permission de \"lire et écrire sur votre stockage\". Ce
         est nécessaire pour télécharger des fichiers, prendre des captures d\'écran et faire des sauvegardes de vos données.</string>
     <string name="toast_permission_loc">\"FOSS Browser\" a besoin de la permission de \"accéder à votre emplacement\". Ceci est demandé à partir de certains sites web
@@ -278,18 +255,6 @@
         Si vous appuyez longuement sur l\'icône de menu ou sur le \"bouton de navigation\", la boîte de dialogue \"Bascule rapide\" s\'affiche. Si vous faites long
         appuyez sur l\'icône \"Marque-page\", la boîte de dialogue \"Filtre\" s\'affiche.
     </string>
-    <string name="dialogHelp_overviewTitle">Vue d\'ensemble</string>
-    <string name="dialogHelp_overviewText">        There are two parts in the \"Overview\" (tab preview and personal data). There is an extra menu. In the settings
-        you can change the behavior of the \"Overview\".&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;Tab preview&lt;/b&gt;&lt;br&gt;
-        It is the upper part of the \"Overview\". To change tabs just click the preview. To close a tab long press the
-        preview. If you swipe the tab preview up, your personal content will open.&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;Personal content&lt;/b&gt;&lt;br&gt;
-        There are three parts: the Startsite, your Bookmarks and your History. If you long click an entry
-        a menu with more options will appear.
-    </string>
     <string name="dialogHelp_filterText">        Vous pouvez étiqueter vos signets avec des filtres. De cette façon, vous pouvez regrouper vos signets. Vous pouvez ouvrir la boîte de dialogue de filtre en appuyant longuement
         sur l\'icône de signet . Si vous activez une entrée une boîte de dialogue apparaît, où vous pouvez modifier le nom du filtre.
     </string>
@@ -308,38 +273,6 @@
 
     </string>
     <!-- License changelog -->
-    <string name="license_title">Copyright © 2017 par Gaukler Faun</string>
-    <string name="license_dialog">        &lt;i&gt;Pour plus d\'informations, visitez le site du projet sur Github: https://github.com/scoute-dich/Browser&lt;/i&gt;&lt;br&gt;&lt;br&gt;
-
-        Ce programme est un logiciel libre : vous pouvez le redistribuer et/ou le modifier
-        sous les termes de la Licence Publique Générale GNU telle que publiée par
-        la Free Software Foundation, soit la version 3 de la Licence, soit
-        (à votre choix) toute version ultérieure.
-
-        Ce programme est distribué dans l\'espoir qu\'il sera utile,
-        mais SANS AUCUNE GARANTIE ; sans même la garantie implicite de
-        LA COMMERCIALISATION ou l\'ADÉQUATION À UN OBJECTIF PARTICULIER.  Voir le
-        GNU General Public License pour plus de détails.
-
-        Vous devriez avoir reçu une copie de la Licence Publique Générale GNU
-        avec ce programme.  Si ce n\'est pas le cas, voir http://www.gnu.org/licenses.&lt;br&gt;&lt;br&gt;
-
-        &lt;i&gt;Les bibliothèques ou projets open source suivants sont utilisés dans ce logiciel:&lt;/i&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;Material Design Icons&lt;/b&gt;&lt;br&gt;
-        SIL Open Font License, Version 1.1.&lt;br&gt;
-        Templarian&lt;br&gt;
-        &lt;i&gt;https://github.com/Templarian/MaterialDesign&lt;/i&gt;&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;Ninja&lt;/b&gt;&lt;br&gt;
-        Apache License Version 2.0&lt;br&gt;
-        Matthew Lee&lt;br&gt;
-        &lt;i&gt;http://git.io/vUrEh&lt;/i&gt;&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;SimpleEncryptionLib&lt;/b&gt;&lt;br&gt;
-        Apache License Version 2.0&lt;br&gt;
-        hummatli&lt;br&gt;
-        &lt;i&gt;https://github.com/hummatli/SimpleEncryptionLib</string>
     <string name="cont_dialog">        &lt;i&gt;Tout d\'abord, je voudrais remercier toutes les personnes qui ont contribué de quelque manière que ce soit à ce projet. Ils ont soumis des problèmes,
         traduits ou aidés de toute autre manière. Sur les sites suivants, vous pouvez devenir un membre actif de cette
         grande communauté :&lt;/i&gt;&lt;br&gt;&lt;br&gt;

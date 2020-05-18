@@ -90,7 +90,7 @@ public class Cookie {
     public synchronized void clearDomains() {
         RecordAction action = new RecordAction(context);
         action.open(true);
-        action.clearDomainsCookie();
+        action.clearTable(RecordUnit.TABLE_COOKIE);
         action.close();
         whitelistCookie.clear();
     }

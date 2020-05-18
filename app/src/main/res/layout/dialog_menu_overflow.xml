@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="?android:attr/colorBackground"
+    tools:ignore="Overdraw,ContentDescription"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:paddingEnd="8dp"
+    android:paddingStart="8dp"
+    android:paddingBottom="8dp">
+
+    <RelativeLayout
+        android:id="@+id/titleBar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:listPreferredItemHeight"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp">
+
+        <TextView
+            android:id="@+id/overflow_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toStartOf="@+id/menu_refresh"
+            android:layout_marginEnd="8dp"
+            android:ellipsize="end"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:text="@string/app_name"
+            android:gravity="center_vertical"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Title"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/menu_refresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:background="?attr/actionBarItemBackground"
+            android:src="@drawable/icon_refresh" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/colorAccent" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <GridView
+            android:stackFromBottom="true"
+            android:fastScrollEnabled="true"
+            android:id="@+id/menu_grid_tab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:stretchMode="columnWidth"
+            android:numColumns="1" />
+
+        <GridView
+            android:stackFromBottom="true"
+            android:fastScrollEnabled="true"
+            android:id="@+id/menu_grid_share"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:stretchMode="columnWidth"
+            android:numColumns="1" />
+
+        <GridView
+            android:stackFromBottom="true"
+            android:fastScrollEnabled="true"
+            android:id="@+id/menu_grid_save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:stretchMode="columnWidth"
+            android:numColumns="1" />
+
+        <GridView
+            android:stackFromBottom="true"
+            android:fastScrollEnabled="true"
+            android:id="@+id/menu_grid_other"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:stretchMode="columnWidth"
+            android:numColumns="1" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:minHeight="46dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_marginEnd="6dp"
+            android:layout_marginStart="6dp"
+            android:orientation="vertical"
+            android:layout_width="42dp"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/floatButton_tabView"
+                android:layout_width="42dp"
+                android:layout_height="2dp"
+                android:background="?android:attr/colorAccent" />
+
+            <ImageButton
+                android:id="@+id/floatButton_tab"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_marginEnd="2dp"
+                android:layout_marginStart="2dp"
+                android:background="?attr/actionBarItemBackground"
+                android:src="@drawable/icon_tab_plus" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginEnd="6dp"
+            android:layout_marginStart="6dp"
+            android:orientation="vertical"
+            android:layout_width="42dp"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/floatButton_shareView"
+                android:layout_width="42dp"
+                android:layout_height="2dp"
+                android:background="?android:attr/colorAccent" />
+
+            <ImageButton
+                android:id="@+id/floatButton_share"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_marginEnd="2dp"
+                android:layout_marginStart="2dp"
+                android:background="?attr/actionBarItemBackground"
+                android:src="@drawable/icon_menu_share" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_marginEnd="6dp"
+            android:layout_marginStart="6dp"
+            android:orientation="vertical"
+            android:layout_width="42dp"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/floatButton_saveView"
+                android:layout_width="42dp"
+                android:layout_height="2dp"
+                android:background="?android:attr/colorAccent" />
+
+            <ImageButton
+                android:id="@+id/floatButton_save"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_marginEnd="2dp"
+                android:layout_marginStart="2dp"
+                android:background="?attr/actionBarItemBackground"
+                android:src="@drawable/icon_menu_save" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginEnd="6dp"
+            android:layout_marginStart="6dp"
+            android:orientation="vertical"
+            android:layout_width="42dp"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/floatButton_moreView"
+                android:layout_width="42dp"
+                android:layout_height="2dp"
+                android:background="?android:attr/colorAccent"
+                tools:ignore="TooManyViews" />
+
+            <ImageButton
+                android:id="@+id/floatButton_more"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_marginEnd="2dp"
+                android:layout_marginStart="2dp"
+                android:background="?attr/actionBarItemBackground"
+                android:src="@drawable/icon_dots" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

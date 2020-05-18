@@ -69,7 +69,6 @@ public class Fragment_settings_data extends PreferenceFragmentCompat {
                 View dialogView;
                 TextView textView;
                 Button action_ok;
-                Button action_cancel;
 
                 dialog = new BottomSheetDialog(Objects.requireNonNull(getActivity()));
                 dialogView = View.inflate(getActivity(), R.layout.dialog_action, null);
@@ -96,13 +95,6 @@ public class Fragment_settings_data extends PreferenceFragmentCompat {
                         }
                     }
                 });
-                action_cancel = dialogView.findViewById(R.id.action_cancel);
-                action_cancel.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        dialog.cancel();
-                    }
-                });
                 dialog.setContentView(dialogView);
                 dialog.show();
                 HelperUnit.setBottomSheetBehavior(dialog, dialogView, BottomSheetBehavior.STATE_EXPANDED);
@@ -117,7 +109,6 @@ public class Fragment_settings_data extends PreferenceFragmentCompat {
                 View dialogView;
                 TextView textView;
                 Button action_ok;
-                Button action_cancel;
 
                 dialog = new BottomSheetDialog(Objects.requireNonNull(getActivity()));
                 dialogView = View.inflate(getActivity(), R.layout.dialog_action, null);
@@ -142,13 +133,6 @@ public class Fragment_settings_data extends PreferenceFragmentCompat {
                         }
                     }
                 });
-                action_cancel = dialogView.findViewById(R.id.action_cancel);
-                action_cancel.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        dialog.cancel();
-                    }
-                });
                 dialog.setContentView(dialogView);
                 dialog.show();
                 HelperUnit.setBottomSheetBehavior(dialog, dialogView, BottomSheetBehavior.STATE_EXPANDED);
@@ -163,7 +147,6 @@ public class Fragment_settings_data extends PreferenceFragmentCompat {
                 View dialogView;
                 TextView textView;
                 Button action_ok;
-                Button action_cancel;
 
                 dialog = new BottomSheetDialog(Objects.requireNonNull(getActivity()));
                 dialogView = View.inflate(getActivity(), R.layout.dialog_action, null);
@@ -190,13 +173,6 @@ public class Fragment_settings_data extends PreferenceFragmentCompat {
                         }
                     }
                 });
-                action_cancel = dialogView.findViewById(R.id.action_cancel);
-                action_cancel.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        dialog.cancel();
-                    }
-                });
                 dialog.setContentView(dialogView);
                 dialog.show();
                 HelperUnit.setBottomSheetBehavior(dialog, dialogView, BottomSheetBehavior.STATE_EXPANDED);
@@ -211,7 +187,6 @@ public class Fragment_settings_data extends PreferenceFragmentCompat {
                 View dialogView;
                 TextView textView;
                 Button action_ok;
-                Button action_cancel;
 
                 dialog = new BottomSheetDialog(Objects.requireNonNull(getActivity()));
                 dialogView = View.inflate(getActivity(), R.layout.dialog_action, null);
@@ -236,13 +211,6 @@ public class Fragment_settings_data extends PreferenceFragmentCompat {
                         }
                     }
                 });
-                action_cancel = dialogView.findViewById(R.id.action_cancel);
-                action_cancel.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        dialog.cancel();
-                    }
-                });
                 dialog.setContentView(dialogView);
                 dialog.show();
                 HelperUnit.setBottomSheetBehavior(dialog, dialogView, BottomSheetBehavior.STATE_EXPANDED);
@@ -257,7 +225,6 @@ public class Fragment_settings_data extends PreferenceFragmentCompat {
                 View dialogView;
                 TextView textView;
                 Button action_ok;
-                Button action_cancel;
 
                 dialog = new BottomSheetDialog(Objects.requireNonNull(getActivity()));
                 dialogView = View.inflate(getActivity(), R.layout.dialog_action, null);
@@ -284,13 +251,6 @@ public class Fragment_settings_data extends PreferenceFragmentCompat {
                         }
                     }
                 });
-                action_cancel = dialogView.findViewById(R.id.action_cancel);
-                action_cancel.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        dialog.cancel();
-                    }
-                });
                 dialog.setContentView(dialogView);
                 dialog.show();
                 HelperUnit.setBottomSheetBehavior(dialog, dialogView, BottomSheetBehavior.STATE_EXPANDED);
@@ -305,7 +265,6 @@ public class Fragment_settings_data extends PreferenceFragmentCompat {
                 View dialogView;
                 TextView textView;
                 Button action_ok;
-                Button action_cancel;
 
                 dialog = new BottomSheetDialog(Objects.requireNonNull(getActivity()));
                 dialogView = View.inflate(getActivity(), R.layout.dialog_action, null);
@@ -330,13 +289,6 @@ public class Fragment_settings_data extends PreferenceFragmentCompat {
                         }
                     }
                 });
-                action_cancel = dialogView.findViewById(R.id.action_cancel);
-                action_cancel.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        dialog.cancel();
-                    }
-                });
                 dialog.setContentView(dialogView);
                 dialog.show();
                 HelperUnit.setBottomSheetBehavior(dialog, dialogView, BottomSheetBehavior.STATE_EXPANDED);
@@ -351,7 +303,6 @@ public class Fragment_settings_data extends PreferenceFragmentCompat {
                 View dialogView;
                 TextView textView;
                 Button action_ok;
-                Button action_cancel;
 
                 dialog = new BottomSheetDialog(Objects.requireNonNull(getActivity()));
                 dialogView = View.inflate(getActivity(), R.layout.dialog_action, null);
@@ -387,13 +338,6 @@ public class Fragment_settings_data extends PreferenceFragmentCompat {
                         }
                     }
                 });
-                action_cancel = dialogView.findViewById(R.id.action_cancel);
-                action_cancel.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        dialog.cancel();
-                    }
-                });
                 dialog.setContentView(dialogView);
                 dialog.show();
                 HelperUnit.setBottomSheetBehavior(dialog, dialogView, BottomSheetBehavior.STATE_EXPANDED);
@@ -408,7 +352,6 @@ public class Fragment_settings_data extends PreferenceFragmentCompat {
                 View dialogView;
                 TextView textView;
                 Button action_ok;
-                Button action_cancel;
 
                 dialog = new BottomSheetDialog(Objects.requireNonNull(getActivity()));
                 dialogView = View.inflate(getActivity(), R.layout.dialog_action, null);
@@ -441,13 +384,6 @@ public class Fragment_settings_data extends PreferenceFragmentCompat {
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
-                    }
-                });
-                action_cancel = dialogView.findViewById(R.id.action_cancel);
-                action_cancel.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        dialog.cancel();
                     }
                 });
                 dialog.setContentView(dialogView);

@@ -38,23 +38,17 @@
     <string name="menu_sc">Verknüpfung auf Startbildschirm</string>
     <string name="menu_sort">Sortiere nach …</string>
     <string name="menu_filter">Filter nach …</string>
-    <string name="menu_share_screenshot">Bildschirmfoto teilen</string>
     <string name="menu_share_link">Link teilen</string>
-    <string name="menu_save_screenshot">Bildschirmfoto speichern</string>
     <string name="menu_save_home">Auf Startseite speichern</string>
     <string name="menu_save_bookmark">Als Lesezeichen speichern</string>
     <string name="menu_save_as">Speichern als …</string>
     <string name="menu_save_pdf">Als PDF speichern</string>
-    <string name="menu_share_pdf">PDF teilen</string>
     <string name="menu_shareClipboard">In Zwischenablage kopieren</string>
     <string name="menu_other_searchSite">Auf Website suchen</string>
-    <string name="menu_other_fileManager">Dateimanager öffnen</string>
     <string name="menu_other_info">Über \"FOSS Browser\"</string>
     <string name="menu_other_help">Hilfe</string>
     <!-- Dialog -->
-    <string name="dialog_toggle_reload">Neu laden</string>
     <string name="dialog_title_hint">Titel:</string>
-    <string name="dialog_url_hint">URL:</string>
     <string name="dialog_extension_hint">Dateiendung (z.B.: \".jpg\"):</string>
     <string name="dialog_sign_in_username">Benutzername</string>
     <string name="dialog_sign_in_password">Passwort</string>
@@ -101,22 +95,18 @@ Dies zu deaktivieren ist sicherer, schneller und spart Datenvolumen. Manche Inha
     <string name="setting_summary_cookie_delete">Falls aktiviert, werden alle Cookies gelöscht. Auch die von vertrauenswürdigen Websites.</string>
     <string name="setting_summary_cookie">Aktiviere Cookies. Cookies sind kleine Textdateien, die auf deinem Gerät gespeichert werden. Websites können sie z.B. nutzen, um die Benutzereinstellungen (z.B. bei Suchmaschinen) zu speichern. Aber sie können auch dazu genutzt werden, um persönliche Nutzerdaten zu sammeln. Cookies von Dritten (sie sammeln zu Werbezwecken Nutzerdaten) sind immer deaktiviert.</string>
     <string name="setting_title_whitelistCookie">Cookie-Positivliste</string>
-    <string name="setting_summary_whitelistCookie">Wenn du Cookies deaktivierst, kannst du diese Positivliste nutzen, um Websites, denen du vertraust, das Benutzen von gespeicherten Cookies zu erlauben.</string>
     <string name="setting_title_javascript">JavaScript</string>
     <string name="setting_summary_javascript">Aktiviere JavaScript. Viele Websites brauchen JavaScript für ihre Funktionsfähigkeit (Menüs, Laden und Darstellen von Bildern, …). Aber es stellt auch ein Sicherheitsrisiko dar und kann für Angriffe benutzt werden.</string>
     <string name="setting_title_whitelistJS">JavaScript-Positivliste</string>
-    <string name="setting_summary_whitelistJS">Wenn du JavaScript deaktivierst, kannst du diese Positivliste nutzen, um Websites, denen du vertraust, das Benutzen von JavaScript zu erlauben.</string>
     <string name="setting_title_adblock">AdBlock</string>
     <string name="setting_summary_adblock">Aktiviere AdBlock, um lästige Werbung zu blockieren. Websites laden auch schneller, falls eingeschaltet.</string>
     <string name="setting_title_whitelist">AdBlock-Positivliste</string>
-    <string name="setting_summary_whitelist">Diesen Websites erlauben, Werbung einzublenden. Einige Websites funktionieren nicht, wenn AdBlock aktiviert ist.</string>
     <string name="setting_title_location">Standortbestimmung</string>
     <string name="setting_summary_location">Websites gestatten, auf den Standort zuzugreifen. Einige Websites (wie für Navigation Google Maps) benötigen dies aktiviert.</string>
     <string name="setting_title_history">Verlauf</string>
     <string name="setting_summary_history">Speichere den Verlauf der besuchten Websites.</string>
     <!-- browser clear -->
     <string name="data_summary">Alle Dateien werden in das Verzeichnis \"Android/data/de.baumann.browser/files/browser_backup/\" deiner SD-Karte exportiert. Dieses Verzeichnis wird GELÖSCHT, wenn du \"FOSS Browser\" deinstallierst. Mache also regelmäßig eine Sicherung an einer sicheren Stelle.</string>
-    <string name="clear_menu_done_all">Alles erledigt</string>
     <string name="clear_title_quit">Bereinigen, wenn die Anwendung schließt</string>
     <string name="clear_summary_quit">Jedesmal, wenn du \"FOSS Browser\" schließt, werden alle oben ausgewählte Daten gelöscht.</string>
     <string name="clear_title_cache">Cache löschen</string>
@@ -165,8 +155,6 @@ Dies zu deaktivieren ist sicherer, schneller und spart Datenvolumen. Manche Inha
     <string name="setting_overView">Übersicht</string>
     <string name="setting_overView_onStart_title">Beim Start anzeigen</string>
     <string name="setting_overView_onStart_summary">Die \"Übersicht\" bei jedem App-Start öffnen.</string>
-    <string name="setting_overView_hide_title">Tab-Vorschauen verstecken</string>
-    <string name="setting_overView_hide_summary">In der erweiterten Übersicht wird die Tab-Vorschau versteckt. Du hast dann mehr Platz für deine Lesezeichen.</string>
     <string name="setting_gestures">Gesten</string>
     <string name="setting_gestures_use_title">Gesten benutzen</string>
     <string name="setting_gestures_use_summary">Gesten auf der Toolbar benutzen und den \"Navigationsknopf\".</string>
@@ -205,7 +193,6 @@ Dies zu deaktivieren ist sicherer, schneller und spart Datenvolumen. Manche Inha
     <string name="hint_database">Dies löscht alle aktuellen Einstellungen und Daten. Willst du fortfahren?</string>
     <!-- Others setting -->
     <string name="setting_title_others">Sonstige</string>
-    <string name="setting_title_license">Lizenz</string>
     <string name="setting_title_appSettings">App-Einstellungen</string>
     <string name="setting_summary_appSettings">Gehe in Systemeinstellungen => Apps zu \"FOSS Browser\". Je nach Android Version kannst du dort Berechtigungen erteilen, die App-Daten löschen usw.</string>
     <string name="setting_title_community">Mitmachen</string>
@@ -228,15 +215,7 @@ Dies zu deaktivieren ist sicherer, schneller und spart Datenvolumen. Manche Inha
     <string name="toast_share_failed">Kann diese Seite nicht teilen</string>
     <string name="toast_start_download">Starte Download</string>
     <string name="toast_wait_a_minute">Bitte einen Moment warten</string>
-    <string name="toast_titleConfirm_delete">Möchtest du den Eintrag wirklich löschen?</string>
-    <string name="toast_titleConfirm_paste">Daten in die Zwischenablage kopieren?</string>
-    <string name="toast_titleConfirm_pasteUN">Benutzername</string>
-    <string name="toast_titleConfirm_pastePW">Passwort</string>
-    <string name="toast_error">Uuups. Etwas ist schief gelaufen. :-(</string>
-    <string name="toast_newTitle">Eintrag existiert schon. Bitte gib einen neuen Titel ein.</string>
-    <string name="toast_edit_successful">Erfolgreich gespeichert</string>
     <string name="toast_webview_forward">Kann die nächste Seite nicht laden</string>
-    <string name="toast_clear">Möchtest du wirklich bereinigen?</string>
     <string name="toast_permission_sdCard">\"FOSS Browser\" braucht die Berechtigung zum Lesen und Schreiben auf deinem Gerätespeicher. Dies ist notwendig, um Dateien herunterzuladen, Bildschirmfotos zu machen und deine Daten zu sichern.</string>
     <string name="toast_permission_loc">\"FOSS Browser\" braucht die Berechtigung \"Zugriff auf deinen Standort\". Dies wird von einigen Websites verlangt, z.B. wenn sie eine Art von Navigation anbieten.</string>
     <string name="toast_restart">Du musst \"FOSS Browser\" neustarten, damit die Änderungen wirksam werden. Jetzt beenden?</string>
@@ -258,15 +237,6 @@ Du kannst sie durch Drücken der Zurück-Taste, nach Unten-wischen oder einen Kl
 
 &lt;b&gt;Lang Drücken&lt;/b&gt;&lt;br&gt;
 Wenn du das Menü-Symbol oder die \"Navigationstaste\" lang drückst, wird der \"Schnell-Schalter-Dialog\" angezeigt. Wenn du lang auf das \"Lesezeichen-Icon\" drücken, wird der \"Filter-Dialog\" angezeigt.</string>
-    <string name="dialogHelp_overviewTitle">Übersicht</string>
-    <string name="dialogHelp_overviewText">Die \"Übersicht\" besteht aus zwei Teilen (Tab-Vorschau und persönliche Daten). Sie verfügt über ein eigenes Menü. In den Einstellungen kannst du das Verhalten der Übersicht ändern.&lt;br&gt;&lt;br&gt;
-
-&lt;b&gt;Tab-Vorschau&lt;/b&gt;&lt;br&gt;
-Es ist der obere Teil der \"Übersicht\". Um Tabs zu wechseln, klick einfach auf die Vorschau. Um einen Tab zu schließen, lang die Vorschau lange drücken. Wenn du die \"Tab-Vorschau\" nach oben wischt, öffnet sich dein persönlicher Inhalt.&lt;br&gt;&lt;br&gt;
-
-&lt;b&gt;Persönliche Inhalt&lt;/b&gt;&lt;br&gt;
-Hier gibt es drei Teile: die Startseite, deine Lesezeichen und dein Browserverlauf. Wenn du auf einen Eintrag lang drückst, erscheint ein Menü mit weiteren Möglichkeiten.
-    </string>
     <string name="dialogHelp_filterText">Du kannst deinen Lesezeichen mit Filter markieren. So kannst du deine Lesezeichengruppieren. Den Filterdialog kannst du öffnen durch langes Drücken auf das Lesezeichen-Icon. Wenn du einen Eintrag aktivierst, erscheint ein Dialog, in dem du den Namen des Filters bearbeiten kannst.
     </string>
     <!-- Dialog changelog -->
@@ -284,33 +254,6 @@ Bitte lies auch den Hilfedialog in der Anwendung.&lt;/b&gt;&lt;br&gt;&lt;br&gt;
 
     </string>
     <!-- License changelog -->
-    <string name="license_title">Copyright © 2017  von Gaukler Faun</string>
-    <string name="license_dialog">        Besuche für mehr Informationen die Projektseite auf Github: https://github.com/scoute-dich/Browser&lt;br&gt;&lt;br&gt;
-
-        Dieses Programm ist freie Software. Sie können es unter den Bedingungen der GNU General Public License, wie von
-        der Free Software Foundation veröffentlicht, weitergeben und/oder modifizieren, entweder gemäß Version 3 der Lizenz oder
-        (nach Ihrer Option) jeder späteren Version. Die Veröffentlichung dieses Programms erfolgt in der Hoffnung, daß es Ihnen
-        von Nutzen sein wird, aber OHNE IRGENDEINE GARANTIE, sogar ohne die implizite Garantie der MARKTREIFE oder der
-        VERWENDBARKEIT FÜR EINEN BESTIMMTEN ZWECK. Details finden Sie in der GNU General Public License. Sie sollten ein
-        Exemplar der GNU General Public License zusammen mit diesem Programm erhalten haben. Falls nicht,
-        siehe http://www.gnu.org/licenses.&lt;br&gt;&lt;br&gt;&lt;br&gt;
-
-        &lt;i&gt;Die folgenden Open Source Bibliotheken oder Projekte werden in dieser Software verwendet:&lt;/i&gt;&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;Material Design Icons&lt;/b&gt;&lt;br&gt;
-        SIL Open Font License, Version 1.1.&lt;br&gt;
-        Templarian&lt;br&gt;
-        &lt;i&gt;https://github.com/Templarian/MaterialDesign&lt;/i&gt;&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;Ninja&lt;/b&gt;&lt;br&gt;
-        Apache License Version 2.0&lt;br&gt;
-        Matthew Lee&lt;br&gt;
-        &lt;i&gt;http://git.io/vUrEh&lt;/i&gt;&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;SimpleEncryptionLib&lt;/b&gt;&lt;br&gt;
-        Apache License Version 2.0&lt;br&gt;
-        hummatli&lt;br&gt;
-        &lt;i&gt;https://github.com/hummatli/SimpleEncryptionLib</string>
     <string name="cont_dialog">        &lt;i&gt;Zuerst möchte ich mich bei allen Leuten bedanken, die in irgendeiner Weise an diesem Projekt mitgewirkt haben. Sie haben Themen eingereicht,
         übersetzt oder anderweitig geholfen. Auf folgenden Seiten können Sie ein aktives Mitglied dieser
         großen Community werden:&lt;/i&gt;&lt;br&gt;&lt;br&gt;

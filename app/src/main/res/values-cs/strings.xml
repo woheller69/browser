@@ -38,23 +38,17 @@
     <string name="menu_sc">Zkratka na ploše</string>
     <string name="menu_sort">Třídit podle …</string>
     <string name="menu_filter">Filtrovat podle …</string>
-    <string name="menu_share_screenshot">Sdílet snímek obrazovky</string>
     <string name="menu_share_link">Sdílet odkaz</string>
-    <string name="menu_save_screenshot">Uložit snímek obrazovky</string>
     <string name="menu_save_home">Uložit na plochu</string>
     <string name="menu_save_bookmark">Uložit jako záložku</string>
     <string name="menu_save_as">Uložit jako …</string>
     <string name="menu_save_pdf">Uložit jako PDF</string>
-    <string name="menu_share_pdf">Sdílet PDF</string>
     <string name="menu_shareClipboard">Kopírovat do schránky</string>
     <string name="menu_other_searchSite">Hledat na stránce</string>
-    <string name="menu_other_fileManager">Otevřít správce souborů</string>
     <string name="menu_other_info">O aplikaci \"FOSS Browser\"</string>
     <string name="menu_other_help">Nápověda</string>
     <!-- Dialog -->
-    <string name="dialog_toggle_reload">Obnovit</string>
     <string name="dialog_title_hint">Název:</string>
-    <string name="dialog_url_hint">URL:</string>
     <string name="dialog_extension_hint">Přípona (například: \".jpg\"):</string>
     <string name="dialog_sign_in_username">Uživatelské jméno</string>
     <string name="dialog_sign_in_password">Heslo</string>
@@ -102,16 +96,13 @@
     <string name="setting_summary_cookie">Povolit cookies. Cookies jsou malé textové soubory, které jsou uloženy ve vašem zařízení. Webové stránky     je používají např. k uložení uživatelských nastavení (např. nastavení vyhledávání). můžou však být použity ke sběru osobních
         uživatelských dat. Cookies třetích stran (ukládají uživatelská data pro zobrazení reklam), jsou vždy zakázány.</string>
     <string name="setting_title_whitelistCookie">Seznam povolených - Cookies</string>
-    <string name="setting_summary_whitelistCookie">Pokud cookies zakážete, můžete pomocí tohoto seznamu povolených povolit webům, kterým důvěřujete,         používat uložené cookies.</string>
     <string name="setting_title_javascript">JavaScript</string>
     <string name="setting_summary_javascript">Povolit JavaScript. Mnoho webových stránek potřebuje pro svou funkčnost JavaScript (nabídky,
         načítání a zobrazování obrázků, …). Je však také rizikem a může být použit k útokům.</string>
     <string name="setting_title_whitelistJS">Seznam povolených - JavaScript</string>
-    <string name="setting_summary_whitelistJS">Pokud JavaScript zakážete, můžete pomocí tohoto seznamu povolených povolit webům, kterým důvěřujete,         používat JavaScript.</string>
     <string name="setting_title_adblock">AdBlock</string>
     <string name="setting_summary_adblock">Zapněte AdBlock pro blokování obtěžujících reklam. Stránky se budou načítat rychleji.</string>
     <string name="setting_title_whitelist">Seznam povolených - AdBlock</string>
-    <string name="setting_summary_whitelist">Povolit těmto webům zobrazovat reklamy. Pokud jsou zapnuty funkce AdBlock, některé weby nefungují.</string>
     <string name="setting_title_location">Poloha</string>
     <string name="setting_summary_location">Povolit webům přístup k vaší poloze. Některé weby (jako Mapy Google pro navigaci)
         to potřebují mít zapnuté.</string>
@@ -121,7 +112,6 @@
     <string name="data_summary">Všechny soubory budou exportovány do adresáře „Android/data/de.baumann.browser/files/browser_backup/“
         na vaší SD kartě. Tento adresář bude SMAZÁN, když odinstalujetel „FOSS Browser“. Proto si vytvořte zálohu na bezpečném
         místě.</string>
-    <string name="clear_menu_done_all">Vše hotovo</string>
     <string name="clear_title_quit">Vymazat při ukončení aplikace</string>
     <string name="clear_summary_quit">Při každém ukončení aplikace „FOSS Browser“ budou všechna výše uvedená data smazána.</string>
     <string name="clear_title_cache">Vymazat mezipaměť</string>
@@ -173,9 +163,6 @@
     <string name="setting_overView">Přehled</string>
     <string name="setting_overView_onStart_title">Zobrazit při spuštění</string>
     <string name="setting_overView_onStart_summary">Otevře „Přehled“ při každém spuštění aplikace.</string>
-    <string name="setting_overView_hide_title">Skrýt náhledy karty</string>
-    <string name="setting_overView_hide_summary">V rozšířeném přehledu se náhled karty skryje. Pak budete mít více místa pro vaše
-    záložky.</string>
     <string name="setting_gestures">Gesta</string>
     <string name="setting_gestures_use_title">Použít gesta</string>
     <string name="setting_gestures_use_summary">Použijte gesta na Panelu nástrojů a „Navigační tlačítka“.</string>
@@ -215,7 +202,6 @@
     <string name="hint_database">Toto vymaže všechna vaše aktuální nastavení a data. Chcete pokračovat?</string>
     <!-- Others setting -->
     <string name="setting_title_others">Další</string>
-    <string name="setting_title_license">Licence</string>
     <string name="setting_title_appSettings">Nastavení aplikace</string>
     <string name="setting_summary_appSettings">Otevřete systémová nastavení pro „FOSS Browser“. Tam můžete
         v závislosti na vaší verzi Android udělit oprávnění, vymazat data aplikace atd.</string>
@@ -239,15 +225,7 @@
     <string name="toast_share_failed">Nelze sdílet tuto stránku</string>
     <string name="toast_start_download">Zahajování stahování</string>
     <string name="toast_wait_a_minute">Prosím, počkejte chvilku</string>
-    <string name="toast_titleConfirm_delete">Opravdu chcete odstranit položku?</string>
-    <string name="toast_titleConfirm_paste">Kopírovat data do schránky?</string>
-    <string name="toast_titleConfirm_pasteUN">Uživatelské jméno</string>
-    <string name="toast_titleConfirm_pastePW">Heslo</string>
-    <string name="toast_error">Jejda. Něco se pokazilo.</string>
-    <string name="toast_newTitle">Položka již existuje. Zadejte prosím nový název.</string>
-    <string name="toast_edit_successful">Úspěšně uloženo</string>
     <string name="toast_webview_forward">Nelze načíst další stránku</string>
-    <string name="toast_clear">Opravdu chcete odstranit?</string>
     <string name="toast_permission_sdCard">„FOSS Browser“ vyžaduje oprávnění „čtení a zápis do vašeho úložiště“. Toto
         je zapotřebí ke stahování souborů, pořizování snímků obrazovky a vytváření záloh vašich dat.</string>
     <string name="toast_permission_loc">„FOSS Browser“ vyžaduje oprávnění k „přístupu k vaší poloze“. To je vyžadováno od některých
@@ -276,18 +254,6 @@ vedle&lt;br&gt;&lt;br&gt;
         Pokud dlouze stisknete ikonu nabídky nebo „Navigační tlačítko“, zobrazí se „Rychlý přepínač dialogu“. Pokud dlouze
         stisknete „ikonu Záložky“, zobrazí se „Filtr dialogu“.
     </string>
-    <string name="dialogHelp_overviewTitle">Přehled</string>
-    <string name="dialogHelp_overviewText">        There are two parts in the \"Overview\" (tab preview and personal data). There is an extra menu. In the settings
-        you can change the behavior of the \"Overview\".&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;Tab preview&lt;/b&gt;&lt;br&gt;
-        It is the upper part of the \"Overview\". To change tabs just click the preview. To close a tab long press the
-        preview. If you swipe the tab preview up, your personal content will open.&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;Personal content&lt;/b&gt;&lt;br&gt;
-        There are three parts: the Startsite, your Bookmarks and your History. If you long click an entry
-        a menu with more options will appear.
-    </string>
     <string name="dialogHelp_filterText">        Záložky můžete označit filtry. Tímto způsobem můžete seskupovat své záložky. Můžete otevřít dialogové okno filtru
         dlouhým stisknutím ikony záložky. Pokud aktivujete položku, objeví se dialogové okno, kde můžete upravit název filtru.
     </string>
@@ -306,38 +272,6 @@ vedle&lt;br&gt;&lt;br&gt;
 
     </string>
     <!-- License changelog -->
-    <string name="license_title">Copyright © 2017  by Gaukler Faun</string>
-    <string name="license_dialog">        &lt;i&gt;For more information visit the project site on Github: https://github.com/scoute-dich/Browser&lt;/i&gt;&lt;br&gt;&lt;br&gt;
-
-        This program is free software: you can redistribute it and/or modify
-        it under the terms of the GNU General Public License as published by
-        the Free Software Foundation, either version 3 of the License, or
-        (at your option) any later version.
-
-        This program is distributed in the hope that it will be useful,
-        but WITHOUT ANY WARRANTY; without even the implied warranty of
-        MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-        GNU General Public License for more details.
-
-        You should have received a copy of the GNU General Public License
-        along with this program.  If not, see http://www.gnu.org/licenses.&lt;br&gt;&lt;br&gt;
-
-        &lt;i&gt;Following open source libraries or projects are used within this software:&lt;/i&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;Material Design Icons&lt;/b&gt;&lt;br&gt;
-        SIL Open Font License, Version 1.1.&lt;br&gt;
-        Templarian&lt;br&gt;
-        &lt;i&gt;https://github.com/Templarian/MaterialDesign&lt;/i&gt;&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;Ninja&lt;/b&gt;&lt;br&gt;
-        Apache License Version 2.0&lt;br&gt;
-        Matthew Lee&lt;br&gt;
-        &lt;i&gt;http://git.io/vUrEh&lt;/i&gt;&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;SimpleEncryptionLib&lt;/b&gt;&lt;br&gt;
-        Apache License Version 2.0&lt;br&gt;
-        hummatli&lt;br&gt;
-        &lt;i&gt;https://github.com/hummatli/SimpleEncryptionLib</string>
     <string name="cont_dialog">        &lt;i&gt;Nejprve bych chtěl poděkovat všem lidem, kteří přispěli jakýmkoli způsobem k tomuto projektu. Byly odeslány otázky,
         přeloženy nebo pomáhaly jakýmkoli jiným způsobem. Na následujících stránkách se můžete stát aktivním členem této
         skvělé komunity:&lt;/i&gt;&lt;br&gt;&lt;br&gt;

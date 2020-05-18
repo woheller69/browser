@@ -49,7 +49,6 @@ import de.baumann.browser.view.NinjaToast;
 public class BrowserUnit {
 
     public static final int PROGRESS_MAX = 100;
-    public static final String SUFFIX_PNG = ".png";
     private static final String SUFFIX_TXT = ".txt";
 
     public static final String MIME_TYPE_TEXT_PLAIN = "text/plain";
@@ -164,29 +163,6 @@ public class BrowserUnit {
         }
     }
 
-
-    public static boolean bitmap2File(Context context, Bitmap bitmap, String filename) {
-        try {
-            FileOutputStream fileOutputStream = context.openFileOutput(filename, Context.MODE_PRIVATE);
-            bitmap.compress(Bitmap.CompressFormat.PNG, 100, fileOutputStream);
-            fileOutputStream.flush();
-            fileOutputStream.close();
-        } catch (Exception e) {
-            return false;
-        }
-
-        return true;
-    }
-
-    public static Bitmap file2Bitmap(Context context, String filename) {
-        try {
-            FileInputStream fileInputStream = context.openFileInput(filename);
-            return BitmapFactory.decodeStream(fileInputStream);
-        } catch (Exception e) {
-            return null;
-        }
-    }
-
     public static void download(final Context context, final String url, final String contentDisposition, final String mimeType) {
 
         String text = context.getString(R.string.dialog_title_download) + " - " + URLUtil.guessFileName(url, contentDisposition, mimeType);
@@ -232,13 +208,6 @@ public class BrowserUnit {
                         Toast.makeText(context, R.string.toast_start_download, Toast.LENGTH_SHORT).show();
                     }
                 }
-                dialog.cancel();
-            }
-        });
-        Button action_cancel = dialogView.findViewById(R.id.action_cancel);
-        action_cancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
                 dialog.cancel();
             }
         });
@@ -340,7 +309,7 @@ public class BrowserUnit {
     public static void clearHome(Context context) {
         RecordAction action = new RecordAction(context);
         action.open(true);
-        action.clearHome();
+        action.clearTable(RecordUnit.TABLE_GRID);
         action.close();
     }
 
@@ -364,10 +333,21 @@ public class BrowserUnit {
         });
     }
 
+    public static void clearBookmark (Context context) {
+        RecordAction action = new RecordAction(context);
+        action.open(true);
+        action.clearTable(RecordUnit.TABLE_BOOKMARK);
+        action.close();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N_MR1) {
+            ShortcutManager shortcutManager = context.getSystemService(ShortcutManager.class);
+            Objects.requireNonNull(shortcutManager).removeAllDynamicShortcuts();
+        }
+    }
+
     public static void clearHistory(Context context) {
         RecordAction action = new RecordAction(context);
         action.open(true);
-        action.clearHistory();
+        action.clearTable(RecordUnit.TABLE_HISTORY);
         action.close();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N_MR1) {
             ShortcutManager shortcutManager = context.getSystemService(ShortcutManager.class);

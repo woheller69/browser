@@ -29,6 +29,7 @@ public class ClearService extends Service {
     }
 
     private void clear() {
+
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
         boolean clearCache = sp.getBoolean(getString(R.string.sp_clear_cache), false);
         boolean clearCookie = sp.getBoolean(getString(R.string.sp_clear_cookie), false);

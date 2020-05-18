@@ -8,14 +8,12 @@ import android.provider.Settings;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
-import android.text.SpannableStringBuilder;
 import android.text.method.LinkMovementMethod;
 import android.view.View;
 import android.widget.TextView;
 
 import androidx.preference.PreferenceFragmentCompat;
 
-import java.util.ArrayList;
 import java.util.Objects;
 
 import de.baumann.browser.activity.Settings_ClearActivity;
@@ -83,27 +81,11 @@ public class Fragment_settings extends PreferenceFragmentCompat implements Share
                 return false;
             }
         });
-        Objects.requireNonNull(findPreference("settings_license")).setOnPreferenceClickListener(new androidx.preference.Preference.OnPreferenceClickListener() {
-            @Override
-            public boolean onPreferenceClick(androidx.preference.Preference preference) {
-                showContributors = false;
-                showLicenseDialog(getString(R.string.license_title), getString(R.string.license_dialog));
-                return false;
-            }
-        });
         Objects.requireNonNull(findPreference("settings_community")).setOnPreferenceClickListener(new androidx.preference.Preference.OnPreferenceClickListener() {
             @Override
             public boolean onPreferenceClick(androidx.preference.Preference preference) {
                 showContributors = true;
                 showLicenseDialog(getString(R.string.setting_title_community), getString(R.string.cont_dialog));
-                return false;
-            }
-        });
-        Objects.requireNonNull(findPreference("settings_license")).setOnPreferenceClickListener(new androidx.preference.Preference.OnPreferenceClickListener() {
-            @Override
-            public boolean onPreferenceClick(androidx.preference.Preference preference) {
-                showContributors = false;
-                showLicenseDialog(getString(R.string.license_title), getString(R.string.license_dialog));
                 return false;
             }
         });
@@ -118,7 +100,8 @@ public class Fragment_settings extends PreferenceFragmentCompat implements Share
         Objects.requireNonNull(findPreference("settings_help")).setOnPreferenceClickListener(new androidx.preference.Preference.OnPreferenceClickListener() {
             @Override
             public boolean onPreferenceClick(androidx.preference.Preference preference) {
-                HelperUnit.show_dialogHelp(getActivity());
+                showContributors = false;
+                showLicenseDialog(getString(R.string.dialogHelp_tipTitle), getString(R.string.dialogHelp_tipText));
                 return false;
             }
         });

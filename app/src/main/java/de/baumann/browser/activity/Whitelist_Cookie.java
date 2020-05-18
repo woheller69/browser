@@ -1,17 +1,19 @@
 package de.baumann.browser.activity;
 
-import android.content.Context;
 import android.os.Bundle;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -24,12 +26,14 @@ import de.baumann.browser.Ninja.R;
 import de.baumann.browser.unit.BrowserUnit;
 import de.baumann.browser.unit.HelperUnit;
 import de.baumann.browser.unit.RecordUnit;
-import de.baumann.browser.view.Adapter_Whitelist;
+import de.baumann.browser.view.WhitelistAdapter;
 import de.baumann.browser.view.NinjaToast;
 
 public class Whitelist_Cookie extends AppCompatActivity {
-    private Adapter_Whitelist adapter;
+
+    private WhitelistAdapter adapter;
     private List<String> list;
+    private Cookie cookie;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -42,6 +46,8 @@ public class Whitelist_Cookie extends AppCompatActivity {
         setSupportActionBar(toolbar);
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
+        cookie = new Cookie(Whitelist_Cookie.this);
+
         RecordAction action = new RecordAction(this);
         action.open(false);
         list = action.listDomains(RecordUnit.TABLE_COOKIE);
@@ -50,7 +56,23 @@ public class Whitelist_Cookie extends AppCompatActivity {
         ListView listView = findViewById(R.id.whitelist);
         listView.setEmptyView(findViewById(R.id.whitelist_empty));
 
-        adapter = new Adapter_Whitelist(this, list);
+        adapter = new WhitelistAdapter(this, list){
+            @Override
+            public View getView (final int position, View convertView, @NonNull ViewGroup parent) {
+                View v = super.getView(position, convertView, parent);
+                ImageButton whitelist_item_cancel = v.findViewById(R.id.whitelist_item_cancel);
+                whitelist_item_cancel.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        cookie.removeDomain(list.get(position));
+                        list.remove(position);
+                        notifyDataSetChanged();
+                        NinjaToast.show(Whitelist_Cookie.this, R.string.toast_delete_successful);
+                    }
+                });
+                return v;
+            }
+        };
         listView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
 
@@ -83,12 +105,6 @@ public class Whitelist_Cookie extends AppCompatActivity {
     }
 
     @Override
-    public void onPause() {
-        hideSoftInput(findViewById(R.id.whitelist_edit));
-        super.onPause();
-    }
-
-    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_clear, menu);
         return super.onCreateOptionsMenu(menu);
@@ -116,13 +132,6 @@ public class Whitelist_Cookie extends AppCompatActivity {
                         dialog.cancel();
                     }
                 });
-                Button action_cancel = dialogView.findViewById(R.id.action_cancel);
-                action_cancel.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        dialog.cancel();
-                    }
-                });
                 dialog.setContentView(dialogView);
                 dialog.show();
 
@@ -131,12 +140,5 @@ public class Whitelist_Cookie extends AppCompatActivity {
                 break;
         }
         return true;
-    }
-
-    private void hideSoftInput(View view) {
-        view.clearFocus();
-        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-        assert imm != null;
-        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 }

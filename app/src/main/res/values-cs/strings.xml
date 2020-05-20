@@ -8,6 +8,7 @@
     <string name="album_title_bookmarks">Záložky</string>
     <string name="album_title_history">Historie</string>
     <string name="album_title_home">Plocha</string>
+    <string name="album_title_tab">Opened Tabs</string>
     <string name="album_title_files">Soubory</string>
     <string name="search_hint">Hledat</string>
     <string name="color_red">Červená</string>
@@ -96,6 +97,7 @@
     <string name="setting_summary_cookie">Povolit cookies. Cookies jsou malé textové soubory, které jsou uloženy ve vašem zařízení. Webové stránky     je používají např. k uložení uživatelských nastavení (např. nastavení vyhledávání). můžou však být použity ke sběru osobních
         uživatelských dat. Cookies třetích stran (ukládají uživatelská data pro zobrazení reklam), jsou vždy zakázány.</string>
     <string name="setting_title_whitelistCookie">Seznam povolených - Cookies</string>
+    <string name="setting_title_whitelistRemote">Remote whitelist</string>
     <string name="setting_title_javascript">JavaScript</string>
     <string name="setting_summary_javascript">Povolit JavaScript. Mnoho webových stránek potřebuje pro svou funkčnost JavaScript (nabídky,
         načítání a zobrazování obrázků, …). Je však také rizikem a může být použit k útokům.</string>
@@ -155,6 +157,7 @@
     <string name="setting_summary_nav_pos_right">Vpravo</string>
     <string name="setting_summary_nav_pos_left">Vlevo</string>
     <string name="setting_summary_nav_pos_center">Uprostřed</string>
+    <string name="setting_summary_nav_pos_null">Never show</string>
     <string name="setting_summary_tab">Co by mělo být uvedeno při spuštění „Přehledu“? Úvodní stránka, vaše záložky, …</string>
     <string name="setting_title_confirm_exit">Potvrdit ukončení prohlížeče</string>
     <string name="setting_summary_confirm_exit">Okno potvrzení při ukončení prohlížeče.</string>

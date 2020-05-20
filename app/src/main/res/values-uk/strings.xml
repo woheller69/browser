@@ -8,6 +8,7 @@
     <string name="album_title_bookmarks">Закладка</string>
     <string name="album_title_history">Історія</string>
     <string name="album_title_home">Головна</string>
+    <string name="album_title_tab">Opened Tabs</string>
     <string name="album_title_files">Файл</string>
     <string name="search_hint">Пошук</string>
     <string name="color_red">Червоний</string>
@@ -92,6 +93,7 @@
     <string name="setting_summary_cookie_delete">Якщо увімкнено, всі cookies будуть видалені. Також файли cookie надійних веб-сайтів.</string>
     <string name="setting_summary_cookie">Увімкнути файли cookie. Файли cookie являють собою невеликі текстові файли, які зберігаються на вашому пристрої. Веб-сайти використовують їх, наприклад, для зберігання користувацьких налаштувань (наприклад, налаштувань пошуку). Але вони також можуть бути використані для збору особистих даних користувача. Сторонні файли cookie (вони збирають дані користувача для реклами) завжди вимкнені.</string>
     <string name="setting_title_whitelistCookie">Білий список куки</string>
+    <string name="setting_title_whitelistRemote">Remote whitelist</string>
     <string name="setting_title_javascript">JavaScript</string>
     <string name="setting_summary_javascript">Увімкнути JavaScript. Багатьом веб-сайтам потрібен JavaScript для їх функціональності (меню, завантаження і відображення зображень). Але вони також являють собою ризик і можуть бути використані для атак.</string>
     <string name="setting_title_whitelistJS">Білий список JavaScript</string>
@@ -149,6 +151,7 @@
     <string name="setting_summary_nav_pos_right">Праворуч</string>
     <string name="setting_summary_nav_pos_left">Зліва</string>
     <string name="setting_summary_nav_pos_center">По центру</string>
+    <string name="setting_summary_nav_pos_null">Never show</string>
     <string name="setting_summary_tab">Що повинно відображатися при запуску \"FOSS Browser\"? Початкова сторінка, закладки …</string>
     <string name="setting_title_confirm_exit">Підтвердити вихід з браузера</string>
     <string name="setting_summary_confirm_exit">Діалогове вікно підтвердження при закритті браузера.</string>

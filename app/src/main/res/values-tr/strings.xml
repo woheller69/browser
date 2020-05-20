@@ -8,6 +8,7 @@
     <string name="album_title_bookmarks">Yer imleri</string>
     <string name="album_title_history">Geçmiş</string>
     <string name="album_title_home">Ana sayfa</string>
+    <string name="album_title_tab">Opened Tabs</string>
     <string name="album_title_files">Dosyalar</string>
     <string name="search_hint">Ara</string>
     <string name="color_red">Kırmızı</string>
@@ -98,6 +99,7 @@
 	bunları örneğin kullanıcı ayarlarını saklamak için kullanır (örneğin, arama ayarları). Ancak kişisel kullanıcı verilerini toplamak 
 	için de kullanılabilirler.  Üçüncü taraf çerezleri (reklam için kullanıcı verilerini toplar) her zaman devre dışı bırakılır.</string>
     <string name="setting_title_whitelistCookie">Çerez beyaz listesi</string>
+    <string name="setting_title_whitelistRemote">Remote whitelist</string>
     <string name="setting_title_javascript">JavaScript</string>
     <string name="setting_summary_javascript">JavaScript\'i etkinleştirin. Birçok web sitesinin işlevselliği için Javascript\'e ihtiyacı vardır 
 	(menüler, resimler yükleme ve görüntüleme, …). Ancak bunlar aynı zamanda bir risktir ve saldırılar için kullanılabilir.</string>
@@ -158,6 +160,7 @@
     <string name="setting_summary_nav_pos_right">Sağ</string>
     <string name="setting_summary_nav_pos_left">Sol</string>
     <string name="setting_summary_nav_pos_center">Orta</string>
+    <string name="setting_summary_nav_pos_null">Never show</string>
     <string name="setting_summary_tab">\"Genel Bakış\" başlangıcında ne gösterilmelidir? Başlangıç sayfası, Yer imleriniz, …</string>
     <string name="setting_title_confirm_exit">Tarayıcı çıkışını onayla</string>
     <string name="setting_summary_confirm_exit">Tarayıcıyı kapatırken onay iletişim kutusu gösterilir.</string>

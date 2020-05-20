@@ -8,6 +8,7 @@
     <string name="album_title_bookmarks">Lesezeichen</string>
     <string name="album_title_history">Verlauf</string>
     <string name="album_title_home">Startseite</string>
+    <string name="album_title_tab">Opened Tabs</string>
     <string name="album_title_files">Dateien</string>
     <string name="search_hint">Suche</string>
     <string name="color_red">Rot</string>
@@ -95,6 +96,7 @@ Dies zu deaktivieren ist sicherer, schneller und spart Datenvolumen. Manche Inha
     <string name="setting_summary_cookie_delete">Falls aktiviert, werden alle Cookies gelöscht. Auch die von vertrauenswürdigen Websites.</string>
     <string name="setting_summary_cookie">Aktiviere Cookies. Cookies sind kleine Textdateien, die auf deinem Gerät gespeichert werden. Websites können sie z.B. nutzen, um die Benutzereinstellungen (z.B. bei Suchmaschinen) zu speichern. Aber sie können auch dazu genutzt werden, um persönliche Nutzerdaten zu sammeln. Cookies von Dritten (sie sammeln zu Werbezwecken Nutzerdaten) sind immer deaktiviert.</string>
     <string name="setting_title_whitelistCookie">Cookie-Positivliste</string>
+    <string name="setting_title_whitelistRemote">Remote whitelist</string>
     <string name="setting_title_javascript">JavaScript</string>
     <string name="setting_summary_javascript">Aktiviere JavaScript. Viele Websites brauchen JavaScript für ihre Funktionsfähigkeit (Menüs, Laden und Darstellen von Bildern, …). Aber es stellt auch ein Sicherheitsrisiko dar und kann für Angriffe benutzt werden.</string>
     <string name="setting_title_whitelistJS">JavaScript-Positivliste</string>
@@ -147,6 +149,7 @@ Dies zu deaktivieren ist sicherer, schneller und spart Datenvolumen. Manche Inha
     <string name="setting_summary_nav_pos_right">Rechts</string>
     <string name="setting_summary_nav_pos_left">Links</string>
     <string name="setting_summary_nav_pos_center">Mitte</string>
+    <string name="setting_summary_nav_pos_null">Never show</string>
     <string name="setting_summary_tab">Was soll beim Start der \"Übersicht\" angezeigt werden? Die Startseite, deine Lesezeichen, …</string>
     <string name="setting_title_confirm_exit">Verlassen des Browsers bestätigen</string>
     <string name="setting_summary_confirm_exit">Bestätigungsdialog beim Schließen des Browsers.</string>

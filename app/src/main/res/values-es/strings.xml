@@ -8,6 +8,7 @@
     <string name="album_title_bookmarks">Marcadores</string>
     <string name="album_title_history">Historial</string>
     <string name="album_title_home">Inicio</string>
+    <string name="album_title_tab">Opened Tabs</string>
     <string name="album_title_files">Archivos</string>
     <string name="search_hint">Búsqueda</string>
     <string name="color_red">Rojo</string>
@@ -92,6 +93,7 @@
     <string name="setting_summary_cookie_delete">Si está activado, se borrarán todas las cookies. Incluyendo las de sitios web de confianza.</string>
     <string name="setting_summary_cookie">Habilitar cookies. Son archivos de texto pequeños, que se almacenan en el dispositivo. Los sitios web pueden utilizarlas para almacenar la configuración del usuario (ej. conf. de búsqueda). Pero también para recopilar datos personales. Las cookies de terceros (publicitarias) siempre están deshabilitadas.</string>
     <string name="setting_title_whitelistCookie">Lista blanca de cookies</string>
+    <string name="setting_title_whitelistRemote">Remote whitelist</string>
     <string name="setting_title_javascript">JavaScript</string>
     <string name="setting_summary_javascript">Activar JavaScript. Muchos sitios web lo necesitan (ej. menús, carga y visualización de imágenes). Pero también puede ser utilizado para explotar vulnerabilidades.</string>
     <string name="setting_title_whitelistJS">Lista blanca de JavaScript</string>
@@ -146,6 +148,7 @@ Puede disponer una página en blanco escribiendo \"about:blank\".</string>
     <string name="setting_summary_nav_pos_right">Derecha</string>
     <string name="setting_summary_nav_pos_left">Izquierda</string>
     <string name="setting_summary_nav_pos_center">Centro</string>
+    <string name="setting_summary_nav_pos_null">Never show</string>
     <string name="setting_summary_tab">Lo que debe mostrarse en la vista general. La página de inicio, los marcadores, …</string>
     <string name="setting_title_confirm_exit">Confirmar salida del navegador</string>
     <string name="setting_summary_confirm_exit">Mostrar un diálogo de confirmación al cerrar el navegador.</string>

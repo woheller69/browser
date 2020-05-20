@@ -8,6 +8,7 @@
     <string name="album_title_bookmarks">Signets</string>
     <string name="album_title_history">Historique</string>
     <string name="album_title_home">Accueil</string>
+    <string name="album_title_tab">Onglets ouverts</string>
     <string name="album_title_files">Fichiers</string>
     <string name="search_hint">Chercher</string>
     <string name="color_red">Rouge</string>
@@ -97,6 +98,7 @@
     utilisent par exemple pour stocker les paramètres utilisateur (par exemple, les paramètres de recherche). Mais ils pourraient aussi être utilisés pour collecter des infos personnelles
         ou données d\'utilisateur. Les cookies tiers (ils collectent les données des utilisateurs pour la publicité) sont toujours désactivés.</string>
     <string name="setting_title_whitelistCookie">Cookie liste blanche</string>
+    <string name="setting_title_whitelistRemote">Liste blanche à distance</string>
     <string name="setting_title_javascript">JavaScript</string>
     <string name="setting_summary_javascript">Activer JavaScript. De nombreux sites Web ont besoin de JavaScript pour fonctionner (menus,
         chargement et affichage d\'images, …). Mais ils sont aussi un risque et peuvent être utilisés pour des attaques.</string>
@@ -157,6 +159,7 @@
     <string name="setting_summary_nav_pos_right">Droite</string>
     <string name="setting_summary_nav_pos_left">Gauche</string>
     <string name="setting_summary_nav_pos_center">Milieu</string>
+    <string name="setting_summary_nav_pos_null">Ne jamais montrer</string>
     <string name="setting_summary_tab">Que doit-on montrer au début de la \"Vue d\'ensemble\"? La page d\'accueil, signets, …</string>
     <string name="setting_title_confirm_exit">Confirmer pour quitter</string>
     <string name="setting_summary_confirm_exit">Fenêtre de confirmation avant fermeture du navigateur.</string>
@@ -192,10 +195,10 @@
     <string name="export_whitelistAdBlock">exporter liste blanche AdBlock</string>
     <string name="setting_title_export_whitelistJS">Exporter la liste blanche JavaScript</string>
     <string name="setting_title_import_whitelistJS">Importer la liste blanche JavaScript</string>
-    <string name="export_whitelistJS">export_whitelist_Javascript</string>
+    <string name="export_whitelistJS">exporter la liste blanche Javascript</string>
     <string name="setting_title_export_whitelistCookie">Exporter la liste blanche des cookies</string>
     <string name="setting_title_import_whitelistCookie">Importer une liste blanche de cookies</string>
-    <string name="export_whitelistCookie">export_whitelist_Cookie</string>
+    <string name="export_whitelistCookie">exporter la liste blanche Cookies</string>
     <string name="setting_title_export_appData">Exporter les données de l\'application</string>
     <string name="setting_title_import_appData">Importer les données de l\'application</string>
     <string name="setting_summary_export_appData">Exporter les données de l\'application (page d\'accueil + aperçus, historique, signets)

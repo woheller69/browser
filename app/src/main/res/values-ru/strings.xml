@@ -8,6 +8,7 @@
     <string name="album_title_bookmarks">Закладки</string>
     <string name="album_title_history">История</string>
     <string name="album_title_home">Главная</string>
+    <string name="album_title_tab">Opened Tabs</string>
     <string name="album_title_files">Файлы</string>
     <string name="search_hint">Поиск</string>
     <string name="color_red">Красный</string>
@@ -92,6 +93,7 @@
     <string name="setting_summary_cookie_delete">Если включено, все cookies будут удалены. Также файлы cookie надежных веб-сайтов.</string>
     <string name="setting_summary_cookie">Включить файлы cookie. Файлы cookie представляют собой небольшие текстовые файлы, которые хранятся на вашем устройстве. Веб-сайты используют их, например, для хранения пользовательских настроек (например, настроек поиска). Но они также могут использоваться для сбора личных данных пользователя. Сторонние файлы cookie (они собирают данные пользователя для рекламы) всегда отключены.</string>
     <string name="setting_title_whitelistCookie">Белый список куки</string>
+    <string name="setting_title_whitelistRemote">Remote whitelist</string>
     <string name="setting_title_javascript">JavaScript</string>
     <string name="setting_summary_javascript">Включить JavaScript. Многим веб-сайтам нужен JavaScript для их функциональности (меню, загрузка и отображение изображений, …). Но они также представляют собой риск и могут быть использованы для атак.</string>
     <string name="setting_title_whitelistJS">Белый список JavaScript</string>
@@ -146,6 +148,7 @@
     <string name="setting_summary_nav_pos_right">Справа</string>
     <string name="setting_summary_nav_pos_left">Cлева</string>
     <string name="setting_summary_nav_pos_center">По центру</string>
+    <string name="setting_summary_nav_pos_null">Never show</string>
     <string name="setting_summary_tab">Что должно отображаться при запуске \"FOSS Browser\"? Начальная страница, закладки, …</string>
     <string name="setting_title_confirm_exit">Подтвердить выход из браузера</string>
     <string name="setting_summary_confirm_exit">Диалоговое окно подтверждения при закрытии браузера.</string>

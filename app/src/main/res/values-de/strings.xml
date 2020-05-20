@@ -8,7 +8,7 @@
     <string name="album_title_bookmarks">Lesezeichen</string>
     <string name="album_title_history">Verlauf</string>
     <string name="album_title_home">Startseite</string>
-    <string name="album_title_tab">Opened Tabs</string>
+    <string name="album_title_tab">Geöffnete Tabs</string>
     <string name="album_title_files">Dateien</string>
     <string name="search_hint">Suche</string>
     <string name="color_red">Rot</string>
@@ -23,7 +23,7 @@
     <string name="color_brown">Braun</string>
     <string name="color_grey">Grau</string>
     <!-- Menu -->
-    <string name="main_menu_tabPreview">Tabvorschau öffnen</string>
+    <string name="main_menu_tabPreview">Übersicht öffnen</string>
     <string name="main_menu_new_tab">Neuer Tab (Hintergrund)</string>
     <string name="main_menu_new_tabOpen">Neuer Tab (Vordergrund)</string>
     <string name="main_omnibox_input_hint">Suchen oder URL eingeben</string>
@@ -53,8 +53,8 @@
     <string name="dialog_extension_hint">Dateiendung (z.B.: \".jpg\"):</string>
     <string name="dialog_sign_in_username">Benutzername</string>
     <string name="dialog_sign_in_password">Passwort</string>
-    <string name="dialog_title_download">Möchtest du die Datei herunterladen?</string>
-    <string name="dialog_content_resubmission">Möchtest du die Daten erneut senden?</string>
+    <string name="dialog_title_download">Datei herunterladen?</string>
+    <string name="dialog_content_resubmission">Daten erneut senden?</string>
     <string name="dialog_content_ssl_error">Das Zertifikat der Seite ist nicht vertrauenswürdig. Trotzdem fortfahren?</string>
     <string name="dialog_sortName">Nach Namen sortieren</string>
     <string name="dialog_sortIcon">Nach Icon sortieren</string>
@@ -81,7 +81,7 @@
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_title_inverted">Invertierte Farben</string>
     <string name="setting_summary_inverted">Wenn aktiviert, werden Inhalte in einem invertierten schwarz/weiß-Modus
-        dargestellt. Dies ist eine Art \"Nachtmodus\".</string>
+        dargestellt.</string>
     <string name="setting_title_font">Schriftgröße</string>
     <string name="setting_summary_font">Ändere die Schriftgröße für die Darstellung von Websites.</string>
     <string name="setting_title_remote">Entfernte Inhalte</string>
@@ -95,14 +95,14 @@ Dies zu deaktivieren ist sicherer, schneller und spart Datenvolumen. Manche Inha
     <string name="setting_title_cookie">Cookies</string>
     <string name="setting_summary_cookie_delete">Falls aktiviert, werden alle Cookies gelöscht. Auch die von vertrauenswürdigen Websites.</string>
     <string name="setting_summary_cookie">Aktiviere Cookies. Cookies sind kleine Textdateien, die auf deinem Gerät gespeichert werden. Websites können sie z.B. nutzen, um die Benutzereinstellungen (z.B. bei Suchmaschinen) zu speichern. Aber sie können auch dazu genutzt werden, um persönliche Nutzerdaten zu sammeln. Cookies von Dritten (sie sammeln zu Werbezwecken Nutzerdaten) sind immer deaktiviert.</string>
-    <string name="setting_title_whitelistCookie">Cookie-Positivliste</string>
-    <string name="setting_title_whitelistRemote">Remote whitelist</string>
+    <string name="setting_title_whitelistCookie">Cookie Ausnahmen</string>
+    <string name="setting_title_whitelistRemote">Entfernte Inhalte Ausnahmen</string>
     <string name="setting_title_javascript">JavaScript</string>
     <string name="setting_summary_javascript">Aktiviere JavaScript. Viele Websites brauchen JavaScript für ihre Funktionsfähigkeit (Menüs, Laden und Darstellen von Bildern, …). Aber es stellt auch ein Sicherheitsrisiko dar und kann für Angriffe benutzt werden.</string>
-    <string name="setting_title_whitelistJS">JavaScript-Positivliste</string>
+    <string name="setting_title_whitelistJS">JavaScript Ausnahmen</string>
     <string name="setting_title_adblock">AdBlock</string>
     <string name="setting_summary_adblock">Aktiviere AdBlock, um lästige Werbung zu blockieren. Websites laden auch schneller, falls eingeschaltet.</string>
-    <string name="setting_title_whitelist">AdBlock-Positivliste</string>
+    <string name="setting_title_whitelist">AdBlock Ausnahmen</string>
     <string name="setting_title_location">Standortbestimmung</string>
     <string name="setting_summary_location">Websites gestatten, auf den Standort zuzugreifen. Einige Websites (wie für Navigation Google Maps) benötigen dies aktiviert.</string>
     <string name="setting_title_history">Verlauf</string>
@@ -116,13 +116,13 @@ Dies zu deaktivieren ist sicherer, schneller und spart Datenvolumen. Manche Inha
     <string name="clear_title_history">Verlauf löschen</string>
     <string name="clear_title_indexedDB">\"Indizierte Datenbanken\" und \"Lokalen WebView-Speicher\" löschen</string>
     <string name="clear_title_deleteDatabase">Datenbank löschen</string>
-    <string name="clear_summary_deleteDatabase">Die gesamte Datenbank löschen (Startseite, Lesezeichen, Verlauf und alle Positivlisten).</string>
+    <string name="clear_summary_deleteDatabase">Die gesamte Datenbank löschen (Startseite, Lesezeichen, Verlauf und alle Ausnahmen).</string>
     <!-- App setting -->
     <string name="setting_title_app">App-Einstellungen</string>
     <string name="setting_title_ui">Verhalten/Oberfläche</string>
     <string name="setting_title_data">Sicherung</string>
     <string name="setting_summary_ui">Das Verhalten und die Benutzeroberfläche ändern, um mit deinen Vorlieben übereinzustimmen.</string>
-    <string name="setting_summary_data">Verschiedene App-Daten importieren und exportieren (Positivlisten, Lesezeichen).</string>
+    <string name="setting_summary_data">Verschiedene App-Daten importieren und exportieren (Ausnahmen, Lesezeichen,…).</string>
     <string name="setting_filter">Lesezeichen-Filter</string>
     <string name="setting_filter_summary">Um den Filterdialog anzuzeigen, lang auf das Lesezeichenicon in der Übersicht drücken. Entscheide, welche Filter du nutzen wirst.</string>
     <string name="setting_title_fav">Favorit</string>
@@ -135,7 +135,7 @@ Dies zu deaktivieren ist sicherer, schneller und spart Datenvolumen. Manche Inha
     <string name="setting_title_hideToolbar">Toolbar verstecken</string>
     <string name="setting_summary_hide">Benutze den ganzen Bildschirm beim Scrollen durch Websites. Wenn du die \"Zurück-Taste\" drückst, verlässt du den Vollbildmodus.</string>
     <string name="setting_theme">Theme</string>
-    <string name="setting_theme_summary">App-Theme festlegen.</string>
+    <string name="setting_theme_summary">Lege das App-Design fest.</string>
     <string name="setting_theme_system">System-Theme</string>
     <string name="setting_theme_light">Helles Theme</string>
     <string name="setting_theme_dark">Dunkles Theme</string>
@@ -149,7 +149,7 @@ Dies zu deaktivieren ist sicherer, schneller und spart Datenvolumen. Manche Inha
     <string name="setting_summary_nav_pos_right">Rechts</string>
     <string name="setting_summary_nav_pos_left">Links</string>
     <string name="setting_summary_nav_pos_center">Mitte</string>
-    <string name="setting_summary_nav_pos_null">Never show</string>
+    <string name="setting_summary_nav_pos_null">Niemals anzeigen</string>
     <string name="setting_summary_tab">Was soll beim Start der \"Übersicht\" angezeigt werden? Die Startseite, deine Lesezeichen, …</string>
     <string name="setting_title_confirm_exit">Verlassen des Browsers bestätigen</string>
     <string name="setting_summary_confirm_exit">Bestätigungsdialog beim Schließen des Browsers.</string>
@@ -180,14 +180,14 @@ Dies zu deaktivieren ist sicherer, schneller und spart Datenvolumen. Manche Inha
     <string name="setting_gesture_09">Neuen Tab öffnen</string>
     <string name="setting_gesture_10">Tab schließen</string>
     <!-- Data -->
-    <string name="setting_title_export_whitelist">AdBlock-Positivliste exportieren</string>
-    <string name="setting_title_import_whitelist">AdBlock-Positivliste importieren</string>
+    <string name="setting_title_export_whitelist">AdBlock Ausnahmen exportieren</string>
+    <string name="setting_title_import_whitelist">AdBlock Ausnahmen importieren</string>
     <string name="export_whitelistAdBlock">export_whitelist_AdBlock</string>
-    <string name="setting_title_export_whitelistJS">JavaScript-Positivliste exportieren</string>
-    <string name="setting_title_import_whitelistJS">JavaScript-Positivliste importieren</string>
+    <string name="setting_title_export_whitelistJS">JavaScript Ausnahmen exportieren</string>
+    <string name="setting_title_import_whitelistJS">JavaScript Ausnahmen importieren</string>
     <string name="export_whitelistJS">export_whitelist_Javascript</string>
-    <string name="setting_title_export_whitelistCookie">Cookie-Positivliste exportieren</string>
-    <string name="setting_title_import_whitelistCookie">Cookie-Positivliste importieren</string>
+    <string name="setting_title_export_whitelistCookie">Cookie Ausnahmen exportieren</string>
+    <string name="setting_title_import_whitelistCookie">Cookie Ausnahmen importieren</string>
     <string name="export_whitelistCookie">export_whitelist_Cookie</string>
     <string name="setting_title_export_appData">App-Daten exportieren</string>
     <string name="setting_title_import_appData">App-Daten importieren</string>

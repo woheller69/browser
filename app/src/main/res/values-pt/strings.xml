@@ -8,6 +8,7 @@
     <string name="album_title_bookmarks">Marcadores</string>
     <string name="album_title_history">Histórico</string>
     <string name="album_title_home">Início</string>
+    <string name="album_title_tab">Opened Tabs</string>
     <string name="album_title_files">Ficheiros</string>
     <string name="search_hint">Pesquisar</string>
     <string name="color_red">Vermelho</string>
@@ -92,8 +93,9 @@
     <string name="setting_summary_cookie_delete">Se ativar a opção, todos os cookies serão apagados. Os cookies de sites fiáveis também serão apagados.</string>
     <string name="setting_summary_cookie">Ativa a utilização de cookies. Os cookies são pequenos ficheiros de texto guardados no seu dispositivo. Os sites podem utilizar cookies para guardar definições do utilizador (por exemplo, nas pesquisas web). Mas os cookies também podem ser utilizados para obter dados pessoais e privados. Os cookies de terceiros (recolhem dados para mostrar anúncios) estarão sempre desativados.</string>
     <string name="setting_title_whitelistCookie">Cookies permitidos</string>
+    <string name="setting_title_whitelistRemote">Remote whitelist</string>
     <string name="setting_title_javascript">JavaScript</string>
-    <string name="setting_summary_javascript">Ativa a utilização de JavaScript. Alguns sites necessitam de executar JavaScript para as suas funcionalidades (menus, carregamento e exibição de imagens…). Mas são também um risco e podem ser utilizados para ataques.</string>
+    <string name="setting_summary_javascript">Ativa a utilização de JavaScript. Alguns sites necessitam de executar JavaScript para as suas funcionalidades (menus, carregamento e exibição de imagens...). Mas são também um risco e podem ser utilizados para ataques.</string>
     <string name="setting_title_whitelistJS">Lista branca JavaScript</string>
     <string name="setting_title_adblock">AdBlock</string>
     <string name="setting_summary_adblock">Ativar AdBlock para bloquear os anúncios. Se ativa, os sites são carregados mais rapidamente.</string>
@@ -144,6 +146,7 @@
     <string name="setting_summary_nav_pos_right">Direita</string>
     <string name="setting_summary_nav_pos_left">Esquerda</string>
     <string name="setting_summary_nav_pos_center">Centro</string>
+    <string name="setting_summary_nav_pos_null">Never show</string>
     <string name="setting_summary_tab">O que deve ser mostrado na \"Vista global\"? Página inicial, marcadores…</string>
     <string name="setting_title_confirm_exit">Confirmar ao sair</string>
     <string name="setting_summary_confirm_exit">Mostrar diálogo para confirmar o fecho do navegador.</string>

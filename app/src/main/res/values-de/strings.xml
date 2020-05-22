@@ -193,7 +193,7 @@ Dies zu deaktivieren ist sicherer, schneller und spart Datenvolumen. Manche Inha
     <string name="setting_title_import_appData">App-Daten importieren</string>
     <string name="setting_summary_export_appData">Exportiere App-Daten (Startpage &amp; Vorschauen, Verlauf, Lesezeichen) und deine persönlichen Einstellungen.</string>
     <string name="title_appData">App-Daten</string>
-    <string name="hint_database">Dies löscht alle aktuellen Einstellungen und Daten. Willst du fortfahren?</string>
+    <string name="hint_database">Daten werden gelöscht. Willst du fortfahren?</string>
     <!-- Others setting -->
     <string name="setting_title_others">Sonstiges</string>
     <string name="setting_title_appSettings">App-Einstellungen</string>

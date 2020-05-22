@@ -82,11 +82,9 @@ class AlbumItem {
         TypedValue typedValue = new TypedValue();
         Resources.Theme theme = context.getTheme();
         theme.resolveAttribute(android.R.attr.textColorPrimary, typedValue, true);
-        @SuppressLint("Recycle") TypedArray arr =
-                context.obtainStyledAttributes(typedValue.data, new int[]{
-                        android.R.attr.textColorPrimary});
+        @SuppressLint("Recycle")
+        TypedArray arr = context.obtainStyledAttributes(typedValue.data, new int[]{android.R.attr.textColorPrimary});
         int primaryColor = arr.getColor(0, -1);
-
         albumTitle.setTextColor(primaryColor);
     }
 }

@@ -27,7 +27,7 @@ public class Record {
     }
 
     private int ordinal;
-    public int getOrdinal() {
+    int getOrdinal() {
         return ordinal;
     }
 

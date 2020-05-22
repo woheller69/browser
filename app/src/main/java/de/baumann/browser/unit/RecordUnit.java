@@ -7,6 +7,7 @@ public class RecordUnit {
     public static final String TABLE_COOKIE = "COOKIE";
     public static final String TABLE_REMOTE = "REMOTE";
     public static final String TABLE_GRID = "GRID";
+    public static final String TABLE_TAB = "TAB";
 
     public static final String TABLE_BOOKMARK = "BOOKAMRK";
 
@@ -27,6 +28,14 @@ public class RecordUnit {
 
     public static final String CREATE_HISTORY = "CREATE TABLE "
             + TABLE_HISTORY
+            + " ("
+            + " " + COLUMN_TITLE + " text,"
+            + " " + COLUMN_URL + " text,"
+            + " " + COLUMN_TIME + " integer"
+            + ")";
+
+    public static final String CREATE_TAB = "CREATE TABLE "
+            + TABLE_TAB
             + " ("
             + " " + COLUMN_TITLE + " text,"
             + " " + COLUMN_URL + " text,"

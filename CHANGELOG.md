@@ -1,15 +1,13 @@
-### v 7.1
-
+### v 7.1 (WIP)
+- updated: translations
 - updated: bookmark management (sorry for removing password saving)
-- updated: menus and dialogs
-- updated: overview
+- updated: overview, menus and dialogs
 - new: hide overflow button
-- many stability improvements removed 5000 lines of code!)
-- reduced apk size
+- many stability improvements -> removed ca. 5000 lines of unnecessary code!)
 
 ### v 7.0
 - new: F-Droid description
-- updated: many translations (BIG THANKS TO ALL CROWDIN translators
+- updated: many translations (BIG THANKS TO ALL CROWDIN translators)
 - fix: leave video fullscreen with back key
 - fix: create windows inside webView
 

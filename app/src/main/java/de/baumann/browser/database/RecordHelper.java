@@ -8,7 +8,7 @@ import de.baumann.browser.unit.RecordUnit;
 
 public class RecordHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "Ninja4.db";
-    private static final int DATABASE_VERSION = 3;
+    private static final int DATABASE_VERSION = 4;
 
     RecordHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -23,6 +23,7 @@ public class RecordHelper extends SQLiteOpenHelper {
         database.execSQL(RecordUnit.CREATE_GRID);
         database.execSQL(RecordUnit.CREATE_BOOKMARK);
         database.execSQL(RecordUnit.CREATE_REMOTE);
+        database.execSQL(RecordUnit.CREATE_TAB);
     }
 
     // UPGRADE ATTENTION!!!
@@ -33,7 +34,9 @@ public class RecordHelper extends SQLiteOpenHelper {
                 database.execSQL(RecordUnit.CREATE_BOOKMARK);
             case 2:
                 database.execSQL(RecordUnit.CREATE_REMOTE);
-                // we want both updates, so no break statement here...
+            case 3:
+                database.execSQL(RecordUnit.CREATE_TAB);
+                // we want all updates, so no break statement here...
         }
     }
 }

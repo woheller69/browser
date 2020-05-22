@@ -381,7 +381,9 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             case KeyEvent.KEYCODE_BACK:
                 hideKeyboard(activity);
                 hideOverview();
-                if (omnibox.getVisibility() == View.GONE && sp.getBoolean("sp_toolbarShow", true)) {
+                if (fullscreenHolder != null || customView != null || videoView != null) {
+                    Log.v(TAG, "FOSS Browser in fullscreen mode");
+                } else if (omnibox.getVisibility() == View.GONE && sp.getBoolean("sp_toolbarShow", true)) {
                     showOmnibox();
                 } else {
                     if (ninjaWebView.canGoBack()) {

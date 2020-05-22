@@ -8,6 +8,7 @@
     <string name="album_title_bookmarks">Bladwijzers</string>
     <string name="album_title_history">Geschiedenis</string>
     <string name="album_title_home">Startpagina</string>
+    <string name="album_title_tab">Opened Tabs</string>
     <string name="album_title_files">Bestanden</string>
     <string name="search_hint">Zoeken</string>
     <string name="color_red">Rood</string>
@@ -96,6 +97,7 @@
     gebruiken die om bijv. je gebruikersinstellingen op te slaan (zoals je zoekinstellingen). Maar ze kunnen ook worden gebruikt om
         persoonlijke gegevens te verzamelen. Cookies van derde partijen (die persoonlijke gegevens verzamelen voor reclamedoeleinden) zijn altijd uitgeschakeld.</string>
     <string name="setting_title_whitelistCookie">Witte lijst</string>
+    <string name="setting_title_whitelistRemote">Remote whitelist</string>
     <string name="setting_title_javascript">JavaScript</string>
     <string name="setting_summary_javascript">JavaScript inschakelen. Veel websites gebruiken JavaScript voor functionaliteit (menu\'s\',
         het laden en tonen van afbeeldingen, etc.). Maar JavaScript is ook risicovol en kan worden gebruikt voor aanvallen.</string>
@@ -156,6 +158,7 @@
     <string name="setting_summary_nav_pos_right">Rechts</string>
     <string name="setting_summary_nav_pos_left">Links</string>
     <string name="setting_summary_nav_pos_center">Midden</string>
+    <string name="setting_summary_nav_pos_null">Never show</string>
     <string name="setting_summary_tab">Wat moet er worden getoond bij het opstarten van \"FOSS-browser\": de startpagina, je bladwijzers, …?</string>
     <string name="setting_title_confirm_exit">Afsluiten bevestigen</string>
     <string name="setting_summary_confirm_exit">Bevestigingsscherm tonen bij het afsluiten van de browser.</string>

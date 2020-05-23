@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- App -->
-    <string name="app_name">FOSS ブラウザ</string>
+    <string name="app_name">FOSS Browser</string>
     <string name="app_ok">OK</string>
     <string name="app_cancel">中止</string>
     <string name="list_empty">現在のリストは空です</string>
@@ -17,15 +17,15 @@
     <string name="color_blue">青</string>
     <string name="color_teal">青緑</string>
     <string name="color_green">緑</string>
-    <string name="color_lime">黄緑</string>
+    <string name="color_lime">ライム</string>
     <string name="color_yellow">黄</string>
     <string name="color_orange">オレンジ</string>
-    <string name="color_brown">茶</string>
-    <string name="color_grey">灰</string>
+    <string name="color_brown">ブラウン</string>
+    <string name="color_grey">グレー</string>
     <!-- Menu -->
     <string name="main_menu_tabPreview">タブプレビューを開く</string>
-    <string name="main_menu_new_tab">新規タブ (裏)</string>
-    <string name="main_menu_new_tabOpen">新規タブ (前)</string>
+    <string name="main_menu_new_tab">新規タブ (バックグラウンド)</string>
+    <string name="main_menu_new_tabOpen">新規タブ (フォアグラウンド)</string>
     <string name="main_omnibox_input_hint">検索または URL を入力</string>
     <string name="menu_open_with">リンクを開く…</string>
     <string name="menu_quit">終了</string>
@@ -38,7 +38,7 @@
     <string name="menu_fav">お気に入りに保存</string>
     <string name="menu_sc">ホーム画面のショートカット</string>
     <string name="menu_sort">ソート…</string>
-    <string name="menu_filter">フィルタ…</string>
+    <string name="menu_filter">フィルター…</string>
     <string name="menu_share_link">リンクを共有</string>
     <string name="menu_save_home">ホームに保存</string>
     <string name="menu_save_bookmark">ブックマークに保存</string>
@@ -120,7 +120,7 @@
     <string name="setting_title_data">バックアップ</string>
     <string name="setting_summary_ui">好みの設定にするためにアプリの動作と UI を変更する</string>
     <string name="setting_summary_data">アプリデータ (ホワイトリスト、ブックマーク) のインポートとエクスポートをする</string>
-    <string name="setting_filter">ブックマークフィルタ</string>
+    <string name="setting_filter">ブックマークフィルター</string>
     <string name="setting_filter_summary">フィルターダイアログを表示するにはブックマークアイコンを一覧画面で長押ししてください。どのフィルターを使うか決定して下さい。</string>
     <string name="setting_title_fav">お気に入り</string>
     <string name="setting_summary_fav">ここでは \"FOSS Browser\" 開始時に読み込む既定のスタートページを変更できます。\"about:blank\" と入力するとページを読み込まず開始します。</string>
@@ -249,27 +249,12 @@
 \u25AA&lt;i&gt;ライセンス:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/LICENSE.md&lt;br&gt;
 \u25AA&lt;i&gt;プライバシー:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/PRIVACY.md</string>
     <!-- License changelog -->
-    <string name="cont_dialog">        &lt;i&gt;First I would like to thank all people who contributed in any way on this project. They submitted issues,
-        translated or helped in any other way. On following sites you can become a active member of this
-        great community:&lt;/i&gt;&lt;br&gt;&lt;br&gt;
+    <string name="cont_dialog">&lt;b&gt;XDA スレッド&lt;/b&gt;&lt;br&gt;
+XDA は開発者とスマートフォン愛好者の大きなコミュニティです。ここではバグの報告、新規機能の追加要請やその他の \"FOSS Browser\" 関連の全てがあります。&lt;br&gt;
+&lt;i&gt;
+https://forum.xda-developers.com/android/apps-games/app-browser-t3500091&lt;/i&gt;&lt;br&gt;&lt;br&gt;
 
-        &lt;b&gt;Crowdin:&lt;/b&gt;&lt;br&gt;
-        Crowdin is an online plattform to translate applications in other languages. A big thanks to all translators. You can
-        also help.&lt;br&gt;
-        &lt;i&gt;https://crowdin.com/project/foss-browser&lt;/i&gt;&lt;br&gt;&lt;br&gt;
-
-
-        &lt;b&gt;XDA-thread:&lt;/b&gt;&lt;br&gt;
-        XDA is a great community for developers and smartphone enthusiasts. Here you can report issues, ask for new features
-        and everything other related to \"FOSS Browser\".&lt;br&gt;
-        &lt;i&gt;https://forum.xda-developers.com/android/apps-games/app-browser-t3500091&lt;/i&gt;&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;Github:&lt;/b&gt;&lt;br&gt;
-        On Github you can see the source code of \"FOSS Browser\". This is the more technical solution: open issues, ask for new
-        features or even help developing or translating.&lt;br&gt;
-        &lt;i&gt;https://github.com/scoute-dich/browser&lt;/i&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-
-
-        &lt;i&gt;Following people contributed at this project. If I have forgotten anybody, please contact me:&lt;/i&gt;
-    </string>
+&lt;b&gt;GitHub&lt;/b&gt;&lt;br&gt;
+GitHub では \"FOSS Browser\" のソースコードを見ることができます。より技術的な解決法: Open issues や新規機能の要請や開発や翻訳の援助をします。&lt;br&gt;
+&lt;i&gt;https://github.com/scoute-dich/browser&lt;/i&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;</string>
 </resources>

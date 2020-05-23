@@ -222,9 +222,8 @@
     <string name="toast_quit">\"FOSS Browser\" を終了しますか?</string>
     <string name="toast_close_tab">現在のタブを閉じますか?</string>
     <string name="toast_downloadComplete">ダウンロードが完了しました。ファイルマネージャーを開きますか?</string>
-    <string name="toast_unsecured">This website uses an unsecured connection (\"http\"). Do you want to try a secure
-        connection (\"https\")?</string>
-    <string name="toast_backup">Backup data? This will overwrite the old backup.</string>
+    <string name="toast_unsecured">このウェブサイトは安全でない接続 (\"http\") を使用しています。安全な接続を試してみますか (\"https\")?</string>
+    <string name="toast_backup">データをバックアップしますか? これにより古いバックアップは上書きされます。</string>
     <string name="toast_fav">お気に入りに保存しました</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">消去</string>
@@ -232,15 +231,8 @@
     <string name="whitelist_add">追加</string>
     <!-- Dialog help -->
     <string name="dialogHelp_tipTitle">ヒント</string>
-    <string name="dialogHelp_tipText">        &lt;b&gt;Menus and dialogs&lt;/b&gt;&lt;br&gt;
-        All menus and dialogs are opened at the bottom of the screen. If the dialog is large you will first see only
-        the upper part. If you swipe it up, the rest will get visible.&lt;br&gt;
-        You can close them by pressing the back button, swiping them down or by clicking outside&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;Long press&lt;/b&gt;&lt;br&gt;
-        If you long press the menu icon or the \"Navigation button\", the \"Fast toggle dialog\" will show. If you long
-        press the \"Bookmark icon\", the \"Filter dialog\" will show.
-    </string>
+    <string name="dialogHelp_tipText">&lt;b&gt;メニューとダイアログ&lt;/b&gt;&lt;br&gt;
+全てのメニューとダイアログは画面の下部の開かれます。もしダイアログが大きかったらまず最初に上の部分を見</string>
     <string name="dialogHelp_filterText">        You can tag your bookmarks with filters. In this way you can group your bookmarks. You can open the filter dialog by
         long pressing the bookmark icon. If you activate an entry a dialog will appear, where you can edit the name of the filter.
     </string>

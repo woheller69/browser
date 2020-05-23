@@ -232,10 +232,12 @@
     <!-- Dialog help -->
     <string name="dialogHelp_tipTitle">ヒント</string>
     <string name="dialogHelp_tipText">&lt;b&gt;メニューとダイアログ&lt;/b&gt;&lt;br&gt;
-全てのメニューとダイアログは画面の下部の開かれます。もしダイアログが大きかったらまず最初に上の部分を見</string>
-    <string name="dialogHelp_filterText">        You can tag your bookmarks with filters. In this way you can group your bookmarks. You can open the filter dialog by
-        long pressing the bookmark icon. If you activate an entry a dialog will appear, where you can edit the name of the filter.
-    </string>
+全てのメニューとダイアログは画面の下部の開かれます。もしダイアログが大きかったらまず最初に上の部分が見えます。上スワイプしたら残りが表示されます。&lt;br&gt;
+戻るボタンのタップ、下スワイプ、外側をタップすると閉じます。&lt;br&gt;&lt;br&gt;
+
+&lt;b&gt;長押し&lt;/b&gt;&lt;br&gt;
+メニューアイコンや \"ナビゲーションボタン\" を長押しすると \"高速ダイアログ切り替え\" が表示されます。\"ブックマークアイコン\" を長押しすると \"フィルターダイアログ\" が表示されます。</string>
+    <string name="dialogHelp_filterText">フィルターをブックマークでマークできます。これによりブックマークをグループ化できます。ブックマークアイコンを長押しすると、フィルターダイアログを開くことができます。 エントリをアクティブにするとダイアログが表示され、そこでフィルターの名前を編集できます。</string>
     <!-- Dialog changelog -->
     <string name="changelog_dialog">        Your language isn\'t supported yet? You want to translate FOSS Browser? Or make improvements to existing translations?
         Feel free to join us on Crowdin: https://crowdin.com/project/foss-browser.&lt;br&gt;&lt;br&gt;

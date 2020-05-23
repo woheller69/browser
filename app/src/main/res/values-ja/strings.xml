@@ -183,49 +183,45 @@
     <string name="setting_title_export_whitelistJS">JavaScript ホワイトリストのエクスポート</string>
     <string name="setting_title_import_whitelistJS">JavaScript ホワイトリストのインポート</string>
     <string name="export_whitelistJS">export_whitelist_Javascript</string>
-    <string name="setting_title_export_whitelistCookie">Export Cookie whitelist</string>
-    <string name="setting_title_import_whitelistCookie">Import Cookie whitelist</string>
+    <string name="setting_title_export_whitelistCookie">Cookie ホワイトリストのエクスポート</string>
+    <string name="setting_title_import_whitelistCookie">Cookie ホワイトリストのインポート</string>
     <string name="export_whitelistCookie">export_whitelist_Cookie</string>
-    <string name="setting_title_export_appData">Export app data</string>
+    <string name="setting_title_export_appData">アプリデータのエクスポート</string>
     <string name="setting_title_import_appData">アプリデータのインポート</string>
-    <string name="setting_summary_export_appData">Export app data (Startpage + previews, History, Bookmarks)
-        and your personal settings.</string>
+    <string name="setting_summary_export_appData">アプリデータ (スタートページ+プレビュー、履歴、ブックマーク) と個人設定をエクスポートする</string>
     <string name="title_appData">アプリデータ</string>
-    <string name="hint_database">This will delete all your current settings and data. Will you proceed?</string>
+    <string name="hint_database">現在の設定とデータが全て削除されます。続行しますか?</string>
     <!-- Others setting -->
     <string name="setting_title_others">その他</string>
     <string name="setting_title_appSettings">アプリ設定</string>
-    <string name="setting_summary_appSettings">Open the system app settings for \"FOSS Browser\". There you can,
-        depending on your Android version grant permissions, clear the app data and so on.</string>
+    <string name="setting_summary_appSettings">\"FOSS Browser\" のシステムアプリ設定を開いて下さい。ここでは Android バージョンによって権限を付与、アプリデータ削除などができます。</string>
     <string name="setting_title_community">開発に協力</string>
     <!-- Toast -->
-    <string name="toast_add_to_home_successful">Successfully added to Home</string>
-    <string name="toast_add_to_home_failed">Failed to add to Home</string>
-    <string name="toast_add_whitelist_successful">Successfully added Domain</string>
-    <string name="toast_already_exist_in_home">Already exist in home</string>
-    <string name="toast_copy_successful">Successfully copied</string>
-    <string name="toast_delete_successful">Successfully deleted</string>
-    <string name="toast_domain_already_exists">Domain already exists</string>
-    <string name="toast_export_successful">Exported as:&#160;</string>
-    <string name="toast_export_failed">Failed to export</string>
-    <string name="toast_import_successful">Imported count:&#160;</string>
-    <string name="toast_import_failed">Failed to import</string>
-    <string name="toast_input_empty">You haven\'t input anything</string>
+    <string name="toast_add_to_home_successful">ホームへの追加に成功しました</string>
+    <string name="toast_add_to_home_failed">ホームへの追加に失敗しました</string>
+    <string name="toast_add_whitelist_successful">ドメインの追加に成功しました</string>
+    <string name="toast_already_exist_in_home">既にホームに存在します</string>
+    <string name="toast_copy_successful">正常にコピーされました</string>
+    <string name="toast_delete_successful">正常に削除されました</string>
+    <string name="toast_domain_already_exists">ドメインは既に存在します</string>
+    <string name="toast_export_successful">&#160; としてエクスポートしました</string>
+    <string name="toast_export_failed">エクスポートに失敗しました</string>
+    <string name="toast_import_successful">インポート数: &#160;</string>
+    <string name="toast_import_failed">インポートに失敗しました</string>
+    <string name="toast_input_empty">何も入力していません</string>
     <string name="toast_invalid_domain">無効なドメイン</string>
-    <string name="toast_load_error">Can\'t load this URL</string>
-    <string name="toast_new_tab_successful">Successfully opened in a new tab</string>
-    <string name="toast_share_failed">Can\'t share this page</string>
+    <string name="toast_load_error">この URL を読み込めません</string>
+    <string name="toast_new_tab_successful">新しいタブで正常に開きました</string>
+    <string name="toast_share_failed">このページを共有できません</string>
     <string name="toast_start_download">ダウンロード開始中…</string>
     <string name="toast_wait_a_minute">少々お待ちください</string>
-    <string name="toast_webview_forward">Can\'t load next site</string>
-    <string name="toast_permission_sdCard">\"FOSS Browser\" needs the permission to \"read and write on your storage\". This
-        is needed to download files, taking screenshots and making backups of your data.</string>
-    <string name="toast_permission_loc">\"FOSS Browser\" needs the permission to \"access your location\". This is requested from some
-        websites for example when they offer some kind of navigation.</string>
-    <string name="toast_restart">You must restart \"FOSS Browser\" to apply changes. Close now?</string>
-    <string name="toast_quit">Do you want to quit \"FOSS Browser\"?</string>
-    <string name="toast_close_tab">Do you want to close current tab?</string>
-    <string name="toast_downloadComplete">Download complete. Open file manager?</string>
+    <string name="toast_webview_forward">次のサイトを読み込めません</string>
+    <string name="toast_permission_sdCard">\"FOSS Browser\" は \"ストレージの読み書き\" の権限が必要です。これはファイルダウンロード、スクリーンショット取得、バックアップファイル作成に必要です。</string>
+    <string name="toast_permission_loc">\"FOSS Browser\" は \"位置情報へのアクセス\" の権限が必要です。例えばナビのような機能を提供するいくつかのサイトで必要になります。</string>
+    <string name="toast_restart">変更を適用するには \"FOSS Browser\" を再起動する必要があります。今すぐ閉じますか?</string>
+    <string name="toast_quit">\"FOSS Browser\" を終了しますか?</string>
+    <string name="toast_close_tab">現在のタブを閉じますか?</string>
+    <string name="toast_downloadComplete">ダウンロードが完了しました。ファイルマネージャーを開きますか?</string>
     <string name="toast_unsecured">This website uses an unsecured connection (\"http\"). Do you want to try a secure
         connection (\"https\")?</string>
     <string name="toast_backup">Backup data? This will overwrite the old backup.</string>

@@ -1,47 +1,44 @@
-"FOSS Browser" is fully free/libre (as in freedom) Android app. The source code is public. The app also does not need any unnecessary
-permissions. It's a simple Android browser based on webview. The intention is to provide a simple and light weight but powerful
-browser with a nice looking user interface.
+"FOSS Browser" ist eine vollständig freie (wie in Freiheit) Android-Anwendung. Der Quellcode ist öffentlich zugänglich. FOSS Browser benötigt keine unnötigen
+Berechtigungen. Es ist ein einfacher Android browser basierend auf webview. FOSS Browser soll ein einfacher und kleiner Browser sein, der funktional und optisch
+ansprechend ist.
 
 -------------------------------------------------
-<b>SECURITY/DATA</b>
+<b>SICHERHEIT/DATEN</b>
 -------------------------------------------------
 
-• fully open source
-• no trackers
-• no unnecessary permissions
-• third party cookies disabled by default
-• enable/disable cookies, javascript, location access, history
-• save login data in separate, encrypted database
-• whitelist for javascript, cookies and AdBlocker
-• toggle image/third party content loading
+• komplett quelloffen
+• keine Tracker
+• keine unnötigen Berechtigungen
+• Cookies von Drittanbietern deaktiviert
+• Einstellungen für Cookies, Javascript, Standort, Verlauf
+• Ausnahmen für Javascript, Cookies, Adblock und entfernte Inhalte
+• Bilder laden deaktivieren (optional)
 • do not track me
-• backup data
+• Daten sichern
 • AdBlocker
-• delete data on exit (optional)
+• Daten beim Verlassen löschen (optional)
 
 -------------------------------------------------
-<b>UI/HANDLING</b>
+<b>UI/HANDHABUNG</b>
 -------------------------------------------------
 
-• optimized for one hand handling (toolbar at bottom)
-• tab control (switch, open, close unlimited tabs)
-• full material design
-• fullscreen browsing (optional)
-• navigation button in fullscreen mode
-• fast toggle for most important settings
-• advanced gesture control for toolbar and navigation button
+• für Einhand-Benutzung optimiert (Toolbar unten)
+• Tabkontrolle (wechseln, öffnen, schließen beliebig vieler Tabs)
+• Material Design
+• Toolbar beim Browsen ausblenden (optional)
+• Navigations-Knopf (bei ausgeblendeter Toolbar, optional)
+• Schnelleinstellungen für die wichtigsten Dinge
+• Gestensteuerung (Toolbar und Navigationsknopf)
 
 -------------------------------------------------
 <b>NICE TO HAVE</b>
 -------------------------------------------------
 
-• small size
-• search on site
-• open links in background
-• Websearch (from marked text context menu)
-• screenshots of the whole website
-• share/save as PDF
-• open links in other apps (for example YouTube)
+• kleine Größé
+• auf der Seite suchen
+• Websuche (über geteilten Text)
+• PDF speichern
+• Links in anderen Anwendungen öffnen (z.B. YouTube)
 
 -------------------------------------------------
 <b>LINKS</b>

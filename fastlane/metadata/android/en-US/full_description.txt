@@ -37,10 +37,8 @@ browser with a nice looking user interface.
 
 • small size
 • search on site
-• open links in background
 • Websearch (from marked text context menu)
-• screenshots of the whole website
-• share/save as PDF
+• save as PDF
 • open links in other apps (for example YouTube)
 
 -------------------------------------------------

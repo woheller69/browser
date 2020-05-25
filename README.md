@@ -35,7 +35,6 @@ browser with a nice looking user interface.
 - no unnecessary permissions
 - third party cookies disabled by default
 - enable/disable cookies, javascript, location access, history
-- save login data in separate, encrypted database
 - whitelist for javascript, cookies and AdBlocker
 - toggle image/third party content loading
 - do not track me
@@ -59,21 +58,19 @@ browser with a nice looking user interface.
 
 - small size
 - search on site
-- open links in background
 - Websearch (from marked text context menu)
-- screenshots of the whole website
 - share/save as PDF
 - open links in other apps (for example YouTube)
 
 
-![1](https://github.com/scoute-dich/browser/blob/master/fastlane/metadata/android/de-DE/images/phoneScreenshots/1.jpg)
+![1](https://github.com/scoute-dich/browser/blob/master/fastlane/metadata/android/de-DE/images/phoneScreenshots/1.png)
 
-![2](https://github.com/scoute-dich/browser/blob/master/fastlane/metadata/android/de-DE/images/phoneScreenshots/2.jpg)
+![2](https://github.com/scoute-dich/browser/blob/master/fastlane/metadata/android/de-DE/images/phoneScreenshots/2.png)
 
-![3](https://github.com/scoute-dich/browser/blob/master/fastlane/metadata/android/de-DE/images/phoneScreenshots/3.jpg)
+![3](https://github.com/scoute-dich/browser/blob/master/fastlane/metadata/android/de-DE/images/phoneScreenshots/3.png)
 
-![4](https://github.com/scoute-dich/browser/blob/master/fastlane/metadata/android/de-DE/images/phoneScreenshots/4.jpg)
+![4](https://github.com/scoute-dich/browser/blob/master/fastlane/metadata/android/de-DE/images/phoneScreenshots/4.png)
 
-![5](https://github.com/scoute-dich/browser/blob/master/fastlane/metadata/android/de-DE/images/phoneScreenshots/5.jpg)
+![5](https://github.com/scoute-dich/browser/blob/master/fastlane/metadata/android/de-DE/images/phoneScreenshots/5.png)
 
-![6](https://github.com/scoute-dich/browser/blob/master/fastlane/metadata/android/de-DE/images/phoneScreenshots/6.jpg)
+![6](https://github.com/scoute-dich/browser/blob/master/fastlane/metadata/android/de-DE/images/phoneScreenshots/6.png)

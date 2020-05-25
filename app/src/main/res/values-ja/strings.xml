@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- App -->
-    <string name="app_name">FOSS ブラウザ</string>
+    <string name="app_name">FOSS Browser</string>
     <string name="app_ok">OK</string>
     <string name="app_cancel">中止</string>
     <string name="list_empty">現在のリストは空です</string>
     <string name="album_title_bookmarks">ブックマーク</string>
     <string name="album_title_history">履歴</string>
     <string name="album_title_home">ホーム</string>
-    <string name="album_title_tab">Opened Tabs</string>
+    <string name="album_title_tab">開かれたタブ</string>
     <string name="album_title_files">ファイル</string>
     <string name="search_hint">検索</string>
     <string name="color_red">赤</string>
@@ -17,15 +17,15 @@
     <string name="color_blue">青</string>
     <string name="color_teal">青緑</string>
     <string name="color_green">緑</string>
-    <string name="color_lime">黄緑</string>
+    <string name="color_lime">ライム</string>
     <string name="color_yellow">黄</string>
     <string name="color_orange">オレンジ</string>
-    <string name="color_brown">茶</string>
-    <string name="color_grey">灰</string>
+    <string name="color_brown">ブラウン</string>
+    <string name="color_grey">グレー</string>
     <!-- Menu -->
     <string name="main_menu_tabPreview">タブプレビューを開く</string>
-    <string name="main_menu_new_tab">新規タブ (裏)</string>
-    <string name="main_menu_new_tabOpen">新規タブ (前)</string>
+    <string name="main_menu_new_tab">新規タブ (バックグラウンド)</string>
+    <string name="main_menu_new_tabOpen">新規タブ (フォアグラウンド)</string>
     <string name="main_omnibox_input_hint">検索または URL を入力</string>
     <string name="menu_open_with">リンクを開く…</string>
     <string name="menu_quit">終了</string>
@@ -38,7 +38,7 @@
     <string name="menu_fav">お気に入りに保存</string>
     <string name="menu_sc">ホーム画面のショートカット</string>
     <string name="menu_sort">ソート…</string>
-    <string name="menu_filter">フィルタ…</string>
+    <string name="menu_filter">フィルター…</string>
     <string name="menu_share_link">リンクを共有</string>
     <string name="menu_save_home">ホームに保存</string>
     <string name="menu_save_bookmark">ブックマークに保存</string>
@@ -93,51 +93,44 @@
     <string name="setting_summary_cookie_delete">有効にすると、信頼できる Web サイトも含め全てのクッキーが削除されます。</string>
     <string name="setting_summary_cookie">クッキーを有効にします。クッキーは小さなテキストファイルで、端末に保存されます。Web サイトは、例えばユーザー設定 (検索設定など) を保存するために使用します。ただし、個人データの収集にも使用できます。サードパーティのクッキー (広告用の個人データを収集している) は常に無効になっています。</string>
     <string name="setting_title_whitelistCookie">クッキーのホワイトリスト</string>
-    <string name="setting_title_whitelistRemote">Remote whitelist</string>
+    <string name="setting_title_whitelistRemote">リモートホワイトリスト</string>
     <string name="setting_title_javascript">JavaScript</string>
-    <string name="setting_summary_javascript">Enable JavaScript. Many websites need JavaScript for their functionality (menus,
-        loading and displaying images, …). But they are also a risk and can be used for attacks.</string>
-    <string name="setting_title_whitelistJS">JavaScript whitelist</string>
+    <string name="setting_summary_javascript">JavaScript を有効化して下さい。多くのウェブサイトでサイトの動作のために必要です (メニューや画像表示など)。しかし攻撃に使用されるリスクもあります。</string>
+    <string name="setting_title_whitelistJS">JavaScript ホワイトリスト</string>
     <string name="setting_title_adblock">AdBlock</string>
-    <string name="setting_summary_adblock">Enable AdBlock to block annoying ads. Sites also load faster when enabled.</string>
-    <string name="setting_title_whitelist">AdBlock whitelist</string>
+    <string name="setting_summary_adblock">AdBlock を有効にして迷惑な広告をブロックします。有効にするとサイトの読み込みが速くなります。</string>
+    <string name="setting_title_whitelist">AdBlock ホワイトリスト</string>
     <string name="setting_title_location">位置情報</string>
     <string name="setting_summary_location">ウェブサイトに位置情報へのアクセスを許可して下さい。いくつかのウェブサイト (Google マップなど) は許可が必要です。</string>
     <string name="setting_title_history">履歴</string>
     <string name="setting_summary_history">閲覧したウェブサイトの履歴を保存</string>
     <!-- browser clear -->
-    <string name="data_summary">All files will be exported to the \"Android/data/de.baumann.browser/files/browser_backup/\"
-        directory of your sd-card. This directory will be DELETED, if you uninstall \"FOSS Browser\". So make a backup regularly on a save
-        place.</string>
+    <string name="data_summary">全てのファイルは SD カードの \"Android/data/de.baumann.browser/files/browser_backup/\" に出力されます。\"FOSS Browser\" をアンインストールするとそのディレクトリは削除されます。なので定期的に安全な場所にバックアップを作成して下さい。</string>
     <string name="clear_title_quit">アプリ終了時に消去</string>
-    <string name="clear_summary_quit">Every time you quit \"FOSS Browser\" all above checked data will be deleted.</string>
+    <string name="clear_summary_quit">毎回 \"FOSS Browser\" を終了したら上記のチェックしたデータは消去されます。</string>
     <string name="clear_title_cache">キャッシュを削除</string>
     <string name="clear_title_cookie">クッキーを消去</string>
     <string name="clear_title_history">履歴を削除</string>
-    <string name="clear_title_indexedDB">Clear \"indexed databases\" and \"local webview storage\"</string>
+    <string name="clear_title_indexedDB">\"インデックス済みデータベース\" と \"ローカルウェブサイトストレージ\" の消去</string>
     <string name="clear_title_deleteDatabase">データベースを削除</string>
-    <string name="clear_summary_deleteDatabase">Delete the whole database (Startpage, bookmarks, history and all whitelists).</string>
+    <string name="clear_summary_deleteDatabase">データベース全体を削除 (スタートページ、ブックマーク、履歴、ホワイトリスト)</string>
     <!-- App setting -->
     <string name="setting_title_app">アプリの設定</string>
     <string name="setting_title_ui">動作/UI</string>
     <string name="setting_title_data">バックアップ</string>
-    <string name="setting_summary_ui">Change the behavior and ui of the app to suit your preferences.</string>
-    <string name="setting_summary_data">Import and export several app data (whitelists, bookmarks).</string>
-    <string name="setting_filter">ブックマークフィルタ</string>
-    <string name="setting_filter_summary">To show the filter dialog long press on the bookmark icon in the overview. Decide which
-        filters you will use.</string>
+    <string name="setting_summary_ui">好みの設定にするためにアプリの動作と UI を変更する</string>
+    <string name="setting_summary_data">アプリデータ (ホワイトリスト、ブックマーク) のインポートとエクスポートをする</string>
+    <string name="setting_filter">ブックマークフィルター</string>
+    <string name="setting_filter_summary">フィルターダイアログを表示するにはブックマークアイコンを一覧画面で長押ししてください。どのフィルターを使うか決定して下さい。</string>
     <string name="setting_title_fav">お気に入り</string>
-    <string name="setting_summary_fav">Here you can change the default website which loads on start of \"FOSS Browser\".
-    Enter \"about:blank\" to get an emty start site.</string>
+    <string name="setting_summary_fav">ここでは \"FOSS Browser\" 開始時に読み込む既定のスタートページを変更できます。\"about:blank\" と入力するとページを読み込まず開始します。</string>
     <string name="setting_title_searchEngine">カスタム検索エンジン</string>
-    <string name="setting_summary_searchEngine">Here you can enter a custom search URL. Also choose \"Custom search engine\" as search
-    provider.</string>
+    <string name="setting_summary_searchEngine">ここではカスタム検索 URL を入力できます。また \"カスタム検索エンジン\" を検索プロバイダとして選択して下さい。</string>
     <string name="setting_title_userAgent">カスタムユーザーエージェント</string>
-    <string name="setting_summary_userAgent">Here you can enter a custom user agent. Let empty to use default one.</string>
+    <string name="setting_summary_userAgent">ここではカスタムユーザーエージェントを入力できます。空白で既定のものを使用します。</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">ツールバーを非表示</string>
-    <string name="setting_summary_hide">Use the whole screen when scrolling through websites. If you press the back button you will
-    leave fullscreen mode.</string>
+    <string name="setting_summary_hide">ウェブサイトスクロール時に画面全体を使用します。戻るボタンを押すとフルスクリーンモードを終了します。</string>
     <string name="setting_theme">テーマ</string>
     <string name="setting_theme_summary">アプリのテーマを設定する</string>
     <string name="setting_theme_system">システムテーマ</string>
@@ -145,28 +138,28 @@
     <string name="setting_theme_dark">暗いテーマ</string>
     <string name="setting_title_theme">UI</string>
     <string name="setting_title_behavior">動作</string>
-    <string name="setting_summary_toolbarShow">Pressing back will make the toolbar visible, before going back in history.</string>
+    <string name="setting_summary_toolbarShow">履歴から戻る前に戻るボタンタッチでツールバーを表示します</string>
     <string name="setting_title_toolbarShow">第一ツールバー</string>
     <string name="setting_title_nav">ナビゲーションボタン</string>
     <string name="setting_title_nav_pos">位置</string>
-    <string name="setting_summary_nav_pos">Decide where the \"Navigation Button\" will be placed.</string>
+    <string name="setting_summary_nav_pos">\"ナビゲーションボタン\" をどこに配置するか決定します</string>
     <string name="setting_summary_nav_pos_right">右</string>
     <string name="setting_summary_nav_pos_left">左</string>
     <string name="setting_summary_nav_pos_center">中央</string>
-    <string name="setting_summary_nav_pos_null">Never show</string>
-    <string name="setting_summary_tab">What should be shown at the start of the \"Overview\"? The Start Page, you bookmarks, …</string>
+    <string name="setting_summary_nav_pos_null">非表示</string>
+    <string name="setting_summary_tab">一覧画面の開始に何を表示させますか? スタートページ、ブックマークなど…</string>
     <string name="setting_title_confirm_exit">ブラウザ終了の確認</string>
-    <string name="setting_summary_confirm_exit">Confirmation dialog when closing browser.</string>
+    <string name="setting_summary_confirm_exit">ブラウザ終了時の確認ダイアログ</string>
     <string name="setting_title_confirm_tab_close">タブ削除の確認</string>
-    <string name="setting_summary_confirm_tab_close">Confirmation dialog when closing a tab.</string>
+    <string name="setting_summary_confirm_tab_close">タブ終了時の確認ダイアログ</string>
     <string name="setting_overView">概観</string>
-    <string name="setting_overView_onStart_title">Show on start</string>
-    <string name="setting_overView_onStart_summary">Open the \"Overview\" on every app start.</string>
-    <string name="setting_gestures">Gestures</string>
-    <string name="setting_gestures_use_title">Use gestures</string>
-    <string name="setting_gestures_use_summary">Use gestures on the toolbar and the \"Navigation button\".</string>
-    <string name="setting_title_reopenLastTab">Reopen last tab</string>
-    <string name="setting_summary_reopenLastTab">Reopen a new tab when the last tab is closed instead of exiting the browser.</string>
+    <string name="setting_overView_onStart_title">開始時に表示</string>
+    <string name="setting_overView_onStart_summary">毎回のアプリ開始時に \"一覧画面\" を開く</string>
+    <string name="setting_gestures">ジェスチャー</string>
+    <string name="setting_gestures_use_title">ジェスチャーを使用</string>
+    <string name="setting_gestures_use_summary">ツールバーと \"ナビゲーションボタン\" でジェスチャーを使用する</string>
+    <string name="setting_title_reopenLastTab">タブを再度開く</string>
+    <string name="setting_summary_reopenLastTab">ブラウザ終了の代わりに最後のタブを閉じた時に新しいタブを開く</string>
     <!-- gestures -->
     <string name="setting_title_toolbar">ツールバー</string>
     <string name="setting_gesture_up">上スワイプ</string>
@@ -174,68 +167,63 @@
     <string name="setting_gesture_left">左スワイプ</string>
     <string name="setting_gesture_right">右スワイプ</string>
     <string name="setting_gesture_01">なし</string>
-    <string name="setting_gesture_02">Forward in history</string>
-    <string name="setting_gesture_03">Back in history</string>
-    <string name="setting_gesture_04">Scroll to top</string>
-    <string name="setting_gesture_05">Scroll to bottom</string>
-    <string name="setting_gesture_06">Switch to left tab</string>
-    <string name="setting_gesture_07">Switch to right tab</string>
-    <string name="setting_gesture_08">Show overview</string>
+    <string name="setting_gesture_02">履歴を前へ</string>
+    <string name="setting_gesture_03">履歴を後ろへ</string>
+    <string name="setting_gesture_04">最上部へスクロール</string>
+    <string name="setting_gesture_05">最下部へスクロール</string>
+    <string name="setting_gesture_06">左のタブに移動</string>
+    <string name="setting_gesture_07">右のタブに移動</string>
+    <string name="setting_gesture_08">一覧画面を表示</string>
     <string name="setting_gesture_09">新しいタブを開く</string>
     <string name="setting_gesture_10">タブを閉じる</string>
     <!-- Data -->
-    <string name="setting_title_export_whitelist">Export AdBlock whitelist</string>
-    <string name="setting_title_import_whitelist">Import AdBlock whitelist</string>
+    <string name="setting_title_export_whitelist">AdBlock ホワイトリストのエクスポート</string>
+    <string name="setting_title_import_whitelist">AdBlock ホワイトリストのインポート</string>
     <string name="export_whitelistAdBlock">export_whitelist_AdBlock</string>
-    <string name="setting_title_export_whitelistJS">Export JavaScript whitelist</string>
-    <string name="setting_title_import_whitelistJS">Import JavaScript whitelist</string>
+    <string name="setting_title_export_whitelistJS">JavaScript ホワイトリストのエクスポート</string>
+    <string name="setting_title_import_whitelistJS">JavaScript ホワイトリストのインポート</string>
     <string name="export_whitelistJS">export_whitelist_Javascript</string>
-    <string name="setting_title_export_whitelistCookie">Export Cookie whitelist</string>
-    <string name="setting_title_import_whitelistCookie">Import Cookie whitelist</string>
+    <string name="setting_title_export_whitelistCookie">Cookie ホワイトリストのエクスポート</string>
+    <string name="setting_title_import_whitelistCookie">Cookie ホワイトリストのインポート</string>
     <string name="export_whitelistCookie">export_whitelist_Cookie</string>
-    <string name="setting_title_export_appData">Export app data</string>
+    <string name="setting_title_export_appData">アプリデータのエクスポート</string>
     <string name="setting_title_import_appData">アプリデータのインポート</string>
-    <string name="setting_summary_export_appData">Export app data (Startpage + previews, History, Bookmarks)
-        and your personal settings.</string>
+    <string name="setting_summary_export_appData">アプリデータ (スタートページ+プレビュー、履歴、ブックマーク) と個人設定をエクスポートする</string>
     <string name="title_appData">アプリデータ</string>
-    <string name="hint_database">This will delete all your current settings and data. Will you proceed?</string>
+    <string name="hint_database">現在の設定とデータが全て削除されます。続行しますか?</string>
     <!-- Others setting -->
     <string name="setting_title_others">その他</string>
     <string name="setting_title_appSettings">アプリ設定</string>
-    <string name="setting_summary_appSettings">Open the system app settings for \"FOSS Browser\". There you can,
-        depending on your Android version grant permissions, clear the app data and so on.</string>
+    <string name="setting_summary_appSettings">\"FOSS Browser\" のシステムアプリ設定を開いて下さい。ここでは Android バージョンによって権限を付与、アプリデータ削除などができます。</string>
     <string name="setting_title_community">開発に協力</string>
     <!-- Toast -->
-    <string name="toast_add_to_home_successful">Successfully added to Home</string>
-    <string name="toast_add_to_home_failed">Failed to add to Home</string>
-    <string name="toast_add_whitelist_successful">Successfully added Domain</string>
-    <string name="toast_already_exist_in_home">Already exist in home</string>
-    <string name="toast_copy_successful">Successfully copied</string>
-    <string name="toast_delete_successful">Successfully deleted</string>
-    <string name="toast_domain_already_exists">Domain already exists</string>
-    <string name="toast_export_successful">Exported as:&#160;</string>
-    <string name="toast_export_failed">Failed to export</string>
-    <string name="toast_import_successful">Imported count:&#160;</string>
-    <string name="toast_import_failed">Failed to import</string>
-    <string name="toast_input_empty">You haven\'t input anything</string>
+    <string name="toast_add_to_home_successful">ホームへの追加に成功しました</string>
+    <string name="toast_add_to_home_failed">ホームへの追加に失敗しました</string>
+    <string name="toast_add_whitelist_successful">ドメインの追加に成功しました</string>
+    <string name="toast_already_exist_in_home">既にホームに存在します</string>
+    <string name="toast_copy_successful">正常にコピーされました</string>
+    <string name="toast_delete_successful">正常に削除されました</string>
+    <string name="toast_domain_already_exists">ドメインは既に存在します</string>
+    <string name="toast_export_successful">&#160; としてエクスポートしました</string>
+    <string name="toast_export_failed">エクスポートに失敗しました</string>
+    <string name="toast_import_successful">インポート数: &#160;</string>
+    <string name="toast_import_failed">インポートに失敗しました</string>
+    <string name="toast_input_empty">何も入力していません</string>
     <string name="toast_invalid_domain">無効なドメイン</string>
-    <string name="toast_load_error">Can\'t load this URL</string>
-    <string name="toast_new_tab_successful">Successfully opened in a new tab</string>
-    <string name="toast_share_failed">Can\'t share this page</string>
+    <string name="toast_load_error">この URL を読み込めません</string>
+    <string name="toast_new_tab_successful">新しいタブで正常に開きました</string>
+    <string name="toast_share_failed">このページを共有できません</string>
     <string name="toast_start_download">ダウンロード開始中…</string>
     <string name="toast_wait_a_minute">少々お待ちください</string>
-    <string name="toast_webview_forward">Can\'t load next site</string>
-    <string name="toast_permission_sdCard">\"FOSS Browser\" needs the permission to \"read and write on your storage\". This
-        is needed to download files, taking screenshots and making backups of your data.</string>
-    <string name="toast_permission_loc">\"FOSS Browser\" needs the permission to \"access your location\". This is requested from some
-        websites for example when they offer some kind of navigation.</string>
-    <string name="toast_restart">You must restart \"FOSS Browser\" to apply changes. Close now?</string>
-    <string name="toast_quit">Do you want to quit \"FOSS Browser\"?</string>
-    <string name="toast_close_tab">Do you want to close current tab?</string>
-    <string name="toast_downloadComplete">Download complete. Open file manager?</string>
-    <string name="toast_unsecured">This website uses an unsecured connection (\"http\"). Do you want to try a secure
-        connection (\"https\")?</string>
-    <string name="toast_backup">Backup data? This will overwrite the old backup.</string>
+    <string name="toast_webview_forward">次のサイトを読み込めません</string>
+    <string name="toast_permission_sdCard">\"FOSS Browser\" は \"ストレージの読み書き\" の権限が必要です。これはファイルダウンロード、スクリーンショット取得、バックアップファイル作成に必要です。</string>
+    <string name="toast_permission_loc">\"FOSS Browser\" は \"位置情報へのアクセス\" の権限が必要です。例えばナビのような機能を提供するいくつかのサイトで必要になります。</string>
+    <string name="toast_restart">変更を適用するには \"FOSS Browser\" を再起動する必要があります。今すぐ閉じますか?</string>
+    <string name="toast_quit">\"FOSS Browser\" を終了しますか?</string>
+    <string name="toast_close_tab">現在のタブを閉じますか?</string>
+    <string name="toast_downloadComplete">ダウンロードが完了しました。ファイルマネージャーを開きますか?</string>
+    <string name="toast_unsecured">このウェブサイトは安全でない接続 (\"http\") を使用しています。安全な接続を試してみますか (\"https\")?</string>
+    <string name="toast_backup">データをバックアップしますか? これにより古いバックアップは上書きされます。</string>
     <string name="toast_fav">お気に入りに保存しました</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">消去</string>
@@ -243,54 +231,30 @@
     <string name="whitelist_add">追加</string>
     <!-- Dialog help -->
     <string name="dialogHelp_tipTitle">ヒント</string>
-    <string name="dialogHelp_tipText">        &lt;b&gt;Menus and dialogs&lt;/b&gt;&lt;br&gt;
-        All menus and dialogs are opened at the bottom of the screen. If the dialog is large you will first see only
-        the upper part. If you swipe it up, the rest will get visible.&lt;br&gt;
-        You can close them by pressing the back button, swiping them down or by clicking outside&lt;br&gt;&lt;br&gt;
+    <string name="dialogHelp_tipText">&lt;b&gt;メニューとダイアログ&lt;/b&gt;&lt;br&gt;
+全てのメニューとダイアログは画面の下部の開かれます。もしダイアログが大きかったらまず最初に上の部分が見えます。上スワイプしたら残りが表示されます。&lt;br&gt;
+戻るボタンのタップ、下スワイプ、外側をタップすると閉じます。&lt;br&gt;&lt;br&gt;
 
-        &lt;b&gt;Long press&lt;/b&gt;&lt;br&gt;
-        If you long press the menu icon or the \"Navigation button\", the \"Fast toggle dialog\" will show. If you long
-        press the \"Bookmark icon\", the \"Filter dialog\" will show.
-    </string>
-    <string name="dialogHelp_filterText">        You can tag your bookmarks with filters. In this way you can group your bookmarks. You can open the filter dialog by
-        long pressing the bookmark icon. If you activate an entry a dialog will appear, where you can edit the name of the filter.
-    </string>
+&lt;b&gt;長押し&lt;/b&gt;&lt;br&gt;
+メニューアイコンや \"ナビゲーションボタン\" を長押しすると \"高速ダイアログ切り替え\" が表示されます。\"ブックマークアイコン\" を長押しすると \"フィルターダイアログ\" が表示されます。</string>
+    <string name="dialogHelp_filterText">フィルターをブックマークでマークできます。これによりブックマークをグループ化できます。ブックマークアイコンを長押しすると、フィルターダイアログを開くことができます。 エントリをアクティブにするとダイアログが表示され、そこでフィルターの名前を編集できます。</string>
     <!-- Dialog changelog -->
-    <string name="changelog_dialog">        Your language isn\'t supported yet? You want to translate FOSS Browser? Or make improvements to existing translations?
-        Feel free to join us on Crowdin: https://crowdin.com/project/foss-browser.&lt;br&gt;&lt;br&gt;
+    <string name="changelog_dialog">あなたの言語はまだサポートされていませんか？ FOSS Browser を翻訳してみませんか?  または既存の翻訳を改善しますか? お気軽に Crowdin: https://crowdin.com/project/foss-browser に参加して下さい。&lt;br&gt;&lt;br&gt;
 
-        &lt;b&gt;On the following sites you have access to all important information about \"FOSS Browser\".
-        Please read also the help dialog within the app.&lt;/b&gt;&lt;br&gt;&lt;br&gt;
+&lt;b&gt;次のサイトでは \"FOSS Browser\" に関するすべての重要な情報にアクセスできます。アプリ内のヘルプダイアログもお読み下さい。&lt;/b&gt;&lt;br&gt;&lt;br&gt;
 
-        \u25AA &lt;i&gt;Project site:&lt;/i&gt; https://github.com/scoute-dich/Browser&lt;br&gt;
-        \u25AA &lt;i&gt;Changelog:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/CHANGELOG.md&lt;br&gt;
-        \u25AA &lt;i&gt;FAQ:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/FAQs.md&lt;br&gt;
-        \u25AA &lt;i&gt;License:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/LICENSE.md&lt;br&gt;
-        \u25AA &lt;i&gt;Privacy:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/PRIVACY.md
-
-    </string>
+\u25AA&lt;i&gt;プロジェクトサイト:&lt;/i&gt; https://github.com/scoute-dich/Browser&lt;br&gt;
+\u25AA&lt;i&gt;更新履歴:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/CHANGELOG.md&lt;br&gt;
+\u25AAFAQ:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/FAQs.md&lt;br&gt;
+\u25AA&lt;i&gt;ライセンス:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/LICENSE.md&lt;br&gt;
+\u25AA&lt;i&gt;プライバシー:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/PRIVACY.md</string>
     <!-- License changelog -->
-    <string name="cont_dialog">        &lt;i&gt;First I would like to thank all people who contributed in any way on this project. They submitted issues,
-        translated or helped in any other way. On following sites you can become a active member of this
-        great community:&lt;/i&gt;&lt;br&gt;&lt;br&gt;
+    <string name="cont_dialog">&lt;b&gt;XDA スレッド&lt;/b&gt;&lt;br&gt;
+XDA は開発者とスマートフォン愛好者の大きなコミュニティです。ここではバグの報告、新規機能の追加要請やその他の \"FOSS Browser\" 関連の全てがあります。&lt;br&gt;
+&lt;i&gt;
+https://forum.xda-developers.com/android/apps-games/app-browser-t3500091&lt;/i&gt;&lt;br&gt;&lt;br&gt;
 
-        &lt;b&gt;Crowdin:&lt;/b&gt;&lt;br&gt;
-        Crowdin is an online plattform to translate applications in other languages. A big thanks to all translators. You can
-        also help.&lt;br&gt;
-        &lt;i&gt;https://crowdin.com/project/foss-browser&lt;/i&gt;&lt;br&gt;&lt;br&gt;
-
-
-        &lt;b&gt;XDA-thread:&lt;/b&gt;&lt;br&gt;
-        XDA is a great community for developers and smartphone enthusiasts. Here you can report issues, ask for new features
-        and everything other related to \"FOSS Browser\".&lt;br&gt;
-        &lt;i&gt;https://forum.xda-developers.com/android/apps-games/app-browser-t3500091&lt;/i&gt;&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;Github:&lt;/b&gt;&lt;br&gt;
-        On Github you can see the source code of \"FOSS Browser\". This is the more technical solution: open issues, ask for new
-        features or even help developing or translating.&lt;br&gt;
-        &lt;i&gt;https://github.com/scoute-dich/browser&lt;/i&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-
-
-        &lt;i&gt;Following people contributed at this project. If I have forgotten anybody, please contact me:&lt;/i&gt;
-    </string>
+&lt;b&gt;GitHub&lt;/b&gt;&lt;br&gt;
+GitHub では \"FOSS Browser\" のソースコードを見ることができます。より技術的な解決法: Open issues や新規機能の要請や開発や翻訳の援助をします。&lt;br&gt;
+&lt;i&gt;https://github.com/scoute-dich/browser&lt;/i&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;</string>
 </resources>

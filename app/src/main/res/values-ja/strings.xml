@@ -121,7 +121,7 @@
     <string name="setting_summary_ui">好みの設定にするためにアプリの動作と UI を変更する</string>
     <string name="setting_summary_data">アプリデータ (ホワイトリスト、ブックマーク) のインポートとエクスポートをする</string>
     <string name="setting_filter">ブックマークフィルター</string>
-    <string name="setting_filter_summary">フィルターダイアログを表示するにはブックマークアイコンを一覧画面で長押ししてください。どのフィルターを使うか決定して下さい。</string>
+    <string name="setting_filter_summary">フィルターダイアログを表示するにはブックマークアイコンを一覧画面で長押しして下さい。どのフィルターを使うか決定して下さい。</string>
     <string name="setting_title_fav">お気に入り</string>
     <string name="setting_summary_fav">ここでは \"FOSS Browser\" 開始時に読み込む既定のスタートページを変更できます。\"about:blank\" と入力するとページを読み込まず開始します。</string>
     <string name="setting_title_searchEngine">カスタム検索エンジン</string>
@@ -214,7 +214,7 @@
     <string name="toast_new_tab_successful">新しいタブで正常に開きました</string>
     <string name="toast_share_failed">このページを共有できません</string>
     <string name="toast_start_download">ダウンロード開始中…</string>
-    <string name="toast_wait_a_minute">少々お待ちください</string>
+    <string name="toast_wait_a_minute">少々お待ち下さい</string>
     <string name="toast_webview_forward">次のサイトを読み込めません</string>
     <string name="toast_permission_sdCard">\"FOSS Browser\" は \"ストレージの読み書き\" の権限が必要です。これはファイルダウンロード、スクリーンショット取得、バックアップファイル作成に必要です。</string>
     <string name="toast_permission_loc">\"FOSS Browser\" は \"位置情報へのアクセス\" の権限が必要です。例えばナビのような機能を提供するいくつかのサイトで必要になります。</string>
@@ -241,7 +241,7 @@
     <!-- Dialog changelog -->
     <string name="changelog_dialog">あなたの言語はまだサポートされていませんか？ FOSS Browser を翻訳してみませんか?  または既存の翻訳を改善しますか? お気軽に Crowdin: https://crowdin.com/project/foss-browser に参加して下さい。&lt;br&gt;&lt;br&gt;
 
-&lt;b&gt;次のサイトでは \"FOSS Browser\" に関するすべての重要な情報にアクセスできます。アプリ内のヘルプダイアログもお読み下さい。&lt;/b&gt;&lt;br&gt;&lt;br&gt;
+&lt;b&gt;次のサイトでは \"FOSS Browser\" に関する全ての重要な情報にアクセスできます。アプリ内のヘルプダイアログもお読み下さい。&lt;/b&gt;&lt;br&gt;&lt;br&gt;
 
 \u25AA&lt;i&gt;プロジェクトサイト:&lt;/i&gt; https://github.com/scoute-dich/Browser&lt;br&gt;
 \u25AA&lt;i&gt;更新履歴:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/CHANGELOG.md&lt;br&gt;

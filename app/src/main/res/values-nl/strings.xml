@@ -189,6 +189,8 @@
     <string name="setting_gesture_09">Nieuw tabblad openen</string>
     <string name="setting_gesture_10">Tabblad sluiten</string>
     <!-- Data -->
+    <string name="setting_title_export_bookmarks">Export bookmarks as HTML-file</string>
+    <string name="setting_title_import_bookmarks">Import bookmarks</string>
     <string name="setting_title_export_appData">App-gegevens exporteren</string>
     <string name="setting_title_import_appData">App-gegevens importeren</string>
     <string name="setting_summary_export_appData">Exporteer app data (Startpagina + previews, geschiedenis, bladwijzers)

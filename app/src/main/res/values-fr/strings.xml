@@ -190,6 +190,8 @@
     <string name="setting_gesture_09">Ouvrir nouvel onglet</string>
     <string name="setting_gesture_10">Fermer l’onglet</string>
     <!-- Data -->
+    <string name="setting_title_export_bookmarks">Export bookmarks as HTML-file</string>
+    <string name="setting_title_import_bookmarks">Import bookmarks</string>
     <string name="setting_title_export_appData">Exporter les données de l\'application</string>
     <string name="setting_title_import_appData">Importer les données de l\'application</string>
     <string name="setting_summary_export_appData">Exporter les données de l\'application (page d\'accueil + aperçus, historique, signets)

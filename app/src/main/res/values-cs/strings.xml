@@ -4,7 +4,7 @@
     <string name="app_name">FOSS Browser</string>
     <string name="app_ok">OK</string>
     <string name="app_cancel">Zrušit</string>
-    <string name="list_empty">Aktuální seznam je prázdný</string>
+    <string name="list_empty">List is empty</string>
     <string name="album_title_bookmarks">Záložky</string>
     <string name="album_title_history">Historie</string>
     <string name="album_title_home">Plocha</string>
@@ -31,7 +31,6 @@
     <string name="menu_quit">Ukončit</string>
     <string name="menu_openFav">Otevřít oblíbené</string>
     <string name="menu_delete">Smazat</string>
-    <string name="menu_delete_list">Smazat seznam</string>
     <string name="menu_edit">Upravit</string>
     <string name="menu_closeTab">Zavřít kartu</string>
     <string name="menu_download">Otevřít stažené</string>
@@ -53,8 +52,8 @@
     <string name="dialog_extension_hint">Přípona (například: \".jpg\"):</string>
     <string name="dialog_sign_in_username">Uživatelské jméno</string>
     <string name="dialog_sign_in_password">Heslo</string>
-    <string name="dialog_title_download">Chcete stáhnout soubor?</string>
-    <string name="dialog_content_resubmission">Chcete znovu odeslat data?</string>
+    <string name="dialog_title_download">Download the file?</string>
+    <string name="dialog_content_resubmission">Resubmit your data?</string>
     <string name="dialog_content_ssl_error">Certifikát webové stránky není důvěryhodný. Přesto pokračovat?</string>
     <string name="dialog_sortName">Řadit podle názvu</string>
     <string name="dialog_sortIcon">Řadit podle ikony</string>
@@ -65,9 +64,8 @@
     <string name="setting_title_browser">Nastavení prohlížeče</string>
     <string name="setting_title_clear_control">Nastavení dat</string>
     <string name="setting_title_start_control">Spustit nastavení</string>
-    <string name="setting_summary_clear_control">Vymažte data prohlížeče nebo se rozhodněte, která data budou vymazána, když opustíte
-     aplikaci.</string>
-    <string name="setting_summary_start_control">Rozhodněte, které komponenty prohlížeče budou při spuštění povoleny.</string>
+    <string name="setting_summary_clear_control">Clear your browser data or decide what data will be cleared when you leave the application.</string>
+    <string name="setting_summary_start_control">Decide which components of FOSS browser will be enabled on start.</string>
     <string name="setting_title_search_engine">Vyhledávač</string>
     <string name="setting_summary_search_engine">Zde můžete zvolit oblíbený vyhledávač nebo nastavit vlastní.</string>
     <string name="setting_summary_search_engine_google">Google</string>
@@ -80,41 +78,34 @@
     <string name="setting_summary_search_engine_qwant">Qwant</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_title_inverted">Převrácené barvy</string>
-    <string name="setting_summary_inverted">Pokud je zaškrtnuto, bude obsah vykreslen v režimu převrácené stupnice šedi. Toto
-    je druh „nočního režimu“.</string>
+    <string name="setting_summary_inverted">If checked, content will be rendered in a inverted grey scale mode. This is a kind of \"night mode\".</string>
     <string name="setting_title_font">Velikost písma</string>
     <string name="setting_summary_font">Změna velikost písma pro zobrazování webových stránek.</string>
     <string name="setting_title_remote">Vzdálený obsah</string>
-    <string name="setting_summary_remote">Povolte vzdálený obsah, který není přímo z navštívené webové stránky..
-        Zakázání je bezpečnější, rychlejší a šetří spotřebu dat. Určitý obsah se však již nebude nadále zobrazovat.</string>
+    <string name="setting_summary_remote">Enable remote content, which is not directly from the website you are visiting. Disabling this is more secure, faster and saves data volume. But some content will not be displayed anymore.</string>
     <string name="setting_title_save_data">Požadavek „Ušetřit data“</string>
     <string name="setting_summary_save_data">Oznámí webovým stránkám, že byste raději ukládali data. Podporované webové stránky se budou načítat rychleji.</string>
     <!-- browser start -->
     <string name="setting_title_images">Obrázky</string>
-    <string name="setting_summary_images">Povolí automatické načítání obrázků. Vypnutí by mohlo být užitečné pro šetření mobilních dat a rychlejší     načítání webových stránek.</string>
+    <string name="setting_summary_images">Enable Network images. Disabling could be useful to save mobile data and to load websites faster.</string>
     <string name="setting_title_cookie">Cookies</string>
     <string name="setting_summary_cookie_delete">Pokud je povoleno, všechny cookies budou smazány. Také cookies důvěryhodných webových stránek.</string>
-    <string name="setting_summary_cookie">Povolit cookies. Cookies jsou malé textové soubory, které jsou uloženy ve vašem zařízení. Webové stránky     je používají např. k uložení uživatelských nastavení (např. nastavení vyhledávání). můžou však být použity ke sběru osobních
-        uživatelských dat. Cookies třetích stran (ukládají uživatelská data pro zobrazení reklam), jsou vždy zakázány.</string>
+    <string name="setting_summary_cookie">Enable Cookies. Cookies are small text files, which are stored on your device. Websites use them for example to store user settings (for example search settings). But they could also be used to collect personal user data. Third party cookies (they collect user data for advertising) are always disabled.</string>
     <string name="setting_title_whitelistCookie">Seznam povolených - Cookies</string>
     <string name="setting_title_whitelistRemote">Vzdálený seznam povolených</string>
     <string name="setting_title_javascript">JavaScript</string>
-    <string name="setting_summary_javascript">Povolit JavaScript. Mnoho webových stránek potřebuje pro svou funkčnost JavaScript (nabídky,
-        načítání a zobrazování obrázků, …). Je však také rizikem a může být použit k útokům.</string>
+    <string name="setting_summary_javascript">Enable JavaScript. Many websites need JavaScript for their functionality (menus, loading and displaying images, …). But they are also a risk and can be used for attacks.</string>
     <string name="setting_title_whitelistJS">Seznam povolených - JavaScript</string>
     <string name="setting_title_adblock">AdBlock</string>
     <string name="setting_summary_adblock">Zapněte AdBlock pro blokování obtěžujících reklam. Stránky se budou načítat rychleji.</string>
     <string name="setting_title_whitelist">Seznam povolených - AdBlock</string>
     <string name="setting_title_location">Poloha</string>
-    <string name="setting_summary_location">Povolit webům přístup k vaší poloze. Některé weby (jako Mapy Google pro navigaci)
-        to potřebují mít zapnuté.</string>
+    <string name="setting_summary_location">Allow websites to access your location. Some websites (like Google maps for navigation) need this enabled.</string>
     <string name="setting_title_history">Historie</string>
     <string name="setting_summary_history">Uložit historii navštívených stránek.</string>
     <!-- browser clear -->
-    <string name="data_summary">Všechny soubory budou exportovány do adresáře „Android/data/de.baumann.browser/files/browser_backup/“
-        na vaší SD kartě. Tento adresář bude SMAZÁN, když odinstalujetel „FOSS Browser“. Proto si vytvořte zálohu na bezpečném
-        místě.</string>
-    <string name="clear_title_quit">Vymazat při ukončení aplikace</string>
+    <string name="data_summary">All files will be exported to the \"Android/data/de.baumann.browser/files/browser_backup/\" directory of your sd-card. This directory will be DELETED, if you uninstall \"FOSS Browser\". So make a backup regularly on a save place.</string>
+    <string name="clear_title_quit">Clear on application exit</string>
     <string name="clear_summary_quit">Při každém ukončení aplikace „FOSS Browser“ budou všechna výše uvedená data smazána.</string>
     <string name="clear_title_cache">Vymazat mezipaměť</string>
     <string name="clear_title_cookie">Vymazat soubory cookie</string>
@@ -129,19 +120,16 @@
     <string name="setting_summary_ui">Změňte chování a UI aplikace podle svých představ.</string>
     <string name="setting_summary_data">Importovat a exportovat některá data aplikace (seznamy povolených, záložky).</string>
     <string name="setting_filter">Filtr záložek</string>
-    <string name="setting_filter_summary">Chcete-li zobrazit dialogové okno filtru, stiskněte v přehledu ikonu záložek. Rozhodněte, které
-        filtry použijete.</string>
+    <string name="setting_filter_summary">To show the filter dialog long press on the bookmark icon in the overview. Decide which filters you will use.</string>
     <string name="setting_title_fav">Oblíbené</string>
-    <string name="setting_summary_fav">Zde můžete změnit výchozí webovou stránku, která se načte při spuštění aplikace „FOSS Browser“.
-    Zadáním „about:blank“ zobrazíte prázdnou úvodní stránku.</string>
+    <string name="setting_summary_fav">Here you can change the default website which loads on start of \"FOSS Browser\". Enter \"about:blank\" to get an emty start site.</string>
     <string name="setting_title_searchEngine">Vlastní vyhledávač</string>
-    <string name="setting_summary_searchEngine">Zde můžete zadat vlastní adresu URL pro vyhledávání. Taky zvolit „Vlastní vyhledávač“ jako poskytovatele vyhledávání.</string>
+    <string name="setting_summary_searchEngine">Here you can enter a custom search URL. Also choose \"Custom search engine\" as search provider.</string>
     <string name="setting_title_userAgent">Vlastní uživatelský agent</string>
     <string name="setting_summary_userAgent">Zde můžete zadat vlastní uživatelský agent. Ponechte prázdné pro použití výchozího.</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">Skrýt Panel nástrojů</string>
-    <string name="setting_summary_hide">Při procházení webovými stránkami použít celou obrazovku. Pokud stisknete tlačítko Zpět,
-    opustíte režim celé obrazovky.</string>
+    <string name="setting_summary_hide">Use the whole screen when scrolling through websites. If you press the back button you will leave fullscreen mode.</string>
     <string name="setting_theme">Motiv</string>
     <string name="setting_theme_summary">Nastavte motiv aplikace.</string>
     <string name="setting_theme_system">Motiv systému</string>
@@ -158,7 +146,7 @@
     <string name="setting_summary_nav_pos_left">Vlevo</string>
     <string name="setting_summary_nav_pos_center">Uprostřed</string>
     <string name="setting_summary_nav_pos_null">Nikdy nezobrazovat</string>
-    <string name="setting_summary_tab">Co by mělo být uvedeno při spuštění „Přehledu“? Úvodní stránka, vaše záložky, …</string>
+    <string name="setting_summary_tab">What should be shown at the start of the \"Overview\"?</string>
     <string name="setting_title_confirm_exit">Potvrdit ukončení prohlížeče</string>
     <string name="setting_summary_confirm_exit">Okno potvrzení při ukončení prohlížeče.</string>
     <string name="setting_title_confirm_tab_close">Potvrdit zavření karty</string>
@@ -192,15 +180,13 @@
     <string name="setting_title_import_bookmarks">Import bookmarks</string>
     <string name="setting_title_export_appData">Exportovat data aplikace</string>
     <string name="setting_title_import_appData">Importovat data aplikace</string>
-    <string name="setting_summary_export_appData">Exportovat data aplikace (Úvodní stránka + náhledy, historie, záložky)
-        a vaše osobní nastavení.</string>
+    <string name="setting_summary_export_appData">Export whole database and your personal settings.</string>
     <string name="title_appData">Data aplikace</string>
-    <string name="hint_database">Toto vymaže všechna vaše aktuální nastavení a data. Chcete pokračovat?</string>
+    <string name="hint_database">This will delete current data. Proceed?</string>
     <!-- Others setting -->
     <string name="setting_title_others">Další</string>
     <string name="setting_title_appSettings">Nastavení aplikace</string>
-    <string name="setting_summary_appSettings">Otevřete systémová nastavení pro „FOSS Browser“. Tam můžete
-        v závislosti na vaší verzi Android udělit oprávnění, vymazat data aplikace atd.</string>
+    <string name="setting_summary_appSettings">Open the system app settings for \"FOSS Browser\". There you can, depending on your Android version grant permissions, clear the app data and so on.</string>
     <string name="setting_title_community">Přispívání</string>
     <!-- Toast -->
     <string name="toast_add_to_home_successful">Úspěšně přidáno na plochu</string>
@@ -222,16 +208,13 @@
     <string name="toast_start_download">Zahajování stahování</string>
     <string name="toast_wait_a_minute">Prosím, počkejte chvilku</string>
     <string name="toast_webview_forward">Nelze načíst další stránku</string>
-    <string name="toast_permission_sdCard">„FOSS Browser“ vyžaduje oprávnění „čtení a zápis do vašeho úložiště“. Toto
-        je zapotřebí ke stahování souborů, pořizování snímků obrazovky a vytváření záloh vašich dat.</string>
-    <string name="toast_permission_loc">„FOSS Browser“ vyžaduje oprávnění k „přístupu k vaší poloze“. To je vyžadováno od některých
-        webových stránek. Například, když nabízejí nějaký druh navigace.</string>
+    <string name="toast_permission_sdCard">\"FOSS Browser\" needs the permission to \"read and write on your storage\". This is needed to download files, taking screenshots and making backups of your data.</string>
+    <string name="toast_permission_loc">\"FOSS Browser\" needs the permission to \"access your location\". This is requested from some websites for example when they offer some kind of navigation.</string>
     <string name="toast_restart">Pro provedení změn musíte restartovat aplikaci „FOSS Browser“. Ukončit nyní?</string>
     <string name="toast_quit">Opravdu chcete ukončit aplikaci „FOSS Browser“?</string>
     <string name="toast_close_tab">Opravdu chcete zavřít aktuální kartu?</string>
     <string name="toast_downloadComplete">Stahování dokončeno. Otevřít správce souborů?</string>
-    <string name="toast_unsecured">Tato stránka používá nezabezpečené připojení („http“). Chcete zkusit zabezpečné
-        připojení („https“)?</string>
+    <string name="toast_unsecured">Website uses an unsecured connection (\"http\"). Try a secure connection (\"https\")?</string>
     <string name="toast_backup">Zálohovat data? Tato akce přepíše starou zálohu.</string>
     <string name="toast_fav">Úspěšně nastaveno jako oblíbené.</string>
     <!-- Whitelist -->
@@ -240,55 +223,41 @@
     <string name="whitelist_add">Přidat</string>
     <!-- Dialog help -->
     <string name="dialogHelp_tipTitle">Tipy</string>
-    <string name="dialogHelp_tipText">        &lt;b&gt;Nabídky a dialogy&lt;/b&gt;&lt;br&gt;
-        Všechny nabídky a dialogy jsou otevřeny ve spodní části obrazovky. Pokud je dialog velký, uvidíte nejprve pouze
-        horní část. Pokud potáhnete nahoru, zbytek se zviditelní.&lt;br&gt;
-        Můžete je zavřít stisknutím tlačítka Zpět, potáhnutím dolů nebo klepnutím
-vedle&lt;br&gt;&lt;br&gt;
+    <string name="dialogHelp_tipText">        &lt;b&gt;Menus and dialogs&lt;/b&gt;&lt;br&gt;
+        All menus and dialogs are opened at the bottom of the screen. If the dialog is large you will first see only the upper part. If you swipe it up, the rest will get visible. You can close them by pressing the back button, swiping them down or by clicking outside&lt;br&gt;&lt;br&gt;
 
         &lt;b&gt;Long press&lt;/b&gt;&lt;br&gt;
-        Pokud dlouze stisknete ikonu nabídky nebo „Navigační tlačítko“, zobrazí se „Rychlý přepínač dialogu“. Pokud dlouze
-        stisknete „ikonu Záložky“, zobrazí se „Filtr dialogu“.
+        If you long press the menu icon or the \"Navigation button\", the \"Fast toggle dialog\" will show. If you long press the \"Bookmark icon\", the \"Filter dialog\" will show.
     </string>
-    <string name="dialogHelp_filterText">        Záložky můžete označit filtry. Tímto způsobem můžete seskupovat své záložky. Můžete otevřít dialogové okno filtru
-        dlouhým stisknutím ikony záložky. Pokud aktivujete položku, objeví se dialogové okno, kde můžete upravit název filtru.
+    <string name="dialogHelp_filterText">        You can tag your bookmarks with filters. In this way you can group your bookmarks. You can open the filter dialog by long pressing the bookmark icon. If you activate an entry a dialog will appear, where you can edit the name of the filter.
     </string>
     <!-- Dialog changelog -->
-    <string name="changelog_dialog">        Váš jazyk zatím není podporován? Chcete přeložit FOSS Browser? Nebo vylepšit stávající překlady?
-        Neváhejte a připojte se k nám na Crowdinu: https://crowdin.com/project/foss-browser.&lt;br&gt;&lt;br&gt;
+    <string name="changelog_dialog">        Your language isn\'t supported yet? You want to translate FOSS Browser? Or make improvements to existing translations? Feel free to join us on Crowdin: https://crowdin.com/project/foss-browser.&lt;br&gt;&lt;br&gt;
 
-        &lt;b&gt;Na následujících stránkách máte přístup ke všem důležitým informacím o aplikaci „FOSS Browser“.
-        Přečtěte si také dialog nápovědy v aplikaci.&lt;/b&gt;&lt;br&gt;&lt;br&gt;
+        &lt;b&gt;On the following sites you have access to all important information about \"FOSS Browser\". Please read also the help dialog within the app.&lt;/b&gt;&lt;br&gt;&lt;br&gt;
 
-        \u25AA &lt;i&gt;Stránka projektu:&lt;/i&gt; https://github.com/scoute-dich/Browser&lt;br&gt;
-        \u25AA &lt;i&gt;Seznam změn:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/CHANGELOG.md&lt;br&gt;
+        \u25AA &lt;i&gt;Project site:&lt;/i&gt; https://github.com/scoute-dich/Browser&lt;br&gt;
+        \u25AA &lt;i&gt;Changelog:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/CHANGELOG.md&lt;br&gt;
         \u25AA &lt;i&gt;FAQ:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/FAQs.md&lt;br&gt;
-        \u25AA &lt;i&gt;Licence:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/LICENSE.md&lt;br&gt;
-        \u25AA &lt;i&gt;Ochrana soukromí:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/PRIVACY.md
+        \u25AA &lt;i&gt;License:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/LICENSE.md&lt;br&gt;
+        \u25AA &lt;i&gt;Privacy:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/PRIVACY.md
 
     </string>
     <!-- License changelog -->
-    <string name="cont_dialog">        &lt;i&gt;Nejprve bych chtěl poděkovat všem lidem, kteří přispěli jakýmkoli způsobem k tomuto projektu. Byly odeslány otázky,
-        přeloženy nebo pomáhaly jakýmkoli jiným způsobem. Na následujících stránkách se můžete stát aktivním členem této
-        skvělé komunity:&lt;/i&gt;&lt;br&gt;&lt;br&gt;
+    <string name="cont_dialog">        &lt;i&gt;First I would like to thank all people who contributed in any way on this project. They submitted issues, translated or helped in any other way. On following sites you can become a active member of this great community:&lt;/i&gt;&lt;br&gt;&lt;br&gt;
 
         &lt;b&gt;Crowdin:&lt;/b&gt;&lt;br&gt;
-        Crowdin je online platforma pro překlad aplikací v jiných jazycích. Velké díky všem překladatelům. Můžete také
-        pomoci.&lt;br&gt;
-        &lt;i&gt;https://crowdin. om/project/foss-browser&lt;/i&gt;&lt;br&gt;&lt;br&gt;
+        Crowdin is an online plattform to translate applications in other languages. A big thanks to all translators. You can also help.&lt;br&gt;
+        &lt;i&gt;https://crowdin.com/project/foss-browser&lt;/i&gt;&lt;br&gt;&lt;br&gt;
 
-
-        &lt;b&gt;XDA-vlákno:&lt;/b&gt;&lt;br&gt;
-        XDA je skvělá komunita pro vývojáře a nadšence pro chytré telefony. Zde můžete hlásit problémy, požádat o nové funkce
-        a vše ostatní související s \"FOSS prohlížeč\".&lt;br&gt;
-        &lt;i&gt;https://forum.xda-developerů. om/android/apps-games/app-browser-t3500091&lt;/i&gt;&lt;br&gt;&lt;br&gt;
+        &lt;b&gt;XDA-thread:&lt;/b&gt;&lt;br&gt;
+        XDA is a great community for developers and smartphone enthusiasts. Here you can report issues, ask for new features and everything other related to \"FOSS Browser\".&lt;br&gt;
+        &lt;i&gt;https://forum.xda-developers.com/android/apps-games/app-browser-t3500091&lt;/i&gt;&lt;br&gt;&lt;br&gt;
 
         &lt;b&gt;Github:&lt;/b&gt;&lt;br&gt;
-        na Github můžete vidět zdrojový kód \"FOSS prohlížeč\". Toto je techničtější řešení: otevřené problémy, požádat o nové
-        funkcí, nebo dokonce pomoci s vývojem nebo překladem.&lt;br&gt;
-        &lt;i&gt;https://github. om/scoute-dich/prohlížeč&lt;/i&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+        On Github you can see the source code of \"FOSS Browser\". This is the more technical solution: open issues, ask for new features or even help developing or translating.&lt;br&gt;
+        &lt;i&gt;https://github.com/scoute-dich/browser&lt;/i&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
 
-
-        &lt;/i&gt;        &lt;i&gt;Po vyhledání informací o tomto projektu přispěli. Pokud jsem někoho zapomněl, kontaktujte mě:&lt;/i&gt;
+        &lt;i&gt;Following people contributed at this project. If I have forgotten anybody, please contact me:&lt;/i&gt;
     </string>
 </resources>

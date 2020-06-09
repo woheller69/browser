@@ -4,7 +4,7 @@
     <string name="app_name">FOSS Browser</string>
     <string name="app_ok">ОК</string>
     <string name="app_cancel">Скасувати</string>
-    <string name="list_empty">Поточний список порожній</string>
+    <string name="list_empty">List is empty</string>
     <string name="album_title_bookmarks">Закладка</string>
     <string name="album_title_history">Історія</string>
     <string name="album_title_home">Головна</string>
@@ -31,7 +31,6 @@
     <string name="menu_quit">Вихід</string>
     <string name="menu_openFav">Open Favorite</string>
     <string name="menu_delete">Видалити</string>
-    <string name="menu_delete_list">Очистити дані</string>
     <string name="menu_edit">Змінити</string>
     <string name="menu_closeTab">Закрити вкладку</string>
     <string name="menu_download">Відкрити завантаження</string>
@@ -53,8 +52,8 @@
     <string name="dialog_extension_hint">Розширення (наприклад: \".jpg\"):</string>
     <string name="dialog_sign_in_username">Ім\'я користувача</string>
     <string name="dialog_sign_in_password">Пароль</string>
-    <string name="dialog_title_download">Хочете завантажити файл?</string>
-    <string name="dialog_content_resubmission">Хочете повторно відправити свої дані?</string>
+    <string name="dialog_title_download">Download the file?</string>
+    <string name="dialog_content_resubmission">Resubmit your data?</string>
     <string name="dialog_content_ssl_error">Сертифікат сайту не є довіреним. Все одно продовжити?</string>
     <string name="dialog_sortName">Сортувати за назвою</string>
     <string name="dialog_sortIcon">Сортувати за значками</string>
@@ -65,8 +64,8 @@
     <string name="setting_title_browser">Налаштування браузера</string>
     <string name="setting_title_clear_control">Контроль даних</string>
     <string name="setting_title_start_control">Управління запуском</string>
-    <string name="setting_summary_clear_control">Очистіть дані свого браузера або визначте, які дані будуть видалені при виході з програми.</string>
-    <string name="setting_summary_start_control">Визначте, які компоненти браузера будуть увімкнені при запуску.</string>
+    <string name="setting_summary_clear_control">Clear your browser data or decide what data will be cleared when you leave the application.</string>
+    <string name="setting_summary_start_control">Decide which components of FOSS browser will be enabled on start.</string>
     <string name="setting_title_search_engine">Пошукова система</string>
     <string name="setting_summary_search_engine">Тут ви можете вибрати бажану пошукову систему або встановити свою.</string>
     <string name="setting_summary_search_engine_google">Google</string>
@@ -79,36 +78,34 @@
     <string name="setting_summary_search_engine_qwant">Qwant</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_title_inverted">Інвертовані кольори</string>
-    <string name="setting_summary_inverted">Якщо прапорець встановлений, вміст буде відображатися в режимі інвертованої сірої шкали. Це свого роду \"нічний режим\".</string>
+    <string name="setting_summary_inverted">If checked, content will be rendered in a inverted grey scale mode. This is a kind of \"night mode\".</string>
     <string name="setting_title_font">Розмір шрифту</string>
     <string name="setting_summary_font">Змініть розмір шрифту для відображення веб-сайтів.</string>
     <string name="setting_title_remote">Віддалений контент</string>
-    <string name="setting_summary_remote">Увімкніть віддалений вміст, який не знаходиться безпосередньо на веб-сайті, який ви відвідуєте. Відключення цього є більш безпечним і економить обсяг даних. Але деякий вміст більше не буде відображатися.</string>
+    <string name="setting_summary_remote">Enable remote content, which is not directly from the website you are visiting. Disabling this is more secure, faster and saves data volume. But some content will not be displayed anymore.</string>
     <string name="setting_title_save_data">Request \'Save Data\'</string>
     <string name="setting_summary_save_data">Tell websites that you would prefer to save data. Supported websites will load faster.</string>
     <!-- browser start -->
     <string name="setting_title_images">Зображення</string>
-    <string name="setting_summary_images">Увімкнути відображення зображень. Вимкнення може бути корисно для збереження мобільних даних і прискорення завантаження сайтів.</string>
+    <string name="setting_summary_images">Enable Network images. Disabling could be useful to save mobile data and to load websites faster.</string>
     <string name="setting_title_cookie">Куки</string>
     <string name="setting_summary_cookie_delete">Якщо увімкнено, всі cookies будуть видалені. Також файли cookie надійних веб-сайтів.</string>
-    <string name="setting_summary_cookie">Увімкнути файли cookie. Файли cookie являють собою невеликі текстові файли, які зберігаються на вашому пристрої. Веб-сайти використовують їх, наприклад, для зберігання користувацьких налаштувань (наприклад, налаштувань пошуку). Але вони також можуть бути використані для збору особистих даних користувача. Сторонні файли cookie (вони збирають дані користувача для реклами) завжди вимкнені.</string>
+    <string name="setting_summary_cookie">Enable Cookies. Cookies are small text files, which are stored on your device. Websites use them for example to store user settings (for example search settings). But they could also be used to collect personal user data. Third party cookies (they collect user data for advertising) are always disabled.</string>
     <string name="setting_title_whitelistCookie">Білий список куки</string>
     <string name="setting_title_whitelistRemote">Remote whitelist</string>
     <string name="setting_title_javascript">JavaScript</string>
-    <string name="setting_summary_javascript">Увімкнути JavaScript. Багатьом веб-сайтам потрібен JavaScript для їх функціональності (меню, завантаження і відображення зображень). Але вони також являють собою ризик і можуть бути використані для атак.</string>
+    <string name="setting_summary_javascript">Enable JavaScript. Many websites need JavaScript for their functionality (menus, loading and displaying images, …). But they are also a risk and can be used for attacks.</string>
     <string name="setting_title_whitelistJS">Білий список JavaScript</string>
     <string name="setting_title_adblock">AdBlock</string>
     <string name="setting_summary_adblock">Увімкніть AdBlock, щоб заблокувати дратівливу рекламу. Сайти завантажуються швидше при включенні.</string>
     <string name="setting_title_whitelist">Білий список AdBlock</string>
     <string name="setting_title_location">Місце розташування</string>
-    <string name="setting_summary_location">Дозволити веб-сайтам доступ до вашого місця розташування. Деякі веб-сайти (наприклад, Карти Google) потребують цього.</string>
+    <string name="setting_summary_location">Allow websites to access your location. Some websites (like Google maps for navigation) need this enabled.</string>
     <string name="setting_title_history">Історія</string>
     <string name="setting_summary_history">Збережіть історію відвідуваних веб-сайтів.</string>
     <!-- browser clear -->
-    <string name="data_summary">All files will be exported to the \"Android/data/de.baumann.browser/files/browser_backup/\"
-        directory of your sd-card. This directory will be DELETED, if you uninstall \"FOSS Browser\". So make a backup regularly on a save
-        place.</string>
-    <string name="clear_title_quit">Очистити при виході з програми</string>
+    <string name="data_summary">All files will be exported to the \"Android/data/de.baumann.browser/files/browser_backup/\" directory of your sd-card. This directory will be DELETED, if you uninstall \"FOSS Browser\". So make a backup regularly on a save place.</string>
+    <string name="clear_title_quit">Clear on application exit</string>
     <string name="clear_summary_quit">Кожен раз при виході з \"Foss Browser\" всі перераховані вище перевірені дані будуть видалятися.</string>
     <string name="clear_title_cache">Очистити кеш</string>
     <string name="clear_title_cookie">Очистити куки</string>
@@ -123,19 +120,16 @@
     <string name="setting_summary_ui">Змініть поведінку та інтерфейс програми відповідно до ваших уподобань.</string>
     <string name="setting_summary_data">Імпортуйте та експортуйте дані програми (білі списки, закладки).</string>
     <string name="setting_filter">Bookmark filter</string>
-    <string name="setting_filter_summary">To show the filter dialog long press on the bookmark icon in the overview. Decide which
-        filters you will use.</string>
+    <string name="setting_filter_summary">To show the filter dialog long press on the bookmark icon in the overview. Decide which filters you will use.</string>
     <string name="setting_title_fav">Favorite</string>
-    <string name="setting_summary_fav">Here you can change the default website which loads on start of \"FOSS Browser\".
-    Enter \"about:blank\" to get an emty start site.</string>
+    <string name="setting_summary_fav">Here you can change the default website which loads on start of \"FOSS Browser\". Enter \"about:blank\" to get an emty start site.</string>
     <string name="setting_title_searchEngine">Custom search engine</string>
-    <string name="setting_summary_searchEngine">Here you can enter a custom search URL. Also choose \"Custom search engine\" as search
-    provider.</string>
+    <string name="setting_summary_searchEngine">Here you can enter a custom search URL. Also choose \"Custom search engine\" as search provider.</string>
     <string name="setting_title_userAgent">Custom user agent</string>
     <string name="setting_summary_userAgent">Here you can enter a custom user agent. Let empty to use default one.</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">Приховати Панель інструментів</string>
-    <string name="setting_summary_hide">Використовуйте весь екран при прокручуванні сайтів. Якщо ви натиснете кнопку \"Назад\", то покинете повноекранний режим.</string>
+    <string name="setting_summary_hide">Use the whole screen when scrolling through websites. If you press the back button you will leave fullscreen mode.</string>
     <string name="setting_theme">Theme</string>
     <string name="setting_theme_summary">Set the app theme.</string>
     <string name="setting_theme_system">System theme</string>
@@ -152,7 +146,7 @@
     <string name="setting_summary_nav_pos_left">Зліва</string>
     <string name="setting_summary_nav_pos_center">По центру</string>
     <string name="setting_summary_nav_pos_null">Never show</string>
-    <string name="setting_summary_tab">Що повинно відображатися при запуску \"FOSS Browser\"? Початкова сторінка, закладки …</string>
+    <string name="setting_summary_tab">What should be shown at the start of the \"Overview\"?</string>
     <string name="setting_title_confirm_exit">Підтвердити вихід з браузера</string>
     <string name="setting_summary_confirm_exit">Діалогове вікно підтвердження при закритті браузера.</string>
     <string name="setting_title_confirm_tab_close">Підтвердити закриття вкладки</string>
@@ -186,14 +180,13 @@
     <string name="setting_title_import_bookmarks">Import bookmarks</string>
     <string name="setting_title_export_appData">Export app data</string>
     <string name="setting_title_import_appData">Import app data</string>
-    <string name="setting_summary_export_appData">Export app data (Startpage + previews, History, Bookmarks)
-        and your personal settings.</string>
+    <string name="setting_summary_export_appData">Export whole database and your personal settings.</string>
     <string name="title_appData">App data</string>
-    <string name="hint_database">Це призведе до видалення всіх поточних налаштувань і даних. Продовжити?</string>
+    <string name="hint_database">This will delete current data. Proceed?</string>
     <!-- Others setting -->
     <string name="setting_title_others">Інший</string>
     <string name="setting_title_appSettings">Налаштування</string>
-    <string name="setting_summary_appSettings">Відкрийте системні налаштування \"FOSS Browser\". Там ви можете надати дозволи, очистити дані програми і так далі.</string>
+    <string name="setting_summary_appSettings">Open the system app settings for \"FOSS Browser\". There you can, depending on your Android version grant permissions, clear the app data and so on.</string>
     <string name="setting_title_community">Підтримка</string>
     <!-- Toast -->
     <string name="toast_add_to_home_successful">Успішно додано на головну</string>
@@ -215,15 +208,13 @@
     <string name="toast_start_download">Початок завантаження</string>
     <string name="toast_wait_a_minute">Будь ласка, зачекайте</string>
     <string name="toast_webview_forward">Не вдається завантажити наступний сайт</string>
-    <string name="toast_permission_sdCard">\"FOSS Browser\" needs the permission to \"read and write on your storage\". This
-        is needed to download files, taking screenshots and making backups of your data.</string>
-    <string name="toast_permission_loc">\"FOSS Browser\" needs the permission to \"access your location\". This is requested from some
-        websites for example when they offer some kind of navigation.</string>
+    <string name="toast_permission_sdCard">\"FOSS Browser\" needs the permission to \"read and write on your storage\". This is needed to download files, taking screenshots and making backups of your data.</string>
+    <string name="toast_permission_loc">\"FOSS Browser\" needs the permission to \"access your location\". This is requested from some websites for example when they offer some kind of navigation.</string>
     <string name="toast_restart">Щоб застосувати зміни, необхідно перезапустити \"FOSS Browser\". Закрити зараз?</string>
     <string name="toast_quit">Хочете вийти з \"FOSS Browser\"?</string>
     <string name="toast_close_tab">Хочете закрити поточну вкладку?</string>
     <string name="toast_downloadComplete">Завантаження завершене. Відкрити файловий менеджер?</string>
-    <string name="toast_unsecured">Цей сайт використовує незахищене з\'єднання (\"http\"). Ви хочете спробувати безпечне з\'єднання (\"https\")?</string>
+    <string name="toast_unsecured">Website uses an unsecured connection (\"http\"). Try a secure connection (\"https\")?</string>
     <string name="toast_backup">Зберегти дані? Це перезапише стару резервну копію.</string>
     <string name="toast_fav">Успішно обрано як улюблене.</string>
     <!-- Whitelist -->
@@ -233,23 +224,17 @@
     <!-- Dialog help -->
     <string name="dialogHelp_tipTitle">Tips</string>
     <string name="dialogHelp_tipText">        &lt;b&gt;Menus and dialogs&lt;/b&gt;&lt;br&gt;
-        All menus and dialogs are opened at the bottom of the screen. If the dialog is large you will first see only
-        the upper part. If you swipe it up, the rest will get visible.&lt;br&gt;
-        You can close them by pressing the back button, swiping them down or by clicking outside&lt;br&gt;&lt;br&gt;
+        All menus and dialogs are opened at the bottom of the screen. If the dialog is large you will first see only the upper part. If you swipe it up, the rest will get visible. You can close them by pressing the back button, swiping them down or by clicking outside&lt;br&gt;&lt;br&gt;
 
         &lt;b&gt;Long press&lt;/b&gt;&lt;br&gt;
-        If you long press the menu icon or the \"Navigation button\", the \"Fast toggle dialog\" will show. If you long
-        press the \"Bookmark icon\", the \"Filter dialog\" will show.
+        If you long press the menu icon or the \"Navigation button\", the \"Fast toggle dialog\" will show. If you long press the \"Bookmark icon\", the \"Filter dialog\" will show.
     </string>
-    <string name="dialogHelp_filterText">        You can tag your bookmarks with filters. In this way you can group your bookmarks. You can open the filter dialog by
-        long pressing the bookmark icon. If you activate an entry a dialog will appear, where you can edit the name of the filter.
+    <string name="dialogHelp_filterText">        You can tag your bookmarks with filters. In this way you can group your bookmarks. You can open the filter dialog by long pressing the bookmark icon. If you activate an entry a dialog will appear, where you can edit the name of the filter.
     </string>
     <!-- Dialog changelog -->
-    <string name="changelog_dialog">        Your language isn\'t supported yet? You want to translate FOSS Browser? Or make improvements to existing translations?
-        Feel free to join us on Crowdin: https://crowdin.com/project/foss-browser.&lt;br&gt;&lt;br&gt;
+    <string name="changelog_dialog">        Your language isn\'t supported yet? You want to translate FOSS Browser? Or make improvements to existing translations? Feel free to join us on Crowdin: https://crowdin.com/project/foss-browser.&lt;br&gt;&lt;br&gt;
 
-        &lt;b&gt;On the following sites you have access to all important information about \"FOSS Browser\".
-        Please read also the help dialog within the app.&lt;/b&gt;&lt;br&gt;&lt;br&gt;
+        &lt;b&gt;On the following sites you have access to all important information about \"FOSS Browser\". Please read also the help dialog within the app.&lt;/b&gt;&lt;br&gt;&lt;br&gt;
 
         \u25AA &lt;i&gt;Project site:&lt;/i&gt; https://github.com/scoute-dich/Browser&lt;br&gt;
         \u25AA &lt;i&gt;Changelog:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/CHANGELOG.md&lt;br&gt;
@@ -259,26 +244,19 @@
 
     </string>
     <!-- License changelog -->
-    <string name="cont_dialog">        &lt;i&gt;First I would like to thank all people who contributed in any way on this project. They submitted issues,
-        translated or helped in any other way. On following sites you can become a active member of this
-        great community:&lt;/i&gt;&lt;br&gt;&lt;br&gt;
+    <string name="cont_dialog">        &lt;i&gt;First I would like to thank all people who contributed in any way on this project. They submitted issues, translated or helped in any other way. On following sites you can become a active member of this great community:&lt;/i&gt;&lt;br&gt;&lt;br&gt;
 
         &lt;b&gt;Crowdin:&lt;/b&gt;&lt;br&gt;
-        Crowdin is an online plattform to translate applications in other languages. A big thanks to all translators. You can
-        also help.&lt;br&gt;
+        Crowdin is an online plattform to translate applications in other languages. A big thanks to all translators. You can also help.&lt;br&gt;
         &lt;i&gt;https://crowdin.com/project/foss-browser&lt;/i&gt;&lt;br&gt;&lt;br&gt;
 
-
         &lt;b&gt;XDA-thread:&lt;/b&gt;&lt;br&gt;
-        XDA is a great community for developers and smartphone enthusiasts. Here you can report issues, ask for new features
-        and everything other related to \"FOSS Browser\".&lt;br&gt;
+        XDA is a great community for developers and smartphone enthusiasts. Here you can report issues, ask for new features and everything other related to \"FOSS Browser\".&lt;br&gt;
         &lt;i&gt;https://forum.xda-developers.com/android/apps-games/app-browser-t3500091&lt;/i&gt;&lt;br&gt;&lt;br&gt;
 
         &lt;b&gt;Github:&lt;/b&gt;&lt;br&gt;
-        On Github you can see the source code of \"FOSS Browser\". This is the more technical solution: open issues, ask for new
-        features or even help developing or translating.&lt;br&gt;
+        On Github you can see the source code of \"FOSS Browser\". This is the more technical solution: open issues, ask for new features or even help developing or translating.&lt;br&gt;
         &lt;i&gt;https://github.com/scoute-dich/browser&lt;/i&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-
 
         &lt;i&gt;Following people contributed at this project. If I have forgotten anybody, please contact me:&lt;/i&gt;
     </string>

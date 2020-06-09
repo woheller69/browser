@@ -237,7 +237,6 @@
     <string name="setting_gesture_10">Close tab</string>
 
     <!-- Data -->
-
     <string name="setting_title_export_bookmarks">Export bookmarks as HTML-file</string>
     <string name="setting_title_import_bookmarks">Import bookmarks</string>
     <string name="setting_title_export_appData">Export app data</string>

@@ -177,6 +177,8 @@
     <string name="setting_gesture_09">新しいタブを開く</string>
     <string name="setting_gesture_10">タブを閉じる</string>
     <!-- Data -->
+    <string name="setting_title_export_bookmarks">Export bookmarks as HTML-file</string>
+    <string name="setting_title_import_bookmarks">Import bookmarks</string>
     <string name="setting_title_export_appData">アプリデータのエクスポート</string>
     <string name="setting_title_import_appData">アプリデータのインポート</string>
     <string name="setting_summary_export_appData">アプリデータ (スタートページ+プレビュー、履歴、ブックマーク) と個人設定をエクスポートする</string>

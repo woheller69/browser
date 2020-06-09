@@ -63,6 +63,7 @@ class AlbumItem {
         });
         ImageView albumClose = albumView.findViewById(R.id.whitelist_item_cancel);
         albumClose.setVisibility(View.VISIBLE);
+        albumClose.setImageResource(R.drawable.icon_close);
         albumTitle = albumView.findViewById(R.id.whitelist_item_domain);
         albumTitle.setText(context.getString(R.string.app_name));
         albumClose.setOnClickListener(new View.OnClickListener() {

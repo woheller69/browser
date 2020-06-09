@@ -69,7 +69,6 @@ public class ImportWhitelistTask extends AsyncTask<Void, Void, Boolean> {
     protected void onPostExecute(Boolean result) {
         dialog.hide();
         dialog.dismiss();
-
         if (result) {
             NinjaToast.show(context, context.getString(R.string.toast_import_successful) + count);
         } else {

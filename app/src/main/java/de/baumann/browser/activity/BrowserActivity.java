@@ -696,7 +696,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 gridTitle.setText(overViewTab);
 
                 List<GridItem> list = new LinkedList<>();
-                GridItem item_01 = new GridItem(R.drawable.icon_delete, getResources().getString(R.string.menu_delete_list), null, 0);
+                GridItem item_01 = new GridItem(R.drawable.icon_delete, getResources().getString(R.string.menu_delete), null, 0);
                 GridItem item_02 = new GridItem(R.drawable.icon_sort_title, getResources().getString(R.string.menu_sort), null, 0);
                 GridItem item_03 = new GridItem(R.drawable.filter_variant, getResources().getString(R.string.menu_filter), null, 0);
 

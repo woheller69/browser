@@ -95,7 +95,7 @@
     <string name="setting_title_whitelistCookie">Cookies permitidos</string>
     <string name="setting_title_whitelistRemote">Remote whitelist</string>
     <string name="setting_title_javascript">JavaScript</string>
-    <string name="setting_summary_javascript">Ativa a utilização de JavaScript. Alguns sites necessitam de executar JavaScript para as suas funcionalidades (menus, carregamento e exibição de imagens…). Mas são também um risco e podem ser utilizados para ataques.</string>
+    <string name="setting_summary_javascript">Ativa a utilização de JavaScript. Alguns sites necessitam de executar JavaScript para as suas funcionalidades (menus, carregamento e exibição de imagens...). Mas são também um risco e podem ser utilizados para ataques.</string>
     <string name="setting_title_whitelistJS">Lista branca JavaScript</string>
     <string name="setting_title_adblock">AdBlock</string>
     <string name="setting_summary_adblock">Ativar AdBlock para bloquear os anúncios. Se ativa, os sites são carregados mais rapidamente.</string>
@@ -177,6 +177,8 @@
     <string name="setting_gesture_09">Abrir novo separador</string>
     <string name="setting_gesture_10">Fechar separador</string>
     <!-- Data -->
+    <string name="setting_title_export_bookmarks">Export bookmarks as HTML-file</string>
+    <string name="setting_title_import_bookmarks">Import bookmarks</string>
     <string name="setting_title_export_appData">Exportar dados da aplicação</string>
     <string name="setting_title_import_appData">Importar dados da aplicação</string>
     <string name="setting_summary_export_appData">Exportar dados da aplicação (página inicial + pré-visualizações, histórico, marcadores) e definições do utilizador.</string>

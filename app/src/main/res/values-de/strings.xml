@@ -4,7 +4,7 @@
     <string name="app_name">FOSS Browser</string>
     <string name="app_ok">OK</string>
     <string name="app_cancel">Abbrechen</string>
-    <string name="list_empty">List is empty</string>
+    <string name="list_empty">Liste ist leer</string>
     <string name="album_title_bookmarks">Lesezeichen</string>
     <string name="album_title_history">Verlauf</string>
     <string name="album_title_home">Startseite</string>
@@ -52,8 +52,8 @@
     <string name="dialog_extension_hint">Dateiendung (z.B.: \".jpg\"):</string>
     <string name="dialog_sign_in_username">Benutzername</string>
     <string name="dialog_sign_in_password">Passwort</string>
-    <string name="dialog_title_download">Download the file?</string>
-    <string name="dialog_content_resubmission">Resubmit your data?</string>
+    <string name="dialog_title_download">Datei herunterladen?</string>
+    <string name="dialog_content_resubmission">Daten noch einmal senden?</string>
     <string name="dialog_content_ssl_error">Das Zertifikat der Seite ist nicht vertrauenswürdig. Trotzdem fortfahren?</string>
     <string name="dialog_sortName">Nach Namen sortieren</string>
     <string name="dialog_sortIcon">Nach Icon sortieren</string>
@@ -64,8 +64,8 @@
     <string name="setting_title_browser">Browser-Einstellungen</string>
     <string name="setting_title_clear_control">Datenkontrolle</string>
     <string name="setting_title_start_control">Start-Einstellungen</string>
-    <string name="setting_summary_clear_control">Clear your browser data or decide what data will be cleared when you leave the application.</string>
-    <string name="setting_summary_start_control">Decide which components of FOSS browser will be enabled on start.</string>
+    <string name="setting_summary_clear_control">Lösche die Daten des Browsers oder entscheide, welche Daten beim Verlassen der Anwendung automatisch gelöscht werden.</string>
+    <string name="setting_summary_start_control">Entscheide welche Funktionen des Browsers beim Start aktiviert sind.</string>
     <string name="setting_title_search_engine">Suchmaschine</string>
     <string name="setting_summary_search_engine">Hier kannst du deine bevorzugte Suchmaschine auswählen, oder eine eigene einrichten.</string>
     <string name="setting_summary_search_engine_google">Google</string>
@@ -78,34 +78,34 @@
     <string name="setting_summary_search_engine_qwant">Qwant</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_title_inverted">Invertierte Farben</string>
-    <string name="setting_summary_inverted">If checked, content will be rendered in a inverted grey scale mode. This is a kind of \"night mode\".</string>
+    <string name="setting_summary_inverted">Wenn aktiviert, werden Inhalte in einem invertierten schwarz/weiß-Modus dargestellt. Dies ist eine Art \"Nachtmodus\".</string>
     <string name="setting_title_font">Schriftgröße</string>
     <string name="setting_summary_font">Ändere die Schriftgröße für die Darstellung von Websites.</string>
     <string name="setting_title_remote">Entfernte Inhalte</string>
-    <string name="setting_summary_remote">Enable remote content, which is not directly from the website you are visiting. Disabling this is more secure, faster and saves data volume. But some content will not be displayed anymore.</string>
+    <string name="setting_summary_remote">Aktiviere das Laden entfernter Inhalte, die nicht direkt von der besuchten Website stammen. Dies zu deaktivieren ist sicherer, schneller und spart Datenvolumen. Manche Inhalte werden dann allerdings nicht mehr angezeigt.</string>
     <string name="setting_title_save_data">\"Daten sparen\" verlangen</string>
     <string name="setting_summary_save_data">Websites mitteilen, dass du Datenvolumen sparen willst. Unterstütze Websites werden schneller geladen.</string>
     <!-- browser start -->
     <string name="setting_title_images">Bilder</string>
-    <string name="setting_summary_images">Enable Network images. Disabling could be useful to save mobile data and to load websites faster.</string>
+    <string name="setting_summary_images">Aktiviere das automatische Laden von Bildern. Wenn du dies deaktivierst, sparst du Datenvolumen und die Internetseiten laden schneller.</string>
     <string name="setting_title_cookie">Cookies</string>
     <string name="setting_summary_cookie_delete">Falls aktiviert, werden alle Cookies gelöscht. Auch die von vertrauenswürdigen Websites.</string>
-    <string name="setting_summary_cookie">Enable Cookies. Cookies are small text files, which are stored on your device. Websites use them for example to store user settings (for example search settings). But they could also be used to collect personal user data. Third party cookies (they collect user data for advertising) are always disabled.</string>
+    <string name="setting_summary_cookie">Aktiviere Cookies. Cookies sind kleine Textdateien, die auf deinem Gerät gespeichert werden. Internetseiten können sie nutzen um die Benutzereinstellungen (z.B. bei Suchmaschinen) zu speichern. Cookies von Dritten (sie sammeln zu Werbezwecken Nutzerdaten) sind immer deaktiviert.</string>
     <string name="setting_title_whitelistCookie">Cookie Ausnahmen</string>
     <string name="setting_title_whitelistRemote">Entfernte Inhalte Ausnahmen</string>
     <string name="setting_title_javascript">JavaScript</string>
-    <string name="setting_summary_javascript">Enable JavaScript. Many websites need JavaScript for their functionality (menus, loading and displaying images, …). But they are also a risk and can be used for attacks.</string>
+    <string name="setting_summary_javascript">Aktiviere JavaScript. Viele Internetseiten brauchen JavaScript um richtig zu funktionieren (Menüs, laden von Bildern, …). JavaScript stellt allerdings ein Sicherheitsrisiko dar und kann benutzt werden, um dein Gerät anzugreifen.</string>
     <string name="setting_title_whitelistJS">JavaScript Ausnahmen</string>
     <string name="setting_title_adblock">AdBlock</string>
     <string name="setting_summary_adblock">Aktiviere AdBlock, um lästige Werbung zu blockieren. Websites laden auch schneller, falls eingeschaltet.</string>
     <string name="setting_title_whitelist">AdBlock Ausnahmen</string>
     <string name="setting_title_location">Standortbestimmung</string>
-    <string name="setting_summary_location">Allow websites to access your location. Some websites (like Google maps for navigation) need this enabled.</string>
+    <string name="setting_summary_location">Websites gestatten, auf den Standort zuzugreifen. Einige Websites (wie für Navigation Google Maps) benötigen dies um richtig zu funktionieren.</string>
     <string name="setting_title_history">Verlauf</string>
     <string name="setting_summary_history">Speichere den Verlauf der besuchten Websites.</string>
     <!-- browser clear -->
-    <string name="data_summary">All files will be exported to the \"Android/data/de.baumann.browser/files/browser_backup/\" directory of your sd-card. This directory will be DELETED, if you uninstall \"FOSS Browser\". So make a backup regularly on a save place.</string>
-    <string name="clear_title_quit">Clear on application exit</string>
+    <string name="data_summary">Alle Dateien werden in das Verzeichnis \"Android/data/de.baumann.browser/files/browser_backup/\" der SD-Karte exportiert. Dieses Verzeichnis wird GELÖSCHT, wenn \"FOSS Browser\" deinstalliert wird, also erstelle regelmäßig ein Backup an einem sicheren Speicherort.</string>
+    <string name="clear_title_quit">Beim Verlassen der Anwendung löschen</string>
     <string name="clear_summary_quit">Jedesmal, wenn du \"FOSS Browser\" schließt, werden alle oben ausgewählte Daten gelöscht.</string>
     <string name="clear_title_cache">Cache löschen</string>
     <string name="clear_title_cookie">Cookies löschen</string>
@@ -120,16 +120,16 @@
     <string name="setting_summary_ui">Ändere das Verhalten und die Benutzeroberfläche entsprechend deinen Wünschen.</string>
     <string name="setting_summary_data">Verschiedene App-Daten importieren und exportieren (Ausnahmen, Lesezeichen,…).</string>
     <string name="setting_filter">Lesezeichen-Filter</string>
-    <string name="setting_filter_summary">To show the filter dialog long press on the bookmark icon in the overview. Decide which filters you will use.</string>
+    <string name="setting_filter_summary">Um den Filterdialog anzuzeigen, lange auf das Lesezeichen-Icon in der Übersicht drücken. Entscheide hier, welche Filter du nutzen wirst.</string>
     <string name="setting_title_fav">Favorit</string>
-    <string name="setting_summary_fav">Here you can change the default website which loads on start of \"FOSS Browser\". Enter \"about:blank\" to get an emty start site.</string>
+    <string name="setting_summary_fav">Hier kannst du die voreingestellte Website ändern, die beim Start von \"FOSS-Browser\" lädt. Gib \"about:blank\" ein, um eine leere Startseite zu erhalten.</string>
     <string name="setting_title_searchEngine">Nutzerdefinierte Suchmaschine</string>
-    <string name="setting_summary_searchEngine">Here you can enter a custom search URL. Also choose \"Custom search engine\" as search provider.</string>
+    <string name="setting_summary_searchEngine">Hier kannst du eine benutzerdefinierte Such-URL eingeben. Wähle auch \"Benutzerdefinierte Suchmaschine\" als Suchanbieter aus.</string>
     <string name="setting_title_userAgent">Eigener Useragent</string>
     <string name="setting_summary_userAgent">Hier kannst du einen eigenen Useragent eingeben. Leer lassen um den Standard zu verwenden.</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">Toolbar verstecken</string>
-    <string name="setting_summary_hide">Use the whole screen when scrolling through websites. If you press the back button you will leave fullscreen mode.</string>
+    <string name="setting_summary_hide">Benutze den ganzen Bildschirm, wenn du durch Internetseiten scrollst. Wenn du die \"Zurücktaste\" drückst, verlässt du den Vollbildmodus.</string>
     <string name="setting_theme">Theme</string>
     <string name="setting_theme_summary">Lege das App-Design fest.</string>
     <string name="setting_theme_system">System-Theme</string>
@@ -146,7 +146,7 @@
     <string name="setting_summary_nav_pos_left">Links</string>
     <string name="setting_summary_nav_pos_center">Mitte</string>
     <string name="setting_summary_nav_pos_null">Niemals anzeigen</string>
-    <string name="setting_summary_tab">What should be shown at the start of the \"Overview\"?</string>
+    <string name="setting_summary_tab">Was soll am Anfang der \"Übersicht\" angezeigt werden?</string>
     <string name="setting_title_confirm_exit">Verlassen des Browsers bestätigen</string>
     <string name="setting_summary_confirm_exit">Bestätigungsdialog beim Schließen des Browsers.</string>
     <string name="setting_title_confirm_tab_close">Schließen des Tabs bestätigen</string>
@@ -180,13 +180,13 @@
     <string name="setting_title_import_bookmarks">Lesezeichen importieren</string>
     <string name="setting_title_export_appData">App-Daten exportieren</string>
     <string name="setting_title_import_appData">App-Daten importieren</string>
-    <string name="setting_summary_export_appData">Export whole database and your personal settings.</string>
+    <string name="setting_summary_export_appData">Exportiere die ganze Datenbank und deine persönlichen Einstellungen.</string>
     <string name="title_appData">App-Daten</string>
-    <string name="hint_database">This will delete current data. Proceed?</string>
+    <string name="hint_database">Aktuelle Daten werden gelöscht. Fortfahren?</string>
     <!-- Others setting -->
     <string name="setting_title_others">Sonstiges</string>
     <string name="setting_title_appSettings">App-Einstellungen</string>
-    <string name="setting_summary_appSettings">Open the system app settings for \"FOSS Browser\". There you can, depending on your Android version grant permissions, clear the app data and so on.</string>
+    <string name="setting_summary_appSettings">Gehe in Systemeinstellungen => Apps zu \"FOSS Browser\". Je nach Android Version kannst du dort Berechtigungen erteilen, die App-Daten löschen usw.</string>
     <string name="setting_title_community">Mitmachen</string>
     <!-- Toast -->
     <string name="toast_add_to_home_successful">Erfolgreich gespeichert.</string>

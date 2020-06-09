@@ -9,7 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 import de.baumann.browser.database.Record;
-import de.baumann.browser.Ninja.R;
+import de.baumann.browser.R;
 
 import java.text.SimpleDateFormat;
 import java.util.List;

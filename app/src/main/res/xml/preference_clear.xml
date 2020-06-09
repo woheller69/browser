@@ -13,7 +13,7 @@
         android:title="@string/clear_title_history"/>
 
     <CheckBoxPreference android:key="sp_clearIndexedDB"
-        android:icon="@drawable/icon_export"
+        android:icon="@drawable/icon_exit"
         android:defaultValue="false"
         android:title="@string/clear_title_indexedDB"/>
 

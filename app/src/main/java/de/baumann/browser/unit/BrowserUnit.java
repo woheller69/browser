@@ -7,8 +7,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.pm.ShortcutManager;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
@@ -28,12 +26,13 @@ import com.google.android.material.bottomsheet.BottomSheetDialog;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
@@ -42,15 +41,15 @@ import java.util.regex.Pattern;
 import de.baumann.browser.browser.AdBlock;
 import de.baumann.browser.browser.Cookie;
 import de.baumann.browser.browser.Javascript;
+import de.baumann.browser.browser.Remote;
+import de.baumann.browser.database.Record;
 import de.baumann.browser.database.RecordAction;
-import de.baumann.browser.Ninja.R;
+import de.baumann.browser.R;
 import de.baumann.browser.view.NinjaToast;
 
 public class BrowserUnit {
 
     public static final int PROGRESS_MAX = 100;
-    private static final String SUFFIX_TXT = ".txt";
-
     public static final String MIME_TYPE_TEXT_PLAIN = "text/plain";
 
     private static final String SEARCH_ENGINE_GOOGLE = "https://www.google.com/search?q=";
@@ -77,6 +76,11 @@ public class BrowserUnit {
     private static final String URL_PREFIX_GOOGLE_PLUS = "plus.url.google.com/url?q=";
     private static final String URL_SUFFIX_GOOGLE_PLUS = "&rct";
 
+    private static final String BOOKMARK_TYPE = "<DT><A HREF=\"{url}\" ADD_DATE=\"{time}\">{title}</A>";
+    private static final String BOOKMARK_TITLE = "{title}";
+    private static final String BOOKMARK_URL = "{url}";
+    private static final String BOOKMARK_TIME = "{time}";
+
     public static boolean isURL(String url) {
         if (url == null) {
             return false;
@@ -94,7 +98,7 @@ public class BrowserUnit {
                 + "(([0-9]{1,3}\\.){3}[0-9]{1,3}"                            // IP形式的URL -> 199.194.52.184
                 + "|"                                                        // 允许IP和DOMAIN（域名）
                 + "(.)*"                                                     // 域名 -> www.
-                // + "([0-9a-z_!~*'()-]+\\.)*"                               // 域名 -> www.
+                + "([0-9a-z_!~*'()-]+\\.)*"                                  // 域名 -> www.
                 + "([0-9a-z][0-9a-z-]{0,61})?[0-9a-z]\\."                    // 二级域名
                 + "[a-z]{2,6})"                                              // first level domain -> .com or .museum
                 + "(:[0-9]{1,4})?"                                           // 端口 -> :80
@@ -224,19 +228,23 @@ public class BrowserUnit {
         switch (i) {
             case 0:
                 list = action.listDomains(RecordUnit.TABLE_WHITELIST);
-                filename = context.getString(R.string.export_whitelistAdBlock);
+                filename = "export_whitelist_AdBlock.txt";
                 break;
             case 1:
                 list = action.listDomains(RecordUnit.TABLE_JAVASCRIPT);
-                filename = context.getString(R.string.export_whitelistJS);
+                filename = "export_whitelist_java.txt";
+                break;
+            case 3:
+                list = action.listDomains(RecordUnit.TABLE_REMOTE);
+                filename = "export_whitelist_remote.txt";
                 break;
             default:
                 list = action.listDomains(RecordUnit.TABLE_COOKIE);
-                filename = context.getString(R.string.export_whitelistCookie);
+                filename = "export_whitelist_cookie.txt";
                 break;
         }
         action.close();
-        File file = new File(context.getExternalFilesDir(null), "browser_backup//" + filename + SUFFIX_TXT);
+        File file = new File(context.getExternalFilesDir(null), "browser_backup//" + filename);
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(file, false));
             for (String domain : list) {
@@ -257,21 +265,26 @@ public class BrowserUnit {
             AdBlock adBlock = null;
             Javascript js = null;
             Cookie cookie = null;
+            Remote remote = null;
             switch (i) {
                 case 0:
                     adBlock= new AdBlock(context);
-                    filename = context.getString(R.string.export_whitelistAdBlock);
+                    filename = "export_whitelist_AdBlock.txt";
                     break;
                 case 1:
                     js = new Javascript(context);
-                    filename = context.getString(R.string.export_whitelistJS);
+                    filename = "export_whitelist_java.txt";
+                    break;
+                case 3:
+                    remote = new Remote(context);
+                    filename = "export_whitelist_remote.txt";
                     break;
                 default:
                     cookie = new Cookie(context);
-                    filename = context.getString(R.string.export_whitelistAdBlock);
+                    filename = "export_whitelist_cookie.txt";
                     break;
             }
-            File file = new File(context.getExternalFilesDir(null), "browser_backup//" + filename + SUFFIX_TXT);
+            File file = new File(context.getExternalFilesDir(null), "browser_backup//" + filename);
             RecordAction action = new RecordAction(context);
             action.open(true);
             BufferedReader reader = new BufferedReader(new FileReader(file));
@@ -290,8 +303,14 @@ public class BrowserUnit {
                             count++;
                         }
                         break;
+                    case 3:
+                        if (!action.checkDomain(line, RecordUnit.TABLE_REMOTE)) {
+                            remote.addDomain(line);
+                            count++;
+                        }
+                        break;
                     default:
-                        if (!action.checkDomain(line, RecordUnit.COLUMN_DOMAIN)) {
+                        if (!action.checkDomain(line, RecordUnit.TABLE_COOKIE)) {
                             cookie.addDomain(line);
                             count++;
                         }
@@ -304,6 +323,87 @@ public class BrowserUnit {
             Log.w("browser", "Error reading file", e);
         }
         return count;
+    }
+
+    public static String exportBookmarks(Context context) {
+        RecordAction action = new RecordAction(context);
+        action.open(false);
+        List<Record> list = action.listBookmark(context, false, 0);
+        action.close();
+        File file = new File(context.getExternalFilesDir(null), "browser_backup//export_Bookmark.html");
+
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(file, false));
+            for (Record record : list) {
+                String type = BOOKMARK_TYPE;
+                type = type.replace(BOOKMARK_TITLE, record.getTitle());
+                type = type.replace(BOOKMARK_URL, record.getURL());
+                type = type.replace(BOOKMARK_TIME, String.valueOf(record.getTime()));
+                writer.write(type);
+                writer.newLine();
+            }
+            writer.close();
+            return file.getAbsolutePath();
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    public static int importBookmarks(Context context) {
+        File file = new File(context.getExternalFilesDir(null), "browser_backup//export_Bookmark.html");
+        List<Record> list = new ArrayList<>();
+        try {
+            RecordAction action = new RecordAction(context);
+            action.open(true);
+
+            BufferedReader reader = new BufferedReader(new FileReader(file));
+            String line;
+            while ((line = reader.readLine()) != null) {
+                line = line.trim();
+                if (!((line.startsWith("<dt><a ") && line.endsWith("</a>")) || (line.startsWith("<DT><A ") && line.endsWith("</A>")))) {
+                    continue;
+                }
+                String title = getBookmarkTitle(line);
+                String url = getBookmarkURL(line);
+                if (title.trim().isEmpty() || url.trim().isEmpty()) {
+                    continue;
+                }
+                Record record = new Record();
+                record.setTitle(title);
+                record.setURL(url);
+                record.setTime(System.currentTimeMillis());
+                if (!action.checkUrl(url, RecordUnit.TABLE_BOOKMARK)) {
+                    list.add(record);
+                }
+            }
+            reader.close();
+            Collections.sort(list, new Comparator<Record>() {
+                @Override
+                public int compare(Record first, Record second) {
+                    return first.getTitle().compareTo(second.getTitle());
+                }
+            });
+            for (Record record : list) {
+                action.addBookmark(record);
+            }
+            action.close();
+        } catch (Exception ignored) {}
+        return list.size();
+    }
+
+    private static String getBookmarkTitle(String line) {
+        line = line.substring(0, line.length() - 4); // Remove last </a>
+        int index = line.lastIndexOf(">");
+        return line.substring(index + 1);
+    }
+
+    private static String getBookmarkURL(String line) {
+        for (String string : line.split(" +")) {
+            if (string.startsWith("href=\"") || string.startsWith("HREF=\"")) {
+                return string.substring(6, string.length() - 1); // Remove href=\" and \"
+            }
+        }
+        return "";
     }
 
     public static void clearHome(Context context) {

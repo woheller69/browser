@@ -1,7 +1,6 @@
 package de.baumann.browser.unit;
 
 import android.content.Context;
-import android.view.View;
 
 public class ViewUnit {
 

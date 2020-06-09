@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.TextView;
 
-import de.baumann.browser.Ninja.R;
+import de.baumann.browser.R;
 import de.baumann.browser.unit.BrowserUnit;
 import de.baumann.browser.unit.HelperUnit;
 import de.baumann.browser.view.NinjaToast;
@@ -21,7 +21,7 @@ public class ImportWhitelistTask extends AsyncTask<Void, Void, Boolean> {
     private final Context context;
     private BottomSheetDialog dialog;
     private int count;
-    private int table;
+    private final int table;
 
     public ImportWhitelistTask(Activity activity, int i) {
         this.context = activity;
@@ -51,6 +51,12 @@ public class ImportWhitelistTask extends AsyncTask<Void, Void, Boolean> {
                 break;
             case 1:
                 count = BrowserUnit.importWhitelist(context, 1);
+                break;
+            case 3:
+                count = BrowserUnit.importWhitelist(context, 3);
+                break;
+            case 4:
+                count = BrowserUnit.importBookmarks(context);
                 break;
             default:
                 count = BrowserUnit.importWhitelist(context, 2);

@@ -189,15 +189,6 @@
     <string name="setting_gesture_09">Nieuw tabblad openen</string>
     <string name="setting_gesture_10">Tabblad sluiten</string>
     <!-- Data -->
-    <string name="setting_title_export_whitelist">Advertentieblokkering - witte lijst exporteren</string>
-    <string name="setting_title_import_whitelist">Advertentieblokkering - witte lijst importeren</string>
-    <string name="export_whitelistAdBlock">export_whitelist_AdBlock</string>
-    <string name="setting_title_export_whitelistJS">JavaScript - witte lijst exporteren</string>
-    <string name="setting_title_import_whitelistJS">JavaScript - witte lijst importeren</string>
-    <string name="export_whitelistJS">export_whitelist_Javascript</string>
-    <string name="setting_title_export_whitelistCookie">Cookies - witte lijst exporteren</string>
-    <string name="setting_title_import_whitelistCookie">Cookies - witte lijst importeren</string>
-    <string name="export_whitelistCookie">export_whitelist_Cookie</string>
     <string name="setting_title_export_appData">App-gegevens exporteren</string>
     <string name="setting_title_import_appData">App-gegevens importeren</string>
     <string name="setting_summary_export_appData">Exporteer app data (Startpagina + previews, geschiedenis, bladwijzers)

@@ -1,6 +1,10 @@
 package de.baumann.browser.activity;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 import androidx.annotation.NonNull;
@@ -22,7 +26,9 @@ import java.util.Objects;
 
 import de.baumann.browser.browser.AdBlock;
 import de.baumann.browser.database.RecordAction;
-import de.baumann.browser.Ninja.R;
+import de.baumann.browser.R;
+import de.baumann.browser.task.ExportWhiteListTask;
+import de.baumann.browser.task.ImportWhitelistTask;
 import de.baumann.browser.unit.BrowserUnit;
 import de.baumann.browser.unit.HelperUnit;
 import de.baumann.browser.unit.RecordUnit;
@@ -106,22 +112,28 @@ public class Whitelist_AdBlock extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_clear, menu);
+        getMenuInflater().inflate(R.menu.menu_whitelist, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem menuItem) {
+
+        final BottomSheetDialog dialog;
+        final View dialogView;
+        final TextView textView;
+        final Button action_ok;
+
         switch (menuItem.getItemId()) {
             case android.R.id.home:
                 finish();
                 break;
             case R.id.menu_clear:
-                final BottomSheetDialog dialog = new BottomSheetDialog(Whitelist_AdBlock.this);
-                View dialogView = View.inflate(Whitelist_AdBlock.this, R.layout.dialog_action, null);
-                TextView textView = dialogView.findViewById(R.id.dialog_text);
+                dialog = new BottomSheetDialog(Whitelist_AdBlock.this);
+                dialogView = View.inflate(Whitelist_AdBlock.this, R.layout.dialog_action, null);
+                textView = dialogView.findViewById(R.id.dialog_text);
                 textView.setText(R.string.hint_database);
-                Button action_ok = dialogView.findViewById(R.id.action_ok);
+                action_ok = dialogView.findViewById(R.id.action_ok);
                 action_ok.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -134,7 +146,64 @@ public class Whitelist_AdBlock extends AppCompatActivity {
                 });
                 dialog.setContentView(dialogView);
                 dialog.show();
-
+                break;
+            case R.id.menu_backup:
+                dialog = new BottomSheetDialog(Objects.requireNonNull(Whitelist_AdBlock.this));
+                dialogView = View.inflate(Whitelist_AdBlock.this, R.layout.dialog_action, null);
+                textView = dialogView.findViewById(R.id.dialog_text);
+                textView.setText(R.string.toast_backup);
+                action_ok = dialogView.findViewById(R.id.action_ok);
+                action_ok.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        if (android.os.Build.VERSION.SDK_INT >= 23 && android.os.Build.VERSION.SDK_INT < 29) {
+                            int hasWRITE_EXTERNAL_STORAGE = checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+                            if (hasWRITE_EXTERNAL_STORAGE != PackageManager.PERMISSION_GRANTED) {
+                                HelperUnit.grantPermissionsStorage(Whitelist_AdBlock.this);
+                                dialog.cancel();
+                            } else {
+                                dialog.cancel();
+                                HelperUnit.makeBackupDir(Whitelist_AdBlock.this);
+                                new ExportWhiteListTask(Whitelist_AdBlock.this, 0).execute();
+                            }
+                        } else {
+                            dialog.cancel();
+                            HelperUnit.makeBackupDir(Whitelist_AdBlock.this);
+                            new ExportWhiteListTask(Whitelist_AdBlock.this, 0).execute();
+                        }
+                    }
+                });
+                dialog.setContentView(dialogView);
+                dialog.show();
+                HelperUnit.setBottomSheetBehavior(dialog, dialogView, BottomSheetBehavior.STATE_EXPANDED);
+                break;
+            case R.id.menu_restore:
+                dialog = new BottomSheetDialog(Objects.requireNonNull(Whitelist_AdBlock.this));
+                dialogView = View.inflate(Whitelist_AdBlock.this, R.layout.dialog_action, null);
+                textView = dialogView.findViewById(R.id.dialog_text);
+                textView.setText(R.string.hint_database);
+                action_ok = dialogView.findViewById(R.id.action_ok);
+                action_ok.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        if (android.os.Build.VERSION.SDK_INT >= 23 && android.os.Build.VERSION.SDK_INT < 29) {
+                            int hasWRITE_EXTERNAL_STORAGE = checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+                            if (hasWRITE_EXTERNAL_STORAGE != PackageManager.PERMISSION_GRANTED) {
+                                HelperUnit.grantPermissionsStorage(Whitelist_AdBlock.this);
+                                dialog.cancel();
+                            } else {
+                                dialog.cancel();
+                                new ImportWhitelistTask(Whitelist_AdBlock.this, 0).execute();
+                            }
+                        } else {
+                            dialog.cancel();
+                            new ImportWhitelistTask(Whitelist_AdBlock.this, 0).execute();
+                        }
+                    }
+                });
+                dialog.setContentView(dialogView);
+                dialog.show();
+                HelperUnit.setBottomSheetBehavior(dialog, dialogView, BottomSheetBehavior.STATE_EXPANDED);
                 break;
             default:
                 break;

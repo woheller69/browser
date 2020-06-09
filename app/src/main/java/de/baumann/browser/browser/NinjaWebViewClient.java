@@ -34,7 +34,7 @@ import java.net.URISyntaxException;
 
 import de.baumann.browser.database.Record;
 import de.baumann.browser.database.RecordAction;
-import de.baumann.browser.Ninja.R;
+import de.baumann.browser.R;
 import de.baumann.browser.unit.BrowserUnit;
 import de.baumann.browser.unit.HelperUnit;
 import de.baumann.browser.unit.RecordUnit;
@@ -49,7 +49,7 @@ public class NinjaWebViewClient extends WebViewClient {
     private final AdBlock adBlock;
     private final Cookie cookie;
 
-    private boolean white;
+    private final boolean white;
     private boolean enable;
     public void enableAdBlock(boolean enable) {
         this.enable = enable;

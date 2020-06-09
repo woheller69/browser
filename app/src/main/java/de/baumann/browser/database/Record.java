@@ -26,12 +26,12 @@ public class Record {
         this.time = time;
     }
 
-    private int ordinal;
+    private final int ordinal;
     int getOrdinal() {
         return ordinal;
     }
 
-    Record() {
+    public Record() {
         this.title = null;
         this.url = null;
         this.time = 0L;

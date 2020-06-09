@@ -179,15 +179,6 @@ Puede disponer una página en blanco escribiendo \"about:blank\".</string>
     <string name="setting_gesture_09">Abrir nueva pestaña</string>
     <string name="setting_gesture_10">Cerrar pestaña</string>
     <!-- Data -->
-    <string name="setting_title_export_whitelist">Exportar lista blanca de anuncios</string>
-    <string name="setting_title_import_whitelist">Importar lista blanca de anuncios</string>
-    <string name="export_whitelistAdBlock">exportar_listablanca_anuncios</string>
-    <string name="setting_title_export_whitelistJS">Exportar lista blanca de JavaScript</string>
-    <string name="setting_title_import_whitelistJS">Importar lista blanca de JavaScript</string>
-    <string name="export_whitelistJS">exportar_listablanca_javascript</string>
-    <string name="setting_title_export_whitelistCookie">Exportar lista blanca de cookies</string>
-    <string name="setting_title_import_whitelistCookie">Importar lista blanca de cookies</string>
-    <string name="export_whitelistCookie">exportar_listablanca_cookies</string>
     <string name="setting_title_export_appData">Exportar datos de la aplicación</string>
     <string name="setting_title_import_appData">Importar datos de la aplicación</string>
     <string name="setting_summary_export_appData">Exporta la página de inicio, previsualizaciones, historial, marcadores, y sus ajustes personales.</string>

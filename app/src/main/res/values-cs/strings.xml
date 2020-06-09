@@ -188,15 +188,6 @@
     <string name="setting_gesture_09">Otevřít novou kartu</string>
     <string name="setting_gesture_10">Zavřít kartu</string>
     <!-- Data -->
-    <string name="setting_title_export_whitelist">Exportovat seznam povolených - AdBlock</string>
-    <string name="setting_title_import_whitelist">Importovat seznam povolených - AdBlock</string>
-    <string name="export_whitelistAdBlock">export_whitelist_AdBlock</string>
-    <string name="setting_title_export_whitelistJS">Exportovat seznam povolených - JavaScript</string>
-    <string name="setting_title_import_whitelistJS">Importovat seznam povolených - JavaScript</string>
-    <string name="export_whitelistJS">export_whitelist_Javascript</string>
-    <string name="setting_title_export_whitelistCookie">Exportovat seznam povolených - Cookies</string>
-    <string name="setting_title_import_whitelistCookie">Importovat seznam povolených - Cookies</string>
-    <string name="export_whitelistCookie">export_whitelist_Cookie</string>
     <string name="setting_title_export_appData">Exportovat data aplikace</string>
     <string name="setting_title_import_appData">Importovat data aplikace</string>
     <string name="setting_summary_export_appData">Exportovat data aplikace (Úvodní stránka + náhledy, historie, záložky)

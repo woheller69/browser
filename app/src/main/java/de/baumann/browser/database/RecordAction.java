@@ -82,14 +82,14 @@ public class RecordAction {
 
     //BOOKMARK
 
-    public boolean addBookmark (Record record) {
+    public void addBookmark (Record record) {
         if (record == null
                 || record.getTitle() == null
                 || record.getTitle().trim().isEmpty()
                 || record.getURL() == null
                 || record.getURL().trim().isEmpty()
                 || record.getTime() < 0L) {
-            return false;
+            return;
         }
 
         ContentValues values = new ContentValues();
@@ -97,13 +97,12 @@ public class RecordAction {
         values.put(RecordUnit.COLUMN_URL, record.getURL().trim());
         values.put(RecordUnit.COLUMN_TIME, record.getTime());
         database.insert(RecordUnit.TABLE_BOOKMARK, null, values);
-        return true;
     }
 
-    public List<Record> listBookmark (Activity activity, boolean filter, long filterBy) {
+    public List<Record> listBookmark (Context context, boolean filter, long filterBy) {
 
         List<Record> list = new LinkedList<>();
-        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(activity);
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
         String sortBy = Objects.requireNonNull(sp.getString("sort_bookmark", "title"));
 
         Cursor cursor;

@@ -21,7 +21,9 @@ package de.baumann.browser.unit;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.DownloadManager;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -35,27 +37,36 @@ import android.net.Uri;
 import android.os.Build;
 
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AlertDialog;
 import androidx.preference.PreferenceManager;
 import androidx.annotation.NonNull;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
+
+import android.os.Environment;
 import android.text.Html;
 import android.text.SpannableString;
 import android.text.util.Linkify;
 import android.view.View;
+import android.webkit.CookieManager;
+import android.webkit.URLUtil;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
 
-import de.baumann.browser.Ninja.R;
+import de.baumann.browser.R;
 import de.baumann.browser.view.GridItem;
 import de.baumann.browser.view.NinjaToast;
+
+import static android.content.Context.DOWNLOAD_SERVICE;
 
 public class HelperUnit {
 
@@ -88,8 +99,7 @@ public class HelperUnit {
                         @RequiresApi(api = Build.VERSION_CODES.M)
                         @Override
                         public void onClick(View view) {
-                            activity.requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
-                                    REQUEST_CODE_ASK_PERMISSIONS);
+                            activity.requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, REQUEST_CODE_ASK_PERMISSIONS);
                             bottomSheetDialog.cancel();
                         }
                     });
@@ -101,13 +111,38 @@ public class HelperUnit {
         }
     }
 
+    @SuppressWarnings("ResultOfMethodCallIgnored")
+    public static void makeBackupDir (final Activity activity) {
+        File backupDir = new File(Objects.requireNonNull(activity).getExternalFilesDir(null), "browser_backup//");
+        if (android.os.Build.VERSION.SDK_INT >= 23 && android.os.Build.VERSION.SDK_INT < 29) {
+            int hasWRITE_EXTERNAL_STORAGE = Objects.requireNonNull(activity).checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+            if (hasWRITE_EXTERNAL_STORAGE != PackageManager.PERMISSION_GRANTED) {
+                HelperUnit.grantPermissionsStorage(activity);
+            } else {
+                if(!backupDir.exists()) {
+                    try {
+                        backupDir.mkdirs();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        } else {
+            if(!backupDir.exists()) {
+                try {
+                    backupDir.mkdirs();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
     public static void grantPermissionsLoc(final Activity activity) {
 
         if (android.os.Build.VERSION.SDK_INT >= 23) {
-
             int hasACCESS_FINE_LOCATION = activity.checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION);
             if (hasACCESS_FINE_LOCATION != PackageManager.PERMISSION_GRANTED) {
-
                 final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(activity);
                 View dialogView = View.inflate(activity, R.layout.dialog_action, null);
                 TextView textView = dialogView.findViewById(R.id.dialog_text);
@@ -116,8 +151,7 @@ public class HelperUnit {
                 action_ok.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        activity.requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
-                                REQUEST_CODE_ASK_PERMISSIONS_1);
+                        activity.requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_CODE_ASK_PERMISSIONS_1);
                         bottomSheetDialog.cancel();
                     }
                 });
@@ -144,6 +178,78 @@ public class HelperUnit {
             default:
                 context.setTheme(R.style.AppTheme);
                 break;
+        }
+    }
+
+    public static void save_as (final Activity activity, final String url) {
+        try {
+            AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+            View dialogView = View.inflate(activity, R.layout.dialog_edit_extension, null);
+
+            final EditText editTitle = dialogView.findViewById(R.id.dialog_edit);
+            final EditText editExtension = dialogView.findViewById(R.id.dialog_edit_extension);
+
+            String filename = URLUtil.guessFileName(url, null, null);
+
+            editTitle.setHint(R.string.dialog_title_hint);
+            editTitle.setText(HelperUnit.fileName(url));
+
+            String extension = filename.substring(filename.lastIndexOf("."));
+            if(extension.length() <= 8) {
+                editExtension.setText(extension);
+            }
+
+            builder.setView(dialogView);
+            builder.setTitle(R.string.menu_edit);
+            builder.setPositiveButton(R.string.app_ok, new DialogInterface.OnClickListener() {
+
+                public void onClick(DialogInterface dialog, int whichButton) {
+
+                    String title = editTitle.getText().toString().trim();
+                    String extension = editExtension.getText().toString().trim();
+                    String  filename = title + extension;
+
+                    if (title.isEmpty() || extension.isEmpty() || !extension.startsWith(".")) {
+                        NinjaToast.show(activity, activity.getString(R.string.toast_input_empty));
+                    } else {
+
+                        if (android.os.Build.VERSION.SDK_INT >= 23 && android.os.Build.VERSION.SDK_INT < 29) {
+                            int hasWRITE_EXTERNAL_STORAGE = activity.checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+                            if (hasWRITE_EXTERNAL_STORAGE != PackageManager.PERMISSION_GRANTED) {
+                                HelperUnit.grantPermissionsStorage(activity);
+                            } else {
+                                Uri source = Uri.parse(url);
+                                DownloadManager.Request request = new DownloadManager.Request(source);
+                                request.addRequestHeader("Cookie", CookieManager.getInstance().getCookie(url));
+                                request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED); //Notify client once download is completed!
+                                request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, filename);
+                                DownloadManager dm = (DownloadManager) activity.getSystemService(DOWNLOAD_SERVICE);
+                                assert dm != null;
+                                dm.enqueue(request);
+                            }
+                        } else {
+                            Uri source = Uri.parse(url);
+                            DownloadManager.Request request = new DownloadManager.Request(source);
+                            request.addRequestHeader("Cookie", CookieManager.getInstance().getCookie(url));
+                            request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED); //Notify client once download is completed!
+                            request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, filename);
+                            DownloadManager dm = (DownloadManager) activity.getSystemService(DOWNLOAD_SERVICE);
+                            assert dm != null;
+                            dm.enqueue(request);
+                        }
+                    }
+                }
+            });
+            builder.setNegativeButton(R.string.app_cancel, new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int whichButton) {
+                    dialog.cancel();
+                }
+            });
+
+            AlertDialog dialog = builder.create();
+            dialog.show();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 

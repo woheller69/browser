@@ -16,7 +16,7 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 
 import de.baumann.browser.browser.*;
-import de.baumann.browser.Ninja.R;
+import de.baumann.browser.R;
 import de.baumann.browser.unit.BrowserUnit;
 
 import java.util.HashMap;
@@ -225,7 +225,6 @@ public class NinjaWebView extends WebView implements AlbumController {
         return album.getAlbumView();
     }
 
-    @Override
     public void setAlbumTitle(String title) {
         album.setAlbumTitle(title);
     }

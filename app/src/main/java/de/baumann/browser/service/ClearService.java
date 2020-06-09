@@ -6,7 +6,7 @@ import android.content.SharedPreferences;
 import android.os.IBinder;
 import androidx.preference.PreferenceManager;
 
-import de.baumann.browser.Ninja.R;
+import de.baumann.browser.R;
 import de.baumann.browser.unit.BrowserUnit;
 
 public class ClearService extends Service {

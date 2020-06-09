@@ -23,7 +23,7 @@ import de.baumann.browser.activity.Settings_GestureActivity;
 import de.baumann.browser.activity.Settings_StartActivity;
 import de.baumann.browser.activity.Settings_UIActivity;
 import de.baumann.browser.unit.HelperUnit;
-import de.baumann.browser.Ninja.R;
+import de.baumann.browser.R;
 
 public class Fragment_settings extends PreferenceFragmentCompat implements SharedPreferences.OnSharedPreferenceChangeListener {
 

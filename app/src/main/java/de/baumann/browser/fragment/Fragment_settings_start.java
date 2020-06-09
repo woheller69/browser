@@ -10,7 +10,7 @@ import java.util.Objects;
 import de.baumann.browser.activity.Whitelist_Cookie;
 import de.baumann.browser.activity.Whitelist_Javascript;
 import de.baumann.browser.activity.Whitelist_AdBlock;
-import de.baumann.browser.Ninja.R;
+import de.baumann.browser.R;
 import de.baumann.browser.activity.Whitelist_Remote;
 
 public class Fragment_settings_start extends PreferenceFragmentCompat {

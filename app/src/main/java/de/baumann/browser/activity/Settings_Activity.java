@@ -9,7 +9,7 @@ import android.view.MenuItem;
 import java.util.Objects;
 
 import de.baumann.browser.fragment.Fragment_settings;
-import de.baumann.browser.Ninja.R;
+import de.baumann.browser.R;
 import de.baumann.browser.unit.HelperUnit;
 
 public class Settings_Activity extends AppCompatActivity {

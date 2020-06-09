@@ -183,15 +183,6 @@
     <string name="setting_gesture_09">Otwórz nową kartę</string>
     <string name="setting_gesture_10">Zamknij aktywną kartę</string>
     <!-- Data -->
-    <string name="setting_title_export_whitelist">Eksportuj białą listę AdBlock</string>
-    <string name="setting_title_import_whitelist">Importuj białą listę AdBlock</string>
-    <string name="export_whitelistAdBlock">eksport_białej listy_AdBlock</string>
-    <string name="setting_title_export_whitelistJS">Eksportuj białą listę JavaScript</string>
-    <string name="setting_title_import_whitelistJS">Importuj białą listę JavaScript</string>
-    <string name="export_whitelistJS">eksport_whitelist_Javascript</string>
-    <string name="setting_title_export_whitelistCookie">Eksportuj białą listę ciasteczek</string>
-    <string name="setting_title_import_whitelistCookie">Importuj białą listę ciasteczek</string>
-    <string name="export_whitelistCookie">eksport_białalista_ciasteczka</string>
     <string name="setting_title_export_appData">Eksportuj dane aplikacji</string>
     <string name="setting_title_import_appData">Importuj dane aplikacji</string>
     <string name="setting_summary_export_appData">Eksportuj dane aplikacji (Strona startowa + podgląd, historia, zakładki)

@@ -179,15 +179,6 @@
     <string name="setting_gesture_09">Открыть новую вкладку</string>
     <string name="setting_gesture_10">Закрыть вкладку</string>
     <!-- Data -->
-    <string name="setting_title_export_whitelist">Экспорт белого списка AdBlock</string>
-    <string name="setting_title_import_whitelist">Импорт белого списка AdBlock</string>
-    <string name="export_whitelistAdBlock">export_whitelist_AdBlock</string>
-    <string name="setting_title_export_whitelistJS">Экспорт белого списка JavaScript</string>
-    <string name="setting_title_import_whitelistJS">Импорт белого списка JavaScript</string>
-    <string name="export_whitelistJS">export_whitelist_Javascript</string>
-    <string name="setting_title_export_whitelistCookie">Экспорт белого списка куки</string>
-    <string name="setting_title_import_whitelistCookie">Импорт белого списка куки</string>
-    <string name="export_whitelistCookie">export_whitelist_Cookie</string>
     <string name="setting_title_export_appData">Экспорт данных</string>
     <string name="setting_title_import_appData">Импорт данных</string>
     <string name="setting_summary_export_appData">Экспортировать данные приложения (стартовая страница + предпросмотры, история, закладки)

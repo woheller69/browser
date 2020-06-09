@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import de.baumann.browser.unit.RecordUnit;
 
-public class RecordHelper extends SQLiteOpenHelper {
+class RecordHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "Ninja4.db";
     private static final int DATABASE_VERSION = 4;
 

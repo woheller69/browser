@@ -190,15 +190,6 @@
     <string name="setting_gesture_09">Ouvrir nouvel onglet</string>
     <string name="setting_gesture_10">Fermer l’onglet</string>
     <!-- Data -->
-    <string name="setting_title_export_whitelist">Exporter la liste blanche d’AdBlock</string>
-    <string name="setting_title_import_whitelist">Importer la liste blanche d’AdBlock</string>
-    <string name="export_whitelistAdBlock">exporter liste blanche AdBlock</string>
-    <string name="setting_title_export_whitelistJS">Exporter la liste blanche JavaScript</string>
-    <string name="setting_title_import_whitelistJS">Importer la liste blanche JavaScript</string>
-    <string name="export_whitelistJS">exporter la liste blanche Javascript</string>
-    <string name="setting_title_export_whitelistCookie">Exporter la liste blanche des cookies</string>
-    <string name="setting_title_import_whitelistCookie">Importer une liste blanche de cookies</string>
-    <string name="export_whitelistCookie">exporter la liste blanche Cookies</string>
     <string name="setting_title_export_appData">Exporter les données de l\'application</string>
     <string name="setting_title_import_appData">Importer les données de l\'application</string>
     <string name="setting_summary_export_appData">Exporter les données de l\'application (page d\'accueil + aperçus, historique, signets)

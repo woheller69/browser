@@ -12,7 +12,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import de.baumann.browser.browser.Javascript;
-import de.baumann.browser.Ninja.R;
+import de.baumann.browser.R;
 
 public class WhitelistAdapter extends ArrayAdapter<String> {
     private final Context context;

@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.TextView;
 
-import de.baumann.browser.Ninja.R;
+import de.baumann.browser.R;
 import de.baumann.browser.unit.BrowserUnit;
 import de.baumann.browser.unit.HelperUnit;
 import de.baumann.browser.view.NinjaToast;
@@ -20,7 +20,7 @@ public class ExportWhiteListTask extends AsyncTask<Void, Void, Boolean> {
     private final Context context;
     private BottomSheetDialog dialog;
     private String path;
-    private int table;
+    private final int table;
 
     public ExportWhiteListTask(Context context, int i) {
         this.context = context;
@@ -50,6 +50,12 @@ public class ExportWhiteListTask extends AsyncTask<Void, Void, Boolean> {
                 break;
             case 1:
                 path = BrowserUnit.exportWhitelist(context, 1);
+                break;
+            case 3:
+                path = BrowserUnit.exportWhitelist(context, 3);
+                break;
+            case 4:
+                path = BrowserUnit.exportBookmarks(context);
                 break;
             default:
                 path = BrowserUnit.exportWhitelist(context, 2);

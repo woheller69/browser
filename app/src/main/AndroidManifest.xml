@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="de.baumann.browser.Ninja">
+    package="de.baumann.browser">
 
     <!-- Permission -->
     <uses-permission android:name="android.permission.INTERNET" />
@@ -28,21 +29,6 @@
         android:fullBackupContent="@xml/backup_descriptor"
         tools:ignore="UnusedAttribute">
 
-        <!-- Holder -->
-        <activity android:name="de.baumann.browser.activity.HolderActivity"
-                  android:label="@string/app_name"
-                  android:launchMode="singleInstance"
-                  android:excludeFromRecents="true"
-                  android:theme="@android:style/Theme.Translucent.NoTitleBar">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="http" />
-                <data android:scheme="https" />
-            </intent-filter>
-        </activity>
-
         <!-- BrowserActivity -->
         <activity android:name="de.baumann.browser.activity.BrowserActivity"
                   android:label="@string/app_name"
@@ -59,6 +45,14 @@
             </intent-filter>
 
             <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="http" />
+                <data android:scheme="https" />
+            </intent-filter>
+
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <action android:name="android.intent.action.WEB_SEARCH" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -66,14 +60,6 @@
                 <action android:name="sc_startPage" />
                 <action android:name="sc_bookmark" />
                 <action android:name="sc_history" />
-            </intent-filter>
-
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="http" />
-                <data android:scheme="https" />
             </intent-filter>
 
             <meta-data android:name="android.app.searchable"

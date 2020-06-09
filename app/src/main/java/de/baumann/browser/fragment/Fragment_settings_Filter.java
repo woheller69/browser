@@ -14,7 +14,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 import java.util.Objects;
 
-import de.baumann.browser.Ninja.R;
+import de.baumann.browser.R;
 import de.baumann.browser.unit.HelperUnit;
 
 public class Fragment_settings_Filter extends PreferenceFragmentCompat {

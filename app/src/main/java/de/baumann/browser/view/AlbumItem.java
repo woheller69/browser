@@ -15,7 +15,7 @@ import androidx.core.content.ContextCompat;
 
 import de.baumann.browser.browser.AlbumController;
 import de.baumann.browser.browser.BrowserController;
-import de.baumann.browser.Ninja.R;
+import de.baumann.browser.R;
 
 class AlbumItem {
 
@@ -63,7 +63,6 @@ class AlbumItem {
         });
         ImageView albumClose = albumView.findViewById(R.id.whitelist_item_cancel);
         albumClose.setVisibility(View.VISIBLE);
-        albumClose.setImageResource(R.drawable.close_circle);
         albumTitle = albumView.findViewById(R.id.whitelist_item_domain);
         albumTitle.setText(context.getString(R.string.app_name));
         albumClose.setOnClickListener(new View.OnClickListener() {

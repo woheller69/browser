@@ -191,15 +191,6 @@
     <string name="setting_gesture_09">Open new tab</string>
     <string name="setting_gesture_10">Close tab</string>
     <!-- Data -->
-    <string name="setting_title_export_whitelist">Export AdBlock whitelist</string>
-    <string name="setting_title_import_whitelist">Import AdBlock whitelist</string>
-    <string name="export_whitelistAdBlock">export_whitelist_AdBlock</string>
-    <string name="setting_title_export_whitelistJS">Export JavaScript whitelist</string>
-    <string name="setting_title_import_whitelistJS">Import JavaScript whitelist</string>
-    <string name="export_whitelistJS">export_whitelist_Javascript</string>
-    <string name="setting_title_export_whitelistCookie">Export Cookie whitelist</string>
-    <string name="setting_title_import_whitelistCookie">Import Cookie whitelist</string>
-    <string name="export_whitelistCookie">export_whitelist_Cookie</string>
     <string name="setting_title_export_appData">Export app data</string>
     <string name="setting_title_import_appData">Import app data</string>
     <string name="setting_summary_export_appData">Export app data (Startpage + previews, History, Bookmarks)

@@ -191,15 +191,6 @@
     <string name="setting_gesture_09">Yeni sekme aç</string>
     <string name="setting_gesture_10">Sekmeyi kapat</string>
     <!-- Data -->
-    <string name="setting_title_export_whitelist">Reklam Engelleyici beyaz listesini dışa aktar</string>
-    <string name="setting_title_import_whitelist">Reklam Engelleyici beyaz listesini içe aktar</string>
-    <string name="export_whitelistAdBlock">AdBlock_beyazliste_aktarim</string>
-    <string name="setting_title_export_whitelistJS">JavaScript beyaz listesini dışa aktar</string>
-    <string name="setting_title_import_whitelistJS">JavaScript beyaz listesini içe aktar</string>
-    <string name="export_whitelistJS">Javascript_beyazliste_aktarim</string>
-    <string name="setting_title_export_whitelistCookie">Çerez beyaz listesini dışa aktar</string>
-    <string name="setting_title_import_whitelistCookie">Çerez beyaz listesini içe aktar</string>
-    <string name="export_whitelistCookie">Cerez_beyazliste_aktarim</string>
     <string name="setting_title_export_appData">Uygulama verilerini dışa aktar</string>
     <string name="setting_title_import_appData">Uygulama verilerini içe aktar</string>
     <string name="setting_summary_export_appData">Uygulama verilerini (Başlangıç sayfası + önizlemeler, Geçmiş, Yer imleri)

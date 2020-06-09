@@ -1,8 +1,11 @@
 ### v 7.1 (WIP)
+- updated: AdBlock hosts
 - updated: translations
 - updated: bookmark management (sorry for removing password saving)
 - updated: overview, menus and dialogs
 - new: hide overflow button
+- new: whitelist for remote content
+- new: backup/restore bookmarks as html
 - many stability improvements -> removed ca. 5000 lines of unnecessary code!)
 
 ### v 7.0

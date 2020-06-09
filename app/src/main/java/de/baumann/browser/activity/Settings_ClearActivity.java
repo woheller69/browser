@@ -14,7 +14,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import de.baumann.browser.fragment.Fragment_clear;
-import de.baumann.browser.Ninja.R;
+import de.baumann.browser.R;
 import de.baumann.browser.service.ClearService;
 import de.baumann.browser.unit.HelperUnit;
 

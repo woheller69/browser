@@ -177,15 +177,6 @@
     <string name="setting_gesture_09">新しいタブを開く</string>
     <string name="setting_gesture_10">タブを閉じる</string>
     <!-- Data -->
-    <string name="setting_title_export_whitelist">AdBlock ホワイトリストのエクスポート</string>
-    <string name="setting_title_import_whitelist">AdBlock ホワイトリストのインポート</string>
-    <string name="export_whitelistAdBlock">export_whitelist_AdBlock</string>
-    <string name="setting_title_export_whitelistJS">JavaScript ホワイトリストのエクスポート</string>
-    <string name="setting_title_import_whitelistJS">JavaScript ホワイトリストのインポート</string>
-    <string name="export_whitelistJS">export_whitelist_Javascript</string>
-    <string name="setting_title_export_whitelistCookie">Cookie ホワイトリストのエクスポート</string>
-    <string name="setting_title_import_whitelistCookie">Cookie ホワイトリストのインポート</string>
-    <string name="export_whitelistCookie">export_whitelist_Cookie</string>
     <string name="setting_title_export_appData">アプリデータのエクスポート</string>
     <string name="setting_title_import_appData">アプリデータのインポート</string>
     <string name="setting_summary_export_appData">アプリデータ (スタートページ+プレビュー、履歴、ブックマーク) と個人設定をエクスポートする</string>

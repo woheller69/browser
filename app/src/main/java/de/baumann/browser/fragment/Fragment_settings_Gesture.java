@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 import androidx.preference.PreferenceFragmentCompat;
 
-import de.baumann.browser.Ninja.R;
+import de.baumann.browser.R;
 
 public class Fragment_settings_Gesture extends PreferenceFragmentCompat implements SharedPreferences.OnSharedPreferenceChangeListener {
 

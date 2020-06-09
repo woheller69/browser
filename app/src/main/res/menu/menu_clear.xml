@@ -6,7 +6,6 @@
     <item android:id="@+id/menu_clear"
           android:title="@string/whitelist_menu_clear"
           android:icon="@drawable/icon_delete"
-          app:showAsAction="always">
-    </item>
+          app:showAsAction="always"/>
 
 </menu>

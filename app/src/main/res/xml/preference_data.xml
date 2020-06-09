@@ -7,7 +7,7 @@
     <PreferenceCategory android:title="@string/title_appData">
         <Preference
             android:key="data_exDB"
-            android:icon="@drawable/icon_export"
+            android:icon="@drawable/icon_exit"
             android:title="@string/setting_title_export_appData"
             android:summary="@string/setting_summary_export_appData"/>
         <Preference
@@ -16,37 +16,15 @@
             android:title="@string/setting_title_import_appData"/>
     </PreferenceCategory>
 
-    <PreferenceCategory android:title="@string/setting_title_adblock">
+    <PreferenceCategory android:title="@string/album_title_bookmarks">
         <Preference
-            android:key="data_exAdBlock"
-            android:icon="@drawable/icon_export"
-            android:title="@string/setting_title_export_whitelist" />
+            android:key="data_exBookmark"
+            android:icon="@drawable/icon_exit"
+            android:title="Export" />
         <Preference
-            android:key="data_imAdBlock"
+            android:key="data_imBookmark"
             android:icon="@drawable/icon_import"
-            android:title="@string/setting_title_import_whitelist" />
-    </PreferenceCategory>
-
-    <PreferenceCategory android:title="@string/setting_title_javascript">
-        <Preference
-            android:key="data_exJava"
-            android:icon="@drawable/icon_export"
-            android:title="@string/setting_title_export_whitelistJS" />
-        <Preference
-            android:key="data_imJava"
-            android:icon="@drawable/icon_import"
-            android:title="@string/setting_title_import_whitelistJS" />
-    </PreferenceCategory>
-
-    <PreferenceCategory android:title="@string/setting_title_cookie">
-        <Preference
-            android:key="data_exCookie"
-            android:icon="@drawable/icon_export"
-            android:title="@string/setting_title_export_whitelistCookie" />
-        <Preference
-            android:key="data_imCookie"
-            android:icon="@drawable/icon_import"
-            android:title="@string/setting_title_import_whitelistCookie" />
+            android:title="Import" />
     </PreferenceCategory>
 
 </PreferenceScreen>

@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Set;
 
 import de.baumann.browser.database.Record;
-import de.baumann.browser.Ninja.R;
+import de.baumann.browser.R;
 
 
 public class CompleteAdapter extends BaseAdapter implements Filterable {

@@ -13,7 +13,7 @@ import androidx.preference.PreferenceFragmentCompat;
 
 import java.util.Objects;
 
-import de.baumann.browser.Ninja.R;
+import de.baumann.browser.R;
 import de.baumann.browser.unit.HelperUnit;
 
 public class Fragment_clear extends PreferenceFragmentCompat {

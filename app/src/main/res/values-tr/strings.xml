@@ -4,7 +4,7 @@
     <string name="app_name">FOSS Browser</string>
     <string name="app_ok">TAMAM</string>
     <string name="app_cancel">İptal et</string>
-    <string name="list_empty">Geçerli liste boş</string>
+    <string name="list_empty">List is empty</string>
     <string name="album_title_bookmarks">Yer imleri</string>
     <string name="album_title_history">Geçmiş</string>
     <string name="album_title_home">Ana sayfa</string>
@@ -31,7 +31,6 @@
     <string name="menu_quit">Çık</string>
     <string name="menu_openFav">Sık Kullanılanı Aç</string>
     <string name="menu_delete">Sil</string>
-    <string name="menu_delete_list">Listeyi sil</string>
     <string name="menu_edit">Düzenle</string>
     <string name="menu_closeTab">Sekmeyi kapat</string>
     <string name="menu_download">İndirmeleri aç</string>
@@ -53,8 +52,8 @@
     <string name="dialog_extension_hint">Uzantı (örneğin: \".jpg\"):</string>
     <string name="dialog_sign_in_username">Kullancı adı</string>
     <string name="dialog_sign_in_password">Parola</string>
-    <string name="dialog_title_download">Dosyayı indirmek ister misiniz?</string>
-    <string name="dialog_content_resubmission">Verilerinizi yeniden göndermek ister misiniz?</string>
+    <string name="dialog_title_download">Download the file?</string>
+    <string name="dialog_content_resubmission">Resubmit your data?</string>
     <string name="dialog_content_ssl_error">Sitenin sertifikası güvenilir değil. Yine de devam edilsin mi?</string>
     <string name="dialog_sortName">İsme göre sırala</string>
     <string name="dialog_sortIcon">Simgeye göre sırala</string>
@@ -65,9 +64,8 @@
     <string name="setting_title_browser">Tarayıcı Ayarları</string>
     <string name="setting_title_clear_control">Veri Denetimi</string>
     <string name="setting_title_start_control">Başlangıç Denetimi</string>
-    <string name="setting_summary_clear_control">Tarayıcı verilerinizi temizleyin veya uygulamadan ayrıldığınızda
-	hangi verilerin silineceğine karar verin.</string>
-    <string name="setting_summary_start_control">Tarayıcının hangi bileşenlerinin başlangıçta etkinleştirileceğine karar verin.</string>
+    <string name="setting_summary_clear_control">Clear your browser data or decide what data will be cleared when you leave the application.</string>
+    <string name="setting_summary_start_control">Decide which components of FOSS browser will be enabled on start.</string>
     <string name="setting_title_search_engine">Arama Motoru</string>
     <string name="setting_summary_search_engine">Buradan tercih ettiğiniz arama motorunu seçebilir veya özel bir tane ayarlayabilirsiniz.</string>
     <string name="setting_summary_search_engine_google">Google</string>
@@ -80,43 +78,34 @@
     <string name="setting_summary_search_engine_qwant">Qwant</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_title_inverted">Ters renkler</string>
-    <string name="setting_summary_inverted">İşaretlenirse, içerik ters çevrilmiş gri tonlama modunda oluşturulur. Bu
-    bir tür \"gece modudur\".</string>
+    <string name="setting_summary_inverted">If checked, content will be rendered in a inverted grey scale mode. This is a kind of \"night mode\".</string>
     <string name="setting_title_font">Yazı boyutu</string>
     <string name="setting_summary_font">Web sitelerini görüntülemek için yazı tipi boyutunu değiştirin.</string>
     <string name="setting_title_remote">Uzaktan içerik</string>
-    <string name="setting_summary_remote">Doğrudan ziyaret ettiğiniz web sitesinde olmayan uzak içeriği etkinleştirin.
-        Bunu devre dışı bırakmak daha güvenli, daha hızlı ve veri hacminden tasarruf sağlar. Ancak bazı içerikler artık görüntülenmeyecektir.</string>
+    <string name="setting_summary_remote">Enable remote content, which is not directly from the website you are visiting. Disabling this is more secure, faster and saves data volume. But some content will not be displayed anymore.</string>
     <string name="setting_title_save_data">\'Veri Kaydetme\' İsteği</string>
     <string name="setting_summary_save_data">Web sitelerine verileri kaydetmeyi tercih edeceğinizi söyleyin. Desteklenen web siteleri daha hızlı yükleyecektir.</string>
     <!-- browser start -->
     <string name="setting_title_images">Görüntüler</string>
-    <string name="setting_summary_images">Ağ görüntülerini etkinleştirin. Devre dışı bırakmak, mobil verileri tasarrufu
-	ve web sitelerini daha hızlı yüklemek için yararlı olabilir.</string>
+    <string name="setting_summary_images">Enable Network images. Disabling could be useful to save mobile data and to load websites faster.</string>
     <string name="setting_title_cookie">Çerezler</string>
     <string name="setting_summary_cookie_delete">Etkinleştirilirse, tüm çerezler silinir. Ayrıca güvenilir web sitelerinin çerezleri de silinir.</string>
-    <string name="setting_summary_cookie">Çerezleri etkinleştirin. Çerezler, cihazınızda depolanan küçük metin dosyalarıdır. Web siteleri
-	bunları örneğin kullanıcı ayarlarını saklamak için kullanır (örneğin, arama ayarları). Ancak kişisel kullanıcı verilerini toplamak 
-	için de kullanılabilirler.  Üçüncü taraf çerezleri (reklam için kullanıcı verilerini toplar) her zaman devre dışı bırakılır.</string>
+    <string name="setting_summary_cookie">Enable Cookies. Cookies are small text files, which are stored on your device. Websites use them for example to store user settings (for example search settings). But they could also be used to collect personal user data. Third party cookies (they collect user data for advertising) are always disabled.</string>
     <string name="setting_title_whitelistCookie">Çerez beyaz listesi</string>
     <string name="setting_title_whitelistRemote">Remote whitelist</string>
     <string name="setting_title_javascript">JavaScript</string>
-    <string name="setting_summary_javascript">JavaScript\'i etkinleştirin. Birçok web sitesinin işlevselliği için Javascript\'e ihtiyacı vardır 
-	(menüler, resimler yükleme ve görüntüleme, …). Ancak bunlar aynı zamanda bir risktir ve saldırılar için kullanılabilir.</string>
+    <string name="setting_summary_javascript">Enable JavaScript. Many websites need JavaScript for their functionality (menus, loading and displaying images, …). But they are also a risk and can be used for attacks.</string>
     <string name="setting_title_whitelistJS">JavaScript beyaz listesi</string>
     <string name="setting_title_adblock">Reklam Engelleyici</string>
     <string name="setting_summary_adblock">Can sıkıcı reklamları engellemek için Reklam Engelleyiciyi etkinleştirin. Siteler de etkinleştirildiğinde daha hızlı yüklenir.</string>
     <string name="setting_title_whitelist">Reklam Engelleyici beyaz listesi</string>
     <string name="setting_title_location">Konum</string>
-    <string name="setting_summary_location">Web sitelerinin konumunuza erişmesine izin verin. Bazı web siteleri (navigasyon için Google maps gibi)
-	için bunun etkin olması gerekir.</string>
+    <string name="setting_summary_location">Allow websites to access your location. Some websites (like Google maps for navigation) need this enabled.</string>
     <string name="setting_title_history">Geçmiş</string>
     <string name="setting_summary_history">Ziyaret edilen web sitelerinin geçmişini kaydedin.</string>
     <!-- browser clear -->
-    <string name="data_summary">Tüm dosyalar SD kartınızın \"Android/data/de.baumann.browser/files/browser_backup/\"
-        dizinine aktarılacaktır. Eğer \"FOSS Browser\"ı kaldırırsanız dizin SİLİNECEKTİR. Bu yüzden düzenli olarak bir yere yedekleme
-        alın.</string>
-    <string name="clear_title_quit">Uygulamadan çıkışta temizle</string>
+    <string name="data_summary">All files will be exported to the \"Android/data/de.baumann.browser/files/browser_backup/\" directory of your sd-card. This directory will be DELETED, if you uninstall \"FOSS Browser\". So make a backup regularly on a save place.</string>
+    <string name="clear_title_quit">Clear on application exit</string>
     <string name="clear_summary_quit">\"FOSS Tarayıcısı\"ndan her çıkışta  yukarıdaki tüm kontrol edilen veriler silinecektir.</string>
     <string name="clear_title_cache">Önbelleği Temizle</string>
     <string name="clear_title_cookie">Çerezleri Temizle</string>
@@ -131,20 +120,16 @@
     <string name="setting_summary_ui">Tercihlerinize uygun olarak uygulamanın davranışını ve arayüzünü değiştirin.</string>
     <string name="setting_summary_data">Birkaç uygulama verisini (beyaz listeler, yer imleri) içe ve dışa aktarın.</string>
     <string name="setting_filter">Yer imi süzgeci</string>
-    <string name="setting_filter_summary">Süzgeç iletişim kutusunu göstermek için genel bakıştaki yer imi simgesine uzun basın.  Hangi süzgeçleri kullanacağınıza 
-          karar verin.</string>
+    <string name="setting_filter_summary">To show the filter dialog long press on the bookmark icon in the overview. Decide which filters you will use.</string>
     <string name="setting_title_fav">Başlangıç sitesi</string>
-    <string name="setting_summary_fav">Buradan \"FOSS Browser\" başlatıldığında yüklenen varsayılan websitesini değiştirebilirsiniz.
-    Boş bir başlangıç sitesi için \"about:blank\" girin.</string>
+    <string name="setting_summary_fav">Here you can change the default website which loads on start of \"FOSS Browser\". Enter \"about:blank\" to get an emty start site.</string>
     <string name="setting_title_searchEngine">Özel arama motoru</string>
-    <string name="setting_summary_searchEngine">Buradan özel arama URL\'si girebilirsiniz. Ayrıca arama sağlayıcısı olarak \"Özel arama motoru\"nu
-    seçin.</string>
+    <string name="setting_summary_searchEngine">Here you can enter a custom search URL. Also choose \"Custom search engine\" as search provider.</string>
     <string name="setting_title_userAgent">Özel kullanıcı aracısı</string>
     <string name="setting_summary_userAgent">Burada özel bir kullanıcı aracısı girebilirsiniz. Varsayılanı kullanmak için boş bırakın.</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">Araç çubuğunu gizle</string>
-    <string name="setting_summary_hide">Web siteleri arasında gezinirken tüm ekranı kullanın. Eğer Geri düğmesine basarsanız
-	tam ekran modundan çıkılacaktır.</string>
+    <string name="setting_summary_hide">Use the whole screen when scrolling through websites. If you press the back button you will leave fullscreen mode.</string>
     <string name="setting_theme">Tema</string>
     <string name="setting_theme_summary">Uygulamanın temasını ayarlayın.</string>
     <string name="setting_theme_system">Sistem teması</string>
@@ -161,7 +146,7 @@
     <string name="setting_summary_nav_pos_left">Sol</string>
     <string name="setting_summary_nav_pos_center">Orta</string>
     <string name="setting_summary_nav_pos_null">Never show</string>
-    <string name="setting_summary_tab">\"Genel Bakış\" başlangıcında ne gösterilmelidir? Başlangıç sayfası, Yer imleriniz, …</string>
+    <string name="setting_summary_tab">What should be shown at the start of the \"Overview\"?</string>
     <string name="setting_title_confirm_exit">Tarayıcı çıkışını onayla</string>
     <string name="setting_summary_confirm_exit">Tarayıcıyı kapatırken onay iletişim kutusu gösterilir.</string>
     <string name="setting_title_confirm_tab_close">Sekme kapatmayı onayla</string>
@@ -195,15 +180,13 @@
     <string name="setting_title_import_bookmarks">Import bookmarks</string>
     <string name="setting_title_export_appData">Uygulama verilerini dışa aktar</string>
     <string name="setting_title_import_appData">Uygulama verilerini içe aktar</string>
-    <string name="setting_summary_export_appData">Uygulama verilerini (Başlangıç sayfası + önizlemeler, Geçmiş, Yer imleri)
-        ve kişisel ayarlarınızı dışa aktarın.</string>
+    <string name="setting_summary_export_appData">Export whole database and your personal settings.</string>
     <string name="title_appData">Uygulama verileri</string>
-    <string name="hint_database">Bu, mevcut tüm ayarlarınızı ve verilerinizi silecektir. Devam edilsin mi?</string>
+    <string name="hint_database">This will delete current data. Proceed?</string>
     <!-- Others setting -->
     <string name="setting_title_others">Diğer</string>
     <string name="setting_title_appSettings">Uygulama ayarları</string>
-    <string name="setting_summary_appSettings">\"FOSS Tarayıcı\" için sistem uygulama ayarlarını açın. Burada Android
-	sürümü izin verme izninize bağlı olarak, uygulama verilerini temizleyebilirsiniz.</string>
+    <string name="setting_summary_appSettings">Open the system app settings for \"FOSS Browser\". There you can, depending on your Android version grant permissions, clear the app data and so on.</string>
     <string name="setting_title_community">Katkıda Bulunanlar</string>
     <!-- Toast -->
     <string name="toast_add_to_home_successful">Başarıyla ana sayfaya eklendi</string>
@@ -225,16 +208,13 @@
     <string name="toast_start_download">İndirmeye başla</string>
     <string name="toast_wait_a_minute">Lütfen biraz bekleyin</string>
     <string name="toast_webview_forward">Bir sonraki site yüklenemiyor</string>
-    <string name="toast_permission_sdCard">\"FOSS Tarayıcı\" \"depolama alanınızı okuma ve yazma\" iznine ihtiyaç duyar. Bu, dosyaları
-	indirmek, dosya yöneticisi oluşturmak ve ekran görüntüleri almak için gereklidir. Henüz izin vermediyseniz, daha sonra ayarlardan yapabilirsiniz.</string>
-    <string name="toast_permission_loc">\"FOSS Tarayıcı\" \"konumunuza erişim\" iznine ihtiyaç duyar. Bu, bazı web sitelerinden,
-	örneğin bir çeşit navigasyon sunduklarında istenir. Henüz izin vermediyseniz, daha sonra ayarlardan yapabilirsiniz.</string>
+    <string name="toast_permission_sdCard">\"FOSS Browser\" needs the permission to \"read and write on your storage\". This is needed to download files, taking screenshots and making backups of your data.</string>
+    <string name="toast_permission_loc">\"FOSS Browser\" needs the permission to \"access your location\". This is requested from some websites for example when they offer some kind of navigation.</string>
     <string name="toast_restart">Değişiklikleri uygulamak için \"FOSS Tarayıcı\"sını yeniden başlatmanız gerekir. Şimdi kapatılsın mı?</string>
     <string name="toast_quit">\"FOSS Tarayıcı\"sından çıkmak istiyor musunuz?</string>
     <string name="toast_close_tab">Geçerli sekmeyi kapatmak istiyor musunuz?</string>
     <string name="toast_downloadComplete">İndirme tamamlandı. Dosya yöneticisi açılsın mı?</string>
-    <string name="toast_unsecured">Bu web sitesi güvenli olmayan bir bağlantı kullanıyor (\"http\"). Güvenli bir bağlantı
-	denemek ister misiniz (\"https\")?</string>
+    <string name="toast_unsecured">Website uses an unsecured connection (\"http\"). Try a secure connection (\"https\")?</string>
     <string name="toast_backup">Veri yedeklensin mi? Bu eski yedeklemenin üzerine yazacaktır.</string>
     <string name="toast_fav">Başarıyla başlangıç sitesi olarak ayarlandı.</string>
     <!-- Whitelist -->
@@ -243,53 +223,41 @@
     <string name="whitelist_add">Ekle</string>
     <!-- Dialog help -->
     <string name="dialogHelp_tipTitle">İpuçları</string>
-    <string name="dialogHelp_tipText">        &lt;b&gt;Menüler ve iletişim kutuları&lt;/b&gt;&lt;br&gt;
-        Tüm menüler ve iletişim kutuları ekranın altında açılır. Eğer iletişim kutusu büyükse önce sadece üst
-        kısmını görürsünüz. Yukarı kaydırdığınızda geri kalanı da görünecektir.&lt;br&gt;
-        Geri düğmesine basarak, aşağı kaydırarak veya dışarısına tıklayarak kapatabilirsiniz.&lt;br&gt;&lt;br&gt;
+    <string name="dialogHelp_tipText">        &lt;b&gt;Menus and dialogs&lt;/b&gt;&lt;br&gt;
+        All menus and dialogs are opened at the bottom of the screen. If the dialog is large you will first see only the upper part. If you swipe it up, the rest will get visible. You can close them by pressing the back button, swiping them down or by clicking outside&lt;br&gt;&lt;br&gt;
 
-        &lt;b&gt;Uzun basma&lt;/b&gt;&lt;br&gt;
-        Menü simgesine veya \"Gezinme düğmesi\"ne uzun basarsanız, \"Hızlı aç/kapa iletişim kutusu\" görünecektir.
-        \"Yer imi simgesi\"ne uzun basarsanız, \"Filtre iletişim kutusu\" görünecektir.
+        &lt;b&gt;Long press&lt;/b&gt;&lt;br&gt;
+        If you long press the menu icon or the \"Navigation button\", the \"Fast toggle dialog\" will show. If you long press the \"Bookmark icon\", the \"Filter dialog\" will show.
     </string>
-    <string name="dialogHelp_filterText">        Yer imlerinizi filtrelerle etiketleyebilirsiniz. Bu şekilde yer imlerinizi gruplandırabilirsiniz. Filtre iletişim kutusunu yer imleri
-        simgesine uzun basarak açabilirsiniz. Bir girişi aktifleştirirseniz, filtrenin adını düzenleyebileceğiniz bir iletişim kutusu görünecektir.    </string>
+    <string name="dialogHelp_filterText">        You can tag your bookmarks with filters. In this way you can group your bookmarks. You can open the filter dialog by long pressing the bookmark icon. If you activate an entry a dialog will appear, where you can edit the name of the filter.
+    </string>
     <!-- Dialog changelog -->
-    <string name="changelog_dialog">        Diliniz henüz desteklenmiyor mu?  FOSS Tarayıcısını çevirmek ister misiniz?  Veya mevcut çevirilerde geliştirmeler mi yapmak istiyorsunuz?
-        Crowdin\'de bize katılmaktan çekinmeyin: https://crowdin.com/project/foss-browser.&lt;br&gt;&lt;br&gt;
+    <string name="changelog_dialog">        Your language isn\'t supported yet? You want to translate FOSS Browser? Or make improvements to existing translations? Feel free to join us on Crowdin: https://crowdin.com/project/foss-browser.&lt;br&gt;&lt;br&gt;
 
-        &lt;b&gt;Aşağıdaki sitelerde \"FOSS Tarayıcısı\" ile ilgili tüm önemli bilgilere erişebilirsiniz.
-        Lütfen uygulama içindeki yardım iletişim kutusunu da okuyun.&lt;/b&gt;&lt;br&gt;&lt;br&gt;
+        &lt;b&gt;On the following sites you have access to all important information about \"FOSS Browser\". Please read also the help dialog within the app.&lt;/b&gt;&lt;br&gt;&lt;br&gt;
 
-        \u25AA &lt;i&gt;Proje sitesi:&lt;/i&gt; https://github.com/scoute-dich/Browser&lt;br&gt;
-        \u25AA &lt;i&gt;Değişiklikler:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/CHANGELOG.md&lt;br&gt;
-        \u25AA &lt;i&gt;SSS:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/FAQs.md&lt;br&gt;
-        \u25AA &lt;i&gt;Lisans:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/LICENSE.md&lt;br&gt;
-        \u25AA &lt;i&gt;Gizlilik:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/PRIVACY.md
+        \u25AA &lt;i&gt;Project site:&lt;/i&gt; https://github.com/scoute-dich/Browser&lt;br&gt;
+        \u25AA &lt;i&gt;Changelog:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/CHANGELOG.md&lt;br&gt;
+        \u25AA &lt;i&gt;FAQ:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/FAQs.md&lt;br&gt;
+        \u25AA &lt;i&gt;License:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/LICENSE.md&lt;br&gt;
+        \u25AA &lt;i&gt;Privacy:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/PRIVACY.md
 
     </string>
     <!-- License changelog -->
-    <string name="cont_dialog">        &lt;i&gt;Öncelikle bu projeye herhangi bir şekilde katkıda bulunan herkese teşekkür etmek istiyorum. Sorunlar bildirdiler,
-        çeviri yaptılar ya da herhangi bir şekilde yardımcı oldular. Aşağıdaki sitelerde bu harika topluluğun aktif bir
-        üyesi olabilirsiniz:&lt;/i&gt;&lt;br&gt;&lt;br&gt;
+    <string name="cont_dialog">        &lt;i&gt;First I would like to thank all people who contributed in any way on this project. They submitted issues, translated or helped in any other way. On following sites you can become a active member of this great community:&lt;/i&gt;&lt;br&gt;&lt;br&gt;
 
         &lt;b&gt;Crowdin:&lt;/b&gt;&lt;br&gt;
-        Crowdin, uygulamaları diğer dillere tercüme etmek için kullanılan online bir platformdur. Tüm çevirmenlere kocaman teşekkürler.
-        Siz de yardımcı olabilirsiniz.&lt;br&gt;
+        Crowdin is an online plattform to translate applications in other languages. A big thanks to all translators. You can also help.&lt;br&gt;
         &lt;i&gt;https://crowdin.com/project/foss-browser&lt;/i&gt;&lt;br&gt;&lt;br&gt;
 
-
-        &lt;b&gt;XDA-konusu:&lt;/b&gt;&lt;br&gt;
-        XDA, geliştiriciler ve akıllı telefon meraklıları için harika bir topluluktur. Burada sorunlar bildirebilir, yeni özelliklerle ve
-        \"FOSS Browser\" ile ilgili diğer her şeyle ilgili istekte bulunabilirsiniz.&lt;br&gt;
+        &lt;b&gt;XDA-thread:&lt;/b&gt;&lt;br&gt;
+        XDA is a great community for developers and smartphone enthusiasts. Here you can report issues, ask for new features and everything other related to \"FOSS Browser\".&lt;br&gt;
         &lt;i&gt;https://forum.xda-developers.com/android/apps-games/app-browser-t3500091&lt;/i&gt;&lt;br&gt;&lt;br&gt;
 
         &lt;b&gt;Github:&lt;/b&gt;&lt;br&gt;
-        Github\'da \"FOSS Browser\" kaynak kodunu görebilirsiniz. Bu daha teknik bir çözümdür: sorunlar bildirin, yeni özellik
-        isteğinde bulunun ya da hatta geliştirme veya çevirilere yardım edin.&lt;br&gt;
+        On Github you can see the source code of \"FOSS Browser\". This is the more technical solution: open issues, ask for new features or even help developing or translating.&lt;br&gt;
         &lt;i&gt;https://github.com/scoute-dich/browser&lt;/i&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
 
-
-        &lt;i&gt;Aşağıdaki kişiler bu projeye katkıda bulundular. Eğer herhangi bir kişiyi unuttuysam, lütfen benimle irtibata geçin:&lt;/i&gt;
+        &lt;i&gt;Following people contributed at this project. If I have forgotten anybody, please contact me:&lt;/i&gt;
     </string>
 </resources>

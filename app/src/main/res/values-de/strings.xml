@@ -122,7 +122,7 @@ Dies zu deaktivieren ist sicherer, schneller und spart Datenvolumen. Manche Inha
     <string name="setting_summary_ui">Ändere das Verhalten und die Benutzeroberfläche entsprechend deinen Wünschen.</string>
     <string name="setting_summary_data">Verschiedene App-Daten importieren und exportieren (Ausnahmen, Lesezeichen,…).</string>
     <string name="setting_filter">Lesezeichen-Filter</string>
-    <string name="setting_filter_summary">Um den Filterdialog anzuzeigen, lang auf das Lesezeichenicon in der Übersicht drücken. Entscheide hier, welche Filter du nutzen wirst.</string>
+    <string name="setting_filter_summary">Um den Filterdialog anzuzeigen, lange auf das Lesezeichen-Icon in der Übersicht drücken. Entscheide hier, welche Filter du nutzen wirst.</string>
     <string name="setting_title_fav">Favorit</string>
     <string name="setting_summary_fav">Hier kannst du die voreingestellte Website ändern, die beim Start von \"FOSS-Browser\" lädt. Gib \"about:blank\" ein, um eine leere Startseite zu erhalten.</string>
     <string name="setting_title_searchEngine">Nutzerdefinierte Suchmaschine</string>
@@ -231,7 +231,7 @@ Du kannst sie durch Drücken der Zurück-Taste, nach Unten-wischen oder einen Kl
 
 &lt;b&gt;Lang Drücken&lt;/b&gt;&lt;br&gt;
 Wenn du das Menü-Symbol oder die \"Navigationstaste\" lang drückst, wird der \"Schnell-Schalter-Dialog\" angezeigt. Wenn du lang auf das \"Lesezeichen-Icon\" drücken, wird der \"Filter-Dialog\" angezeigt.</string>
-    <string name="dialogHelp_filterText">Du kannst deinen Lesezeichen mit Filter markieren. So kannst du deine Lesezeichengruppieren. Den Filterdialog kannst du öffnen durch langes Drücken auf das Lesezeichen-Icon. Wenn du einen Eintrag aktivierst, erscheint ein Dialog, in dem du den Namen des Filters bearbeiten kannst.</string>
+    <string name="dialogHelp_filterText">Du kannst deinen Lesezeichen mit Filter gruppieren. Den Filterdialog kannst du durch langes Drücken auf das Lesezeichen-Icon öffnen. Wenn du einen Eintrag aktivierst, erscheint ein Dialog, in dem du den Namen des Filters bearbeiten kannst.</string>
     <!-- Dialog changelog -->
     <string name="changelog_dialog">Deine Sprache wird noch nicht unterstützt? Du möchtest FOSS Browser übersetzen? Oder eine bestehende Übersetzung verbessern?
 Zögere nicht, uns auf Crowdin beizutreten: https://crowdin.com/project/foss-browser&lt;br&gt;&lt;br&gt;

@@ -183,6 +183,8 @@
     <string name="setting_gesture_09">Otwórz nową kartę</string>
     <string name="setting_gesture_10">Zamknij aktywną kartę</string>
     <!-- Data -->
+    <string name="setting_title_export_bookmarks">Export bookmarks as HTML-file</string>
+    <string name="setting_title_import_bookmarks">Import bookmarks</string>
     <string name="setting_title_export_appData">Eksportuj dane aplikacji</string>
     <string name="setting_title_import_appData">Importuj dane aplikacji</string>
     <string name="setting_summary_export_appData">Eksportuj dane aplikacji (Strona startowa + podgląd, historia, zakładki)

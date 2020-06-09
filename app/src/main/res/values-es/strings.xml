@@ -179,6 +179,8 @@ Puede disponer una página en blanco escribiendo \"about:blank\".</string>
     <string name="setting_gesture_09">Abrir nueva pestaña</string>
     <string name="setting_gesture_10">Cerrar pestaña</string>
     <!-- Data -->
+    <string name="setting_title_export_bookmarks">Export bookmarks as HTML-file</string>
+    <string name="setting_title_import_bookmarks">Import bookmarks</string>
     <string name="setting_title_export_appData">Exportar datos de la aplicación</string>
     <string name="setting_title_import_appData">Importar datos de la aplicación</string>
     <string name="setting_summary_export_appData">Exporta la página de inicio, previsualizaciones, historial, marcadores, y sus ajustes personales.</string>

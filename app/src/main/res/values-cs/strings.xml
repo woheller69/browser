@@ -188,6 +188,8 @@
     <string name="setting_gesture_09">Otevřít novou kartu</string>
     <string name="setting_gesture_10">Zavřít kartu</string>
     <!-- Data -->
+    <string name="setting_title_export_bookmarks">Export bookmarks as HTML-file</string>
+    <string name="setting_title_import_bookmarks">Import bookmarks</string>
     <string name="setting_title_export_appData">Exportovat data aplikace</string>
     <string name="setting_title_import_appData">Importovat data aplikace</string>
     <string name="setting_summary_export_appData">Exportovat data aplikace (Úvodní stránka + náhledy, historie, záložky)

@@ -182,6 +182,8 @@
     <string name="setting_gesture_09">Відкрити нову вкладку</string>
     <string name="setting_gesture_10">Закрити вкладку</string>
     <!-- Data -->
+    <string name="setting_title_export_bookmarks">Export bookmarks as HTML-file</string>
+    <string name="setting_title_import_bookmarks">Import bookmarks</string>
     <string name="setting_title_export_appData">Export app data</string>
     <string name="setting_title_import_appData">Import app data</string>
     <string name="setting_summary_export_appData">Export app data (Startpage + previews, History, Bookmarks)

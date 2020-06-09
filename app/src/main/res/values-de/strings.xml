@@ -4,7 +4,7 @@
     <string name="app_name">FOSS Browser</string>
     <string name="app_ok">OK</string>
     <string name="app_cancel">Abbrechen</string>
-    <string name="list_empty">Aktuelle Liste ist leer</string>
+    <string name="list_empty">Liste ist leer</string>
     <string name="album_title_bookmarks">Lesezeichen</string>
     <string name="album_title_history">Verlauf</string>
     <string name="album_title_home">Startseite</string>
@@ -17,7 +17,7 @@
     <string name="color_blue">Blau</string>
     <string name="color_teal">Petrol</string>
     <string name="color_green">Grün</string>
-    <string name="color_lime">Lindgrün</string>
+    <string name="color_lime">Lime</string>
     <string name="color_yellow">Gelb</string>
     <string name="color_orange">Orange</string>
     <string name="color_brown">Braun</string>
@@ -65,8 +65,7 @@
     <string name="setting_title_browser">Browser-Einstellungen</string>
     <string name="setting_title_clear_control">Datenkontrolle</string>
     <string name="setting_title_start_control">Start-Einstellungen</string>
-    <string name="setting_summary_clear_control">Lösche Deine Browserdaten, oder entscheide, welche Daten beim Verlassen der
-        Anwendung automatisch gelöscht werden.</string>
+    <string name="setting_summary_clear_control">Lösche Deine Browserdaten, oder entscheide, welche Daten beim Verlassen der Anwendung automatisch gelöscht werden.</string>
     <string name="setting_summary_start_control">Entscheide, welche Komponenten des Browsers beim Start aktiviert werden.</string>
     <string name="setting_title_search_engine">Suchmaschine</string>
     <string name="setting_summary_search_engine">Hier kannst du deine bevorzugte Suchmaschine auswählen, oder eine eigene einrichten.</string>
@@ -80,8 +79,7 @@
     <string name="setting_summary_search_engine_qwant">Qwant</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_title_inverted">Invertierte Farben</string>
-    <string name="setting_summary_inverted">Wenn aktiviert, werden Inhalte in einem invertierten schwarz/weiß-Modus
-        dargestellt.</string>
+    <string name="setting_summary_inverted">Wenn aktiviert, werden Inhalte in einem invertierten schwarz/weiß-Modus dargestellt.</string>
     <string name="setting_title_font">Schriftgröße</string>
     <string name="setting_summary_font">Ändere die Schriftgröße für die Darstellung von Websites.</string>
     <string name="setting_title_remote">Entfernte Inhalte</string>

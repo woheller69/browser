@@ -4,7 +4,7 @@
     <string name="app_name">Navigateur FOSS</string>
     <string name="app_ok">Ok</string>
     <string name="app_cancel">Annuler</string>
-    <string name="list_empty">List is empty</string>
+    <string name="list_empty">Liste vide</string>
     <string name="album_title_bookmarks">Signets</string>
     <string name="album_title_history">Historique</string>
     <string name="album_title_home">Accueil</string>
@@ -52,8 +52,8 @@
     <string name="dialog_extension_hint">Extension (par exemple: \".jpg\"):</string>
     <string name="dialog_sign_in_username">Nom d\'utilisateur</string>
     <string name="dialog_sign_in_password">Mot de passe</string>
-    <string name="dialog_title_download">Download the file?</string>
-    <string name="dialog_content_resubmission">Resubmit your data?</string>
+    <string name="dialog_title_download">Télécharger le fichier</string>
+    <string name="dialog_content_resubmission">Remettre vos données à nouveau?</string>
     <string name="dialog_content_ssl_error">Le certificat du site n\'est pas fiable. Continuez quand même?</string>
     <string name="dialog_sortName">Trier par nom</string>
     <string name="dialog_sortIcon">Trier par icône</string>
@@ -64,8 +64,8 @@
     <string name="setting_title_browser">Paramètres du navigateur</string>
     <string name="setting_title_clear_control">Contrôle des données</string>
     <string name="setting_title_start_control">Contrôle du démarrage</string>
-    <string name="setting_summary_clear_control">Clear your browser data or decide what data will be cleared when you leave the application.</string>
-    <string name="setting_summary_start_control">Decide which components of FOSS browser will be enabled on start.</string>
+    <string name="setting_summary_clear_control">Effacer les données du navigateur ou décider quelles données seront effacées en quittant l\'application.</string>
+    <string name="setting_summary_start_control">Décider quels composants du navigateur seront activés au démarrage.</string>
     <string name="setting_title_search_engine">Moteur de recherche</string>
     <string name="setting_summary_search_engine">Ici, vous pouvez choisir votre moteur de recherche préféré ou définir un moteur personnalisé.</string>
     <string name="setting_summary_search_engine_google">Google</string>

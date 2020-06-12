@@ -100,12 +100,12 @@
     <string name="setting_summary_adblock">Включите AdBlock, чтобы заблокировать раздражающую рекламу. Сайты загружаются быстрее при включении.</string>
     <string name="setting_title_whitelist">Белый список AdBlock</string>
     <string name="setting_title_location">Местоположение</string>
-    <string name="setting_summary_location">Allow websites to access your location. Some websites (like Google maps for navigation) need this enabled.</string>
+    <string name="setting_summary_location">Разрешить сайтам доступ к Вашему местоположению. Некоторые сайты (например, карты Google) нуждаются в этом.</string>
     <string name="setting_title_history">История</string>
     <string name="setting_summary_history">Сохраните историю посещаемых веб-сайтов.</string>
     <!-- browser clear -->
-    <string name="data_summary">All files will be exported to the \"Android/data/de.baumann.browser/files/browser_backup/\" directory of your sd-card. This directory will be DELETED, if you uninstall \"FOSS Browser\". So make a backup regularly on a save place.</string>
-    <string name="clear_title_quit">Clear on application exit</string>
+    <string name="data_summary">Все файлы будут экспортированы в папку \"Android/data/de.baumann.browser/files/browser_backup/\" Вашей sd-карты. Этот каталог будет УДАЛЕН, если вы удалите \"FOSS Browser\". Поэтому регулярно делайте резервную копию в надёжном месте.</string>
+    <string name="clear_title_quit">Очистить при выходе из приложения</string>
     <string name="clear_summary_quit">Каждый раз при выходе из \"FOSS Browser\" все вышеперечисленные проверенные данные будут удаляться.</string>
     <string name="clear_title_cache">Очистить кэш</string>
     <string name="clear_title_cookie">Очистить куки</string>
@@ -120,16 +120,16 @@
     <string name="setting_summary_ui">Измените поведение и интерфейс приложения в соответствии с вашими предпочтениями.</string>
     <string name="setting_summary_data">Импортируйте и экспортируйте данные приложения (белые списки, закладки).</string>
     <string name="setting_filter">Фильтр закладок</string>
-    <string name="setting_filter_summary">To show the filter dialog long press on the bookmark icon in the overview. Decide which filters you will use.</string>
+    <string name="setting_filter_summary">Чтобы отобразить диалоговое окно фильтра, удерживайте нажатие на значке закладок в окне. Определите, какие фильтры Вы будете использовать.</string>
     <string name="setting_title_fav">Избранное</string>
-    <string name="setting_summary_fav">Here you can change the default website which loads on start of \"FOSS Browser\". Enter \"about:blank\" to get an emty start site.</string>
+    <string name="setting_summary_fav">Здесь Вы можете изменить веб-сайт по умолчанию, который загружается при запуске \"FOSS Browser\". Введите \"about:blank\", чтобы открывалась пуcтая вкладка.</string>
     <string name="setting_title_searchEngine">Пользовательская поисковая система</string>
-    <string name="setting_summary_searchEngine">Here you can enter a custom search URL. Also choose \"Custom search engine\" as search provider.</string>
+    <string name="setting_summary_searchEngine">Здесь Вы можете ввести свой адрес для поиска. Также можно выбрать \"Пользовательская поисковая система\" для поиска по умолчанию.</string>
     <string name="setting_title_userAgent">Произвольный юзер-агент</string>
     <string name="setting_summary_userAgent">Здесь вы можете ввести произвольный юзер-агент. Пустое значение для использования юзер-агента по умолчанию.</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">Скрыть панель инструментов</string>
-    <string name="setting_summary_hide">Use the whole screen when scrolling through websites. If you press the back button you will leave fullscreen mode.</string>
+    <string name="setting_summary_hide">Используйте весь экран при прокрутке сайтов. Если Вы нажмете кнопку Назад, то покинете полноэкранный режим.</string>
     <string name="setting_theme">Тема</string>
     <string name="setting_theme_summary">Установить тему приложения.</string>
     <string name="setting_theme_system">Системная тема</string>
@@ -145,8 +145,8 @@
     <string name="setting_summary_nav_pos_right">Справа</string>
     <string name="setting_summary_nav_pos_left">Cлева</string>
     <string name="setting_summary_nav_pos_center">По центру</string>
-    <string name="setting_summary_nav_pos_null">Never show</string>
-    <string name="setting_summary_tab">What should be shown at the start of the \"Overview\"?</string>
+    <string name="setting_summary_nav_pos_null">Не показывать</string>
+    <string name="setting_summary_tab">Что должно быть показано при запуске «Обзора»?</string>
     <string name="setting_title_confirm_exit">Подтвердить выход из браузера</string>
     <string name="setting_summary_confirm_exit">Диалоговое окно подтверждения при закрытии браузера.</string>
     <string name="setting_title_confirm_tab_close">Подтвердить закрытие вкладки</string>
@@ -176,17 +176,17 @@
     <string name="setting_gesture_09">Открыть новую вкладку</string>
     <string name="setting_gesture_10">Закрыть вкладку</string>
     <!-- Data -->
-    <string name="setting_title_export_bookmarks">Export bookmarks as HTML-file</string>
-    <string name="setting_title_import_bookmarks">Import bookmarks</string>
+    <string name="setting_title_export_bookmarks">Экспортировать закладки в HTML-файл</string>
+    <string name="setting_title_import_bookmarks">Импортировать закладки</string>
     <string name="setting_title_export_appData">Экспорт данных</string>
     <string name="setting_title_import_appData">Импорт данных</string>
-    <string name="setting_summary_export_appData">Export whole database and your personal settings.</string>
+    <string name="setting_summary_export_appData">Экспортировать всю базу данных и Ваши персональные настройки.</string>
     <string name="title_appData">Данные приложения</string>
-    <string name="hint_database">This will delete current data. Proceed?</string>
+    <string name="hint_database">Это удалит текущие данные. Продолжить?</string>
     <!-- Others setting -->
     <string name="setting_title_others">Другие</string>
     <string name="setting_title_appSettings">Настройки</string>
-    <string name="setting_summary_appSettings">Open the system app settings for \"FOSS Browser\". There you can, depending on your Android version grant permissions, clear the app data and so on.</string>
+    <string name="setting_summary_appSettings">Откройте системные настройки \"FOSS Browser\". Там Вы можете предоставить разрешения, очистить данные приложения и так далее.</string>
     <string name="setting_title_community">Поддержка</string>
     <!-- Toast -->
     <string name="toast_add_to_home_successful">Успешно добавлено на главную</string>
@@ -208,13 +208,13 @@
     <string name="toast_start_download">Начало загрузки</string>
     <string name="toast_wait_a_minute">Подождите минутку</string>
     <string name="toast_webview_forward">Не удается загрузить следующий сайт</string>
-    <string name="toast_permission_sdCard">\"FOSS Browser\" needs the permission to \"read and write on your storage\". This is needed to download files, taking screenshots and making backups of your data.</string>
-    <string name="toast_permission_loc">\"FOSS Browser\" needs the permission to \"access your location\". This is requested from some websites for example when they offer some kind of navigation.</string>
+    <string name="toast_permission_sdCard">\"FOSS Browser\" нуждается в разрешении на \"чтение и запись\". Это необходимо для загрузки файлов, снимков экрана и резервного копирования файлов.</string>
+    <string name="toast_permission_loc">\"FOSS Browser\" нуждается в разрешении \"доступа к местоположению\". Это необходимо для некоторых веб-сайтов, например, когда они предлагают какую-то навигацию.</string>
     <string name="toast_restart">Чтобы применить изменения, необходимо перезапустить \"FOSS Browser\". Закрыть сейчас?</string>
     <string name="toast_quit">Хотите выйти из \"FOSS Browser\"?</string>
     <string name="toast_close_tab">Хотите закрыть текущую вкладку?</string>
     <string name="toast_downloadComplete">Загрузка завершена. Открыть файловый менеджер?</string>
-    <string name="toast_unsecured">Website uses an unsecured connection (\"http\"). Try a secure connection (\"https\")?</string>
+    <string name="toast_unsecured">Сайт использует незащищенное соединение (\"http\"). Попробовать безопасное соединение (\"https\")?</string>
     <string name="toast_backup">Сохранить данные? Это перезапишет старую резервную копию.</string>
     <string name="toast_fav">Успешно добавлено в избранное.</string>
     <!-- Whitelist -->
@@ -223,41 +223,41 @@
     <string name="whitelist_add">Добавить</string>
     <!-- Dialog help -->
     <string name="dialogHelp_tipTitle">Подсказки</string>
-    <string name="dialogHelp_tipText">        &lt;b&gt;Menus and dialogs&lt;/b&gt;&lt;br&gt;
-        All menus and dialogs are opened at the bottom of the screen. If the dialog is large you will first see only the upper part. If you swipe it up, the rest will get visible. You can close them by pressing the back button, swiping them down or by clicking outside&lt;br&gt;&lt;br&gt;
+    <string name="dialogHelp_tipText">        &lt;b&gt;Меню и диалоги&lt;/b&gt;&lt;br&gt;
+       Все меню и диалоги открываются внизу экрана. Если диалог большой, сперва Вы увидите верхнюю часть.Если Вы прокрутите её, будет видна оставшаяся часть. Закрытие производится кнопкой Назад, свайпом вниз или нажатием на пустом месте&lt;br&gt;&lt;br&gt;
 
-        &lt;b&gt;Long press&lt;/b&gt;&lt;br&gt;
-        If you long press the menu icon or the \"Navigation button\", the \"Fast toggle dialog\" will show. If you long press the \"Bookmark icon\", the \"Filter dialog\" will show.
+        &lt;b&gt;Удержание нажатия&lt;/b&gt;&lt;br&gt;
+        Удержание нажатия на значке меню или на кнопке навигации вызывает быстрый диалог переключения. Удержание нажатия на значке закладки вызывает диалог фильтров.
     </string>
-    <string name="dialogHelp_filterText">        You can tag your bookmarks with filters. In this way you can group your bookmarks. You can open the filter dialog by long pressing the bookmark icon. If you activate an entry a dialog will appear, where you can edit the name of the filter.
+    <string name="dialogHelp_filterText">        Вы можете присвоить своим закладкам фильтры. Так можно создавать группы закладок. Можно открыть диалог фильтров удержанием нажатия на значке закладки. Если Вы активировали пункт ввод, появится диалог, позволяющий изменить имя фильтра.
     </string>
     <!-- Dialog changelog -->
-    <string name="changelog_dialog">        Your language isn\'t supported yet? You want to translate FOSS Browser? Or make improvements to existing translations? Feel free to join us on Crowdin: https://crowdin.com/project/foss-browser.&lt;br&gt;&lt;br&gt;
+    <string name="changelog_dialog">Отсутствует Ваш язык? Вы хотите помочь с переводом FOSS Browser? Или улучшить существующий перевод? Присоединяйтесь к нам на Crowdin: https://crowdin.com/project/foss-browser.&lt;br&gt;&lt;br&gt;
 
-        &lt;b&gt;On the following sites you have access to all important information about \"FOSS Browser\". Please read also the help dialog within the app.&lt;/b&gt;&lt;br&gt;&lt;br&gt;
+        &lt;b&gt;На следующих сайтах Вы получите всю важную информацию о \"FOSS Browser\". Пожалуйста, пользуйтесь также справкой внутри приложения.&lt;/b&gt;&lt;br&gt;&lt;br&gt;
 
-        \u25AA &lt;i&gt;Project site:&lt;/i&gt; https://github.com/scoute-dich/Browser&lt;br&gt;
-        \u25AA &lt;i&gt;Changelog:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/CHANGELOG.md&lt;br&gt;
-        \u25AA &lt;i&gt;FAQ:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/FAQs.md&lt;br&gt;
-        \u25AA &lt;i&gt;License:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/LICENSE.md&lt;br&gt;
-        \u25AA &lt;i&gt;Privacy:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/PRIVACY.md
+        \u25AA &lt;i&gt;Сайт проекта:&lt;/i&gt; https://github.com/scoute-dich/Browser&lt;br&gt;
+        \u25AA &lt;i&gt;История изменений:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/CHANGELOG.md&lt;br&gt;
+        \u25AA &lt;i&gt;Вопросы и ответы:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/FAQs.md&lt;br&gt;
+        \u25AA &lt;i&gt;Лицензия:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/LICENSE.md&lt;br&gt;
+        \u25AA &lt;i&gt;Конфиденциальность:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/PRIVACY.md
 
     </string>
     <!-- License changelog -->
-    <string name="cont_dialog">        &lt;i&gt;First I would like to thank all people who contributed in any way on this project. They submitted issues, translated or helped in any other way. On following sites you can become a active member of this great community:&lt;/i&gt;&lt;br&gt;&lt;br&gt;
+    <string name="cont_dialog">        &lt;i&gt;Сперва я хотел бы поблагодарить всех людей, которые внесли свой вклад в этот проект. Они сообщали о проблемах, переводили или помогали каким-либо другим способом. На следующих сайтах Вы можете стать активным членом этого великого сообщества:&lt;/i&gt;&lt;br&gt;&lt;br&gt;
 
         &lt;b&gt;Crowdin:&lt;/b&gt;&lt;br&gt;
-        Crowdin is an online plattform to translate applications in other languages. A big thanks to all translators. You can also help.&lt;br&gt;
-        &lt;i&gt;https://crowdin.com/project/foss-browser&lt;/i&gt;&lt;br&gt;&lt;br&gt;
+        Crowdin является онлайн-платформой для перевода приложений на другие языки. Большое спасибо всем переводчикам. Вы тоже можете помочь.&lt;br&gt;
+        &lt;i&gt;https://crowdin. om/project/foss-browser&lt;/i&gt;&lt;br&gt;&lt;br&gt;
 
-        &lt;b&gt;XDA-thread:&lt;/b&gt;&lt;br&gt;
-        XDA is a great community for developers and smartphone enthusiasts. Here you can report issues, ask for new features and everything other related to \"FOSS Browser\".&lt;br&gt;
-        &lt;i&gt;https://forum.xda-developers.com/android/apps-games/app-browser-t3500091&lt;/i&gt;&lt;br&gt;&lt;br&gt;
+        &lt;b&gt;Тема на XDA:&lt;/b&gt;&lt;br&gt;
+        XDA - это отличное сообщество для разработчиков и энтузиастов смартфонов. Здесь Вы можете сообщить о проблемах, запросить новые возможности и узнать все остальное, что связано с \"FOSS Browser\".&lt;br&gt;
+        &lt;i&gt;https://forum.xda-developers. om/android/apps-games/app-browser-t3500091&lt;/i&gt;&lt;br&gt;&lt;br&gt;
 
         &lt;b&gt;Github:&lt;/b&gt;&lt;br&gt;
-        On Github you can see the source code of \"FOSS Browser\". This is the more technical solution: open issues, ask for new features or even help developing or translating.&lt;br&gt;
-        &lt;i&gt;https://github.com/scoute-dich/browser&lt;/i&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+        На Github Вы можете увидеть исходный код \"FOSS Browser\". Это более техническое решение: открывайте карточки проблем, запрашивайте новые функции или даже окажите помощь в разработке или переводе.&lt;br&gt;
+        &lt;i&gt;https://github. om/scoute-dich/browser&lt;/i&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
 
-        &lt;i&gt;Following people contributed at this project. If I have forgotten anybody, please contact me:&lt;/i&gt;
+        &lt;i&gt;Следующие люди внесли свой вклад в этот проект. Если я забыл кого-нибудь, пожалуйста, свяжитесь со мной:&lt;/i&gt;
     </string>
 </resources>

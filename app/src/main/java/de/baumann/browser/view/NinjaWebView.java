@@ -4,20 +4,23 @@ import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
+import android.content.res.TypedArray;
 import android.os.Build;
 import android.os.Message;
 
 import androidx.preference.PreferenceManager;
 
 import android.util.AttributeSet;
+import android.util.TypedValue;
 import android.view.*;
-import android.webkit.CookieManager;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 
 import de.baumann.browser.browser.*;
 import de.baumann.browser.R;
 import de.baumann.browser.unit.BrowserUnit;
+import de.baumann.browser.unit.HelperUnit;
 
 import java.util.HashMap;
 import java.util.Objects;
@@ -70,15 +73,10 @@ public class NinjaWebView extends WebView implements AlbumController {
     public AdBlock getAdBlock() {
         return adBlock;
     }
-
-    private Javascript javaHosts;
     private Cookie cookieHosts;
+    public Cookie getCookieHosts() { return cookieHosts; }
+    private Javascript javaHosts;
     private Remote remoteHosts;
-
-    public Cookie getCookieHosts() {
-        return cookieHosts;
-    }
-
     private SharedPreferences sp;
     private WebSettings webSettings;
 
@@ -138,6 +136,16 @@ public class NinjaWebView extends WebView implements AlbumController {
 
     @TargetApi(Build.VERSION_CODES.O)
     private synchronized void initWebSettings() {
+
+
+        TypedValue typedValue = new TypedValue();
+        Resources.Theme theme = context.getTheme();
+        theme.resolveAttribute(android.R.attr.colorBackground, typedValue, true);
+        @SuppressLint("Recycle")
+        TypedArray arr = context.obtainStyledAttributes(typedValue.data, new int[]{android.R.attr.colorBackground});
+        int primaryColor = arr.getColor(0, -1);
+
+        this.setBackgroundColor(primaryColor);
         webSettings = getSettings();
         webSettings.setBuiltInZoomControls(true);
         webSettings.setDisplayZoomControls(false);
@@ -158,7 +166,6 @@ public class NinjaWebView extends WebView implements AlbumController {
         if (!userAgent.isEmpty()) {
             webSettings.setUserAgentString(userAgent);
         }
-
         webViewClient.enableAdBlock(sp.getBoolean(context.getString(R.string.sp_ad_block), true));
         webSettings = getSettings();
         webSettings.setTextZoom(Integer.parseInt(Objects.requireNonNull(sp.getString("sp_fontSize", "100"))));
@@ -169,8 +176,6 @@ public class NinjaWebView extends WebView implements AlbumController {
         webSettings.setJavaScriptEnabled(sp.getBoolean(context.getString(R.string.sp_javascript), true));
         webSettings.setJavaScriptCanOpenWindowsAutomatically(sp.getBoolean(context.getString(R.string.sp_javascript), true));
         webSettings.setGeolocationEnabled(sp.getBoolean(context.getString(R.string.sp_location), false));
-        CookieManager manager = CookieManager.getInstance();
-        manager.setAcceptCookie(sp.getBoolean(context.getString(R.string.sp_cookies), true));
     }
 
     private synchronized void initAlbum() {
@@ -193,29 +198,24 @@ public class NinjaWebView extends WebView implements AlbumController {
         if (url == null || url.trim().isEmpty()) {
             NinjaToast.show(context, R.string.toast_load_error);
             return;
+        }
+        HelperUnit.initRendering(this);
+
+        if (javaHosts.isWhite(url) || sp.getBoolean(context.getString(R.string.sp_javascript), true)) {
+            webSettings.setJavaScriptCanOpenWindowsAutomatically(true);
+            webSettings.setJavaScriptEnabled(true);
         } else {
-            if (!sp.getBoolean(context.getString(R.string.sp_javascript), true)) {
-                if (javaHosts.isWhite(url)) {
-                    webSettings = getSettings();
-                    webSettings.setJavaScriptCanOpenWindowsAutomatically(true);
-                    webSettings.setJavaScriptEnabled(true);
-                } else {
-                    webSettings = getSettings();
-                    webSettings.setJavaScriptCanOpenWindowsAutomatically(false);
-                    webSettings.setJavaScriptEnabled(false);
-                }
-            }
-            if (!sp.getBoolean("sp_remote", true)) {
-                if (remoteHosts.isWhite(url)) {
-                    webSettings.setAllowFileAccessFromFileURLs(true);
-                    webSettings.setAllowUniversalAccessFromFileURLs(true);
-                    webSettings.setDomStorageEnabled(true);
-                } else {
-                    webSettings.setAllowFileAccessFromFileURLs(false);
-                    webSettings.setAllowUniversalAccessFromFileURLs(false);
-                    webSettings.setDomStorageEnabled(false);
-                }
-            }
+            webSettings.setJavaScriptCanOpenWindowsAutomatically(false);
+            webSettings.setJavaScriptEnabled(false);
+        }
+        if (remoteHosts.isWhite(url) || sp.getBoolean("sp_remote", true)) {
+            webSettings.setAllowFileAccessFromFileURLs(true);
+            webSettings.setAllowUniversalAccessFromFileURLs(true);
+            webSettings.setDomStorageEnabled(true);
+        } else {
+            webSettings.setAllowFileAccessFromFileURLs(false);
+            webSettings.setAllowUniversalAccessFromFileURLs(false);
+            webSettings.setDomStorageEnabled(false);
         }
         super.loadUrl(BrowserUnit.queryWrapper(context, url.trim()), getRequestHeaders());
     }
@@ -274,18 +274,5 @@ public class NinjaWebView extends WebView implements AlbumController {
         Message click = clickHandler.obtainMessage();
         click.setTarget(clickHandler);
         requestFocusNodeHref(click);
-    }
-
-    private boolean prepareRecord() {
-        String title = getTitle();
-        String url = getUrl();
-
-        return !(title == null
-                || title.isEmpty()
-                || url == null
-                || url.isEmpty()
-                || url.startsWith(BrowserUnit.URL_SCHEME_ABOUT)
-                || url.startsWith(BrowserUnit.URL_SCHEME_MAIL_TO)
-                || url.startsWith(BrowserUnit.URL_SCHEME_INTENT));
     }
 }

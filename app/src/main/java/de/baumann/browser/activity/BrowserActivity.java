@@ -19,7 +19,6 @@ import android.database.Cursor;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
 
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.preference.PreferenceManager;
@@ -273,6 +272,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         if (sp.getBoolean("start_tabStart", false)){
             showOverview();
         }
+        HelperUnit.initRendering(ninjaWebView);
     }
 
     @Override
@@ -575,14 +575,9 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 if (inputBox.hasFocus()) {
                     ninjaWebView.stopLoading();
                     inputBox.setText(ninjaWebView.getUrl());
-                    new Handler().postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            omniboxTitle.setVisibility(View.GONE);
-                            inputBox.requestFocus();
-                            inputBox.setSelection(0,inputBox.getText().toString().length());
-                        }
-                    }, 250);
+                    omniboxTitle.setVisibility(View.GONE);
+                    inputBox.requestFocus();
+                    inputBox.setSelection(0,inputBox.getText().toString().length());
                 } else {
                     omniboxTitle.setVisibility(View.VISIBLE);
                     omniboxTitle.setText(ninjaWebView.getTitle());
@@ -606,7 +601,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         switch (gestureAction) {
             case "01":
-
                 break;
             case "02":
                 if (ninjaWebView.canGoForward()) {
@@ -989,7 +983,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        updateAlbum(list.get(position).getURL());
+                        ninjaWebView.loadUrl(list.get(position).getURL());
                         hideOverview();
                     }
                 });
@@ -1005,7 +999,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         });
 
         switch (Objects.requireNonNull(sp.getString("start_tab", "0"))) {
-
             case "3":
                 open_bookmark.performClick();
                 break;
@@ -1278,7 +1271,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             }
         });
 
-        if (sp.getBoolean("saveHistory", false)) {
+        if (sp.getBoolean("saveHistory", true)) {
             toggle_historyView.setVisibility(View.VISIBLE);
         } else {
             toggle_historyView.setVisibility(View.INVISIBLE);
@@ -1287,7 +1280,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         toggle_history.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (sp.getBoolean("saveHistory", false)) {
+                if (sp.getBoolean("saveHistory", true)) {
                     toggle_historyView.setVisibility(View.INVISIBLE);
                     sp.edit().putBoolean("saveHistory", false).commit();
                 } else {
@@ -1351,7 +1344,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     toggle_invertView.setVisibility(View.VISIBLE);
                     sp.edit().putBoolean("sp_invert", true).commit();
                 }
-                HelperUnit.initRendering(contentFrame);
+                HelperUnit.initRendering(ninjaWebView);
             }
         });
 
@@ -1478,11 +1471,11 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
     @Override
     public synchronized void updateProgress(int progress) {
-        progressBar.setProgress(progress);
 
         updateOmnibox();
 
         if (progress < BrowserUnit.PROGRESS_MAX) {
+            progressBar.setProgress(progress);
             progressBar.setVisibility(View.VISIBLE);
             updateRefresh(true);
         } else {
@@ -1858,8 +1851,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     dialog_overview.cancel();
                     updateAlbum(sp.getString("favoriteURL", "https://github.com/scoute-dich/browser"));
                 } else if (position == 3) {
-                    dialog_overview.cancel();
                     removeAlbum(currentAlbumController);
+                    dialog_overview.cancel();
                 } else if (position == 4) {
                     dialog_overview.cancel();
                     doubleTapsQuit();

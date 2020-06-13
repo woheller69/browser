@@ -10,7 +10,6 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-
     <style name="AppTheme_system" parent="Theme.AppCompat.DayNight.NoActionBar">
         <item name="colorAccent">@color/colorAccent</item>
     </style>

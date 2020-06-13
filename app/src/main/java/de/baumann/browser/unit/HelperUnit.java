@@ -40,6 +40,9 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.preference.PreferenceManager;
 import androidx.annotation.NonNull;
+import androidx.webkit.WebSettingsCompat;
+import androidx.webkit.WebViewFeature;
+
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
@@ -50,6 +53,7 @@ import android.text.util.Linkify;
 import android.view.View;
 import android.webkit.CookieManager;
 import android.webkit.URLUtil;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -345,21 +349,29 @@ public class HelperUnit {
             0, 0, 0, 1.0f, 0     // Alpha
     };
 
-    public static void initRendering(View view) {
+    public static void initRendering(WebView webView) {
         if (sp.getBoolean("sp_invert", false)) {
-            Paint paint = new Paint();
-            ColorMatrix matrix = new ColorMatrix();
-            matrix.set(NEGATIVE_COLOR);
-            ColorMatrix gcm = new ColorMatrix();
-            gcm.setSaturation(0);
-            ColorMatrix concat = new ColorMatrix();
-            concat.setConcat(matrix, gcm);
-            ColorMatrixColorFilter filter = new ColorMatrixColorFilter(concat);
-            paint.setColorFilter(filter);
-            // maybe sometime LAYER_TYPE_NONE would better?
-            view.setLayerType(View.LAYER_TYPE_HARDWARE, paint);
+            if(WebViewFeature.isFeatureSupported(WebViewFeature.FORCE_DARK)) {
+                WebSettingsCompat.setForceDark(webView.getSettings(), WebSettingsCompat.FORCE_DARK_ON);
+            } else {
+                Paint paint = new Paint();
+                ColorMatrix matrix = new ColorMatrix();
+                matrix.set(NEGATIVE_COLOR);
+                ColorMatrix gcm = new ColorMatrix();
+                gcm.setSaturation(0);
+                ColorMatrix concat = new ColorMatrix();
+                concat.setConcat(matrix, gcm);
+                ColorMatrixColorFilter filter = new ColorMatrixColorFilter(concat);
+                paint.setColorFilter(filter);
+                // maybe sometime LAYER_TYPE_NONE would better?
+                webView.setLayerType(View.LAYER_TYPE_HARDWARE, paint);
+            }
         } else {
-            view.setLayerType(View.LAYER_TYPE_HARDWARE, null);
+            webView.setLayerType(View.LAYER_TYPE_HARDWARE, null);
+
+            if(WebViewFeature.isFeatureSupported(WebViewFeature.FORCE_DARK)) {
+                WebSettingsCompat.setForceDark(webView.getSettings(), WebSettingsCompat.FORCE_DARK_OFF);
+            }
         }
     }
 

@@ -109,6 +109,14 @@ public class NinjaWebViewClient extends WebViewClient {
         PackageManager packageManager = context.getPackageManager();
         Intent browseIntent = new Intent(Intent.ACTION_VIEW).setData(parsedUri);
 
+        CookieManager manager = CookieManager.getInstance();
+        if (cookie.isWhite(url) || sp.getBoolean(context.getString(R.string.sp_cookies), true)) {
+            manager.setAcceptCookie(true);
+            manager.getCookie(url);
+        } else {
+            manager.setAcceptCookie(false);
+        }
+
         if (url.startsWith("http")) {
             webView.loadUrl(url, ninjaWebView.getRequestHeaders());
             return true;
@@ -160,16 +168,6 @@ public class NinjaWebViewClient extends WebViewClient {
                     new ByteArrayInputStream("".getBytes())
             );
         }
-        if (!sp.getBoolean(context.getString(R.string.sp_cookies), true)) {
-            if (cookie.isWhite(url)) {
-                CookieManager manager = CookieManager.getInstance();
-                manager.getCookie(url);
-                manager.setAcceptCookie(true);
-            } else {
-                CookieManager manager = CookieManager.getInstance();
-                manager.setAcceptCookie(false);
-            }
-        }
         return super.shouldInterceptRequest(view, url);
     }
 
@@ -181,16 +179,6 @@ public class NinjaWebViewClient extends WebViewClient {
                     BrowserUnit.URL_ENCODING,
                     new ByteArrayInputStream("".getBytes())
             );
-        }
-        if (!sp.getBoolean(context.getString(R.string.sp_cookies), true)) {
-            if (cookie.isWhite(request.getUrl().toString())) {
-                CookieManager manager = CookieManager.getInstance();
-                manager.getCookie(request.getUrl().toString());
-                manager.setAcceptCookie(true);
-            } else {
-                CookieManager manager = CookieManager.getInstance();
-                manager.setAcceptCookie(false);
-            }
         }
         return super.shouldInterceptRequest(view, request);
     }

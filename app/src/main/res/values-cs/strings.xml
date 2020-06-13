@@ -24,9 +24,9 @@
     <string name="color_grey">Šedá</string>
     <!-- Menu -->
     <string name="main_menu_tabPreview">Otevřít náhled karty</string>
-    <string name="main_menu_new_tab">Nová karta (pozadí)</string>
-    <string name="main_menu_new_tabOpen">Nová karta (popředí)</string>
-    <string name="main_omnibox_input_hint">Vyhledejte nebo zadejte adresu URL</string>
+    <string name="main_menu_new_tab">Nová karta (na pozadí)</string>
+    <string name="main_menu_new_tabOpen">Nová karta (na popředí)</string>
+    <string name="main_omnibox_input_hint">Vyhledávejte nebo zadejte adresu URL</string>
     <string name="menu_open_with">Otevřít odkaz pomocí …</string>
     <string name="menu_quit">Ukončit</string>
     <string name="menu_openFav">Otevřít oblíbené</string>
@@ -45,11 +45,11 @@
     <string name="menu_save_pdf">Uložit jako PDF</string>
     <string name="menu_shareClipboard">Kopírovat do schránky</string>
     <string name="menu_other_searchSite">Hledat na stránce</string>
-    <string name="menu_other_info">O aplikaci \"FOSS Browser\"</string>
+    <string name="menu_other_info">O aplikaci „FOSS Browser“</string>
     <string name="menu_other_help">Nápověda</string>
     <!-- Dialog -->
     <string name="dialog_title_hint">Název:</string>
-    <string name="dialog_extension_hint">Přípona (například: \".jpg\"):</string>
+    <string name="dialog_extension_hint">Přípona (například: „.jpg“):</string>
     <string name="dialog_sign_in_username">Uživatelské jméno</string>
     <string name="dialog_sign_in_password">Heslo</string>
     <string name="dialog_title_download">Stáhnout soubor?</string>
@@ -80,7 +80,7 @@
     <string name="setting_title_inverted">Převrácené barvy</string>
     <string name="setting_summary_inverted">Pokud je zaškrtnuto, bude obsah vykreslen v režimu převrácené stupnice šedi. Toto je druh „nočního režimu“.</string>
     <string name="setting_title_font">Velikost písma</string>
-    <string name="setting_summary_font">Změna velikost písma pro zobrazování webových stránek.</string>
+    <string name="setting_summary_font">Změna velikosti písma zobrazených webových stránek.</string>
     <string name="setting_title_remote">Vzdálený obsah</string>
     <string name="setting_summary_remote">Povolte vzdálený obsah, který není přímo z navštívené webové stránky. Zakázání je bezpečnější, rychlejší a šetří spotřebu dat. Určitý obsah se však již nebude nadále zobrazovat.</string>
     <string name="setting_title_save_data">Požadavek „Ušetřit data“</string>

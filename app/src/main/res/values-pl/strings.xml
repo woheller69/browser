@@ -4,11 +4,11 @@
     <string name="app_name">Przeglądarka FOSS</string>
     <string name="app_ok">OK</string>
     <string name="app_cancel">Odrzuć</string>
-    <string name="list_empty">List is empty</string>
+    <string name="list_empty">Lista jest pusta</string>
     <string name="album_title_bookmarks">Zakładki</string>
     <string name="album_title_history">Historia</string>
     <string name="album_title_home">Witryny</string>
-    <string name="album_title_tab">Opened Tabs</string>
+    <string name="album_title_tab">Otwarte karty</string>
     <string name="album_title_files">Pliki</string>
     <string name="search_hint">Wyszukaj</string>
     <string name="color_red">Czerwień</string>
@@ -52,8 +52,8 @@
     <string name="dialog_extension_hint">Rozszerzenie (np.: \".jpg\"):</string>
     <string name="dialog_sign_in_username">Login</string>
     <string name="dialog_sign_in_password">Hasło</string>
-    <string name="dialog_title_download">Download the file?</string>
-    <string name="dialog_content_resubmission">Resubmit your data?</string>
+    <string name="dialog_title_download">Pobrać plik?</string>
+    <string name="dialog_content_resubmission">Ponownie przesłać swoje dane?</string>
     <string name="dialog_content_ssl_error">Wykryto niezaufany certyfikat. Chcesz kontynuować?</string>
     <string name="dialog_sortName">Sortowanie po nazwie</string>
     <string name="dialog_sortIcon">Sortowanie po ikonie</string>
@@ -64,8 +64,8 @@
     <string name="setting_title_browser">Preferencje przeglądarki</string>
     <string name="setting_title_clear_control">Kontrola danych</string>
     <string name="setting_title_start_control">Kontrola przeglądania</string>
-    <string name="setting_summary_clear_control">Clear your browser data or decide what data will be cleared when you leave the application.</string>
-    <string name="setting_summary_start_control">Decide which components of FOSS browser will be enabled on start.</string>
+    <string name="setting_summary_clear_control">Wyczyść dane przeglądarki lub zdecyduj jakie dane zostaną usunięte po opuszczeniu aplikacji.</string>
+    <string name="setting_summary_start_control">Zdecyduj, które elementy przeglądarki FOSS będą włączone na starcie.</string>
     <string name="setting_title_search_engine">Wyszukiwarka</string>
     <string name="setting_summary_search_engine">Zdecyduj o domyślnej wyszukiwarce internetowej lub wprowadź własną.</string>
     <string name="setting_summary_search_engine_google">Google</string>
@@ -78,34 +78,34 @@
     <string name="setting_summary_search_engine_qwant">Qwant</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_title_inverted">Odwrócone kolory</string>
-    <string name="setting_summary_inverted">If checked, content will be rendered in a inverted grey scale mode. This is a kind of \"night mode\".</string>
+    <string name="setting_summary_inverted">Jeśli zaznaczone, zawartość będzie wyświetlana w odwróconej skali szarości. Jest to rodzaj \"trybu nocnego\".</string>
     <string name="setting_title_font">Rozmiar czcionki</string>
     <string name="setting_summary_font">Zmień podstawowy rozmiar czcionek wyświetlanych na stronach.</string>
     <string name="setting_title_remote">Zawartość zdalna</string>
-    <string name="setting_summary_remote">Enable remote content, which is not directly from the website you are visiting. Disabling this is more secure, faster and saves data volume. But some content will not be displayed anymore.</string>
+    <string name="setting_summary_remote">Włącz zdalną zawartość, która nie jest bezpośrednio z odwiedzanej strony. Wyłączenie tego jest bezpieczniejsze, szybsze i zapisuje głośność danych. Jednak niektóre treści nie będą już wyświetlane.</string>
     <string name="setting_title_save_data">Zażądaj \'Zapisz dane\'</string>
     <string name="setting_summary_save_data">Powiedz stronom, że wolałbyś zapisać dane. Obsługiwane strony będą ładowane szybciej.</string>
     <!-- browser start -->
     <string name="setting_title_images">Grafiki</string>
-    <string name="setting_summary_images">Enable Network images. Disabling could be useful to save mobile data and to load websites faster.</string>
+    <string name="setting_summary_images">Włącz obrazy sieciowe. Wyłączenie może być przydatne do zapisywania danych mobilnych i szybszego ładowania witryn.</string>
     <string name="setting_title_cookie">Ciasteczka</string>
     <string name="setting_summary_cookie_delete">Wszystkie ciasteczka zostaną usunięte, także te z witryn zaufanych.</string>
-    <string name="setting_summary_cookie">Enable Cookies. Cookies are small text files, which are stored on your device. Websites use them for example to store user settings (for example search settings). But they could also be used to collect personal user data. Third party cookies (they collect user data for advertising) are always disabled.</string>
+    <string name="setting_summary_cookie">Włącz ciasteczka. Pliki cookie to małe pliki tekstowe, które są przechowywane na twoim urządzeniu. Witryny używają ich na przykład do przechowywania ustawień użytkownika (np. ustawienia wyszukiwania). Ale mogą być one również wykorzystywane do zbierania danych osobowych. Pliki cookie stron trzecich (zbierają dane użytkowników do reklamy) są zawsze wyłączone.</string>
     <string name="setting_title_whitelistCookie">Biała lista ciasteczek</string>
-    <string name="setting_title_whitelistRemote">Remote whitelist</string>
+    <string name="setting_title_whitelistRemote">Wykluczone aplikacje</string>
     <string name="setting_title_javascript">JavaScript</string>
-    <string name="setting_summary_javascript">Enable JavaScript. Many websites need JavaScript for their functionality (menus, loading and displaying images, …). But they are also a risk and can be used for attacks.</string>
+    <string name="setting_summary_javascript">Zezwól na skrypty. Wiele witryn wykorzystuje je w ramach swojej funkcjonalności (rozwijane menu, ładowanie obrazków i elementów nawigacyjnych), jednak skrypty te podatne są na ataki.</string>
     <string name="setting_title_whitelistJS">Biała lista JavaScript</string>
     <string name="setting_title_adblock">AdBlock</string>
     <string name="setting_summary_adblock">Zezwól na AdBlock do blokady irytujących reklam. Poprawia on prędkość ładowania witryn.</string>
     <string name="setting_title_whitelist">Biała lista AdBlock</string>
     <string name="setting_title_location">Lokalizacja</string>
-    <string name="setting_summary_location">Allow websites to access your location. Some websites (like Google maps for navigation) need this enabled.</string>
+    <string name="setting_summary_location">Zezwól na dostęp do lokalizacji twojego urządzenia. Niektóre witryny (np. Google Maps do nawigacji) wymagają włączenia tej funkcji.</string>
     <string name="setting_title_history">Historia</string>
     <string name="setting_summary_history">Zezwól na zapisywanie historii odwiedzanych witryn.</string>
     <!-- browser clear -->
-    <string name="data_summary">All files will be exported to the \"Android/data/de.baumann.browser/files/browser_backup/\" directory of your sd-card. This directory will be DELETED, if you uninstall \"FOSS Browser\". So make a backup regularly on a save place.</string>
-    <string name="clear_title_quit">Clear on application exit</string>
+    <string name="data_summary">Wszystkie pliki zostaną wyeksportowane do katalogu \"Android/data/de.baumann.browser/files/browser_backup/\" karty SD. Ten katalog zostanie wyłączony, jeśli odinstalujesz \"FOSS Browser\". Wykonaj regularnie kopię zapasową w miejscu zapisu.</string>
+    <string name="clear_title_quit">Wymaż na zamknięciu</string>
     <string name="clear_summary_quit">Za każdym razem, gdy zamkniesz \"FOSS Browser\" wszystkie zaznaczone powyżej dane zostaną wymazane.</string>
     <string name="clear_title_cache">Wymaż dane podręczne</string>
     <string name="clear_title_cookie">Wymaż ciasteczka</string>
@@ -120,16 +120,16 @@
     <string name="setting_summary_ui">Dostosuj aplikację do swoich upodobań.</string>
     <string name="setting_summary_data">Importuj lub eksportuj wybrane dane (białe listy, zakładki).</string>
     <string name="setting_filter">Filtr zakładek</string>
-    <string name="setting_filter_summary">To show the filter dialog long press on the bookmark icon in the overview. Decide which filters you will use.</string>
+    <string name="setting_filter_summary">Aby wyświetlić okno dialogowe filtrów, naciśnij ikonę zakładki w podglądzie. Zdecyduj, którego filtrów użyjesz.</string>
     <string name="setting_title_fav">Ulubione</string>
-    <string name="setting_summary_fav">Here you can change the default website which loads on start of \"FOSS Browser\". Enter \"about:blank\" to get an emty start site.</string>
+    <string name="setting_summary_fav">Tutaj możesz zmienić domyślną witrynę, która ładuje się na początku \"FOSS Browser\". Wpisz \"about:blank\", aby uzyskać stronę startową.</string>
     <string name="setting_title_searchEngine">Własna wyszukiwarka</string>
-    <string name="setting_summary_searchEngine">Here you can enter a custom search URL. Also choose \"Custom search engine\" as search provider.</string>
+    <string name="setting_summary_searchEngine">Tutaj możesz wprowadzić niestandardowy adres URL wyszukiwania. Wybierz również \"Własny silnik wyszukiwania\" jako dostawcę.</string>
     <string name="setting_title_userAgent">Niestandardowy agent użytkownika</string>
     <string name="setting_summary_userAgent">Tutaj możesz wprowadzić niestandardowego agenta użytkownika. Pozostaw puste, aby użyć domyślnego.</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">Ukryj dolny panel</string>
-    <string name="setting_summary_hide">Use the whole screen when scrolling through websites. If you press the back button you will leave fullscreen mode.</string>
+    <string name="setting_summary_hide">Pokazuj witryny na całym ekranie. Dotykając przycisku wstecz wyjdziesz z trybu pełnoekranowego.</string>
     <string name="setting_theme">Motyw</string>
     <string name="setting_theme_summary">Ustaw motyw aplikacji.</string>
     <string name="setting_theme_system">Szablon systemowy</string>
@@ -145,8 +145,8 @@
     <string name="setting_summary_nav_pos_right">Po prawej</string>
     <string name="setting_summary_nav_pos_left">Po lewej</string>
     <string name="setting_summary_nav_pos_center">Pośrodku</string>
-    <string name="setting_summary_nav_pos_null">Never show</string>
-    <string name="setting_summary_tab">What should be shown at the start of the \"Overview\"?</string>
+    <string name="setting_summary_nav_pos_null">Nigdy nie pokazuj</string>
+    <string name="setting_summary_tab">Co należy pokazać na początku „przeglądu”?</string>
     <string name="setting_title_confirm_exit">Potwierdzaj zamknięcie przeglądarki</string>
     <string name="setting_summary_confirm_exit">Wyświetlaj komunikat przy zamykaniu apki.</string>
     <string name="setting_title_confirm_tab_close">Potwierdzaj zamknięcie karty</string>
@@ -176,17 +176,17 @@
     <string name="setting_gesture_09">Otwórz nową kartę</string>
     <string name="setting_gesture_10">Zamknij aktywną kartę</string>
     <!-- Data -->
-    <string name="setting_title_export_bookmarks">Export bookmarks as HTML-file</string>
-    <string name="setting_title_import_bookmarks">Import bookmarks</string>
+    <string name="setting_title_export_bookmarks">Eksportuj zakładki jako plik HTML</string>
+    <string name="setting_title_import_bookmarks">Importuj zakładki</string>
     <string name="setting_title_export_appData">Eksportuj dane aplikacji</string>
     <string name="setting_title_import_appData">Importuj dane aplikacji</string>
-    <string name="setting_summary_export_appData">Export whole database and your personal settings.</string>
+    <string name="setting_summary_export_appData">Eksportuj całą bazę danych i ustawienia osobiste.</string>
     <string name="title_appData">Dane aplikacji</string>
-    <string name="hint_database">This will delete current data. Proceed?</string>
+    <string name="hint_database">Spowoduje to usunięcie aktualnych danych. Kontynuować?</string>
     <!-- Others setting -->
     <string name="setting_title_others">Pozostałe</string>
     <string name="setting_title_appSettings">Ustawienia aplikacji</string>
-    <string name="setting_summary_appSettings">Open the system app settings for \"FOSS Browser\". There you can, depending on your Android version grant permissions, clear the app data and so on.</string>
+    <string name="setting_summary_appSettings">Otwiera systemowy panel informacji o \"FOSS Browser\". Możesz tam ustalić indywidualne uprawienia, usunąć dane itd, w zależności od wersji twojego systemu Android.</string>
     <string name="setting_title_community">Kontrybucja</string>
     <!-- Toast -->
     <string name="toast_add_to_home_successful">Poprawnie dodano do ważnych witryn</string>
@@ -208,13 +208,13 @@
     <string name="toast_start_download">Rozpoczynanie pobierania</string>
     <string name="toast_wait_a_minute">Zaczekaj chwilę</string>
     <string name="toast_webview_forward">Nie można załadować kolejnej strony</string>
-    <string name="toast_permission_sdCard">\"FOSS Browser\" needs the permission to \"read and write on your storage\". This is needed to download files, taking screenshots and making backups of your data.</string>
-    <string name="toast_permission_loc">\"FOSS Browser\" needs the permission to \"access your location\". This is requested from some websites for example when they offer some kind of navigation.</string>
+    <string name="toast_permission_sdCard">\"FOSS Browser\" wymaga uprawnienia na \”odczytywanie i zapisywanie zawartości pamieci\”. Jest ono niezbędne do pobierania plików przez wbudowany manager plików i udostępniania zrzutów ekranu. Jeśli nie chcesz teraz udzielać uprawnienia, możesz to zrobić później w Preferencjach aplikacji.</string>
+    <string name="toast_permission_loc">\"FOSS Browser\" wymaga uprawnienia \”dostęp na lokalizacji\”. Jest ono niezbędne dla poprawnego działania niektórych witryn, np. tych oferujących nawigację. Przydzielenie uprawnień możesz zmienić w każdej chwili w ustawieniach.</string>
     <string name="toast_restart">Musisz uruchomić ponownie \"FOSS Browser\”, aby zachować te zmiany. Zamknąć teraz?</string>
     <string name="toast_quit">Zamknąć \"FOSS Browser\"?</string>
     <string name="toast_close_tab">Zamknąć aktualną kartę?</string>
     <string name="toast_downloadComplete">Pobieranie ukończone. Otworzyć katalog pobierania?</string>
-    <string name="toast_unsecured">Website uses an unsecured connection (\"http\"). Try a secure connection (\"https\")?</string>
+    <string name="toast_unsecured">Ta witryna używa nieszyfrowanego połączenia (\"http\"). Spróbować przejść na szyfrowane (\"https\")?</string>
     <string name="toast_backup">Dokonać nowej kopii bezpieczeństwa danych? Nadpisze ona poprzednią kopię.</string>
     <string name="toast_fav">Ustawiono jako ulubioną na start.</string>
     <!-- Whitelist -->
@@ -223,41 +223,41 @@
     <string name="whitelist_add">Dodaj</string>
     <!-- Dialog help -->
     <string name="dialogHelp_tipTitle">Porady</string>
-    <string name="dialogHelp_tipText">        &lt;b&gt;Menus and dialogs&lt;/b&gt;&lt;br&gt;
-        All menus and dialogs are opened at the bottom of the screen. If the dialog is large you will first see only the upper part. If you swipe it up, the rest will get visible. You can close them by pressing the back button, swiping them down or by clicking outside&lt;br&gt;&lt;br&gt;
+    <string name="dialogHelp_tipText">        &lt;b&gt;Menu i okna dialogowe&lt;/b&gt;&lt;br&gt;
+        Wszystkie menu i okna dialogowe są otwierane na dole ekranu. Jeśli okno dialogowe jest duże, najpierw zobaczysz tylko górną część. Jeśli przesuniesz je w górę, reszta będzie widoczna. Możesz je zamknąć naciskając przycisk wstecz, przesuwając je w dół lub klikając na zewnątrz&lt;br&gt;&lt;br&gt;
 
-        &lt;b&gt;Long press&lt;/b&gt;&lt;br&gt;
-        If you long press the menu icon or the \"Navigation button\", the \"Fast toggle dialog\" will show. If you long press the \"Bookmark icon\", the \"Filter dialog\" will show.
+        &lt;b&gt;Długie naciśnięcie&lt;/b&gt;&lt;br&gt;
+        Jeśli długo naciśniesz ikonę menu lub przycisk nawigacji Okno dialogowe \"Szybkie przełączanie\" pojawi się. Jeśli długo naciśniesz ikonę zakładki, pojawi się \"Filtr dialog\".
     </string>
-    <string name="dialogHelp_filterText">        You can tag your bookmarks with filters. In this way you can group your bookmarks. You can open the filter dialog by long pressing the bookmark icon. If you activate an entry a dialog will appear, where you can edit the name of the filter.
+    <string name="dialogHelp_filterText">        Możesz oznaczyć zakładki za pomocą filtrów. W ten sposób możesz grupować zakładki. Możesz otworzyć okno dialogowe filtrów przez długie naciśnięcie ikony zakładki. Jeśli aktywujesz wpis, pojawi się okno dialogowe, gdzie możesz edytować nazwę filtra.
     </string>
     <!-- Dialog changelog -->
-    <string name="changelog_dialog">        Your language isn\'t supported yet? You want to translate FOSS Browser? Or make improvements to existing translations? Feel free to join us on Crowdin: https://crowdin.com/project/foss-browser.&lt;br&gt;&lt;br&gt;
+    <string name="changelog_dialog">        Twój język nie jest jeszcze obsługiwany? Chcesz przetłumaczyć FOSS Browser? Czy możesz ulepszyć istniejące tłumaczenia? Dołącz do nas na Crowdin: https://crowdin. om/project/foss-browser.&lt;br&gt;&lt;br&gt;
 
-        &lt;b&gt;On the following sites you have access to all important information about \"FOSS Browser\". Please read also the help dialog within the app.&lt;/b&gt;&lt;br&gt;&lt;br&gt;
+        &lt;b&gt;Na następujących stronach masz dostęp do wszystkich ważnych informacji o \"przeglądarce FOSS\". Przeczytaj także okno pomocy w aplikacji.&lt;/b&gt;&lt;br&gt;&lt;br&gt;
 
-        \u25AA &lt;i&gt;Project site:&lt;/i&gt; https://github.com/scoute-dich/Browser&lt;br&gt;
-        \u25AA &lt;i&gt;Changelog:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/CHANGELOG.md&lt;br&gt;
-        \u25AA &lt;i&gt;FAQ:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/FAQs.md&lt;br&gt;
-        \u25AA &lt;i&gt;License:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/LICENSE.md&lt;br&gt;
-        \u25AA &lt;i&gt;Privacy:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/PRIVACY.md
+        \u25AA &lt;i&gt;Strona projektu:&lt;/i&gt; https://github. om/scoute-dich/Browser&lt;br&gt;
+        \u25AA &lt;i&gt;Changelog:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/CHANGELOG. d&lt;br&gt;
+        \u25AA &lt;i&gt;FAQ:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/FAQs. d&lt;br&gt;
+        \u25AA &lt;i&gt;Licencja:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/LICENSE. d&lt;br&gt;
+        \u25AA &lt;i&gt;Prywatność:&lt;/i&gt; https://github. om/scoute-dich/browser/blob/master/PRIVACY.md
 
     </string>
     <!-- License changelog -->
-    <string name="cont_dialog">        &lt;i&gt;First I would like to thank all people who contributed in any way on this project. They submitted issues, translated or helped in any other way. On following sites you can become a active member of this great community:&lt;/i&gt;&lt;br&gt;&lt;br&gt;
+    <string name="cont_dialog">        &lt;i&gt;Najpierw chciałbym podziękować wszystkim osobom, które w jakikolwiek sposób przyczyniły się do realizacji tego projektu. Przedstawiły one kwestie, przetłumaczone lub pomogły w jakikolwiek inny sposób. Na następujących stronach możesz zostać aktywnym członkiem tej wspaniałej społeczności:&lt;/i&gt;&lt;br&gt;&lt;br&gt;
 
         &lt;b&gt;Crowdin:&lt;/b&gt;&lt;br&gt;
-        Crowdin is an online plattform to translate applications in other languages. A big thanks to all translators. You can also help.&lt;br&gt;
-        &lt;i&gt;https://crowdin.com/project/foss-browser&lt;/i&gt;&lt;br&gt;&lt;br&gt;
+        Crowdin jest formularzem do tłumaczenia aplikacji na inne języki. Duże podziękowania dla wszystkich tłumaczy. Możesz również pomóc.&lt;br&gt;
+        &lt;i&gt;https://crowdin. om/project/foss-browser&lt;/i&gt;&lt;br&gt;&lt;br&gt;
 
         &lt;b&gt;XDA-thread:&lt;/b&gt;&lt;br&gt;
-        XDA is a great community for developers and smartphone enthusiasts. Here you can report issues, ask for new features and everything other related to \"FOSS Browser\".&lt;br&gt;
-        &lt;i&gt;https://forum.xda-developers.com/android/apps-games/app-browser-t3500091&lt;/i&gt;&lt;br&gt;&lt;br&gt;
+        XDA to wspaniała społeczność dla programistów i entuzjastów. Tutaj możesz zgłaszać problemy, prosić o nowe funkcje i wszystkie inne związane z \"FOSS Browser\".&lt;br&gt;
+        &lt;i&gt;https://forum.xda-developers. om/android/apps-games/app-browser-t3500091&lt;/i&gt;&lt;br&gt;&lt;br&gt;
 
         &lt;b&gt;Github:&lt;/b&gt;&lt;br&gt;
-        On Github you can see the source code of \"FOSS Browser\". This is the more technical solution: open issues, ask for new features or even help developing or translating.&lt;br&gt;
-        &lt;i&gt;https://github.com/scoute-dich/browser&lt;/i&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+        Na Githubie możesz zobaczyć kod źródłowy \"FOSS Browser\". Jest to rozwiązanie bardziej techniczne: kwestie otwarte, prosić o nowe funkcje, a nawet pomóc w opracowaniu lub tłumaczeniu.&lt;br&gt;
+        &lt;i&gt;https://github. om/scoute-dich/przeglądarka&lt;/i&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
 
-        &lt;i&gt;Following people contributed at this project. If I have forgotten anybody, please contact me:&lt;/i&gt;
+        &lt;i&gt;Obserwowani użytkownicy w tym projekcie. Jeśli nikomu zapomniałem, skontaktuj się ze mną:&lt;/i&gt;
     </string>
 </resources>

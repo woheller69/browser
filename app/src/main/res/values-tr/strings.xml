@@ -4,11 +4,11 @@
     <string name="app_name">FOSS Browser</string>
     <string name="app_ok">TAMAM</string>
     <string name="app_cancel">İptal et</string>
-    <string name="list_empty">List is empty</string>
+    <string name="list_empty">Liste boş</string>
     <string name="album_title_bookmarks">Yer imleri</string>
     <string name="album_title_history">Geçmiş</string>
     <string name="album_title_home">Ana sayfa</string>
-    <string name="album_title_tab">Opened Tabs</string>
+    <string name="album_title_tab">Açılan sekmeler</string>
     <string name="album_title_files">Dosyalar</string>
     <string name="search_hint">Ara</string>
     <string name="color_red">Kırmızı</string>
@@ -52,7 +52,7 @@
     <string name="dialog_extension_hint">Uzantı (örneğin: \".jpg\"):</string>
     <string name="dialog_sign_in_username">Kullancı adı</string>
     <string name="dialog_sign_in_password">Parola</string>
-    <string name="dialog_title_download">Download the file?</string>
+    <string name="dialog_title_download">Dosya indir?</string>
     <string name="dialog_content_resubmission">Resubmit your data?</string>
     <string name="dialog_content_ssl_error">Sitenin sertifikası güvenilir değil. Yine de devam edilsin mi?</string>
     <string name="dialog_sortName">İsme göre sırala</string>
@@ -64,7 +64,7 @@
     <string name="setting_title_browser">Tarayıcı Ayarları</string>
     <string name="setting_title_clear_control">Veri Denetimi</string>
     <string name="setting_title_start_control">Başlangıç Denetimi</string>
-    <string name="setting_summary_clear_control">Clear your browser data or decide what data will be cleared when you leave the application.</string>
+    <string name="setting_summary_clear_control">Tarayıcı verilerinizi temizleyin veya uygulamadan ayrıldığınızda	hangi verilerin silineceğine karar verin.</string>
     <string name="setting_summary_start_control">Decide which components of FOSS browser will be enabled on start.</string>
     <string name="setting_title_search_engine">Arama Motoru</string>
     <string name="setting_summary_search_engine">Buradan tercih ettiğiniz arama motorunu seçebilir veya özel bir tane ayarlayabilirsiniz.</string>

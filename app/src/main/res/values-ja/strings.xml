@@ -45,7 +45,7 @@
     <string name="menu_save_pdf">PDF として保存</string>
     <string name="menu_shareClipboard">クリップボードにコピー</string>
     <string name="menu_other_searchSite">サイト上の検索</string>
-    <string name="menu_other_info">FOSS ブラウザについて</string>
+    <string name="menu_other_info">\"FOSS Browser\" について</string>
     <string name="menu_other_help">ヘルプ</string>
     <!-- Dialog -->
     <string name="dialog_title_hint">タイトル:</string>
@@ -65,7 +65,7 @@
     <string name="setting_title_clear_control">データコントロール</string>
     <string name="setting_title_start_control">スタートコントロール</string>
     <string name="setting_summary_clear_control">ブラウザのデータを消去するか、アプリを終了する時に何のデータを消去するか選択します。</string>
-    <string name="setting_summary_start_control">起動時に FOSS Browser のどのコンポーネントが有効になるかを決定します。</string>
+    <string name="setting_summary_start_control">起動時に FOSS Browser のどのコンポーネントが有効になるかを決定します</string>
     <string name="setting_title_search_engine">検索エンジン</string>
     <string name="setting_summary_search_engine">ここでおすすめの検索エンジンや独自の検索エンジンを選択できます</string>
     <string name="setting_summary_search_engine_google">Google</string>
@@ -230,15 +230,17 @@
 メニューアイコンや \"ナビゲーションボタン\" を長押しすると \"高速ダイアログ切り替え\" が表示されます。\"ブックマークアイコン\" を長押しすると \"フィルターダイアログ\" が表示されます。</string>
     <string name="dialogHelp_filterText">フィルターをブックマークでマークできます。これによりブックマークをグループ化できます。ブックマークアイコンを長押しすると、フィルターダイアログを開くことができます。 エントリをアクティブにするとダイアログが表示され、そこでフィルターの名前を編集できます。</string>
     <!-- Dialog changelog -->
-    <string name="changelog_dialog">あなたの言語はまだサポートされていませんか？ FOSS Browser を翻訳してみませんか?  または既存の翻訳を改善しますか? お気軽に Crowdin: https://crowdin.com/project/foss-browser に参加して下さい。&lt;br&gt;&lt;br&gt;
+    <string name="changelog_dialog">        あなたの言語はまだサポートされていませんか? FOSS Browser を翻訳してみませんか?  または既存の翻訳を改善しますか? お気軽に Crowdin: https://crowdin.com/project/foss-browser に参加して下さい。&lt;br&gt;&lt;br&gt;
 
-&lt;b&gt;次のサイトでは \"FOSS Browser\" に関する全ての重要な情報にアクセスできます。アプリ内のヘルプダイアログもお読み下さい。&lt;/b&gt;&lt;br&gt;&lt;br&gt;
+        &lt;b&gt;次のサイトでは \"FOSS Browser\" に関する全ての重要な情報にアクセスできます。アプリ内のヘルプダイアログもお読み下さい。&lt;/b&gt;&lt;br&gt;&lt;br&gt;
 
-\u25AA&lt;i&gt;プロジェクトサイト:&lt;/i&gt; https://github.com/scoute-dich/Browser&lt;br&gt;
-\u25AA&lt;i&gt;更新履歴:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/CHANGELOG.md&lt;br&gt;
-\u25AAFAQ:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/FAQs.md&lt;br&gt;
-\u25AA&lt;i&gt;ライセンス:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/LICENSE.md&lt;br&gt;
-\u25AA&lt;i&gt;プライバシー:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/PRIVACY.md</string>
+        \u25AA &lt;i&gt;プロジェクトサイト:&lt;/i&gt; https://github.com/scoute-dich/Browser&lt;br&gt;
+        \u25AA &lt;i&gt;更新履歴:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/CHANGELOG.md&lt;br&gt;
+        \u25AA &lt;i&gt;FAQ:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/FAQs.md&lt;br&gt;
+        \u25AA &lt;i&gt;ライセンス:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/LICENSE.md&lt;br&gt;
+        \u25AA &lt;i&gt;プライバシー:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/PRIVACY.md
+
+    </string>
     <!-- License changelog -->
     <string name="cont_dialog">&lt;b&gt;XDA スレッド&lt;/b&gt;&lt;br&gt;
 XDA は開発者とスマートフォン愛好者の大きなコミュニティです。ここではバグの報告、新規機能の追加要請やその他の \"FOSS Browser\" 関連の全てがあります。&lt;br&gt;

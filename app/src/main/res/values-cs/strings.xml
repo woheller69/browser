@@ -24,9 +24,9 @@
     <string name="color_grey">Šedá</string>
     <!-- Menu -->
     <string name="main_menu_tabPreview">Otevřít náhled karty</string>
-    <string name="main_menu_new_tab">Nová karta (pozadí)</string>
-    <string name="main_menu_new_tabOpen">Nová karta (popředí)</string>
-    <string name="main_omnibox_input_hint">Vyhledejte nebo zadejte adresu URL</string>
+    <string name="main_menu_new_tab">Nová karta (na pozadí)</string>
+    <string name="main_menu_new_tabOpen">Nová karta (na popředí)</string>
+    <string name="main_omnibox_input_hint">Vyhledávejte nebo zadejte adresu URL</string>
     <string name="menu_open_with">Otevřít odkaz pomocí …</string>
     <string name="menu_quit">Ukončit</string>
     <string name="menu_openFav">Otevřít oblíbené</string>

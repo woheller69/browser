@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- App -->
-    <string name="app_name">Браузер FOSS</string>
+    <string name="app_name">FOSS Browser</string>
     <string name="app_ok">ОК</string>
     <string name="app_cancel">Отмена</string>
     <string name="list_empty">Список пуст</string>

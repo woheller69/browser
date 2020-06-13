@@ -80,7 +80,7 @@
     <string name="setting_title_inverted">色を反転</string>
     <string name="setting_summary_inverted">チェックすると、コンテンツは反転したグレースケースで表示されます。これは一種の「ダークモード」です。</string>
     <string name="setting_title_font">フォントサイズ</string>
-    <string name="setting_summary_font">表示中のウェブサイトに合わせてフォントサイズを変更</string>
+    <string name="setting_summary_font">表示中のウェブサイトに合わせてフォントサイズを変更します。</string>
     <string name="setting_title_remote">リモートコンテンツ</string>
     <string name="setting_summary_remote">アクセスしている Web サイトから直接ではないリモートコンテンツを有効にします。これを無効にすると、より安全で高速になりデータ量が節約されます。ただし一部のコンテンツは表示されなくなります。</string>
     <string name="setting_title_save_data">「データを保存」のリクエスト</string>
@@ -102,23 +102,23 @@
     <string name="setting_title_location">位置情報</string>
     <string name="setting_summary_location">ウェブサイトに位置情報へのアクセスを許可して下さい。いくつかのウェブサイト (Google マップなど) は許可が必要です。</string>
     <string name="setting_title_history">履歴</string>
-    <string name="setting_summary_history">閲覧したウェブサイトの履歴を保存</string>
+    <string name="setting_summary_history">閲覧したウェブサイトの履歴を保存します。</string>
     <!-- browser clear -->
-    <string name="data_summary">全てのファイルは SD カードの \"Android/data/de.baumann.browser/files/browser_backup/\" に出力されます。\"FOSS Browser\" をアンインストールするとそのディレクトリは削除されます。なので定期的に安全な場所にバックアップを作成して下さい。</string>
+    <string name="data_summary">全てのファイルは SD カードの \"Android/data/de.baumann.browser/files/browser_backup/\" に出力されます。\"FOSS Browser\" をアンインストールするとそのディレクトリは削除されます。ですので定期的に安全な場所にバックアップを作成して下さい。</string>
     <string name="clear_title_quit">アプリ終了時に消去</string>
-    <string name="clear_summary_quit">毎回 \"FOSS Browser\" を終了したら上記のチェックしたデータは消去されます。</string>
+    <string name="clear_summary_quit">毎回 \"FOSS Browser\" を終了すると上記のチェックしたデータは消去されます。</string>
     <string name="clear_title_cache">キャッシュを削除</string>
     <string name="clear_title_cookie">クッキーを消去</string>
     <string name="clear_title_history">履歴を削除</string>
     <string name="clear_title_indexedDB">\"インデックス済みデータベース\" と \"ローカルウェブサイトストレージ\" の消去</string>
     <string name="clear_title_deleteDatabase">データベースを削除</string>
-    <string name="clear_summary_deleteDatabase">データベース全体を削除 (スタートページ、ブックマーク、履歴、ホワイトリスト)</string>
+    <string name="clear_summary_deleteDatabase">データベース全体 (スタートページ、ブックマーク、履歴、ホワイトリスト) を削除します。</string>
     <!-- App setting -->
     <string name="setting_title_app">アプリの設定</string>
     <string name="setting_title_ui">動作/UI</string>
     <string name="setting_title_data">バックアップ</string>
-    <string name="setting_summary_ui">好みの設定にするためにアプリの動作と UI を変更する</string>
-    <string name="setting_summary_data">アプリデータ (ホワイトリスト、ブックマーク) のインポートとエクスポートをする</string>
+    <string name="setting_summary_ui">好みの設定にするためにアプリの動作と UI を変更します。</string>
+    <string name="setting_summary_data">アプリデータ (ホワイトリスト、ブックマーク) のインポートとエクスポートをします。</string>
     <string name="setting_filter">ブックマークフィルター</string>
     <string name="setting_filter_summary">フィルターダイアログを表示するにはブックマークアイコンを一覧画面で長押しして下さい。どのフィルターを使うか決定して下さい。</string>
     <string name="setting_title_fav">お気に入り</string>
@@ -131,34 +131,34 @@
     <string name="setting_title_hideToolbar">ツールバーを非表示</string>
     <string name="setting_summary_hide">ウェブサイトスクロール時に画面全体を使用します。戻るボタンを押すとフルスクリーンモードを終了します。</string>
     <string name="setting_theme">テーマ</string>
-    <string name="setting_theme_summary">アプリのテーマを設定する</string>
+    <string name="setting_theme_summary">アプリのテーマを設定します。</string>
     <string name="setting_theme_system">システムテーマ</string>
     <string name="setting_theme_light">明るいテーマ</string>
     <string name="setting_theme_dark">暗いテーマ</string>
     <string name="setting_title_theme">UI</string>
     <string name="setting_title_behavior">動作</string>
-    <string name="setting_summary_toolbarShow">履歴から戻る前に戻るボタンタッチでツールバーを表示します</string>
-    <string name="setting_title_toolbarShow">第一ツールバー</string>
+    <string name="setting_summary_toolbarShow">履歴から戻る前に戻るボタンタッチでツールバーを表示します。</string>
+    <string name="setting_title_toolbarShow">最初のツールバー</string>
     <string name="setting_title_nav">ナビゲーションボタン</string>
     <string name="setting_title_nav_pos">位置</string>
-    <string name="setting_summary_nav_pos">\"ナビゲーションボタン\" をどこに配置するか決定します</string>
+    <string name="setting_summary_nav_pos">\"ナビゲーションボタン\" をどこに配置するか決定します。</string>
     <string name="setting_summary_nav_pos_right">右</string>
     <string name="setting_summary_nav_pos_left">左</string>
     <string name="setting_summary_nav_pos_center">中央</string>
     <string name="setting_summary_nav_pos_null">非表示</string>
     <string name="setting_summary_tab">「概要」の最初に表示されるべきものは何ですか?</string>
     <string name="setting_title_confirm_exit">ブラウザ終了の確認</string>
-    <string name="setting_summary_confirm_exit">ブラウザ終了時の確認ダイアログ</string>
+    <string name="setting_summary_confirm_exit">ブラウザ終了時の確認ダイアログです。</string>
     <string name="setting_title_confirm_tab_close">タブ削除の確認</string>
-    <string name="setting_summary_confirm_tab_close">タブ終了時の確認ダイアログ</string>
+    <string name="setting_summary_confirm_tab_close">タブ終了時の確認ダイアログです。</string>
     <string name="setting_overView">概観</string>
     <string name="setting_overView_onStart_title">開始時に表示</string>
-    <string name="setting_overView_onStart_summary">毎回のアプリ開始時に \"一覧画面\" を開く</string>
+    <string name="setting_overView_onStart_summary">毎回のアプリ開始時に \"一覧画面\" を開きます。</string>
     <string name="setting_gestures">ジェスチャー</string>
     <string name="setting_gestures_use_title">ジェスチャーを使用</string>
-    <string name="setting_gestures_use_summary">ツールバーと \"ナビゲーションボタン\" でジェスチャーを使用する</string>
+    <string name="setting_gestures_use_summary">ツールバーと \"ナビゲーションボタン\" でジェスチャーを使用します。</string>
     <string name="setting_title_reopenLastTab">タブを再度開く</string>
-    <string name="setting_summary_reopenLastTab">ブラウザ終了の代わりに最後のタブを閉じた時に新しいタブを開く</string>
+    <string name="setting_summary_reopenLastTab">ブラウザ終了の代わりに最後のタブを閉じた時に新しいタブを開きます。</string>
     <!-- gestures -->
     <string name="setting_title_toolbar">ツールバー</string>
     <string name="setting_gesture_up">上スワイプ</string>
@@ -180,7 +180,7 @@
     <string name="setting_title_import_bookmarks">ブックマークをインポート</string>
     <string name="setting_title_export_appData">アプリデータのエクスポート</string>
     <string name="setting_title_import_appData">アプリデータのインポート</string>
-    <string name="setting_summary_export_appData">データベースと個人設定全体をエクスポートします</string>
+    <string name="setting_summary_export_appData">データベースと個人設定全体をエクスポートします。</string>
     <string name="title_appData">アプリデータ</string>
     <string name="hint_database">現在のデータを削除します。続行しますか?</string>
     <!-- Others setting -->
@@ -258,6 +258,6 @@
         GitHubでは \"FOSS Browser\" のソースコードをご覧いただけます。これはより技術的な解決策です: 問題の提示、新機能の要求、または開発や翻訳の支援などです。&lt;br&gt;
         &lt;i&gt;https://github.com/scoute-dich/browser&lt;/i&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
 
-        &lt;i&gt;このプロジェクトには以下の人々が貢献しました。 記載漏れがあったら連絡して下さい:&lt;/i&gt;
+        &lt;i&gt;このプロジェクトには以下の人々が貢献しました。 もし記載漏れがあったら連絡して下さい:&lt;/i&gt;
     </string>
 </resources>

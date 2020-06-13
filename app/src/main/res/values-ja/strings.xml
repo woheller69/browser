@@ -223,12 +223,14 @@
     <string name="whitelist_add">追加</string>
     <!-- Dialog help -->
     <string name="dialogHelp_tipTitle">ヒント</string>
-    <string name="dialogHelp_tipText">&lt;b&gt;メニューとダイアログ&lt;/b&gt;&lt;br&gt;
-全てのメニューとダイアログは画面の下部の開かれます。もしダイアログが大きかったらまず最初に上の部分が見えます。上スワイプしたら残りが表示されます。戻るボタンのタップ、下スワイプ、外側をタップすると閉じます。&lt;br&gt;&lt;br&gt;
+    <string name="dialogHelp_tipText">        &lt;b&gt;メニューとダイアログ&lt;/b&gt;&lt;br&gt;
+        全てのメニューとダイアログは画面の下部の開かれます。もしダイアログが大きかったらまず最初に上の部分が見えます。上スワイプしたら残りが表示されます。戻るボタンのタップ、下スワイプ、外側をタップすると閉じます。&lt;br&gt;&lt;br&gt;
 
-&lt;b&gt;長押し&lt;/b&gt;&lt;br&gt;
-メニューアイコンや \"ナビゲーションボタン\" を長押しすると \"高速ダイアログ切り替え\" が表示されます。\"ブックマークアイコン\" を長押しすると \"フィルターダイアログ\" が表示されます。</string>
-    <string name="dialogHelp_filterText">フィルターをブックマークでマークできます。これによりブックマークをグループ化できます。ブックマークアイコンを長押しすると、フィルターダイアログを開くことができます。 エントリをアクティブにするとダイアログが表示され、そこでフィルターの名前を編集できます。</string>
+        &lt;b&gt;長押し&lt;/b&gt;&lt;br&gt;
+        メニューアイコンや \"ナビゲーションボタン\" を長押しすると \"高速ダイアログ切り替え\" が表示されます。\"ブックマークアイコン\" を長押しすると \"フィルターダイアログ\" が表示されます。
+    </string>
+    <string name="dialogHelp_filterText">       フィルターをブックマークでマークできます。これによりブックマークをグループ化できます。ブックマークアイコンを長押しすると、フィルターダイアログを開くことができます。 エントリをアクティブにするとダイアログが表示され、そこでフィルターの名前を編集できます。
+    </string>
     <!-- Dialog changelog -->
     <string name="changelog_dialog">        あなたの言語はまだサポートされていませんか? FOSS Browser を翻訳してみませんか?  または既存の翻訳を改善しますか? お気軽に Crowdin: https://crowdin.com/project/foss-browser に参加して下さい。&lt;br&gt;&lt;br&gt;
 
@@ -242,12 +244,20 @@
 
     </string>
     <!-- License changelog -->
-    <string name="cont_dialog">&lt;b&gt;XDA スレッド&lt;/b&gt;&lt;br&gt;
-XDA は開発者とスマートフォン愛好者の大きなコミュニティです。ここではバグの報告、新規機能の追加要請やその他の \"FOSS Browser\" 関連の全てがあります。&lt;br&gt;
-&lt;i&gt;
-https://forum.xda-developers.com/android/apps-games/app-browser-t3500091&lt;/i&gt;&lt;br&gt;&lt;br&gt;
+    <string name="cont_dialog">        &lt;i&gt;First I would like to thank all people who contributed in any way on this project. They submitted issues, translated or helped in any other way. On following sites you can become a active member of this great community:&lt;/i&gt;&lt;br&gt;&lt;br&gt;
 
-&lt;b&gt;GitHub&lt;/b&gt;&lt;br&gt;
-GitHub では \"FOSS Browser\" のソースコードを見ることができます。より技術的な解決法: Open issues や新規機能の要請や開発や翻訳の援助をします。&lt;br&gt;
-&lt;i&gt;https://github.com/scoute-dich/browser&lt;/i&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;</string>
+        &lt;b&gt;Crowdin:&lt;/b&gt;&lt;br&gt;
+        Crowdin is an online plattform to translate applications in other languages. A big thanks to all translators. You can also help.&lt;br&gt;
+        &lt;i&gt;https://crowdin.com/project/foss-browser&lt;/i&gt;&lt;br&gt;&lt;br&gt;
+
+        &lt;b&gt;XDA-thread:&lt;/b&gt;&lt;br&gt;
+        XDA is a great community for developers and smartphone enthusiasts. Here you can report issues, ask for new features and everything other related to \"FOSS Browser\".&lt;br&gt;
+        &lt;i&gt;https://forum.xda-developers.com/android/apps-games/app-browser-t3500091&lt;/i&gt;&lt;br&gt;&lt;br&gt;
+
+        &lt;b&gt;Github:&lt;/b&gt;&lt;br&gt;
+        On Github you can see the source code of \"FOSS Browser\". This is the more technical solution: open issues, ask for new features or even help developing or translating.&lt;br&gt;
+        &lt;i&gt;https://github.com/scoute-dich/browser&lt;/i&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+        &lt;i&gt;Following people contributed at this project. If I have forgotten anybody, please contact me:&lt;/i&gt;
+    </string>
 </resources>

@@ -45,11 +45,11 @@
     <string name="menu_save_pdf">Uložit jako PDF</string>
     <string name="menu_shareClipboard">Kopírovat do schránky</string>
     <string name="menu_other_searchSite">Hledat na stránce</string>
-    <string name="menu_other_info">O aplikaci \"FOSS Browser\"</string>
+    <string name="menu_other_info">O aplikaci „FOSS Browser“</string>
     <string name="menu_other_help">Nápověda</string>
     <!-- Dialog -->
     <string name="dialog_title_hint">Název:</string>
-    <string name="dialog_extension_hint">Přípona (například: \".jpg\"):</string>
+    <string name="dialog_extension_hint">Přípona (například: „.jpg“):</string>
     <string name="dialog_sign_in_username">Uživatelské jméno</string>
     <string name="dialog_sign_in_password">Heslo</string>
     <string name="dialog_title_download">Stáhnout soubor?</string>

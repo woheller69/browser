@@ -54,7 +54,7 @@
     <string name="dialog_sign_in_password">パスワード</string>
     <string name="dialog_title_download">ファイルをダウンロードしますか?</string>
     <string name="dialog_content_resubmission">データを再送信しますか?</string>
-    <string name="dialog_content_ssl_error">このサーバーの証明書は信頼されていません、続行しますか?</string>
+    <string name="dialog_content_ssl_error">このサーバの証明書は信頼されていません。続行しますか?</string>
     <string name="dialog_sortName">名前順</string>
     <string name="dialog_sortIcon">アイコン順</string>
     <string name="dialog_sortDate">日付順</string>
@@ -65,9 +65,9 @@
     <string name="setting_title_clear_control">データコントロール</string>
     <string name="setting_title_start_control">スタートコントロール</string>
     <string name="setting_summary_clear_control">ブラウザのデータを消去するか、アプリを終了する時に何のデータを消去するか選択します。</string>
-    <string name="setting_summary_start_control">起動時に FOSS Browser のどのコンポーネントが有効になるかを決定します</string>
+    <string name="setting_summary_start_control">起動時に FOSS Browser のどのコンポーネントが有効になるかを決定します。</string>
     <string name="setting_title_search_engine">検索エンジン</string>
-    <string name="setting_summary_search_engine">ここでおすすめの検索エンジンや独自の検索エンジンを選択できます</string>
+    <string name="setting_summary_search_engine">ここでおすすめの検索エンジンや独自の検索エンジンを選択できます。</string>
     <string name="setting_summary_search_engine_google">Google</string>
     <string name="setting_summary_search_engine_duckduckgo">DuckDuckGo</string>
     <string name="setting_summary_search_engine_startpage">StartPage</string>
@@ -244,20 +244,20 @@
 
     </string>
     <!-- License changelog -->
-    <string name="cont_dialog">        &lt;i&gt;First I would like to thank all people who contributed in any way on this project. They submitted issues, translated or helped in any other way. On following sites you can become a active member of this great community:&lt;/i&gt;&lt;br&gt;&lt;br&gt;
+    <string name="cont_dialog">        &lt;i&gt;まず、このプロジェクトに何らかの形で貢献してくれた全ての人々に感謝します。 彼らは問題を提示、翻訳、様々な方法で支援をしました。次のサイトではこの素晴らしいコミュニティのアクティブなメンバーになることができます:&lt;/i&gt;&lt;br&gt;&lt;br&gt;
 
         &lt;b&gt;Crowdin:&lt;/b&gt;&lt;br&gt;
-        Crowdin is an online plattform to translate applications in other languages. A big thanks to all translators. You can also help.&lt;br&gt;
+        Crowdin はアプリを他の言語に翻訳するためのオンラインプラットフォームです。全ての翻訳者に大変感謝します。あなたも支援することができます。&lt;br&gt;
         &lt;i&gt;https://crowdin.com/project/foss-browser&lt;/i&gt;&lt;br&gt;&lt;br&gt;
 
-        &lt;b&gt;XDA-thread:&lt;/b&gt;&lt;br&gt;
-        XDA is a great community for developers and smartphone enthusiasts. Here you can report issues, ask for new features and everything other related to \"FOSS Browser\".&lt;br&gt;
+        &lt;b&gt;XDA-スレッド:&lt;/b&gt;&lt;br&gt;
+        XDAは、開発者やスマートフォン愛好家のための素晴らしいコミュニティです。ここでは問題を報告したり、新機能や \"FOSS Browser\" に関連するその他全てのことについて質問できます。&lt;br&gt;
         &lt;i&gt;https://forum.xda-developers.com/android/apps-games/app-browser-t3500091&lt;/i&gt;&lt;br&gt;&lt;br&gt;
 
-        &lt;b&gt;Github:&lt;/b&gt;&lt;br&gt;
-        On Github you can see the source code of \"FOSS Browser\". This is the more technical solution: open issues, ask for new features or even help developing or translating.&lt;br&gt;
+        &lt;b&gt;GitHub:&lt;/b&gt;&lt;br&gt;
+        GitHubでは \"FOSS Browser\" のソースコードをご覧いただけます。これはより技術的な解決策です: 問題の提示、新機能の要求、または開発や翻訳の支援などです。&lt;br&gt;
         &lt;i&gt;https://github.com/scoute-dich/browser&lt;/i&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
 
-        &lt;i&gt;Following people contributed at this project. If I have forgotten anybody, please contact me:&lt;/i&gt;
+        &lt;i&gt;このプロジェクトには以下の人々が貢献しました。 記載漏れがあったら連絡して下さい:&lt;/i&gt;
     </string>
 </resources>

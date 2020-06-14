@@ -98,13 +98,13 @@
     <string name="setting_title_whitelistJS">Seznam povolených – JavaScript</string>
     <string name="setting_title_adblock">AdBlock</string>
     <string name="setting_summary_adblock">Zapněte AdBlock pro blokování obtěžujících reklam. Stránky se budou načítat rychleji.</string>
-    <string name="setting_title_whitelist">Seznam povolených - AdBlock</string>
+    <string name="setting_title_whitelist">Seznam povolených – AdBlock</string>
     <string name="setting_title_location">Poloha</string>
-    <string name="setting_summary_location">Povolit webům přístup k vaší poloze. Některé weby (jako Mapy Google pro navigaci) to potřebují mít zapnuté.</string>
+    <string name="setting_summary_location">Povolit webům přístup k vaší poloze. Některé weby (jako Mapy Google pro navigaci) jej potřebují mít zapnutý.</string>
     <string name="setting_title_history">Historie</string>
     <string name="setting_summary_history">Uložit historii navštívených stránek.</string>
     <!-- browser clear -->
-    <string name="data_summary">Všechny soubory budou exportovány do adresáře „Android/data/de.baumann.browser/files/browser_backup/“ na vaší SD kartě. Tento adresář bude SMAZÁN, když odinstalujetel „FOSS Browser“. Proto si vytvořte zálohu na bezpečném místě.</string>
+    <string name="data_summary">Všechny soubory budou exportovány do adresáře „Android/data/de.baumann.browser/files/browser_backup/“ na vaší SD kartě. Tento adresář bude SMAZÁN, když „FOSS Browser“ odinstalujete. Proto si pravidelně na bezpečném místě vytvářejte zálohu.</string>
     <string name="clear_title_quit">Vymazat při ukončení aplikace</string>
     <string name="clear_summary_quit">Při každém ukončení aplikace „FOSS Browser“ budou všechna výše uvedená data smazána.</string>
     <string name="clear_title_cache">Vymazat mezipaměť</string>

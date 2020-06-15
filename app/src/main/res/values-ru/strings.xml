@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- App -->
-    <string name="app_name">Браузер FOSS</string>
+    <string name="app_name">FOSS Browser</string>
     <string name="app_ok">ОК</string>
     <string name="app_cancel">Отмена</string>
     <string name="list_empty">Список пуст</string>
@@ -29,7 +29,7 @@
     <string name="main_omnibox_input_hint">Поиск или ввод URL-адреса</string>
     <string name="menu_open_with">Открыть ссылку с …</string>
     <string name="menu_quit">Выход</string>
-    <string name="menu_openFav">Открыть избранное</string>
+    <string name="menu_openFav">Открыть главную</string>
     <string name="menu_delete">Удалить</string>
     <string name="menu_edit">Изменить</string>
     <string name="menu_closeTab">Закрыть вкладку</string>
@@ -121,7 +121,7 @@
     <string name="setting_summary_data">Импортируйте и экспортируйте данные приложения (белые списки, закладки).</string>
     <string name="setting_filter">Фильтр закладок</string>
     <string name="setting_filter_summary">Чтобы отобразить диалоговое окно фильтра, удерживайте нажатие на значке закладок в окне. Определите, какие фильтры Вы будете использовать.</string>
-    <string name="setting_title_fav">Избранное</string>
+    <string name="setting_title_fav">Главная</string>
     <string name="setting_summary_fav">Здесь Вы можете изменить веб-сайт по умолчанию, который загружается при запуске \"FOSS Browser\". Введите \"about:blank\", чтобы открывалась пуcтая вкладка.</string>
     <string name="setting_title_searchEngine">Пользовательская поисковая система</string>
     <string name="setting_summary_searchEngine">Здесь Вы можете ввести свой адрес для поиска. Также можно выбрать \"Пользовательская поисковая система\" для поиска по умолчанию.</string>
@@ -138,7 +138,7 @@
     <string name="setting_title_theme">Интерфейс</string>
     <string name="setting_title_behavior">Поведение</string>
     <string name="setting_summary_toolbarShow">Нажатие назад сделает панель инструментов видимой, прежде чем вернуться в историю.</string>
-    <string name="setting_title_toolbarShow">Первая панель инструментов</string>
+    <string name="setting_title_toolbarShow">Сначала панель инструментов</string>
     <string name="setting_title_nav">Кнопка навигации</string>
     <string name="setting_title_nav_pos">Положение</string>
     <string name="setting_summary_nav_pos">Определите, где будет размещена \"Кнопка навигации \".</string>
@@ -216,7 +216,7 @@
     <string name="toast_downloadComplete">Загрузка завершена. Открыть файловый менеджер?</string>
     <string name="toast_unsecured">Сайт использует незащищенное соединение (\"http\"). Попробовать безопасное соединение (\"https\")?</string>
     <string name="toast_backup">Сохранить данные? Это перезапишет старую резервную копию.</string>
-    <string name="toast_fav">Успешно добавлено в избранное.</string>
+    <string name="toast_fav">Успешно установлено главной.</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">Очистить</string>
     <string name="whitelist_edit_hint">Домен</string>

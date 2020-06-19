@@ -186,7 +186,7 @@
     <!-- Others setting -->
     <string name="setting_title_others">Outros</string>
     <string name="setting_title_appSettings">Configurações do aplicativo</string>
-    <string name="setting_summary_appSettings">Abra as configurações de aplicativo do sistema para \"FOSS Browser\". Lá você pode, dependendo das permissões de acesso da versão do Android, limpar os dados do aplicativo e assim por diante.</string>
+    <string name="setting_summary_appSettings">Abre as configurações de aplicativo do sistema para o \"FOSS Browser\". Lá você pode, dependendo das permissões de acesso da versão do Android, limpar os dados do aplicativo e assim por diante.</string>
     <string name="setting_title_community">Contribuições</string>
     <!-- Toast -->
     <string name="toast_add_to_home_successful">Adicionado ao Início com sucesso</string>
@@ -207,7 +207,7 @@
     <string name="toast_share_failed">Não é possível compartilhar esta página</string>
     <string name="toast_start_download">Iniciando download</string>
     <string name="toast_wait_a_minute">Por favor aguarde um pouco</string>
-    <string name="toast_webview_forward">Não é possível carregar o próximo site</string>
+    <string name="toast_webview_forward">Não foi possível carregar o próximo site</string>
     <string name="toast_permission_sdCard">\"FOSS Browser\" precisa da permissão para \"ler e escrever no seu armazenamento\". Isto é necessário para baixar arquivos, tirar capturas de tela e fazer backups dos seus dados.</string>
     <string name="toast_permission_loc">\"FOSS Browser\" precisa da permissão para \"acessar sua localização\". Isto é solicitado em alguns sites, por exemplo, quando eles oferecem algum tipo de navegação.</string>
     <string name="toast_restart">Você deve reiniciar o \"FOSS Browser\" para aplicar as alterações. Fechar agora?</string>

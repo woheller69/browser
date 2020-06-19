@@ -80,16 +80,16 @@
     <string name="setting_title_inverted">Cores invertidas</string>
     <string name="setting_summary_inverted">Se selecionado, o conteúdo será exibido em um modo invertido da escala de cinza. É um tipo de \"modo noturno\".</string>
     <string name="setting_title_font">Tamanho da fonte</string>
-    <string name="setting_summary_font">Alterar o tamanho da fonte para exibir sites.</string>
+    <string name="setting_summary_font">Altere o tamanho da fonte para exibição dos sites.</string>
     <string name="setting_title_remote">Conteúdo remoto</string>
-    <string name="setting_summary_remote">Habilitar conteúdo remoto, que não é diretamente do site que você está visitando. Desabilitar isto é mais seguro, mais rápido e salva o volume de dados. Mas alguns conteúdos não serão mais exibidos.</string>
-    <string name="setting_title_save_data">Solicitar \'Salvar Dados\'</string>
-    <string name="setting_summary_save_data">Informar aos sites que você prefere salvar dados. Sites suportados irão carregar mais rápido.</string>
+    <string name="setting_summary_remote">Habilita o conteúdo remoto, que não é diretamente do site que você está visitando. Desabilita-lo é mais seguro, mais rápido e economiza dados. Porém alguns conteúdos não serão mais exibidos.</string>
+    <string name="setting_title_save_data">Solicitar \'Economia de Dados\'</string>
+    <string name="setting_summary_save_data">Informar aos sites que você prefere economizar dados. Sites suportados carregarão mais rápido.</string>
     <!-- browser start -->
     <string name="setting_title_images">Imagens</string>
-    <string name="setting_summary_images">Habilita imagens de rede. Desabilitar pode ser útil para salvar dados móveis e carregar sites mais rápido.</string>
+    <string name="setting_summary_images">Habilita imagens dos sites. Desabilitar pode ser útil para economizar dados móveis e carregar os sites mais rápido.</string>
     <string name="setting_title_cookie">Cookies</string>
-    <string name="setting_summary_cookie_delete">Se ativo, todos os cookies serão apagados. Inclusive os cookies de sites confiáveis.</string>
+    <string name="setting_summary_cookie_delete">Se selecionado, todos os cookies serão apagados. Inclusive os cookies de sites confiáveis.</string>
     <string name="setting_summary_cookie">Habilite Cookies. Cookies são pequenos arquivos de texto, que são armazenados no seu dispositivo. Sites usam-nas por exemplo para armazenar as configurações do usuário (por exemplo, configurações de busca). Mas também podem ser usados para coletar dados pessoais do usuário. Os cookies de terceiros (coletam dados do usuário para publicidade) são sempre desativados.</string>
     <string name="setting_title_whitelistCookie">Lista branca para cookies</string>
     <string name="setting_title_whitelistRemote">Lista branca remota</string>

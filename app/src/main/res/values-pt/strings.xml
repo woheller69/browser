@@ -45,7 +45,7 @@
     <string name="menu_save_pdf">Salvar como PDF</string>
     <string name="menu_shareClipboard">Copiar para área de transferência</string>
     <string name="menu_other_searchSite">Procurar no site</string>
-    <string name="menu_other_info">Sobre o \"Navegador FOSS\"</string>
+    <string name="menu_other_info">Sobre o \"FOSS Browser\"</string>
     <string name="menu_other_help">Ajuda</string>
     <!-- Dialog -->
     <string name="dialog_title_hint">Título:</string>
@@ -63,9 +63,9 @@
     <!-- browser setting -->
     <string name="setting_title_browser">Configurações do Navegador</string>
     <string name="setting_title_clear_control">Controle de Dados</string>
-    <string name="setting_title_start_control">Controle de Inicialização</string>
+    <string name="setting_title_start_control">Controle da Inicialização</string>
     <string name="setting_summary_clear_control">Limpar dados do navegador ou decidir quais dados serão apagados quando você deixar o aplicativo.</string>
-    <string name="setting_summary_start_control">Decida quais componentes do navegador FOSS serão ativados no início.</string>
+    <string name="setting_summary_start_control">Decida quais componentes do FOSS Browser estarão ativos ao iniciar.</string>
     <string name="setting_title_search_engine">Mecanismo de busca</string>
     <string name="setting_summary_search_engine">Escolha seu mecanismo de busca preferido ou defina um personalizado.</string>
     <string name="setting_summary_search_engine_google">Google</string>
@@ -78,7 +78,7 @@
     <string name="setting_summary_search_engine_qwant">Qwant</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_title_inverted">Cores invertidas</string>
-    <string name="setting_summary_inverted">Se marcado, o conteúdo será processado em um modo invertido da escala de cinza. Este é um tipo de \"modo noturno\".</string>
+    <string name="setting_summary_inverted">Se selecionado, o conteúdo será exibido em um modo invertido da escala de cinza. É um tipo de \"modo noturno\".</string>
     <string name="setting_title_font">Tamanho da fonte</string>
     <string name="setting_summary_font">Alterar o tamanho da fonte para exibir sites.</string>
     <string name="setting_title_remote">Conteúdo remoto</string>

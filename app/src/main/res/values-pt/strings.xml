@@ -177,7 +177,7 @@
     <string name="setting_gesture_10">Fechar aba</string>
     <!-- Data -->
     <string name="setting_title_export_bookmarks">Exportar favoritos como arquivo HTML</string>
-    <string name="setting_title_import_bookmarks">Importar marcadores</string>
+    <string name="setting_title_import_bookmarks">Importar favoritos</string>
     <string name="setting_title_export_appData">Exportar dados do aplicativo</string>
     <string name="setting_title_import_appData">Importar dados do aplicativo</string>
     <string name="setting_summary_export_appData">Exporte todo o banco de dados e suas configurações pessoais.</string>

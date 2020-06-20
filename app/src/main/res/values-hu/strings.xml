@@ -34,10 +34,10 @@
     <string name="menu_edit">Szerkesztés</string>
     <string name="menu_closeTab">Lap bezárása</string>
     <string name="menu_download">Letöltések</string>
-    <string name="menu_fav">Set as start site</string>
+    <string name="menu_fav">Mentés kedvencként</string>
     <string name="menu_sc">Parancsikon a kezdőképernyőn</string>
-    <string name="menu_sort">Sort by …</string>
-    <string name="menu_filter">Filter by …</string>
+    <string name="menu_sort">Rendezés …</string>
+    <string name="menu_filter">Szűrés …</string>
     <string name="menu_share_link">Share link</string>
     <string name="menu_save_home">Save at Home</string>
     <string name="menu_save_bookmark">Save as bookmark</string>
@@ -48,20 +48,20 @@
     <string name="menu_other_info">A \"FOSS Browser\" névjegye</string>
     <string name="menu_other_help">Súgó</string>
     <!-- Dialog -->
-    <string name="dialog_title_hint">Title:</string>
+    <string name="dialog_title_hint">Cím:</string>
     <string name="dialog_extension_hint">Kiterjesztés (például: \".jpg\"):</string>
-    <string name="dialog_sign_in_username">Username</string>
+    <string name="dialog_sign_in_username">Felhasználónév</string>
     <string name="dialog_sign_in_password">Jelszó</string>
-    <string name="dialog_title_download">Download the file?</string>
-    <string name="dialog_content_resubmission">Resubmit your data?</string>
+    <string name="dialog_title_download">Letölti a fájlt?</string>
+    <string name="dialog_content_resubmission">Újraküldi az adatait?</string>
     <string name="dialog_content_ssl_error">The certificate of the site is not trusted. Proceed anyway?</string>
-    <string name="dialog_sortName">Sort by name</string>
-    <string name="dialog_sortIcon">Sort by icon</string>
-    <string name="dialog_sortDate">Sort by date</string>
+    <string name="dialog_sortName">Rendezés név szerint</string>
+    <string name="dialog_sortIcon">Rendezés ikon szerint</string>
+    <string name="dialog_sortDate">Rendezés dátum szerint</string>
     <!-- Settings -->
-    <string name="setting_label">Settings</string>
+    <string name="setting_label">Beállítások</string>
     <!-- browser setting -->
-    <string name="setting_title_browser">Browser Settings</string>
+    <string name="setting_title_browser">Böngésző beállításai</string>
     <string name="setting_title_clear_control">Data Control</string>
     <string name="setting_title_start_control">Start Control</string>
     <string name="setting_summary_clear_control">Clear your browser data or decide what data will be cleared when you leave the application.</string>
@@ -216,7 +216,7 @@
     <string name="toast_downloadComplete">Download complete. Open file manager?</string>
     <string name="toast_unsecured">Website uses an unsecured connection (\"http\"). Try a secure connection (\"https\")?</string>
     <string name="toast_backup">Backup data? This will overwrite the old backup.</string>
-    <string name="toast_fav">Successfully set as start site.</string>
+    <string name="toast_fav">Sikeresen beállítva kedvencként.</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">Clear</string>
     <string name="whitelist_edit_hint">Domain</string>

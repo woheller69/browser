@@ -66,7 +66,7 @@
     <string name="setting_title_start_control">Start Control</string>
     <string name="setting_summary_clear_control">Clear your browser data or decide what data will be cleared when you leave the application.</string>
     <string name="setting_summary_start_control">Decide which components of FOSS browser will be enabled on start.</string>
-    <string name="setting_title_search_engine">Search Engine</string>
+    <string name="setting_title_search_engine">Keresőmotor</string>
     <string name="setting_summary_search_engine">Here you can choose your preferred search engine or set a custom one.</string>
     <string name="setting_summary_search_engine_google">Google</string>
     <string name="setting_summary_search_engine_duckduckgo">DuckDuckGo</string>
@@ -79,16 +79,16 @@
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_title_inverted">Inverted colors</string>
     <string name="setting_summary_inverted">If checked, content will be rendered in a inverted grey scale mode. This is a kind of \"night mode\".</string>
-    <string name="setting_title_font">Font size</string>
+    <string name="setting_title_font">Betűméret</string>
     <string name="setting_summary_font">Change the font size for displaying websites.</string>
-    <string name="setting_title_remote">Remote content</string>
+    <string name="setting_title_remote">Távoli tartalom</string>
     <string name="setting_summary_remote">Enable remote content, which is not directly from the website you are visiting. Disabling this is more secure, faster and saves data volume. But some content will not be displayed anymore.</string>
     <string name="setting_title_save_data">Request \'Save Data\'</string>
     <string name="setting_summary_save_data">Tell websites that you would prefer to save data. Supported websites will load faster.</string>
     <!-- browser start -->
-    <string name="setting_title_images">Images</string>
+    <string name="setting_title_images">Képek</string>
     <string name="setting_summary_images">Enable Network images. Disabling could be useful to save mobile data and to load websites faster.</string>
-    <string name="setting_title_cookie">Cookies</string>
+    <string name="setting_title_cookie">Sütik</string>
     <string name="setting_summary_cookie_delete">If enabled, all cookies will be deleted. Also the Cookies of trusted websites.</string>
     <string name="setting_summary_cookie">Enable Cookies. Cookies are small text files, which are stored on your device. Websites use them for example to store user settings (for example search settings). But they could also be used to collect personal user data. Third party cookies (they collect user data for advertising) are always disabled.</string>
     <string name="setting_title_whitelistCookie">Cookie whitelist</string>
@@ -107,9 +107,9 @@
     <string name="data_summary">All files will be exported to the \"Android/data/de.baumann.browser/files/browser_backup/\" directory of your sd-card. This directory will be DELETED, if you uninstall \"FOSS Browser\". So make a backup regularly on a save place.</string>
     <string name="clear_title_quit">Clear on application exit</string>
     <string name="clear_summary_quit">Every time you quit \"FOSS Browser\" all above checked data will be deleted.</string>
-    <string name="clear_title_cache">Clear Cache</string>
-    <string name="clear_title_cookie">Clear Cookies</string>
-    <string name="clear_title_history">Clear History</string>
+    <string name="clear_title_cache">Gyorsítótár törlése</string>
+    <string name="clear_title_cookie">Sütik törlése</string>
+    <string name="clear_title_history">Előzmények törlése</string>
     <string name="clear_title_indexedDB">Clear \"indexed databases\" and \"local webview storage\"</string>
     <string name="clear_title_deleteDatabase">Delete database</string>
     <string name="clear_summary_deleteDatabase">Delete the whole database (Startpage, bookmarks, history and all whitelists).</string>
@@ -130,11 +130,11 @@
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">Hide toolbar</string>
     <string name="setting_summary_hide">Use the whole screen when scrolling through websites. If you press the back button you will leave fullscreen mode.</string>
-    <string name="setting_theme">Theme</string>
+    <string name="setting_theme">Téma</string>
     <string name="setting_theme_summary">Set the app theme.</string>
     <string name="setting_theme_system">System theme</string>
-    <string name="setting_theme_light">Light theme</string>
-    <string name="setting_theme_dark">Dark theme</string>
+    <string name="setting_theme_light">Világos téma</string>
+    <string name="setting_theme_dark">Sötét téma</string>
     <string name="setting_title_theme">UI</string>
     <string name="setting_title_behavior">Behavior</string>
     <string name="setting_summary_toolbarShow">Pressing back will make the toolbar visible, before going back in history.</string>

@@ -23,10 +23,10 @@
     <string name="color_brown">Barna</string>
     <string name="color_grey">Szürke</string>
     <!-- Menu -->
-    <string name="main_menu_tabPreview">Open tab preview</string>
-    <string name="main_menu_new_tab">New tab (background)</string>
-    <string name="main_menu_new_tabOpen">New tab (foreground)</string>
-    <string name="main_omnibox_input_hint">Search or type URL</string>
+    <string name="main_menu_tabPreview">Lap előnézetének megnyitása</string>
+    <string name="main_menu_new_tab">Új lap (háttérben)</string>
+    <string name="main_menu_new_tabOpen">Új lap (előtérben)</string>
+    <string name="main_omnibox_input_hint">Keresés vagy írjon be URL címet</string>
     <string name="menu_open_with">Open link with …</string>
     <string name="menu_quit">Kilépés</string>
     <string name="menu_openFav">Open Favorite</string>

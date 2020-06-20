@@ -151,7 +151,7 @@
     <string name="setting_summary_confirm_exit">Confirmation dialog when closing browser.</string>
     <string name="setting_title_confirm_tab_close">Confirm tab close</string>
     <string name="setting_summary_confirm_tab_close">Confirmation dialog when closing a tab.</string>
-    <string name="setting_overView">Overview</string>
+    <string name="setting_overView">Áttekintés</string>
     <string name="setting_overView_onStart_title">Show on start</string>
     <string name="setting_overView_onStart_summary">Open the \"Overview\" on every app start.</string>
     <string name="setting_gestures">Gestures</string>
@@ -173,8 +173,8 @@
     <string name="setting_gesture_06">Switch to left tab</string>
     <string name="setting_gesture_07">Switch to right tab</string>
     <string name="setting_gesture_08">Show overview</string>
-    <string name="setting_gesture_09">Open new tab</string>
-    <string name="setting_gesture_10">Close tab</string>
+    <string name="setting_gesture_09">Új lap megnyitása</string>
+    <string name="setting_gesture_10">Lap bezárása</string>
     <!-- Data -->
     <string name="setting_title_export_bookmarks">Export bookmarks as HTML-file</string>
     <string name="setting_title_import_bookmarks">Import bookmarks</string>

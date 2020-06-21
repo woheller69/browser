@@ -105,8 +105,8 @@
     <string name="setting_summary_history">A meglátogatott weboldalak előzményeinek mentése.</string>
     <!-- browser clear -->
     <string name="data_summary">All files will be exported to the \"Android/data/de.baumann.browser/files/browser_backup/\" directory of your sd-card. This directory will be DELETED, if you uninstall \"FOSS Browser\". So make a backup regularly on a save place.</string>
-    <string name="clear_title_quit">Clear on application exit</string>
-    <string name="clear_summary_quit">Every time you quit \"FOSS Browser\" all above checked data will be deleted.</string>
+    <string name="clear_title_quit">Törlés az alkalmazás bezárásakor</string>
+    <string name="clear_summary_quit">Minden alkalommal amikor kilép a \"FOSS Browser\" alkalmazásból, az összes fent bejelölt adat törlésre kerül.</string>
     <string name="clear_title_cache">Gyorsítótár törlése</string>
     <string name="clear_title_cookie">Sütik törlése</string>
     <string name="clear_title_history">Előzmények törlése</string>
@@ -114,7 +114,7 @@
     <string name="clear_title_deleteDatabase">Delete database</string>
     <string name="clear_summary_deleteDatabase">Delete the whole database (Startpage, bookmarks, history and all whitelists).</string>
     <!-- App setting -->
-    <string name="setting_title_app">App Settings</string>
+    <string name="setting_title_app">Alkalmazás beállításai</string>
     <string name="setting_title_ui">Behavior/UI</string>
     <string name="setting_title_data">Backup</string>
     <string name="setting_summary_ui">Change the behavior and ui of the app to suit your preferences.</string>
@@ -123,7 +123,7 @@
     <string name="setting_filter_summary">To show the filter dialog long press on the bookmark icon in the overview. Decide which filters you will use.</string>
     <string name="setting_title_fav">Favorite</string>
     <string name="setting_summary_fav">Here you can change the default website which loads on start of \"FOSS Browser\". Enter \"about:blank\" to get an emty start site.</string>
-    <string name="setting_title_searchEngine">Custom search engine</string>
+    <string name="setting_title_searchEngine">Egyedi keresőmotor</string>
     <string name="setting_summary_searchEngine">Here you can enter a custom search URL. Also choose \"Custom search engine\" as search provider.</string>
     <string name="setting_title_userAgent">Custom user agent</string>
     <string name="setting_summary_userAgent">Here you can enter a custom user agent. Let empty to use default one.</string>
@@ -132,7 +132,7 @@
     <string name="setting_summary_hide">Use the whole screen when scrolling through websites. If you press the back button you will leave fullscreen mode.</string>
     <string name="setting_theme">Téma</string>
     <string name="setting_theme_summary">Set the app theme.</string>
-    <string name="setting_theme_system">System theme</string>
+    <string name="setting_theme_system">Rendszer téma</string>
     <string name="setting_theme_light">Világos téma</string>
     <string name="setting_theme_dark">Sötét téma</string>
     <string name="setting_title_theme">UI</string>
@@ -140,7 +140,7 @@
     <string name="setting_summary_toolbarShow">Pressing back will make the toolbar visible, before going back in history.</string>
     <string name="setting_title_toolbarShow">First toolbar</string>
     <string name="setting_title_nav">Navigation button</string>
-    <string name="setting_title_nav_pos">Position</string>
+    <string name="setting_title_nav_pos">Pozíció</string>
     <string name="setting_summary_nav_pos">Decide where the \"Navigation Button\" will be placed.</string>
     <string name="setting_summary_nav_pos_right">Right</string>
     <string name="setting_summary_nav_pos_left">Left</string>

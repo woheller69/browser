@@ -82,8 +82,8 @@
     <string name="setting_title_font">Betűméret</string>
     <string name="setting_summary_font">Megváltoztatja a weboldalak megjelenített betűméretét.</string>
     <string name="setting_title_remote">Távoli tartalom</string>
-    <string name="setting_summary_remote">Enable remote content, which is not directly from the website you are visiting. Disabling this is more secure, faster and saves data volume. But some content will not be displayed anymore.</string>
-    <string name="setting_title_save_data">Request \'Save Data\'</string>
+    <string name="setting_summary_remote">Távoli tartalom engedélyezése, ami nem közvetlenül a meglátogatott weboldalról származik. Letiltása nagyobb biztonságot és sebességet eredményez alacsonyabb adatforgalom mellett, de a tartalom egy része nem fog megjelenni.</string>
+    <string name="setting_title_save_data">\'Save Data\' kérése</string>
     <string name="setting_summary_save_data">Tell websites that you would prefer to save data. Supported websites will load faster.</string>
     <!-- browser start -->
     <string name="setting_title_images">Képek</string>

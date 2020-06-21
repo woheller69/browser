@@ -110,9 +110,9 @@
     <string name="clear_title_cache">Gyorsítótár törlése</string>
     <string name="clear_title_cookie">Sütik törlése</string>
     <string name="clear_title_history">Előzmények törlése</string>
-    <string name="clear_title_indexedDB">Clear \"indexed databases\" and \"local webview storage\"</string>
-    <string name="clear_title_deleteDatabase">Delete database</string>
-    <string name="clear_summary_deleteDatabase">Delete the whole database (Startpage, bookmarks, history and all whitelists).</string>
+    <string name="clear_title_indexedDB">Az \"indexelt adatbázisok\" és a \"helyi webview tároló\" törlése</string>
+    <string name="clear_title_deleteDatabase">Adatbázis törlése</string>
+    <string name="clear_summary_deleteDatabase">A teljes adatbázis törlése (Kezdőoldal, könyvjelzők, előzmények és az összes engedélylista).</string>
     <!-- App setting -->
     <string name="setting_title_app">Alkalmazás beállításai</string>
     <string name="setting_title_ui">Behavior/UI</string>

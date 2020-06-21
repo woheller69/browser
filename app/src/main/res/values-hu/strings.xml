@@ -38,9 +38,9 @@
     <string name="menu_sc">Parancsikon a kezdőképernyőn</string>
     <string name="menu_sort">Rendezés …</string>
     <string name="menu_filter">Szűrés …</string>
-    <string name="menu_share_link">Share link</string>
-    <string name="menu_save_home">Save at Home</string>
-    <string name="menu_save_bookmark">Save as bookmark</string>
+    <string name="menu_share_link">Hivatkozás megosztása</string>
+    <string name="menu_save_home">Mentés kezdőlapként</string>
+    <string name="menu_save_bookmark">Mentés könyvjelzőként</string>
     <string name="menu_save_as">Mentés másként …</string>
     <string name="menu_save_pdf">Mentés PDF-ként</string>
     <string name="menu_shareClipboard">Másolás a vágólapra</string>

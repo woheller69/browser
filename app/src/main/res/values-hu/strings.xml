@@ -78,7 +78,7 @@
     <string name="setting_summary_search_engine_qwant">Qwant</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_title_inverted">Színek invertálása</string>
-    <string name="setting_summary_inverted">Bejelölve a tartalom invertált szürkeárnyalatos módban fog megjelenni. Ez egyfajta \"éjszakai mód\".</string>
+    <string name="setting_summary_inverted">Bejelölve, a tartalom invertált szürkeárnyalatos módban fog megjelenni. Ez egyfajta \"éjszakai mód\".</string>
     <string name="setting_title_font">Betűméret</string>
     <string name="setting_summary_font">Megváltoztatja a weboldalak megjelenített betűméretét.</string>
     <string name="setting_title_remote">Távoli tartalom</string>
@@ -89,7 +89,7 @@
     <string name="setting_title_images">Képek</string>
     <string name="setting_summary_images">Hálózati képek engedélyezése. Letiltása hasznos lehet a mobil adatforgalom megtakarítása és a weboldalak gyorsabb betöltése érdekében.</string>
     <string name="setting_title_cookie">Sütik</string>
-    <string name="setting_summary_cookie_delete">Engedélyezve az összes süti törlésre kerül. A megbízható weboldalakhoz tartozó sütik is.</string>
+    <string name="setting_summary_cookie_delete">Engedélyezve, az összes süti törlésre kerül. A megbízható weboldalakhoz tartozó sütik is.</string>
     <string name="setting_summary_cookie">Enable Cookies. Cookies are small text files, which are stored on your device. Websites use them for example to store user settings (for example search settings). But they could also be used to collect personal user data. Third party cookies (they collect user data for advertising) are always disabled.</string>
     <string name="setting_title_whitelistCookie">Süti engedélylista</string>
     <string name="setting_title_whitelistRemote">Távoli tartalom engedélylista</string>

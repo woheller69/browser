@@ -54,7 +54,7 @@
     <string name="dialog_sign_in_password">Jelszó</string>
     <string name="dialog_title_download">Letölti a fájlt?</string>
     <string name="dialog_content_resubmission">Újraküldi az adatait?</string>
-    <string name="dialog_content_ssl_error">The certificate of the site is not trusted. Proceed anyway?</string>
+    <string name="dialog_content_ssl_error">A weboldal tanúsítványa nem megbízható. Továbblép mindenképpen?</string>
     <string name="dialog_sortName">Rendezés név szerint</string>
     <string name="dialog_sortIcon">Rendezés ikon szerint</string>
     <string name="dialog_sortDate">Rendezés dátum szerint</string>
@@ -62,9 +62,9 @@
     <string name="setting_label">Beállítások</string>
     <!-- browser setting -->
     <string name="setting_title_browser">Böngésző beállításai</string>
-    <string name="setting_title_clear_control">Data Control</string>
+    <string name="setting_title_clear_control">Adatvédelem</string>
     <string name="setting_title_start_control">Start Control</string>
-    <string name="setting_summary_clear_control">Clear your browser data or decide what data will be cleared when you leave the application.</string>
+    <string name="setting_summary_clear_control">Böngészési adatok törlése vagy az alkalmazás elhagyásakor törlésre kerülő adatok beállítása.</string>
     <string name="setting_summary_start_control">Decide which components of FOSS browser will be enabled on start.</string>
     <string name="setting_title_search_engine">Keresőmotor</string>
     <string name="setting_summary_search_engine">Here you can choose your preferred search engine or set a custom one.</string>

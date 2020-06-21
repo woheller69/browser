@@ -100,7 +100,7 @@
     <string name="setting_summary_adblock">AdBlock engedélyezése a bosszantó hirdetések blokkolására. A weboldalak is gyorsabban töltődnek be, ha engedélyezett.</string>
     <string name="setting_title_whitelist">AdBlock engedélylista</string>
     <string name="setting_title_location">Tartózkodási hely</string>
-    <string name="setting_summary_location">Allow websites to access your location. Some websites (like Google maps for navigation) need this enabled.</string>
+    <string name="setting_summary_location">Megengedi a weboldalaknak, hogy hozzáférjenek a tartózkodási helyéhez. Néhány weboldal számára (mint a Google Térkép navigáció) engedélyezni kell.</string>
     <string name="setting_title_history">Előzmények</string>
     <string name="setting_summary_history">A meglátogatott weboldalak előzményeinek mentése.</string>
     <!-- browser clear -->

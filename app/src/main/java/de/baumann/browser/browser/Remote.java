@@ -25,19 +25,16 @@ public class Remote {
     private static final Locale locale = Locale.getDefault();
 
     private static void loadHosts(final Context context) {
-        Thread thread = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                AssetManager manager = context.getAssets();
-                try {
-                    BufferedReader reader = new BufferedReader(new InputStreamReader(manager.open(FILE)));
-                    String line;
-                    while ((line = reader.readLine()) != null) {
-                        hostsRemote.add(line.toLowerCase(locale));
-                    }
-                } catch (IOException i) {
-                    Log.w("browser", "Error loading hosts");
+        Thread thread = new Thread(() -> {
+            AssetManager manager = context.getAssets();
+            try {
+                BufferedReader reader = new BufferedReader(new InputStreamReader(manager.open(FILE)));
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    hostsRemote.add(line.toLowerCase(locale));
                 }
+            } catch (IOException i) {
+                Log.w("browser", "Error loading hosts");
             }
         });
         thread.start();

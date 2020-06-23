@@ -4,12 +4,18 @@ android {
     compileSdkVersion 29
     buildToolsVersion '28.0.3'
 
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
     defaultConfig {
         applicationId "de.baumann.browser"
         minSdkVersion 21
         targetSdkVersion 29
-        versionCode 102
-        versionName "7.0"
+        versionCode 103
+        versionName "7.1"
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
     }
@@ -20,6 +26,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
+
     lintOptions {
         checkReleaseBuilds false
         disable 'MissingTranslation'
@@ -32,7 +39,7 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'com.google.android.material:material:1.1.0'
     implementation 'androidx.cardview:cardview:1.0.0'
-    implementation 'androidx.preference:preference:1.1.0'
+    implementation 'androidx.preference:preference:1.1.1'
     implementation 'androidx.legacy:legacy-preference-v14:1.0.0'
-    implementation 'androidx.webkit:webkit:1.3.0-alpha03'
+    implementation 'androidx.webkit:webkit:1.3.0-beta01'
 }

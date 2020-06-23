@@ -15,7 +15,6 @@ import android.util.Log;
 import android.view.View;
 import android.webkit.CookieManager;
 import android.webkit.URLUtil;
-import android.webkit.ValueCallback;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,7 +31,6 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
@@ -61,7 +59,7 @@ public class BrowserUnit {
     private static final String SEARCH_ENGINE_ECOSIA = "https://www.ecosia.org/search?q=";
 
     private static final String SEARCH_ENGINE_STARTPAGE_DE = "https://startpage.com/do/search?lui=deu&language=deutsch&query=";
-    private static final String SEARCH_ENGINE_SEARX = "https://searx.me/?q=";
+    private static final String SEARCH_ENGINE_SEARX = "https://searx.be/?q=";
 
     public static final String URL_ENCODING = "UTF-8";
     private static final String URL_ABOUT_BLANK = "about:blank";
@@ -141,7 +139,7 @@ public class BrowserUnit {
 
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
         String custom = sp.getString("sp_search_engine_custom", SEARCH_ENGINE_STARTPAGE);
-        final int i = Integer.valueOf(Objects.requireNonNull(sp.getString(context.getString(R.string.sp_search_engine), "9")));
+        final int i = Integer.valueOf(Objects.requireNonNull(sp.getString(context.getString(R.string.sp_search_engine), "6")));
         switch (i) {
             case 0:
                 return SEARCH_ENGINE_STARTPAGE + query;
@@ -175,35 +173,25 @@ public class BrowserUnit {
         TextView textView = dialogView.findViewById(R.id.dialog_text);
         textView.setText(text);
         Button action_ok = dialogView.findViewById(R.id.action_ok);
-        action_ok.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
-                String filename = URLUtil.guessFileName(url, contentDisposition, mimeType); // Maybe unexpected filename.
+        action_ok.setOnClickListener(view -> {
+            DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
+            String filename = URLUtil.guessFileName(url, contentDisposition, mimeType); // Maybe unexpected filename.
 
-                CookieManager cookieManager = CookieManager.getInstance();
-                String cookie = cookieManager.getCookie(url);
-                request.addRequestHeader("Cookie", cookie);
-                request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
-                request.setTitle(filename);
-                request.setMimeType(mimeType);
-                request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, filename);
-                DownloadManager manager = (DownloadManager) context.getSystemService(Context.DOWNLOAD_SERVICE);
-                assert manager != null;
+            CookieManager cookieManager = CookieManager.getInstance();
+            String cookie = cookieManager.getCookie(url);
+            request.addRequestHeader("Cookie", cookie);
+            request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+            request.setTitle(filename);
+            request.setMimeType(mimeType);
+            request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, filename);
+            DownloadManager manager = (DownloadManager) context.getSystemService(Context.DOWNLOAD_SERVICE);
+            assert manager != null;
 
-                if (android.os.Build.VERSION.SDK_INT >= 23 && android.os.Build.VERSION.SDK_INT < 29) {
-                    int hasWRITE_EXTERNAL_STORAGE = context.checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
-                    if (hasWRITE_EXTERNAL_STORAGE != PackageManager.PERMISSION_GRANTED) {
-                        Activity activity = (Activity) context;
-                        HelperUnit.grantPermissionsStorage(activity);
-                    } else {
-                        manager.enqueue(request);
-                        try {
-                            NinjaToast.show(context, R.string.toast_start_download);
-                        } catch (Exception e) {
-                            Toast.makeText(context, R.string.toast_start_download, Toast.LENGTH_SHORT).show();
-                        }
-                    }
+            if (Build.VERSION.SDK_INT >= 23 && Build.VERSION.SDK_INT < 29) {
+                int hasWRITE_EXTERNAL_STORAGE = context.checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+                if (hasWRITE_EXTERNAL_STORAGE != PackageManager.PERMISSION_GRANTED) {
+                    Activity activity = (Activity) context;
+                    HelperUnit.grantPermissionsStorage(activity);
                 } else {
                     manager.enqueue(request);
                     try {
@@ -212,8 +200,15 @@ public class BrowserUnit {
                         Toast.makeText(context, R.string.toast_start_download, Toast.LENGTH_SHORT).show();
                     }
                 }
-                dialog.cancel();
+            } else {
+                manager.enqueue(request);
+                try {
+                    NinjaToast.show(context, R.string.toast_start_download);
+                } catch (Exception e) {
+                    Toast.makeText(context, R.string.toast_start_download, Toast.LENGTH_SHORT).show();
+                }
             }
+            dialog.cancel();
         });
         dialog.setContentView(dialogView);
         dialog.show();
@@ -377,12 +372,7 @@ public class BrowserUnit {
                 }
             }
             reader.close();
-            Collections.sort(list, new Comparator<Record>() {
-                @Override
-                public int compare(Record first, Record second) {
-                    return first.getTitle().compareTo(second.getTitle());
-                }
-            });
+            Collections.sort(list, (first, second) -> first.getTitle().compareTo(second.getTitle()));
             for (Record record : list) {
                 action.addBookmark(record);
             }
@@ -427,10 +417,7 @@ public class BrowserUnit {
     public static void clearCookie() {
         CookieManager cookieManager = CookieManager.getInstance();
         cookieManager.flush();
-        cookieManager.removeAllCookies(new ValueCallback<Boolean>() {
-            @Override
-            public void onReceiveValue(Boolean value) {}
-        });
+        cookieManager.removeAllCookies(value -> {});
     }
 
     public static void clearBookmark (Context context) {

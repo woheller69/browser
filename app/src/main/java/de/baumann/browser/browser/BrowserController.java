@@ -1,7 +1,6 @@
 package de.baumann.browser.browser;
 
 import android.net.Uri;
-import android.os.Message;
 import android.view.View;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
@@ -15,6 +14,5 @@ public interface BrowserController {
     void onShowCustomView(View view, WebChromeClient.CustomViewCallback callback);
     void onLongPress(String url);
     void hideOverview ();
-    void onCreateView(Message resultMsg);
     void onHideCustomView();
 }

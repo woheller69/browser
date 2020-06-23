@@ -44,34 +44,24 @@ class AlbumItem {
         initUI();
     }
 
+    @SuppressWarnings("SameReturnValue")
     @SuppressLint("InflateParams")
     private void initUI() {
         albumView = LayoutInflater.from(context).inflate(R.layout.whitelist_item, null, false);
-        albumView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                browserController.showAlbum(albumController);
-                browserController.hideOverview();
-            }
+        albumView.setOnClickListener(v -> {
+            browserController.showAlbum(albumController);
+            browserController.hideOverview();
         });
-        albumView.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                browserController.removeAlbum(albumController);
-                return true;
-            }
+        albumView.setOnLongClickListener(v -> {
+            browserController.removeAlbum(albumController);
+            return true;
         });
         ImageView albumClose = albumView.findViewById(R.id.whitelist_item_cancel);
         albumClose.setVisibility(View.VISIBLE);
         albumClose.setImageResource(R.drawable.icon_close);
         albumTitle = albumView.findViewById(R.id.whitelist_item_domain);
         albumTitle.setText(context.getString(R.string.app_name));
-        albumClose.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                browserController.removeAlbum(albumController);
-            }
-        });
+        albumClose.setOnClickListener(v -> browserController.removeAlbum(albumController));
     }
 
     public void activate() {

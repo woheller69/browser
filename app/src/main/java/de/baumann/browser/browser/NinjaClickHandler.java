@@ -13,6 +13,7 @@ public class NinjaClickHandler extends Handler {
         this.webView = webView;
     }
 
+    @SuppressWarnings("NullableProblems")
     @Override
     public void handleMessage(Message message) {
         super.handleMessage(message);

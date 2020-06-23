@@ -11,7 +11,6 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -40,12 +39,7 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
                 }
             }
 
-            Collections.sort(resultList, new Comparator<CompleteItem>() {
-                @Override
-                public int compare(CompleteItem first, CompleteItem second) {
-                    return Integer.compare(first.getIndex(), second.getIndex());
-                }
-            });
+            Collections.sort(resultList, (first, second) -> Integer.compare(first.getIndex(), second.getIndex()));
 
             FilterResults results = new FilterResults();
             results.values = resultList;

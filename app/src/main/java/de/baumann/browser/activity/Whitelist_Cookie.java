@@ -62,19 +62,17 @@ public class Whitelist_Cookie extends AppCompatActivity {
         ListView listView = findViewById(R.id.whitelist);
         listView.setEmptyView(findViewById(R.id.whitelist_empty));
 
+        //noinspection NullableProblems
         adapter = new WhitelistAdapter(this, list){
             @Override
             public View getView (final int position, View convertView, @NonNull ViewGroup parent) {
                 View v = super.getView(position, convertView, parent);
                 ImageButton whitelist_item_cancel = v.findViewById(R.id.whitelist_item_cancel);
-                whitelist_item_cancel.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        cookie.removeDomain(list.get(position));
-                        list.remove(position);
-                        notifyDataSetChanged();
-                        NinjaToast.show(Whitelist_Cookie.this, R.string.toast_delete_successful);
-                    }
+                whitelist_item_cancel.setOnClickListener(v1 -> {
+                    cookie.removeDomain(list.get(position));
+                    list.remove(position);
+                    notifyDataSetChanged();
+                    NinjaToast.show(Whitelist_Cookie.this, R.string.toast_delete_successful);
                 });
                 return v;
             }
@@ -83,29 +81,26 @@ public class Whitelist_Cookie extends AppCompatActivity {
         adapter.notifyDataSetChanged();
 
         Button button = findViewById(R.id.whitelist_add);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                EditText editText = findViewById(R.id.whitelist_edit);
-                String domain = editText.getText().toString().trim();
-                if (domain.isEmpty()) {
-                    NinjaToast.show(Whitelist_Cookie.this, R.string.toast_input_empty);
-                } else if (!BrowserUnit.isURL(domain)) {
-                    NinjaToast.show(Whitelist_Cookie.this, R.string.toast_invalid_domain);
+        button.setOnClickListener(v -> {
+            EditText editText = findViewById(R.id.whitelist_edit);
+            String domain = editText.getText().toString().trim();
+            if (domain.isEmpty()) {
+                NinjaToast.show(Whitelist_Cookie.this, R.string.toast_input_empty);
+            } else if (!BrowserUnit.isURL(domain)) {
+                NinjaToast.show(Whitelist_Cookie.this, R.string.toast_invalid_domain);
+            } else {
+                RecordAction action1 = new RecordAction(Whitelist_Cookie.this);
+                action1.open(true);
+                if (action1.checkDomain(domain, RecordUnit.TABLE_COOKIE)) {
+                    NinjaToast.show(Whitelist_Cookie.this, R.string.toast_domain_already_exists);
                 } else {
-                    RecordAction action = new RecordAction(Whitelist_Cookie.this);
-                    action.open(true);
-                    if (action.checkDomain(domain, RecordUnit.TABLE_COOKIE)) {
-                        NinjaToast.show(Whitelist_Cookie.this, R.string.toast_domain_already_exists);
-                    } else {
-                        Cookie cookie = new Cookie(Whitelist_Cookie.this);
-                        cookie.addDomain(domain.trim());
-                        list.add(0, domain.trim());
-                        adapter.notifyDataSetChanged();
-                        NinjaToast.show(Whitelist_Cookie.this, R.string.toast_add_whitelist_successful);
-                    }
-                    action.close();
+                    Cookie cookie = new Cookie(Whitelist_Cookie.this);
+                    cookie.addDomain(domain.trim());
+                    list.add(0, domain.trim());
+                    adapter.notifyDataSetChanged();
+                    NinjaToast.show(Whitelist_Cookie.this, R.string.toast_add_whitelist_successful);
                 }
+                action1.close();
             }
         });
     }
@@ -134,15 +129,12 @@ public class Whitelist_Cookie extends AppCompatActivity {
                 textView = dialogView.findViewById(R.id.dialog_text);
                 textView.setText(R.string.hint_database);
                 action_ok = dialogView.findViewById(R.id.action_ok);
-                action_ok.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Cookie cookie = new Cookie(Whitelist_Cookie.this);
-                        cookie.clearDomains();
-                        list.clear();
-                        adapter.notifyDataSetChanged();
-                        dialog.cancel();
-                    }
+                action_ok.setOnClickListener(view -> {
+                    Cookie cookie = new Cookie(Whitelist_Cookie.this);
+                    cookie.clearDomains();
+                    list.clear();
+                    adapter.notifyDataSetChanged();
+                    dialog.cancel();
                 });
                 dialog.setContentView(dialogView);
                 dialog.show();
@@ -153,24 +145,21 @@ public class Whitelist_Cookie extends AppCompatActivity {
                 textView = dialogView.findViewById(R.id.dialog_text);
                 textView.setText(R.string.toast_backup);
                 action_ok = dialogView.findViewById(R.id.action_ok);
-                action_ok.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        if (android.os.Build.VERSION.SDK_INT >= 23 && android.os.Build.VERSION.SDK_INT < 29) {
-                            int hasWRITE_EXTERNAL_STORAGE = checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
-                            if (hasWRITE_EXTERNAL_STORAGE != PackageManager.PERMISSION_GRANTED) {
-                                HelperUnit.grantPermissionsStorage(Whitelist_Cookie.this);
-                                dialog.cancel();
-                            } else {
-                                dialog.cancel();
-                                HelperUnit.makeBackupDir(Whitelist_Cookie.this);
-                                new ExportWhiteListTask(Whitelist_Cookie.this, 2).execute();
-                            }
+                action_ok.setOnClickListener(view -> {
+                    if (android.os.Build.VERSION.SDK_INT >= 23 && android.os.Build.VERSION.SDK_INT < 29) {
+                        int hasWRITE_EXTERNAL_STORAGE = checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+                        if (hasWRITE_EXTERNAL_STORAGE != PackageManager.PERMISSION_GRANTED) {
+                            HelperUnit.grantPermissionsStorage(Whitelist_Cookie.this);
+                            dialog.cancel();
                         } else {
                             dialog.cancel();
                             HelperUnit.makeBackupDir(Whitelist_Cookie.this);
                             new ExportWhiteListTask(Whitelist_Cookie.this, 2).execute();
                         }
+                    } else {
+                        dialog.cancel();
+                        HelperUnit.makeBackupDir(Whitelist_Cookie.this);
+                        new ExportWhiteListTask(Whitelist_Cookie.this, 2).execute();
                     }
                 });
                 dialog.setContentView(dialogView);
@@ -183,22 +172,19 @@ public class Whitelist_Cookie extends AppCompatActivity {
                 textView = dialogView.findViewById(R.id.dialog_text);
                 textView.setText(R.string.hint_database);
                 action_ok = dialogView.findViewById(R.id.action_ok);
-                action_ok.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        if (android.os.Build.VERSION.SDK_INT >= 23 && android.os.Build.VERSION.SDK_INT < 29) {
-                            int hasWRITE_EXTERNAL_STORAGE = checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
-                            if (hasWRITE_EXTERNAL_STORAGE != PackageManager.PERMISSION_GRANTED) {
-                                HelperUnit.grantPermissionsStorage(Whitelist_Cookie.this);
-                                dialog.cancel();
-                            } else {
-                                dialog.cancel();
-                                new ImportWhitelistTask(Whitelist_Cookie.this, 2).execute();
-                            }
+                action_ok.setOnClickListener(view -> {
+                    if (android.os.Build.VERSION.SDK_INT >= 23 && android.os.Build.VERSION.SDK_INT < 29) {
+                        int hasWRITE_EXTERNAL_STORAGE = checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+                        if (hasWRITE_EXTERNAL_STORAGE != PackageManager.PERMISSION_GRANTED) {
+                            HelperUnit.grantPermissionsStorage(Whitelist_Cookie.this);
+                            dialog.cancel();
                         } else {
                             dialog.cancel();
                             new ImportWhitelistTask(Whitelist_Cookie.this, 2).execute();
                         }
+                    } else {
+                        dialog.cancel();
+                        new ImportWhitelistTask(Whitelist_Cookie.this, 2).execute();
                     }
                 });
                 dialog.setContentView(dialogView);

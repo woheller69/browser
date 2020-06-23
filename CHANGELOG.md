@@ -1,8 +1,10 @@
-### v 7.1 (WIP)
+### v 7.1
+- removed: ability to save password within bookmark
 - updated: AdBlock hosts
 - updated: translations
 - updated: bookmark management (sorry for removing password saving)
 - updated: overview, menus and dialogs
+- fix: searx.me search
 - new: hide overflow button
 - new: whitelist for remote content
 - new: backup/restore bookmarks as html

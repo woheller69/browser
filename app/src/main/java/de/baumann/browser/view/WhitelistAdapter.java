@@ -31,6 +31,7 @@ public class WhitelistAdapter extends ArrayAdapter<String> {
         ImageButton cancel;
     }
 
+    @SuppressWarnings("NullableProblems")
     @NonNull
     @Override
     public View getView(final int position, View convertView, @NonNull ViewGroup parent) {
@@ -48,15 +49,12 @@ public class WhitelistAdapter extends ArrayAdapter<String> {
         }
 
         holder.domain.setText(list.get(position));
-        holder.cancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Javascript Javascript = new Javascript(context);
-                Javascript.removeDomain(list.get(position));
-                list.remove(position);
-                notifyDataSetChanged();
-                NinjaToast.show(context, R.string.toast_delete_successful);
-            }
+        holder.cancel.setOnClickListener(v -> {
+            Javascript Javascript = new Javascript(context);
+            Javascript.removeDomain(list.get(position));
+            list.remove(position);
+            notifyDataSetChanged();
+            NinjaToast.show(context, R.string.toast_delete_successful);
         });
 
         return view;

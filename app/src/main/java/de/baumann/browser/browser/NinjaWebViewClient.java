@@ -2,7 +2,6 @@ package de.baumann.browser.browser;
 
 import android.annotation.TargetApi;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -190,19 +189,13 @@ public class NinjaWebViewClient extends WebViewClient {
         TextView textView = dialogView.findViewById(R.id.dialog_text);
         textView.setText(R.string.dialog_content_resubmission);
         Button action_ok = dialogView.findViewById(R.id.action_ok);
-        action_ok.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                resend.sendToTarget();
-                dialog.cancel();
-            }
+        action_ok.setOnClickListener(view1 -> {
+            resend.sendToTarget();
+            dialog.cancel();
         });
-        dialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
-            @Override
-            public void onCancel(DialogInterface dialog) {
-                doNotResend.sendToTarget();
-                dialog.cancel();
-            }
+        dialog.setOnCancelListener(dialog1 -> {
+            doNotResend.sendToTarget();
+            dialog1.cancel();
         });
         dialog.setContentView(dialogView);
         dialog.show();
@@ -240,19 +233,13 @@ public class NinjaWebViewClient extends WebViewClient {
         TextView textView = dialogView.findViewById(R.id.dialog_text);
         textView.setText(text);
         Button action_ok = dialogView.findViewById(R.id.action_ok);
-        action_ok.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                handler.proceed();
-                dialog.cancel();
-            }
+        action_ok.setOnClickListener(view1 -> {
+            handler.proceed();
+            dialog.cancel();
         });
-        dialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
-            @Override
-            public void onCancel(DialogInterface dialog) {
-                handler.cancel();
-                dialog.cancel();
-            }
+        dialog.setOnCancelListener(dialog1 -> {
+            handler.cancel();
+            dialog1.cancel();
         });
         dialog.setContentView(dialogView);
         dialog.show();
@@ -276,21 +263,15 @@ public class NinjaWebViewClient extends WebViewClient {
         ib_icon.setVisibility(View.GONE);
 
         Button action_ok = dialogView.findViewById(R.id.action_ok);
-        action_ok.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String user = pass_userNameET.getText().toString().trim();
-                String pass = pass_userPWET.getText().toString().trim();
-                handler.proceed(user, pass);
-                dialog.cancel();
-            }
+        action_ok.setOnClickListener(view1 -> {
+            String user = pass_userNameET.getText().toString().trim();
+            String pass = pass_userPWET.getText().toString().trim();
+            handler.proceed(user, pass);
+            dialog.cancel();
         });
-        dialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
-            @Override
-            public void onCancel(DialogInterface dialog) {
-                handler.cancel();
-                dialog.cancel();
-            }
+        dialog.setOnCancelListener(dialog1 -> {
+            handler.cancel();
+            dialog1.cancel();
         });
         dialog.setContentView(dialogView);
         dialog.show();

@@ -4,15 +4,12 @@ import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.content.res.Resources;
-import android.content.res.TypedArray;
 import android.os.Build;
 import android.os.Message;
 
 import androidx.preference.PreferenceManager;
 
 import android.util.AttributeSet;
-import android.util.TypedValue;
 import android.view.*;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -28,8 +25,6 @@ import java.util.Objects;
 public class NinjaWebView extends WebView implements AlbumController {
 
     private OnScrollChangeListener onScrollChangeListener;
-
-
     public NinjaWebView(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
@@ -39,7 +34,7 @@ public class NinjaWebView extends WebView implements AlbumController {
     }
 
     @Override
-    protected void onScrollChanged(int l, int t, int old_l, int old_t) {
+    public void onScrollChanged(int l, int t, int old_l, int old_t) {
         super.onScrollChanged(l, t, old_l, old_t);
         if (onScrollChangeListener != null) {
             onScrollChangeListener.onScrollChange(t, old_t);
@@ -115,59 +110,36 @@ public class NinjaWebView extends WebView implements AlbumController {
         this.gestureDetector = new GestureDetector(context, new NinjaGestureListener(this));
 
         initWebView();
-        initWebSettings();
         initPreferences();
         initAlbum();
     }
 
+    @SuppressWarnings("SameReturnValue")
+    @SuppressLint("ClickableViewAccessibility")
     private synchronized void initWebView() {
         setWebViewClient(webViewClient);
         setWebChromeClient(webChromeClient);
         setDownloadListener(downloadListener);
-        setOnTouchListener(new OnTouchListener() {
-            @SuppressLint("ClickableViewAccessibility")
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                gestureDetector.onTouchEvent(motionEvent);
-                return false;
-            }
+        setOnTouchListener((view, motionEvent) -> {
+            gestureDetector.onTouchEvent(motionEvent);
+            return false;
         });
     }
 
     @TargetApi(Build.VERSION_CODES.O)
-    private synchronized void initWebSettings() {
-
-
-        TypedValue typedValue = new TypedValue();
-        Resources.Theme theme = context.getTheme();
-        theme.resolveAttribute(android.R.attr.colorBackground, typedValue, true);
-        @SuppressLint("Recycle")
-        TypedArray arr = context.obtainStyledAttributes(typedValue.data, new int[]{android.R.attr.colorBackground});
-        int primaryColor = arr.getColor(0, -1);
-
-        this.setBackgroundColor(primaryColor);
-        webSettings = getSettings();
-        webSettings.setBuiltInZoomControls(true);
-        webSettings.setDisplayZoomControls(false);
-        webSettings.setSupportZoom(true);
-        webSettings.setSupportMultipleWindows(true);
-        webSettings.setLoadWithOverviewMode(true);
-        webSettings.setUseWideViewPort(true);
-        if (android.os.Build.VERSION.SDK_INT >= 26) {
-            webSettings.setSafeBrowsingEnabled(true);
-        }
-    }
-
     public synchronized void initPreferences() {
         sp = PreferenceManager.getDefaultSharedPreferences(context);
         String userAgent = sp.getString("userAgent", "");
         webSettings = getSettings();
 
+        if (android.os.Build.VERSION.SDK_INT >= 26) {
+            webSettings.setSafeBrowsingEnabled(true);
+        }
         if (!userAgent.isEmpty()) {
             webSettings.setUserAgentString(userAgent);
         }
+
         webViewClient.enableAdBlock(sp.getBoolean(context.getString(R.string.sp_ad_block), true));
-        webSettings = getSettings();
         webSettings.setTextZoom(Integer.parseInt(Objects.requireNonNull(sp.getString("sp_fontSize", "100"))));
         webSettings.setAllowFileAccessFromFileURLs(sp.getBoolean(("sp_remote"), false));
         webSettings.setAllowUniversalAccessFromFileURLs(sp.getBoolean(("sp_remote"), false));

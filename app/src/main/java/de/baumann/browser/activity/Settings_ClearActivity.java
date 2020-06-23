@@ -56,13 +56,10 @@ public class Settings_ClearActivity extends AppCompatActivity {
                 TextView textView = dialogView.findViewById(R.id.dialog_text);
                 textView.setText(R.string.hint_database);
                 Button action_ok = dialogView.findViewById(R.id.action_ok);
-                action_ok.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Intent toClearService = new Intent(Settings_ClearActivity.this, ClearService.class);
-                        startService(toClearService);
-                        dialog.cancel();
-                    }
+                action_ok.setOnClickListener(view -> {
+                    Intent toClearService = new Intent(Settings_ClearActivity.this, ClearService.class);
+                    startService(toClearService);
+                    dialog.cancel();
                 });
                 dialog.setContentView(dialogView);
                 dialog.show();

@@ -6,11 +6,6 @@ public class GridItem {
         return title;
     }
 
-    private final String url;
-    public String getURL() {
-        return url;
-    }
-
     private final int icon;
     public int getIcon() {
         return icon;
@@ -21,9 +16,8 @@ public class GridItem {
         return data;
     }
 
-    public GridItem(int icon, String title, String url, int data) {
+    public GridItem(int icon, String title, int data) {
         this.title = title;
-        this.url = url;
         this.icon = icon;
         this.data = data;
     }

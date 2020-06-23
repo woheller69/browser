@@ -44,7 +44,7 @@ import de.baumann.browser.unit.BrowserUnit;
 import de.baumann.browser.unit.HelperUnit;
 import de.baumann.browser.view.NinjaToast;
 
-@SuppressWarnings("ResultOfMethodCallIgnored")
+@SuppressWarnings({"ResultOfMethodCallIgnored", "ConstantConditions"})
 public class Fragment_settings_data extends PreferenceFragmentCompat {
 
     private BottomSheetDialog dialog;
@@ -56,119 +56,101 @@ public class Fragment_settings_data extends PreferenceFragmentCompat {
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         setPreferencesFromResource(R.xml.preference_data, rootKey);
 
-        File sd = Objects.requireNonNull(getActivity()).getExternalFilesDir(null);
+        File sd = requireActivity().getExternalFilesDir(null);
         File data = Environment.getDataDirectory();
-        String database_app = "//data//" + Objects.requireNonNull(getActivity()).getPackageName() + "//databases//Ninja4.db";
+        String database_app = "//data//" + requireActivity().getPackageName() + "//databases//Ninja4.db";
         String database_backup = "browser_backup//Ninja4.db";
         final File previewsFolder_app = new File(data, database_app);
         final File previewsFolder_backup = new File(sd, database_backup);
 
-        Objects.requireNonNull(findPreference("data_exDB")).setOnPreferenceClickListener(new androidx.preference.Preference.OnPreferenceClickListener() {
-            @Override
-            public boolean onPreferenceClick(androidx.preference.Preference preference) {
-                dialog = new BottomSheetDialog(Objects.requireNonNull(getActivity()));
-                dialogView = View.inflate(getActivity(), R.layout.dialog_action, null);
-                textView = dialogView.findViewById(R.id.dialog_text);
-                textView.setText(R.string.toast_backup);
-                action_ok = dialogView.findViewById(R.id.action_ok);
-                action_ok.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        dialog.cancel();
-                        try {
-                            if (android.os.Build.VERSION.SDK_INT >= 23 && android.os.Build.VERSION.SDK_INT < 29) {
-                                int hasWRITE_EXTERNAL_STORAGE = getActivity().checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
-                                if (hasWRITE_EXTERNAL_STORAGE != PackageManager.PERMISSION_GRANTED) {
-                                    HelperUnit.grantPermissionsStorage(getActivity());
-                                    dialog.cancel();
-                                } else {
-                                    makeBackupDir();
-                                    BrowserUnit.deleteDir(previewsFolder_backup);
-                                    copyDirectory(previewsFolder_app, previewsFolder_backup);
-                                    backupUserPrefs(getActivity());
-                                    NinjaToast.show(getActivity(), getString(R.string.toast_export_successful) + "browser_backup");
-                                }
-                            } else {
-                                makeBackupDir();
-                                BrowserUnit.deleteDir(previewsFolder_backup);
-                                copyDirectory(previewsFolder_app, previewsFolder_backup);
-                                backupUserPrefs(getActivity());
-                                NinjaToast.show(getActivity(), getString(R.string.toast_export_successful) + "browser_backup");
-                            }
-                        } catch (Exception e) {
-                            e.printStackTrace();
+        findPreference("data_exDB").setOnPreferenceClickListener(preference -> {
+            dialog = new BottomSheetDialog(requireActivity());
+            dialogView = View.inflate(getActivity(), R.layout.dialog_action, null);
+            textView = dialogView.findViewById(R.id.dialog_text);
+            textView.setText(R.string.toast_backup);
+            action_ok = dialogView.findViewById(R.id.action_ok);
+            action_ok.setOnClickListener(view -> {
+                dialog.cancel();
+                try {
+                    if (android.os.Build.VERSION.SDK_INT >= 23 && android.os.Build.VERSION.SDK_INT < 29) {
+                        int hasWRITE_EXTERNAL_STORAGE = getActivity().checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+                        if (hasWRITE_EXTERNAL_STORAGE != PackageManager.PERMISSION_GRANTED) {
+                            HelperUnit.grantPermissionsStorage(getActivity());
+                            dialog.cancel();
+                        } else {
+                            makeBackupDir();
+                            BrowserUnit.deleteDir(previewsFolder_backup);
+                            copyDirectory(previewsFolder_app, previewsFolder_backup);
+                            backupUserPrefs(getActivity());
+                            NinjaToast.show(getActivity(), getString(R.string.toast_export_successful) + "browser_backup");
                         }
+                    } else {
+                        makeBackupDir();
+                        BrowserUnit.deleteDir(previewsFolder_backup);
+                        copyDirectory(previewsFolder_app, previewsFolder_backup);
+                        backupUserPrefs(getActivity());
+                        NinjaToast.show(getActivity(), getString(R.string.toast_export_successful) + "browser_backup");
                     }
-                });
-                dialog.setContentView(dialogView);
-                dialog.show();
-                HelperUnit.setBottomSheetBehavior(dialog, dialogView, BottomSheetBehavior.STATE_EXPANDED);
-                return false;
-            }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            });
+            dialog.setContentView(dialogView);
+            dialog.show();
+            HelperUnit.setBottomSheetBehavior(dialog, dialogView, BottomSheetBehavior.STATE_EXPANDED);
+            return false;
         });
 
-        Objects.requireNonNull(findPreference("data_imDB")).setOnPreferenceClickListener(new androidx.preference.Preference.OnPreferenceClickListener() {
-            @Override
-            public boolean onPreferenceClick(androidx.preference.Preference preference) {
-                dialog = new BottomSheetDialog(Objects.requireNonNull(getActivity()));
-                dialogView = View.inflate(getActivity(), R.layout.dialog_action, null);
-                textView = dialogView.findViewById(R.id.dialog_text);
-                textView.setText(R.string.hint_database);
-                action_ok = dialogView.findViewById(R.id.action_ok);
-                action_ok.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        dialog.cancel();
-                        try {
-                            if (android.os.Build.VERSION.SDK_INT >= 23 && android.os.Build.VERSION.SDK_INT < 29) {
-                                int hasWRITE_EXTERNAL_STORAGE = getActivity().checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
-                                if (hasWRITE_EXTERNAL_STORAGE != PackageManager.PERMISSION_GRANTED) {
-                                    HelperUnit.grantPermissionsStorage(getActivity());
-                                    dialog.cancel();
-                                } else {
-                                    BrowserUnit.deleteDir(previewsFolder_app);
-                                    copyDirectory(previewsFolder_backup, previewsFolder_app);
-                                    restoreUserPrefs(getActivity());
-                                    dialogRestart();
-                                }
-                            } else {
-                                BrowserUnit.deleteDir(previewsFolder_app);
-                                copyDirectory(previewsFolder_backup, previewsFolder_app);
-                                restoreUserPrefs(getActivity());
-                                dialogRestart();
-                            }
-
-                        } catch (Exception e) {
-                            e.printStackTrace();
+        findPreference("data_imDB").setOnPreferenceClickListener(preference -> {
+            dialog = new BottomSheetDialog(requireActivity());
+            dialogView = View.inflate(getActivity(), R.layout.dialog_action, null);
+            textView = dialogView.findViewById(R.id.dialog_text);
+            textView.setText(R.string.hint_database);
+            action_ok = dialogView.findViewById(R.id.action_ok);
+            action_ok.setOnClickListener(view -> {
+                dialog.cancel();
+                try {
+                    if (android.os.Build.VERSION.SDK_INT >= 23 && android.os.Build.VERSION.SDK_INT < 29) {
+                        int hasWRITE_EXTERNAL_STORAGE = getActivity().checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+                        if (hasWRITE_EXTERNAL_STORAGE != PackageManager.PERMISSION_GRANTED) {
+                            HelperUnit.grantPermissionsStorage(getActivity());
+                            dialog.cancel();
+                        } else {
+                            BrowserUnit.deleteDir(previewsFolder_app);
+                            copyDirectory(previewsFolder_backup, previewsFolder_app);
+                            restoreUserPrefs(getActivity());
+                            dialogRestart();
                         }
+                    } else {
+                        BrowserUnit.deleteDir(previewsFolder_app);
+                        copyDirectory(previewsFolder_backup, previewsFolder_app);
+                        restoreUserPrefs(getActivity());
+                        dialogRestart();
                     }
-                });
-                dialog.setContentView(dialogView);
-                dialog.show();
-                HelperUnit.setBottomSheetBehavior(dialog, dialogView, BottomSheetBehavior.STATE_EXPANDED);
-                return false;
-            }
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            });
+            dialog.setContentView(dialogView);
+            dialog.show();
+            HelperUnit.setBottomSheetBehavior(dialog, dialogView, BottomSheetBehavior.STATE_EXPANDED);
+            return false;
         });
-        Objects.requireNonNull(findPreference("data_imBookmark")).setOnPreferenceClickListener(new androidx.preference.Preference.OnPreferenceClickListener() {
-            @Override
-            public boolean onPreferenceClick(androidx.preference.Preference preference) {
-                new ImportWhitelistTask(getActivity(), 4).execute();
-                return false;
-            }
+        findPreference("data_imBookmark").setOnPreferenceClickListener(preference -> {
+            new ImportWhitelistTask(getActivity(), 4).execute();
+            return false;
         });
-        Objects.requireNonNull(findPreference("data_exBookmark")).setOnPreferenceClickListener(new androidx.preference.Preference.OnPreferenceClickListener() {
-            @Override
-            public boolean onPreferenceClick(androidx.preference.Preference preference) {
-                new ExportWhiteListTask(getActivity(), 4).execute();
-                return false;
-            }
+        findPreference("data_exBookmark").setOnPreferenceClickListener(preference -> {
+            new ExportWhiteListTask(getActivity(), 4).execute();
+            return false;
         });
     }
 
     private void makeBackupDir () {
-        File backupDir = new File(Objects.requireNonNull(getActivity()).getExternalFilesDir(null), "browser_backup//");
+        File backupDir = new File(requireActivity().getExternalFilesDir(null), "browser_backup//");
         if (android.os.Build.VERSION.SDK_INT >= 23 && android.os.Build.VERSION.SDK_INT < 29) {
-            int hasWRITE_EXTERNAL_STORAGE = Objects.requireNonNull(getActivity()).checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+            int hasWRITE_EXTERNAL_STORAGE = requireActivity().checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
             if (hasWRITE_EXTERNAL_STORAGE != PackageManager.PERMISSION_GRANTED) {
                 HelperUnit.grantPermissionsStorage(getActivity());
             } else {

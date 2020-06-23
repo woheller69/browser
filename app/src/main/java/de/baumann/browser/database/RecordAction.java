@@ -140,52 +140,6 @@ public class RecordAction {
         return list;
     }
 
-    //Tab
-
-    public void addTab(Record record) {
-        if (record == null
-                || record.getTitle() == null
-                || record.getTitle().trim().isEmpty()
-                || record.getURL() == null
-                || record.getURL().trim().isEmpty()
-                || record.getTime() < 0L) {
-            return;
-        }
-
-        ContentValues values = new ContentValues();
-        values.put(RecordUnit.COLUMN_TITLE, record.getTitle().trim());
-        values.put(RecordUnit.COLUMN_URL, record.getURL().trim());
-        values.put(RecordUnit.COLUMN_TIME, record.getTime());
-        database.insert(RecordUnit.TABLE_TAB, null, values);
-    }
-
-    public List<Record> listTab () {
-        List<Record> list = new ArrayList<>();
-        Cursor cursor;
-        cursor = database.query(
-                RecordUnit.TABLE_TAB,
-                new String[] {
-                        RecordUnit.COLUMN_TITLE,
-                        RecordUnit.COLUMN_URL,
-                        RecordUnit.COLUMN_TIME
-                },
-                null,
-                null,
-                null,
-                null,
-                RecordUnit.COLUMN_TITLE + " asc"
-        );
-
-        cursor.moveToFirst();
-        while (!cursor.isAfterLast()) {
-            list.add(getRecord(cursor));
-            cursor.moveToNext();
-        }
-        cursor.close();
-
-        return list;
-    }
-
     //History
 
     public void addHistory(Record record) {

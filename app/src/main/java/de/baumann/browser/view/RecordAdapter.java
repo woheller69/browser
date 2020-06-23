@@ -33,7 +33,7 @@ public class RecordAdapter extends ArrayAdapter<Record> {
         ImageView icon;
     }
 
-    @NonNull
+    @SuppressWarnings("NullableProblems")
     @Override
     public View getView(int position, View convertView, @NonNull ViewGroup parent) {
         Holder holder;

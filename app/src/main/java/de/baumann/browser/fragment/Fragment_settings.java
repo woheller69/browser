@@ -14,8 +14,6 @@ import android.widget.TextView;
 
 import androidx.preference.PreferenceFragmentCompat;
 
-import java.util.Objects;
-
 import de.baumann.browser.activity.Settings_ClearActivity;
 import de.baumann.browser.activity.Settings_DataActivity;
 import de.baumann.browser.activity.Settings_FilterActivity;
@@ -25,6 +23,7 @@ import de.baumann.browser.activity.Settings_UIActivity;
 import de.baumann.browser.unit.HelperUnit;
 import de.baumann.browser.R;
 
+@SuppressWarnings("ConstantConditions")
 public class Fragment_settings extends PreferenceFragmentCompat implements SharedPreferences.OnSharedPreferenceChangeListener {
 
     private boolean showContributors;
@@ -33,88 +32,58 @@ public class Fragment_settings extends PreferenceFragmentCompat implements Share
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         setPreferencesFromResource(R.xml.preference_setting, rootKey);
 
-        Objects.requireNonNull(findPreference("settings_filter")).setOnPreferenceClickListener(new androidx.preference.Preference.OnPreferenceClickListener() {
-            @Override
-            public boolean onPreferenceClick(androidx.preference.Preference preference) {
-                Intent intent = new Intent(getActivity(), Settings_FilterActivity.class);
-                Objects.requireNonNull(getActivity()).startActivity(intent);
-                return false;
-            }
+       findPreference("settings_filter").setOnPreferenceClickListener(preference -> {
+           Intent intent = new Intent(getActivity(), Settings_FilterActivity.class);
+           requireActivity().startActivity(intent);
+           return false;
+       });
+        findPreference("settings_data").setOnPreferenceClickListener(preference -> {
+            Intent intent = new Intent(getActivity(), Settings_DataActivity.class);
+            requireActivity().startActivity(intent);
+            return false;
         });
-        Objects.requireNonNull(findPreference("settings_data")).setOnPreferenceClickListener(new androidx.preference.Preference.OnPreferenceClickListener() {
-            @Override
-            public boolean onPreferenceClick(androidx.preference.Preference preference) {
-                Intent intent = new Intent(getActivity(), Settings_DataActivity.class);
-                Objects.requireNonNull(getActivity()).startActivity(intent);
-                return false;
-            }
+        findPreference("settings_ui").setOnPreferenceClickListener(preference -> {
+            Intent intent = new Intent(getActivity(), Settings_UIActivity.class);
+            requireActivity().startActivity(intent);
+            return false;
         });
-        Objects.requireNonNull(findPreference("settings_ui")).setOnPreferenceClickListener(new androidx.preference.Preference.OnPreferenceClickListener() {
-            @Override
-            public boolean onPreferenceClick(androidx.preference.Preference preference) {
-                Intent intent = new Intent(getActivity(), Settings_UIActivity.class);
-                Objects.requireNonNull(getActivity()).startActivity(intent);
-                return false;
-            }
+        findPreference("settings_gesture").setOnPreferenceClickListener(preference -> {
+            Intent intent = new Intent(getActivity(), Settings_GestureActivity.class);
+            requireActivity().startActivity(intent);
+            return false;
         });
-        Objects.requireNonNull(findPreference("settings_gesture")).setOnPreferenceClickListener(new androidx.preference.Preference.OnPreferenceClickListener() {
-            @Override
-            public boolean onPreferenceClick(androidx.preference.Preference preference) {
-                Intent intent = new Intent(getActivity(), Settings_GestureActivity.class);
-                Objects.requireNonNull(getActivity()).startActivity(intent);
-                return false;
-            }
+        findPreference("settings_start").setOnPreferenceClickListener(preference -> {
+            Intent intent = new Intent(getActivity(), Settings_StartActivity.class);
+            requireActivity().startActivity(intent);
+            return false;
         });
-        Objects.requireNonNull(findPreference("settings_start")).setOnPreferenceClickListener(new androidx.preference.Preference.OnPreferenceClickListener() {
-            @Override
-            public boolean onPreferenceClick(androidx.preference.Preference preference) {
-                Intent intent = new Intent(getActivity(), Settings_StartActivity.class);
-                Objects.requireNonNull(getActivity()).startActivity(intent);
-                return false;
-            }
+        findPreference("settings_clear").setOnPreferenceClickListener(preference -> {
+            Intent intent = new Intent(getActivity(), Settings_ClearActivity.class);
+            requireActivity().startActivity(intent);
+            return false;
         });
-        Objects.requireNonNull(findPreference("settings_clear")).setOnPreferenceClickListener(new androidx.preference.Preference.OnPreferenceClickListener() {
-            @Override
-            public boolean onPreferenceClick(androidx.preference.Preference preference) {
-                Intent intent = new Intent(getActivity(), Settings_ClearActivity.class);
-                Objects.requireNonNull(getActivity()).startActivity(intent);
-                return false;
-            }
+        findPreference("settings_community").setOnPreferenceClickListener(preference -> {
+            showContributors = true;
+            showLicenseDialog(getString(R.string.setting_title_community), getString(R.string.cont_dialog));
+            return false;
         });
-        Objects.requireNonNull(findPreference("settings_community")).setOnPreferenceClickListener(new androidx.preference.Preference.OnPreferenceClickListener() {
-            @Override
-            public boolean onPreferenceClick(androidx.preference.Preference preference) {
-                showContributors = true;
-                showLicenseDialog(getString(R.string.setting_title_community), getString(R.string.cont_dialog));
-                return false;
-            }
+        findPreference("settings_info").setOnPreferenceClickListener(preference -> {
+            showContributors = false;
+            showLicenseDialog(getString(R.string.menu_other_info), getString(R.string.changelog_dialog));
+            return false;
         });
-        Objects.requireNonNull(findPreference("settings_info")).setOnPreferenceClickListener(new androidx.preference.Preference.OnPreferenceClickListener() {
-            @Override
-            public boolean onPreferenceClick(androidx.preference.Preference preference) {
-                showContributors = false;
-                showLicenseDialog(getString(R.string.menu_other_info), getString(R.string.changelog_dialog));
-                return false;
-            }
+        findPreference("settings_help").setOnPreferenceClickListener(preference -> {
+            showContributors = false;
+            showLicenseDialog(getString(R.string.dialogHelp_tipTitle), getString(R.string.dialogHelp_tipText));
+            return false;
         });
-        Objects.requireNonNull(findPreference("settings_help")).setOnPreferenceClickListener(new androidx.preference.Preference.OnPreferenceClickListener() {
-            @Override
-            public boolean onPreferenceClick(androidx.preference.Preference preference) {
-                showContributors = false;
-                showLicenseDialog(getString(R.string.dialogHelp_tipTitle), getString(R.string.dialogHelp_tipText));
-                return false;
-            }
-        });
-        Objects.requireNonNull(findPreference("settings_appSettings")).setOnPreferenceClickListener(new androidx.preference.Preference.OnPreferenceClickListener() {
-            @Override
-            public boolean onPreferenceClick(androidx.preference.Preference preference) {
-                Intent intent = new Intent();
-                intent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
-                Uri uri = Uri.fromParts("package", Objects.requireNonNull(getActivity()).getPackageName(), null);
-                intent.setData(uri);
-                getActivity().startActivity(intent);
-                return false;
-            }
+        findPreference("settings_appSettings").setOnPreferenceClickListener(preference -> {
+            Intent intent = new Intent();
+            intent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+            Uri uri = Uri.fromParts("package", requireActivity().getPackageName(), null);
+            intent.setData(uri);
+            getActivity().startActivity(intent);
+            return false;
         });
     }
 
@@ -127,7 +96,7 @@ public class Fragment_settings extends PreferenceFragmentCompat implements Share
 
     private void showLicenseDialog(String title, String text) {
 
-        final BottomSheetDialog dialog = new BottomSheetDialog(Objects.requireNonNull(getActivity()));
+        final BottomSheetDialog dialog = new BottomSheetDialog(requireActivity());
         View dialogView = View.inflate(getActivity(), R.layout.dialog_text, null);
 
         TextView dialog_title = dialogView.findViewById(R.id.dialog_title);

@@ -7,8 +7,8 @@
     <string name="list_empty">Liste ist leer</string>
     <string name="album_title_bookmarks">Lesezeichen</string>
     <string name="album_title_history">Verlauf</string>
-    <string name="album_title_home">Startseite</string>
-    <string name="album_title_tab">Geöffnete Tabs</string>
+    <string name="album_title_home">Start</string>
+    <string name="album_title_tab">Tabs</string>
     <string name="album_title_files">Dateien</string>
     <string name="search_hint">Suche</string>
     <string name="color_red">Rot</string>
@@ -39,7 +39,7 @@
     <string name="menu_sort">Sortiere nach …</string>
     <string name="menu_filter">Filter nach …</string>
     <string name="menu_share_link">Link teilen</string>
-    <string name="menu_save_home">Auf Startseite speichern</string>
+    <string name="menu_save_home">Auf Start speichern</string>
     <string name="menu_save_bookmark">Als Lesezeichen speichern</string>
     <string name="menu_save_as">Speichern als …</string>
     <string name="menu_save_pdf">Als PDF speichern</string>

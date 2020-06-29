@@ -154,13 +154,13 @@
     <string name="setting_overView">Áttekintés</string>
     <string name="setting_overView_onStart_title">Show on start</string>
     <string name="setting_overView_onStart_summary">Open the \"Overview\" on every app start.</string>
-    <string name="setting_gestures">Gestures</string>
+    <string name="setting_gestures">Kézmozdulatok</string>
     <string name="setting_gestures_use_title">Use gestures</string>
     <string name="setting_gestures_use_summary">Use gestures on the toolbar and the \"Navigation button\".</string>
     <string name="setting_title_reopenLastTab">Reopen last tab</string>
     <string name="setting_summary_reopenLastTab">Reopen a new tab when the last tab is closed instead of exiting the browser.</string>
     <!-- gestures -->
-    <string name="setting_title_toolbar">Toolbar</string>
+    <string name="setting_title_toolbar">Eszköztár</string>
     <string name="setting_gesture_up">Swipe up</string>
     <string name="setting_gesture_down">Swipe down</string>
     <string name="setting_gesture_left">Swipe left</string>
@@ -172,19 +172,19 @@
     <string name="setting_gesture_05">Scroll to bottom</string>
     <string name="setting_gesture_06">Switch to left tab</string>
     <string name="setting_gesture_07">Switch to right tab</string>
-    <string name="setting_gesture_08">Show overview</string>
+    <string name="setting_gesture_08">Áttekintés mutatása</string>
     <string name="setting_gesture_09">Új lap megnyitása</string>
     <string name="setting_gesture_10">Lap bezárása</string>
     <!-- Data -->
-    <string name="setting_title_export_bookmarks">Export bookmarks as HTML-file</string>
-    <string name="setting_title_import_bookmarks">Import bookmarks</string>
-    <string name="setting_title_export_appData">Export app data</string>
-    <string name="setting_title_import_appData">Import app data</string>
+    <string name="setting_title_export_bookmarks">Könyvjelzők exportálása HTML-fájlként</string>
+    <string name="setting_title_import_bookmarks">Könyvjelzők importálása</string>
+    <string name="setting_title_export_appData">Alkalmazásadatok exportálása</string>
+    <string name="setting_title_import_appData">Alkalmazásadatok importálása</string>
     <string name="setting_summary_export_appData">Export whole database and your personal settings.</string>
-    <string name="title_appData">App data</string>
+    <string name="title_appData">Alkalmazásadatok</string>
     <string name="hint_database">This will delete current data. Proceed?</string>
     <!-- Others setting -->
-    <string name="setting_title_others">Others</string>
+    <string name="setting_title_others">Egyebek</string>
     <string name="setting_title_appSettings">App settings</string>
     <string name="setting_summary_appSettings">Open the system app settings for \"FOSS Browser\". There you can, depending on your Android version grant permissions, clear the app data and so on.</string>
     <string name="setting_title_community">Contributing</string>
@@ -205,7 +205,7 @@
     <string name="toast_load_error">Can\'t load this URL</string>
     <string name="toast_new_tab_successful">Successfully opened in a new tab</string>
     <string name="toast_share_failed">Can\'t share this page</string>
-    <string name="toast_start_download">Starting download</string>
+    <string name="toast_start_download">Letöltés indítása</string>
     <string name="toast_wait_a_minute">Please wait for a moment</string>
     <string name="toast_webview_forward">Can\'t load next site</string>
     <string name="toast_permission_sdCard">\"FOSS Browser\" needs the permission to \"read and write on your storage\". This is needed to download files, taking screenshots and making backups of your data.</string>

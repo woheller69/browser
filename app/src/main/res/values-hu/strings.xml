@@ -115,14 +115,14 @@
     <string name="clear_summary_deleteDatabase">A teljes adatbázis törlése (Kezdőoldal, könyvjelzők, előzmények és az összes engedélylista).</string>
     <!-- App setting -->
     <string name="setting_title_app">Alkalmazás beállításai</string>
-    <string name="setting_title_ui">Viselkedés/UI</string>
+    <string name="setting_title_ui">Viselkedés/felhasználói felület</string>
     <string name="setting_title_data">Biztonsági másolat</string>
     <string name="setting_summary_ui">Megváltoztathatja az alkalmazás viselkedését és felhasználói felületét az igényeinek megfelelően.</string>
     <string name="setting_summary_data">Számos alkalmazásadatot (engedélylisták, könyvjelzők) importálhat és exportálhat.</string>
     <string name="setting_filter">Könyvjelző szűrő</string>
     <string name="setting_filter_summary">To show the filter dialog long press on the bookmark icon in the overview. Decide which filters you will use.</string>
     <string name="setting_title_fav">Kedvenc</string>
-    <string name="setting_summary_fav">Here you can change the default website which loads on start of \"FOSS Browser\". Enter \"about:blank\" to get an emty start site.</string>
+    <string name="setting_summary_fav">Megváltoztathatja az alapértelmezett weboldalt, ami betöltődik a \"FOSS Browser\" indításakor. Üres lap megnyitásához a következőt írja be: \"about:blank\".</string>
     <string name="setting_title_searchEngine">Egyedi keresőmotor</string>
     <string name="setting_summary_searchEngine">Here you can enter a custom search URL. Also choose \"Custom search engine\" as search provider.</string>
     <string name="setting_title_userAgent">Custom user agent</string>
@@ -131,15 +131,15 @@
     <string name="setting_title_hideToolbar">Eszköztár elrejtése</string>
     <string name="setting_summary_hide">Use the whole screen when scrolling through websites. If you press the back button you will leave fullscreen mode.</string>
     <string name="setting_theme">Téma</string>
-    <string name="setting_theme_summary">Set the app theme.</string>
+    <string name="setting_theme_summary">Az alkalmazás témájának beállítása.</string>
     <string name="setting_theme_system">Rendszer téma</string>
     <string name="setting_theme_light">Világos téma</string>
     <string name="setting_theme_dark">Sötét téma</string>
-    <string name="setting_title_theme">UI</string>
-    <string name="setting_title_behavior">Behavior</string>
+    <string name="setting_title_theme">Felhasználói felület</string>
+    <string name="setting_title_behavior">Viselkedés</string>
     <string name="setting_summary_toolbarShow">Pressing back will make the toolbar visible, before going back in history.</string>
     <string name="setting_title_toolbarShow">First toolbar</string>
-    <string name="setting_title_nav">Navigation button</string>
+    <string name="setting_title_nav">Navigációs gomb</string>
     <string name="setting_title_nav_pos">Pozíció</string>
     <string name="setting_summary_nav_pos">Decide where the \"Navigation Button\" will be placed.</string>
     <string name="setting_summary_nav_pos_right">Right</string>

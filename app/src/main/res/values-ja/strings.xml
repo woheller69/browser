@@ -41,7 +41,7 @@
     <string name="menu_share_link">リンクを共有</string>
     <string name="menu_save_home">ホームに保存</string>
     <string name="menu_save_bookmark">ブックマークに保存</string>
-    <string name="menu_save_as">名前を付けて保存</string>
+    <string name="menu_save_as">名前を付けて保存…</string>
     <string name="menu_save_pdf">PDF として保存</string>
     <string name="menu_shareClipboard">クリップボードにコピー</string>
     <string name="menu_other_searchSite">サイト内の検索</string>

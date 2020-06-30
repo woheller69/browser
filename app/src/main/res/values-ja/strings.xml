@@ -44,7 +44,7 @@
     <string name="menu_save_as">名前を付けて保存</string>
     <string name="menu_save_pdf">PDF として保存</string>
     <string name="menu_shareClipboard">クリップボードにコピー</string>
-    <string name="menu_other_searchSite">サイト上の検索</string>
+    <string name="menu_other_searchSite">サイト内の検索</string>
     <string name="menu_other_info">\"FOSS Browser\" について</string>
     <string name="menu_other_help">ヘルプ</string>
     <!-- Dialog -->
@@ -94,13 +94,13 @@
     <string name="setting_title_whitelistCookie">クッキーのホワイトリスト</string>
     <string name="setting_title_whitelistRemote">リモートホワイトリスト</string>
     <string name="setting_title_javascript">JavaScript</string>
-    <string name="setting_summary_javascript">JavaScript を有効化して下さい。多くのウェブサイトでサイトの動作のために必要です (メニューや画像表示など)。しかし攻撃に使用されるリスクもあります。</string>
+    <string name="setting_summary_javascript">JavaScript を有効化します。多くのウェブサイトでサイトの動作のために必要です (メニューや画像表示など)。しかし攻撃に使用されるリスクもあります。</string>
     <string name="setting_title_whitelistJS">JavaScript ホワイトリスト</string>
     <string name="setting_title_adblock">AdBlock</string>
     <string name="setting_summary_adblock">AdBlock を有効にして迷惑な広告をブロックします。有効にするとサイトの読み込みが速くなります。</string>
     <string name="setting_title_whitelist">AdBlock ホワイトリスト</string>
     <string name="setting_title_location">位置情報</string>
-    <string name="setting_summary_location">ウェブサイトに位置情報へのアクセスを許可して下さい。いくつかのウェブサイト (Google マップなど) は許可が必要です。</string>
+    <string name="setting_summary_location">ウェブサイトに位置情報へのアクセスを許可します。いくつかのウェブサイト (Google マップなど) は許可が必要です。</string>
     <string name="setting_title_history">履歴</string>
     <string name="setting_summary_history">閲覧したウェブサイトの履歴を保存します。</string>
     <!-- browser clear -->

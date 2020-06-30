@@ -114,7 +114,7 @@
     <string name="clear_title_deleteDatabase">データベースを削除</string>
     <string name="clear_summary_deleteDatabase">データベース全体 (スタートページ、ブックマーク、履歴、ホワイトリスト) を削除します。</string>
     <!-- App setting -->
-    <string name="setting_title_app">アプリの設定</string>
+    <string name="setting_title_app">アプリ設定</string>
     <string name="setting_title_ui">動作/UI</string>
     <string name="setting_title_data">バックアップ</string>
     <string name="setting_summary_ui">好みの設定にするためにアプリの動作と UI を変更します。</string>
@@ -124,7 +124,7 @@
     <string name="setting_title_fav">お気に入り</string>
     <string name="setting_summary_fav">ここでは \"FOSS Browser\" 開始時に読み込む既定のスタートページを変更できます。\"about:blank\" と入力するとページを読み込まず開始します。</string>
     <string name="setting_title_searchEngine">カスタム検索エンジン</string>
-    <string name="setting_summary_searchEngine">ここではカスタム検索 URL を入力できます。また \"カスタム検索エンジン\" を検索プロバイダとして選択して下さい。</string>
+    <string name="setting_summary_searchEngine">ここではカスタム検索 URL を入力できます。入力後は \"カスタム検索エンジン\" を検索プロバイダとして選択して下さい。</string>
     <string name="setting_title_userAgent">カスタムユーザーエージェント</string>
     <string name="setting_summary_userAgent">ここではカスタムユーザーエージェントを入力できます。空白で既定のものを使用します。</string>
     <!-- App behavior -->
@@ -166,8 +166,8 @@
     <string name="setting_gesture_left">左スワイプ</string>
     <string name="setting_gesture_right">右スワイプ</string>
     <string name="setting_gesture_01">なし</string>
-    <string name="setting_gesture_02">履歴を前へ</string>
-    <string name="setting_gesture_03">履歴を後ろへ</string>
+    <string name="setting_gesture_02">履歴の前へ</string>
+    <string name="setting_gesture_03">履歴の後ろへ</string>
     <string name="setting_gesture_04">最上部へスクロール</string>
     <string name="setting_gesture_05">最下部へスクロール</string>
     <string name="setting_gesture_06">左のタブに移動</string>

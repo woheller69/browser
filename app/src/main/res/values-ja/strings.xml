@@ -137,8 +137,8 @@
     <string name="setting_theme_dark">暗いテーマ</string>
     <string name="setting_title_theme">UI</string>
     <string name="setting_title_behavior">動作</string>
-    <string name="setting_summary_toolbarShow">Pressing back will make the toolbar visible, before going back in history.</string>
-    <string name="setting_title_toolbarShow">最初のツールバー</string>
+    <string name="setting_summary_toolbarShow">履歴に戻る前に戻るボタンのタッチでツールバーを表示します。</string>
+    <string name="setting_title_toolbarShow">ツールバーを最初に表示</string>
     <string name="setting_title_nav">ナビゲーションボタン</string>
     <string name="setting_title_nav_pos">位置</string>
     <string name="setting_summary_nav_pos">\"ナビゲーションボタン\" をどこに配置するか決定します。</string>

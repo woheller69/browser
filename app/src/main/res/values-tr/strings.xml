@@ -78,7 +78,7 @@
     <string name="setting_summary_search_engine_qwant">Qwant</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_title_inverted">Ters renkler</string>
-    <string name="setting_summary_inverted">If checked, content will be rendered in a inverted grey scale mode. This is a kind of \"night mode\".</string>
+    <string name="setting_summary_inverted">İşaretlenirse, içerik ters çevrilmiş gri tonlama modunda oluşturulur. Bu bir tür \"gece modu\".</string>
     <string name="setting_title_font">Yazı boyutu</string>
     <string name="setting_summary_font">Web sitelerini görüntülemek için yazı tipi boyutunu değiştirin.</string>
     <string name="setting_title_remote">Uzaktan içerik</string>
@@ -92,7 +92,7 @@
     <string name="setting_summary_cookie_delete">Etkinleştirilirse, tüm çerezler silinir. Ayrıca güvenilir web sitelerinin çerezleri de silinir.</string>
     <string name="setting_summary_cookie">Enable Cookies. Cookies are small text files, which are stored on your device. Websites use them for example to store user settings (for example search settings). But they could also be used to collect personal user data. Third party cookies (they collect user data for advertising) are always disabled.</string>
     <string name="setting_title_whitelistCookie">Çerez beyaz listesi</string>
-    <string name="setting_title_whitelistRemote">Remote whitelist</string>
+    <string name="setting_title_whitelistRemote">Uzak beyaz liste</string>
     <string name="setting_title_javascript">JavaScript</string>
     <string name="setting_summary_javascript">Enable JavaScript. Many websites need JavaScript for their functionality (menus, loading and displaying images, …). But they are also a risk and can be used for attacks.</string>
     <string name="setting_title_whitelistJS">JavaScript beyaz listesi</string>
@@ -105,7 +105,7 @@
     <string name="setting_summary_history">Ziyaret edilen web sitelerinin geçmişini kaydedin.</string>
     <!-- browser clear -->
     <string name="data_summary">All files will be exported to the \"Android/data/de.baumann.browser/files/browser_backup/\" directory of your sd-card. This directory will be DELETED, if you uninstall \"FOSS Browser\". So make a backup regularly on a save place.</string>
-    <string name="clear_title_quit">Clear on application exit</string>
+    <string name="clear_title_quit">Uygulama çıkışında temizle</string>
     <string name="clear_summary_quit">\"FOSS Tarayıcısı\"ndan her çıkışta  yukarıdaki tüm kontrol edilen veriler silinecektir.</string>
     <string name="clear_title_cache">Önbelleği Temizle</string>
     <string name="clear_title_cookie">Çerezleri Temizle</string>
@@ -145,7 +145,7 @@
     <string name="setting_summary_nav_pos_right">Sağ</string>
     <string name="setting_summary_nav_pos_left">Sol</string>
     <string name="setting_summary_nav_pos_center">Orta</string>
-    <string name="setting_summary_nav_pos_null">Never show</string>
+    <string name="setting_summary_nav_pos_null">Asla gösterme</string>
     <string name="setting_summary_tab">What should be shown at the start of the \"Overview\"?</string>
     <string name="setting_title_confirm_exit">Tarayıcı çıkışını onayla</string>
     <string name="setting_summary_confirm_exit">Tarayıcıyı kapatırken onay iletişim kutusu gösterilir.</string>
@@ -177,7 +177,7 @@
     <string name="setting_gesture_10">Sekmeyi kapat</string>
     <!-- Data -->
     <string name="setting_title_export_bookmarks">Export bookmarks as HTML-file</string>
-    <string name="setting_title_import_bookmarks">Import bookmarks</string>
+    <string name="setting_title_import_bookmarks">Yer işaretlerini içe aktar</string>
     <string name="setting_title_export_appData">Uygulama verilerini dışa aktar</string>
     <string name="setting_title_import_appData">Uygulama verilerini içe aktar</string>
     <string name="setting_summary_export_appData">Export whole database and your personal settings.</string>
@@ -232,15 +232,15 @@
     <string name="dialogHelp_filterText">        You can tag your bookmarks with filters. In this way you can group your bookmarks. You can open the filter dialog by long pressing the bookmark icon. If you activate an entry a dialog will appear, where you can edit the name of the filter.
     </string>
     <!-- Dialog changelog -->
-    <string name="changelog_dialog">        Your language isn\'t supported yet? You want to translate FOSS Browser? Or make improvements to existing translations? Feel free to join us on Crowdin: https://crowdin.com/project/foss-browser.&lt;br&gt;&lt;br&gt;
+    <string name="changelog_dialog">        Diliniz henüz desteklenmiyor mu? FOSS tarayıcısını dilinize çevirmek ister misiniz? Veya mevcut çevirilerde iyileştirmeler yapmak ister misiniz? Crowdin\'de bize katılmaktan çekinmeyin: https://crowdin.com/project/foss-browser.&lt;br&gt;&lt;br&gt;
 
-        &lt;b&gt;On the following sites you have access to all important information about \"FOSS Browser\". Please read also the help dialog within the app.&lt;/b&gt;&lt;br&gt;&lt;br&gt;
+        &lt;b&gt;Aşağıdaki sitelerden \"FOSS tarayıcısı\" ile ilgili tüm önemli bilgilere erişebilirsiniz. Lütfen uygulama içindeki yardım iletişim kutusunu da okuyun.&lt;/b&gt;&lt;br&gt;&lt;br&gt;
 
-        \u25AA &lt;i&gt;Project site:&lt;/i&gt; https://github.com/scoute-dich/Browser&lt;br&gt;
-        \u25AA &lt;i&gt;Changelog:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/CHANGELOG.md&lt;br&gt;
-        \u25AA &lt;i&gt;FAQ:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/FAQs.md&lt;br&gt;
-        \u25AA &lt;i&gt;License:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/LICENSE.md&lt;br&gt;
-        \u25AA &lt;i&gt;Privacy:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/PRIVACY.md
+        \u25AA &lt;i&gt;Proje site:&lt;/i&gt; https://github.com/scoute-dich/Browser&lt;br&gt;
+        \u25AA &lt;i&gt;Değişiklikler:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/CHANGELOG.md&lt;br&gt;
+        \u25AA &lt;i&gt;SSS:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/FAQs.md&lt;br&gt;
+        \u25AA &lt;i&gt;Lisans:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/LICENSE.md&lt;br&gt;
+        \u25AA &lt;i&gt;Gizlilik:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/PRIVACY.md
 
     </string>
     <!-- License changelog -->

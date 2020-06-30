@@ -41,10 +41,10 @@
     <string name="menu_share_link">リンクを共有</string>
     <string name="menu_save_home">ホームに保存</string>
     <string name="menu_save_bookmark">ブックマークに保存</string>
-    <string name="menu_save_as">名前を付けて保存</string>
+    <string name="menu_save_as">名前を付けて保存…</string>
     <string name="menu_save_pdf">PDF として保存</string>
     <string name="menu_shareClipboard">クリップボードにコピー</string>
-    <string name="menu_other_searchSite">サイト上の検索</string>
+    <string name="menu_other_searchSite">サイト内の検索</string>
     <string name="menu_other_info">\"FOSS Browser\" について</string>
     <string name="menu_other_help">ヘルプ</string>
     <!-- Dialog -->
@@ -94,13 +94,13 @@
     <string name="setting_title_whitelistCookie">クッキーのホワイトリスト</string>
     <string name="setting_title_whitelistRemote">リモートホワイトリスト</string>
     <string name="setting_title_javascript">JavaScript</string>
-    <string name="setting_summary_javascript">JavaScript を有効化して下さい。多くのウェブサイトでサイトの動作のために必要です (メニューや画像表示など)。しかし攻撃に使用されるリスクもあります。</string>
+    <string name="setting_summary_javascript">JavaScript を有効化します。多くのウェブサイトでサイトの動作のために必要です (メニューや画像表示など)。しかし攻撃に使用されるリスクもあります。</string>
     <string name="setting_title_whitelistJS">JavaScript ホワイトリスト</string>
     <string name="setting_title_adblock">AdBlock</string>
     <string name="setting_summary_adblock">AdBlock を有効にして迷惑な広告をブロックします。有効にするとサイトの読み込みが速くなります。</string>
     <string name="setting_title_whitelist">AdBlock ホワイトリスト</string>
     <string name="setting_title_location">位置情報</string>
-    <string name="setting_summary_location">ウェブサイトに位置情報へのアクセスを許可して下さい。いくつかのウェブサイト (Google マップなど) は許可が必要です。</string>
+    <string name="setting_summary_location">ウェブサイトに位置情報へのアクセスを許可します。いくつかのウェブサイト (Google マップなど) は許可が必要です。</string>
     <string name="setting_title_history">履歴</string>
     <string name="setting_summary_history">閲覧したウェブサイトの履歴を保存します。</string>
     <!-- browser clear -->
@@ -114,7 +114,7 @@
     <string name="clear_title_deleteDatabase">データベースを削除</string>
     <string name="clear_summary_deleteDatabase">データベース全体 (スタートページ、ブックマーク、履歴、ホワイトリスト) を削除します。</string>
     <!-- App setting -->
-    <string name="setting_title_app">アプリの設定</string>
+    <string name="setting_title_app">アプリ設定</string>
     <string name="setting_title_ui">動作/UI</string>
     <string name="setting_title_data">バックアップ</string>
     <string name="setting_summary_ui">好みの設定にするためにアプリの動作と UI を変更します。</string>
@@ -124,7 +124,7 @@
     <string name="setting_title_fav">お気に入り</string>
     <string name="setting_summary_fav">ここでは \"FOSS Browser\" 開始時に読み込む既定のスタートページを変更できます。\"about:blank\" と入力するとページを読み込まず開始します。</string>
     <string name="setting_title_searchEngine">カスタム検索エンジン</string>
-    <string name="setting_summary_searchEngine">ここではカスタム検索 URL を入力できます。また \"カスタム検索エンジン\" を検索プロバイダとして選択して下さい。</string>
+    <string name="setting_summary_searchEngine">ここではカスタム検索 URL を入力できます。入力後は \"カスタム検索エンジン\" を検索プロバイダとして選択して下さい。</string>
     <string name="setting_title_userAgent">カスタムユーザーエージェント</string>
     <string name="setting_summary_userAgent">ここではカスタムユーザーエージェントを入力できます。空白で既定のものを使用します。</string>
     <!-- App behavior -->
@@ -137,8 +137,8 @@
     <string name="setting_theme_dark">暗いテーマ</string>
     <string name="setting_title_theme">UI</string>
     <string name="setting_title_behavior">動作</string>
-    <string name="setting_summary_toolbarShow">履歴から戻る前に戻るボタンタッチでツールバーを表示します。</string>
-    <string name="setting_title_toolbarShow">最初のツールバー</string>
+    <string name="setting_summary_toolbarShow">履歴に戻る前に戻るボタンのタッチでツールバーを表示します。</string>
+    <string name="setting_title_toolbarShow">ツールバーを最初に表示</string>
     <string name="setting_title_nav">ナビゲーションボタン</string>
     <string name="setting_title_nav_pos">位置</string>
     <string name="setting_summary_nav_pos">\"ナビゲーションボタン\" をどこに配置するか決定します。</string>
@@ -146,12 +146,12 @@
     <string name="setting_summary_nav_pos_left">左</string>
     <string name="setting_summary_nav_pos_center">中央</string>
     <string name="setting_summary_nav_pos_null">非表示</string>
-    <string name="setting_summary_tab">「概要」の最初に表示されるべきものは何ですか?</string>
+    <string name="setting_summary_tab">「一覧画面」の最初に表示されるものを選択します。</string>
     <string name="setting_title_confirm_exit">ブラウザ終了の確認</string>
     <string name="setting_summary_confirm_exit">ブラウザ終了時の確認ダイアログです。</string>
     <string name="setting_title_confirm_tab_close">タブ削除の確認</string>
     <string name="setting_summary_confirm_tab_close">タブ終了時の確認ダイアログです。</string>
-    <string name="setting_overView">概観</string>
+    <string name="setting_overView">一覧画面</string>
     <string name="setting_overView_onStart_title">開始時に表示</string>
     <string name="setting_overView_onStart_summary">毎回のアプリ開始時に \"一覧画面\" を開きます。</string>
     <string name="setting_gestures">ジェスチャー</string>
@@ -166,8 +166,8 @@
     <string name="setting_gesture_left">左スワイプ</string>
     <string name="setting_gesture_right">右スワイプ</string>
     <string name="setting_gesture_01">なし</string>
-    <string name="setting_gesture_02">履歴を前へ</string>
-    <string name="setting_gesture_03">履歴を後ろへ</string>
+    <string name="setting_gesture_02">履歴の前へ</string>
+    <string name="setting_gesture_03">履歴の後ろへ</string>
     <string name="setting_gesture_04">最上部へスクロール</string>
     <string name="setting_gesture_05">最下部へスクロール</string>
     <string name="setting_gesture_06">左のタブに移動</string>

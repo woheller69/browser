@@ -7,8 +7,8 @@
     <string name="list_empty">Liste ist leer</string>
     <string name="album_title_bookmarks">Lesezeichen</string>
     <string name="album_title_history">Verlauf</string>
-    <string name="album_title_home">Startseite</string>
-    <string name="album_title_tab">Geöffnete Tabs</string>
+    <string name="album_title_home">Start</string>
+    <string name="album_title_tab">Tabs</string>
     <string name="album_title_files">Dateien</string>
     <string name="search_hint">Suche</string>
     <string name="color_red">Rot</string>
@@ -29,17 +29,17 @@
     <string name="main_omnibox_input_hint">Suchen oder URL eingeben</string>
     <string name="menu_open_with">Link öffnen mit …</string>
     <string name="menu_quit">Beenden</string>
-    <string name="menu_openFav">Favorit öffnen</string>
+    <string name="menu_openFav">Startseite öffnen</string>
     <string name="menu_delete">Löschen</string>
     <string name="menu_edit">Bearbeiten</string>
     <string name="menu_closeTab">Tab schließen</string>
     <string name="menu_download">Downloads öffnen</string>
-    <string name="menu_fav">Als Favorit speichern</string>
+    <string name="menu_fav">Als Startseite speichern</string>
     <string name="menu_sc">Verknüpfung auf Startbildschirm</string>
     <string name="menu_sort">Sortiere nach …</string>
     <string name="menu_filter">Filter nach …</string>
     <string name="menu_share_link">Link teilen</string>
-    <string name="menu_save_home">Auf Startseite speichern</string>
+    <string name="menu_save_home">Auf Start speichern</string>
     <string name="menu_save_bookmark">Als Lesezeichen speichern</string>
     <string name="menu_save_as">Speichern als …</string>
     <string name="menu_save_pdf">Als PDF speichern</string>
@@ -121,7 +121,7 @@
     <string name="setting_summary_data">Verschiedene App-Daten importieren und exportieren (Ausnahmen, Lesezeichen,…).</string>
     <string name="setting_filter">Lesezeichen-Filter</string>
     <string name="setting_filter_summary">Um den Filterdialog anzuzeigen, lange auf das Lesezeichen-Icon in der Übersicht drücken. Entscheide hier, welche Filter du nutzen wirst.</string>
-    <string name="setting_title_fav">Favorit</string>
+    <string name="setting_title_fav">Startseite</string>
     <string name="setting_summary_fav">Hier kannst du die voreingestellte Website ändern, die beim Start von \"FOSS-Browser\" lädt. Gib \"about:blank\" ein, um eine leere Startseite zu erhalten.</string>
     <string name="setting_title_searchEngine">Nutzerdefinierte Suchmaschine</string>
     <string name="setting_summary_searchEngine">Hier kannst du eine benutzerdefinierte Such-URL eingeben. Wähle auch \"Benutzerdefinierte Suchmaschine\" als Suchanbieter aus.</string>
@@ -216,7 +216,7 @@
     <string name="toast_downloadComplete">Download vollständig. Dateimanager öffnen?</string>
     <string name="toast_unsecured">Diese Website benutzt eine ungesicherte Verbindung (\"http\"). Möchtest du eine sichere Verbindung (\"https\") versuchen?</string>
     <string name="toast_backup">Daten sichern? Das überschreibt die alte Sicherung.</string>
-    <string name="toast_fav">Erfolgreich als Favorit gespeichert.</string>
+    <string name="toast_fav">Erfolgreich als Startseite gespeichert.</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">Löschen</string>
     <string name="whitelist_edit_hint">Domain</string>

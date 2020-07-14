@@ -64,12 +64,6 @@ public class NinjaWebView extends WebView implements AlbumController {
     private NinjaClickHandler clickHandler;
     private GestureDetector gestureDetector;
 
-    private AdBlock adBlock;
-    public AdBlock getAdBlock() {
-        return adBlock;
-    }
-    private Cookie cookieHosts;
-    public Cookie getCookieHosts() { return cookieHosts; }
     private Javascript javaHosts;
     private Remote remoteHosts;
     private SharedPreferences sp;
@@ -98,9 +92,7 @@ public class NinjaWebView extends WebView implements AlbumController {
         this.context = context;
         this.foreground = false;
 
-        this.adBlock = new AdBlock(this.context);
         this.javaHosts = new Javascript(this.context);
-        this.cookieHosts = new Cookie(this.context);
         this.remoteHosts = new Remote(this.context);
         this.album = new AlbumItem(this.context, this, this.browserController);
         this.webViewClient = new NinjaWebViewClient(this);
@@ -131,6 +123,10 @@ public class NinjaWebView extends WebView implements AlbumController {
         sp = PreferenceManager.getDefaultSharedPreferences(context);
         String userAgent = sp.getString("userAgent", "");
         webSettings = getSettings();
+
+        webSettings.setSupportZoom(true);
+        webSettings.setBuiltInZoomControls(true);
+        webSettings.setDisplayZoomControls(false);
 
         if (android.os.Build.VERSION.SDK_INT >= 26) {
             webSettings.setSafeBrowsingEnabled(true);
@@ -189,6 +185,7 @@ public class NinjaWebView extends WebView implements AlbumController {
             webSettings.setAllowUniversalAccessFromFileURLs(false);
             webSettings.setDomStorageEnabled(false);
         }
+
         super.loadUrl(BrowserUnit.queryWrapper(context, url.trim()), getRequestHeaders());
     }
 

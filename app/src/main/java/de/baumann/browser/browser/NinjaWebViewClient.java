@@ -59,8 +59,8 @@ public class NinjaWebViewClient extends WebViewClient {
         this.ninjaWebView = ninjaWebView;
         this.context = ninjaWebView.getContext();
         this.sp = PreferenceManager.getDefaultSharedPreferences(context);
-        this.adBlock = ninjaWebView.getAdBlock();
-        this.cookie = ninjaWebView.getCookieHosts();
+        this.adBlock = new AdBlock(this.context);
+        this.cookie = new Cookie(this.context);
         this.white = false;
         this.enable = true;
     }

@@ -1,3 +1,8 @@
+### v 7.2 (WIP)
+- fix: zooming on websites
+- fix: opening new tab when restarting
+- new: close search on site by back pressing
+
 ### v 7.1
 - removed: ability to save password within bookmark
 - updated: AdBlock hosts

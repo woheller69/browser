@@ -22,7 +22,7 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.preference.PreferenceManager;
 
-import android.os.StrictMode;
+import android.os.Handler;
 import android.print.PrintAttributes;
 import android.print.PrintDocumentAdapter;
 import android.print.PrintManager;
@@ -193,9 +193,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         super.onCreate(savedInstanceState);
 
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
-        WebView.enableSlowWholeDocumentDraw();
-        StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
-        StrictMode.setVmPolicy(builder.build());
 
         context = BrowserActivity.this;
         activity = BrowserActivity.this;
@@ -338,8 +335,13 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             Intent toClearService = new Intent(this, ClearService.class);
             startService(toClearService);
         }
+
         BrowserContainer.clear();
         unregisterReceiver(downloadReceiver);
+
+        if (ninjaWebView != null) {
+            ninjaWebView.destroy();
+        }
         finish();
         super.onDestroy();
     }
@@ -350,10 +352,13 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             case KeyEvent.KEYCODE_MENU:
                 showOverflow();
             case KeyEvent.KEYCODE_BACK:
-                hideKeyboard(activity);
                 hideOverview();
                 if (fullscreenHolder != null || customView != null || videoView != null) {
                     Log.v(TAG, "FOSS Browser in fullscreen mode");
+                } else if (searchPanel.getVisibility() == View.VISIBLE) {
+                    searchOnSite = false;
+                    searchBox.setText("");
+                    showOmnibox();
                 } else if (omnibox.getVisibility() == View.GONE && sp.getBoolean("sp_toolbarShow", true)) {
                     showOmnibox();
                 } else {
@@ -399,7 +404,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         inputBox.setOnItemClickListener((parent, view, position, id) -> {
             String url = ((TextView) view.findViewById(R.id.record_item_time)).getText().toString();
             updateAlbum(url);
-            hideKeyboard(activity);
+            hideKeyboard(inputBox);
         });
     }
 
@@ -431,29 +436,36 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             Log.i(TAG, "resumed FOSS browser");
         } else if (intent.getAction() != null && intent.getAction().equals(Intent.ACTION_WEB_SEARCH)) {
             addAlbum(null, intent.getStringExtra(SearchManager.QUERY), true);
+            getIntent().setAction("");
         } else if (filePathCallback != null) {
             filePathCallback = null;
+            getIntent().setAction("");
         } else if ("sc_history".equals(action)) {
             addAlbum(getString(R.string.app_name), sp.getString("favoriteURL", "https://github.com/scoute-dich/browser"), true);
             showOverview();
             open_history.performClick();
+            getIntent().setAction("");
         } else if ("sc_bookmark".equals(action)) {
             addAlbum(getString(R.string.app_name), sp.getString("favoriteURL", "https://github.com/scoute-dich/browser"), true);
             showOverview();
             open_bookmark.performClick();
+            getIntent().setAction("");
         } else if ("sc_startPage".equals(action)) {
             addAlbum(getString(R.string.app_name), sp.getString("favoriteURL", "https://github.com/scoute-dich/browser"), true);
             showOverview();
             open_startPage.performClick();
+            getIntent().setAction("");
         } else if (Intent.ACTION_SEND.equals(action)) {
             addAlbum(getString(R.string.app_name), url, true);
+            getIntent().setAction("");
         } else if (Intent.ACTION_VIEW.equals(action)) {
             String data = Objects.requireNonNull(getIntent().getData()).toString();
             addAlbum(getString(R.string.app_name), data, true);
-        } else {
+            getIntent().setAction("");
+        } else if (BrowserContainer.size() < 1) {
             addAlbum(getString(R.string.app_name), sp.getString("favoriteURL", "https://github.com/scoute-dich/browser"), true);
+            getIntent().setAction("");
         }
-        getIntent().setAction("");
     }
 
     @SuppressLint("ClickableViewAccessibility")
@@ -527,7 +539,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 return true;
             }
             updateAlbum(query);
-            hideKeyboard(activity);
+            hideKeyboard(inputBox);
             return false;
         });
 
@@ -537,11 +549,12 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 inputBox.setText(ninjaWebView.getUrl());
                 omniboxTitle.setVisibility(View.GONE);
                 inputBox.requestFocus();
-                inputBox.setSelection(0,inputBox.getText().toString().length());
+                Handler handler = new Handler();
+                handler.postDelayed(() -> inputBox.setSelection(0,inputBox.getText().toString().length()), 250);
             } else {
                 omniboxTitle.setVisibility(View.VISIBLE);
                 omniboxTitle.setText(ninjaWebView.getTitle());
-                hideKeyboard(activity);
+                hideKeyboard(inputBox);
             }
         });
         updateAutoComplete();
@@ -944,15 +957,15 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             }
         });
         searchUp.setOnClickListener(v -> {
-            hideKeyboard(activity);
+            hideKeyboard(searchBox);
             ((NinjaWebView) currentAlbumController).findNext(false);
         });
         searchDown.setOnClickListener(v -> {
-            hideKeyboard(activity);
+            hideKeyboard(searchBox);
             ((NinjaWebView) currentAlbumController).findNext(true);
         });
         searchCancel.setOnClickListener(v -> {
-            hideKeyboard(activity);
+            hideKeyboard(searchBox);
             searchOnSite = false;
             searchBox.setText("");
             showOmnibox();
@@ -1542,15 +1555,11 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         }
     }
 
-    private static void hideKeyboard(Activity activity) {
-        InputMethodManager imm = (InputMethodManager) activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
-        //Find the currently focused view, so we can grab the correct window token from it.
-        View view = activity.getCurrentFocus();
-        //If no view currently has focus, create a new one, just so we can grab a window token from it
-        if (view == null) {
-            view = new View(activity);
-        }
-        Objects.requireNonNull(imm).hideSoftInputFromWindow(view.getWindowToken(), 0);
+    private void hideKeyboard(View view) {
+        view.clearFocus();
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        assert imm != null;
+        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 
     private void showOmnibox() {
@@ -1560,7 +1569,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             omnibox.setVisibility(View.VISIBLE);
             omniboxTitle.setVisibility(View.VISIBLE);
             appBar.setVisibility(View.VISIBLE);
-            hideKeyboard(activity);
         }
     }
 
@@ -1946,7 +1954,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
                 action_ok = dialogEditView.findViewById(R.id.action_ok);
                 action_ok.setOnClickListener(view12 -> {
-                    hideKeyboard(activity);
                     RecordAction action = new RecordAction(context);
                     action.open(true);
                     action.deleteURL(url, RecordUnit.TABLE_BOOKMARK);

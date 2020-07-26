@@ -125,11 +125,11 @@
     <string name="setting_summary_fav">Megváltoztathatja az alapértelmezett weboldalt, ami betöltődik a \"FOSS Browser\" indításakor. Üres lap megnyitásához a következőt írja be: \"about:blank\".</string>
     <string name="setting_title_searchEngine">Egyedi keresőmotor</string>
     <string name="setting_summary_searchEngine">Itt adhat meg egyedi keresési URL címet. Továbbá válassza az \"Egyedi keresőmotor\"-t kereső szolgáltatóként.</string>
-    <string name="setting_title_userAgent">Custom user agent</string>
-    <string name="setting_summary_userAgent">Here you can enter a custom user agent. Let empty to use default one.</string>
+    <string name="setting_title_userAgent">Egyedi user agent</string>
+    <string name="setting_summary_userAgent">Itt adhat meg egyedi user agent-et. Hagyja üresen az alapértelmezett használatához.</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">Eszköztár elrejtése</string>
-    <string name="setting_summary_hide">Use the whole screen when scrolling through websites. If you press the back button you will leave fullscreen mode.</string>
+    <string name="setting_summary_hide">Használja a teljes képernyőt amikor a weboldalakat megtekinti. A vissza gomb megnyomásával, elhagyja a teljes képernyős módot.</string>
     <string name="setting_theme">Téma</string>
     <string name="setting_theme_summary">Az alkalmazás témájának beállítása.</string>
     <string name="setting_theme_system">Rendszer téma</string>
@@ -138,14 +138,14 @@
     <string name="setting_title_theme">Felhasználói felület</string>
     <string name="setting_title_behavior">Viselkedés</string>
     <string name="setting_summary_toolbarShow">Pressing back will make the toolbar visible, before going back in history.</string>
-    <string name="setting_title_toolbarShow">First toolbar</string>
+    <string name="setting_title_toolbarShow">Első eszköztár</string>
     <string name="setting_title_nav">Navigációs gomb</string>
     <string name="setting_title_nav_pos">Pozíció</string>
-    <string name="setting_summary_nav_pos">Decide where the \"Navigation Button\" will be placed.</string>
-    <string name="setting_summary_nav_pos_right">Right</string>
-    <string name="setting_summary_nav_pos_left">Left</string>
-    <string name="setting_summary_nav_pos_center">Center</string>
-    <string name="setting_summary_nav_pos_null">Never show</string>
+    <string name="setting_summary_nav_pos">Döntse el, hogy hol legyen a \"Navigációs gomb\".</string>
+    <string name="setting_summary_nav_pos_right">Jobbra</string>
+    <string name="setting_summary_nav_pos_left">Balra</string>
+    <string name="setting_summary_nav_pos_center">Középen</string>
+    <string name="setting_summary_nav_pos_null">Soha ne mutassa</string>
     <string name="setting_summary_tab">What should be shown at the start of the \"Overview\"?</string>
     <string name="setting_title_confirm_exit">Confirm browser exit</string>
     <string name="setting_summary_confirm_exit">Confirmation dialog when closing browser.</string>
@@ -155,7 +155,7 @@
     <string name="setting_overView_onStart_title">Show on start</string>
     <string name="setting_overView_onStart_summary">Open the \"Overview\" on every app start.</string>
     <string name="setting_gestures">Kézmozdulatok</string>
-    <string name="setting_gestures_use_title">Use gestures</string>
+    <string name="setting_gestures_use_title">Használjon kézmozdulatokat</string>
     <string name="setting_gestures_use_summary">Use gestures on the toolbar and the \"Navigation button\".</string>
     <string name="setting_title_reopenLastTab">Reopen last tab</string>
     <string name="setting_summary_reopenLastTab">Reopen a new tab when the last tab is closed instead of exiting the browser.</string>

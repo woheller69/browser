@@ -185,7 +185,7 @@
     <string name="hint_database">Ezzel törli az aktuális adatokat. Folytatja?</string>
     <!-- Others setting -->
     <string name="setting_title_others">Egyebek</string>
-    <string name="setting_title_appSettings">App settings</string>
+    <string name="setting_title_appSettings">Alkalmazás beállításai</string>
     <string name="setting_summary_appSettings">Open the system app settings for \"FOSS Browser\". There you can, depending on your Android version grant permissions, clear the app data and so on.</string>
     <string name="setting_title_community">Contributing</string>
     <!-- Toast -->

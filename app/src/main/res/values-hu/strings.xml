@@ -146,11 +146,11 @@
     <string name="setting_summary_nav_pos_left">Balra</string>
     <string name="setting_summary_nav_pos_center">Középen</string>
     <string name="setting_summary_nav_pos_null">Soha ne mutassa</string>
-    <string name="setting_summary_tab">What should be shown at the start of the \"Overview\"?</string>
+    <string name="setting_summary_tab">Mi jelenjen meg az \"Áttekintés\" elején?</string>
     <string name="setting_title_confirm_exit">Böngésző bezárásának megerősítése</string>
-    <string name="setting_summary_confirm_exit">Confirmation dialog when closing browser.</string>
+    <string name="setting_summary_confirm_exit">Megerősítő párbeszédpanel a böngésző bezárásakor.</string>
     <string name="setting_title_confirm_tab_close">Lap bezárásának megerősítése</string>
-    <string name="setting_summary_confirm_tab_close">Confirmation dialog when closing a tab.</string>
+    <string name="setting_summary_confirm_tab_close">Megerősítő párbeszédpanel a lap bezárásakor.</string>
     <string name="setting_overView">Áttekintés</string>
     <string name="setting_overView_onStart_title">Mutassa indításkor</string>
     <string name="setting_overView_onStart_summary">Az \"Áttekintés\" megnyitása minden alkalmazás indításkor.</string>
@@ -180,9 +180,9 @@
     <string name="setting_title_import_bookmarks">Könyvjelzők importálása</string>
     <string name="setting_title_export_appData">Alkalmazásadatok exportálása</string>
     <string name="setting_title_import_appData">Alkalmazásadatok importálása</string>
-    <string name="setting_summary_export_appData">Export whole database and your personal settings.</string>
+    <string name="setting_summary_export_appData">A teljes adatbázis és a személyes beállítások exportálása.</string>
     <string name="title_appData">Alkalmazásadatok</string>
-    <string name="hint_database">This will delete current data. Proceed?</string>
+    <string name="hint_database">Ezzel törli az aktuális adatokat. Folytatja?</string>
     <!-- Others setting -->
     <string name="setting_title_others">Egyebek</string>
     <string name="setting_title_appSettings">App settings</string>

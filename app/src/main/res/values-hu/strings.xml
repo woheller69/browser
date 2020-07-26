@@ -147,13 +147,13 @@
     <string name="setting_summary_nav_pos_center">Középen</string>
     <string name="setting_summary_nav_pos_null">Soha ne mutassa</string>
     <string name="setting_summary_tab">What should be shown at the start of the \"Overview\"?</string>
-    <string name="setting_title_confirm_exit">Confirm browser exit</string>
+    <string name="setting_title_confirm_exit">Böngésző bezárásának megerősítése</string>
     <string name="setting_summary_confirm_exit">Confirmation dialog when closing browser.</string>
-    <string name="setting_title_confirm_tab_close">Confirm tab close</string>
+    <string name="setting_title_confirm_tab_close">Lap bezárásának megerősítése</string>
     <string name="setting_summary_confirm_tab_close">Confirmation dialog when closing a tab.</string>
     <string name="setting_overView">Áttekintés</string>
-    <string name="setting_overView_onStart_title">Show on start</string>
-    <string name="setting_overView_onStart_summary">Open the \"Overview\" on every app start.</string>
+    <string name="setting_overView_onStart_title">Mutassa indításkor</string>
+    <string name="setting_overView_onStart_summary">Az \"Áttekintés\" megnyitása minden alkalmazás indításkor.</string>
     <string name="setting_gestures">Kézmozdulatok</string>
     <string name="setting_gestures_use_title">Használjon kézmozdulatokat</string>
     <string name="setting_gestures_use_summary">Használjon kézmozdulatokat az eszköztáron és a \"Navigációs gomb\"-hoz.</string>

@@ -156,9 +156,9 @@
     <string name="setting_overView_onStart_summary">Open the \"Overview\" on every app start.</string>
     <string name="setting_gestures">Kézmozdulatok</string>
     <string name="setting_gestures_use_title">Használjon kézmozdulatokat</string>
-    <string name="setting_gestures_use_summary">Use gestures on the toolbar and the \"Navigation button\".</string>
-    <string name="setting_title_reopenLastTab">Reopen last tab</string>
-    <string name="setting_summary_reopenLastTab">Reopen a new tab when the last tab is closed instead of exiting the browser.</string>
+    <string name="setting_gestures_use_summary">Használjon kézmozdulatokat az eszköztáron és a \"Navigációs gomb\"-hoz.</string>
+    <string name="setting_title_reopenLastTab">Utolsó lap megnyitása</string>
+    <string name="setting_summary_reopenLastTab">A bőngészőből való kilépés helyett nyisson új lapot, amikor az utolsó lapot is bezárja.</string>
     <!-- gestures -->
     <string name="setting_title_toolbar">Eszköztár</string>
     <string name="setting_gesture_up">Swipe up</string>

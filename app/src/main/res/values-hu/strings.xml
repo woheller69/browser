@@ -120,11 +120,11 @@
     <string name="setting_summary_ui">Megváltoztathatja az alkalmazás viselkedését és felhasználói felületét az igényeinek megfelelően.</string>
     <string name="setting_summary_data">Számos alkalmazásadatot (engedélylisták, könyvjelzők) importálhat és exportálhat.</string>
     <string name="setting_filter">Könyvjelző szűrő</string>
-    <string name="setting_filter_summary">To show the filter dialog long press on the bookmark icon in the overview. Decide which filters you will use.</string>
+    <string name="setting_filter_summary">A szűrő párbeszédpanel megjelenítéséhez nyomja meg hosszan a könyvjelző ikont az áttekintésben. Döntse el, hogy mely szűrőket fogja használni.</string>
     <string name="setting_title_fav">Kedvenc</string>
     <string name="setting_summary_fav">Megváltoztathatja az alapértelmezett weboldalt, ami betöltődik a \"FOSS Browser\" indításakor. Üres lap megnyitásához a következőt írja be: \"about:blank\".</string>
     <string name="setting_title_searchEngine">Egyedi keresőmotor</string>
-    <string name="setting_summary_searchEngine">Here you can enter a custom search URL. Also choose \"Custom search engine\" as search provider.</string>
+    <string name="setting_summary_searchEngine">Itt adhat meg egyedi keresési URL címet. Továbbá válassza az \"Egyedi keresőmotor\"-t kereső szolgáltatóként.</string>
     <string name="setting_title_userAgent">Custom user agent</string>
     <string name="setting_summary_userAgent">Here you can enter a custom user agent. Let empty to use default one.</string>
     <!-- App behavior -->

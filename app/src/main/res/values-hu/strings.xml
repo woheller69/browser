@@ -137,7 +137,7 @@
     <string name="setting_theme_dark">Sötét téma</string>
     <string name="setting_title_theme">Felhasználói felület</string>
     <string name="setting_title_behavior">Viselkedés</string>
-    <string name="setting_summary_toolbarShow">Pressing back will make the toolbar visible, before going back in history.</string>
+    <string name="setting_summary_toolbarShow">A vissza megnyomása láthatóvá teszi az eszköztárat, mielőtt visszatér az előzményekhez.</string>
     <string name="setting_title_toolbarShow">Első eszköztár</string>
     <string name="setting_title_nav">Navigációs gomb</string>
     <string name="setting_title_nav_pos">Pozíció</string>

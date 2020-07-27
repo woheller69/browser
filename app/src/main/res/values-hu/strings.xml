@@ -161,10 +161,10 @@
     <string name="setting_summary_reopenLastTab">A bőngészőből való kilépés helyett nyisson új lapot, amikor az utolsó lapot is bezárja.</string>
     <!-- gestures -->
     <string name="setting_title_toolbar">Eszköztár</string>
-    <string name="setting_gesture_up">Swipe up</string>
-    <string name="setting_gesture_down">Swipe down</string>
-    <string name="setting_gesture_left">Swipe left</string>
-    <string name="setting_gesture_right">Swipe right</string>
+    <string name="setting_gesture_up">Csúsztatás felfelé</string>
+    <string name="setting_gesture_down">Csúsztatás lefelé</string>
+    <string name="setting_gesture_left">Csúsztatás balra</string>
+    <string name="setting_gesture_right">Csúsztatás jobbra</string>
     <string name="setting_gesture_01">Nothing</string>
     <string name="setting_gesture_02">Forward in history</string>
     <string name="setting_gesture_03">Back in history</string>
@@ -212,7 +212,7 @@
     <string name="toast_permission_loc">\"FOSS Browser\" needs the permission to \"access your location\". This is requested from some websites for example when they offer some kind of navigation.</string>
     <string name="toast_restart">You must restart \"FOSS Browser\" to apply changes. Close now?</string>
     <string name="toast_quit">Do you want to quit \"FOSS Browser\"?</string>
-    <string name="toast_close_tab">Do you want to close current tab?</string>
+    <string name="toast_close_tab">Be akarja zárni a jelenlegi lapot?</string>
     <string name="toast_downloadComplete">Download complete. Open file manager?</string>
     <string name="toast_unsecured">Website uses an unsecured connection (\"http\"). Try a secure connection (\"https\")?</string>
     <string name="toast_backup">Backup data? This will overwrite the old backup.</string>

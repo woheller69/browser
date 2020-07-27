@@ -166,10 +166,10 @@
     <string name="setting_gesture_left">Csúsztatás balra</string>
     <string name="setting_gesture_right">Csúsztatás jobbra</string>
     <string name="setting_gesture_01">Semmi</string>
-    <string name="setting_gesture_02">Forward in history</string>
-    <string name="setting_gesture_03">Back in history</string>
-    <string name="setting_gesture_04">Scroll to top</string>
-    <string name="setting_gesture_05">Scroll to bottom</string>
+    <string name="setting_gesture_02">Előre az előzményekben</string>
+    <string name="setting_gesture_03">Vissza az előzményekben</string>
+    <string name="setting_gesture_04">Görgetés a tetejére</string>
+    <string name="setting_gesture_05">Görgetés az aljára</string>
     <string name="setting_gesture_06">Váltás a bal lapra</string>
     <string name="setting_gesture_07">Váltás a jobb lapra</string>
     <string name="setting_gesture_08">Áttekintés mutatása</string>

@@ -187,7 +187,7 @@
     <string name="setting_title_others">Egyebek</string>
     <string name="setting_title_appSettings">Alkalmazás beállításai</string>
     <string name="setting_summary_appSettings">Open the system app settings for \"FOSS Browser\". There you can, depending on your Android version grant permissions, clear the app data and so on.</string>
-    <string name="setting_title_community">Contributing</string>
+    <string name="setting_title_community">Hozzájárulás</string>
     <!-- Toast -->
     <string name="toast_add_to_home_successful">Sikeresen hozzáadva a Kezdőlaphoz</string>
     <string name="toast_add_to_home_failed">Nem sikerült hozzáadni a Kezdőlaphoz</string>

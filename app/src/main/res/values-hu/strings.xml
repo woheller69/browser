@@ -215,7 +215,7 @@
     <string name="toast_close_tab">Be akarja zárni a jelenlegi lapot?</string>
     <string name="toast_downloadComplete">Befejezve a letöltés. Megnyitja a fájlkezelőt?</string>
     <string name="toast_unsecured">A weboldal nem biztonságos kapcsolatot használ (\"http\"). Megpróbálja a biztonságos kapcsolatot (\"https\")?</string>
-    <string name="toast_backup">Backup data? This will overwrite the old backup.</string>
+    <string name="toast_backup">Biztonsági másolat az adatokról? Ez felülírja a régi biztonsági másolatot.</string>
     <string name="toast_fav">Sikeresen beállítva kedvencként.</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">Törlés</string>

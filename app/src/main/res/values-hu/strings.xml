@@ -198,7 +198,7 @@
     <string name="toast_domain_already_exists">A domain már létezik</string>
     <string name="toast_export_successful">Exportálva mint:&#160;</string>
     <string name="toast_export_failed">Sikertelen exportálás</string>
-    <string name="toast_import_successful">Imported count:&#160;</string>
+    <string name="toast_import_successful">Importált szám:&#160;</string>
     <string name="toast_import_failed">Sikertelen importálás</string>
     <string name="toast_input_empty">Nem írt be semmit</string>
     <string name="toast_invalid_domain">Érvénytelen domain</string>

@@ -244,20 +244,20 @@
 
     </string>
     <!-- License changelog -->
-    <string name="cont_dialog">        &lt;i&gt;First I would like to thank all people who contributed in any way on this project. They submitted issues, translated or helped in any other way. On following sites you can become a active member of this great community:&lt;/i&gt;&lt;br&gt;&lt;br&gt;
+    <string name="cont_dialog">        &lt;i&gt;Először is szeretnék köszönetet mondani mindenkinek, aki bármilyen módon hozzájárult ehhez a projekthez. Akik hibajelentéseket küldtek, fordítást készítettek vagy egyéb módon segítettek. A következő oldalakon aktív tagjává válhat ennek a nagyszerű közösségnek:&lt;/i&gt;&lt;br&gt;&lt;br&gt;
 
         &lt;b&gt;Crowdin:&lt;/b&gt;&lt;br&gt;
-        Crowdin is an online plattform to translate applications in other languages. A big thanks to all translators. You can also help.&lt;br&gt;
+        A Crowdin egy online platform az alkalmazások más nyelvekre történő fordítására. Nagy köszönet minden fordítónak. Ön is tud segíteni.&lt;br&gt;
         &lt;i&gt;https://crowdin.com/project/foss-browser&lt;/i&gt;&lt;br&gt;&lt;br&gt;
 
         &lt;b&gt;XDA-thread:&lt;/b&gt;&lt;br&gt;
-        XDA is a great community for developers and smartphone enthusiasts. Here you can report issues, ask for new features and everything other related to \"FOSS Browser\".&lt;br&gt;
+        Az XDA egy nagyszerű közösség a fejlesztők és az okostelefon-rajongók számára. Itt jelentheti a hibákat, kérhet új funkciókat és minden egyéb, ami a \"FOSS Browser\"-rel kapcsolatos.&lt;br&gt;
         &lt;i&gt;https://forum.xda-developers.com/android/apps-games/app-browser-t3500091&lt;/i&gt;&lt;br&gt;&lt;br&gt;
 
         &lt;b&gt;Github:&lt;/b&gt;&lt;br&gt;
-        On Github you can see the source code of \"FOSS Browser\". This is the more technical solution: open issues, ask for new features or even help developing or translating.&lt;br&gt;
+        A Github-on láthatja \"FOSS Browser\" forráskódját. Ez inkább a technikai dolgokkal foglalkozik: hibákat tud bejelenteni, kérhet új funkciókat vagy akár segíthet a fejlesztésben vagy a fordításban.&lt;br&gt;
         &lt;i&gt;https://github.com/scoute-dich/browser&lt;/i&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
 
-        &lt;i&gt;Following people contributed at this project. If I have forgotten anybody, please contact me:&lt;/i&gt;
+        &lt;i&gt;A következő emberek járultak hozzá ehhez a projekthez. Ha elfelejtettem bárkit, kérem, lépjen kapcsolatba velem:&lt;/i&gt;
     </string>
 </resources>

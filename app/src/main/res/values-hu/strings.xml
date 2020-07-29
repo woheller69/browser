@@ -223,11 +223,11 @@
     <string name="whitelist_add">Hozzáad</string>
     <!-- Dialog help -->
     <string name="dialogHelp_tipTitle">Tippek</string>
-    <string name="dialogHelp_tipText">        &lt;b&gt;Menus and dialogs&lt;/b&gt;&lt;br&gt;
-        All menus and dialogs are opened at the bottom of the screen. If the dialog is large you will first see only the upper part. If you swipe it up, the rest will get visible. You can close them by pressing the back button, swiping them down or by clicking outside&lt;br&gt;&lt;br&gt;
+    <string name="dialogHelp_tipText">        &lt;b&gt;Menük és párbeszédpanelek&lt;/b&gt;&lt;br&gt;
+        Az összes menü és párbeszédpanel a képernyő alján nyílik meg. Ha a párbeszédpanel nagyméretű, akkor először csak a felső rész látható. A többi is láthatóvá válik, ha felfelé csúsztatja. A bezárásukhoz nyomja meg a vissza gombot, csúsztassa lefelé vagy kattintson kívülre.&lt;br&gt;&lt;br&gt;
 
-        &lt;b&gt;Long press&lt;/b&gt;&lt;br&gt;
-        If you long press the menu icon or the \"Navigation button\", the \"Fast toggle dialog\" will show. If you long press the \"Bookmark icon\", the \"Filter dialog\" will show.
+        &lt;b&gt;Hosszú megnyomás&lt;/b&gt;&lt;br&gt;
+        Ha hosszan nyomva tartja a menü ikont vagy a \"Navigációs gomb\"-ot, a \"Gyors váltás párbeszédpanel\" fog megjelenni. Ha hosszan nyomva tartja a \"Könyvjelző ikont\", akkor pedig a \"Szűrő párbeszédpanel\" jelenik meg.
     </string>
     <string name="dialogHelp_filterText">        You can tag your bookmarks with filters. In this way you can group your bookmarks. You can open the filter dialog by long pressing the bookmark icon. If you activate an entry a dialog will appear, where you can edit the name of the filter.
     </string>

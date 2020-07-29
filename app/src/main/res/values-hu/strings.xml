@@ -229,7 +229,7 @@
         &lt;b&gt;Hosszú megnyomás&lt;/b&gt;&lt;br&gt;
         Ha hosszan nyomva tartja a menü ikont vagy a \"Navigációs gomb\"-ot, a \"Gyors váltás párbeszédpanel\" fog megjelenni. Ha hosszan nyomva tartja a \"Könyvjelző ikont\", akkor pedig a \"Szűrő párbeszédpanel\" jelenik meg.
     </string>
-    <string name="dialogHelp_filterText">        You can tag your bookmarks with filters. In this way you can group your bookmarks. You can open the filter dialog by long pressing the bookmark icon. If you activate an entry a dialog will appear, where you can edit the name of the filter.
+    <string name="dialogHelp_filterText">        A könyvjelzőket szűrőkkel címkézheti. Ilyen módon csoportosítani tudja a könyvjelzőket. A szűrő párbeszédpanel megnyitható a könyvjelző ikon hosszan nyomva tartásával. Egy bejegyzés aktiválásakor párbeszédpanel jelenik meg, ahol szerkeszteni tudja a szűrő nevét.
     </string>
     <!-- Dialog changelog -->
     <string name="changelog_dialog">        Az ön nyelve még nem támogatott? Le szeretné fordítani a FOSS Browser-t? Vagy javítana a meglévő fordításon? Nyugodtan csatlakozzon hozzánk a Crowdin-on: https://crowdin.com/project/foss-browser.&lt;br&gt;&lt;br&gt;

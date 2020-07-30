@@ -39,12 +39,12 @@
     <string name="menu_sort">Сортирај по …</string>
     <string name="menu_filter">Филтрирај по …</string>
     <string name="menu_share_link">Подели везу</string>
-    <string name="menu_save_home">Save at Home</string>
-    <string name="menu_save_bookmark">Save as bookmark</string>
-    <string name="menu_save_as">Save as …</string>
-    <string name="menu_save_pdf">Save as PDF</string>
-    <string name="menu_shareClipboard">Copy to clipboard</string>
-    <string name="menu_other_searchSite">Search on site</string>
+    <string name="menu_save_home">Сачувај на почетној</string>
+    <string name="menu_save_bookmark">Сачувај као забелешку</string>
+    <string name="menu_save_as">Сачувај као …</string>
+    <string name="menu_save_pdf">Сачувај као PDF датотеку</string>
+    <string name="menu_shareClipboard">Копирај</string>
+    <string name="menu_other_searchSite">Претражи на страници</string>
     <string name="menu_other_info">About \"FOSS Browser\"</string>
     <string name="menu_other_help">Help</string>
     <!-- Dialog -->

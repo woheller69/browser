@@ -67,7 +67,7 @@
     <string name="setting_summary_clear_control">Избришите податке прегледача или изаберите који подаци ће бити избрисани након што угасите апликацију.</string>
     <string name="setting_summary_start_control">Изаберите који компоненти прегледача ће бити омогућени при подизању.</string>
     <string name="setting_title_search_engine">Претраживач</string>
-    <string name="setting_summary_search_engine">Here you can choose your preferred search engine or set a custom one.</string>
+    <string name="setting_summary_search_engine">Овде можете изабрати подразумевани претраживач, или сами додати.</string>
     <string name="setting_summary_search_engine_google">Google</string>
     <string name="setting_summary_search_engine_duckduckgo">DuckDuckGo</string>
     <string name="setting_summary_search_engine_startpage">StartPage</string>
@@ -77,9 +77,9 @@
     <string name="setting_summary_search_engine_searx">Searx</string>
     <string name="setting_summary_search_engine_qwant">Qwant</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
-    <string name="setting_title_inverted">Inverted colors</string>
-    <string name="setting_summary_inverted">If checked, content will be rendered in a inverted grey scale mode. This is a kind of \"night mode\".</string>
-    <string name="setting_title_font">Font size</string>
+    <string name="setting_title_inverted">Обрнуте боје</string>
+    <string name="setting_summary_inverted">Ако је чекирано, садржај ће бити приказан у обрнутом црно-белом режиму. Изгледа слично ноћном режиму.</string>
+    <string name="setting_title_font">Величина слова</string>
     <string name="setting_summary_font">Change the font size for displaying websites.</string>
     <string name="setting_title_remote">Remote content</string>
     <string name="setting_summary_remote">Enable remote content, which is not directly from the website you are visiting. Disabling this is more secure, faster and saves data volume. But some content will not be displayed anymore.</string>

@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- App -->
-    <string name="app_name">FOSS Browser</string>
-    <string name="app_ok">OK</string>
-    <string name="app_cancel">Cancel</string>
-    <string name="list_empty">List is empty</string>
-    <string name="album_title_bookmarks">Bookmarks</string>
-    <string name="album_title_history">History</string>
-    <string name="album_title_home">Home</string>
-    <string name="album_title_tab">Opened Tabs</string>
-    <string name="album_title_files">Files</string>
-    <string name="search_hint">Search</string>
-    <string name="color_red">Red</string>
-    <string name="color_pink">Pink</string>
-    <string name="color_purple">Purple</string>
-    <string name="color_blue">Blue</string>
-    <string name="color_teal">Teal</string>
-    <string name="color_green">Green</string>
-    <string name="color_lime">Lime</string>
+    <string name="app_name">开源浏览器</string>
+    <string name="app_ok">确定</string>
+    <string name="app_cancel">取消</string>
+    <string name="list_empty">列表为空</string>
+    <string name="album_title_bookmarks">书签</string>
+    <string name="album_title_history">历史记录</string>
+    <string name="album_title_home">主页</string>
+    <string name="album_title_tab">开启的标签页</string>
+    <string name="album_title_files">文件</string>
+    <string name="search_hint">搜索</string>
+    <string name="color_red">红色</string>
+    <string name="color_pink">粉色</string>
+    <string name="color_purple">紫色</string>
+    <string name="color_blue">蓝色</string>
+    <string name="color_teal">水鸭青</string>
+    <string name="color_green">绿色</string>
+    <string name="color_lime">黄绿色</string>
     <string name="color_yellow">Yellow</string>
     <string name="color_orange">Orange</string>
     <string name="color_brown">Brown</string>

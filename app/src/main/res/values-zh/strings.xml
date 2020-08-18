@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- App -->
-    <string name="app_name">开源浏览器</string>
+    <string name="app_name">FOSS浏览器</string>
     <string name="app_ok">确定</string>
     <string name="app_cancel">取消</string>
     <string name="list_empty">列表为空</string>
@@ -119,9 +119,9 @@
     <string name="setting_title_data">备份</string>
     <string name="setting_summary_ui">更改应用的行为和界面以适应您的设置。</string>
     <string name="setting_summary_data">导入和导出应用数据 (白名单、书签)。</string>
-    <string name="setting_filter">Bookmark filter</string>
-    <string name="setting_filter_summary">To show the filter dialog long press on the bookmark icon in the overview. Decide which filters you will use.</string>
-    <string name="setting_title_fav">Favorite</string>
+    <string name="setting_filter">书签过滤器</string>
+    <string name="setting_filter_summary">要显示过滤器选择对话框，请长按概览中的书签图标。选择您所需要的过滤器。</string>
+    <string name="setting_title_fav">主页设置</string>
     <string name="setting_summary_fav">Here you can change the default website which loads on start of \"FOSS Browser\". Enter \"about:blank\" to get an emty start site.</string>
     <string name="setting_title_searchEngine">Custom search engine</string>
     <string name="setting_summary_searchEngine">Here you can enter a custom search URL. Also choose \"Custom search engine\" as search provider.</string>

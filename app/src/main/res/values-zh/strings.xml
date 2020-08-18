@@ -244,20 +244,20 @@
 
     </string>
     <!-- License changelog -->
-    <string name="cont_dialog">        &lt;i&gt;First I would like to thank all people who contributed in any way on this project. They submitted issues, translated or helped in any other way. On following sites you can become a active member of this great community:&lt;/i&gt;&lt;br&gt;&lt;br&gt;
+    <string name="cont_dialog">        &lt;i&gt;首先，我要感谢所有以任何方式为这个项目做出贡献的人。 他们以任何其他方式提交问题、翻译或帮助。 在以下网站上您可以成为这个伟大社区的活跃成员:&lt;/i&gt;&lt;br&gt;&lt;br&gt;
 
         &lt;b&gt;Crowdin:&lt;/b&gt;&lt;br&gt;
-        Crowdin is an online plattform to translate applications in other languages. A big thanks to all translators. You can also help.&lt;br&gt;
-        &lt;i&gt;https://crowdin.com/project/foss-browser&lt;/i&gt;&lt;br&gt;&lt;br&gt;
+        Crowdin 是一个可翻译应用程序为其他语言的在线工程。 非常感谢所有翻译。您也可以帮忙。&lt;br&gt;
+        &lt;i&gt;https://crowdin.com/project/foss-browser &lt;/i&gt;&lt;br&gt;&lt;br&gt;
 
         &lt;b&gt;XDA-thread:&lt;/b&gt;&lt;br&gt;
-        XDA is a great community for developers and smartphone enthusiasts. Here you can report issues, ask for new features and everything other related to \"FOSS Browser\".&lt;br&gt;
-        &lt;i&gt;https://forum.xda-developers.com/android/apps-games/app-browser-t3500091&lt;/i&gt;&lt;br&gt;&lt;br&gt;
+        XDA是开发者和智能手机爱好者的好社区。 您可以在这里报告问题，询问新功能和与“FOSS浏览器”相关的一切。&lt;br&gt;
+        &lt;i&gt;https://forum.xda-developers。 om/android/apps-games/app-browser-t3500091&lt;/i&gt;&lt;br&gt;&lt;br&gt;
 
         &lt;b&gt;Github:&lt;/b&gt;&lt;br&gt;
-        On Github you can see the source code of \"FOSS Browser\". This is the more technical solution: open issues, ask for new features or even help developing or translating.&lt;br&gt;
-        &lt;i&gt;https://github.com/scoute-dich/browser&lt;/i&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+        在 Github 上，您可以看到“FOSS浏览器”的源代码。 这是更具技术性的解决办法：未决问题，要求新的特性，甚至帮助开发或翻译。&lt;br&gt;
+        &lt;i&gt;https://github.com/scoute-dich/browser &lt;/i&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
 
-        &lt;i&gt;Following people contributed at this project. If I have forgotten anybody, please contact me:&lt;/i&gt;
+        &lt;i&gt;关注此项目的人。 如果我忘记了任何人，请联系我：&lt;/i&gt;
     </string>
 </resources>

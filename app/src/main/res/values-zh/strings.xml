@@ -137,7 +137,7 @@
     <string name="setting_theme_dark">暗色主题</string>
     <string name="setting_title_theme">界面</string>
     <string name="setting_title_behavior">行为</string>
-    <string name="setting_summary_toolbarShow">Pressing back will make the toolbar visible, before going back in history.</string>
+    <string name="setting_summary_toolbarShow">在返回历史记录页面之前按下返回键将会使工具栏可见</string>
     <string name="setting_title_toolbarShow">第一个工具栏</string>
     <string name="setting_title_nav">导航栏按钮</string>
     <string name="setting_title_nav_pos">位置</string>
@@ -223,24 +223,22 @@
     <string name="whitelist_add">添加</string>
     <!-- Dialog help -->
     <string name="dialogHelp_tipTitle">提示</string>
-    <string name="dialogHelp_tipText">        &lt;b&gt;Menus and dialogs&lt;/b&gt;&lt;br&gt;
-        All menus and dialogs are opened at the bottom of the screen. If the dialog is large you will first see only the upper part. If you swipe it up, the rest will get visible. You can close them by pressing the back button, swiping them down or by clicking outside&lt;br&gt;&lt;br&gt;
+    <string name="dialogHelp_tipText">        &lt;b&gt;菜单和对话框&lt;/b&gt;&lt;br&gt;
+        所有菜单和对话框都是在屏幕底部打开的。 如果对话框是大的，您将先看到上面的部分。如果您向上滑动，您将会看到其余部分。 您可以通过按返回按钮关闭它们， 也可以向下滑动或单击外部&lt;br&gt;&lt;br&gt;
 
-        &lt;b&gt;Long press&lt;/b&gt;&lt;br&gt;
-        If you long press the menu icon or the \"Navigation button\", the \"Fast toggle dialog\" will show. If you long press the \"Bookmark icon\", the \"Filter dialog\" will show.
+        &lt;b&gt;长按&lt;/b&gt;&lt;br&gt;
+        如果您长按菜单图标或“导航按钮”， 将显示“快速切换对话框”。 如果您长按\"书签图标\"，将会显示\"过滤对话框\"。
     </string>
-    <string name="dialogHelp_filterText">        You can tag your bookmarks with filters. In this way you can group your bookmarks. You can open the filter dialog by long pressing the bookmark icon. If you activate an entry a dialog will appear, where you can edit the name of the filter.
+    <string name="dialogHelp_filterText">        您可以用过滤器标记您的书签。这样您就可以将您的书签分组。 您可以长按书签图标打开过滤器对话框。 如果您激活一个条目，将出现一个对话框，您可以在那里编辑过滤器的名称。
     </string>
     <!-- Dialog changelog -->
-    <string name="changelog_dialog">        Your language isn\'t supported yet? You want to translate FOSS Browser? Or make improvements to existing translations? Feel free to join us on Crowdin: https://crowdin.com/project/foss-browser.&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;On the following sites you have access to all important information about \"FOSS Browser\". Please read also the help dialog within the app.&lt;/b&gt;&lt;br&gt;&lt;br&gt;
-
-        \u25AA &lt;i&gt;Project site:&lt;/i&gt; https://github.com/scoute-dich/Browser&lt;br&gt;
-        \u25AA &lt;i&gt;Changelog:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/CHANGELOG.md&lt;br&gt;
-        \u25AA &lt;i&gt;FAQ:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/FAQs.md&lt;br&gt;
-        \u25AA &lt;i&gt;License:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/LICENSE.md&lt;br&gt;
-        \u25AA &lt;i&gt;Privacy:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/PRIVACY.md
+    <string name="changelog_dialog">您的语言还不被支持？您想要翻译FOSS Browser吗？或者改进现有的翻译？您随时都能在Crowdin上加入我们：https://crowdin.com/project/foss-browser.&lt;br&gt;&lt;br&gt;
+        &lt;b&gt;在下列的网站上您可以了解所有关于FOSS Browser的重要信息。同时也请阅读应用内的帮助对话框。&lt;/b&gt;&lt;br&gt;&lt;br&gt;
+        \u25AA&lt;i&gt;项目网站：&lt;/i&gt;https://github.com/scoute-dich/Browser&lt;br&gt;
+        \u25AA&lt;i&gt;新版变化：&lt;/i&gt;https://github.com/scoute-dich/browser/blob/master/CHANGELOG.md&lt;br&gt;
+        \u25AA&lt;i&gt;常见问题：&lt;/i&gt;https://github.com/scoute-dich/browser/blob/master/FAQs.md&lt;br&gt;
+        \u25AA&lt;i&gt;许可证：&lt;/i&gt;https://github.com/scoute-dich/browser/blob/master/LICENSE.md&lt;br&gt;
+        \u25AA&lt;i&gt;隐私协议：&lt;/i&gt;https://github.com/scoute-dich/browser/blob/master/PRIVACY.md
 
     </string>
     <!-- License changelog -->

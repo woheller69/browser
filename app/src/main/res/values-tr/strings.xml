@@ -182,7 +182,7 @@
     <string name="setting_title_import_appData">Uygulama verilerini içe aktar</string>
     <string name="setting_summary_export_appData">Tüm veritabanını ve kişisel ayarlarınızı dışa aktarın.</string>
     <string name="title_appData">Uygulama verileri</string>
-    <string name="hint_database">This will delete current data. Proceed?</string>
+    <string name="hint_database">Bu, mevcut verileri siler. Devam edilsin mi?</string>
     <!-- Others setting -->
     <string name="setting_title_others">Diğer</string>
     <string name="setting_title_appSettings">Uygulama ayarları</string>
@@ -214,7 +214,7 @@
     <string name="toast_quit">\"FOSS Tarayıcı\"sından çıkmak istiyor musunuz?</string>
     <string name="toast_close_tab">Geçerli sekmeyi kapatmak istiyor musunuz?</string>
     <string name="toast_downloadComplete">İndirme tamamlandı. Dosya yöneticisi açılsın mı?</string>
-    <string name="toast_unsecured">Website uses an unsecured connection (\"http\"). Try a secure connection (\"https\")?</string>
+    <string name="toast_unsecured">Web sitesi güvenli olmayan bir bağlantı (\"http\") kullanıyor. Güvenli bir bağlantı (\"https\") denensin mi?</string>
     <string name="toast_backup">Veri yedeklensin mi? Bu eski yedeklemenin üzerine yazacaktır.</string>
     <string name="toast_fav">Başarıyla başlangıç sitesi olarak ayarlandı.</string>
     <!-- Whitelist -->

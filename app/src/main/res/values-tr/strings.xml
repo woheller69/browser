@@ -100,11 +100,11 @@
     <string name="setting_summary_adblock">Can sıkıcı reklamları engellemek için Reklam Engelleyiciyi etkinleştirin. Siteler de etkinleştirildiğinde daha hızlı yüklenir.</string>
     <string name="setting_title_whitelist">Reklam Engelleyici beyaz listesi</string>
     <string name="setting_title_location">Konum</string>
-    <string name="setting_summary_location">Allow websites to access your location. Some websites (like Google maps for navigation) need this enabled.</string>
+    <string name="setting_summary_location">Web sitelerinin konumunuza erişmesine izin verin. Bazı web siteleri (navigasyon için Google Haritalar gibi) bunun etkinleştirilmesi gerekir.</string>
     <string name="setting_title_history">Geçmiş</string>
     <string name="setting_summary_history">Ziyaret edilen web sitelerinin geçmişini kaydedin.</string>
     <!-- browser clear -->
-    <string name="data_summary">All files will be exported to the \"Android/data/de.baumann.browser/files/browser_backup/\" directory of your sd-card. This directory will be DELETED, if you uninstall \"FOSS Browser\". So make a backup regularly on a save place.</string>
+    <string name="data_summary">Tüm dosyalar SD kartınızın \"Android/data/de.baumann.browser/files/browser_backup/\" dizinine aktarılacaktır. Eğer \"FOSS Browser\"ı kaldırırsanız bu dizin SİLİNECEKTİR. Bu nedenle, kaydettiğiniz bir yerde düzenli olarak yedekleme yapın.</string>
     <string name="clear_title_quit">Uygulama çıkışında temizle</string>
     <string name="clear_summary_quit">\"FOSS Tarayıcısı\"ndan her çıkışta  yukarıdaki tüm kontrol edilen veriler silinecektir.</string>
     <string name="clear_title_cache">Önbelleği Temizle</string>
@@ -120,16 +120,16 @@
     <string name="setting_summary_ui">Tercihlerinize uygun olarak uygulamanın davranışını ve arayüzünü değiştirin.</string>
     <string name="setting_summary_data">Birkaç uygulama verisini (beyaz listeler, yer imleri) içe ve dışa aktarın.</string>
     <string name="setting_filter">Yer imi süzgeci</string>
-    <string name="setting_filter_summary">To show the filter dialog long press on the bookmark icon in the overview. Decide which filters you will use.</string>
+    <string name="setting_filter_summary">Süzgeç iletişim kutusunu görüntülemek için, genel bakıştaki yer imi simgesine uzun basın. Hangi süzgeçleri kullanacağınıza karar verin.</string>
     <string name="setting_title_fav">Başlangıç sitesi</string>
-    <string name="setting_summary_fav">Here you can change the default website which loads on start of \"FOSS Browser\". Enter \"about:blank\" to get an emty start site.</string>
+    <string name="setting_summary_fav">Buradan, \"FOSS Browser\"ın başlangıcında yüklenen varsayılan web sitesini değiştirebilirsiniz. Boş bir başlangıç sitesi almak için \"about: blank\" girin.</string>
     <string name="setting_title_searchEngine">Özel arama motoru</string>
-    <string name="setting_summary_searchEngine">Here you can enter a custom search URL. Also choose \"Custom search engine\" as search provider.</string>
+    <string name="setting_summary_searchEngine">Buradan özel bir arama URL\'si girebilirsiniz. Ayrıca arama sağlayıcısı olarak \"Özel arama motoru\"nu seçin.</string>
     <string name="setting_title_userAgent">Özel kullanıcı aracısı</string>
     <string name="setting_summary_userAgent">Burada özel bir kullanıcı aracısı girebilirsiniz. Varsayılanı kullanmak için boş bırakın.</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">Araç çubuğunu gizle</string>
-    <string name="setting_summary_hide">Use the whole screen when scrolling through websites. If you press the back button you will leave fullscreen mode.</string>
+    <string name="setting_summary_hide">Web sitelerinde gezinirken tüm ekranı kullanın. Geri düğmesine basarsanız, tam ekran modundan çıkacaksınız.</string>
     <string name="setting_theme">Tema</string>
     <string name="setting_theme_summary">Uygulamanın temasını ayarlayın.</string>
     <string name="setting_theme_system">Sistem teması</string>
@@ -146,7 +146,7 @@
     <string name="setting_summary_nav_pos_left">Sol</string>
     <string name="setting_summary_nav_pos_center">Orta</string>
     <string name="setting_summary_nav_pos_null">Asla gösterme</string>
-    <string name="setting_summary_tab">What should be shown at the start of the \"Overview\"?</string>
+    <string name="setting_summary_tab">\"Genel bakış\"ın başlangıcında ne gösterilmelidir?</string>
     <string name="setting_title_confirm_exit">Tarayıcı çıkışını onayla</string>
     <string name="setting_summary_confirm_exit">Tarayıcıyı kapatırken onay iletişim kutusu gösterilir.</string>
     <string name="setting_title_confirm_tab_close">Sekme kapatmayı onayla</string>
@@ -176,11 +176,11 @@
     <string name="setting_gesture_09">Yeni sekme aç</string>
     <string name="setting_gesture_10">Sekmeyi kapat</string>
     <!-- Data -->
-    <string name="setting_title_export_bookmarks">Export bookmarks as HTML-file</string>
+    <string name="setting_title_export_bookmarks">Yer imlerini HTML olarak dışa aktar</string>
     <string name="setting_title_import_bookmarks">Yer işaretlerini içe aktar</string>
     <string name="setting_title_export_appData">Uygulama verilerini dışa aktar</string>
     <string name="setting_title_import_appData">Uygulama verilerini içe aktar</string>
-    <string name="setting_summary_export_appData">Export whole database and your personal settings.</string>
+    <string name="setting_summary_export_appData">Tüm veritabanını ve kişisel ayarlarınızı dışa aktarın.</string>
     <string name="title_appData">Uygulama verileri</string>
     <string name="hint_database">This will delete current data. Proceed?</string>
     <!-- Others setting -->

@@ -1,4 +1,4 @@
-### v 7.2 (WIP)
+### v 7.2
 - fix: zooming on websites
 - fix: opening new tab when restarting
 - new: close search on site by back pressing

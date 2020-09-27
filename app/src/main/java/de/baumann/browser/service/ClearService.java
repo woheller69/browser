@@ -4,6 +4,8 @@ import android.app.Service;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.IBinder;
+import android.webkit.WebStorage;
+
 import androidx.preference.PreferenceManager;
 
 import de.baumann.browser.R;
@@ -47,6 +49,7 @@ public class ClearService extends Service {
         }
         if (clearIndexedDB) {
             BrowserUnit.clearIndexedDB(this);
+            WebStorage.getInstance().deleteAllData();
         }
     }
 }

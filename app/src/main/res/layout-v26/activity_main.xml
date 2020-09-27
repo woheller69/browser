@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
-    android:id="@+id/rootView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
@@ -127,7 +126,8 @@
                 android:inputType="textAutoCorrect"
                 android:maxLines="1"
                 android:ellipsize="end"
-                android:background="?android:attr/colorBackground" />
+                android:background="?android:attr/colorBackground"
+                android:importantForAutofill="no" />
 
         </RelativeLayout>
 

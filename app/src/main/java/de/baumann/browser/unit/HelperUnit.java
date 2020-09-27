@@ -351,10 +351,10 @@ public class HelperUnit {
                 webView.setLayerType(View.LAYER_TYPE_HARDWARE, paint);
             }
         } else {
-            webView.setLayerType(View.LAYER_TYPE_HARDWARE, null);
-
             if(WebViewFeature.isFeatureSupported(WebViewFeature.FORCE_DARK)) {
                 WebSettingsCompat.setForceDark(webView.getSettings(), WebSettingsCompat.FORCE_DARK_OFF);
+            } else {
+                webView.setLayerType(View.LAYER_TYPE_HARDWARE, null);
             }
         }
     }

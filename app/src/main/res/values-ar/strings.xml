@@ -5,7 +5,7 @@
     <string name="app_ok">موافق</string>
     <string name="app_cancel">ألغ</string>
     <string name="list_empty">القائمة فارغة</string>
-    <string name="album_title_bookmarks">Bookmarks</string>
+    <string name="album_title_bookmarks">الإشارات المرجعيّة</string>
     <string name="album_title_history">التأريخ</string>
     <string name="album_title_home">الصفحة الرئيسية</string>
     <string name="album_title_tab">الألسنة المفتوحة</string>
@@ -25,7 +25,7 @@
     <!-- Menu -->
     <string name="main_menu_tabPreview">افتح معاينة اللسان</string>
     <string name="main_menu_new_tab">لسان جديد (في الخلفية)</string>
-    <string name="main_menu_new_tabOpen">New tab (foreground)</string>
+    <string name="main_menu_new_tabOpen">لسان جديد (في الواجهة)</string>
     <string name="main_omnibox_input_hint">ابحث أو أدخل رابطا</string>
     <string name="menu_open_with">افتح الرابط بواسطة…</string>
     <string name="menu_quit">غادر</string>
@@ -40,7 +40,7 @@
     <string name="menu_filter">رشِّح بواسطة…</string>
     <string name="menu_share_link">شارك الرابط</string>
     <string name="menu_save_home">احفظه في الصفحة الرئيسية</string>
-    <string name="menu_save_bookmark">Save as bookmark</string>
+    <string name="menu_save_bookmark">احفظ في الإشارة المرجعية</string>
     <string name="menu_save_as">حفظ كـ …</string>
     <string name="menu_save_pdf">إحفظ ك PDF</string>
     <string name="menu_shareClipboard">انسخ إلى الحافظة</string>
@@ -49,26 +49,26 @@
     <string name="menu_other_help">مساعدة</string>
     <!-- Dialog -->
     <string name="dialog_title_hint">العنوان:</string>
-    <string name="dialog_extension_hint">Extension (for example: \".jpg\"):</string>
-    <string name="dialog_sign_in_username">Username</string>
-    <string name="dialog_sign_in_password">Password</string>
-    <string name="dialog_title_download">Download the file?</string>
-    <string name="dialog_content_resubmission">Resubmit your data?</string>
-    <string name="dialog_content_ssl_error">The certificate of the site is not trusted. Proceed anyway?</string>
-    <string name="dialog_sortName">Sort by name</string>
-    <string name="dialog_sortIcon">Sort by icon</string>
-    <string name="dialog_sortDate">Sort by date</string>
+    <string name="dialog_extension_hint">الامتداد (مثلا: \".jpg\"):</string>
+    <string name="dialog_sign_in_username">اسم المستخدم</string>
+    <string name="dialog_sign_in_password">كلمة السر</string>
+    <string name="dialog_title_download">تريد تنزيل الملف؟</string>
+    <string name="dialog_content_resubmission">هل تريد اعادة إرسال بياناتك؟</string>
+    <string name="dialog_content_ssl_error">شهادة الموقع غير موثوق بها. هل تريد المتابعة على أية حال؟</string>
+    <string name="dialog_sortName">افرز حسب الاسم</string>
+    <string name="dialog_sortIcon">افرز حسب الأيقونة</string>
+    <string name="dialog_sortDate">افرز حسب التاريخ</string>
     <!-- Settings -->
-    <string name="setting_label">Settings</string>
+    <string name="setting_label">الاعدادات</string>
     <!-- browser setting -->
-    <string name="setting_title_browser">Browser Settings</string>
-    <string name="setting_title_clear_control">Data Control</string>
+    <string name="setting_title_browser">إعدادات المتصفح</string>
+    <string name="setting_title_clear_control">التحكم في البيانات</string>
     <string name="setting_title_start_control">Start Control</string>
-    <string name="setting_summary_clear_control">Clear your browser data or decide what data will be cleared when you leave the application.</string>
+    <string name="setting_summary_clear_control">امسح بيانات المتصفح أو حدد البيانات التي سيتم مسحها عند مغادرة التطبيق.</string>
     <string name="setting_summary_start_control">Decide which components of FOSS browser will be enabled on start.</string>
-    <string name="setting_title_search_engine">Search Engine</string>
-    <string name="setting_summary_search_engine">Here you can choose your preferred search engine or set a custom one.</string>
-    <string name="setting_summary_search_engine_google">Google</string>
+    <string name="setting_title_search_engine">محرك البحث</string>
+    <string name="setting_summary_search_engine">هنا يمكنك اختيار محرك البحث المفضل لديك أو تعيين محرك مخصص.</string>
+    <string name="setting_summary_search_engine_google">غوغل</string>
     <string name="setting_summary_search_engine_duckduckgo">DuckDuckGo</string>
     <string name="setting_summary_search_engine_startpage">StartPage</string>
     <string name="setting_summary_search_engine_bing">Bing</string>
@@ -77,23 +77,23 @@
     <string name="setting_summary_search_engine_searx">Searx</string>
     <string name="setting_summary_search_engine_qwant">Qwant</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
-    <string name="setting_title_inverted">Inverted colors</string>
+    <string name="setting_title_inverted">اقلب الألوان</string>
     <string name="setting_summary_inverted">If checked, content will be rendered in a inverted grey scale mode. This is a kind of \"night mode\".</string>
-    <string name="setting_title_font">Font size</string>
+    <string name="setting_title_font">حجم الخط</string>
     <string name="setting_summary_font">Change the font size for displaying websites.</string>
-    <string name="setting_title_remote">Remote content</string>
-    <string name="setting_summary_remote">Enable remote content, which is not directly from the website you are visiting. Disabling this is more secure, faster and saves data volume. But some content will not be displayed anymore.</string>
-    <string name="setting_title_save_data">Request \'Save Data\'</string>
-    <string name="setting_summary_save_data">Tell websites that you would prefer to save data. Supported websites will load faster.</string>
+    <string name="setting_title_remote">المحتوى البعيد</string>
+    <string name="setting_summary_remote">المحتوى البعيد، هو متحوى يحمل من مواقع أخرى يستخدمها الموقع الذي تزور. تعطيل هذا يجعل تحميل الموقع أكثر أمنا، أسرع ويقلل حجم البيانات. ولكن لن يعرض بعض المحتوى.</string>
+    <string name="setting_title_save_data">اطلب \'حفظ البيانات\'</string>
+    <string name="setting_summary_save_data">أعلِم المواقع أنك تفضل حفظ البيانات. سيسرع تحميل المواقع المدعومة.</string>
     <!-- browser start -->
-    <string name="setting_title_images">Images</string>
-    <string name="setting_summary_images">Enable Network images. Disabling could be useful to save mobile data and to load websites faster.</string>
-    <string name="setting_title_cookie">Cookies</string>
-    <string name="setting_summary_cookie_delete">If enabled, all cookies will be deleted. Also the Cookies of trusted websites.</string>
-    <string name="setting_summary_cookie">Enable Cookies. Cookies are small text files, which are stored on your device. Websites use them for example to store user settings (for example search settings). But they could also be used to collect personal user data. Third party cookies (they collect user data for advertising) are always disabled.</string>
+    <string name="setting_title_images">الصور</string>
+    <string name="setting_summary_images">مكّن الصور. تعطيلها قد يكون مفيداً لحفظ بيانات الجوال وتحميل المواقع بشكل أسرع.</string>
+    <string name="setting_title_cookie">ملفات تعريف الارتباط</string>
+    <string name="setting_summary_cookie_delete">إذا فُعّل، ستحذف جميع ملفات تعريف الارتباط، حتى المواقع الموثوقة.</string>
+    <string name="setting_summary_cookie">مكّن ملفات تعريف الارتباط. ملفات تعريف الارتباط هي ملفات نصية صغيرة، يتم تخزينها على جهازك. تستخدمها المواقع لتخزين البيانات مثل إعدادات المستخدم (مثلا إعدادات البحث). ولكن يمكن استخدامها أيضا لجمع بيانات المستخدم الشخصية. ملفات تعريف الارتباط لطرف الثالث (تقوم بجمع بيانات المستخدم لتوجيه الإعلانات) تكون معطلة دائما.</string>
     <string name="setting_title_whitelistCookie">Cookie whitelist</string>
     <string name="setting_title_whitelistRemote">Remote whitelist</string>
-    <string name="setting_title_javascript">JavaScript</string>
+    <string name="setting_title_javascript">جافا سكريبت</string>
     <string name="setting_summary_javascript">Enable JavaScript. Many websites need JavaScript for their functionality (menus, loading and displaying images, …). But they are also a risk and can be used for attacks.</string>
     <string name="setting_title_whitelistJS">JavaScript whitelist</string>
     <string name="setting_title_adblock">AdBlock</string>

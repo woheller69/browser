@@ -37,18 +37,18 @@
     <string name="menu_fav">Set as start site</string>
     <string name="menu_sc">أضف الاختصار الي الشاشة الرئيسية</string>
     <string name="menu_sort">افرز حسب…</string>
-    <string name="menu_filter">Filter by …</string>
-    <string name="menu_share_link">Share link</string>
-    <string name="menu_save_home">Save at Home</string>
+    <string name="menu_filter">رشِّح بواسطة…</string>
+    <string name="menu_share_link">شارك الرابط</string>
+    <string name="menu_save_home">احفظه في الصفحة الرئيسية</string>
     <string name="menu_save_bookmark">Save as bookmark</string>
-    <string name="menu_save_as">Save as …</string>
-    <string name="menu_save_pdf">Save as PDF</string>
-    <string name="menu_shareClipboard">Copy to clipboard</string>
-    <string name="menu_other_searchSite">Search on site</string>
+    <string name="menu_save_as">حفظ كـ …</string>
+    <string name="menu_save_pdf">إحفظ ك PDF</string>
+    <string name="menu_shareClipboard">انسخ إلى الحافظة</string>
+    <string name="menu_other_searchSite">ابحث في الموقع</string>
     <string name="menu_other_info">About \"FOSS Browser\"</string>
-    <string name="menu_other_help">Help</string>
+    <string name="menu_other_help">مساعدة</string>
     <!-- Dialog -->
-    <string name="dialog_title_hint">Title:</string>
+    <string name="dialog_title_hint">العنوان:</string>
     <string name="dialog_extension_hint">Extension (for example: \".jpg\"):</string>
     <string name="dialog_sign_in_username">Username</string>
     <string name="dialog_sign_in_password">Password</string>

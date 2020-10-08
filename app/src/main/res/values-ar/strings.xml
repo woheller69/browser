@@ -78,9 +78,9 @@
     <string name="setting_summary_search_engine_qwant">Qwant</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_title_inverted">اقلب الألوان</string>
-    <string name="setting_summary_inverted">If checked, content will be rendered in a inverted grey scale mode. This is a kind of \"night mode\".</string>
+    <string name="setting_summary_inverted">إذا حُدد، سيصوّر المحتوى في وضع قلب اللون لدرجات الرمادي. هذا نوع من \"الوضع الليلي\".</string>
     <string name="setting_title_font">حجم الخط</string>
-    <string name="setting_summary_font">Change the font size for displaying websites.</string>
+    <string name="setting_summary_font">غيّر خط عرض المواقع.</string>
     <string name="setting_title_remote">المحتوى البعيد</string>
     <string name="setting_summary_remote">المحتوى البعيد، هو متحوى يحمل من مواقع أخرى يستخدمها الموقع الذي تزور. تعطيل هذا يجعل تحميل الموقع أكثر أمنا، أسرع ويقلل حجم البيانات. ولكن لن يعرض بعض المحتوى.</string>
     <string name="setting_title_save_data">اطلب \'حفظ البيانات\'</string>
@@ -94,15 +94,15 @@
     <string name="setting_title_whitelistCookie">Cookie whitelist</string>
     <string name="setting_title_whitelistRemote">Remote whitelist</string>
     <string name="setting_title_javascript">جافا سكريبت</string>
-    <string name="setting_summary_javascript">Enable JavaScript. Many websites need JavaScript for their functionality (menus, loading and displaying images, …). But they are also a risk and can be used for attacks.</string>
+    <string name="setting_summary_javascript">مكّن جافا سكريبت. العديد من المواقع تحتاج إلى جافا سكريبت لوظائفها (القوائم، تحميل وعرض الصور، …). ولكنها تشكل خطرا ويمكن استخدامها في مهاجمتك.</string>
     <string name="setting_title_whitelistJS">JavaScript whitelist</string>
-    <string name="setting_title_adblock">AdBlock</string>
-    <string name="setting_summary_adblock">Enable AdBlock to block annoying ads. Sites also load faster when enabled.</string>
+    <string name="setting_title_adblock">مانع الاعلانات</string>
+    <string name="setting_summary_adblock">مكن مانع الاعلانات لمنع الإعلانات المزعجة. تمكينه يسرع تحميل المواقع.</string>
     <string name="setting_title_whitelist">AdBlock whitelist</string>
-    <string name="setting_title_location">Location</string>
-    <string name="setting_summary_location">Allow websites to access your location. Some websites (like Google maps for navigation) need this enabled.</string>
-    <string name="setting_title_history">History</string>
-    <string name="setting_summary_history">Save the history of visited websites.</string>
+    <string name="setting_title_location">الموقع</string>
+    <string name="setting_summary_location">اسمح للمواقع الوصول إلى موقعك. بعض المواقع (مثل خرائط غوغل) تحتاج لهذا.</string>
+    <string name="setting_title_history">التأريخ</string>
+    <string name="setting_summary_history">حفظ تأريخ المواقع المزارة.</string>
     <!-- browser clear -->
     <string name="data_summary">All files will be exported to the \"Android/data/de.baumann.browser/files/browser_backup/\" directory of your sd-card. This directory will be DELETED, if you uninstall \"FOSS Browser\". So make a backup regularly on a save place.</string>
     <string name="clear_title_quit">Clear on application exit</string>

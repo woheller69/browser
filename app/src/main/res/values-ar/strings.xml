@@ -45,7 +45,7 @@
     <string name="menu_save_pdf">إحفظ ك PDF</string>
     <string name="menu_shareClipboard">انسخ إلى الحافظة</string>
     <string name="menu_other_searchSite">ابحث في الموقع</string>
-    <string name="menu_other_info">About \"FOSS Browser\"</string>
+    <string name="menu_other_info">حول \"FOSS Browser\"</string>
     <string name="menu_other_help">مساعدة</string>
     <!-- Dialog -->
     <string name="dialog_title_hint">العنوان:</string>
@@ -63,9 +63,9 @@
     <!-- browser setting -->
     <string name="setting_title_browser">إعدادات المتصفح</string>
     <string name="setting_title_clear_control">التحكم في البيانات</string>
-    <string name="setting_title_start_control">Start Control</string>
+    <string name="setting_title_start_control">التحكم في بدأ التشغيل</string>
     <string name="setting_summary_clear_control">امسح بيانات المتصفح أو حدد البيانات التي سيتم مسحها عند مغادرة التطبيق.</string>
-    <string name="setting_summary_start_control">Decide which components of FOSS browser will be enabled on start.</string>
+    <string name="setting_summary_start_control">حدد مكونات \"FOSS Browser\" التي ستمكن عند البدء.</string>
     <string name="setting_title_search_engine">محرك البحث</string>
     <string name="setting_summary_search_engine">هنا يمكنك اختيار محرك البحث المفضل لديك أو تعيين محرك مخصص.</string>
     <string name="setting_summary_search_engine_google">غوغل</string>

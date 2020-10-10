@@ -29,12 +29,12 @@
     <string name="main_omnibox_input_hint">検索または URL を入力</string>
     <string name="menu_open_with">リンクを開く…</string>
     <string name="menu_quit">終了</string>
-    <string name="menu_openFav">スタートページを開く</string>
+    <string name="menu_openFav">お気に入りを開く</string>
     <string name="menu_delete">削除</string>
     <string name="menu_edit">編集</string>
     <string name="menu_closeTab">タブを閉じる</string>
     <string name="menu_download">ダウンロードを開く</string>
-    <string name="menu_fav">スタートページに保存</string>
+    <string name="menu_fav">お気に入りに保存</string>
     <string name="menu_sc">ホーム画面のショートカット</string>
     <string name="menu_sort">ソート…</string>
     <string name="menu_filter">フィルター…</string>
@@ -121,8 +121,8 @@
     <string name="setting_summary_data">アプリデータ (ホワイトリスト、ブックマーク) のインポートとエクスポートをします。</string>
     <string name="setting_filter">ブックマークフィルター</string>
     <string name="setting_filter_summary">フィルターダイアログを表示するにはブックマークアイコンを一覧画面で長押しして下さい。どのフィルターを使うか決定して下さい。</string>
-    <string name="setting_title_fav">スタートページ</string>
-    <string name="setting_summary_fav">ここでは \"FOSS Browser\" 開始時に読み込む既定のスタートページを変更できます。\"about:blank\" と入力するとページを読み込まず開始します。</string>
+    <string name="setting_title_fav">お気に入り</string>
+    <string name="setting_summary_fav">ここでは \"FOSS Browser\" 開始時に読み込む既定のウェブサイトを変更できます。\"about:blank\" と入力するとページを読み込まず開始します。</string>
     <string name="setting_title_searchEngine">カスタム検索エンジン</string>
     <string name="setting_summary_searchEngine">ここではカスタム検索 URL を入力できます。入力後は \"カスタム検索エンジン\" を検索エンジンで選択して下さい。</string>
     <string name="setting_title_userAgent">カスタムユーザーエージェント</string>
@@ -216,7 +216,7 @@
     <string name="toast_downloadComplete">ダウンロードが完了しました。ファイルマネージャーを開きますか?</string>
     <string name="toast_unsecured">ウェブサイトは安全でない接続 (\"http\") を使用しています。安全な接続を試してみますか (\"https\")?</string>
     <string name="toast_backup">データをバックアップしますか? これにより古いバックアップは上書きされます。</string>
-    <string name="toast_fav">スタートページに保存しました</string>
+    <string name="toast_fav">お気に入りに保存しました</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">消去</string>
     <string name="whitelist_edit_hint">ドメイン</string>

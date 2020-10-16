@@ -5,7 +5,7 @@
     <string name="app_ok">موافق</string>
     <string name="app_cancel">ألغ</string>
     <string name="list_empty">القائمة فارغة</string>
-    <string name="album_title_bookmarks">الإشارات المرجعيّة</string>
+    <string name="album_title_bookmarks">العلامات</string>
     <string name="album_title_history">التأريخ</string>
     <string name="album_title_home">الصفحة الرئيسية</string>
     <string name="album_title_tab">الألسنة المفتوحة</string>
@@ -40,7 +40,7 @@
     <string name="menu_filter">رشِّح بواسطة…</string>
     <string name="menu_share_link">شارك الرابط</string>
     <string name="menu_save_home">احفظه في الصفحة الرئيسية</string>
-    <string name="menu_save_bookmark">احفظ في الإشارة المرجعية</string>
+    <string name="menu_save_bookmark">احفظ كعلامة</string>
     <string name="menu_save_as">حفظ كـ …</string>
     <string name="menu_save_pdf">إحفظ ك PDF</string>
     <string name="menu_shareClipboard">انسخ إلى الحافظة</string>
@@ -88,9 +88,9 @@
     <!-- browser start -->
     <string name="setting_title_images">الصور</string>
     <string name="setting_summary_images">مكّن الصور. تعطيلها قد يكون مفيداً لحفظ بيانات الجوال وتحميل المواقع بشكل أسرع.</string>
-    <string name="setting_title_cookie">ملفات تعريف الارتباط</string>
-    <string name="setting_summary_cookie_delete">إذا فُعّل، ستحذف جميع ملفات تعريف الارتباط، حتى المواقع الموثوقة.</string>
-    <string name="setting_summary_cookie">مكّن ملفات تعريف الارتباط. ملفات تعريف الارتباط هي ملفات نصية صغيرة، يتم تخزينها على جهازك. تستخدمها المواقع لتخزين البيانات مثل إعدادات المستخدم (مثلا إعدادات البحث). ولكن يمكن استخدامها أيضا لجمع بيانات المستخدم الشخصية. ملفات تعريف الارتباط لطرف الثالث (تقوم بجمع بيانات المستخدم لتوجيه الإعلانات) تكون معطلة دائما.</string>
+    <string name="setting_title_cookie">الكعكات</string>
+    <string name="setting_summary_cookie_delete">إذا فُعّل، ستحذف جميع الكعكات، حتى الخاصة بالمواقع الموثوقة.</string>
+    <string name="setting_summary_cookie">مكّن الكعكات. الكعكات هي ملفات نصية صغيرة، يتم تخزينها على جهازك. تستخدمها المواقع لتخزين البيانات مثل إعدادات المستخدم (مثل إعدادات البحث). ولكن يمكن استخدامها أيضا لجمع بيانات المستخدم الشخصية. كعكات الطرف الثالث (تقوم بجمع بيانات المستخدم لتوجيه الإعلانات) تكون معطلة دائما.</string>
     <string name="setting_title_whitelistCookie">القائمة البيضاء للكعكات</string>
     <string name="setting_title_whitelistRemote">القائمة البيضاء البعيدة</string>
     <string name="setting_title_javascript">جافا سكريبت</string>
@@ -112,15 +112,15 @@
     <string name="clear_title_history">حذف التأريخ</string>
     <string name="clear_title_indexedDB">امسح \"قواعد البيانات المفهرسة\" و \"تخزين عرض الويب المحلي\"</string>
     <string name="clear_title_deleteDatabase">احذف قاعدة البيانات</string>
-    <string name="clear_summary_deleteDatabase">Delete the whole database (Startpage, bookmarks, history and all whitelists).</string>
+    <string name="clear_summary_deleteDatabase">احذف قاعدة البيانات بأكملها (صفحة البدء، العلامات، التأريخ وجميع القوائم البيضاء).</string>
     <!-- App setting -->
-    <string name="setting_title_app">App Settings</string>
-    <string name="setting_title_ui">Behavior/UI</string>
-    <string name="setting_title_data">Backup</string>
-    <string name="setting_summary_ui">Change the behavior and ui of the app to suit your preferences.</string>
-    <string name="setting_summary_data">Import and export several app data (whitelists, bookmarks).</string>
-    <string name="setting_filter">Bookmark filter</string>
-    <string name="setting_filter_summary">To show the filter dialog long press on the bookmark icon in the overview. Decide which filters you will use.</string>
+    <string name="setting_title_app">إعدادات التطبيق</string>
+    <string name="setting_title_ui">السلوك/واجهة المستخدم</string>
+    <string name="setting_title_data">النسخ الاحتياطي</string>
+    <string name="setting_summary_ui">غيّر سلوك التطبيق و واجهة المستخدم لتتناسب مع تفضيلاتك.</string>
+    <string name="setting_summary_data">استيراد وتصدير العديد من بيانات التطبيق (القوائم البيضاء، العلامات).</string>
+    <string name="setting_filter">مرشح العلامات</string>
+    <string name="setting_filter_summary">لعرض حوار العلامات اضغط مطولا على أيقونة العلامات في النظرة العامة. حدد المشرح الدي ستستخدم.</string>
     <string name="setting_title_fav">Favorite</string>
     <string name="setting_summary_fav">Here you can change the default website which loads on start of \"FOSS Browser\". Enter \"about:blank\" to get an emty start site.</string>
     <string name="setting_title_searchEngine">Custom search engine</string>

@@ -121,7 +121,7 @@
     <string name="setting_summary_data">استيراد وتصدير العديد من بيانات التطبيق (القوائم البيضاء، العلامات).</string>
     <string name="setting_filter">مرشح العلامات</string>
     <string name="setting_filter_summary">لعرض حوار العلامات اضغط مطولا على أيقونة العلامات في النظرة العامة. حدد المشرح الدي ستستخدم.</string>
-    <string name="setting_title_fav">Favorite</string>
+    <string name="setting_title_fav">المفضلة</string>
     <string name="setting_summary_fav">Here you can change the default website which loads on start of \"FOSS Browser\". Enter \"about:blank\" to get an emty start site.</string>
     <string name="setting_title_searchEngine">Custom search engine</string>
     <string name="setting_summary_searchEngine">Here you can enter a custom search URL. Also choose \"Custom search engine\" as search provider.</string>

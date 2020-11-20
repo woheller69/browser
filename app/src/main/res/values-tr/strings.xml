@@ -186,7 +186,7 @@
     <!-- Others setting -->
     <string name="setting_title_others">Diğer</string>
     <string name="setting_title_appSettings">Uygulama ayarları</string>
-    <string name="setting_summary_appSettings">Open the system app settings for \"FOSS Browser\". There you can, depending on your Android version grant permissions, clear the app data and so on.</string>
+    <string name="setting_summary_appSettings">\"FOSS Tarayıcı\" için sistem uygulaması ayarlarını açın. Orada, Android sürümünüzün izin vermesine bağlı olarak, uygulama verilerini temizleyebilirsiniz.</string>
     <string name="setting_title_community">Katkıda Bulunanlar</string>
     <!-- Toast -->
     <string name="toast_add_to_home_successful">Başarıyla ana sayfaya eklendi</string>
@@ -208,8 +208,8 @@
     <string name="toast_start_download">İndirmeye başla</string>
     <string name="toast_wait_a_minute">Lütfen biraz bekleyin</string>
     <string name="toast_webview_forward">Bir sonraki site yüklenemiyor</string>
-    <string name="toast_permission_sdCard">\"FOSS Browser\" needs the permission to \"read and write on your storage\". This is needed to download files, taking screenshots and making backups of your data.</string>
-    <string name="toast_permission_loc">\"FOSS Browser\" needs the permission to \"access your location\". This is requested from some websites for example when they offer some kind of navigation.</string>
+    <string name="toast_permission_sdCard">\"FOSS Tarayıcı\" nın \"deponuzu okuma ve yazma\" iznine ihtiyacı var. Bu, dosyaları indirmek, ekran görüntüleri almak ve verilerinizin yedeğini almak için gereklidir.</string>
+    <string name="toast_permission_loc">\"FOSS Tarayıcı\" nın \"konumunuza erişim\" iznine ihtiyacı var. Bu, bazı web sitelerinden, örneğin bir tür gezinme sunduklarında istenir.</string>
     <string name="toast_restart">Değişiklikleri uygulamak için \"FOSS Tarayıcı\"sını yeniden başlatmanız gerekir. Şimdi kapatılsın mı?</string>
     <string name="toast_quit">\"FOSS Tarayıcı\"sından çıkmak istiyor musunuz?</string>
     <string name="toast_close_tab">Geçerli sekmeyi kapatmak istiyor musunuz?</string>

@@ -223,13 +223,13 @@
     <string name="whitelist_add">Ekle</string>
     <!-- Dialog help -->
     <string name="dialogHelp_tipTitle">İpuçları</string>
-    <string name="dialogHelp_tipText">        &lt;b&gt;Menus and dialogs&lt;/b&gt;&lt;br&gt;
-        All menus and dialogs are opened at the bottom of the screen. If the dialog is large you will first see only the upper part. If you swipe it up, the rest will get visible. You can close them by pressing the back button, swiping them down or by clicking outside&lt;br&gt;&lt;br&gt;
+    <string name="dialogHelp_tipText">        &lt;b&gt;Menüler ve iletişim kutuları&lt;/b&gt;&lt;br&gt;
+        Tüm menüler ve iletilim kutuları ekranın altında açılır.  İletişim kutusu büyükse, önce sadece üst kısmı göreceksiniz.  Yukarı kaydırırsanız, geri kalanı görünür hale gelir. Geri düğmesine basarak, aşağı kaydırarak veya dışını tıklayarak kapatabilirsiniz.&lt;br&gt;&lt;br&gt;
 
-        &lt;b&gt;Long press&lt;/b&gt;&lt;br&gt;
-        If you long press the menu icon or the \"Navigation button\", the \"Fast toggle dialog\" will show. If you long press the \"Bookmark icon\", the \"Filter dialog\" will show.
+        &lt;b&gt;Uzun basma&lt;/b&gt;&lt;br&gt;
+        Menü simgesine veya \"Gezinme düğmesi\" ne uzun basarsanız, \"Hızlı geçiş iletişim kutusu\" gösterilecektir.  \"Yer imi simgesine\" uzun basarsanız, \"Süzgeç iletişim kutusu\" görünecektir.
     </string>
-    <string name="dialogHelp_filterText">        You can tag your bookmarks with filters. In this way you can group your bookmarks. You can open the filter dialog by long pressing the bookmark icon. If you activate an entry a dialog will appear, where you can edit the name of the filter.
+    <string name="dialogHelp_filterText">        Yer imlerinizi süzgeçlerle etiketleyebilirsiniz. Bu şekilde yer imlerinizi gruplayabilirsiniz. Yer imi simgesine uzun basarak süzgeö iletişim kutusunu açabilirsiniz. Bir girişi etkinleştirirseniz, süzgecin adını düzenleyebileceğiniz bir iletişim kutusu görünecektir.
     </string>
     <!-- Dialog changelog -->
     <string name="changelog_dialog">        Diliniz henüz desteklenmiyor mu? FOSS tarayıcısını dilinize çevirmek ister misiniz? Veya mevcut çevirilerde iyileştirmeler yapmak ister misiniz? Crowdin\'de bize katılmaktan çekinmeyin: https://crowdin.com/project/foss-browser.&lt;br&gt;&lt;br&gt;

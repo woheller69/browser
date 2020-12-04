@@ -45,28 +45,28 @@
     <string name="menu_save_pdf">Save as PDF</string>
     <string name="menu_shareClipboard">複製到剪貼簿</string>
     <string name="menu_other_searchSite">Search on site</string>
-    <string name="menu_other_info">About \"FOSS Browser\"</string>
+    <string name="menu_other_info">關於「FOSS瀏覽器」</string>
     <string name="menu_other_help">Help</string>
     <!-- Dialog -->
     <string name="dialog_title_hint">Title:</string>
-    <string name="dialog_extension_hint">Extension (for example: \".jpg\"):</string>
-    <string name="dialog_sign_in_username">Username</string>
-    <string name="dialog_sign_in_password">Password</string>
+    <string name="dialog_extension_hint">副檔名（例如：\".jpg\"）</string>
+    <string name="dialog_sign_in_username">使用者名稱</string>
+    <string name="dialog_sign_in_password">密碼</string>
     <string name="dialog_title_download">Download the file?</string>
     <string name="dialog_content_resubmission">Resubmit your data?</string>
     <string name="dialog_content_ssl_error">The certificate of the site is not trusted. Proceed anyway?</string>
-    <string name="dialog_sortName">Sort by name</string>
-    <string name="dialog_sortIcon">Sort by icon</string>
-    <string name="dialog_sortDate">Sort by date</string>
+    <string name="dialog_sortName">按名稱排序</string>
+    <string name="dialog_sortIcon">按圖示排序</string>
+    <string name="dialog_sortDate">按日期排序</string>
     <!-- Settings -->
-    <string name="setting_label">Settings</string>
+    <string name="setting_label">設定</string>
     <!-- browser setting -->
-    <string name="setting_title_browser">Browser Settings</string>
+    <string name="setting_title_browser">瀏覽器設定</string>
     <string name="setting_title_clear_control">Data Control</string>
     <string name="setting_title_start_control">Start Control</string>
     <string name="setting_summary_clear_control">Clear your browser data or decide what data will be cleared when you leave the application.</string>
     <string name="setting_summary_start_control">Decide which components of FOSS browser will be enabled on start.</string>
-    <string name="setting_title_search_engine">Search Engine</string>
+    <string name="setting_title_search_engine">搜尋引擎</string>
     <string name="setting_summary_search_engine">Here you can choose your preferred search engine or set a custom one.</string>
     <string name="setting_summary_search_engine_google">Google</string>
     <string name="setting_summary_search_engine_duckduckgo">DuckDuckGo</string>

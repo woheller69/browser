@@ -77,22 +77,22 @@
     <string name="setting_summary_search_engine_searx">Searx</string>
     <string name="setting_summary_search_engine_qwant">Qwant</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
-    <string name="setting_title_inverted">Inverted colors</string>
-    <string name="setting_summary_inverted">If checked, content will be rendered in a inverted grey scale mode. This is a kind of \"night mode\".</string>
+    <string name="setting_title_inverted">顏色反轉</string>
+    <string name="setting_summary_inverted">網頁內容將以反轉的灰階顯示，可視為夜間模式的一種。</string>
     <string name="setting_title_font">字體大小</string>
-    <string name="setting_summary_font">Change the font size for displaying websites.</string>
-    <string name="setting_title_remote">Remote content</string>
-    <string name="setting_summary_remote">Enable remote content, which is not directly from the website you are visiting. Disabling this is more secure, faster and saves data volume. But some content will not be displayed anymore.</string>
-    <string name="setting_title_save_data">Request \'Save Data\'</string>
-    <string name="setting_summary_save_data">Tell websites that you would prefer to save data. Supported websites will load faster.</string>
+    <string name="setting_summary_font">更改網站顯示的字型大小</string>
+    <string name="setting_title_remote">遠端內容</string>
+    <string name="setting_summary_remote">啟用遠端內容，該內容並非直接來自當前造訪的網站。停用本功能會更安全、更快速並節省資料量。但有些內容將無法顯示。</string>
+    <string name="setting_title_save_data">請求「儲存資料」</string>
+    <string name="setting_summary_save_data">告訴網站你希望儲存資料。支援的網站可加快載入速度。</string>
     <!-- browser start -->
-    <string name="setting_title_images">Images</string>
-    <string name="setting_summary_images">Enable Network images. Disabling could be useful to save mobile data and to load websites faster.</string>
+    <string name="setting_title_images">圖片</string>
+    <string name="setting_summary_images">顯示網路圖片。停用可節省行動數據用量並加快網頁載入。</string>
     <string name="setting_title_cookie">Cookies</string>
     <string name="setting_summary_cookie_delete">若啟用此設定將會刪除所有的 Cookies，包含白名單網站的 Cookies。</string>
     <string name="setting_summary_cookie">允許 Cookies。Cookies 是儲存在您裝置上的小型文字檔案，網站能用來記錄使用者的設定(例如搜尋設定)。但它也能用來蒐集個人資料。廣告用途的第三方 Cookies 已強制禁止。</string>
     <string name="setting_title_whitelistCookie">Cookie 白名單</string>
-    <string name="setting_title_whitelistRemote">Remote whitelist</string>
+    <string name="setting_title_whitelistRemote">遠端白名單</string>
     <string name="setting_title_javascript">JavaScript</string>
     <string name="setting_summary_javascript">允許 JavaScript。很多網站需要使用 Javascript 實現功能（選單、載入和顯示圖片等等），但這些功能也存有被用以發動攻擊的風險。</string>
     <string name="setting_title_whitelistJS">JavaScript 白名單</string>
@@ -104,7 +104,7 @@
     <string name="setting_title_history">歷史紀錄</string>
     <string name="setting_summary_history">保存瀏覽網頁的歷史。</string>
     <!-- browser clear -->
-    <string name="data_summary">All files will be exported to the \"Android/data/de.baumann.browser/files/browser_backup/\" directory of your sd-card. This directory will be DELETED, if you uninstall \"FOSS Browser\". So make a backup regularly on a save place.</string>
+    <string name="data_summary">所有檔案將會被匯出至以下內部儲存空間間目錄\"Android/data/de.baumann.browser/files/browser_backup/\" 。若您刪除FOSS browser, 此目錄會被刪除！因此您應定期在其他儲存空間中備份此應用程式資料。</string>
     <string name="clear_title_quit">離開後清除</string>
     <string name="clear_summary_quit">每一次您離開  FOSS Browser 以上勾選的資料會被刪除。</string>
     <string name="clear_title_cache">清除快取</string>
@@ -115,11 +115,11 @@
     <string name="clear_summary_deleteDatabase">刪除全部資料庫（啟動頁的設定、書籤、歷史和所有白名單）</string>
     <!-- App setting -->
     <string name="setting_title_app">應用程式資訊</string>
-    <string name="setting_title_ui">Behavior/UI</string>
-    <string name="setting_title_data">Backup</string>
-    <string name="setting_summary_ui">Change the behavior and ui of the app to suit your preferences.</string>
-    <string name="setting_summary_data">Import and export several app data (whitelists, bookmarks).</string>
-    <string name="setting_filter">Bookmark filter</string>
+    <string name="setting_title_ui">行為/介面</string>
+    <string name="setting_title_data">備份</string>
+    <string name="setting_summary_ui">依照喜好選擇應用程式的行為和介面。</string>
+    <string name="setting_summary_data">匯出和匯入應用程式資料（書籤、白名單）</string>
+    <string name="setting_filter">書籤分類</string>
     <string name="setting_filter_summary">To show the filter dialog long press on the bookmark icon in the overview. Decide which filters you will use.</string>
     <string name="setting_title_fav">Favorite</string>
     <string name="setting_summary_fav">Here you can change the default website which loads on start of \"FOSS Browser\". Enter \"about:blank\" to get an emty start site.</string>

@@ -209,7 +209,7 @@
     <string name="toast_wait_a_minute">請稍候</string>
     <string name="toast_webview_forward">無法載入下個網頁</string>
     <string name="toast_permission_sdCard">FOSS Browser需要讀取以及編輯您的儲存空間的權限。此權限用來下載檔案，儲存螢幕截圖以及備份您的資料。</string>
-    <string name="toast_permission_loc">\"FOSS Browser\" needs the permission to \"access your location\". This is requested from some websites for example when they offer some kind of navigation.</string>
+    <string name="toast_permission_loc">FOSS Browser需要權限存取您的位置。某些網站會要求此權限當他們提供一些導航服務時。</string>
     <string name="toast_restart">你必需重啟FOSS瀏覽器以應用變更，現在關閉？</string>
     <string name="toast_quit">是否退出FOSS瀏覽器？</string>
     <string name="toast_close_tab">是否關閉當前分頁？</string>
@@ -223,11 +223,11 @@
     <string name="whitelist_add">新增</string>
     <!-- Dialog help -->
     <string name="dialogHelp_tipTitle">小提示</string>
-    <string name="dialogHelp_tipText">        &lt;b&gt;Menus and dialogs&lt;/b&gt;&lt;br&gt;
-        All menus and dialogs are opened at the bottom of the screen. If the dialog is large you will first see only the upper part. If you swipe it up, the rest will get visible. You can close them by pressing the back button, swiping them down or by clicking outside&lt;br&gt;&lt;br&gt;
+    <string name="dialogHelp_tipText">        &lt;b&gt;選單以及對話框&lt;/b&gt;&lt;br&gt;
+        所有選單以及對話框將在畫面底部開啟。若對話框很大您一開始只會看到上半部。若您上滑將可以看到所有內容。您也可以輕觸返回鍵、下滑或點選其他地方以關閉選單或對話框。&lt;br&gt;&lt;br&gt;
 
-        &lt;b&gt;Long press&lt;/b&gt;&lt;br&gt;
-        If you long press the menu icon or the \"Navigation button\", the \"Fast toggle dialog\" will show. If you long press the \"Bookmark icon\", the \"Filter dialog\" will show.
+        &lt;b&gt;長按&lt;/b&gt;&lt;br&gt;
+        若您長按菜單圖示或導航鈕，快速設定對話框將會顯示。若您長按書籤圖示，分類對話框將會顯示。
     </string>
     <string name="dialogHelp_filterText">        You can tag your bookmarks with filters. In this way you can group your bookmarks. You can open the filter dialog by long pressing the bookmark icon. If you activate an entry a dialog will appear, where you can edit the name of the filter.
     </string>

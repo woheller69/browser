@@ -29,12 +29,12 @@
     <string name="main_omnibox_input_hint">Search or type URL</string>
     <string name="menu_open_with">Open link with …</string>
     <string name="menu_quit">Quit</string>
-    <string name="menu_openFav">Open Favorite</string>
+    <string name="menu_openFav">開啟首頁</string>
     <string name="menu_delete">Delete</string>
     <string name="menu_edit">Edit</string>
     <string name="menu_closeTab">關閉分頁</string>
     <string name="menu_download">開啟下載資料夾</string>
-    <string name="menu_fav">儲存至我的最愛</string>
+    <string name="menu_fav">設為首頁</string>
     <string name="menu_sc">於主屏幕新增捷徑</string>
     <string name="menu_sort">以…排序</string>
     <string name="menu_filter">以…篩選</string>
@@ -121,7 +121,7 @@
     <string name="setting_summary_data">匯出和匯入應用程式資料（書籤、白名單）</string>
     <string name="setting_filter">書籤分類</string>
     <string name="setting_filter_summary">長按概覽中的書籤圖示以顯示分類對話框，決定您想使用的分類顏色。</string>
-    <string name="setting_title_fav">我的最愛</string>
+    <string name="setting_title_fav">首頁</string>
     <string name="setting_summary_fav">您可在此變更啟動FOSS Browser時的預設起始網站。輸入 about:blank 以獲得空白起始網站。</string>
     <string name="setting_title_searchEngine">自訂搜尋引擎</string>
     <string name="setting_summary_searchEngine">您可在此輸入自訂搜尋引擎的URL。並在搜尋引擎選項中勾選「自訂搜尋引擎」。</string>
@@ -216,7 +216,7 @@
     <string name="toast_downloadComplete">下載完成。是否開啟檔案管理器？</string>
     <string name="toast_unsecured">此網站使用不安全的連線（http），是否嘗試使用安全連線（https）？</string>
     <string name="toast_backup">是否備份資料？舊的資料將被覆蓋！</string>
-    <string name="toast_fav">成功加入我的最愛</string>
+    <string name="toast_fav">成功設為首頁</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">清除</string>
     <string name="whitelist_edit_hint">域名</string>
@@ -229,7 +229,7 @@
         &lt;b&gt;長按&lt;/b&gt;&lt;br&gt;
         若您長按菜單圖示或導航鈕，快速設定對話框將會顯示。若您長按書籤圖示，分類對話框將會顯示。
     </string>
-    <string name="dialogHelp_filterText">        You can tag your bookmarks with filters. In this way you can group your bookmarks. You can open the filter dialog by long pressing the bookmark icon. If you activate an entry a dialog will appear, where you can edit the name of the filter.
+    <string name="dialogHelp_filterText">        您可以用顏色標記書籤，如此一來您可以為書籤分組。您可以長按書籤圖示以打開分類顏色對話框 。如果您成功開啟對話框，您可以編輯分類顏色的名稱。
     </string>
     <!-- Dialog changelog -->
     <string name="changelog_dialog">        您的語言尚不支援？您想要翻譯FOSS Browser嗎？或您想改進已經存在的翻譯嗎？歡迎在Crowdin自由加入我們的行列 : https://crowdin.com/project/foss-browser 。&lt;br&gt;&lt;br&gt;
@@ -244,20 +244,20 @@
 
     </string>
     <!-- License changelog -->
-    <string name="cont_dialog">        &lt;i&gt;First I would like to thank all people who contributed in any way on this project. They submitted issues, translated or helped in any other way. On following sites you can become a active member of this great community:&lt;/i&gt;&lt;br&gt;&lt;br&gt;
+    <string name="cont_dialog">        &lt;i&gt;首先我想要感謝以任何方法對此專案貢獻的所有人，不論提交錯誤回報，翻譯，或用其他方式幫助我們。在以下網站中您可以成為這個超棒的社群的活躍會員:&lt;/i&gt;&lt;br&gt;&lt;br&gt;
 
         &lt;b&gt;Crowdin:&lt;/b&gt;&lt;br&gt;
-        Crowdin is an online plattform to translate applications in other languages. A big thanks to all translators. You can also help.&lt;br&gt;
+        Crowdin是一個翻譯應用程式至其他語言的線上平台。對所有翻譯者致上大大的感謝。您也可以提供幫助。&lt;br&gt;
         &lt;i&gt;https://crowdin.com/project/foss-browser&lt;/i&gt;&lt;br&gt;&lt;br&gt;
 
-        &lt;b&gt;XDA-thread:&lt;/b&gt;&lt;br&gt;
-        XDA is a great community for developers and smartphone enthusiasts. Here you can report issues, ask for new features and everything other related to \"FOSS Browser\".&lt;br&gt;
+        &lt;b&gt;XDA-討論串:&lt;/b&gt;&lt;br&gt;
+        XDA是一個很棒的社群網站提供給開發者以及智慧型手機熱衷用戶。 在這個論壇您可以回報問題，要求新功能，以及留下其他關於FOSS Browser的回饋。&lt;br&gt;
         &lt;i&gt;https://forum.xda-developers.com/android/apps-games/app-browser-t3500091&lt;/i&gt;&lt;br&gt;&lt;br&gt;
 
         &lt;b&gt;Github:&lt;/b&gt;&lt;br&gt;
-        On Github you can see the source code of \"FOSS Browser\". This is the more technical solution: open issues, ask for new features or even help developing or translating.&lt;br&gt;
+        在Github您可以看到FOSS Browser的原始碼。有更多技術性的解答：開放問題串，要求新功能，設置幫助開發以及翻譯。&lt;br&gt;
         &lt;i&gt;https://github.com/scoute-dich/browser&lt;/i&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
 
-        &lt;i&gt;Following people contributed at this project. If I have forgotten anybody, please contact me:&lt;/i&gt;
+        &lt;i&gt;下列人員為此專案的貢獻者。如果遺漏了任何人，請聯絡我:&lt;/i&gt;
     </string>
 </resources>

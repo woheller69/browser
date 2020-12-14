@@ -34,7 +34,7 @@
     <string name="menu_edit">Edit</string>
     <string name="menu_closeTab">Close tab</string>
     <string name="menu_download">Open downloads</string>
-    <string name="menu_fav">Save as favorite</string>
+    <string name="menu_fav">儲存至我的最愛</string>
     <string name="menu_sc">於主屏幕新增捷徑</string>
     <string name="menu_sort">以…排序</string>
     <string name="menu_filter">以…篩選</string>

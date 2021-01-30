@@ -220,16 +220,16 @@
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">Clear</string>
     <string name="whitelist_edit_hint">Domain</string>
-    <string name="whitelist_add">Add</string>
+    <string name="whitelist_add">أضف</string>
     <!-- Dialog help -->
-    <string name="dialogHelp_tipTitle">Tips</string>
-    <string name="dialogHelp_tipText">        &lt;b&gt;Menus and dialogs&lt;/b&gt;&lt;br&gt;
-        All menus and dialogs are opened at the bottom of the screen. If the dialog is large you will first see only the upper part. If you swipe it up, the rest will get visible. You can close them by pressing the back button, swiping them down or by clicking outside&lt;br&gt;&lt;br&gt;
+    <string name="dialogHelp_tipTitle">تلميحات</string>
+    <string name="dialogHelp_tipText">        &lt;b&gt;القوائم و الحواريات&lt;/b&gt;&lt;br&gt;
+        جميع القوائم و الحواريات تُفتح في الجزء السفلي من الشاشة. إذا كان مربع الحوار كبيرًا فسترى أولاً الجزء العلوي فقط. إذا سحبته لأعلى ، فسيصبح الباقي مرئيًا. يمكنك إغلاقها بالضغط على زر الرجوع أو التمرير لأسفل أو بالنقر خارجاً&lt;br&gt;&lt;br&gt;
 
-        &lt;b&gt;Long press&lt;/b&gt;&lt;br&gt;
-        If you long press the menu icon or the \"Navigation button\", the \"Fast toggle dialog\" will show. If you long press the \"Bookmark icon\", the \"Filter dialog\" will show.
+        &lt;b&gt;اضغط مطولاً&lt;/b&gt;&lt;br&gt;
+        إذا ضغطت مطولاً على أيقونة القائمة أو \"زر التنقل\"، سيُعرض \"مربع حوار التبديل السريع\". إذا  ضغطت  مطولاً على \"أيقونة الإشارة المرجعية\"، فسيُعرض \"مربع حوار المرشحات\".
     </string>
-    <string name="dialogHelp_filterText">        You can tag your bookmarks with filters. In this way you can group your bookmarks. You can open the filter dialog by long pressing the bookmark icon. If you activate an entry a dialog will appear, where you can edit the name of the filter.
+    <string name="dialogHelp_filterText">        يمكنك توسيم إشاراتك المرجعية بعوامل التصفية. بهذه الطريقة يمكنك تجميع إشاراتك المرجعية. يمكنك فتح مربع حوار التصفية بالضغط مطولاً على أيقونة الإشارة المرجعية. إذا فعّلت عنصراً فسيظهر مربع حوار، حيث يمكنك تعديل اسم عامل التصفية.
     </string>
     <!-- Dialog changelog -->
     <string name="changelog_dialog">        Your language isn\'t supported yet? You want to translate FOSS Browser? Or make improvements to existing translations? Feel free to join us on Crowdin: https://crowdin.com/project/foss-browser.&lt;br&gt;&lt;br&gt;

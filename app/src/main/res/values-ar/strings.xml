@@ -170,16 +170,16 @@
     <string name="setting_gesture_03">تراجعا في التاريخ</string>
     <string name="setting_gesture_04">مرر إلى الأعلى</string>
     <string name="setting_gesture_05">مرر إلى الأسفل</string>
-    <string name="setting_gesture_06">Switch to left tab</string>
-    <string name="setting_gesture_07">Switch to right tab</string>
-    <string name="setting_gesture_08">Show overview</string>
-    <string name="setting_gesture_09">Open new tab</string>
-    <string name="setting_gesture_10">Close tab</string>
+    <string name="setting_gesture_06">بدّل الى التبويب الأيسر</string>
+    <string name="setting_gesture_07">بدّل الى التبويب الأيمن</string>
+    <string name="setting_gesture_08">أظهر نظرة عامة</string>
+    <string name="setting_gesture_09">افتح تبويبا جديدا</string>
+    <string name="setting_gesture_10">أغلق التبويب</string>
     <!-- Data -->
-    <string name="setting_title_export_bookmarks">Export bookmarks as HTML-file</string>
-    <string name="setting_title_import_bookmarks">Import bookmarks</string>
-    <string name="setting_title_export_appData">Export app data</string>
-    <string name="setting_title_import_appData">Import app data</string>
+    <string name="setting_title_export_bookmarks">صدّر العلامات كملف HTML</string>
+    <string name="setting_title_import_bookmarks">استورد العلامات</string>
+    <string name="setting_title_export_appData">صدّر بيانات التطبيق</string>
+    <string name="setting_title_import_appData">استورد بيانات التطبيق</string>
     <string name="setting_summary_export_appData">Export whole database and your personal settings.</string>
     <string name="title_appData">App data</string>
     <string name="hint_database">This will delete current data. Proceed?</string>

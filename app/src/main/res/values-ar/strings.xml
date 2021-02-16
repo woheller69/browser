@@ -232,15 +232,7 @@
     <string name="dialogHelp_filterText">        يمكنك توسيم إشاراتك المرجعية بعوامل التصفية. بهذه الطريقة يمكنك تجميع إشاراتك المرجعية. يمكنك فتح مربع حوار التصفية بالضغط مطولاً على أيقونة الإشارة المرجعية. إذا فعّلت عنصراً فسيظهر مربع حوار، حيث يمكنك تعديل اسم عامل التصفية.
     </string>
     <!-- Dialog changelog -->
-    <string name="changelog_dialog">        Your language isn\'t supported yet? You want to translate FOSS Browser? Or make improvements to existing translations? Feel free to join us on Crowdin: https://crowdin.com/project/foss-browser.&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;On the following sites you have access to all important information about \"FOSS Browser\". Please read also the help dialog within the app.&lt;/b&gt;&lt;br&gt;&lt;br&gt;
-
-        \u25AA &lt;i&gt;Project site:&lt;/i&gt; https://github.com/scoute-dich/Browser&lt;br&gt;
-        \u25AA &lt;i&gt;Changelog:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/CHANGELOG.md&lt;br&gt;
-        \u25AA &lt;i&gt;FAQ:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/FAQs.md&lt;br&gt;
-        \u25AA &lt;i&gt;License:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/LICENSE.md&lt;br&gt;
-        \u25AA &lt;i&gt;Privacy:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/PRIVACY.md
+    <string name="changelog_dialog">        لغتك غير مدعومة بعد؟ تريد ترجمة المتصفح الحر FOSS Browser؟ أو إجراء تحسينات على الترجمات الموجودة؟ لا تتردد في الانضمام إلينا في Crowdin: https://crowdin.com/project/foss-browser.&lt;br&gt;&lt;br&gt;         &lt;b&gt;في المواقع التالية يمكنك الوصول إلى جميع المعلومات الهامة حول المتصفح الحر \"FOSS Browser\". رجاءا اقرأ أيضا حوار المساعدة داخل التطبيق.&lt;/b&gt;&lt;br&gt;&lt;br&gt;         \u25AA &lt;i&gt;موقع المشروع:&lt;/i&gt; https://github.com/scoute-dich/Browser&lt;br&gt;         \u25AA &lt;i&gt;سجلّ التغييرات:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/CHANGELOG.md&lt;br&gt;         \u25AA &lt;i&gt;أسئلة متكررة:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/FAQs.md&lt;br&gt;         \u25AA &lt;i&gt;الرخصة:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/LICENSE.md&lt;br&gt;         \u25AA &lt;i&gt;الخصوصية:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/PRIVACY.md
 
     </string>
     <!-- License changelog -->

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- App -->
-    <string name="app_name">FOSS Browser</string>
+    <string name="app_name">المتصفح الحر FOSS Browser</string>
     <string name="app_ok">موافق</string>
     <string name="app_cancel">ألغ</string>
     <string name="list_empty">القائمة فارغة</string>
@@ -69,14 +69,14 @@
     <string name="setting_title_search_engine">محرك البحث</string>
     <string name="setting_summary_search_engine">هنا يمكنك اختيار محرك البحث المفضل لديك أو تعيين محرك مخصص.</string>
     <string name="setting_summary_search_engine_google">غوغل</string>
-    <string name="setting_summary_search_engine_duckduckgo">DuckDuckGo</string>
-    <string name="setting_summary_search_engine_startpage">StartPage</string>
-    <string name="setting_summary_search_engine_bing">Bing</string>
-    <string name="setting_summary_search_engine_baidu">Baidu</string>
-    <string name="setting_summary_search_engine_startpage_de">StartPage (de)</string>
-    <string name="setting_summary_search_engine_searx">Searx</string>
-    <string name="setting_summary_search_engine_qwant">Qwant</string>
-    <string name="setting_summary_search_engine_ecosia">Ecosia</string>
+    <string name="setting_summary_search_engine_duckduckgo">محرك DuckDuckGo</string>
+    <string name="setting_summary_search_engine_startpage">محرك StartPage</string>
+    <string name="setting_summary_search_engine_bing">محرك Bing</string>
+    <string name="setting_summary_search_engine_baidu">محرك Baidu</string>
+    <string name="setting_summary_search_engine_startpage_de">محرك StartPage (المانيا)</string>
+    <string name="setting_summary_search_engine_searx">محرك Searx</string>
+    <string name="setting_summary_search_engine_qwant">محرك Qwant</string>
+    <string name="setting_summary_search_engine_ecosia">محرك Ecosia</string>
     <string name="setting_title_inverted">اقلب الألوان</string>
     <string name="setting_summary_inverted">إذا حُدد، سيصوّر المحتوى في وضع قلب اللون لدرجات الرمادي. هذا نوع من \"الوضع الليلي\".</string>
     <string name="setting_title_font">حجم الخط</string>
@@ -122,23 +122,23 @@
     <string name="setting_filter">مرشح العلامات</string>
     <string name="setting_filter_summary">لعرض حوار العلامات اضغط مطولا على أيقونة العلامات في النظرة العامة. حدد المشرح الدي ستستخدم.</string>
     <string name="setting_title_fav">المفضلة</string>
-    <string name="setting_summary_fav">Here you can change the default website which loads on start of \"FOSS Browser\". Enter \"about:blank\" to get an emty start site.</string>
-    <string name="setting_title_searchEngine">Custom search engine</string>
-    <string name="setting_summary_searchEngine">Here you can enter a custom search URL. Also choose \"Custom search engine\" as search provider.</string>
-    <string name="setting_title_userAgent">Custom user agent</string>
-    <string name="setting_summary_userAgent">Here you can enter a custom user agent. Let empty to use default one.</string>
+    <string name="setting_summary_fav">هنا يمكنك تغيير الموقع الافتراضي الذي يحمّل عند بدء المتصفح الحر \"FOSS Browser\". أَدخِل \"about:blank\" لتحصل على موقع بدء فارغ.</string>
+    <string name="setting_title_searchEngine">محرك بحث مخصص</string>
+    <string name="setting_summary_searchEngine">هنا يمكنك إدخال رابط بحث مخصص. أيضا اختر \"محرك بحث مخصص\" كمزود بحث.</string>
+    <string name="setting_title_userAgent">وكيل مستخدم مخصص</string>
+    <string name="setting_summary_userAgent">هنا يمكنك إدخال وكيل مستخدم مخصص. اتركه فارغا لاستخدام وكيل افتراضي.</string>
     <!-- App behavior -->
-    <string name="setting_title_hideToolbar">Hide toolbar</string>
-    <string name="setting_summary_hide">Use the whole screen when scrolling through websites. If you press the back button you will leave fullscreen mode.</string>
-    <string name="setting_theme">Theme</string>
-    <string name="setting_theme_summary">Set the app theme.</string>
-    <string name="setting_theme_system">System theme</string>
-    <string name="setting_theme_light">Light theme</string>
-    <string name="setting_theme_dark">Dark theme</string>
-    <string name="setting_title_theme">UI</string>
-    <string name="setting_title_behavior">Behavior</string>
-    <string name="setting_summary_toolbarShow">Pressing back will make the toolbar visible, before going back in history.</string>
-    <string name="setting_title_toolbarShow">First toolbar</string>
+    <string name="setting_title_hideToolbar">أخفِ شريط الأدوات</string>
+    <string name="setting_summary_hide">استخدم الشاشة بأكملها عند اللف عبر المواقع. إذا ضغطت زر الرجوع ستغادر وضع الشاشة الكاملة.</string>
+    <string name="setting_theme">السمة</string>
+    <string name="setting_theme_summary">عيّن سمة التطبيق.</string>
+    <string name="setting_theme_system">سمة النظام</string>
+    <string name="setting_theme_light">سمة فاتحة</string>
+    <string name="setting_theme_dark">سمة داكنة</string>
+    <string name="setting_title_theme">واجهة مستخدم</string>
+    <string name="setting_title_behavior">السلوك</string>
+    <string name="setting_summary_toolbarShow">ضغط العودة سيجعل شريط الأدوات مرئيًا، قبل العودة في التاريخ.</string>
+    <string name="setting_title_toolbarShow">شريط الأدوات الأول</string>
     <string name="setting_title_nav">Navigation button</string>
     <string name="setting_title_nav_pos">Position</string>
     <string name="setting_summary_nav_pos">Decide where the \"Navigation Button\" will be placed.</string>

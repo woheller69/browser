@@ -165,10 +165,10 @@
     <string name="setting_gesture_down">مرر لأسفل</string>
     <string name="setting_gesture_left">مرر لليسار</string>
     <string name="setting_gesture_right">مرر لليمين</string>
-    <string name="setting_gesture_01">Nothing</string>
-    <string name="setting_gesture_02">Forward in history</string>
-    <string name="setting_gesture_03">Back in history</string>
-    <string name="setting_gesture_04">Scroll to top</string>
+    <string name="setting_gesture_01">لا شيء</string>
+    <string name="setting_gesture_02">أماما في التاريخ</string>
+    <string name="setting_gesture_03">تراجعا في التاريخ</string>
+    <string name="setting_gesture_04">مرر إلى الأعلى</string>
     <string name="setting_gesture_05">Scroll to bottom</string>
     <string name="setting_gesture_06">Switch to left tab</string>
     <string name="setting_gesture_07">Switch to right tab</string>

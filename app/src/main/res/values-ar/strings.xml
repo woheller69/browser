@@ -49,7 +49,7 @@
     <string name="menu_other_help">مساعدة</string>
     <!-- Dialog -->
     <string name="dialog_title_hint">العنوان:</string>
-    <string name="dialog_extension_hint">الامتداد (مثلا: \".jpg\"):</string>
+    <string name="dialog_extension_hint">الامتداد (مثلا: \"‎.jpg\"):</string>
     <string name="dialog_sign_in_username">اسم المستخدم</string>
     <string name="dialog_sign_in_password">كلمة السر</string>
     <string name="dialog_title_download">تريد تنزيل الملف؟</string>
@@ -236,20 +236,20 @@
 
     </string>
     <!-- License changelog -->
-    <string name="cont_dialog">        &lt;i&gt;First I would like to thank all people who contributed in any way on this project. They submitted issues, translated or helped in any other way. On following sites you can become a active member of this great community:&lt;/i&gt;&lt;br&gt;&lt;br&gt;
+    <string name="cont_dialog">        &lt;i&gt;ولا أرغب في أن أشكر كل الأشخاص الذين ساهموا بأية طريقة في هذا المشروع. لقد قدموا إبلاغات عن المشاكل وترجموا وساعدوا بطرق أخرى. يمكنك على المواقع التالية أن تصبح عضوا فاعلا في هذا المجتمع الرائع:&lt;/i&gt;&lt;br&gt;&lt;br&gt;
 
-        &lt;b&gt;Crowdin:&lt;/b&gt;&lt;br&gt;
-        Crowdin is an online plattform to translate applications in other languages. A big thanks to all translators. You can also help.&lt;br&gt;
+        &lt;b&gt;كراود إن Crowdin:&lt;/b&gt;&lt;br&gt;
+        كراود إن Crowdin هو منصة على الانترنت لترجمة التطبيقات بلغات أخرى. شكرا جزيلا لكل المترجمين. يمكنك أيضا أن تساعد.&lt;br&gt;
         &lt;i&gt;https://crowdin.com/project/foss-browser&lt;/i&gt;&lt;br&gt;&lt;br&gt;
 
-        &lt;b&gt;XDA-thread:&lt;/b&gt;&lt;br&gt;
-        XDA is a great community for developers and smartphone enthusiasts. Here you can report issues, ask for new features and everything other related to \"FOSS Browser\".&lt;br&gt;
+        &lt;b&gt;المحادثة على أكس دي أي XDA:&lt;/b&gt;&lt;br&gt;
+        أكس دي أي XDA هو مجتمع رائع لمطوري ومناصري الهواتف الذكية. يمكنك هنا الإبلاغ عن المشاكل وطلب ميزات جديدة وأي شيء آخر يتعلق بالمتصفح الحر \"FOSS Browser\".&lt;br&gt;
         &lt;i&gt;https://forum.xda-developers.com/android/apps-games/app-browser-t3500091&lt;/i&gt;&lt;br&gt;&lt;br&gt;
 
-        &lt;b&gt;Github:&lt;/b&gt;&lt;br&gt;
-        On Github you can see the source code of \"FOSS Browser\". This is the more technical solution: open issues, ask for new features or even help developing or translating.&lt;br&gt;
+        &lt;b&gt;گِت هب Github:&lt;/b&gt;&lt;br&gt;
+        في گِت هب Github يمكنك أن ترى الشفرة المصدرية للمتصفح الحر \"FOSS Browser\". هذا هو الحل الأكثر تقنية: افتح إبلاغات عن المشاكل واطلب ميزات جديدة أو حتى ساعد في التطوير او الترجمة.&lt;br&gt;
         &lt;i&gt;https://github.com/scoute-dich/browser&lt;/i&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
 
-        &lt;i&gt;Following people contributed at this project. If I have forgotten anybody, please contact me:&lt;/i&gt;
+        &lt;i&gt;أسهم الأشخاص التالية أسمائهم في هذا المشروع. إذا نسيت أحدا، فالرجاء الاتصال بي:&lt;/i&gt;
     </string>
 </resources>

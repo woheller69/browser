@@ -180,12 +180,12 @@
     <string name="setting_title_import_bookmarks">استورد العلامات</string>
     <string name="setting_title_export_appData">صدّر بيانات التطبيق</string>
     <string name="setting_title_import_appData">استورد بيانات التطبيق</string>
-    <string name="setting_summary_export_appData">Export whole database and your personal settings.</string>
-    <string name="title_appData">App data</string>
-    <string name="hint_database">This will delete current data. Proceed?</string>
+    <string name="setting_summary_export_appData">صدّر قاعدة البيانات بأكملها وإعداداتك الشخصية.</string>
+    <string name="title_appData">بيانات التطبيق</string>
+    <string name="hint_database">هذا سيحذف البيانات الحالية. أواصل؟</string>
     <!-- Others setting -->
-    <string name="setting_title_others">Others</string>
-    <string name="setting_title_appSettings">App settings</string>
+    <string name="setting_title_others">أخرى</string>
+    <string name="setting_title_appSettings">إعدادات التطبيق</string>
     <string name="setting_summary_appSettings">Open the system app settings for \"FOSS Browser\". There you can, depending on your Android version grant permissions, clear the app data and so on.</string>
     <string name="setting_title_community">Contributing</string>
     <!-- Toast -->

@@ -186,7 +186,7 @@
     <!-- Others setting -->
     <string name="setting_title_others">Diğer</string>
     <string name="setting_title_appSettings">Uygulama ayarları</string>
-    <string name="setting_summary_appSettings">Open the system app settings for \"FOSS Browser\". There you can, depending on your Android version grant permissions, clear the app data and so on.</string>
+    <string name="setting_summary_appSettings">\"FOSS Tarayıcı\" için sistem uygulaması ayarlarını açın. Orada, Android sürümünüzün izin vermesine bağlı olarak, uygulama verilerini temizleyebilirsiniz.</string>
     <string name="setting_title_community">Katkıda Bulunanlar</string>
     <!-- Toast -->
     <string name="toast_add_to_home_successful">Başarıyla ana sayfaya eklendi</string>
@@ -208,8 +208,8 @@
     <string name="toast_start_download">İndirmeye başla</string>
     <string name="toast_wait_a_minute">Lütfen biraz bekleyin</string>
     <string name="toast_webview_forward">Bir sonraki site yüklenemiyor</string>
-    <string name="toast_permission_sdCard">\"FOSS Browser\" needs the permission to \"read and write on your storage\". This is needed to download files, taking screenshots and making backups of your data.</string>
-    <string name="toast_permission_loc">\"FOSS Browser\" needs the permission to \"access your location\". This is requested from some websites for example when they offer some kind of navigation.</string>
+    <string name="toast_permission_sdCard">\"FOSS Tarayıcı\" nın \"deponuzu okuma ve yazma\" iznine ihtiyacı var. Bu, dosyaları indirmek, ekran görüntüleri almak ve verilerinizin yedeğini almak için gereklidir.</string>
+    <string name="toast_permission_loc">\"FOSS Tarayıcı\" nın \"konumunuza erişim\" iznine ihtiyacı var. Bu, bazı web sitelerinden, örneğin bir tür gezinme sunduklarında istenir.</string>
     <string name="toast_restart">Değişiklikleri uygulamak için \"FOSS Tarayıcı\"sını yeniden başlatmanız gerekir. Şimdi kapatılsın mı?</string>
     <string name="toast_quit">\"FOSS Tarayıcı\"sından çıkmak istiyor musunuz?</string>
     <string name="toast_close_tab">Geçerli sekmeyi kapatmak istiyor musunuz?</string>
@@ -223,13 +223,13 @@
     <string name="whitelist_add">Ekle</string>
     <!-- Dialog help -->
     <string name="dialogHelp_tipTitle">İpuçları</string>
-    <string name="dialogHelp_tipText">        &lt;b&gt;Menus and dialogs&lt;/b&gt;&lt;br&gt;
-        All menus and dialogs are opened at the bottom of the screen. If the dialog is large you will first see only the upper part. If you swipe it up, the rest will get visible. You can close them by pressing the back button, swiping them down or by clicking outside&lt;br&gt;&lt;br&gt;
+    <string name="dialogHelp_tipText">        &lt;b&gt;Menüler ve iletişim kutuları&lt;/b&gt;&lt;br&gt;
+        Tüm menüler ve iletilim kutuları ekranın altında açılır.  İletişim kutusu büyükse, önce sadece üst kısmı göreceksiniz.  Yukarı kaydırırsanız, geri kalanı görünür hale gelir. Geri düğmesine basarak, aşağı kaydırarak veya dışını tıklayarak kapatabilirsiniz.&lt;br&gt;&lt;br&gt;
 
-        &lt;b&gt;Long press&lt;/b&gt;&lt;br&gt;
-        If you long press the menu icon or the \"Navigation button\", the \"Fast toggle dialog\" will show. If you long press the \"Bookmark icon\", the \"Filter dialog\" will show.
+        &lt;b&gt;Uzun basma&lt;/b&gt;&lt;br&gt;
+        Menü simgesine veya \"Gezinme düğmesi\" ne uzun basarsanız, \"Hızlı geçiş iletişim kutusu\" gösterilecektir.  \"Yer imi simgesine\" uzun basarsanız, \"Süzgeç iletişim kutusu\" görünecektir.
     </string>
-    <string name="dialogHelp_filterText">        You can tag your bookmarks with filters. In this way you can group your bookmarks. You can open the filter dialog by long pressing the bookmark icon. If you activate an entry a dialog will appear, where you can edit the name of the filter.
+    <string name="dialogHelp_filterText">        Yer imlerinizi süzgeçlerle etiketleyebilirsiniz. Bu şekilde yer imlerinizi gruplayabilirsiniz. Yer imi simgesine uzun basarak süzgeö iletişim kutusunu açabilirsiniz. Bir girişi etkinleştirirseniz, süzgecin adını düzenleyebileceğiniz bir iletişim kutusu görünecektir.
     </string>
     <!-- Dialog changelog -->
     <string name="changelog_dialog">        Diliniz henüz desteklenmiyor mu? FOSS tarayıcısını dilinize çevirmek ister misiniz? Veya mevcut çevirilerde iyileştirmeler yapmak ister misiniz? Crowdin\'de bize katılmaktan çekinmeyin: https://crowdin.com/project/foss-browser.&lt;br&gt;&lt;br&gt;
@@ -244,20 +244,20 @@
 
     </string>
     <!-- License changelog -->
-    <string name="cont_dialog">        &lt;i&gt;First I would like to thank all people who contributed in any way on this project. They submitted issues, translated or helped in any other way. On following sites you can become a active member of this great community:&lt;/i&gt;&lt;br&gt;&lt;br&gt;
+    <string name="cont_dialog">        &lt;i&gt;Öncelikle bu projeye herhangi bir şekilde katkıda bulunan herkese teşekkür ediyorum. Sorun bildirdiler, tercüme ettiler veya başka bir şekilde yardım ettiler. Aşağıdaki sitelerde bu harika topluluğun etkin bir üyesi olabilirsiniz:&lt;/i&gt;&lt;br&gt;&lt;br&gt;
 
         &lt;b&gt;Crowdin:&lt;/b&gt;&lt;br&gt;
-        Crowdin is an online plattform to translate applications in other languages. A big thanks to all translators. You can also help.&lt;br&gt;
+        Crowdin, uygulamaları diğer dillere çevirmek için çevrimiçi bir platformdur. Tüm çevirmenlere çok teşekkürler. Sen de yardım edebilirsin.&lt;br&gt;
         &lt;i&gt;https://crowdin.com/project/foss-browser&lt;/i&gt;&lt;br&gt;&lt;br&gt;
 
-        &lt;b&gt;XDA-thread:&lt;/b&gt;&lt;br&gt;
-        XDA is a great community for developers and smartphone enthusiasts. Here you can report issues, ask for new features and everything other related to \"FOSS Browser\".&lt;br&gt;
+        &lt;b&gt;XDA-konusu:&lt;/b&gt;&lt;br&gt;
+        XDA, geliştiriciler ve akıllı telefon meraklıları için harika bir topluluktur. Burada sorunları bildirebilir, yeni özellikler isteyebilir ve \"FOSS Tarayıcı\" ile ilgili diğer her şeyi isteyebilirsiniz.&lt;br&gt;
         &lt;i&gt;https://forum.xda-developers.com/android/apps-games/app-browser-t3500091&lt;/i&gt;&lt;br&gt;&lt;br&gt;
 
         &lt;b&gt;Github:&lt;/b&gt;&lt;br&gt;
-        On Github you can see the source code of \"FOSS Browser\". This is the more technical solution: open issues, ask for new features or even help developing or translating.&lt;br&gt;
+        Github\'da \"FOSS Tarayıcı\" nın kaynak kodunu görebilirsiniz. Bu daha teknik bir çözümdür: sorun bildirin, yeni özellikler isteyin ve hatta geliştirme veya çeviri konusunda yardım edin.&lt;br&gt;
         &lt;i&gt;https://github.com/scoute-dich/browser&lt;/i&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
 
-        &lt;i&gt;Following people contributed at this project. If I have forgotten anybody, please contact me:&lt;/i&gt;
+        &lt;i&gt;Bu projeye aşağıdaki kişiler katkıda bulundu.  Birini unuttuysam, lütfen benimle iletişime geçin:&lt;/i&gt;
     </string>
 </resources>

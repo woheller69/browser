@@ -1,263 +1,255 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- App -->
-    <string name="app_name">FOSS Browser</string>
-    <string name="app_ok">OK</string>
-    <string name="app_cancel">Cancel</string>
-    <string name="list_empty">List is empty</string>
-    <string name="album_title_bookmarks">Bookmarks</string>
-    <string name="album_title_history">History</string>
-    <string name="album_title_home">Home</string>
-    <string name="album_title_tab">Opened Tabs</string>
-    <string name="album_title_files">Files</string>
-    <string name="search_hint">Search</string>
-    <string name="color_red">Red</string>
-    <string name="color_pink">Pink</string>
-    <string name="color_purple">Purple</string>
-    <string name="color_blue">Blue</string>
-    <string name="color_teal">Teal</string>
-    <string name="color_green">Green</string>
-    <string name="color_lime">Lime</string>
-    <string name="color_yellow">Yellow</string>
-    <string name="color_orange">Orange</string>
-    <string name="color_brown">Brown</string>
-    <string name="color_grey">Grey</string>
+    <string name="app_name">المتصفح الحر FOSS Browser</string>
+    <string name="app_ok">موافق</string>
+    <string name="app_cancel">ألغ</string>
+    <string name="list_empty">القائمة فارغة</string>
+    <string name="album_title_bookmarks">العلامات</string>
+    <string name="album_title_history">التأريخ</string>
+    <string name="album_title_home">الصفحة الرئيسية</string>
+    <string name="album_title_tab">الألسنة المفتوحة</string>
+    <string name="album_title_files">ملفات</string>
+    <string name="search_hint">ابحث</string>
+    <string name="color_red">أحمر</string>
+    <string name="color_pink">وردي</string>
+    <string name="color_purple">أرجواني</string>
+    <string name="color_blue">أزرق</string>
+    <string name="color_teal">أخضر سماوي</string>
+    <string name="color_green">أخضر</string>
+    <string name="color_lime">ليموني</string>
+    <string name="color_yellow">أصفر</string>
+    <string name="color_orange">برتقالي</string>
+    <string name="color_brown">بنّي</string>
+    <string name="color_grey">رمادي</string>
     <!-- Menu -->
-    <string name="main_menu_tabPreview">Open tab preview</string>
-    <string name="main_menu_new_tab">New tab (background)</string>
-    <string name="main_menu_new_tabOpen">New tab (foreground)</string>
-    <string name="main_omnibox_input_hint">Search or type URL</string>
-    <string name="menu_open_with">Open link with …</string>
-    <string name="menu_quit">Quit</string>
-    <string name="menu_openFav">Open Favorite</string>
-    <string name="menu_delete">Delete</string>
-    <string name="menu_edit">Edit</string>
-    <string name="menu_closeTab">Close tab</string>
-    <string name="menu_download">Open downloads</string>
+    <string name="main_menu_tabPreview">افتح معاينة اللسان</string>
+    <string name="main_menu_new_tab">لسان جديد (في الخلفية)</string>
+    <string name="main_menu_new_tabOpen">لسان جديد (في الواجهة)</string>
+    <string name="main_omnibox_input_hint">ابحث أو أدخل رابطا</string>
+    <string name="menu_open_with">افتح الرابط بواسطة…</string>
+    <string name="menu_quit">غادر</string>
+    <string name="menu_openFav">افتح قائمة المفضلة</string>
+    <string name="menu_delete">احذف</string>
+    <string name="menu_edit">حرّر</string>
+    <string name="menu_closeTab">اغلق اللسان</string>
+    <string name="menu_download">افتح التنزيلات</string>
     <string name="menu_fav">Set as start site</string>
-    <string name="menu_sc">Shortcut on home screen</string>
-    <string name="menu_sort">Sort by …</string>
-    <string name="menu_filter">Filter by …</string>
-    <string name="menu_share_link">Share link</string>
-    <string name="menu_save_home">Save at Home</string>
-    <string name="menu_save_bookmark">Save as bookmark</string>
-    <string name="menu_save_as">Save as …</string>
-    <string name="menu_save_pdf">Save as PDF</string>
-    <string name="menu_shareClipboard">Copy to clipboard</string>
-    <string name="menu_other_searchSite">Search on site</string>
-    <string name="menu_other_info">About \"FOSS Browser\"</string>
-    <string name="menu_other_help">Help</string>
+    <string name="menu_sc">أضف الاختصار الي الشاشة الرئيسية</string>
+    <string name="menu_sort">افرز حسب…</string>
+    <string name="menu_filter">رشِّح بواسطة…</string>
+    <string name="menu_share_link">شارك الرابط</string>
+    <string name="menu_save_home">احفظه في الصفحة الرئيسية</string>
+    <string name="menu_save_bookmark">احفظ كعلامة</string>
+    <string name="menu_save_as">حفظ كـ …</string>
+    <string name="menu_save_pdf">إحفظ ك PDF</string>
+    <string name="menu_shareClipboard">انسخ إلى الحافظة</string>
+    <string name="menu_other_searchSite">ابحث في الموقع</string>
+    <string name="menu_other_info">حول \"FOSS Browser\"</string>
+    <string name="menu_other_help">مساعدة</string>
     <!-- Dialog -->
-    <string name="dialog_title_hint">Title:</string>
-    <string name="dialog_extension_hint">Extension (for example: \".jpg\"):</string>
-    <string name="dialog_sign_in_username">Username</string>
-    <string name="dialog_sign_in_password">Password</string>
-    <string name="dialog_title_download">Download the file?</string>
-    <string name="dialog_content_resubmission">Resubmit your data?</string>
-    <string name="dialog_content_ssl_error">The certificate of the site is not trusted. Proceed anyway?</string>
-    <string name="dialog_sortName">Sort by name</string>
-    <string name="dialog_sortIcon">Sort by icon</string>
-    <string name="dialog_sortDate">Sort by date</string>
+    <string name="dialog_title_hint">العنوان:</string>
+    <string name="dialog_extension_hint">الامتداد (مثلا: \"‎.jpg\"):</string>
+    <string name="dialog_sign_in_username">اسم المستخدم</string>
+    <string name="dialog_sign_in_password">كلمة السر</string>
+    <string name="dialog_title_download">تريد تنزيل الملف؟</string>
+    <string name="dialog_content_resubmission">هل تريد اعادة إرسال بياناتك؟</string>
+    <string name="dialog_content_ssl_error">شهادة الموقع غير موثوق بها. هل تريد المتابعة على أية حال؟</string>
+    <string name="dialog_sortName">افرز حسب الاسم</string>
+    <string name="dialog_sortIcon">افرز حسب الأيقونة</string>
+    <string name="dialog_sortDate">افرز حسب التاريخ</string>
     <!-- Settings -->
-    <string name="setting_label">Settings</string>
+    <string name="setting_label">الاعدادات</string>
     <!-- browser setting -->
-    <string name="setting_title_browser">Browser Settings</string>
-    <string name="setting_title_clear_control">Data Control</string>
-    <string name="setting_title_start_control">Start Control</string>
-    <string name="setting_summary_clear_control">Clear your browser data or decide what data will be cleared when you leave the application.</string>
-    <string name="setting_summary_start_control">Decide which components of FOSS browser will be enabled on start.</string>
-    <string name="setting_title_search_engine">Search Engine</string>
-    <string name="setting_summary_search_engine">Here you can choose your preferred search engine or set a custom one.</string>
-    <string name="setting_summary_search_engine_google">Google</string>
-    <string name="setting_summary_search_engine_duckduckgo">DuckDuckGo</string>
-    <string name="setting_summary_search_engine_startpage">StartPage</string>
-    <string name="setting_summary_search_engine_bing">Bing</string>
-    <string name="setting_summary_search_engine_baidu">Baidu</string>
-    <string name="setting_summary_search_engine_startpage_de">StartPage (de)</string>
-    <string name="setting_summary_search_engine_searx">Searx</string>
-    <string name="setting_summary_search_engine_qwant">Qwant</string>
-    <string name="setting_summary_search_engine_ecosia">Ecosia</string>
-    <string name="setting_title_inverted">Inverted colors</string>
-    <string name="setting_summary_inverted">If checked, content will be rendered in a inverted grey scale mode. This is a kind of \"night mode\".</string>
-    <string name="setting_title_font">Font size</string>
-    <string name="setting_summary_font">Change the font size for displaying websites.</string>
-    <string name="setting_title_remote">Remote content</string>
-    <string name="setting_summary_remote">Enable remote content, which is not directly from the website you are visiting. Disabling this is more secure, faster and saves data volume. But some content will not be displayed anymore.</string>
-    <string name="setting_title_save_data">Request \'Save Data\'</string>
-    <string name="setting_summary_save_data">Tell websites that you would prefer to save data. Supported websites will load faster.</string>
+    <string name="setting_title_browser">إعدادات المتصفح</string>
+    <string name="setting_title_clear_control">التحكم في البيانات</string>
+    <string name="setting_title_start_control">التحكم في بدأ التشغيل</string>
+    <string name="setting_summary_clear_control">امسح بيانات المتصفح أو حدد البيانات التي سيتم مسحها عند مغادرة التطبيق.</string>
+    <string name="setting_summary_start_control">حدد مكونات \"FOSS Browser\" التي ستمكن عند البدء.</string>
+    <string name="setting_title_search_engine">محرك البحث</string>
+    <string name="setting_summary_search_engine">هنا يمكنك اختيار محرك البحث المفضل لديك أو تعيين محرك مخصص.</string>
+    <string name="setting_summary_search_engine_google">غوغل</string>
+    <string name="setting_summary_search_engine_duckduckgo">محرك DuckDuckGo</string>
+    <string name="setting_summary_search_engine_startpage">محرك StartPage</string>
+    <string name="setting_summary_search_engine_bing">محرك Bing</string>
+    <string name="setting_summary_search_engine_baidu">محرك Baidu</string>
+    <string name="setting_summary_search_engine_startpage_de">محرك StartPage (المانيا)</string>
+    <string name="setting_summary_search_engine_searx">محرك Searx</string>
+    <string name="setting_summary_search_engine_qwant">محرك Qwant</string>
+    <string name="setting_summary_search_engine_ecosia">محرك Ecosia</string>
+    <string name="setting_title_inverted">اقلب الألوان</string>
+    <string name="setting_summary_inverted">إذا حُدد، سيصوّر المحتوى في وضع قلب اللون لدرجات الرمادي. هذا نوع من \"الوضع الليلي\".</string>
+    <string name="setting_title_font">حجم الخط</string>
+    <string name="setting_summary_font">غيّر خط عرض المواقع.</string>
+    <string name="setting_title_remote">المحتوى البعيد</string>
+    <string name="setting_summary_remote">المحتوى البعيد، هو متحوى يحمل من مواقع أخرى يستخدمها الموقع الذي تزور. تعطيل هذا يجعل تحميل الموقع أكثر أمنا، أسرع ويقلل حجم البيانات. ولكن لن يعرض بعض المحتوى.</string>
+    <string name="setting_title_save_data">اطلب \'حفظ البيانات\'</string>
+    <string name="setting_summary_save_data">أعلِم المواقع أنك تفضل حفظ البيانات. سيسرع تحميل المواقع المدعومة.</string>
     <!-- browser start -->
-    <string name="setting_title_images">Images</string>
-    <string name="setting_summary_images">Enable Network images. Disabling could be useful to save mobile data and to load websites faster.</string>
-    <string name="setting_title_cookie">Cookies</string>
-    <string name="setting_summary_cookie_delete">If enabled, all cookies will be deleted. Also the Cookies of trusted websites.</string>
-    <string name="setting_summary_cookie">Enable Cookies. Cookies are small text files, which are stored on your device. Websites use them for example to store user settings (for example search settings). But they could also be used to collect personal user data. Third party cookies (they collect user data for advertising) are always disabled.</string>
-    <string name="setting_title_whitelistCookie">Cookie whitelist</string>
-    <string name="setting_title_whitelistRemote">Remote whitelist</string>
-    <string name="setting_title_javascript">JavaScript</string>
-    <string name="setting_summary_javascript">Enable JavaScript. Many websites need JavaScript for their functionality (menus, loading and displaying images, …). But they are also a risk and can be used for attacks.</string>
-    <string name="setting_title_whitelistJS">JavaScript whitelist</string>
-    <string name="setting_title_adblock">AdBlock</string>
-    <string name="setting_summary_adblock">Enable AdBlock to block annoying ads. Sites also load faster when enabled.</string>
-    <string name="setting_title_whitelist">AdBlock whitelist</string>
-    <string name="setting_title_location">Location</string>
-    <string name="setting_summary_location">Allow websites to access your location. Some websites (like Google maps for navigation) need this enabled.</string>
-    <string name="setting_title_history">History</string>
-    <string name="setting_summary_history">Save the history of visited websites.</string>
+    <string name="setting_title_images">الصور</string>
+    <string name="setting_summary_images">مكّن الصور. تعطيلها قد يكون مفيداً لحفظ بيانات الجوال وتحميل المواقع بشكل أسرع.</string>
+    <string name="setting_title_cookie">الكعكات</string>
+    <string name="setting_summary_cookie_delete">إذا فُعّل، ستحذف جميع الكعكات، حتى الخاصة بالمواقع الموثوقة.</string>
+    <string name="setting_summary_cookie">مكّن الكعكات. الكعكات هي ملفات نصية صغيرة، يتم تخزينها على جهازك. تستخدمها المواقع لتخزين البيانات مثل إعدادات المستخدم (مثل إعدادات البحث). ولكن يمكن استخدامها أيضا لجمع بيانات المستخدم الشخصية. كعكات الطرف الثالث (تقوم بجمع بيانات المستخدم لتوجيه الإعلانات) تكون معطلة دائما.</string>
+    <string name="setting_title_whitelistCookie">القائمة البيضاء للكعكات</string>
+    <string name="setting_title_whitelistRemote">القائمة البيضاء البعيدة</string>
+    <string name="setting_title_javascript">جافا سكريبت</string>
+    <string name="setting_summary_javascript">مكّن جافا سكريبت. العديد من المواقع تحتاج إلى جافا سكريبت لوظائفها (القوائم، تحميل وعرض الصور، …). ولكنها تشكل خطرا ويمكن استخدامها في مهاجمتك.</string>
+    <string name="setting_title_whitelistJS">القائمة البيضاء لجافا سكربت</string>
+    <string name="setting_title_adblock">مانع الاعلانات</string>
+    <string name="setting_summary_adblock">مكن مانع الاعلانات لمنع الإعلانات المزعجة. تمكينه يسرع تحميل المواقع.</string>
+    <string name="setting_title_whitelist">القائمة البيضاء لمانع الاعلانات</string>
+    <string name="setting_title_location">الموقع</string>
+    <string name="setting_summary_location">اسمح للمواقع الوصول إلى موقعك. بعض المواقع (مثل خرائط غوغل) تحتاج لهذا.</string>
+    <string name="setting_title_history">التأريخ</string>
+    <string name="setting_summary_history">حفظ تأريخ المواقع المزارة.</string>
     <!-- browser clear -->
-    <string name="data_summary">All files will be exported to the \"Android/data/de.baumann.browser/files/browser_backup/\" directory of your sd-card. This directory will be DELETED, if you uninstall \"FOSS Browser\". So make a backup regularly on a save place.</string>
-    <string name="clear_title_quit">Clear on application exit</string>
-    <string name="clear_summary_quit">Every time you quit \"FOSS Browser\" all above checked data will be deleted.</string>
-    <string name="clear_title_cache">Clear Cache</string>
-    <string name="clear_title_cookie">Clear Cookies</string>
-    <string name="clear_title_history">Clear History</string>
-    <string name="clear_title_indexedDB">Clear \"indexed databases\" and \"local webview storage\"</string>
-    <string name="clear_title_deleteDatabase">Delete database</string>
-    <string name="clear_summary_deleteDatabase">Delete the whole database (Startpage, bookmarks, history and all whitelists).</string>
+    <string name="data_summary">ستستورد كل الملفات الى دليل في الذاكرة الخارجية \"Android/data/de.baumann.browser/files/browser_backup/\". سيُحذف هذا الدليل اذا أزلت \"FOSS Browser\". انسخه احتياطيا بانتظام في مكان آمن.</string>
+    <string name="clear_title_quit">امسح عند خروج التطبيق</string>
+    <string name="clear_summary_quit">ستمسح كل البيانات المؤشرة فوق عند خروج \"FOSS Browser\".</string>
+    <string name="clear_title_cache">امسح التخزين المؤقت</string>
+    <string name="clear_title_cookie">امسح الكعكات</string>
+    <string name="clear_title_history">حذف التأريخ</string>
+    <string name="clear_title_indexedDB">امسح \"قواعد البيانات المفهرسة\" و \"تخزين عرض الويب المحلي\"</string>
+    <string name="clear_title_deleteDatabase">احذف قاعدة البيانات</string>
+    <string name="clear_summary_deleteDatabase">احذف قاعدة البيانات بأكملها (صفحة البدء، العلامات، التأريخ وجميع القوائم البيضاء).</string>
     <!-- App setting -->
-    <string name="setting_title_app">App Settings</string>
-    <string name="setting_title_ui">Behavior/UI</string>
-    <string name="setting_title_data">Backup</string>
-    <string name="setting_summary_ui">Change the behavior and ui of the app to suit your preferences.</string>
-    <string name="setting_summary_data">Import and export several app data (whitelists, bookmarks).</string>
-    <string name="setting_filter">Bookmark filter</string>
-    <string name="setting_filter_summary">To show the filter dialog long press on the bookmark icon in the overview. Decide which filters you will use.</string>
-    <string name="setting_title_fav">Favorite</string>
-    <string name="setting_summary_fav">Here you can change the default website which loads on start of \"FOSS Browser\". Enter \"about:blank\" to get an emty start site.</string>
-    <string name="setting_title_searchEngine">Custom search engine</string>
-    <string name="setting_summary_searchEngine">Here you can enter a custom search URL. Also choose \"Custom search engine\" as search provider.</string>
-    <string name="setting_title_userAgent">Custom user agent</string>
-    <string name="setting_summary_userAgent">Here you can enter a custom user agent. Let empty to use default one.</string>
+    <string name="setting_title_app">إعدادات التطبيق</string>
+    <string name="setting_title_ui">السلوك/واجهة المستخدم</string>
+    <string name="setting_title_data">النسخ الاحتياطي</string>
+    <string name="setting_summary_ui">غيّر سلوك التطبيق و واجهة المستخدم لتتناسب مع تفضيلاتك.</string>
+    <string name="setting_summary_data">استيراد وتصدير العديد من بيانات التطبيق (القوائم البيضاء، العلامات).</string>
+    <string name="setting_filter">مرشح العلامات</string>
+    <string name="setting_filter_summary">لعرض حوار العلامات اضغط مطولا على أيقونة العلامات في النظرة العامة. حدد المشرح الدي ستستخدم.</string>
+    <string name="setting_title_fav">المفضلة</string>
+    <string name="setting_summary_fav">هنا يمكنك تغيير الموقع الافتراضي الذي يحمّل عند بدء المتصفح الحر \"FOSS Browser\". أَدخِل \"about:blank\" لتحصل على موقع بدء فارغ.</string>
+    <string name="setting_title_searchEngine">محرك بحث مخصص</string>
+    <string name="setting_summary_searchEngine">هنا يمكنك إدخال رابط بحث مخصص. أيضا اختر \"محرك بحث مخصص\" كمزود بحث.</string>
+    <string name="setting_title_userAgent">وكيل مستخدم مخصص</string>
+    <string name="setting_summary_userAgent">هنا يمكنك إدخال وكيل مستخدم مخصص. اتركه فارغا لاستخدام وكيل افتراضي.</string>
     <!-- App behavior -->
-    <string name="setting_title_hideToolbar">Hide toolbar</string>
-    <string name="setting_summary_hide">Use the whole screen when scrolling through websites. If you press the back button you will leave fullscreen mode.</string>
-    <string name="setting_theme">Theme</string>
-    <string name="setting_theme_summary">Set the app theme.</string>
-    <string name="setting_theme_system">System theme</string>
-    <string name="setting_theme_light">Light theme</string>
-    <string name="setting_theme_dark">Dark theme</string>
-    <string name="setting_title_theme">UI</string>
-    <string name="setting_title_behavior">Behavior</string>
-    <string name="setting_summary_toolbarShow">Pressing back will make the toolbar visible, before going back in history.</string>
-    <string name="setting_title_toolbarShow">First toolbar</string>
-    <string name="setting_title_nav">Navigation button</string>
-    <string name="setting_title_nav_pos">Position</string>
-    <string name="setting_summary_nav_pos">Decide where the \"Navigation Button\" will be placed.</string>
-    <string name="setting_summary_nav_pos_right">Right</string>
-    <string name="setting_summary_nav_pos_left">Left</string>
-    <string name="setting_summary_nav_pos_center">Center</string>
-    <string name="setting_summary_nav_pos_null">Never show</string>
-    <string name="setting_summary_tab">What should be shown at the start of the \"Overview\"?</string>
-    <string name="setting_title_confirm_exit">Confirm browser exit</string>
-    <string name="setting_summary_confirm_exit">Confirmation dialog when closing browser.</string>
-    <string name="setting_title_confirm_tab_close">Confirm tab close</string>
-    <string name="setting_summary_confirm_tab_close">Confirmation dialog when closing a tab.</string>
-    <string name="setting_overView">Overview</string>
-    <string name="setting_overView_onStart_title">Show on start</string>
-    <string name="setting_overView_onStart_summary">Open the \"Overview\" on every app start.</string>
-    <string name="setting_gestures">Gestures</string>
-    <string name="setting_gestures_use_title">Use gestures</string>
-    <string name="setting_gestures_use_summary">Use gestures on the toolbar and the \"Navigation button\".</string>
-    <string name="setting_title_reopenLastTab">Reopen last tab</string>
-    <string name="setting_summary_reopenLastTab">Reopen a new tab when the last tab is closed instead of exiting the browser.</string>
+    <string name="setting_title_hideToolbar">أخفِ شريط الأدوات</string>
+    <string name="setting_summary_hide">استخدم الشاشة بأكملها عند اللف عبر المواقع. إذا ضغطت زر الرجوع ستغادر وضع الشاشة الكاملة.</string>
+    <string name="setting_theme">السمة</string>
+    <string name="setting_theme_summary">عيّن سمة التطبيق.</string>
+    <string name="setting_theme_system">سمة النظام</string>
+    <string name="setting_theme_light">سمة فاتحة</string>
+    <string name="setting_theme_dark">سمة داكنة</string>
+    <string name="setting_title_theme">واجهة مستخدم</string>
+    <string name="setting_title_behavior">السلوك</string>
+    <string name="setting_summary_toolbarShow">ضغط العودة سيجعل شريط الأدوات مرئيًا، قبل العودة في التاريخ.</string>
+    <string name="setting_title_toolbarShow">شريط الأدوات الأول</string>
+    <string name="setting_title_nav">زر التنقل</string>
+    <string name="setting_title_nav_pos">الموضع</string>
+    <string name="setting_summary_nav_pos">قرر أين سيوضع \"زر التنقل\".</string>
+    <string name="setting_summary_nav_pos_right">يمينا</string>
+    <string name="setting_summary_nav_pos_left">يسارا</string>
+    <string name="setting_summary_nav_pos_center">الوسط</string>
+    <string name="setting_summary_nav_pos_null">لا تُظهر أبداً</string>
+    <string name="setting_summary_tab">ما الذي ينبغي أن يظهر في بداية \"نظرة عامة\"؟</string>
+    <string name="setting_title_confirm_exit">تأكيد خروج المتصفح</string>
+    <string name="setting_summary_confirm_exit">حوار التأكيد عند إغلاق المتصفح.</string>
+    <string name="setting_title_confirm_tab_close">أكّد خروج التبويب</string>
+    <string name="setting_summary_confirm_tab_close">حوار التأكيد عند إغلاق تبويب.</string>
+    <string name="setting_overView">نظرة عامة</string>
+    <string name="setting_overView_onStart_title">أَظهر عند البداية</string>
+    <string name="setting_overView_onStart_summary">افتح \"نظرة عامة\" عند كل بداية للتطبيق.</string>
+    <string name="setting_gestures">إيماءات</string>
+    <string name="setting_gestures_use_title">استخدام الإيماءات</string>
+    <string name="setting_gestures_use_summary">استخدم الإيماءات على شريط الأدوات و \"زر التنقل\".</string>
+    <string name="setting_title_reopenLastTab">أعد فتح آخر تبويب</string>
+    <string name="setting_summary_reopenLastTab">أعد فتح تبويب جديد عند غلق آخر تبويب بدلا من الخروج من المتصفح.</string>
     <!-- gestures -->
-    <string name="setting_title_toolbar">Toolbar</string>
-    <string name="setting_gesture_up">Swipe up</string>
-    <string name="setting_gesture_down">Swipe down</string>
-    <string name="setting_gesture_left">Swipe left</string>
-    <string name="setting_gesture_right">Swipe right</string>
-    <string name="setting_gesture_01">Nothing</string>
-    <string name="setting_gesture_02">Forward in history</string>
-    <string name="setting_gesture_03">Back in history</string>
-    <string name="setting_gesture_04">Scroll to top</string>
-    <string name="setting_gesture_05">Scroll to bottom</string>
-    <string name="setting_gesture_06">Switch to left tab</string>
-    <string name="setting_gesture_07">Switch to right tab</string>
-    <string name="setting_gesture_08">Show overview</string>
-    <string name="setting_gesture_09">Open new tab</string>
-    <string name="setting_gesture_10">Close tab</string>
+    <string name="setting_title_toolbar">شريط الأدوات</string>
+    <string name="setting_gesture_up">مرر لأعلى</string>
+    <string name="setting_gesture_down">مرر لأسفل</string>
+    <string name="setting_gesture_left">مرر لليسار</string>
+    <string name="setting_gesture_right">مرر لليمين</string>
+    <string name="setting_gesture_01">لا شيء</string>
+    <string name="setting_gesture_02">أماما في التاريخ</string>
+    <string name="setting_gesture_03">تراجعا في التاريخ</string>
+    <string name="setting_gesture_04">مرر إلى الأعلى</string>
+    <string name="setting_gesture_05">مرر إلى الأسفل</string>
+    <string name="setting_gesture_06">بدّل الى التبويب الأيسر</string>
+    <string name="setting_gesture_07">بدّل الى التبويب الأيمن</string>
+    <string name="setting_gesture_08">أظهر نظرة عامة</string>
+    <string name="setting_gesture_09">افتح تبويبا جديدا</string>
+    <string name="setting_gesture_10">أغلق التبويب</string>
     <!-- Data -->
-    <string name="setting_title_export_bookmarks">Export bookmarks as HTML-file</string>
-    <string name="setting_title_import_bookmarks">Import bookmarks</string>
-    <string name="setting_title_export_appData">Export app data</string>
-    <string name="setting_title_import_appData">Import app data</string>
-    <string name="setting_summary_export_appData">Export whole database and your personal settings.</string>
-    <string name="title_appData">App data</string>
-    <string name="hint_database">This will delete current data. Proceed?</string>
+    <string name="setting_title_export_bookmarks">صدّر العلامات كملف HTML</string>
+    <string name="setting_title_import_bookmarks">استورد العلامات</string>
+    <string name="setting_title_export_appData">صدّر بيانات التطبيق</string>
+    <string name="setting_title_import_appData">استورد بيانات التطبيق</string>
+    <string name="setting_summary_export_appData">صدّر قاعدة البيانات بأكملها وإعداداتك الشخصية.</string>
+    <string name="title_appData">بيانات التطبيق</string>
+    <string name="hint_database">هذا سيحذف البيانات الحالية. أواصل؟</string>
     <!-- Others setting -->
-    <string name="setting_title_others">Others</string>
-    <string name="setting_title_appSettings">App settings</string>
-    <string name="setting_summary_appSettings">Open the system app settings for \"FOSS Browser\". There you can, depending on your Android version grant permissions, clear the app data and so on.</string>
-    <string name="setting_title_community">Contributing</string>
+    <string name="setting_title_others">أخرى</string>
+    <string name="setting_title_appSettings">إعدادات التطبيق</string>
+    <string name="setting_summary_appSettings">افتح إعدادات تطبيق النظام للمتصفح الحر \"FOSS Browser\". هناك يمكنك، واعتمادا على الأذونات الممنوحة في إصدارك من أندرويد، أن تفرغ بيانات التطبيق وما شابه.</string>
+    <string name="setting_title_community">المساهمة</string>
     <!-- Toast -->
-    <string name="toast_add_to_home_successful">Successfully added to Home</string>
-    <string name="toast_add_to_home_failed">Failed to add to Home</string>
-    <string name="toast_add_whitelist_successful">Successfully added Domain</string>
-    <string name="toast_already_exist_in_home">Already exist in home</string>
-    <string name="toast_copy_successful">Successfully copied</string>
-    <string name="toast_delete_successful">Successfully deleted</string>
-    <string name="toast_domain_already_exists">Domain already exists</string>
-    <string name="toast_export_successful">Exported as:&#160;</string>
-    <string name="toast_export_failed">Failed to export</string>
-    <string name="toast_import_successful">Imported count:&#160;</string>
-    <string name="toast_import_failed">Failed to import</string>
-    <string name="toast_input_empty">You haven\'t input anything</string>
-    <string name="toast_invalid_domain">Invalid domain</string>
-    <string name="toast_load_error">Can\'t load this URL</string>
-    <string name="toast_new_tab_successful">Successfully opened in a new tab</string>
-    <string name="toast_share_failed">Can\'t share this page</string>
-    <string name="toast_start_download">Starting download</string>
-    <string name="toast_wait_a_minute">Please wait for a moment</string>
-    <string name="toast_webview_forward">Can\'t load next site</string>
-    <string name="toast_permission_sdCard">\"FOSS Browser\" needs the permission to \"read and write on your storage\". This is needed to download files, taking screenshots and making backups of your data.</string>
-    <string name="toast_permission_loc">\"FOSS Browser\" needs the permission to \"access your location\". This is requested from some websites for example when they offer some kind of navigation.</string>
-    <string name="toast_restart">You must restart \"FOSS Browser\" to apply changes. Close now?</string>
-    <string name="toast_quit">Do you want to quit \"FOSS Browser\"?</string>
-    <string name="toast_close_tab">Do you want to close current tab?</string>
-    <string name="toast_downloadComplete">Download complete. Open file manager?</string>
-    <string name="toast_unsecured">Website uses an unsecured connection (\"http\"). Try a secure connection (\"https\")?</string>
-    <string name="toast_backup">Backup data? This will overwrite the old backup.</string>
+    <string name="toast_add_to_home_successful">أضيف إلى الرئيسية بنجاح</string>
+    <string name="toast_add_to_home_failed">فشلت الإضافة الى الرئيسية</string>
+    <string name="toast_add_whitelist_successful">أضيف النطاق بنجاح</string>
+    <string name="toast_already_exist_in_home">موجود مسبقا في الرئيسية</string>
+    <string name="toast_copy_successful">نُسخ بنجاح</string>
+    <string name="toast_delete_successful">حُذف بنجاح</string>
+    <string name="toast_domain_already_exists">النطاق موجود مسبقا</string>
+    <string name="toast_export_successful">صُدّر كـ:&#160;</string>
+    <string name="toast_export_failed">فشل التصدير</string>
+    <string name="toast_import_successful">عدد المستورَد:&#160;</string>
+    <string name="toast_import_failed">فشل الاستيراد</string>
+    <string name="toast_input_empty">لم تُدخل أي شيء</string>
+    <string name="toast_invalid_domain">نطاق غير سليم</string>
+    <string name="toast_load_error">لا يمكن تحميل هذا الرابط</string>
+    <string name="toast_new_tab_successful">فُتح بنجاح في علامة تبويب جديدة</string>
+    <string name="toast_share_failed">لا يمكن مشاركة هذه الصفحة</string>
+    <string name="toast_start_download">بدء التحميل</string>
+    <string name="toast_wait_a_minute">رجاءا انتظر لحظة</string>
+    <string name="toast_webview_forward">لا يمكن تحميل الموقع التالي</string>
+    <string name="toast_permission_sdCard">يحتاج المتصفح الحر \"FOSS Browse\" إذن \"القراءة والكتابة على التخزين خاصتك\". هذا مطلوب لتحميل الملفات، التقاط لقطات الشاشة وعمل نسخ احتياطية من بياناتك.</string>
+    <string name="toast_permission_loc">يحتاج المتصفح الحر \"FOSS Browser\" إذن \"الوصول إلى موقعك\". هذا يُطلب من بعض المواقع على سبيل المثال عندما توفر نوعاً ما من التصفح.</string>
+    <string name="toast_restart">يجب عليك إعادة تشغيل المتصفح الحر\"FOSS Browser\" لتطبيق التغييرات. أغلق الآن؟</string>
+    <string name="toast_quit">أتريد إنهاء المتصفح الحر\"FOSS Browser\"؟</string>
+    <string name="toast_close_tab">أتريد إغلاق التبويب الحالي؟</string>
+    <string name="toast_downloadComplete">اكتمل التحميل. أفتح مدير الملفات؟</string>
+    <string name="toast_unsecured">يستخدم الموقع اتصالا غير آمن (\"http\"). أجرب اتصالا آمنا (\"https\")؟</string>
+    <string name="toast_backup">اعمل نسخا احتياطيا للبيانات؟ هذا سيستبدل النسخ الاحتياطي القديم.</string>
     <string name="toast_fav">Successfully set as start site.</string>
     <!-- Whitelist -->
-    <string name="whitelist_menu_clear">Clear</string>
-    <string name="whitelist_edit_hint">Domain</string>
-    <string name="whitelist_add">Add</string>
+    <string name="whitelist_menu_clear">إفراغ</string>
+    <string name="whitelist_edit_hint">النطاق</string>
+    <string name="whitelist_add">أضف</string>
     <!-- Dialog help -->
-    <string name="dialogHelp_tipTitle">Tips</string>
-    <string name="dialogHelp_tipText">        &lt;b&gt;Menus and dialogs&lt;/b&gt;&lt;br&gt;
-        All menus and dialogs are opened at the bottom of the screen. If the dialog is large you will first see only the upper part. If you swipe it up, the rest will get visible. You can close them by pressing the back button, swiping them down or by clicking outside&lt;br&gt;&lt;br&gt;
+    <string name="dialogHelp_tipTitle">تلميحات</string>
+    <string name="dialogHelp_tipText">        &lt;b&gt;القوائم و الحواريات&lt;/b&gt;&lt;br&gt;
+        جميع القوائم و الحواريات تُفتح في الجزء السفلي من الشاشة. إذا كان مربع الحوار كبيرًا فسترى أولاً الجزء العلوي فقط. إذا سحبته لأعلى ، فسيصبح الباقي مرئيًا. يمكنك إغلاقها بالضغط على زر الرجوع أو التمرير لأسفل أو بالنقر خارجاً&lt;br&gt;&lt;br&gt;
 
-        &lt;b&gt;Long press&lt;/b&gt;&lt;br&gt;
-        If you long press the menu icon or the \"Navigation button\", the \"Fast toggle dialog\" will show. If you long press the \"Bookmark icon\", the \"Filter dialog\" will show.
+        &lt;b&gt;اضغط مطولاً&lt;/b&gt;&lt;br&gt;
+        إذا ضغطت مطولاً على أيقونة القائمة أو \"زر التنقل\"، سيُعرض \"مربع حوار التبديل السريع\". إذا  ضغطت  مطولاً على \"أيقونة الإشارة المرجعية\"، فسيُعرض \"مربع حوار المرشحات\".
     </string>
-    <string name="dialogHelp_filterText">        You can tag your bookmarks with filters. In this way you can group your bookmarks. You can open the filter dialog by long pressing the bookmark icon. If you activate an entry a dialog will appear, where you can edit the name of the filter.
+    <string name="dialogHelp_filterText">        يمكنك توسيم إشاراتك المرجعية بعوامل التصفية. بهذه الطريقة يمكنك تجميع إشاراتك المرجعية. يمكنك فتح مربع حوار التصفية بالضغط مطولاً على أيقونة الإشارة المرجعية. إذا فعّلت عنصراً فسيظهر مربع حوار، حيث يمكنك تعديل اسم عامل التصفية.
     </string>
     <!-- Dialog changelog -->
-    <string name="changelog_dialog">        Your language isn\'t supported yet? You want to translate FOSS Browser? Or make improvements to existing translations? Feel free to join us on Crowdin: https://crowdin.com/project/foss-browser.&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;On the following sites you have access to all important information about \"FOSS Browser\". Please read also the help dialog within the app.&lt;/b&gt;&lt;br&gt;&lt;br&gt;
-
-        \u25AA &lt;i&gt;Project site:&lt;/i&gt; https://github.com/scoute-dich/Browser&lt;br&gt;
-        \u25AA &lt;i&gt;Changelog:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/CHANGELOG.md&lt;br&gt;
-        \u25AA &lt;i&gt;FAQ:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/FAQs.md&lt;br&gt;
-        \u25AA &lt;i&gt;License:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/LICENSE.md&lt;br&gt;
-        \u25AA &lt;i&gt;Privacy:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/PRIVACY.md
+    <string name="changelog_dialog">        لغتك غير مدعومة بعد؟ تريد ترجمة المتصفح الحر FOSS Browser؟ أو إجراء تحسينات على الترجمات الموجودة؟ لا تتردد في الانضمام إلينا في Crowdin: https://crowdin.com/project/foss-browser.&lt;br&gt;&lt;br&gt;         &lt;b&gt;في المواقع التالية يمكنك الوصول إلى جميع المعلومات الهامة حول المتصفح الحر \"FOSS Browser\". رجاءا اقرأ أيضا حوار المساعدة داخل التطبيق.&lt;/b&gt;&lt;br&gt;&lt;br&gt;         \u25AA &lt;i&gt;موقع المشروع:&lt;/i&gt; https://github.com/scoute-dich/Browser&lt;br&gt;         \u25AA &lt;i&gt;سجلّ التغييرات:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/CHANGELOG.md&lt;br&gt;         \u25AA &lt;i&gt;أسئلة متكررة:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/FAQs.md&lt;br&gt;         \u25AA &lt;i&gt;الرخصة:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/LICENSE.md&lt;br&gt;         \u25AA &lt;i&gt;الخصوصية:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/PRIVACY.md
 
     </string>
     <!-- License changelog -->
-    <string name="cont_dialog">        &lt;i&gt;First I would like to thank all people who contributed in any way on this project. They submitted issues, translated or helped in any other way. On following sites you can become a active member of this great community:&lt;/i&gt;&lt;br&gt;&lt;br&gt;
+    <string name="cont_dialog">        &lt;i&gt;ولا أرغب في أن أشكر كل الأشخاص الذين ساهموا بأية طريقة في هذا المشروع. لقد قدموا إبلاغات عن المشاكل وترجموا وساعدوا بطرق أخرى. يمكنك على المواقع التالية أن تصبح عضوا فاعلا في هذا المجتمع الرائع:&lt;/i&gt;&lt;br&gt;&lt;br&gt;
 
-        &lt;b&gt;Crowdin:&lt;/b&gt;&lt;br&gt;
-        Crowdin is an online plattform to translate applications in other languages. A big thanks to all translators. You can also help.&lt;br&gt;
+        &lt;b&gt;كراود إن Crowdin:&lt;/b&gt;&lt;br&gt;
+        كراود إن Crowdin هو منصة على الانترنت لترجمة التطبيقات بلغات أخرى. شكرا جزيلا لكل المترجمين. يمكنك أيضا أن تساعد.&lt;br&gt;
         &lt;i&gt;https://crowdin.com/project/foss-browser&lt;/i&gt;&lt;br&gt;&lt;br&gt;
 
-        &lt;b&gt;XDA-thread:&lt;/b&gt;&lt;br&gt;
-        XDA is a great community for developers and smartphone enthusiasts. Here you can report issues, ask for new features and everything other related to \"FOSS Browser\".&lt;br&gt;
+        &lt;b&gt;المحادثة على أكس دي أي XDA:&lt;/b&gt;&lt;br&gt;
+        أكس دي أي XDA هو مجتمع رائع لمطوري ومناصري الهواتف الذكية. يمكنك هنا الإبلاغ عن المشاكل وطلب ميزات جديدة وأي شيء آخر يتعلق بالمتصفح الحر \"FOSS Browser\".&lt;br&gt;
         &lt;i&gt;https://forum.xda-developers.com/android/apps-games/app-browser-t3500091&lt;/i&gt;&lt;br&gt;&lt;br&gt;
 
-        &lt;b&gt;Github:&lt;/b&gt;&lt;br&gt;
-        On Github you can see the source code of \"FOSS Browser\". This is the more technical solution: open issues, ask for new features or even help developing or translating.&lt;br&gt;
+        &lt;b&gt;گِت هب Github:&lt;/b&gt;&lt;br&gt;
+        في گِت هب Github يمكنك أن ترى الشفرة المصدرية للمتصفح الحر \"FOSS Browser\". هذا هو الحل الأكثر تقنية: افتح إبلاغات عن المشاكل واطلب ميزات جديدة أو حتى ساعد في التطوير او الترجمة.&lt;br&gt;
         &lt;i&gt;https://github.com/scoute-dich/browser&lt;/i&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
 
-        &lt;i&gt;Following people contributed at this project. If I have forgotten anybody, please contact me:&lt;/i&gt;
+        &lt;i&gt;أسهم الأشخاص التالية أسمائهم في هذا المشروع. إذا نسيت أحدا، فالرجاء الاتصال بي:&lt;/i&gt;
     </string>
 </resources>

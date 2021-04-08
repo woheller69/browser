@@ -77,8 +77,6 @@
     <string name="setting_summary_search_engine_searx">Searx</string>
     <string name="setting_summary_search_engine_qwant">Qwant</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
-    <string name="setting_title_inverted">Invertierte Farben</string>
-    <string name="setting_summary_inverted">Wenn aktiviert, werden Inhalte in einem invertierten schwarz/weiß-Modus dargestellt. Dies ist eine Art \"Nachtmodus\".</string>
     <string name="setting_title_font">Schriftgröße</string>
     <string name="setting_summary_font">Ändere die Schriftgröße für die Darstellung von Websites.</string>
     <string name="setting_title_remote">Entfernte Inhalte</string>

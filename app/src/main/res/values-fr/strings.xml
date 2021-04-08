@@ -77,8 +77,6 @@
     <string name="setting_summary_search_engine_searx">Chercher</string>
     <string name="setting_summary_search_engine_qwant">Qwant</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
-    <string name="setting_title_inverted">Couleurs inversées</string>
-    <string name="setting_summary_inverted">Si coché, le contenu sera rendu dans un mode d\'échelle de gris inversé. Il s\'agit d\'une sorte de \"mode nuit\".</string>
     <string name="setting_title_font">Taille de la police</string>
     <string name="setting_summary_font">Modifier la taille de la police pour l’affichage des sites Web.</string>
     <string name="setting_title_remote">Contenu à distance</string>

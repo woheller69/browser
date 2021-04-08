@@ -77,8 +77,6 @@
     <string name="setting_summary_search_engine_searx">Searx</string>
     <string name="setting_summary_search_engine_qwant">Qwant</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
-    <string name="setting_title_inverted">色を反転</string>
-    <string name="setting_summary_inverted">チェックすると、コンテンツは反転したグレースケースで表示されます。これは一種の「ダークモード」です。</string>
     <string name="setting_title_font">フォントサイズ</string>
     <string name="setting_summary_font">表示中のウェブサイトに合わせてフォントサイズを変更します。</string>
     <string name="setting_title_remote">リモートコンテンツ</string>

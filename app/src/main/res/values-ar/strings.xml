@@ -77,8 +77,6 @@
     <string name="setting_summary_search_engine_searx">محرك Searx</string>
     <string name="setting_summary_search_engine_qwant">محرك Qwant</string>
     <string name="setting_summary_search_engine_ecosia">محرك Ecosia</string>
-    <string name="setting_title_inverted">اقلب الألوان</string>
-    <string name="setting_summary_inverted">إذا حُدد، سيصوّر المحتوى في وضع قلب اللون لدرجات الرمادي. هذا نوع من \"الوضع الليلي\".</string>
     <string name="setting_title_font">حجم الخط</string>
     <string name="setting_summary_font">غيّر خط عرض المواقع.</string>
     <string name="setting_title_remote">المحتوى البعيد</string>

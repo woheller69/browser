@@ -77,8 +77,6 @@
     <string name="setting_summary_search_engine_searx">Searx</string>
     <string name="setting_summary_search_engine_qwant">Qwant</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
-    <string name="setting_title_inverted">Převrácené barvy</string>
-    <string name="setting_summary_inverted">Pokud je zaškrtnuto, bude obsah vykreslen v režimu převrácené stupnice šedi. Toto je druh „nočního režimu“.</string>
     <string name="setting_title_font">Velikost písma</string>
     <string name="setting_summary_font">Změna velikosti písma zobrazených webových stránek.</string>
     <string name="setting_title_remote">Vzdálený obsah</string>

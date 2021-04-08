@@ -16,7 +16,6 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.textfield.TextInputLayout;
 import android.view.View;
-import android.webkit.CookieManager;
 import android.webkit.HttpAuthHandler;
 import android.webkit.SslErrorHandler;
 import android.webkit.WebResourceRequest;
@@ -46,7 +45,6 @@ public class NinjaWebViewClient extends WebViewClient {
     private final Context context;
     private final SharedPreferences sp;
     private final AdBlock adBlock;
-    private final Cookie cookie;
 
     private final boolean white;
     private boolean enable;
@@ -60,7 +58,6 @@ public class NinjaWebViewClient extends WebViewClient {
         this.context = ninjaWebView.getContext();
         this.sp = PreferenceManager.getDefaultSharedPreferences(context);
         this.adBlock = new AdBlock(this.context);
-        this.cookie = new Cookie(this.context);
         this.white = false;
         this.enable = true;
     }
@@ -108,16 +105,8 @@ public class NinjaWebViewClient extends WebViewClient {
         PackageManager packageManager = context.getPackageManager();
         Intent browseIntent = new Intent(Intent.ACTION_VIEW).setData(parsedUri);
 
-        CookieManager manager = CookieManager.getInstance();
-        if (cookie.isWhite(url) || sp.getBoolean(context.getString(R.string.sp_cookies), true)) {
-            manager.setAcceptCookie(true);
-            manager.getCookie(url);
-        } else {
-            manager.setAcceptCookie(false);
-        }
-
         if (url.startsWith("http")) {
-            webView.loadUrl(url, ninjaWebView.getRequestHeaders());
+            this.ninjaWebView.loadUrl(url, this.ninjaWebView.getRequestHeaders());
             return true;
         }
 

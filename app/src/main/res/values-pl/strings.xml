@@ -77,8 +77,6 @@
     <string name="setting_summary_search_engine_searx">Searx</string>
     <string name="setting_summary_search_engine_qwant">Qwant</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
-    <string name="setting_title_inverted">Odwrócone kolory</string>
-    <string name="setting_summary_inverted">Jeśli zaznaczone, zawartość będzie wyświetlana w odwróconej skali szarości. Jest to rodzaj \"trybu nocnego\".</string>
     <string name="setting_title_font">Rozmiar czcionki</string>
     <string name="setting_summary_font">Zmień podstawowy rozmiar czcionek wyświetlanych na stronach.</string>
     <string name="setting_title_remote">Zawartość zdalna</string>

@@ -77,8 +77,6 @@
     <string name="setting_summary_search_engine_searx">Zoeken</string>
     <string name="setting_summary_search_engine_qwant">Aantal</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
-    <string name="setting_title_inverted">Kleuren omkeren</string>
-    <string name="setting_summary_inverted">If checked, content will be rendered in a inverted grey scale mode. This is a kind of \"night mode\".</string>
     <string name="setting_title_font">Lettertypegrootte</string>
     <string name="setting_summary_font">Wijzig de lettertypegrootte die gebruikt wordt bij het tonen van websites.</string>
     <string name="setting_title_remote">Externe inhoud</string>

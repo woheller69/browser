@@ -77,8 +77,6 @@
     <string name="setting_summary_search_engine_searx">Searx</string>
     <string name="setting_summary_search_engine_qwant">Qwant</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
-    <string name="setting_title_inverted">Színek invertálása</string>
-    <string name="setting_summary_inverted">Bejelölve, a tartalom invertált szürkeárnyalatos módban fog megjelenni. Ez egyfajta \"éjszakai mód\".</string>
     <string name="setting_title_font">Betűméret</string>
     <string name="setting_summary_font">Megváltoztatja a weboldalak megjelenített betűméretét.</string>
     <string name="setting_title_remote">Távoli tartalom</string>

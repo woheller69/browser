@@ -66,20 +66,11 @@
                 android:layout_height="?android:attr/listPreferredItemHeightSmall"
                 android:minHeight="?android:attr/listPreferredItemHeightSmall">
 
-                <ImageView
-                    android:id="@+id/abIcon"
-                    android:layout_width="24dp"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentStart="true"
-                    android:layout_marginEnd="16dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/icon_adblock" />
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_toEndOf="@+id/abIcon"
-                    android:layout_toStartOf="@+id/imageButton_ab"
+                    android:layout_toStartOf="@+id/imageButton_ab_tab"
+                    android:layout_alignParentStart="true"
                     android:includeFontPadding="false"
                     android:gravity="center_vertical"
                     android:text="@string/setting_title_adblock"
@@ -106,6 +97,18 @@
                     android:scaleType="fitCenter"
                     app:srcCompat="@drawable/ic_action_close_red" />
 
+                <ImageButton
+                    android:id="@+id/imageButton_ab_tab"
+                    android:layout_width="24dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_toStartOf="@+id/imageButton_ab"
+                    android:background="?attr/actionBarItemBackground"
+                    android:foregroundGravity="center_vertical"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/icon_adblock" />
+
             </RelativeLayout>
 
             <RelativeLayout
@@ -113,20 +116,11 @@
                 android:layout_height="?android:attr/listPreferredItemHeightSmall"
                 android:minHeight="?android:attr/listPreferredItemHeightSmall">
 
-                <ImageView
-                    android:id="@+id/jsIcon"
-                    android:layout_width="24dp"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentStart="true"
-                    android:layout_marginEnd="16dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/icon_java"/>
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_toEndOf="@+id/jsIcon"
-                    android:layout_toStartOf="@+id/imageButton_js"
+                    android:layout_alignParentStart="true"
+                    android:layout_toStartOf="@+id/imageButton_js_tab"
                     android:includeFontPadding="false"
                     android:gravity="center_vertical"
                     android:text="@string/setting_title_javascript"
@@ -152,6 +146,18 @@
                     android:scaleType="fitCenter"
                     app:srcCompat="@drawable/ic_action_close_red"/>
 
+                <ImageButton
+                    android:id="@+id/imageButton_js_tab"
+                    android:layout_width="24dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_toStartOf="@+id/imageButton_js"
+                    android:background="?attr/actionBarItemBackground"
+                    android:foregroundGravity="center_vertical"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/icon_java" />
+
             </RelativeLayout>
 
             <RelativeLayout
@@ -159,21 +165,11 @@
                 android:layout_height="?android:attr/listPreferredItemHeightSmall"
                 android:minHeight="?android:attr/listPreferredItemHeightSmall">
 
-                <ImageView
-                    android:layout_centerVertical="true"
-                    android:id="@+id/cookieIcon"
-                    android:layout_width="24dp"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentStart="true"
-                    android:layout_marginEnd="16dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/icon_cookie"/>
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_toEndOf="@+id/cookieIcon"
-                    android:layout_toStartOf="@+id/imageButton_cookie"
+                    android:layout_alignParentStart="true"
+                    android:layout_toStartOf="@+id/imageButton_cookie_tab"
                     android:includeFontPadding="false"
                     android:gravity="center_vertical"
                     android:text="@string/setting_title_cookie"
@@ -199,6 +195,18 @@
                     android:scaleType="fitCenter"
                     app:srcCompat="@drawable/ic_action_close_red"/>
 
+                <ImageButton
+                    android:id="@+id/imageButton_cookie_tab"
+                    android:layout_width="24dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_toStartOf="@+id/imageButton_cookie"
+                    android:background="?attr/actionBarItemBackground"
+                    android:foregroundGravity="center_vertical"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/icon_cookie" />
+
             </RelativeLayout>
 
             <RelativeLayout
@@ -206,20 +214,11 @@
                 android:layout_height="?android:attr/listPreferredItemHeightSmall"
                 android:minHeight="?android:attr/listPreferredItemHeightSmall">
 
-                <ImageView
-                    android:id="@+id/extIcon"
-                    android:layout_width="24dp"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentStart="true"
-                    android:layout_marginEnd="16dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/icon_remote" />
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_toEndOf="@+id/extIcon"
-                    android:layout_toStartOf="@+id/imageButton_ext"
+                    android:layout_alignParentStart="true"
+                    android:layout_toStartOf="@+id/imageButton_ext_tab"
                     android:includeFontPadding="false"
                     android:gravity="center_vertical"
                     android:text="@string/setting_title_remote"
@@ -245,6 +244,18 @@
                     android:foregroundGravity="center_vertical"
                     android:scaleType="fitCenter"
                     app:srcCompat="@drawable/ic_action_close_red" />
+
+                <ImageButton
+                    android:id="@+id/imageButton_ext_tab"
+                    android:layout_width="24dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_toStartOf="@+id/imageButton_ext"
+                    android:background="?attr/actionBarItemBackground"
+                    android:foregroundGravity="center_vertical"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/icon_remote" />
 
             </RelativeLayout>
 

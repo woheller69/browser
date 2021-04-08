@@ -77,8 +77,6 @@
     <string name="setting_summary_search_engine_searx">Searx</string>
     <string name="setting_summary_search_engine_qwant">Qwant</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
-    <string name="setting_title_inverted">Інвертовані кольори</string>
-    <string name="setting_summary_inverted">If checked, content will be rendered in a inverted grey scale mode. This is a kind of \"night mode\".</string>
     <string name="setting_title_font">Розмір шрифту</string>
     <string name="setting_summary_font">Змініть розмір шрифту для відображення веб-сайтів.</string>
     <string name="setting_title_remote">Віддалений контент</string>

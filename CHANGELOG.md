@@ -1,3 +1,10 @@
+### v 7.3 (WIP)
+- updated and added translations (now 16 languages are supported!)
+- updated: build libraries
+- removed: multi-window support
+- new: Opting out of metrics collection
+- new: support of: open target="_blank"
+
 ### v 7.2
 - fix: zooming on websites
 - fix: opening new tab when restarting

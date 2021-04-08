@@ -77,8 +77,6 @@
     <string name="setting_summary_search_engine_searx">Searx</string>
     <string name="setting_summary_search_engine_qwant">Qwant</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
-    <string name="setting_title_inverted">Colores invertidos</string>
-    <string name="setting_summary_inverted">Si está marcado, el contenido se mostrará en un modo de escala gris invertida. Este es un tipo de \"modo nocturno\".</string>
     <string name="setting_title_font">Tamaño de fuente</string>
     <string name="setting_summary_font">Ajustar el tamaño del texto en sitios web.</string>
     <string name="setting_title_remote">Contenido remoto</string>

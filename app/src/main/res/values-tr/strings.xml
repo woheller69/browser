@@ -77,8 +77,6 @@
     <string name="setting_summary_search_engine_searx">Searx</string>
     <string name="setting_summary_search_engine_qwant">Qwant</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
-    <string name="setting_title_inverted">Ters renkler</string>
-    <string name="setting_summary_inverted">İşaretlenirse, içerik ters çevrilmiş gri tonlama modunda oluşturulur. Bu bir tür \"gece modu\".</string>
     <string name="setting_title_font">Yazı boyutu</string>
     <string name="setting_summary_font">Web sitelerini görüntülemek için yazı tipi boyutunu değiştirin.</string>
     <string name="setting_title_remote">Uzaktan içerik</string>

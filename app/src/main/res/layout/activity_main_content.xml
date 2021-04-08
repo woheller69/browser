@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:showIn="@layout/activity_main">
+    tools:showIn="@layout/activity_main"
+    tools:ignore="ContentDescription,RelativeOverlap">
 
     <FrameLayout android:id="@+id/main_content"
         android:layout_width="match_parent"
@@ -36,8 +37,7 @@
         android:visibility="gone"
         app:backgroundTint="?android:attr/colorAccent"
         app:fabSize="mini"
-        app:srcCompat="@drawable/icon_overflow_fab"
-        tools:ignore="RelativeOverlap" />
+        app:srcCompat="@drawable/icon_overflow_fab" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_imageButtonNav_left"
@@ -49,8 +49,7 @@
         android:visibility="gone"
         app:backgroundTint="?android:attr/colorAccent"
         app:fabSize="mini"
-        app:srcCompat="@drawable/icon_overflow_fab"
-        tools:ignore="RelativeOverlap" />
+        app:srcCompat="@drawable/icon_overflow_fab"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_imageButtonNav_center"
@@ -62,8 +61,7 @@
         android:visibility="gone"
         app:backgroundTint="?android:attr/colorAccent"
         app:fabSize="mini"
-        app:srcCompat="@drawable/icon_overflow_fab"
-        tools:ignore="RelativeOverlap" />
+        app:srcCompat="@drawable/icon_overflow_fab"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_imageButtonNav_null"

@@ -1,6 +1,8 @@
 package de.baumann.browser.browser;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.view.View;
 import android.webkit.*;
@@ -17,7 +19,6 @@ public class NinjaWebChromeClient extends WebChromeClient {
         this.ninjaWebView = ninjaWebView;
     }
 
-
     @Override
     public void onProgressChanged(WebView view, int progress) {
         super.onProgressChanged(view, progress);
@@ -27,6 +28,28 @@ public class NinjaWebChromeClient extends WebChromeClient {
         } else {
             ninjaWebView.update(view.getTitle());
         }
+    }
+
+    @Override
+    public boolean onCreateWindow(WebView view, boolean dialog, boolean userGesture, android.os.Message resultMsg) {
+
+        Context context = view.getContext();
+        WebView newWebView = new WebView(context);
+        view.addView(newWebView);
+        WebView.WebViewTransport transport = (WebView.WebViewTransport) resultMsg.obj;
+        transport.setWebView(newWebView);
+        resultMsg.sendToTarget();
+
+        newWebView.setWebViewClient(new WebViewClient() {
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW);
+                browserIntent.setData(Uri.parse(url));
+                context.startActivity(browserIntent);
+                return true;
+            }
+        });
+        return true;
     }
 
     @Override

@@ -22,7 +22,6 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.preference.PreferenceManager;
 
-import android.os.Handler;
 import android.print.PrintAttributes;
 import android.print.PrintDocumentAdapter;
 import android.print.PrintManager;
@@ -31,6 +30,7 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -39,6 +39,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
+import android.webkit.CookieManager;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
@@ -258,7 +259,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         if (sp.getBoolean("start_tabStart", false)){
             showOverview();
         }
-        HelperUnit.initRendering(ninjaWebView);
     }
 
     @Override
@@ -980,10 +980,82 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         }
     }
 
+    @SuppressLint("SetJavaScriptEnabled")
     private void show_dialogFastToggle() {
 
         final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(context);
         View dialogView = View.inflate(context, R.layout.dialog_toggle, null);
+
+        //TabControl
+
+        final ImageButton whiteList_ab_tab = dialogView.findViewById(R.id.imageButton_ab_tab);
+        if (sp.getBoolean(getString(R.string.sp_ad_block), true)) {
+            whiteList_ab_tab.setImageResource(R.drawable.icon_adblock_enabled);
+        } else {
+            whiteList_ab_tab.setImageResource(R.drawable.icon_adblock);
+        }
+
+        final ImageButton whiteList_js_tab = dialogView.findViewById(R.id.imageButton_js_tab);
+        if (ninjaWebView.getSettings().getJavaScriptEnabled()) {
+            whiteList_js_tab.setImageResource(R.drawable.icon_java_enabled);
+            whiteList_js_tab.setOnClickListener(view -> {
+                ninjaWebView.getSettings().setJavaScriptEnabled(false);
+                ninjaWebView.getSettings().setJavaScriptCanOpenWindowsAutomatically(false);
+                ninjaWebView.reload();
+                bottomSheetDialog.cancel();
+            });
+        } else {
+            whiteList_js_tab.setImageResource(R.drawable.icon_java);
+            whiteList_js_tab.setOnClickListener(view -> {
+                ninjaWebView.getSettings().setJavaScriptEnabled(true);
+                ninjaWebView.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
+                ninjaWebView.reload();
+                bottomSheetDialog.cancel();
+            });
+        }
+
+        CookieManager manager = CookieManager.getInstance();
+        final ImageButton whiteList_cookie_tab = dialogView.findViewById(R.id.imageButton_cookie_tab);
+        if (manager.acceptCookie()) {
+            whiteList_cookie_tab.setImageResource(R.drawable.icon_cookie_enabled);
+            whiteList_cookie_tab.setOnClickListener(view -> {
+                manager.setAcceptCookie(false);
+                manager.getCookie(ninjaWebView.getUrl());
+                ninjaWebView.reload();
+                bottomSheetDialog.cancel();
+            });
+        } else {
+            whiteList_cookie_tab.setImageResource(R.drawable.icon_cookie);
+            whiteList_cookie_tab.setOnClickListener(view -> {
+                manager.setAcceptCookie(true);
+                manager.getCookie(ninjaWebView.getUrl());
+                ninjaWebView.reload();
+                bottomSheetDialog.cancel();
+            });
+        }
+
+        ImageButton whiteList_ext_tab = dialogView.findViewById(R.id.imageButton_ext_tab);
+        if (ninjaWebView.getSettings().getDomStorageEnabled()) {
+            whiteList_ext_tab.setImageResource(R.drawable.icon_remote_enabled);
+            whiteList_ext_tab.setOnClickListener(view -> {
+                ninjaWebView.getSettings().setAllowFileAccessFromFileURLs(false);
+                ninjaWebView.getSettings().setAllowUniversalAccessFromFileURLs(false);
+                ninjaWebView.getSettings().setDomStorageEnabled(false);
+                ninjaWebView.reload();
+                bottomSheetDialog.cancel();
+            });
+        } else {
+            whiteList_ext_tab.setImageResource(R.drawable.icon_remote);
+            whiteList_ext_tab.setOnClickListener(view -> {
+                ninjaWebView.getSettings().setAllowFileAccessFromFileURLs(true);
+                ninjaWebView.getSettings().setAllowUniversalAccessFromFileURLs(true);
+                ninjaWebView.getSettings().setDomStorageEnabled(true);
+                ninjaWebView.reload();
+                bottomSheetDialog.cancel();
+            });
+        }
+
+        // CheckBox
 
         CheckBox sw_java = dialogView.findViewById(R.id.switch_js);
         final ImageButton whiteList_js = dialogView.findViewById(R.id.imageButton_js);
@@ -1005,29 +1077,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         final String url = ninjaWebView.getUrl();
 
-        if (sp.getBoolean(getString(R.string.sp_javascript), true)){
-            sw_java.setChecked(true);
-        } else {
-            sw_java.setChecked(false);
-        }
-
-        if (sp.getBoolean(getString(R.string.sp_ad_block), true)){
-            sw_adBlock.setChecked(true);
-        } else {
-            sw_adBlock.setChecked(false);
-        }
-
-        if (sp.getBoolean(getString(R.string.sp_cookies), true)){
-            sw_cookie.setChecked(true);
-        } else {
-            sw_cookie.setChecked(false);
-        }
-
-        if (sp.getBoolean("sp_remote", true)){
-            switch_ext.setChecked(true);
-        } else {
-            switch_ext.setChecked(false);
-        }
+        sw_java.setChecked(sp.getBoolean(getString(R.string.sp_javascript), true));
+        sw_adBlock.setChecked(sp.getBoolean(getString(R.string.sp_ad_block), true));
+        sw_cookie.setChecked(sp.getBoolean(getString(R.string.sp_cookies), true));
+        switch_ext.setChecked(sp.getBoolean("sp_remote", true));
 
         if (javaHosts.isWhite(url)) {
             whiteList_js.setImageResource(R.drawable.check_green);
@@ -1216,9 +1269,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         ib_reload.setOnClickListener(view -> {
             if (ninjaWebView != null) {
                 bottomSheetDialog.cancel();
-                ninjaWebView.initPreferences();
-                addAlbum(ninjaWebView.getTitle(), ninjaWebView.getUrl(), false);
-                removeAlbum(currentAlbumController);
+                ninjaWebView.initPreferences(ninjaWebView.getUrl());
+                ninjaWebView.reload();
             }
         });
 
@@ -1238,11 +1290,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         if (currentAlbumController != null) {
             int index = BrowserContainer.indexOf(currentAlbumController) + 1;
             BrowserContainer.add(ninjaWebView, index);
-            tab_container.addView(albumView, LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         } else {
             BrowserContainer.add(ninjaWebView);
-            tab_container.addView(albumView, LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         }
+        tab_container.addView(albumView, LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
 
         if (!foreground) {
             ninjaWebView.deactivate();
@@ -1251,13 +1302,14 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             showAlbum(ninjaWebView);
         }
 
-        if (url != null && !url.isEmpty()) {
+        if (!url.isEmpty()) {
             ninjaWebView.loadUrl(url);
         }
     }
 
     private synchronized void updateAlbum(String url) {
-        ((NinjaWebView) currentAlbumController).loadUrl(url);
+        addAlbum(null, url, false);
+        removeAlbum(currentAlbumController);
     }
 
     private void closeTabConfirmation(final Runnable okAction) {
@@ -1325,50 +1377,30 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     @Override
     public synchronized void updateProgress(int progress) {
 
-        updateOmnibox();if (progress < BrowserUnit.PROGRESS_MAX) {
+        updateOmnibox();
+
+        if (progress < BrowserUnit.PROGRESS_MAX) {
             progressBar.setProgress(progress);
             progressBar.setVisibility(View.VISIBLE);
-            updateRefresh(true);
         } else {
             progressBar.setVisibility(View.GONE);
-            updateRefresh(false);
         }
 
-        if (Objects.requireNonNull(sp.getBoolean("hideToolbar", true))) {
+        if (sp.getBoolean("hideToolbar", true)) {
             ninjaWebView.setOnScrollChangeListener((scrollY, oldScrollY) -> {
                 int height = (int) Math.floor(ninjaWebView.getContentHeight() * ninjaWebView.getResources().getDisplayMetrics().density);
                 int webViewHeight = ninjaWebView.getHeight();
                 int cutoff = height - webViewHeight - 112 * Math.round(getResources().getDisplayMetrics().density);
                 if (scrollY > oldScrollY && cutoff >= scrollY) {
                     if (!searchOnSite)  {
-                        fab_imageButtonNav.setVisibility(View.VISIBLE);
-                        searchPanel.setVisibility(View.GONE);
-                        omnibox.setVisibility(View.GONE);
-                        omniboxTitle.setVisibility(View.GONE);
+
                         appBar.setVisibility(View.GONE);
+                        fab_imageButtonNav.setVisibility(View.VISIBLE);
                     }
                 } else if (scrollY < oldScrollY){
                     showOmnibox();
                 }
             });
-        }
-    }
-
-    private void updateRefresh(boolean running) {
-        if (showOverflow) {
-            if (running) {
-                omniboxRefresh.setImageResource(R.drawable.icon_close);
-            } else {
-                try {
-                    if (ninjaWebView.getUrl().startsWith("https://")) {
-                        omniboxRefresh.setImageResource(R.drawable.icon_refresh);
-                    } else {
-                        omniboxRefresh.setImageResource(R.drawable.icon_alert);
-                    }
-                } catch (Exception e) {
-                    omniboxRefresh.setImageResource(R.drawable.icon_refresh);
-                }
-            }
         }
     }
 
@@ -1579,7 +1611,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             omniboxRefresh.setImageResource(R.drawable.icon_alert);
         }
 
-
         omniboxRefresh.setOnClickListener(v -> {
             dialog_overview.cancel();
             final String url1 = ninjaWebView.getUrl();
@@ -1598,9 +1629,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     bottomSheetDialog.show();
                     HelperUnit.setBottomSheetBehavior(bottomSheetDialog, dialogView, BottomSheetBehavior.STATE_EXPANDED);
                 } else {
-                    ninjaWebView.initPreferences();
-                    addAlbum(ninjaWebView.getTitle(), ninjaWebView.getUrl(), false);
-                    removeAlbum(currentAlbumController);
+                    ninjaWebView.initPreferences(ninjaWebView.getUrl());
+                    ninjaWebView.reload();
                 }
             } else if (url1 == null ){
                 String text = getString(R.string.toast_load_error);

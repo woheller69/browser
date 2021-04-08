@@ -77,8 +77,6 @@
     <string name="setting_summary_search_engine_searx">Searx</string>
     <string name="setting_summary_search_engine_qwant">Qwant</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
-    <string name="setting_title_inverted">Инвертированные цвета</string>
-    <string name="setting_summary_inverted">Если отмечено, содержимое будет отображаться в режиме инвертированного серого. Это вид \"ночного режима\".</string>
     <string name="setting_title_font">Размер шрифта</string>
     <string name="setting_summary_font">Измените размер шрифта для отображения веб-сайтов.</string>
     <string name="setting_title_remote">Удаленный контент</string>

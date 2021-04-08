@@ -77,8 +77,6 @@
     <string name="setting_summary_search_engine_searx">Searx</string>
     <string name="setting_summary_search_engine_qwant">Qwant</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
-    <string name="setting_title_inverted">Обрнуте боје</string>
-    <string name="setting_summary_inverted">Ако је чекирано, садржај ће бити приказан у обрнутом црно-белом режиму. Изгледа слично ноћном режиму.</string>
     <string name="setting_title_font">Величина слова</string>
     <string name="setting_summary_font">Change the font size for displaying websites.</string>
     <string name="setting_title_remote">Remote content</string>

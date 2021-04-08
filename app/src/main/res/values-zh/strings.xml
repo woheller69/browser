@@ -77,8 +77,6 @@
     <string name="setting_summary_search_engine_searx">Searx</string>
     <string name="setting_summary_search_engine_qwant">Qwant</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
-    <string name="setting_title_inverted">顏色反轉</string>
-    <string name="setting_summary_inverted">網頁內容將以反轉的灰階顯示，可視為夜間模式的一種。</string>
     <string name="setting_title_font">字體大小</string>
     <string name="setting_summary_font">更改網站顯示的字型大小</string>
     <string name="setting_title_remote">遠端內容</string>

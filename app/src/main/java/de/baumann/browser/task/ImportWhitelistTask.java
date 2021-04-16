@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.TextView;
 
+import java.util.Objects;
+
 import de.baumann.browser.R;
 import de.baumann.browser.unit.BrowserUnit;
 import de.baumann.browser.unit.HelperUnit;
@@ -37,8 +39,7 @@ public class ImportWhitelistTask extends AsyncTask<Void, Void, Boolean> {
         TextView textView = dialogView.findViewById(R.id.dialog_text);
         textView.setText(context.getString(R.string.toast_wait_a_minute));
         dialog.setContentView(dialogView);
-        //noinspection ConstantConditions
-        dialog.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+        Objects.requireNonNull(dialog.getWindow()).clearFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
         dialog.show();
         HelperUnit.setBottomSheetBehavior(dialog, dialogView, BottomSheetBehavior.STATE_EXPANDED);
     }

@@ -3,10 +3,11 @@
 <resources>
 
     <color name="colorAccent">#26a69a</color>
+    <color name="color_grey">#303030</color>
 
     <color name="color_transparent">@android:color/transparent</color>
     <color name="color_light">#fafafa</color>
-    <color name="color_hint">#E0E0E0</color>
+    <color name="color_hint">#BDBDBD</color>
 
     <color name="color_red">#F44336</color>
     <color name="color_shadow_light">@color/cardview_shadow_start_color</color>

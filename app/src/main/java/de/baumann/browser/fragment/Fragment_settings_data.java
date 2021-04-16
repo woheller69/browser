@@ -138,11 +138,45 @@ public class Fragment_settings_data extends PreferenceFragmentCompat {
             return false;
         });
         findPreference("data_imBookmark").setOnPreferenceClickListener(preference -> {
-            new ImportWhitelistTask(getActivity(), 4).execute();
+            try {
+                if (android.os.Build.VERSION.SDK_INT >= 23 && android.os.Build.VERSION.SDK_INT < 29) {
+                    int hasWRITE_EXTERNAL_STORAGE = getActivity().checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+                    if (hasWRITE_EXTERNAL_STORAGE != PackageManager.PERMISSION_GRANTED) {
+                        HelperUnit.grantPermissionsStorage(getActivity());
+                        dialog.cancel();
+                    } else {
+                        makeBackupDir();
+                        new ImportWhitelistTask(getActivity(), 4).execute();
+                    }
+                } else {
+                    makeBackupDir();
+                    new ImportWhitelistTask(getActivity(), 4).execute();
+                }
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
             return false;
         });
         findPreference("data_exBookmark").setOnPreferenceClickListener(preference -> {
-            new ExportWhiteListTask(getActivity(), 4).execute();
+            try {
+                if (android.os.Build.VERSION.SDK_INT >= 23 && android.os.Build.VERSION.SDK_INT < 29) {
+                    int hasWRITE_EXTERNAL_STORAGE = getActivity().checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+                    if (hasWRITE_EXTERNAL_STORAGE != PackageManager.PERMISSION_GRANTED) {
+                        HelperUnit.grantPermissionsStorage(getActivity());
+                        dialog.cancel();
+                    } else {
+                        makeBackupDir();
+                        new ExportWhiteListTask(getActivity(), 4).execute();
+                    }
+                } else {
+                    makeBackupDir();
+                    new ExportWhiteListTask(getActivity(), 4).execute();
+                }
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
             return false;
         });
     }

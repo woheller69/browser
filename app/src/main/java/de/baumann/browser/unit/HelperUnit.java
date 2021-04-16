@@ -72,17 +72,6 @@ import static android.content.Context.DOWNLOAD_SERVICE;
 
 public class HelperUnit {
 
-    public static void bound (Context context, View view) {
-        int windowWidth = context.getResources().getDisplayMetrics().widthPixels;
-        int windowHeight = context.getResources().getDisplayMetrics().heightPixels;
-
-        int widthSpec = View.MeasureSpec.makeMeasureSpec(windowWidth, View.MeasureSpec.EXACTLY);
-        int heightSpec = View.MeasureSpec.makeMeasureSpec(windowHeight, View.MeasureSpec.EXACTLY);
-
-        view.measure(widthSpec, heightSpec);
-        view.layout(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight());
-    }
-
     private static final int REQUEST_CODE_ASK_PERMISSIONS = 123;
     private static final int REQUEST_CODE_ASK_PERMISSIONS_1 = 1234;
     private static SharedPreferences sp;
@@ -248,7 +237,7 @@ public class HelperUnit {
     }
 
     public static void setBottomSheetBehavior (final BottomSheetDialog dialog, final View view, int beh) {
-        BottomSheetBehavior mBehavior = BottomSheetBehavior.from((View) view.getParent());
+        BottomSheetBehavior<View> mBehavior = BottomSheetBehavior.from((View) view.getParent());
         mBehavior.setState(beh);
         mBehavior.addBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
             @Override
@@ -359,8 +348,7 @@ public class HelperUnit {
         }
     }
 
-    @SuppressWarnings("unchecked")
-    public static void addFilterItems (Activity activity, List gridList) {
+    public static void addFilterItems (Activity activity, List<GridItem> gridList) {
         GridItem item_01 = new GridItem(R.drawable.circle_red_big, sp.getString("icon_01", activity.getResources().getString(R.string.color_red)),  11);
         GridItem item_02 = new GridItem(R.drawable.circle_pink_big, sp.getString("icon_02", activity.getResources().getString(R.string.color_pink)),  10);
         GridItem item_03 = new GridItem(R.drawable.circle_purple_big, sp.getString("icon_03", activity.getResources().getString(R.string.color_purple)),  9);

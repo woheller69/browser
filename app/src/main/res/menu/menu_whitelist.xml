@@ -3,21 +3,18 @@
 <menu xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:ignore="AlwaysShowAction">
+    tools:ignore="AlwaysShowAction,HardcodedText">
 
     <item android:id="@+id/menu_backup"
         android:title="Backup"
-        android:icon="@drawable/icon_export"
-        app:showAsAction="always"/>
+        app:showAsAction="never" />
 
     <item android:id="@+id/menu_restore"
         android:title="Restore"
-        android:icon="@drawable/icon_import"
-        app:showAsAction="always"/>
+        app:showAsAction="never"/>
 
     <item android:id="@+id/menu_clear"
         android:title="@string/whitelist_menu_clear"
-        android:icon="@drawable/icon_database_remove"
-        app:showAsAction="always"/>
+        app:showAsAction="never"/>
 
 </menu>

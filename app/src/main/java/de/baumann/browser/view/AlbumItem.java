@@ -2,13 +2,9 @@ package de.baumann.browser.view;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.res.Resources;
-import android.content.res.TypedArray;
-import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
-
 import android.widget.TextView;
 
 import androidx.core.content.ContextCompat;
@@ -21,6 +17,7 @@ class AlbumItem {
 
     private final Context context;
     private final AlbumController albumController;
+    private ImageView albumClose;
 
     private View albumView;
     View getAlbumView() {
@@ -44,37 +41,28 @@ class AlbumItem {
         initUI();
     }
 
-    @SuppressWarnings("SameReturnValue")
     @SuppressLint("InflateParams")
     private void initUI() {
         albumView = LayoutInflater.from(context).inflate(R.layout.whitelist_item, null, false);
-        albumView.setOnClickListener(v -> {
-            browserController.showAlbum(albumController);
-            browserController.hideOverview();
-        });
         albumView.setOnLongClickListener(v -> {
             browserController.removeAlbum(albumController);
             return true;
         });
-        ImageView albumClose = albumView.findViewById(R.id.whitelist_item_cancel);
+        albumClose = albumView.findViewById(R.id.whitelist_item_cancel);
         albumClose.setVisibility(View.VISIBLE);
-        albumClose.setImageResource(R.drawable.icon_close);
-        albumTitle = albumView.findViewById(R.id.whitelist_item_domain);
-        albumTitle.setText(context.getString(R.string.app_name));
         albumClose.setOnClickListener(v -> browserController.removeAlbum(albumController));
+        albumTitle = albumView.findViewById(R.id.whitelist_item_domain);
     }
 
     public void activate() {
         albumTitle.setTextColor(ContextCompat.getColor(context, R.color.colorAccent));
+        albumClose.setImageResource(R.drawable.icon_close_enabled);
+        albumView.setOnClickListener(v -> browserController.hideTabView());
     }
 
     void deactivate() {
-        TypedValue typedValue = new TypedValue();
-        Resources.Theme theme = context.getTheme();
-        theme.resolveAttribute(android.R.attr.textColorPrimary, typedValue, true);
-        @SuppressLint("Recycle")
-        TypedArray arr = context.obtainStyledAttributes(typedValue.data, new int[]{android.R.attr.textColorPrimary});
-        int primaryColor = arr.getColor(0, -1);
-        albumTitle.setTextColor(primaryColor);
+        albumTitle.setTextColor(ContextCompat.getColor(context, R.color.color_light));
+        albumClose.setImageResource(R.drawable.icon_close_light);
+        albumView.setOnClickListener(v -> browserController.showAlbum(albumController));
     }
 }

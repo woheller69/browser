@@ -131,6 +131,7 @@ public class NinjaWebView extends WebView implements AlbumController {
         if (android.os.Build.VERSION.SDK_INT >= 26) {
             webSettings.setSafeBrowsingEnabled(true);
         }
+        assert userAgent != null;
         if (!userAgent.isEmpty()) {
             webSettings.setUserAgentString(userAgent);
         }

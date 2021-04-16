@@ -46,27 +46,22 @@ public class Settings_ClearActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem menuItem) {
-        switch (menuItem.getItemId()) {
-            case android.R.id.home:
-                finish();
-                break;
-            case R.id.menu_clear:
-                final BottomSheetDialog dialog = new BottomSheetDialog(Settings_ClearActivity.this);
-                View dialogView = View.inflate(Settings_ClearActivity.this, R.layout.dialog_action, null);
-                TextView textView = dialogView.findViewById(R.id.dialog_text);
-                textView.setText(R.string.hint_database);
-                Button action_ok = dialogView.findViewById(R.id.action_ok);
-                action_ok.setOnClickListener(view -> {
-                    Intent toClearService = new Intent(Settings_ClearActivity.this, ClearService.class);
-                    startService(toClearService);
-                    dialog.cancel();
-                });
-                dialog.setContentView(dialogView);
-                dialog.show();
-                HelperUnit.setBottomSheetBehavior(dialog, dialogView, BottomSheetBehavior.STATE_EXPANDED);
-                break;
-            default:
-                break;
+        if (menuItem.getItemId() == android.R.id.home) {
+            finish();
+        } else if (menuItem.getItemId() == R.id.menu_clear) {
+            final BottomSheetDialog dialog = new BottomSheetDialog(Settings_ClearActivity.this);
+            View dialogView = View.inflate(Settings_ClearActivity.this, R.layout.dialog_action, null);
+            TextView textView = dialogView.findViewById(R.id.dialog_text);
+            textView.setText(R.string.hint_database);
+            Button action_ok = dialogView.findViewById(R.id.action_ok);
+            action_ok.setOnClickListener(view -> {
+                Intent toClearService = new Intent(Settings_ClearActivity.this, ClearService.class);
+                startService(toClearService);
+                dialog.cancel();
+            });
+            dialog.setContentView(dialogView);
+            dialog.show();
+            HelperUnit.setBottomSheetBehavior(dialog, dialogView, BottomSheetBehavior.STATE_EXPANDED);
         }
         return true;
     }

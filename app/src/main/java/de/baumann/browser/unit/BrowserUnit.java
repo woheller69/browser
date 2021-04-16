@@ -139,7 +139,7 @@ public class BrowserUnit {
 
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
         String custom = sp.getString("sp_search_engine_custom", SEARCH_ENGINE_STARTPAGE);
-        final int i = Integer.valueOf(Objects.requireNonNull(sp.getString(context.getString(R.string.sp_search_engine), "6")));
+        final int i = Integer.parseInt(Objects.requireNonNull(sp.getString(context.getString(R.string.sp_search_engine), "6")));
         switch (i) {
             case 0:
                 return SEARCH_ENGINE_STARTPAGE + query;

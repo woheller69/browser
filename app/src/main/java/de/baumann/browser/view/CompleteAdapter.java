@@ -54,7 +54,7 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
         }
     }
 
-    private class CompleteItem {
+    private static class CompleteItem {
         private final String title;
 
         String getTitle() {
@@ -118,10 +118,10 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
         this.layoutResId = layoutResId;
         this.originalList = new ArrayList<>();
         this.resultList = new ArrayList<>();
-        dedup(recordList);
+        getRecordList(recordList);
     }
 
-    private void dedup(List<Record> recordList) {
+    private void getRecordList(List<Record> recordList) {
         for (Record record : recordList) {
             if (record.getTitle() != null
                     && !record.getTitle().isEmpty()

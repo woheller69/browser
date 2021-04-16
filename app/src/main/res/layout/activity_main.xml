@@ -6,23 +6,34 @@
     tools:ignore="ContentDescription">
 
     <RelativeLayout
-        android:id="@+id/appBar"
+        android:id="@+id/toolBar"
+        android:background="@color/color_grey"
         android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:minHeight="@dimen/layout_margin_56dp">
 
-        <RelativeLayout android:id="@+id/main_omnibox"
+        <RelativeLayout android:id="@+id/omniBox"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <ImageButton android:id="@+id/omnibox_overflow"
+            <ImageButton
+                android:id="@+id/open_tab"
+                android:layout_width="wrap_content"
+                android:layout_height="56dp"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_marginStart="16dp"
+                android:background="?attr/actionBarItemBackground"
+                android:src="@drawable/icon_menu" />
+
+            <ImageButton
+                android:id="@+id/omnibox_overflow"
                 android:layout_alignParentEnd="true"
                 android:layout_centerInParent="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:src="@drawable/icon_overflow"
+                android:padding="6dp"
+                android:src="@drawable/icon_overflow_light"
                 android:background="?attr/actionBarItemBackground"/>
 
             <ImageButton
@@ -32,43 +43,29 @@
                 android:layout_centerVertical="true"
                 android:layout_toStartOf="@id/omnibox_overflow"
                 android:background="?attr/actionBarItemBackground"
-                android:padding="8dp"
+                android:padding="6dp"
                 android:src="@drawable/icon_preview" />
 
             <androidx.appcompat.widget.AppCompatAutoCompleteTextView
-                android:id="@+id/main_omnibox_input"
+                android:id="@+id/omniBox_text"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_centerInParent="true"
                 android:layout_toStartOf="@id/omnibox_overview"
+                android:layout_toEndOf="@id/open_tab"
                 android:layout_marginStart="16dp"
-                android:includeFontPadding="false"
+                android:layout_marginEnd="8dp"
                 android:hint="@string/main_omnibox_input_hint"
-                android:textCursorDrawable="@null"
                 android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/color_light"
+                android:textColorHint="@color/color_hint"
+                android:textStyle="bold"
                 android:selectAllOnFocus="true"
                 android:completionThreshold="1"
+                android:background="@android:color/transparent"
                 android:imeOptions="actionGo"
                 android:inputType="textUri"
-                android:maxLines="1"
-                android:ellipsize="end"
-                android:background="?android:attr/colorBackground"/>
-
-            <TextView
-                android:id="@+id/omnibox_title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:layout_marginStart="16dp"
-                android:layout_toStartOf="@id/omnibox_overview"
-                android:includeFontPadding="false"
-                android:ellipsize="end"
-                android:maxLines="1"
-                android:text="@string/app_name"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="?android:attr/textColorSecondary"
-                android:textStyle="bold"
-                android:background="?android:attr/colorBackground" />
+                android:singleLine="true"/>
 
         </RelativeLayout>
 
@@ -86,7 +83,7 @@
                 android:layout_marginTop="@dimen/layout_margin_8dp"
                 android:layout_marginBottom="@dimen/layout_margin_8dp"
                 android:layout_gravity="center"
-                android:src="@drawable/icon_close"
+                android:src="@drawable/icon_close_light"
                 android:background="?attr/actionBarItemBackground"/>
 
             <ImageButton android:id="@+id/main_search_down"
@@ -121,12 +118,14 @@
                 android:paddingStart="16dp"
                 android:paddingEnd="8dp"
                 android:hint="@string/search_hint"
+                android:textColor="@color/color_light"
+                android:textColorHint="@color/color_hint"
+                android:background="@android:color/transparent"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:imeOptions="actionDone"
                 android:inputType="textAutoCorrect"
-                android:maxLines="1"
-                android:ellipsize="end"
-                android:background="?android:attr/colorBackground" />
+                android:singleLine="true"
+                android:ellipsize="start" />
 
         </RelativeLayout>
 
@@ -135,6 +134,6 @@
     <include layout="@layout/activity_main_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/appBar"/>
+        android:layout_above="@+id/toolBar"/>
 
 </RelativeLayout>

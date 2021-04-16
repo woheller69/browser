@@ -1,9 +1,15 @@
 ### v 7.3 (WIP)
 - updated and added translations (now 16 languages are supported!)
 - updated: build libraries
+- updated: AdBlock-hosts
 - removed: multi-window support
 - new: Opting out of metrics collection
 - new: support of: open target="_blank"
+- new: better tab handling
+- fix: export bookmarks
+- fix: tab handling
+- fix: apply javaScript, cookies and remote content whitelists
+- many other small fixes
 
 ### v 7.2
 - fix: zooming on websites

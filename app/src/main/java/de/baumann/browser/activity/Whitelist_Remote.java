@@ -118,80 +118,72 @@ public class Whitelist_Remote extends AppCompatActivity {
         final TextView textView;
         final Button action_ok;
 
-        switch (menuItem.getItemId()) {
-            case android.R.id.home:
-                finish();
-                break;
-            case R.id.menu_clear:
-                dialog = new BottomSheetDialog(Whitelist_Remote.this);
-                dialogView = View.inflate(Whitelist_Remote.this, R.layout.dialog_action, null);
-                textView = dialogView.findViewById(R.id.dialog_text);
-                textView.setText(R.string.hint_database);
-                action_ok = dialogView.findViewById(R.id.action_ok);
-                action_ok.setOnClickListener(view -> {
-                    Remote remote = new Remote(Whitelist_Remote.this);
-                    remote.clearDomains();
-                    list.clear();
-                    adapter.notifyDataSetChanged();
-                    dialog.cancel();
-                });
-                dialog.setContentView(dialogView);
-                dialog.show();
-                break;
-            case R.id.menu_backup:
-                dialog = new BottomSheetDialog(Objects.requireNonNull(Whitelist_Remote.this));
-                dialogView = View.inflate(Whitelist_Remote.this, R.layout.dialog_action, null);
-                textView = dialogView.findViewById(R.id.dialog_text);
-                textView.setText(R.string.toast_backup);
-                action_ok = dialogView.findViewById(R.id.action_ok);
-                action_ok.setOnClickListener(view -> {
-                    if (android.os.Build.VERSION.SDK_INT >= 23 && android.os.Build.VERSION.SDK_INT < 29) {
-                        int hasWRITE_EXTERNAL_STORAGE = checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
-                        if (hasWRITE_EXTERNAL_STORAGE != PackageManager.PERMISSION_GRANTED) {
-                            HelperUnit.grantPermissionsStorage(Whitelist_Remote.this);
-                            dialog.cancel();
-                        } else {
-                            dialog.cancel();
-                            HelperUnit.makeBackupDir(Whitelist_Remote.this);
-                            new ExportWhiteListTask(Whitelist_Remote.this, 3).execute();
-                        }
+        if (menuItem.getItemId() == android.R.id.home) {
+            finish();
+        } else if (menuItem.getItemId() == R.id.menu_clear) {
+            dialog = new BottomSheetDialog(Whitelist_Remote.this);
+            dialogView = View.inflate(Whitelist_Remote.this, R.layout.dialog_action, null);
+            textView = dialogView.findViewById(R.id.dialog_text);
+            textView.setText(R.string.hint_database);
+            action_ok = dialogView.findViewById(R.id.action_ok);
+            action_ok.setOnClickListener(view -> {
+                Remote remote = new Remote(Whitelist_Remote.this);
+                remote.clearDomains();
+                list.clear();
+                adapter.notifyDataSetChanged();
+                dialog.cancel();
+            });
+            dialog.setContentView(dialogView);
+            dialog.show();
+        } else if (menuItem.getItemId() == R.id.menu_backup) {
+            dialog = new BottomSheetDialog(Whitelist_Remote.this);
+            dialogView = View.inflate(Whitelist_Remote.this, R.layout.dialog_action, null);
+            textView = dialogView.findViewById(R.id.dialog_text);
+            textView.setText(R.string.toast_backup);
+            action_ok = dialogView.findViewById(R.id.action_ok);
+            action_ok.setOnClickListener(view -> {
+                if (android.os.Build.VERSION.SDK_INT >= 23 && android.os.Build.VERSION.SDK_INT < 29) {
+                    int hasWRITE_EXTERNAL_STORAGE = checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+                    if (hasWRITE_EXTERNAL_STORAGE != PackageManager.PERMISSION_GRANTED) {
+                        HelperUnit.grantPermissionsStorage(Whitelist_Remote.this);
+                        dialog.cancel();
                     } else {
                         dialog.cancel();
                         HelperUnit.makeBackupDir(Whitelist_Remote.this);
                         new ExportWhiteListTask(Whitelist_Remote.this, 3).execute();
                     }
-                });
-                dialog.setContentView(dialogView);
-                dialog.show();
-                HelperUnit.setBottomSheetBehavior(dialog, dialogView, BottomSheetBehavior.STATE_EXPANDED);
-                break;
-            case R.id.menu_restore:
-                dialog = new BottomSheetDialog(Objects.requireNonNull(Whitelist_Remote.this));
-                dialogView = View.inflate(Whitelist_Remote.this, R.layout.dialog_action, null);
-                textView = dialogView.findViewById(R.id.dialog_text);
-                textView.setText(R.string.hint_database);
-                action_ok = dialogView.findViewById(R.id.action_ok);
-                action_ok.setOnClickListener(view -> {
-                    if (android.os.Build.VERSION.SDK_INT >= 23 && android.os.Build.VERSION.SDK_INT < 29) {
-                        int hasWRITE_EXTERNAL_STORAGE = checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
-                        if (hasWRITE_EXTERNAL_STORAGE != PackageManager.PERMISSION_GRANTED) {
-                            HelperUnit.grantPermissionsStorage(Whitelist_Remote.this);
-                            dialog.cancel();
-                        } else {
-                            dialog.cancel();
-                            new ImportWhitelistTask(Whitelist_Remote.this, 3).execute();
-                        }
+                } else {
+                    dialog.cancel();
+                    HelperUnit.makeBackupDir(Whitelist_Remote.this);
+                    new ExportWhiteListTask(Whitelist_Remote.this, 3).execute();
+                }
+            });
+            dialog.setContentView(dialogView);
+            dialog.show();
+            HelperUnit.setBottomSheetBehavior(dialog, dialogView, BottomSheetBehavior.STATE_EXPANDED);
+        } else if (menuItem.getItemId() == R.id.menu_restore) {dialog = new BottomSheetDialog(Whitelist_Remote.this);
+            dialogView = View.inflate(Whitelist_Remote.this, R.layout.dialog_action, null);
+            textView = dialogView.findViewById(R.id.dialog_text);
+            textView.setText(R.string.hint_database);
+            action_ok = dialogView.findViewById(R.id.action_ok);
+            action_ok.setOnClickListener(view -> {
+                if (android.os.Build.VERSION.SDK_INT >= 23 && android.os.Build.VERSION.SDK_INT < 29) {
+                    int hasWRITE_EXTERNAL_STORAGE = checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+                    if (hasWRITE_EXTERNAL_STORAGE != PackageManager.PERMISSION_GRANTED) {
+                        HelperUnit.grantPermissionsStorage(Whitelist_Remote.this);
+                        dialog.cancel();
                     } else {
                         dialog.cancel();
                         new ImportWhitelistTask(Whitelist_Remote.this, 3).execute();
                     }
-                });
-                dialog.setContentView(dialogView);
-                dialog.show();
-                HelperUnit.setBottomSheetBehavior(dialog, dialogView, BottomSheetBehavior.STATE_EXPANDED);
-                break;
-            default:
-                break;
+                } else {
+                    dialog.cancel();
+                    new ImportWhitelistTask(Whitelist_Remote.this, 3).execute();
+                }
+            });
+            dialog.setContentView(dialogView);
+            dialog.show();
+            HelperUnit.setBottomSheetBehavior(dialog, dialogView, BottomSheetBehavior.STATE_EXPANDED);
         }
         return true;
     }

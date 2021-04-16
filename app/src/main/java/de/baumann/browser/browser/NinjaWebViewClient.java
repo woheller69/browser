@@ -71,10 +71,8 @@ public class NinjaWebViewClient extends WebViewClient {
             action.open(true);
             if (action.checkUrl(url, RecordUnit.TABLE_HISTORY)) {
                 action.deleteURL(url, RecordUnit.TABLE_HISTORY);
-                action.addHistory(new Record(ninjaWebView.getTitle(), url, System.currentTimeMillis(), 0));
-            } else {
-                action.addHistory(new Record(ninjaWebView.getTitle(), url, System.currentTimeMillis(), 0));
             }
+            action.addHistory(new Record(ninjaWebView.getTitle(), url, System.currentTimeMillis(), 0));
             action.close();
         }
 
@@ -106,7 +104,9 @@ public class NinjaWebViewClient extends WebViewClient {
         Intent browseIntent = new Intent(Intent.ACTION_VIEW).setData(parsedUri);
 
         if (url.startsWith("http")) {
-            this.ninjaWebView.loadUrl(url, this.ninjaWebView.getRequestHeaders());
+            ninjaWebView.getSettings();
+            ninjaWebView.initPreferences(url);
+            ninjaWebView.loadUrl(url, ninjaWebView.getRequestHeaders());
             return true;
         }
 

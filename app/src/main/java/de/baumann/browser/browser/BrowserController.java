@@ -13,6 +13,6 @@ public interface BrowserController {
     void showFileChooser(ValueCallback<Uri[]> filePathCallback);
     void onShowCustomView(View view, WebChromeClient.CustomViewCallback callback);
     void onLongPress(String url);
-    void hideOverview ();
+    void hideTabView ();
     void onHideCustomView();
 }

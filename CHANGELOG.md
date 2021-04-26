@@ -9,6 +9,7 @@
 - fix: export bookmarks
 - fix: tab handling
 - fix: apply javaScript, cookies and remote content whitelists
+- fix: switching between system day/night mode
 - many other small fixes
 
 ### v 7.2

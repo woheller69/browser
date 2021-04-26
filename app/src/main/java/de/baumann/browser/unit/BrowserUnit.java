@@ -10,6 +10,8 @@ import android.content.pm.ShortcutManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
+
+import androidx.appcompat.app.AlertDialog;
 import androidx.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
@@ -21,6 +23,7 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -45,6 +48,7 @@ import de.baumann.browser.database.RecordAction;
 import de.baumann.browser.R;
 import de.baumann.browser.view.NinjaToast;
 
+@SuppressWarnings("ResultOfMethodCallIgnored")
 public class BrowserUnit {
 
     public static final int PROGRESS_MAX = 100;
@@ -168,12 +172,9 @@ public class BrowserUnit {
     public static void download(final Context context, final String url, final String contentDisposition, final String mimeType) {
 
         String text = context.getString(R.string.dialog_title_download) + " - " + URLUtil.guessFileName(url, contentDisposition, mimeType);
-        final BottomSheetDialog dialog = new BottomSheetDialog(context);
-        View dialogView = View.inflate(context, R.layout.dialog_action, null);
-        TextView textView = dialogView.findViewById(R.id.dialog_text);
-        textView.setText(text);
-        Button action_ok = dialogView.findViewById(R.id.action_ok);
-        action_ok.setOnClickListener(view -> {
+        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
+        builder.setMessage(text);
+        builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
             DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
             String filename = URLUtil.guessFileName(url, contentDisposition, mimeType); // Maybe unexpected filename.
 
@@ -208,14 +209,13 @@ public class BrowserUnit {
                     Toast.makeText(context, R.string.toast_start_download, Toast.LENGTH_SHORT).show();
                 }
             }
-            dialog.cancel();
         });
-        dialog.setContentView(dialogView);
+        builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
+        AlertDialog dialog = builder.create();
         dialog.show();
-        HelperUnit.setBottomSheetBehavior(dialog, dialogView, BottomSheetBehavior.STATE_EXPANDED);
     }
 
-    public static String exportWhitelist(Context context, int i) {
+    public static void exportWhitelist(Context context, int i) {
         RecordAction action = new RecordAction(context);
         List<String> list;
         String filename;
@@ -247,13 +247,12 @@ public class BrowserUnit {
                 writer.newLine();
             }
             writer.close();
-            return file.getAbsolutePath();
-        } catch (Exception e) {
-            return null;
+            file.getAbsolutePath();
+        } catch (Exception ignored) {
         }
     }
 
-    public static int importWhitelist (Context context, int i) {
+    public static void importWhitelist (Context context, int i) {
         int count = 0;
         try {
             String filename;
@@ -317,10 +316,9 @@ public class BrowserUnit {
         } catch (Exception e) {
             Log.w("browser", "Error reading file", e);
         }
-        return count;
     }
 
-    public static String exportBookmarks(Context context) {
+    public static void exportBookmarks(Context context) {
         RecordAction action = new RecordAction(context);
         action.open(false);
         List<Record> list = action.listBookmark(context, false, 0);
@@ -338,13 +336,12 @@ public class BrowserUnit {
                 writer.newLine();
             }
             writer.close();
-            return file.getAbsolutePath();
-        } catch (Exception e) {
-            return null;
+            file.getAbsolutePath();
+        } catch (Exception ignored) {
         }
     }
 
-    public static int importBookmarks(Context context) {
+    public static void importBookmarks(Context context) {
         File file = new File(context.getExternalFilesDir(null), "browser_backup//export_Bookmark.html");
         List<Record> list = new ArrayList<>();
         try {
@@ -378,7 +375,7 @@ public class BrowserUnit {
             }
             action.close();
         } catch (Exception ignored) {}
-        return list.size();
+        list.size();
     }
 
     private static String getBookmarkTitle(String line) {

@@ -128,12 +128,6 @@
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">Werkbalk verbergen</string>
     <string name="setting_summary_hide">Use the whole screen when scrolling through websites. If you press the back button you will leave fullscreen mode.</string>
-    <string name="setting_theme">Thema</string>
-    <string name="setting_theme_summary">Stel het app thema in.</string>
-    <string name="setting_theme_system">Systeem thema</string>
-    <string name="setting_theme_light">Licht thema</string>
-    <string name="setting_theme_dark">Donker thema</string>
-    <string name="setting_title_theme">UI</string>
     <string name="setting_title_behavior">Gedrag</string>
     <string name="setting_summary_toolbarShow">Terugdrukken maakt de werkbalk zichtbaar, voordat je teruggaat in de geschiedenis.</string>
     <string name="setting_title_toolbarShow">Eerste werkbalk</string>
@@ -185,7 +179,6 @@
     <string name="setting_title_others">Overig</string>
     <string name="setting_title_appSettings">App-instellingen</string>
     <string name="setting_summary_appSettings">Open the system app settings for \"FOSS Browser\". There you can, depending on your Android version grant permissions, clear the app data and so on.</string>
-    <string name="setting_title_community">Bijdragen</string>
     <!-- Toast -->
     <string name="toast_add_to_home_successful">Toegevoegd aan beginscherm</string>
     <string name="toast_add_to_home_failed">Toevoegen mislukt</string>
@@ -195,22 +188,16 @@
     <string name="toast_delete_successful">Verwijderd</string>
     <string name="toast_domain_already_exists">Domein is al aanwezig</string>
     <string name="toast_export_successful">Geëxporteerd als:&#160;</string>
-    <string name="toast_export_failed">Exporteren mislukt</string>
-    <string name="toast_import_successful">Geïmporteerd:&#160;</string>
-    <string name="toast_import_failed">Importeren mislukt</string>
     <string name="toast_input_empty">Je hebt niks ingevoerd</string>
     <string name="toast_invalid_domain">Ongeldig domein</string>
     <string name="toast_load_error">Deze URL kan niet worden geladen</string>
     <string name="toast_new_tab_successful">Geopend op nieuw tabblad</string>
     <string name="toast_share_failed">Deze pagina kan niet worden gedeeld</string>
     <string name="toast_start_download">Bezig met starten van download…</string>
-    <string name="toast_wait_a_minute">Even geduld…</string>
     <string name="toast_webview_forward">Volgende site kan niet worden geladen</string>
     <string name="toast_permission_sdCard">\"FOSS Browser\" needs the permission to \"read and write on your storage\". This is needed to download files, taking screenshots and making backups of your data.</string>
-    <string name="toast_permission_loc">\"FOSS Browser\" needs the permission to \"access your location\". This is requested from some websites for example when they offer some kind of navigation.</string>
     <string name="toast_restart">\"FOSS-browser\" moet worden herstart om de wijzigingen toe te passen. Wil je nu afsluiten?</string>
     <string name="toast_quit">Wil je \"FOSS-browser\" afsluiten?</string>
-    <string name="toast_close_tab">Wil je het huidige tabblad sluiten?</string>
     <string name="toast_downloadComplete">Downloaden voltooid. Wil je bestandsbeheer openen?</string>
     <string name="toast_unsecured">Website uses an unsecured connection (\"http\"). Try a secure connection (\"https\")?</string>
     <string name="toast_backup">Wil je de gegevens back-uppen? Dit overschrijft de oude back-up.</string>
@@ -242,20 +229,4 @@
 
     </string>
     <!-- License changelog -->
-    <string name="cont_dialog">        &lt;i&gt;First I would like to thank all people who contributed in any way on this project. They submitted issues, translated or helped in any other way. On following sites you can become a active member of this great community:&lt;/i&gt;&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;Crowdin:&lt;/b&gt;&lt;br&gt;
-        Crowdin is an online plattform to translate applications in other languages. A big thanks to all translators. You can also help.&lt;br&gt;
-        &lt;i&gt;https://crowdin.com/project/foss-browser&lt;/i&gt;&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;XDA-thread:&lt;/b&gt;&lt;br&gt;
-        XDA is a great community for developers and smartphone enthusiasts. Here you can report issues, ask for new features and everything other related to \"FOSS Browser\".&lt;br&gt;
-        &lt;i&gt;https://forum.xda-developers.com/android/apps-games/app-browser-t3500091&lt;/i&gt;&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;Github:&lt;/b&gt;&lt;br&gt;
-        On Github you can see the source code of \"FOSS Browser\". This is the more technical solution: open issues, ask for new features or even help developing or translating.&lt;br&gt;
-        &lt;i&gt;https://github.com/scoute-dich/browser&lt;/i&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-
-        &lt;i&gt;Following people contributed at this project. If I have forgotten anybody, please contact me:&lt;/i&gt;
-    </string>
 </resources>

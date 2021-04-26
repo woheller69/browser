@@ -2,20 +2,19 @@ package de.baumann.browser.fragment;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 
-import com.google.android.material.bottomsheet.BottomSheetBehavior;
-import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.Objects;
 
 import de.baumann.browser.R;
-import de.baumann.browser.unit.HelperUnit;
 
 public class Fragment_settings_Filter extends PreferenceFragmentCompat {
 
@@ -127,27 +126,33 @@ public class Fragment_settings_Filter extends PreferenceFragmentCompat {
     }
 
     private void editFilterNames (final String filter, final String filterDefault, final Preference preference) {
-
-        final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(requireActivity());
+        SharedPreferences sp = getPreferenceScreen().getSharedPreferences();
+        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder (getActivity());
         View dialogView = View.inflate(getActivity(), R.layout.dialog_edit_title, null);
 
-        final EditText editText = dialogView.findViewById(R.id.pass_title);
-        final SharedPreferences sp = getPreferenceScreen().getSharedPreferences();
-        ImageView edit_icon = dialogView.findViewById(R.id.edit_icon);
-        edit_icon.setVisibility(View.GONE);
+        TextInputLayout edit_title_layout = dialogView.findViewById(R.id.edit_title_layout);
+        TextInputLayout edit_userName_layout = dialogView.findViewById(R.id.edit_userName_layout);
+        TextInputLayout edit_PW_layout = dialogView.findViewById(R.id.edit_PW_layout);
+        ImageView ib_icon = dialogView.findViewById(R.id.edit_icon);
+        ib_icon.setVisibility(View.GONE);
+        edit_title_layout.setVisibility(View.VISIBLE);
+        edit_userName_layout.setVisibility(View.GONE);
+        edit_PW_layout.setVisibility(View.GONE);
 
-        editText.setHint(R.string.dialog_title_hint);
-        editText.setText(sp.getString(filter, filterDefault));
+        EditText edit_title = dialogView.findViewById(R.id.edit_title);
+        edit_title.setText(sp.getString(filter, filterDefault));
 
-        Button action_ok = dialogView.findViewById(R.id.action_ok);
-        action_ok.setOnClickListener(view -> {
-            String text = editText.getText().toString().trim();
+        builder.setView(dialogView);
+        builder.setTitle(getString(R.string.menu_edit));
+        builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
+            String text = edit_title.getText().toString().trim();
             sp.edit().putString(filter, text).apply();
             Objects.requireNonNull(preference).setTitle(sp.getString(filter, filterDefault));
-            bottomSheetDialog.cancel();
+            dialog.cancel();
         });
-        bottomSheetDialog.setContentView(dialogView);
-        bottomSheetDialog.show();
-        HelperUnit.setBottomSheetBehavior(bottomSheetDialog, dialogView, BottomSheetBehavior.STATE_EXPANDED);
+        builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 }

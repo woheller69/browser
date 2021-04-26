@@ -2,46 +2,36 @@
 
 <LinearLayout android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:background="?android:attr/colorBackground"
-    tools:ignore="Overdraw"
-    android:paddingEnd="8dp"
-    android:paddingStart="8dp"
-    android:paddingBottom="8dp"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <TextView
-        android:id="@+id/overview_title"
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/menuTitle"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
+        android:text="@string/setting_filter"
         android:ellipsize="end"
         android:includeFontPadding="false"
         android:maxLines="1"
-        android:text="@string/app_name"
         android:gravity="center_vertical"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="?android:attr/textColorPrimary"
-        android:textStyle="bold" />
+        android:textAppearance="?attr/textAppearanceBody1"
+        android:textStyle="bold"/>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@color/colorAccent" />
+        android:background="?android:attr/textColorSecondary" />
 
     <GridView
-        android:stackFromBottom="true"
-        android:fastScrollEnabled="true"
         android:id="@+id/menu_grid"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         android:gravity="center"
         android:stretchMode="columnWidth"
-        android:numColumns="auto_fit" />
+        android:numColumns="1" />
 
 </LinearLayout>

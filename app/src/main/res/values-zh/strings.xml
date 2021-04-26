@@ -128,12 +128,6 @@
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">隐藏工具栏</string>
     <string name="setting_summary_hide">当在网页中滑动时使用全屏浏览。当您按下返回键会退出全屏模式。</string>
-    <string name="setting_theme">主题</string>
-    <string name="setting_theme_summary">设置应用主题。</string>
-    <string name="setting_theme_system">系统主题</string>
-    <string name="setting_theme_light">亮色主题</string>
-    <string name="setting_theme_dark">暗色主题</string>
-    <string name="setting_title_theme">界面</string>
     <string name="setting_title_behavior">行为</string>
     <string name="setting_summary_toolbarShow">在返回历史记录页面之前按下返回键将会使工具栏可见</string>
     <string name="setting_title_toolbarShow">第一个工具栏</string>
@@ -185,7 +179,6 @@
     <string name="setting_title_others">其它</string>
     <string name="setting_title_appSettings">应用设置</string>
     <string name="setting_summary_appSettings">打开“FOSS浏览器”系统应用设置。您可以根据您的 Android 版本授予权限，清除应用数据等等。</string>
-    <string name="setting_title_community">贡献者</string>
     <!-- Toast -->
     <string name="toast_add_to_home_successful">成功添加到桌面</string>
     <string name="toast_add_to_home_failed">添加到桌面失败</string>
@@ -195,22 +188,16 @@
     <string name="toast_delete_successful">删除成功</string>
     <string name="toast_domain_already_exists">域名已存在</string>
     <string name="toast_export_successful">导出为&#160;</string>
-    <string name="toast_export_failed">导出失败</string>
-    <string name="toast_import_successful">导入次数：&#160;</string>
-    <string name="toast_import_failed">导入失败</string>
     <string name="toast_input_empty">您没有输入任何内容</string>
     <string name="toast_invalid_domain">无效域名</string>
     <string name="toast_load_error">无法加载此 URL</string>
     <string name="toast_new_tab_successful">成功在新标签页中打开</string>
     <string name="toast_share_failed">无法分享此页面</string>
     <string name="toast_start_download">正在开始下载</string>
-    <string name="toast_wait_a_minute">请稍候</string>
     <string name="toast_webview_forward">无法加载下一个网站</string>
     <string name="toast_permission_sdCard">\"FOSS浏览器\"需要“在你的存储上读写”的权限。 这是下载文件，进行屏幕截图和备份您的数据所必要的。</string>
-    <string name="toast_permission_loc">\"FOSS浏览器\"需要\"访问您的位置\"权限。这是某些网站所请求的，例如当它们提供某种导航时。</string>
     <string name="toast_restart">您必须重启“FOSS浏览器”才能应用更改。现在关闭吗？</string>
     <string name="toast_quit">您想要退出“FOSS浏览器”吗？</string>
-    <string name="toast_close_tab">您想要关闭当前标签页吗？</string>
     <string name="toast_downloadComplete">下载完成。打开文件管理器？</string>
     <string name="toast_unsecured">网站使用不安全的连接 (\"http\")。尝试安全连接 (\"https://\")？</string>
     <string name="toast_backup">备份数据？这将覆盖旧的备份。</string>
@@ -240,20 +227,4 @@
 
     </string>
     <!-- License changelog -->
-    <string name="cont_dialog">        &lt;i&gt;首先，我要感谢所有以任何方式为这个项目做出贡献的人。 他们以任何其他方式提交问题、翻译或帮助。 在以下网站上您可以成为这个伟大社区的活跃成员:&lt;/i&gt;&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;Crowdin:&lt;/b&gt;&lt;br&gt;
-        Crowdin 是一个可翻译应用程序为其他语言的在线工程。 非常感谢所有翻译。您也可以帮忙。&lt;br&gt;
-        &lt;i&gt;https://crowdin.com/project/foss-browser &lt;/i&gt;&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;XDA-thread:&lt;/b&gt;&lt;br&gt;
-        XDA是开发者和智能手机爱好者的好社区。 您可以在这里报告问题，询问新功能和与“FOSS浏览器”相关的一切。&lt;br&gt;
-        &lt;i&gt;https://forum.xda-developers。 om/android/apps-games/app-browser-t3500091&lt;/i&gt;&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;Github:&lt;/b&gt;&lt;br&gt;
-        在 Github 上，您可以看到“FOSS浏览器”的源代码。 这是更具技术性的解决办法：未决问题，要求新的特性，甚至帮助开发或翻译。&lt;br&gt;
-        &lt;i&gt;https://github.com/scoute-dich/browser &lt;/i&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-
-        &lt;i&gt;关注此项目的人。 如果我忘记了任何人，请联系我：&lt;/i&gt;
-    </string>
 </resources>

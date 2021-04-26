@@ -18,11 +18,12 @@
             android:id="@+id/view3">
 
             <androidx.appcompat.widget.Toolbar
+                app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:background="?attr/colorPrimary"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+                android:background="?attr/colorPrimary" />
 
         </com.google.android.material.appbar.AppBarLayout>
 

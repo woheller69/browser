@@ -128,12 +128,6 @@
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">أخفِ شريط الأدوات</string>
     <string name="setting_summary_hide">استخدم الشاشة بأكملها عند اللف عبر المواقع. إذا ضغطت زر الرجوع ستغادر وضع الشاشة الكاملة.</string>
-    <string name="setting_theme">السمة</string>
-    <string name="setting_theme_summary">عيّن سمة التطبيق.</string>
-    <string name="setting_theme_system">سمة النظام</string>
-    <string name="setting_theme_light">سمة فاتحة</string>
-    <string name="setting_theme_dark">سمة داكنة</string>
-    <string name="setting_title_theme">واجهة مستخدم</string>
     <string name="setting_title_behavior">السلوك</string>
     <string name="setting_summary_toolbarShow">ضغط العودة سيجعل شريط الأدوات مرئيًا، قبل العودة في التاريخ.</string>
     <string name="setting_title_toolbarShow">شريط الأدوات الأول</string>
@@ -185,7 +179,6 @@
     <string name="setting_title_others">أخرى</string>
     <string name="setting_title_appSettings">إعدادات التطبيق</string>
     <string name="setting_summary_appSettings">افتح إعدادات تطبيق النظام للمتصفح الحر \"FOSS Browser\". هناك يمكنك، واعتمادا على الأذونات الممنوحة في إصدارك من أندرويد، أن تفرغ بيانات التطبيق وما شابه.</string>
-    <string name="setting_title_community">المساهمة</string>
     <!-- Toast -->
     <string name="toast_add_to_home_successful">أضيف إلى الرئيسية بنجاح</string>
     <string name="toast_add_to_home_failed">فشلت الإضافة الى الرئيسية</string>
@@ -195,22 +188,16 @@
     <string name="toast_delete_successful">حُذف بنجاح</string>
     <string name="toast_domain_already_exists">النطاق موجود مسبقا</string>
     <string name="toast_export_successful">صُدّر كـ:&#160;</string>
-    <string name="toast_export_failed">فشل التصدير</string>
-    <string name="toast_import_successful">عدد المستورَد:&#160;</string>
-    <string name="toast_import_failed">فشل الاستيراد</string>
     <string name="toast_input_empty">لم تُدخل أي شيء</string>
     <string name="toast_invalid_domain">نطاق غير سليم</string>
     <string name="toast_load_error">لا يمكن تحميل هذا الرابط</string>
     <string name="toast_new_tab_successful">فُتح بنجاح في علامة تبويب جديدة</string>
     <string name="toast_share_failed">لا يمكن مشاركة هذه الصفحة</string>
     <string name="toast_start_download">بدء التحميل</string>
-    <string name="toast_wait_a_minute">رجاءا انتظر لحظة</string>
     <string name="toast_webview_forward">لا يمكن تحميل الموقع التالي</string>
     <string name="toast_permission_sdCard">يحتاج المتصفح الحر \"FOSS Browse\" إذن \"القراءة والكتابة على التخزين خاصتك\". هذا مطلوب لتحميل الملفات، التقاط لقطات الشاشة وعمل نسخ احتياطية من بياناتك.</string>
-    <string name="toast_permission_loc">يحتاج المتصفح الحر \"FOSS Browser\" إذن \"الوصول إلى موقعك\". هذا يُطلب من بعض المواقع على سبيل المثال عندما توفر نوعاً ما من التصفح.</string>
     <string name="toast_restart">يجب عليك إعادة تشغيل المتصفح الحر\"FOSS Browser\" لتطبيق التغييرات. أغلق الآن؟</string>
     <string name="toast_quit">أتريد إنهاء المتصفح الحر\"FOSS Browser\"؟</string>
-    <string name="toast_close_tab">أتريد إغلاق التبويب الحالي؟</string>
     <string name="toast_downloadComplete">اكتمل التحميل. أفتح مدير الملفات؟</string>
     <string name="toast_unsecured">يستخدم الموقع اتصالا غير آمن (\"http\"). أجرب اتصالا آمنا (\"https\")؟</string>
     <string name="toast_backup">اعمل نسخا احتياطيا للبيانات؟ هذا سيستبدل النسخ الاحتياطي القديم.</string>
@@ -234,20 +221,4 @@
 
     </string>
     <!-- License changelog -->
-    <string name="cont_dialog">        &lt;i&gt;ولا أرغب في أن أشكر كل الأشخاص الذين ساهموا بأية طريقة في هذا المشروع. لقد قدموا إبلاغات عن المشاكل وترجموا وساعدوا بطرق أخرى. يمكنك على المواقع التالية أن تصبح عضوا فاعلا في هذا المجتمع الرائع:&lt;/i&gt;&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;كراود إن Crowdin:&lt;/b&gt;&lt;br&gt;
-        كراود إن Crowdin هو منصة على الانترنت لترجمة التطبيقات بلغات أخرى. شكرا جزيلا لكل المترجمين. يمكنك أيضا أن تساعد.&lt;br&gt;
-        &lt;i&gt;https://crowdin.com/project/foss-browser&lt;/i&gt;&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;المحادثة على أكس دي أي XDA:&lt;/b&gt;&lt;br&gt;
-        أكس دي أي XDA هو مجتمع رائع لمطوري ومناصري الهواتف الذكية. يمكنك هنا الإبلاغ عن المشاكل وطلب ميزات جديدة وأي شيء آخر يتعلق بالمتصفح الحر \"FOSS Browser\".&lt;br&gt;
-        &lt;i&gt;https://forum.xda-developers.com/android/apps-games/app-browser-t3500091&lt;/i&gt;&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;گِت هب Github:&lt;/b&gt;&lt;br&gt;
-        في گِت هب Github يمكنك أن ترى الشفرة المصدرية للمتصفح الحر \"FOSS Browser\". هذا هو الحل الأكثر تقنية: افتح إبلاغات عن المشاكل واطلب ميزات جديدة أو حتى ساعد في التطوير او الترجمة.&lt;br&gt;
-        &lt;i&gt;https://github.com/scoute-dich/browser&lt;/i&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-
-        &lt;i&gt;أسهم الأشخاص التالية أسمائهم في هذا المشروع. إذا نسيت أحدا، فالرجاء الاتصال بي:&lt;/i&gt;
-    </string>
 </resources>

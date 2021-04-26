@@ -43,26 +43,31 @@ import androidx.webkit.WebViewFeature;
 
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import android.os.Environment;
+import android.os.Handler;
+import android.os.Looper;
 import android.text.Html;
 import android.text.SpannableString;
 import android.text.util.Linkify;
+import android.view.Gravity;
 import android.view.View;
 import android.webkit.CookieManager;
 import android.webkit.URLUtil;
 import android.webkit.WebView;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import de.baumann.browser.R;
 import de.baumann.browser.view.GridItem;
@@ -81,18 +86,13 @@ public class HelperUnit {
             int hasWRITE_EXTERNAL_STORAGE = activity.checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
             if (hasWRITE_EXTERNAL_STORAGE != PackageManager.PERMISSION_GRANTED) {
                 if (!activity.shouldShowRequestPermissionRationale(Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
-                    final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(activity);
-                    View dialogView = View.inflate(activity, R.layout.dialog_action, null);
-                    TextView textView = dialogView.findViewById(R.id.dialog_text);
-                    textView.setText(R.string.toast_permission_sdCard);
-                    Button action_ok = dialogView.findViewById(R.id.action_ok);
-                    action_ok.setOnClickListener(view -> {
-                        activity.requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, REQUEST_CODE_ASK_PERMISSIONS);
-                        bottomSheetDialog.cancel();
-                    });
-                    bottomSheetDialog.setContentView(dialogView);
-                    bottomSheetDialog.show();
-                    HelperUnit.setBottomSheetBehavior(bottomSheetDialog, dialogView, BottomSheetBehavior.STATE_EXPANDED);
+                    MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(activity);
+                    builder.setMessage(R.string.toast_permission_sdCard);
+                    builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> activity.requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, REQUEST_CODE_ASK_PERMISSIONS));
+                    builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
+                    AlertDialog dialog = builder.create();
+                    dialog.show();
+                    Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
                 }
             }
         }
@@ -126,56 +126,30 @@ public class HelperUnit {
     }
 
     public static void grantPermissionsLoc(final Activity activity) {
-
         if (android.os.Build.VERSION.SDK_INT >= 23) {
             int hasACCESS_FINE_LOCATION = activity.checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION);
             if (hasACCESS_FINE_LOCATION != PackageManager.PERMISSION_GRANTED) {
-                final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(activity);
-                View dialogView = View.inflate(activity, R.layout.dialog_action, null);
-                TextView textView = dialogView.findViewById(R.id.dialog_text);
-                textView.setText(R.string.toast_permission_loc);
-                Button action_ok = dialogView.findViewById(R.id.action_ok);
-                action_ok.setOnClickListener(view -> {
-                    activity.requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_CODE_ASK_PERMISSIONS_1);
-                    bottomSheetDialog.cancel();
-                });
-                bottomSheetDialog.setContentView(dialogView);
-                bottomSheetDialog.show();
-                HelperUnit.setBottomSheetBehavior(bottomSheetDialog, dialogView, BottomSheetBehavior.STATE_EXPANDED);
+                MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(activity);
+                builder.setMessage(R.string.toast_quit);
+                builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> activity.requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_CODE_ASK_PERMISSIONS_1));
+                builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
+                AlertDialog dialog = builder.create();
+                dialog.show();
+                Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
             }
         }
     }
 
-    public static void applyTheme(Context context) {
-        sp = PreferenceManager.getDefaultSharedPreferences(context);
-        String showNavButton = Objects.requireNonNull(sp.getString("sp_theme", "1"));
-        switch (showNavButton) {
-            case "0":
-                context.setTheme(R.style.AppTheme_system);
-                break;
-            case "2":
-                context.setTheme(R.style.AppTheme_dark);
-                break;
-            case "3":
-                context.setTheme(R.style.AppTheme_amoled);
-                break;
-            default:
-                context.setTheme(R.style.AppTheme);
-                break;
-        }
-    }
-
     public static void save_as (final Activity activity, final String url) {
+
         try {
-            AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+            MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(activity);
             View dialogView = View.inflate(activity, R.layout.dialog_edit_extension, null);
 
-            final EditText editTitle = dialogView.findViewById(R.id.dialog_edit);
-            final EditText editExtension = dialogView.findViewById(R.id.dialog_edit_extension);
+            final EditText editTitle = dialogView.findViewById(R.id.dialog_edit_1);
+            final EditText editExtension = dialogView.findViewById(R.id.dialog_edit_2);
 
             String filename = URLUtil.guessFileName(url, null, null);
-
-            editTitle.setHint(R.string.dialog_title_hint);
             editTitle.setText(HelperUnit.fileName(url));
 
             String extension = filename.substring(filename.lastIndexOf("."));
@@ -184,7 +158,7 @@ public class HelperUnit {
             }
 
             builder.setView(dialogView);
-            builder.setTitle(R.string.menu_edit);
+            builder.setTitle(R.string.menu_save_as);
             builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
 
                 String title = editTitle.getText().toString().trim();
@@ -225,6 +199,7 @@ public class HelperUnit {
 
             AlertDialog dialog = builder.create();
             dialog.show();
+            Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -322,7 +297,8 @@ public class HelperUnit {
             0, 0, 0, 1.0f, 0     // Alpha
     };
 
-    public static void initRendering(WebView webView) {
+    public static void initRendering(WebView webView, Context context) {
+        sp = PreferenceManager.getDefaultSharedPreferences(context);
         if (sp.getBoolean("sp_invert", false)) {
             if(WebViewFeature.isFeatureSupported(WebViewFeature.FORCE_DARK)) {
                 WebSettingsCompat.setForceDark(webView.getSettings(), WebSettingsCompat.FORCE_DARK_ON);
@@ -374,6 +350,46 @@ public class HelperUnit {
         if (sp.getBoolean("filter_11", true)){ gridList.add(gridList.size(), item_11); }
     }
 
+
+    public static String[] filterMenu (Activity activity) {
+
+        String[] menuItems = new String[0];
+
+        if (sp.getBoolean("filter_01", true)){
+            menuItems = new String[]{sp.getString("icon_01", activity.getResources().getString(R.string.color_red))};
+        }
+        if (sp.getBoolean("filter_02", true)){
+            menuItems = new String[]{sp.getString("icon_02", activity.getResources().getString(R.string.color_pink))};
+        }
+        if (sp.getBoolean("filter_03", true)){
+            menuItems = new String[]{sp.getString("icon_03", activity.getResources().getString(R.string.color_purple))};
+        }
+        if (sp.getBoolean("filter_04", true)){
+            menuItems = new String[]{sp.getString("icon_04", activity.getResources().getString(R.string.color_blue))};
+        }
+        if (sp.getBoolean("filter_05", true)){
+            menuItems = new String[]{sp.getString("icon_05", activity.getResources().getString(R.string.color_teal))};
+        }
+        if (sp.getBoolean("filter_06", true)){
+            menuItems = new String[]{sp.getString("icon_06", activity.getResources().getString(R.string.color_green))};
+        }
+        if (sp.getBoolean("filter_07", true)){
+            menuItems = new String[]{sp.getString("icon_07", activity.getResources().getString(R.string.color_lime))};
+        }
+        if (sp.getBoolean("filter_08", true)){
+            menuItems = new String[]{sp.getString("icon_08", activity.getResources().getString(R.string.color_yellow))};
+        }
+        if (sp.getBoolean("filter_09", true)){
+            menuItems = new String[]{sp.getString("icon_09", activity.getResources().getString(R.string.color_orange))};
+        }
+        if (sp.getBoolean("filter_10", true)){
+            menuItems = new String[]{sp.getString("icon_10", activity.getResources().getString(R.string.color_brown))};
+        }
+        if (sp.getBoolean("filter_11", true)){
+            menuItems = new String[]{sp.getString("icon_11", activity.getResources().getString(R.string.color_grey))};
+        }
+        return menuItems;
+    }
     public static void setFilterIcons (ImageView ib_icon, long newIcon) {
         if (newIcon == 11) {
             ib_icon.setImageResource(R.drawable.circle_red_big);
@@ -398,5 +414,65 @@ public class HelperUnit {
         } else if (newIcon == 1) {
             ib_icon.setImageResource(R.drawable.circle_grey_big);
         }
+    }
+
+    public static void backupData(Activity context, int i) {
+        ExecutorService executor = Executors.newSingleThreadExecutor();
+        Handler handler = new Handler(Looper.getMainLooper());
+        executor.execute(() -> {
+            //Background work here
+            switch (i) {
+                case 0:
+                    BrowserUnit.exportWhitelist(context, 0);
+                    break;
+                case 1:
+                    BrowserUnit.exportWhitelist(context, 1);
+                    break;
+                case 3:
+                    BrowserUnit.exportWhitelist(context, 3);
+                    break;
+                case 4:
+                    BrowserUnit.exportBookmarks(context);
+                    break;
+                default:
+                    BrowserUnit.exportWhitelist(context, 2);
+                    break;
+            }
+
+            handler.post(() -> {
+                //UI Thread work here
+                NinjaToast.show(context, context.getString(R.string.toast_export_successful));
+            });
+        });
+    }
+
+    public static void restoreData(Activity context, int i) {
+        ExecutorService executor = Executors.newSingleThreadExecutor();
+        Handler handler = new Handler(Looper.getMainLooper());
+        executor.execute(() -> {
+            //Background work here
+            switch (i) {
+                case 0:
+                    BrowserUnit.importWhitelist(context, 0);
+                    break;
+                case 1:
+                    BrowserUnit.importWhitelist(context, 1);
+                    break;
+                case 3:
+                    BrowserUnit.importWhitelist(context, 3);
+                    break;
+                case 4:
+                    BrowserUnit.importBookmarks(context);
+                    break;
+                default:
+                    BrowserUnit.importWhitelist(context, 2);
+                    break;
+            }
+
+            handler.post(() -> {
+                //UI Thread work here
+                NinjaToast.show(context, context.getString(R.string.toast_export_successful));
+            });
+        });
     }
 }

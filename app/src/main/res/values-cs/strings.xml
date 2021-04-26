@@ -128,12 +128,6 @@
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">Skrýt Panel nástrojů</string>
     <string name="setting_summary_hide">Při procházení webovými stránkami použít celou obrazovku. Pokud stisknete tlačítko Zpět, opustíte režim celé obrazovky.</string>
-    <string name="setting_theme">Motiv</string>
-    <string name="setting_theme_summary">Nastavte motiv aplikace.</string>
-    <string name="setting_theme_system">Motiv systému</string>
-    <string name="setting_theme_light">Světlý motiv</string>
-    <string name="setting_theme_dark">Tmavý motiv</string>
-    <string name="setting_title_theme">UI</string>
     <string name="setting_title_behavior">Chování</string>
     <string name="setting_summary_toolbarShow">Stisknutím tlačítka Zpět se Panel nástrojů zviditelní před návratem do historie.</string>
     <string name="setting_title_toolbarShow">První Panel nástrojů</string>
@@ -185,7 +179,6 @@
     <string name="setting_title_others">Další</string>
     <string name="setting_title_appSettings">Nastavení aplikace</string>
     <string name="setting_summary_appSettings">Otevřete systémová nastavení pro „FOSS Browser“. Tam můžete v závislosti na vaší verzi Android udělit oprávnění, vymazat data aplikace atd.</string>
-    <string name="setting_title_community">Přispívání</string>
     <!-- Toast -->
     <string name="toast_add_to_home_successful">Úspěšně přidáno na plochu</string>
     <string name="toast_add_to_home_failed">Přidání na plochu se nezdařilo</string>
@@ -195,22 +188,16 @@
     <string name="toast_delete_successful">Úspěšně smazáno</string>
     <string name="toast_domain_already_exists">Doména již existuje</string>
     <string name="toast_export_successful">Exportováno jako&#160;</string>
-    <string name="toast_export_failed">Chyba exportu</string>
-    <string name="toast_import_successful">Importovaný počet:&#160;</string>
-    <string name="toast_import_failed">Chyba importu</string>
     <string name="toast_input_empty">Nic jste nevložili</string>
     <string name="toast_invalid_domain">Neplatná doména</string>
     <string name="toast_load_error">Nelze načíst tuto URL</string>
     <string name="toast_new_tab_successful">Úspěšně otevřeno na nové kartě</string>
     <string name="toast_share_failed">Nelze sdílet tuto stránku</string>
     <string name="toast_start_download">Zahajování stahování</string>
-    <string name="toast_wait_a_minute">Prosím, počkejte chvilku</string>
     <string name="toast_webview_forward">Nelze načíst další stránku</string>
     <string name="toast_permission_sdCard">„FOSS Browser“ vyžaduje oprávnění „čtení a zápis do vašeho úložiště“. Toto je zapotřebí ke stahování souborů, pořizování snímků obrazovky a vytváření záloh vašich dat.</string>
-    <string name="toast_permission_loc">„FOSS Browser“ vyžaduje oprávnění k „přístupu k vaší poloze“. To je vyžadováno od některých webových stránek. Například, když nabízejí nějaký druh navigace.</string>
     <string name="toast_restart">Pro provedení změn musíte restartovat aplikaci „FOSS Browser“. Ukončit nyní?</string>
     <string name="toast_quit">Opravdu chcete ukončit aplikaci „FOSS Browser“?</string>
-    <string name="toast_close_tab">Opravdu chcete zavřít aktuální kartu?</string>
     <string name="toast_downloadComplete">Stahování dokončeno. Otevřít správce souborů?</string>
     <string name="toast_unsecured">Stránka používá nezabezpečené připojení („http“). Chcete zkusit zabezpečné připojení („https“)?</string>
     <string name="toast_backup">Zálohovat data? Tato akce přepíše starou zálohu.</string>
@@ -248,27 +235,4 @@ vedle&lt;br&gt;&lt;br&gt;
 
     </string>
     <!-- License changelog -->
-    <string name="cont_dialog">        &lt;i&gt;Nejprve bych chtěl poděkovat všem lidem, kteří přispěli jakýmkoli způsobem k tomuto projektu. Byly odeslány otázky,
-        přeloženy nebo pomáhaly jakýmkoli jiným způsobem. Na následujících stránkách se můžete stát aktivním členem této
-        skvělé komunity:&lt;/i&gt;&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;Crowdin:&lt;/b&gt;&lt;br&gt;
-        Crowdin je online platforma pro překlad aplikací v jiných jazycích. Velké díky všem překladatelům. Můžete také
-        pomoci.&lt;br&gt;
-        &lt;i&gt;https://crowdin. om/project/foss-browser&lt;/i&gt;&lt;br&gt;&lt;br&gt;
-
-
-        &lt;b&gt;XDA-vlákno:&lt;/b&gt;&lt;br&gt;
-        XDA je skvělá komunita pro vývojáře a nadšence pro chytré telefony. Zde můžete hlásit problémy, požádat o nové funkce
-        a vše ostatní související s \"FOSS prohlížeč\".&lt;br&gt;
-        &lt;i&gt;https://forum.xda-developerů. om/android/apps-games/app-browser-t3500091&lt;/i&gt;&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;Github:&lt;/b&gt;&lt;br&gt;
-        na Github můžete vidět zdrojový kód \"FOSS prohlížeč\". Toto je techničtější řešení: otevřené problémy, požádat o nové
-        funkcí, nebo dokonce pomoci s vývojem nebo překladem.&lt;br&gt;
-        &lt;i&gt;https://github. om/scoute-dich/prohlížeč&lt;/i&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-
-
-        &lt;/i&gt;        &lt;i&gt;Po vyhledání informací o tomto projektu přispěli. Pokud jsem někoho zapomněl, kontaktujte mě:&lt;/i&gt;
-    </string>
 </resources>

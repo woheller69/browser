@@ -128,12 +128,6 @@
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">ツールバーを非表示</string>
     <string name="setting_summary_hide">ウェブサイトスクロール時に画面全体を使用します。戻るボタンを押すとフルスクリーンモードを終了します。</string>
-    <string name="setting_theme">テーマ</string>
-    <string name="setting_theme_summary">アプリのテーマを設定します。</string>
-    <string name="setting_theme_system">システムテーマ</string>
-    <string name="setting_theme_light">ライトテーマ</string>
-    <string name="setting_theme_dark">ダークテーマ</string>
-    <string name="setting_title_theme">UI</string>
     <string name="setting_title_behavior">動作</string>
     <string name="setting_summary_toolbarShow">履歴に戻る前に戻るボタンのタッチでツールバーを表示します。</string>
     <string name="setting_title_toolbarShow">ツールバーを最初に表示</string>
@@ -185,7 +179,6 @@
     <string name="setting_title_others">その他</string>
     <string name="setting_title_appSettings">アプリ設定</string>
     <string name="setting_summary_appSettings">\"FOSS Browser\" のシステムアプリ設定を開いて下さい。ここでは Android バージョンによって権限を付与、アプリデータ削除などができます。</string>
-    <string name="setting_title_community">開発に協力</string>
     <!-- Toast -->
     <string name="toast_add_to_home_successful">ホームへの追加に成功しました</string>
     <string name="toast_add_to_home_failed">ホームへの追加に失敗しました</string>
@@ -195,22 +188,16 @@
     <string name="toast_delete_successful">正常に削除されました</string>
     <string name="toast_domain_already_exists">ドメインは既に存在します</string>
     <string name="toast_export_successful">&#160; としてエクスポートしました</string>
-    <string name="toast_export_failed">エクスポートに失敗しました</string>
-    <string name="toast_import_successful">インポート数: &#160;</string>
-    <string name="toast_import_failed">インポートに失敗しました</string>
     <string name="toast_input_empty">何も入力していません</string>
     <string name="toast_invalid_domain">無効なドメイン</string>
     <string name="toast_load_error">この URL を読み込めません</string>
     <string name="toast_new_tab_successful">新しいタブで正常に開きました</string>
     <string name="toast_share_failed">このページを共有できません</string>
     <string name="toast_start_download">ダウンロード開始中…</string>
-    <string name="toast_wait_a_minute">少々お待ち下さい</string>
     <string name="toast_webview_forward">次のサイトを読み込めません</string>
     <string name="toast_permission_sdCard">\"FOSS Browser\" は \"ストレージの読み書き\" の権限が必要です。これはファイルダウンロード、スクリーンショット取得、バックアップファイル作成に必要です。</string>
-    <string name="toast_permission_loc">\"FOSS Browser\" は \"位置情報へのアクセス\" の権限が必要です。例えばナビのような機能を提供するいくつかのサイトで必要になります。</string>
     <string name="toast_restart">変更を適用するには \"FOSS Browser\" を再起動する必要があります。今すぐ閉じますか?</string>
     <string name="toast_quit">\"FOSS Browser\" を終了しますか?</string>
-    <string name="toast_close_tab">現在のタブを閉じますか?</string>
     <string name="toast_downloadComplete">ダウンロードが完了しました。ファイルマネージャーを開きますか?</string>
     <string name="toast_unsecured">ウェブサイトは安全でない接続 (\"http\") を使用しています。安全な接続を試してみますか (\"https\")?</string>
     <string name="toast_backup">データをバックアップしますか? これにより古いバックアップは上書きされます。</string>
@@ -242,20 +229,4 @@
 
     </string>
     <!-- License changelog -->
-    <string name="cont_dialog">        &lt;i&gt;まず、このプロジェクトに何らかの形で貢献してくれた全ての人々に感謝します。 彼らは問題を提示、翻訳、様々な方法で支援をしました。次のサイトではこの素晴らしいコミュニティのアクティブなメンバーになることができます:&lt;/i&gt;&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;Crowdin:&lt;/b&gt;&lt;br&gt;
-        Crowdin はアプリを他の言語に翻訳するためのオンラインプラットフォームです。全ての翻訳者に大変感謝します。あなたも支援に参加することができます。&lt;br&gt;
-        &lt;i&gt;https://crowdin.com/project/foss-browser&lt;/i&gt;&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;XDA-スレッド:&lt;/b&gt;&lt;br&gt;
-        XDA は、開発者やスマートフォン愛好家のための素晴らしいコミュニティです。ここでは問題を報告したり、新機能や \"FOSS Browser\" に関連するその他全てのことについて質問できます。&lt;br&gt;
-        &lt;i&gt;https://forum.xda-developers.com/android/apps-games/app-browser-t3500091&lt;/i&gt;&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;GitHub:&lt;/b&gt;&lt;br&gt;
-        GitHub では \"FOSS Browser\" のソースコードをご覧いただけます。これはより技術的な解決策です: 問題の提示、新機能の要求、または開発や翻訳の支援などです。&lt;br&gt;
-        &lt;i&gt;https://github.com/scoute-dich/browser&lt;/i&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-
-        &lt;i&gt;このプロジェクトには以下の人々が貢献しました。 もし記載漏れがあったら連絡して下さい:&lt;/i&gt;
-    </string>
 </resources>

@@ -128,12 +128,6 @@
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">Ukryj dolny panel</string>
     <string name="setting_summary_hide">Pokazuj witryny na całym ekranie. Dotykając przycisku wstecz wyjdziesz z trybu pełnoekranowego.</string>
-    <string name="setting_theme">Motyw</string>
-    <string name="setting_theme_summary">Ustaw motyw aplikacji.</string>
-    <string name="setting_theme_system">Szablon systemowy</string>
-    <string name="setting_theme_light">Jasny motyw</string>
-    <string name="setting_theme_dark">Ciemny motyw</string>
-    <string name="setting_title_theme">UI</string>
     <string name="setting_title_behavior">Zachowanie</string>
     <string name="setting_summary_toolbarShow">Naciśnięcie wstecz sprawi, że pasek narzędzi będzie widoczny, zanim wróci do historii.</string>
     <string name="setting_title_toolbarShow">Pierwszy pasek narzędzi</string>
@@ -185,7 +179,6 @@
     <string name="setting_title_others">Pozostałe</string>
     <string name="setting_title_appSettings">Ustawienia aplikacji</string>
     <string name="setting_summary_appSettings">Otwiera systemowy panel informacji o \"FOSS Browser\". Możesz tam ustalić indywidualne uprawienia, usunąć dane itd, w zależności od wersji twojego systemu Android.</string>
-    <string name="setting_title_community">Kontrybucja</string>
     <!-- Toast -->
     <string name="toast_add_to_home_successful">Poprawnie dodano do ważnych witryn</string>
     <string name="toast_add_to_home_failed">Błąd dodawania do ważnych witryn</string>
@@ -195,22 +188,16 @@
     <string name="toast_delete_successful">Usuwanie zakończone</string>
     <string name="toast_domain_already_exists">Ten adres witryny już istnieje</string>
     <string name="toast_export_successful">Wyeksportowano jako:&#160;</string>
-    <string name="toast_export_failed">Błąd przy ekporcie</string>
-    <string name="toast_import_successful">Zaimportowano:&#160;</string>
-    <string name="toast_import_failed">Błąd przy imporcie</string>
     <string name="toast_input_empty">Nie wprowadziłeś niczego</string>
     <string name="toast_invalid_domain">Niewłaściwy adres</string>
     <string name="toast_load_error">Nie można załadować adresu</string>
     <string name="toast_new_tab_successful">Załadowano w nowej karcie</string>
     <string name="toast_share_failed">Nie można udostępnić</string>
     <string name="toast_start_download">Rozpoczynanie pobierania</string>
-    <string name="toast_wait_a_minute">Zaczekaj chwilę</string>
     <string name="toast_webview_forward">Nie można załadować kolejnej strony</string>
     <string name="toast_permission_sdCard">\"FOSS Browser\" wymaga uprawnienia na \”odczytywanie i zapisywanie zawartości pamieci\”. Jest ono niezbędne do pobierania plików przez wbudowany manager plików i udostępniania zrzutów ekranu. Jeśli nie chcesz teraz udzielać uprawnienia, możesz to zrobić później w Preferencjach aplikacji.</string>
-    <string name="toast_permission_loc">\"FOSS Browser\" wymaga uprawnienia \”dostęp na lokalizacji\”. Jest ono niezbędne dla poprawnego działania niektórych witryn, np. tych oferujących nawigację. Przydzielenie uprawnień możesz zmienić w każdej chwili w ustawieniach.</string>
     <string name="toast_restart">Musisz uruchomić ponownie \"FOSS Browser\”, aby zachować te zmiany. Zamknąć teraz?</string>
     <string name="toast_quit">Zamknąć \"FOSS Browser\"?</string>
-    <string name="toast_close_tab">Zamknąć aktualną kartę?</string>
     <string name="toast_downloadComplete">Pobieranie ukończone. Otworzyć katalog pobierania?</string>
     <string name="toast_unsecured">Ta witryna używa nieszyfrowanego połączenia (\"http\"). Spróbować przejść na szyfrowane (\"https\")?</string>
     <string name="toast_backup">Dokonać nowej kopii bezpieczeństwa danych? Nadpisze ona poprzednią kopię.</string>
@@ -242,20 +229,4 @@
 
     </string>
     <!-- License changelog -->
-    <string name="cont_dialog">        &lt;i&gt;Najpierw chciałbym podziękować wszystkim osobom, które w jakikolwiek sposób przyczyniły się do realizacji tego projektu. Przedstawiły one kwestie, przetłumaczone lub pomogły w jakikolwiek inny sposób. Na następujących stronach możesz zostać aktywnym członkiem tej wspaniałej społeczności:&lt;/i&gt;&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;Crowdin:&lt;/b&gt;&lt;br&gt;
-        Crowdin jest formularzem do tłumaczenia aplikacji na inne języki. Duże podziękowania dla wszystkich tłumaczy. Możesz również pomóc.&lt;br&gt;
-        &lt;i&gt;https://crowdin. om/project/foss-browser&lt;/i&gt;&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;XDA-thread:&lt;/b&gt;&lt;br&gt;
-        XDA to wspaniała społeczność dla programistów i entuzjastów. Tutaj możesz zgłaszać problemy, prosić o nowe funkcje i wszystkie inne związane z \"FOSS Browser\".&lt;br&gt;
-        &lt;i&gt;https://forum.xda-developers. om/android/apps-games/app-browser-t3500091&lt;/i&gt;&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;Github:&lt;/b&gt;&lt;br&gt;
-        Na Githubie możesz zobaczyć kod źródłowy \"FOSS Browser\". Jest to rozwiązanie bardziej techniczne: kwestie otwarte, prosić o nowe funkcje, a nawet pomóc w opracowaniu lub tłumaczeniu.&lt;br&gt;
-        &lt;i&gt;https://github. om/scoute-dich/przeglądarka&lt;/i&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-
-        &lt;i&gt;Obserwowani użytkownicy w tym projekcie. Jeśli nikomu zapomniałem, skontaktuj się ze mną:&lt;/i&gt;
-    </string>
 </resources>

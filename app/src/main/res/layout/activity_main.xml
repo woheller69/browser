@@ -7,7 +7,7 @@
 
     <RelativeLayout
         android:id="@+id/toolBar"
-        android:background="@color/color_grey"
+        android:background="@color/primaryColor"
         android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
         android:layout_height="56dp"
@@ -18,13 +18,13 @@
             android:layout_height="match_parent">
 
             <ImageButton
-                android:id="@+id/open_tab"
+                android:id="@+id/omniBox_tab"
                 android:layout_width="wrap_content"
                 android:layout_height="56dp"
                 android:layout_gravity="center_vertical|center_horizontal"
                 android:layout_marginStart="16dp"
                 android:background="?attr/actionBarItemBackground"
-                android:src="@drawable/icon_menu" />
+                android:src="@drawable/icon_menu_light" />
 
             <ImageButton
                 android:id="@+id/omnibox_overflow"
@@ -47,12 +47,12 @@
                 android:src="@drawable/icon_preview" />
 
             <androidx.appcompat.widget.AppCompatAutoCompleteTextView
-                android:id="@+id/omniBox_text"
+                android:id="@+id/omniBox_input"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_centerInParent="true"
                 android:layout_toStartOf="@id/omnibox_overview"
-                android:layout_toEndOf="@id/open_tab"
+                android:layout_toEndOf="@id/omniBox_tab"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="8dp"
                 android:hint="@string/main_omnibox_input_hint"
@@ -69,13 +69,13 @@
 
         </RelativeLayout>
 
-        <RelativeLayout android:id="@+id/main_search_panel"
+        <RelativeLayout android:id="@+id/searchBox"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:minHeight="@dimen/layout_margin_56dp"
             android:visibility="gone">
 
-            <ImageButton android:id="@+id/main_search_cancel"
+            <ImageButton android:id="@+id/searchBox_cancel"
                 android:contentDescription="@null"
                 android:layout_width="42dp"
                 android:layout_height="42dp"
@@ -86,33 +86,33 @@
                 android:src="@drawable/icon_close_light"
                 android:background="?attr/actionBarItemBackground"/>
 
-            <ImageButton android:id="@+id/main_search_down"
+            <ImageButton android:id="@+id/searchBox_down"
                 android:contentDescription="@null"
                 android:layout_width="42dp"
                 android:layout_height="42dp"
-                android:layout_toStartOf="@id/main_search_cancel"
+                android:layout_toStartOf="@id/searchBox_cancel"
                 android:layout_marginTop="@dimen/layout_margin_8dp"
                 android:layout_marginBottom="@dimen/layout_margin_8dp"
                 android:layout_gravity="center"
                 android:src="@drawable/icon_arrow_down_gest"
                 android:background="?attr/actionBarItemBackground"/>
 
-            <ImageButton android:id="@+id/main_search_up"
+            <ImageButton android:id="@+id/searchBox_up"
                 android:contentDescription="@null"
                 android:layout_width="42dp"
                 android:layout_height="42dp"
-                android:layout_toStartOf="@id/main_search_down"
+                android:layout_toStartOf="@id/searchBox_down"
                 android:layout_marginTop="@dimen/layout_margin_8dp"
                 android:layout_marginBottom="@dimen/layout_margin_8dp"
                 android:layout_gravity="center"
                 android:src="@drawable/icon_arrow_up_gest"
                 android:background="?attr/actionBarItemBackground"/>
 
-            <EditText android:id="@+id/main_search_box"
+            <EditText android:id="@+id/searchBox_input"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_centerInParent="true"
-                android:layout_toStartOf="@id/main_search_up"
+                android:layout_toStartOf="@id/searchBox_up"
                 android:layout_marginStart="8dp"
                 android:includeFontPadding="false"
                 android:paddingStart="16dp"

@@ -1,9 +1,13 @@
 package de.baumann.browser.activity;
 
+import android.app.DownloadManager;
 import android.content.Intent;
 import android.os.Bundle;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
@@ -26,7 +30,6 @@ public class Settings_ClearActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
-        HelperUnit.applyTheme(this);
         setContentView(R.layout.activity_settings);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -49,19 +52,15 @@ public class Settings_ClearActivity extends AppCompatActivity {
         if (menuItem.getItemId() == android.R.id.home) {
             finish();
         } else if (menuItem.getItemId() == R.id.menu_clear) {
-            final BottomSheetDialog dialog = new BottomSheetDialog(Settings_ClearActivity.this);
-            View dialogView = View.inflate(Settings_ClearActivity.this, R.layout.dialog_action, null);
-            TextView textView = dialogView.findViewById(R.id.dialog_text);
-            textView.setText(R.string.hint_database);
-            Button action_ok = dialogView.findViewById(R.id.action_ok);
-            action_ok.setOnClickListener(view -> {
+            MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(this);
+            builder.setMessage(R.string.hint_database);
+            builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
                 Intent toClearService = new Intent(Settings_ClearActivity.this, ClearService.class);
                 startService(toClearService);
-                dialog.cancel();
             });
-            dialog.setContentView(dialogView);
+            builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
+            AlertDialog dialog = builder.create();
             dialog.show();
-            HelperUnit.setBottomSheetBehavior(dialog, dialogView, BottomSheetBehavior.STATE_EXPANDED);
         }
         return true;
     }

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/menu_delete"
+        android:title="@string/menu_delete" />
+
+    <item
+        android:title="@string/menu_sort">
+        <menu>
+            <item
+                android:id="@+id/menu_sortName"
+                android:title="@string/dialog_sortName" />
+            <item
+                android:id="@+id/menu_sortDate"
+                android:title="@string/dialog_sortDate" />
+        </menu>
+    </item>
+
+</menu>

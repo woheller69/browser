@@ -7,10 +7,13 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Environment;
+
+import androidx.appcompat.app.AlertDialog;
 import androidx.preference.PreferenceManager;
 
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import android.view.View;
 import android.widget.Button;
@@ -38,8 +41,6 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
 import de.baumann.browser.R;
-import de.baumann.browser.task.ExportWhiteListTask;
-import de.baumann.browser.task.ImportWhitelistTask;
 import de.baumann.browser.unit.BrowserUnit;
 import de.baumann.browser.unit.HelperUnit;
 import de.baumann.browser.view.NinjaToast;
@@ -64,12 +65,9 @@ public class Fragment_settings_data extends PreferenceFragmentCompat {
         final File previewsFolder_backup = new File(sd, database_backup);
 
         findPreference("data_exDB").setOnPreferenceClickListener(preference -> {
-            dialog = new BottomSheetDialog(requireActivity());
-            dialogView = View.inflate(getActivity(), R.layout.dialog_action, null);
-            textView = dialogView.findViewById(R.id.dialog_text);
-            textView.setText(R.string.toast_backup);
-            action_ok = dialogView.findViewById(R.id.action_ok);
-            action_ok.setOnClickListener(view -> {
+            MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(getActivity());
+            builder.setMessage(R.string.toast_backup);
+            builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
                 dialog.cancel();
                 try {
                     if (android.os.Build.VERSION.SDK_INT >= 23 && android.os.Build.VERSION.SDK_INT < 29) {
@@ -95,19 +93,16 @@ public class Fragment_settings_data extends PreferenceFragmentCompat {
                     e.printStackTrace();
                 }
             });
-            dialog.setContentView(dialogView);
+            builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
+            AlertDialog dialog = builder.create();
             dialog.show();
-            HelperUnit.setBottomSheetBehavior(dialog, dialogView, BottomSheetBehavior.STATE_EXPANDED);
             return false;
         });
 
         findPreference("data_imDB").setOnPreferenceClickListener(preference -> {
-            dialog = new BottomSheetDialog(requireActivity());
-            dialogView = View.inflate(getActivity(), R.layout.dialog_action, null);
-            textView = dialogView.findViewById(R.id.dialog_text);
-            textView.setText(R.string.hint_database);
-            action_ok = dialogView.findViewById(R.id.action_ok);
-            action_ok.setOnClickListener(view -> {
+            MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(getActivity());
+            builder.setMessage(R.string.hint_database);
+            builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
                 dialog.cancel();
                 try {
                     if (android.os.Build.VERSION.SDK_INT >= 23 && android.os.Build.VERSION.SDK_INT < 29) {
@@ -132,9 +127,9 @@ public class Fragment_settings_data extends PreferenceFragmentCompat {
                     e.printStackTrace();
                 }
             });
-            dialog.setContentView(dialogView);
+            builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
+            AlertDialog dialog = builder.create();
             dialog.show();
-            HelperUnit.setBottomSheetBehavior(dialog, dialogView, BottomSheetBehavior.STATE_EXPANDED);
             return false;
         });
         findPreference("data_imBookmark").setOnPreferenceClickListener(preference -> {
@@ -146,11 +141,11 @@ public class Fragment_settings_data extends PreferenceFragmentCompat {
                         dialog.cancel();
                     } else {
                         makeBackupDir();
-                        new ImportWhitelistTask(getActivity(), 4).execute();
+                        HelperUnit.restoreData(getActivity(), 4);
                     }
                 } else {
                     makeBackupDir();
-                    new ImportWhitelistTask(getActivity(), 4).execute();
+                    HelperUnit.restoreData(getActivity(), 4);
                 }
 
             } catch (Exception e) {
@@ -167,11 +162,11 @@ public class Fragment_settings_data extends PreferenceFragmentCompat {
                         dialog.cancel();
                     } else {
                         makeBackupDir();
-                        new ExportWhiteListTask(getActivity(), 4).execute();
+                        HelperUnit.backupData(getActivity(), 4);
                     }
                 } else {
                     makeBackupDir();
-                    new ExportWhiteListTask(getActivity(), 4).execute();
+                    HelperUnit.backupData(getActivity(), 4);
                 }
 
             } catch (Exception e) {

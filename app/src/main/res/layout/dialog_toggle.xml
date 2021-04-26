@@ -1,34 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="?android:attr/colorBackground"
-    tools:ignore="ContentDescription,Overdraw" >
+    tools:ignore="ContentDescription" >
 
     <RelativeLayout
-        android:id="@+id/titleBar"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp">
+        android:layout_height="56dp">
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/dialog_title"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_toStartOf="@+id/ib_settings"
+            android:layout_toStartOf="@+id/ib_reload"
+            android:layout_alignParentStart="true"
             android:layout_marginEnd="8dp"
             android:ellipsize="end"
             android:includeFontPadding="false"
             android:maxLines="1"
             android:text="@string/app_name"
             android:gravity="center_vertical"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="?android:attr/textColorPrimary"
+            android:textAppearance="?attr/textAppearanceBody1"
             android:textStyle="bold" />
 
         <ImageButton android:id="@+id/ib_reload"
@@ -40,331 +39,284 @@
             android:background="?attr/actionBarItemBackground"
             tools:ignore="ContentDescription" />
 
-        <ImageButton
-            android:id="@+id/ib_settings"
-            android:layout_centerInParent="true"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_toStartOf="@+id/ib_reload"
-            android:layout_marginEnd="16dp"
-            android:src="@drawable/icon_settings"
-            android:background="?attr/actionBarItemBackground"
-            tools:ignore="ContentDescription" />
-
     </RelativeLayout>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="8dp"
-        android:background="@color/colorAccent" />
+        android:background="?android:attr/textColorSecondary" />
 
-    <ScrollView android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="?android:attr/colorBackground"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginBottom="8dp">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/listPreferredItemHeightSmall"
+            android:minHeight="?android:attr/listPreferredItemHeightSmall">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_toStartOf="@+id/imageButton_js_tab"
+                android:gravity="center_vertical"
+                android:text="@string/setting_title_javascript"
+                android:textAppearance="?attr/textAppearanceBody1"
+                android:ellipsize="end"
+                android:includeFontPadding="false"
+                android:maxLines="1" />
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:layout_centerVertical="true"
+                android:id="@+id/switch_js"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:checked="false" />
+
+            <ImageButton
+                android:id="@+id/imageButton_js"
+                android:layout_width="24dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_toStartOf="@+id/switch_js"
+                android:background="?attr/actionBarItemBackground"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/ic_action_close_red"/>
+
+            <ImageButton
+                android:id="@+id/imageButton_js_tab"
+                android:layout_width="24dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_toStartOf="@+id/imageButton_js"
+                android:background="?attr/actionBarItemBackground"
+                android:foregroundGravity="center_vertical"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/icon_java" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/listPreferredItemHeightSmall"
+            android:minHeight="?android:attr/listPreferredItemHeightSmall">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_toStartOf="@+id/imageButton_ext_tab"
+                android:gravity="center_vertical"
+                android:text="@string/setting_title_remote"
+                android:textAppearance="?attr/textAppearanceBody1"
+                android:ellipsize="end"
+                android:includeFontPadding="false"
+                android:maxLines="1" />
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:layout_centerVertical="true"
+                android:id="@+id/switch_ext"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:checked="false" />
+
+            <ImageButton
+                android:id="@+id/imageButton_ext"
+                android:layout_width="24dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_toStartOf="@+id/switch_ext"
+                android:background="?attr/actionBarItemBackground"
+                android:foregroundGravity="center_vertical"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/ic_action_close_red" />
+
+            <ImageButton
+                android:id="@+id/imageButton_ext_tab"
+                android:layout_width="24dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_toStartOf="@+id/imageButton_ext"
+                android:background="?attr/actionBarItemBackground"
+                android:foregroundGravity="center_vertical"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/icon_remote" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/listPreferredItemHeightSmall"
+            android:minHeight="?android:attr/listPreferredItemHeightSmall">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_toStartOf="@+id/imageButton_cookie"
+                android:gravity="center_vertical"
+                android:text="@string/setting_title_cookie"
+                android:textAppearance="?attr/textAppearanceBody1"
+                android:ellipsize="end"
+                android:includeFontPadding="false"
+                android:maxLines="1"/>
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:layout_centerVertical="true"
+                android:id="@+id/switch_cookie"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:checked="false"/>
+
+            <ImageButton
+                android:id="@+id/imageButton_cookie"
+                android:layout_width="24dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_toStartOf="@+id/switch_cookie"
+                android:background="?attr/actionBarItemBackground"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/ic_action_close_red"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/listPreferredItemHeightSmall"
+            android:minHeight="?android:attr/listPreferredItemHeightSmall">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_toStartOf="@+id/imageButton_ab"
+                android:layout_alignParentStart="true"
+                android:gravity="center_vertical"
+                android:text="@string/setting_title_adblock"
+                android:textAppearance="?attr/textAppearanceBody1"
+                android:ellipsize="end"
+                android:includeFontPadding="false"
+                android:maxLines="1" />
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/switch_adBlock"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:checked="false" />
+
+            <ImageButton
+                android:id="@+id/imageButton_ab"
+                android:layout_width="24dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_toStartOf="@+id/switch_adBlock"
+                android:background="?attr/actionBarItemBackground"
+                android:foregroundGravity="center_vertical"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/ic_action_close_red" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/textColorSecondary" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="8dp">
 
         <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
-
-            <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal">
+            <com.google.android.material.chip.ChipGroup
+                android:layout_gravity="center_horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="?android:attr/listPreferredItemHeightSmall"
-                android:minHeight="?android:attr/listPreferredItemHeightSmall">
+                android:layout_height="56dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                app:singleLine="true">
 
-                <TextView
+                <com.google.android.material.chip.Chip
+
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:id="@+id/chip_history"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentStart="true"
-                    android:layout_toStartOf="@+id/imageButton_js_tab"
-                    android:includeFontPadding="false"
-                    android:gravity="center_vertical"
-                    android:text="@string/setting_title_javascript"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="?android:attr/textColorPrimary" />
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    app:chipEndPadding="4dp"
+                    app:chipIcon="@drawable/icon_history"
+                    app:chipIconEnabled="true"
+                    app:chipStartPadding="4dp"
+                    app:textEndPadding="0dp"
+                    app:textStartPadding="0dp" />
 
-                <CheckBox
-                    android:layout_centerVertical="true"
-                    android:id="@+id/switch_js"
+                <com.google.android.material.chip.Chip
+
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:id="@+id/chip_location"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentEnd="true"
-                    android:checked="false" />
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    app:chipIcon="@drawable/icon_location"
+                    app:textStartPadding="0dp"
+                    app:textEndPadding="0dp"
+                    app:chipStartPadding="4dp"
+                    app:chipEndPadding="4dp"
+                    app:chipIconEnabled="true"/>
 
-                <ImageButton
-                    android:id="@+id/imageButton_js"
-                    android:layout_width="24dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_toStartOf="@+id/switch_js"
-                    android:background="?attr/actionBarItemBackground"
-                    android:scaleType="fitCenter"
-                    app:srcCompat="@drawable/ic_action_close_red"/>
+                <com.google.android.material.chip.Chip
 
-                <ImageButton
-                    android:id="@+id/imageButton_js_tab"
-                    android:layout_width="24dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_toStartOf="@+id/imageButton_js"
-                    android:background="?attr/actionBarItemBackground"
-                    android:foregroundGravity="center_vertical"
-                    android:scaleType="fitCenter"
-                    app:srcCompat="@drawable/icon_java" />
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="?android:attr/listPreferredItemHeightSmall"
-                android:minHeight="?android:attr/listPreferredItemHeightSmall">
-
-                <TextView
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:id="@+id/chip_image"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentStart="true"
-                    android:layout_toStartOf="@+id/imageButton_ext_tab"
-                    android:includeFontPadding="false"
-                    android:gravity="center_vertical"
-                    android:text="@string/setting_title_remote"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="?android:attr/textColorPrimary" />
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    app:chipIcon="@drawable/icon_image"
+                    app:textStartPadding="0dp"
+                    app:textEndPadding="0dp"
+                    app:chipStartPadding="4dp"
+                    app:chipEndPadding="4dp"
+                    app:chipIconEnabled="true"/>
 
-                <CheckBox
-                    android:layout_centerVertical="true"
-                    android:id="@+id/switch_ext"
+                <com.google.android.material.chip.Chip
+
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:id="@+id/chip_night"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentEnd="true"
-                    android:checked="false" />
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    app:chipIcon="@drawable/icon_night"
+                    app:textStartPadding="0dp"
+                    app:textEndPadding="0dp"
+                    app:chipStartPadding="4dp"
+                    app:chipEndPadding="4dp"
+                    app:chipIconEnabled="true"/>
 
-                <ImageButton
-                    android:id="@+id/imageButton_ext"
-                    android:layout_width="24dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_toStartOf="@+id/switch_ext"
-                    android:background="?attr/actionBarItemBackground"
-                    android:foregroundGravity="center_vertical"
-                    android:scaleType="fitCenter"
-                    app:srcCompat="@drawable/ic_action_close_red" />
-
-                <ImageButton
-                    android:id="@+id/imageButton_ext_tab"
-                    android:layout_width="24dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_toStartOf="@+id/imageButton_ext"
-                    android:background="?attr/actionBarItemBackground"
-                    android:foregroundGravity="center_vertical"
-                    android:scaleType="fitCenter"
-                    app:srcCompat="@drawable/icon_remote" />
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="?android:attr/listPreferredItemHeightSmall"
-                android:minHeight="?android:attr/listPreferredItemHeightSmall">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentStart="true"
-                    android:layout_toStartOf="@+id/imageButton_cookie"
-                    android:includeFontPadding="false"
-                    android:gravity="center_vertical"
-                    android:text="@string/setting_title_cookie"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="?android:attr/textColorPrimary"/>
-
-                <CheckBox
-                    android:layout_centerVertical="true"
-                    android:id="@+id/switch_cookie"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentEnd="true"
-                    android:checked="false"/>
-
-                <ImageButton
-                    android:id="@+id/imageButton_cookie"
-                    android:layout_width="24dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_toStartOf="@+id/switch_cookie"
-                    android:background="?attr/actionBarItemBackground"
-                    android:scaleType="fitCenter"
-                    app:srcCompat="@drawable/ic_action_close_red"/>
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="?android:attr/listPreferredItemHeightSmall"
-                android:minHeight="?android:attr/listPreferredItemHeightSmall">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_toStartOf="@+id/imageButton_ab"
-                    android:layout_alignParentStart="true"
-                    android:includeFontPadding="false"
-                    android:gravity="center_vertical"
-                    android:text="@string/setting_title_adblock"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="?android:attr/textColorPrimary" />
-
-                <CheckBox
-                    android:layout_centerVertical="true"
-                    android:id="@+id/switch_adBlock"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentEnd="true"
-                    android:checked="false" />
-
-                <ImageButton
-                    android:id="@+id/imageButton_ab"
-                    android:layout_width="24dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_toStartOf="@+id/switch_adBlock"
-                    android:background="?attr/actionBarItemBackground"
-                    android:foregroundGravity="center_vertical"
-                    android:scaleType="fitCenter"
-                    app:srcCompat="@drawable/ic_action_close_red" />
-
-            </RelativeLayout>
-
-            <HorizontalScrollView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="8dp">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:layout_gravity="center_horizontal">
-
-                    <LinearLayout
-                        android:layout_width="42dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="6dp"
-                        android:layout_marginEnd="6dp"
-                        android:orientation="vertical">
-
-                        <View
-                            android:id="@+id/toggle_historyView"
-                            android:layout_width="42dp"
-                            android:layout_height="2dp"
-                            android:background="?android:attr/colorAccent" />
-
-                        <ImageButton
-                            android:id="@+id/toggle_history"
-                            android:layout_width="42dp"
-                            android:layout_height="42dp"
-                            android:layout_gravity="center_vertical|center_horizontal"
-                            android:layout_marginStart="2dp"
-                            android:layout_marginEnd="2dp"
-                            android:background="?attr/actionBarItemBackground"
-                            android:src="@drawable/icon_history" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="42dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="6dp"
-                        android:layout_marginEnd="6dp"
-                        android:orientation="vertical">
-
-                        <View
-                            android:id="@+id/toggle_locationView"
-                            android:layout_width="42dp"
-                            android:layout_height="2dp"
-                            android:background="?android:attr/colorAccent" />
-
-                        <ImageButton
-                            android:id="@+id/toggle_location"
-                            android:layout_width="42dp"
-                            android:layout_height="42dp"
-                            android:layout_gravity="center_vertical|center_horizontal"
-                            android:layout_marginStart="2dp"
-                            android:layout_marginEnd="2dp"
-                            android:background="?attr/actionBarItemBackground"
-                            android:src="@drawable/icon_location" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="42dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="6dp"
-                        android:layout_marginEnd="6dp"
-                        android:orientation="vertical">
-
-                        <View
-                            android:id="@+id/toggle_imagesView"
-                            android:layout_width="42dp"
-                            android:layout_height="2dp"
-                            android:background="?android:attr/colorAccent" />
-
-                        <ImageButton
-                            android:id="@+id/toggle_images"
-                            android:layout_width="42dp"
-                            android:layout_height="42dp"
-                            android:layout_gravity="center_vertical|center_horizontal"
-                            android:layout_marginStart="2dp"
-                            android:layout_marginEnd="2dp"
-                            android:background="?attr/actionBarItemBackground"
-                            android:src="@drawable/icon_image" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="42dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="6dp"
-                        android:layout_marginEnd="6dp"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <View
-                            android:layout_width="42dp"
-                            android:layout_height="2dp"
-                            android:visibility="invisible" />
-
-                        <ImageButton
-                            android:id="@+id/toggle_invert"
-                            android:layout_width="42dp"
-                            android:layout_height="42dp"
-                            android:layout_gravity="center_vertical|center_horizontal"
-                            android:layout_marginStart="2dp"
-                            android:layout_marginEnd="2dp"
-                            android:background="?attr/actionBarItemBackground"
-                            android:src="@drawable/icon_night" />
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-            </HorizontalScrollView>
+            </com.google.android.material.chip.ChipGroup>
 
         </LinearLayout>
 
-    </ScrollView>
+    </HorizontalScrollView>
 
 </LinearLayout>
 

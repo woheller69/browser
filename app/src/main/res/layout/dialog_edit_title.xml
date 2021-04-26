@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?android:attr/colorBackground"
-    android:padding="8dp"
+    android:paddingEnd="20dp"
+    android:paddingStart="20dp"
+    android:paddingTop="20dp"
     tools:ignore="Autofill,Overdraw">
 
     <LinearLayout
@@ -13,30 +14,28 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_toStartOf="@+id/action_ok">
+        android:layout_marginTop="8dp">
 
         <ImageView
             android:id="@+id/edit_icon"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
+            android:layout_marginEnd="16dp"
             android:gravity="center_vertical"
             android:contentDescription="@null"
             android:scaleType="fitCenter"
-            android:src="@drawable/circle_red_big" />
+            android:src="@drawable/circle_red_big"
+            android:background="?attr/actionBarItemBackground" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/edit_title"
+            android:id="@+id/edit_title_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" >
 
             <EditText
-                android:id="@+id/pass_title"
+                android:id="@+id/edit_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:includeFontPadding="false"
                 android:inputType="text"
                 android:hint="@string/dialog_title_hint" />
 
@@ -45,55 +44,42 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_toStartOf="@+id/action_ok"
-        android:layout_alignParentStart="true"
-        android:orientation="vertical"
-        android:layout_margin="8dp">
+        android:orientation="horizontal"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp">
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/edit_userName_layout"
+            android:visibility="gone"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:passwordToggleEnabled="false" >
+            android:layout_height="wrap_content" >
 
             <EditText
-                android:visibility="gone"
                 android:id="@+id/edit_userName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:includeFontPadding="false"
                 android:inputType="text"
                 android:hint="@string/dialog_sign_in_username" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/edit_PW_layout"
+            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" >
 
             <EditText
-                android:visibility="gone"
                 android:id="@+id/edit_PW"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:includeFontPadding="false"
                 android:inputType="textPassword"
                 android:hint="@string/dialog_sign_in_password" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
-
     </LinearLayout>
 
-    <Button
-        android:id="@+id/action_ok"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_centerInParent="true"
-        android:background="?attr/selectableItemBackground"
-        android:text="@string/app_ok"
-        android:textColor="?android:attr/colorAccent" />
-
-</RelativeLayout>
+</LinearLayout>

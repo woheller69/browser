@@ -7,6 +7,8 @@ import android.net.Uri;
 import android.view.View;
 import android.webkit.*;
 
+import java.util.Objects;
+
 import de.baumann.browser.unit.HelperUnit;
 import de.baumann.browser.view.NinjaWebView;
 
@@ -23,7 +25,7 @@ public class NinjaWebChromeClient extends WebChromeClient {
     public void onProgressChanged(WebView view, int progress) {
         super.onProgressChanged(view, progress);
         ninjaWebView.update(progress);
-        if (view.getTitle().isEmpty()) {
+        if (Objects.requireNonNull(view.getTitle()).isEmpty()) {
             ninjaWebView.update(view.getUrl());
         } else {
             ninjaWebView.update(view.getTitle());

@@ -1,0 +1,27 @@
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:ignore="MenuTitle">
+
+    <item
+        android:id="@+id/page_1"
+        android:enabled="true"
+        android:title="@string/album_title_tab"
+        android:icon="@drawable/icon_tab" />
+    <item
+        android:id="@+id/page_2"
+        android:enabled="true"
+        android:title="@string/menu_share_link"
+        android:icon="@drawable/icon_menu_share" />
+
+    <item
+        android:id="@+id/page_3"
+        android:enabled="true"
+        android:title="@string/menu_save_as"
+        android:icon="@drawable/icon_menu_save" />
+    <item
+        android:id="@+id/page_4"
+        android:enabled="true"
+        android:title="@string/setting_title_others"
+        android:icon="@drawable/icon_dots" />
+
+</menu>

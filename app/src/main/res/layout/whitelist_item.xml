@@ -12,7 +12,8 @@
         android:layout_height="match_parent"
         android:layout_centerInParent="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="8dp"
         android:src="@drawable/icon_delete"
         android:background="?attr/actionBarItemBackground"/>
 
@@ -23,9 +24,9 @@
         android:layout_alignParentStart="true"
         android:layout_toStartOf="@id/whitelist_item_cancel"
         android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="16dp"
         android:includeFontPadding="false"
-        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textAppearance="?attr/textAppearanceBody1"
         android:textColor="?android:attr/textColorPrimary"
         android:maxLines="1"
         android:ellipsize="end"/>

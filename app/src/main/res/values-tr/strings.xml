@@ -128,12 +128,6 @@
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">Araç çubuğunu gizle</string>
     <string name="setting_summary_hide">Web sitelerinde gezinirken tüm ekranı kullanın. Geri düğmesine basarsanız, tam ekran modundan çıkacaksınız.</string>
-    <string name="setting_theme">Tema</string>
-    <string name="setting_theme_summary">Uygulamanın temasını ayarlayın.</string>
-    <string name="setting_theme_system">Sistem teması</string>
-    <string name="setting_theme_light">Açık tema</string>
-    <string name="setting_theme_dark">Karanlık tema</string>
-    <string name="setting_title_theme">Arayüz</string>
     <string name="setting_title_behavior">Davranış</string>
     <string name="setting_summary_toolbarShow">Geri basmak, geçmişe geri dönmeden önce araç çubuğunu görünür kılar.</string>
     <string name="setting_title_toolbarShow">İlk araç çubuğu</string>
@@ -185,7 +179,6 @@
     <string name="setting_title_others">Diğer</string>
     <string name="setting_title_appSettings">Uygulama ayarları</string>
     <string name="setting_summary_appSettings">\"FOSS Tarayıcı\" için sistem uygulaması ayarlarını açın. Orada, Android sürümünüzün izin vermesine bağlı olarak, uygulama verilerini temizleyebilirsiniz.</string>
-    <string name="setting_title_community">Katkıda Bulunanlar</string>
     <!-- Toast -->
     <string name="toast_add_to_home_successful">Başarıyla ana sayfaya eklendi</string>
     <string name="toast_add_to_home_failed">Ana sayfaya eklenemedi</string>
@@ -195,22 +188,16 @@
     <string name="toast_delete_successful">Başarıyla silindi</string>
     <string name="toast_domain_already_exists">Etki alanı zaten mevcut</string>
     <string name="toast_export_successful">Aktarıldı:&#160;</string>
-    <string name="toast_export_failed">Dışa aktarılamadı</string>
-    <string name="toast_import_successful">Aktarma sayısı:&#160;</string>
-    <string name="toast_import_failed">İçe aktarılamadı</string>
     <string name="toast_input_empty">Hiçbir şey girmediniz</string>
     <string name="toast_invalid_domain">Geçersiz etki alanı</string>
     <string name="toast_load_error">Bu URL yüklenemiyor</string>
     <string name="toast_new_tab_successful">Yeni bir sekmede başarıyla açıldı</string>
     <string name="toast_share_failed">Bu sayfa paylaşılamıyor</string>
     <string name="toast_start_download">İndirmeye başla</string>
-    <string name="toast_wait_a_minute">Lütfen biraz bekleyin</string>
     <string name="toast_webview_forward">Bir sonraki site yüklenemiyor</string>
     <string name="toast_permission_sdCard">\"FOSS Tarayıcı\" nın \"deponuzu okuma ve yazma\" iznine ihtiyacı var. Bu, dosyaları indirmek, ekran görüntüleri almak ve verilerinizin yedeğini almak için gereklidir.</string>
-    <string name="toast_permission_loc">\"FOSS Tarayıcı\" nın \"konumunuza erişim\" iznine ihtiyacı var. Bu, bazı web sitelerinden, örneğin bir tür gezinme sunduklarında istenir.</string>
     <string name="toast_restart">Değişiklikleri uygulamak için \"FOSS Tarayıcı\"sını yeniden başlatmanız gerekir. Şimdi kapatılsın mı?</string>
     <string name="toast_quit">\"FOSS Tarayıcı\"sından çıkmak istiyor musunuz?</string>
-    <string name="toast_close_tab">Geçerli sekmeyi kapatmak istiyor musunuz?</string>
     <string name="toast_downloadComplete">İndirme tamamlandı. Dosya yöneticisi açılsın mı?</string>
     <string name="toast_unsecured">Web sitesi güvenli olmayan bir bağlantı (\"http\") kullanıyor. Güvenli bir bağlantı (\"https\") denensin mi?</string>
     <string name="toast_backup">Veri yedeklensin mi? Bu eski yedeklemenin üzerine yazacaktır.</string>
@@ -242,20 +229,4 @@
 
     </string>
     <!-- License changelog -->
-    <string name="cont_dialog">        &lt;i&gt;Öncelikle bu projeye herhangi bir şekilde katkıda bulunan herkese teşekkür ediyorum. Sorun bildirdiler, tercüme ettiler veya başka bir şekilde yardım ettiler. Aşağıdaki sitelerde bu harika topluluğun etkin bir üyesi olabilirsiniz:&lt;/i&gt;&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;Crowdin:&lt;/b&gt;&lt;br&gt;
-        Crowdin, uygulamaları diğer dillere çevirmek için çevrimiçi bir platformdur. Tüm çevirmenlere çok teşekkürler. Sen de yardım edebilirsin.&lt;br&gt;
-        &lt;i&gt;https://crowdin.com/project/foss-browser&lt;/i&gt;&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;XDA-konusu:&lt;/b&gt;&lt;br&gt;
-        XDA, geliştiriciler ve akıllı telefon meraklıları için harika bir topluluktur. Burada sorunları bildirebilir, yeni özellikler isteyebilir ve \"FOSS Tarayıcı\" ile ilgili diğer her şeyi isteyebilirsiniz.&lt;br&gt;
-        &lt;i&gt;https://forum.xda-developers.com/android/apps-games/app-browser-t3500091&lt;/i&gt;&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;Github:&lt;/b&gt;&lt;br&gt;
-        Github\'da \"FOSS Tarayıcı\" nın kaynak kodunu görebilirsiniz. Bu daha teknik bir çözümdür: sorun bildirin, yeni özellikler isteyin ve hatta geliştirme veya çeviri konusunda yardım edin.&lt;br&gt;
-        &lt;i&gt;https://github.com/scoute-dich/browser&lt;/i&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-
-        &lt;i&gt;Bu projeye aşağıdaki kişiler katkıda bulundu.  Birini unuttuysam, lütfen benimle iletişime geçin:&lt;/i&gt;
-    </string>
 </resources>

@@ -2,18 +2,18 @@ package de.baumann.browser.browser;
 
 import android.annotation.TargetApi;
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.net.http.SslError;
 import android.os.Build;
 import android.os.Message;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.preference.PreferenceManager;
 import androidx.annotation.NonNull;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.textfield.TextInputLayout;
 import android.view.View;
 import android.webkit.HttpAuthHandler;
@@ -28,7 +28,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.io.ByteArrayInputStream;
-import java.net.URISyntaxException;
 
 import de.baumann.browser.database.Record;
 import de.baumann.browser.database.RecordAction;
@@ -86,64 +85,27 @@ public class NinjaWebViewClient extends WebViewClient {
     @Override
     public boolean shouldOverrideUrlLoading(WebView view, String url) {
         final Uri uri = Uri.parse(url);
-        return handleUri(view, uri);
+        return handleUri(uri);
     }
 
     @TargetApi(Build.VERSION_CODES.N)
     @Override
     public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
         final Uri uri = request.getUrl();
-        return handleUri(view, uri);
+        return handleUri(uri);
     }
 
-    private boolean handleUri(WebView webView, final Uri uri) {
-
+    private boolean handleUri(final Uri uri) {
         String url = uri.toString();
-        Uri parsedUri = Uri.parse(url);
-        PackageManager packageManager = context.getPackageManager();
-        Intent browseIntent = new Intent(Intent.ACTION_VIEW).setData(parsedUri);
-
         if (url.startsWith("http")) {
             ninjaWebView.getSettings();
             ninjaWebView.initPreferences(url);
             ninjaWebView.loadUrl(url, ninjaWebView.getRequestHeaders());
             return true;
+        } else {
+            NinjaToast.show(context, R.string.toast_load_error);
+            return false;
         }
-
-        if (browseIntent.resolveActivity(packageManager) != null) {
-            context.startActivity(browseIntent);
-            return true;
-        }
-
-        if (url.startsWith("intent:")) {
-            try {
-                Intent intent = Intent.parseUri(url, Intent.URI_INTENT_SCHEME);
-                if (intent.resolveActivity(context.getPackageManager()) != null) {
-                    try {
-                        context.startActivity(intent);
-                    } catch (Exception e) {
-                        NinjaToast.show(context, R.string.toast_load_error);
-                    }
-                    return true;
-                }
-                //try to find fallback url
-                String fallbackUrl = intent.getStringExtra("browser_fallback_url");
-                if (fallbackUrl != null) {
-                    webView.loadUrl(fallbackUrl);
-                    return true;
-                }
-                //invite to install
-                Intent marketIntent = new Intent(Intent.ACTION_VIEW).setData(Uri.parse("market://details?id=" + intent.getPackage()));
-                if (marketIntent.resolveActivity(packageManager) != null) {
-                    context.startActivity(marketIntent);
-                    return true;
-                }
-            } catch (URISyntaxException e) {
-                //not an intent uri
-                return false;
-            }
-        }
-        return true;//do nothing in other cases
     }
 
     @Override
@@ -173,22 +135,17 @@ public class NinjaWebViewClient extends WebViewClient {
 
     @Override
     public void onFormResubmission(WebView view, @NonNull final Message doNotResend, final Message resend) {
-        final BottomSheetDialog dialog = new BottomSheetDialog(context);
-        View dialogView = View.inflate(context, R.layout.dialog_action, null);
-        TextView textView = dialogView.findViewById(R.id.dialog_text);
-        textView.setText(R.string.dialog_content_resubmission);
-        Button action_ok = dialogView.findViewById(R.id.action_ok);
-        action_ok.setOnClickListener(view1 -> {
+        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
+        builder.setMessage(R.string.dialog_content_resubmission);
+        builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
             resend.sendToTarget();
-            dialog.cancel();
         });
+        builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
+        AlertDialog dialog = builder.create();
+        dialog.show();
         dialog.setOnCancelListener(dialog1 -> {
             doNotResend.sendToTarget();
-            dialog1.cancel();
         });
-        dialog.setContentView(dialogView);
-        dialog.show();
-        HelperUnit.setBottomSheetBehavior(dialog, dialogView, BottomSheetBehavior.STATE_EXPANDED);
     }
 
     @Override
@@ -217,53 +174,52 @@ public class NinjaWebViewClient extends WebViewClient {
         }
         String text = message + " - " + context.getString(R.string.dialog_content_ssl_error);
 
-        final BottomSheetDialog dialog = new BottomSheetDialog(context);
-        View dialogView = View.inflate(context, R.layout.dialog_action, null);
-        TextView textView = dialogView.findViewById(R.id.dialog_text);
-        textView.setText(text);
-        Button action_ok = dialogView.findViewById(R.id.action_ok);
-        action_ok.setOnClickListener(view1 -> {
+        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
+        builder.setMessage(text);
+        builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
             handler.proceed();
-            dialog.cancel();
         });
+        builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
+        AlertDialog dialog = builder.create();
+        dialog.show();
         dialog.setOnCancelListener(dialog1 -> {
             handler.cancel();
-            dialog1.cancel();
         });
-        dialog.setContentView(dialogView);
-        dialog.show();
-        HelperUnit.setBottomSheetBehavior(dialog, dialogView, BottomSheetBehavior.STATE_EXPANDED);
     }
 
     @Override
     public void onReceivedHttpAuthRequest(WebView view, @NonNull final HttpAuthHandler handler, String host, String realm) {
 
-        final BottomSheetDialog dialog = new BottomSheetDialog(context);
+        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
         View dialogView = View.inflate(context, R.layout.dialog_edit_title, null);
 
-        final EditText pass_userNameET = dialogView.findViewById(R.id.edit_userName);
-        final EditText pass_userPWET = dialogView.findViewById(R.id.edit_PW);
-        pass_userNameET.setVisibility(View.VISIBLE);
-        pass_userPWET.setVisibility(View.VISIBLE);
-
-        TextInputLayout login_title = dialogView.findViewById(R.id.edit_title);
-        login_title.setVisibility(View.GONE);
+        TextInputLayout edit_title_layout = dialogView.findViewById(R.id.edit_title_layout);
+        TextInputLayout edit_userName_layout = dialogView.findViewById(R.id.edit_userName_layout);
+        TextInputLayout edit_PW_layout = dialogView.findViewById(R.id.edit_PW_layout);
         ImageView ib_icon = dialogView.findViewById(R.id.edit_icon);
         ib_icon.setVisibility(View.GONE);
+        edit_title_layout.setVisibility(View.GONE);
+        edit_userName_layout.setVisibility(View.VISIBLE);
+        edit_PW_layout.setVisibility(View.VISIBLE);
 
-        Button action_ok = dialogView.findViewById(R.id.action_ok);
-        action_ok.setOnClickListener(view1 -> {
+        EditText pass_userNameET = dialogView.findViewById(R.id.edit_userName);
+        EditText pass_userPWET = dialogView.findViewById(R.id.edit_PW);
+
+        builder.setView(dialogView);
+        builder.setTitle("HttpAuthRequest");
+        builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
             String user = pass_userNameET.getText().toString().trim();
             String pass = pass_userPWET.getText().toString().trim();
             handler.proceed(user, pass);
             dialog.cancel();
         });
+        builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
         dialog.setOnCancelListener(dialog1 -> {
             handler.cancel();
             dialog1.cancel();
         });
-        dialog.setContentView(dialogView);
-        dialog.show();
-        HelperUnit.setBottomSheetBehavior(dialog, dialogView, BottomSheetBehavior.STATE_EXPANDED);
     }
 }

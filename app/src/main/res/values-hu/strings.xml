@@ -128,12 +128,6 @@
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">Eszköztár elrejtése</string>
     <string name="setting_summary_hide">Használja a teljes képernyőt amikor a weboldalakat megtekinti. A vissza gomb megnyomásával, elhagyja a teljes képernyős módot.</string>
-    <string name="setting_theme">Téma</string>
-    <string name="setting_theme_summary">Az alkalmazás témájának beállítása.</string>
-    <string name="setting_theme_system">Rendszer téma</string>
-    <string name="setting_theme_light">Világos téma</string>
-    <string name="setting_theme_dark">Sötét téma</string>
-    <string name="setting_title_theme">Felhasználói felület</string>
     <string name="setting_title_behavior">Viselkedés</string>
     <string name="setting_summary_toolbarShow">A vissza megnyomása láthatóvá teszi az eszköztárat, mielőtt visszatér az előzményekhez.</string>
     <string name="setting_title_toolbarShow">Első eszköztár</string>
@@ -185,7 +179,6 @@
     <string name="setting_title_others">Egyebek</string>
     <string name="setting_title_appSettings">Alkalmazás beállításai</string>
     <string name="setting_summary_appSettings">Nyissa meg a \"FOSS Browser\" beállításait a rendszer alkalmazások részében. Itt az Android verziójától függően engedélyeket adhat, törölheti az alkalmazás adatait és így tovább.</string>
-    <string name="setting_title_community">Hozzájárulás</string>
     <!-- Toast -->
     <string name="toast_add_to_home_successful">Sikeresen hozzáadva a Kezdőlaphoz</string>
     <string name="toast_add_to_home_failed">Nem sikerült hozzáadni a Kezdőlaphoz</string>
@@ -195,22 +188,16 @@
     <string name="toast_delete_successful">Sikeresen törölve</string>
     <string name="toast_domain_already_exists">A domain már létezik</string>
     <string name="toast_export_successful">Exportálva mint:&#160;</string>
-    <string name="toast_export_failed">Sikertelen exportálás</string>
-    <string name="toast_import_successful">Importált szám:&#160;</string>
-    <string name="toast_import_failed">Sikertelen importálás</string>
     <string name="toast_input_empty">Nem írt be semmit</string>
     <string name="toast_invalid_domain">Érvénytelen domain</string>
     <string name="toast_load_error">Nem tölthető be ez az URL cím</string>
     <string name="toast_new_tab_successful">Sikeresen megnyitva új lapon</string>
     <string name="toast_share_failed">Ez az oldal nem osztható meg</string>
     <string name="toast_start_download">Letöltés indítása</string>
-    <string name="toast_wait_a_minute">Kérem, várjon egy pillanatra</string>
     <string name="toast_webview_forward">Nem tölthető be a következő oldal</string>
     <string name="toast_permission_sdCard">A \"FOSS Browser\"-nek \"tárhely olvasása és írása\" engedélyre van szüksége. Ez szükséges a fájlok letöltéséhez, képernyőképek készítéséhez és az adatok biztonsági másolatának készítéséhez.</string>
-    <string name="toast_permission_loc">A \"FOSS Browser\"-nek \"hozzáférés a helyadatokhoz\" engedélyre van szüksége. Ezt néhány weboldal kérheti, például amikor valamilyen navigációt ajánl.</string>
     <string name="toast_restart">A változások alkalmazásához újra kell indítania a \"FOSS Browser\"-t. Bezárja most?</string>
     <string name="toast_quit">Ki akar lépni a \"FOSS Browser\"-ből?</string>
-    <string name="toast_close_tab">Be akarja zárni a jelenlegi lapot?</string>
     <string name="toast_downloadComplete">Befejezve a letöltés. Megnyitja a fájlkezelőt?</string>
     <string name="toast_unsecured">A weboldal nem biztonságos kapcsolatot használ (\"http\"). Megpróbálja a biztonságos kapcsolatot (\"https\")?</string>
     <string name="toast_backup">Biztonsági másolat az adatokról? Ez felülírja a régi biztonsági másolatot.</string>
@@ -242,20 +229,4 @@
 
     </string>
     <!-- License changelog -->
-    <string name="cont_dialog">        &lt;i&gt;Először is szeretnék köszönetet mondani mindenkinek, aki bármilyen módon hozzájárult ehhez a projekthez. Akik hibajelentéseket küldtek, fordítást készítettek vagy egyéb módon segítettek. A következő oldalakon aktív tagjává válhat ennek a nagyszerű közösségnek:&lt;/i&gt;&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;Crowdin:&lt;/b&gt;&lt;br&gt;
-        A Crowdin egy online platform az alkalmazások más nyelvekre történő fordítására. Nagy köszönet minden fordítónak. Ön is tud segíteni.&lt;br&gt;
-        &lt;i&gt;https://crowdin.com/project/foss-browser&lt;/i&gt;&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;XDA-thread:&lt;/b&gt;&lt;br&gt;
-        Az XDA egy nagyszerű közösség a fejlesztők és az okostelefon-rajongók számára. Itt jelentheti a hibákat, kérhet új funkciókat és minden egyéb, ami a \"FOSS Browser\"-rel kapcsolatos.&lt;br&gt;
-        &lt;i&gt;https://forum.xda-developers.com/android/apps-games/app-browser-t3500091&lt;/i&gt;&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;Github:&lt;/b&gt;&lt;br&gt;
-        A Github-on láthatja \"FOSS Browser\" forráskódját. Ez inkább a technikai dolgokkal foglalkozik: hibákat tud bejelenteni, kérhet új funkciókat vagy akár segíthet a fejlesztésben vagy a fordításban.&lt;br&gt;
-        &lt;i&gt;https://github.com/scoute-dich/browser&lt;/i&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-
-        &lt;i&gt;A következő emberek járultak hozzá ehhez a projekthez. Ha elfelejtettem bárkit, kérem, lépjen kapcsolatba velem:&lt;/i&gt;
-    </string>
 </resources>

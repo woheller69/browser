@@ -123,7 +123,7 @@ public class NinjaWebView extends WebView implements AlbumController {
     @TargetApi(Build.VERSION_CODES.O)
     public synchronized void initPreferences(String url) {
 
-        HelperUnit.initRendering(this);
+        HelperUnit.initRendering(this, this.context);
         sp = PreferenceManager.getDefaultSharedPreferences(context);
         WebSettings webSettings = getSettings();
 
@@ -136,6 +136,19 @@ public class NinjaWebView extends WebView implements AlbumController {
             webSettings.setUserAgentString(userAgent);
         }
 
+        webSettings.setSupportZoom(true);
+        webSettings.setBuiltInZoomControls(true);
+        webSettings.setDisplayZoomControls(false);
+        webSettings.setSupportMultipleWindows(true);
+        webViewClient.enableAdBlock(sp.getBoolean(context.getString(R.string.sp_ad_block), true));
+        webSettings.setTextZoom(Integer.parseInt(Objects.requireNonNull(sp.getString("sp_fontSize", "100"))));
+        webSettings.setDomStorageEnabled(sp.getBoolean(("sp_remote"), false));
+        webSettings.setBlockNetworkImage(!sp.getBoolean(context.getString(R.string.sp_images), true));
+        webSettings.setJavaScriptEnabled(sp.getBoolean(context.getString(R.string.sp_javascript), true));
+        webSettings.setJavaScriptCanOpenWindowsAutomatically(sp.getBoolean(context.getString(R.string.sp_javascript), true));
+        webSettings.setGeolocationEnabled(sp.getBoolean(context.getString(R.string.sp_location), false));
+        webSettings.setDomStorageEnabled(remoteHosts.isWhite(url) || sp.getBoolean("sp_remote", true));
+        
         CookieManager manager = CookieManager.getInstance();
         if (cookieHosts.isWhite(url) || sp.getBoolean(context.getString(R.string.sp_cookies), true)) {
             manager.setAcceptCookie(true);
@@ -144,35 +157,12 @@ public class NinjaWebView extends WebView implements AlbumController {
             manager.setAcceptCookie(false);
         }
 
-        webSettings.setSupportZoom(true);
-        webSettings.setBuiltInZoomControls(true);
-        webSettings.setDisplayZoomControls(false);
-        webSettings.setSupportMultipleWindows(true);
-        webViewClient.enableAdBlock(sp.getBoolean(context.getString(R.string.sp_ad_block), true));
-        webSettings.setTextZoom(Integer.parseInt(Objects.requireNonNull(sp.getString("sp_fontSize", "100"))));
-        webSettings.setAllowFileAccessFromFileURLs(sp.getBoolean(("sp_remote"), false));
-        webSettings.setAllowUniversalAccessFromFileURLs(sp.getBoolean(("sp_remote"), false));
-        webSettings.setDomStorageEnabled(sp.getBoolean(("sp_remote"), false));
-        webSettings.setBlockNetworkImage(!sp.getBoolean(context.getString(R.string.sp_images), true));
-        webSettings.setJavaScriptEnabled(sp.getBoolean(context.getString(R.string.sp_javascript), true));
-        webSettings.setJavaScriptCanOpenWindowsAutomatically(sp.getBoolean(context.getString(R.string.sp_javascript), true));
-        webSettings.setGeolocationEnabled(sp.getBoolean(context.getString(R.string.sp_location), false));
-
         if (javaHosts.isWhite(url) || sp.getBoolean(context.getString(R.string.sp_javascript), true)) {
             webSettings.setJavaScriptCanOpenWindowsAutomatically(true);
             webSettings.setJavaScriptEnabled(true);
         } else {
             webSettings.setJavaScriptCanOpenWindowsAutomatically(false);
             webSettings.setJavaScriptEnabled(false);
-        }
-        if (remoteHosts.isWhite(url) || sp.getBoolean("sp_remote", true)) {
-            webSettings.setAllowFileAccessFromFileURLs(true);
-            webSettings.setAllowUniversalAccessFromFileURLs(true);
-            webSettings.setDomStorageEnabled(true);
-        } else {
-            webSettings.setAllowFileAccessFromFileURLs(false);
-            webSettings.setAllowUniversalAccessFromFileURLs(false);
-            webSettings.setDomStorageEnabled(false);
         }
     }
 

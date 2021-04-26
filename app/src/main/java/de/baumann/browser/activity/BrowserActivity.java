@@ -172,7 +172,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     private AlbumController currentAlbumController = null;
 
     private static final int INPUT_FILE_REQUEST_CODE = 1;
-
     private ValueCallback<Uri[]> mFilePathCallback;
 
     // Classes

@@ -3,13 +3,12 @@
 <resources>
 
     <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="colorPrimaryDark">@color/primaryDarkColor</item>
+
         <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryDark">@color/primaryDarkColor</item>
         <item name="colorSecondary">@color/secondaryColor</item>
-        <item name="colorAccent">@color/secondaryColor</item>
 
 
     </style>
-
 
 </resources>

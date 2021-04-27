@@ -2,15 +2,18 @@
 - updated and added translations (now 16 languages are supported!)
 - updated: build libraries
 - updated: AdBlock-hosts
+- updated: Material Components
 - removed: multi-window support
-- new: Opting out of metrics collection
+- removed: theme settings
 - new: support of: open target="_blank"
 - new: better tab handling
+- fix: Opting out of metrics collection
 - fix: export bookmarks
 - fix: tab handling
 - fix: apply javaScript, cookies and remote content whitelists
 - fix: switching between system day/night mode
-- many other small fixes
+- fix: dialogs in landscape
+- fix: other small fixes
 
 ### v 7.2
 - fix: zooming on websites

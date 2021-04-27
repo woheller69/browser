@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
 
-    <color name="primaryColor">#009688</color>
+    <color name="primaryColor">#4db6ac</color>
     <color name="primaryDarkColor">#424242</color>
-    <color name="secondaryColor">#ffc107</color>
+    <color name="secondaryColor">#4db6ac</color>
 
     <color name="color_transparent">@android:color/transparent</color>
     <color name="color_light">#fafafa</color>
     <color name="color_hint">#BDBDBD</color>
-
-    <color name="color_red">#F44336</color>
     <color name="color_shadow_light">@color/cardview_shadow_start_color</color>
 
 </resources>

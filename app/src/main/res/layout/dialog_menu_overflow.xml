@@ -2,7 +2,6 @@
 
 <LinearLayout
     xmlns:tools="http://schemas.android.com/tools"
-    android:animateLayoutChanges="true"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -43,6 +42,13 @@
 
     </RelativeLayout>
 
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        app:tabIndicatorHeight="0dp"/>
+
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
@@ -77,23 +83,5 @@
             android:numColumns="1" />
 
     </RelativeLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="?android:attr/textColorSecondary" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottom_navigation"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:menu="@menu/menu_bottom_overflow" />
-
-    </LinearLayout>
 
 </LinearLayout>

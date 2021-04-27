@@ -15,6 +15,8 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.textfield.TextInputLayout;
+
+import android.view.Gravity;
 import android.view.View;
 import android.webkit.HttpAuthHandler;
 import android.webkit.SslErrorHandler;
@@ -28,6 +30,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.io.ByteArrayInputStream;
+import java.util.Objects;
 
 import de.baumann.browser.database.Record;
 import de.baumann.browser.database.RecordAction;
@@ -146,6 +149,7 @@ public class NinjaWebViewClient extends WebViewClient {
         dialog.setOnCancelListener(dialog1 -> {
             doNotResend.sendToTarget();
         });
+        Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
     }
 
     @Override
@@ -185,6 +189,7 @@ public class NinjaWebViewClient extends WebViewClient {
         dialog.setOnCancelListener(dialog1 -> {
             handler.cancel();
         });
+        Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
     }
 
     @Override
@@ -217,6 +222,7 @@ public class NinjaWebViewClient extends WebViewClient {
 
         AlertDialog dialog = builder.create();
         dialog.show();
+        Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
         dialog.setOnCancelListener(dialog1 -> {
             handler.cancel();
             dialog1.cancel();

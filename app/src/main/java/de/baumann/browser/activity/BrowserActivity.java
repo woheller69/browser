@@ -14,7 +14,6 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
-import android.content.res.Configuration;
 import android.database.Cursor;
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -37,6 +36,7 @@ import com.google.android.material.chip.Chip;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.progressindicator.LinearProgressIndicator;
+import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.textfield.TextInputLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -59,7 +59,6 @@ import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.widget.AutoCompleteTextView;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.GridView;
@@ -71,6 +70,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.VideoView;
 
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Locale;
@@ -152,6 +152,15 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     private boolean showOverflow = false;
     private TextView overflow_title;
 
+    private int originalOrientation;
+    private boolean searchOnSite;
+
+    private ValueCallback<Uri[]> filePathCallback = null;
+    private AlbumController currentAlbumController = null;
+
+    private static final int INPUT_FILE_REQUEST_CODE = 1;
+    private ValueCallback<Uri[]> mFilePathCallback;
+
     private boolean prepareRecord() {
         NinjaWebView webView = (NinjaWebView) currentAlbumController;
         String title = webView.getTitle();
@@ -164,15 +173,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 || url.startsWith(BrowserUnit.URL_SCHEME_MAIL_TO)
                 || url.startsWith(BrowserUnit.URL_SCHEME_INTENT));
     }
-
-    private int originalOrientation;
-    private boolean searchOnSite;
-
-    private ValueCallback<Uri[]> filePathCallback = null;
-    private AlbumController currentAlbumController = null;
-
-    private static final int INPUT_FILE_REQUEST_CODE = 1;
-    private ValueCallback<Uri[]> mFilePathCallback;
 
     // Classes
 
@@ -582,11 +582,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         updateAutoComplete();
         omniBox_overview.setOnClickListener(v -> showOverview());
         omniBox_overview.setOnLongClickListener(v -> {
-            if (overViewTab.equals(getString(R.string.album_title_bookmarks))) {
-                bottom_navigation.setSelectedItemId(R.id.page_2);
-                showOverview();
-                show_dialogFilter();
-            }
+            bottom_navigation.setSelectedItemId(R.id.page_2);
+            show_dialogFilter();
             return false;
         });
 
@@ -598,6 +595,12 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         tab_openOverView.setOnClickListener(view -> {
             dialog_tabPreview.cancel();
             showOverview();
+        });
+        tab_openOverView.setOnLongClickListener(v -> {
+            bottom_navigation.setSelectedItemId(R.id.page_2);
+            hideTabView();
+            show_dialogFilter();
+            return false;
         });
         
         builder.setView(dialogView);
@@ -779,7 +782,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     popup.inflate(R.menu.menu_list_history);
                 }
                 popup.setOnMenuItemClickListener(item -> {
-
                     if (item.getItemId() == R.id.menu_delete) {
                         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
                         builder.setMessage(R.string.hint_database);
@@ -819,13 +821,21 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     return true;
                 });
                 popup.show();
+                popup.setOnDismissListener(v -> {
+                    if (overViewTab.equals(getString(R.string.album_title_home))) {
+                        bottom_navigation.setSelectedItemId(R.id.page_1);
+                    } else if (overViewTab.equals(getString(R.string.album_title_bookmarks))) {
+                        bottom_navigation.setSelectedItemId(R.id.page_2);
+                    } else if (overViewTab.equals(getString(R.string.album_title_history))) {
+                        bottom_navigation.setSelectedItemId(R.id.page_3);
+                    }
+                });
             }
             return true;
         };
 
         bottom_navigation = dialogView.findViewById(R.id.bottom_navigation);
         bottom_navigation.setOnNavigationItemSelectedListener(navListener);
-
         bottom_navigation.findViewById(R.id.page_2).setOnLongClickListener(v -> {
             show_dialogFilter();
             return true;
@@ -840,10 +850,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     hideOverview();
                 }
             }
-
             @Override
-            public void onSlide(@NonNull View bottomSheet, float slideOffset) {
-            }
+            public void onSlide(@NonNull View bottomSheet, float slideOffset) {}
         });
 
         bottomSheetDialog_OverView.setOnCancelListener(dialog ->
@@ -901,13 +909,11 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     1, 0));
             cursor.moveToNext();
             action.close();
-            deleteDatabase("pass_DB_v01.db");
         }
     }
 
     @SuppressLint("SetJavaScriptEnabled")
     private void show_dialogFastToggle() {
-
 
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
         View dialogView = View.inflate(context, R.layout.dialog_toggle, null);
@@ -917,20 +923,27 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         dialog.show();
         Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
 
+        Chip chip_settings = dialogView.findViewById(R.id.chip_settings);
+        chip_settings.setOnClickListener(v -> {
+            dialog.cancel();
+            Intent settings = new Intent(BrowserActivity.this, Settings_Activity.class);
+            startActivity(settings);
+        });
+
         //TabControl
 
-        final ImageButton whiteList_js_tab = dialogView.findViewById(R.id.imageButton_js_tab);
+        Chip chip_javaScript_Tab = dialogView.findViewById(R.id.chip_javaScript_Tab);
         if (ninjaWebView.getSettings().getJavaScriptEnabled()) {
-            whiteList_js_tab.setImageResource(R.drawable.icon_java_enabled);
-            whiteList_js_tab.setOnClickListener(view -> {
+            chip_javaScript_Tab.setChecked(true);
+            chip_javaScript_Tab.setOnClickListener(view -> {
                 ninjaWebView.getSettings().setJavaScriptEnabled(false);
                 ninjaWebView.getSettings().setJavaScriptCanOpenWindowsAutomatically(false);
                 ninjaWebView.reload();
                 dialog.cancel();
             });
         } else {
-            whiteList_js_tab.setImageResource(R.drawable.icon_java);
-            whiteList_js_tab.setOnClickListener(view -> {
+            chip_javaScript_Tab.setChecked(false);
+            chip_javaScript_Tab.setOnClickListener(view -> {
                 ninjaWebView.getSettings().setJavaScriptEnabled(true);
                 ninjaWebView.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
                 ninjaWebView.reload();
@@ -938,17 +951,17 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             });
         }
 
-        ImageButton whiteList_ext_tab = dialogView.findViewById(R.id.imageButton_ext_tab);
+        Chip chip_dom_Tab = dialogView.findViewById(R.id.chip_dom_Tab);
         if (ninjaWebView.getSettings().getDomStorageEnabled()) {
-            whiteList_ext_tab.setImageResource(R.drawable.icon_remote_enabled);
-            whiteList_ext_tab.setOnClickListener(view -> {
+            chip_dom_Tab.setChecked(true);
+            chip_dom_Tab.setOnClickListener(view -> {
                 ninjaWebView.getSettings().setDomStorageEnabled(false);
                 ninjaWebView.reload();
                 dialog.cancel();
             });
         } else {
-            whiteList_ext_tab.setImageResource(R.drawable.icon_remote);
-            whiteList_ext_tab.setOnClickListener(view -> {
+            chip_dom_Tab.setChecked(false);
+            chip_dom_Tab.setOnClickListener(view -> {
                 ninjaWebView.getSettings().setDomStorageEnabled(true);
                 ninjaWebView.reload();
                 dialog.cancel();
@@ -956,15 +969,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         }
 
         // CheckBox
-
-        CheckBox sw_java = dialogView.findViewById(R.id.switch_js);
-        final ImageButton whiteList_js = dialogView.findViewById(R.id.imageButton_js);
-        CheckBox sw_adBlock = dialogView.findViewById(R.id.switch_adBlock);
-        final ImageButton whiteList_ab = dialogView.findViewById(R.id.imageButton_ab);
-        CheckBox sw_cookie = dialogView.findViewById(R.id.switch_cookie);
-        final ImageButton whitelist_cookie = dialogView.findViewById(R.id.imageButton_cookie);
-        CheckBox switch_ext = dialogView.findViewById(R.id.switch_ext);
-        final ImageButton imageButton_ext = dialogView.findViewById(R.id.imageButton_ext);
 
         TextView dialog_title = dialogView.findViewById(R.id.dialog_title);
         dialog_title.setText(HelperUnit.domain(ninjaWebView.getUrl()));
@@ -977,106 +981,99 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         final String url = ninjaWebView.getUrl();
 
-        sw_java.setChecked(sp.getBoolean(getString(R.string.sp_javascript), true));
-        sw_adBlock.setChecked(sp.getBoolean(getString(R.string.sp_ad_block), true));
-        sw_cookie.setChecked(sp.getBoolean(getString(R.string.sp_cookies), true));
-        switch_ext.setChecked(sp.getBoolean("sp_remote", true));
-
-        if (javaHosts.isWhite(url)) {
-            whiteList_js.setImageResource(R.drawable.check_green);
-        } else {
-            whiteList_js.setImageResource(R.drawable.ic_action_close_red);
-        }
-
-        if (cookieHosts.isWhite(url)) {
-            whitelist_cookie.setImageResource(R.drawable.check_green);
-        } else {
-            whitelist_cookie.setImageResource(R.drawable.ic_action_close_red);
-        }
-
-        if (adBlock.isWhite(url)) {
-            whiteList_ab.setImageResource(R.drawable.check_green);
-        } else {
-            whiteList_ab.setImageResource(R.drawable.ic_action_close_red);
-        }
-
-        if (remote.isWhite(url)) {
-            imageButton_ext.setImageResource(R.drawable.check_green);
-        } else {
-            whiteList_ab.setImageResource(R.drawable.ic_action_close_red);
-        }
-
-        imageButton_ext.setOnClickListener(view -> {
-            if (remote.isWhite(ninjaWebView.getUrl())) {
-                imageButton_ext.setImageResource(R.drawable.ic_action_close_red);
-                remote.removeDomain(HelperUnit.domain(url));
-            } else {
-                imageButton_ext.setImageResource(R.drawable.check_green);
-                remote.addDomain(HelperUnit.domain(url));
-            }
-        });
-
-        whiteList_js.setOnClickListener(view -> {
+        Chip chip_javaScript_WL = dialogView.findViewById(R.id.chip_javaScript_WL);
+        chip_javaScript_WL.setChecked(javaHosts.isWhite(url));
+        chip_javaScript_WL.setOnClickListener(v -> {
             if (javaHosts.isWhite(ninjaWebView.getUrl())) {
-                whiteList_js.setImageResource(R.drawable.ic_action_close_red);
+                chip_javaScript_WL.setChecked(false);
                 javaHosts.removeDomain(HelperUnit.domain(url));
             } else {
-                whiteList_js.setImageResource(R.drawable.check_green);
+                chip_javaScript_WL.setChecked(true);
                 javaHosts.addDomain(HelperUnit.domain(url));
             }
         });
 
-        whitelist_cookie.setOnClickListener(view -> {
+        Chip chip_dom_WL = dialogView.findViewById(R.id.chip_dom_WL);
+        chip_dom_WL.setChecked(remote.isWhite(url));
+        chip_dom_WL.setOnClickListener(v -> {
+            if (remote.isWhite(ninjaWebView.getUrl())) {
+                chip_dom_WL.setChecked(false);
+                remote.removeDomain(HelperUnit.domain(url));
+            } else {
+                chip_dom_WL.setChecked(true);
+                remote.addDomain(HelperUnit.domain(url));
+            }
+        });
+
+        Chip chip_cookie_WL = dialogView.findViewById(R.id.chip_cookie_WL);
+        chip_cookie_WL.setChecked(cookieHosts.isWhite(url));
+        chip_cookie_WL.setOnClickListener(v -> {
             if (cookieHosts.isWhite(ninjaWebView.getUrl())) {
-                whitelist_cookie.setImageResource(R.drawable.ic_action_close_red);
+                chip_cookie_WL.setChecked(false);
                 cookieHosts.removeDomain(HelperUnit.domain(url));
             } else {
-                whitelist_cookie.setImageResource(R.drawable.check_green);
+                chip_cookie_WL.setChecked(true);
                 cookieHosts.addDomain(HelperUnit.domain(url));
             }
         });
 
-
-        whiteList_ab.setOnClickListener(view -> {
-            if (adBlock.isWhite(ninjaWebView.getUrl())) {
-                whiteList_ab.setImageResource(R.drawable.ic_action_close_red);
+        Chip chip_adBlock_WL = dialogView.findViewById(R.id.chip_adBlock_WL);
+        chip_adBlock_WL.setChecked(adBlock.isWhite(url));
+        chip_adBlock_WL.setOnClickListener(v -> {
+            if (cookieHosts.isWhite(ninjaWebView.getUrl())) {
+                chip_adBlock_WL.setChecked(false);
                 adBlock.removeDomain(HelperUnit.domain(url));
             } else {
-                whiteList_ab.setImageResource(R.drawable.check_green);
+                chip_adBlock_WL.setChecked(true);
                 adBlock.addDomain(HelperUnit.domain(url));
             }
         });
 
-        sw_java.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            if(isChecked){
-                sp.edit().putBoolean(getString(R.string.sp_javascript), true).apply();
-            }else{
+        Chip chip_javaScript = dialogView.findViewById(R.id.chip_javaScript);
+        chip_javaScript.setChecked(sp.getBoolean(getString(R.string.sp_javascript), true));
+        chip_javaScript.setOnClickListener(v -> {
+            if (sp.getBoolean(getString(R.string.sp_javascript), true)) {
+                chip_javaScript.setChecked(false);
                 sp.edit().putBoolean(getString(R.string.sp_javascript), false).apply();
-            }
-
-        });
-
-        sw_adBlock.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            if(isChecked){
-                sp.edit().putBoolean(getString(R.string.sp_ad_block), true).apply();
-            }else{
-                sp.edit().putBoolean(getString(R.string.sp_ad_block), false).apply();
+            } else {
+                chip_javaScript.setChecked(true);
+                sp.edit().putBoolean(getString(R.string.sp_javascript), true).apply();
             }
         });
 
-        sw_cookie.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            if(isChecked){
-                sp.edit().putBoolean(getString(R.string.sp_cookies), true).apply();
-            }else{
-                sp.edit().putBoolean(getString(R.string.sp_cookies), false).apply();
-            }
-        });
-
-        switch_ext.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            if(isChecked){
-                sp.edit().putBoolean("sp_remote", true).apply();
-            }else{
+        Chip chip_dom = dialogView.findViewById(R.id.chip_dom);
+        chip_dom.setChecked(sp.getBoolean("sp_remote", true));
+        chip_dom.setOnClickListener(v -> {
+            if (sp.getBoolean("sp_remote", true)) {
+                chip_dom.setChecked(false);
                 sp.edit().putBoolean("sp_remote", false).apply();
+            } else {
+                chip_dom.setChecked(true);
+                sp.edit().putBoolean("sp_remote", true).apply();
+            }
+        });
+
+        Chip chip_cookie = dialogView.findViewById(R.id.chip_cookie);
+        chip_cookie.setChecked(sp.getBoolean(getString(R.string.sp_cookies), true));
+        chip_cookie.setOnClickListener(v -> {
+            if (sp.getBoolean(getString(R.string.sp_cookies), true)) {
+                chip_cookie.setChecked(false);
+                sp.edit().putBoolean(getString(R.string.sp_cookies), false).apply();
+            } else {
+                chip_cookie.setChecked(true);
+                sp.edit().putBoolean(getString(R.string.sp_cookies), true).apply();
+            }
+        });
+
+        Chip chip_adBlock = dialogView.findViewById(R.id.chip_adBlock);
+        chip_adBlock.setChecked(sp.getBoolean(getString(R.string.sp_ad_block), true));
+        chip_adBlock.setOnClickListener(v -> {
+            if (sp.getBoolean(getString(R.string.sp_ad_block), true)) {
+                chip_adBlock.setChecked(false);
+                sp.edit().putBoolean(getString(R.string.sp_ad_block), false).apply();
+            } else {
+                chip_adBlock.setChecked(true);
+                sp.edit().putBoolean(getString(R.string.sp_ad_block), true).apply();
             }
         });
 
@@ -1201,7 +1198,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             if(!sp.getBoolean("sp_reopenLastTab", false)) {
                 doubleTapsQuit();
             }else{
-                ninjaWebView.loadUrl(sp.getString("favoriteURL", "https://github.com/scoute-dich/browser"));
+                ninjaWebView.loadUrl(Objects.requireNonNull(sp.getString("favoriteURL", "https://github.com/scoute-dich/browser")));
                 hideOverview();
             }
         } else {
@@ -1520,23 +1517,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         final GridView menu_grid_save = dialogView.findViewById(R.id.overflow_save);
         final GridView menu_grid_other = dialogView.findViewById(R.id.overflow_other);
 
-        int orientation = this.getResources().getConfiguration().orientation;
-        int numberColumns;
-        if (orientation == Configuration.ORIENTATION_PORTRAIT) {
-            numberColumns = 1;
-        } else {
-            numberColumns = 2;
-        }
-
         menu_grid_tab.setVisibility(View.VISIBLE);
         menu_grid_share.setVisibility(View.GONE);
         menu_grid_save.setVisibility(View.GONE);
         menu_grid_other.setVisibility(View.GONE);
-
-        menu_grid_tab.setNumColumns(numberColumns);
-        menu_grid_share.setNumColumns(numberColumns);
-        menu_grid_save.setNumColumns(numberColumns);
-        menu_grid_other.setNumColumns(numberColumns);
 
         // Tab
 
@@ -1565,7 +1549,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             } else if (position == 2) {
                 addAlbum(getString(R.string.app_name), Objects.requireNonNull(sp.getString("favoriteURL", "https://github.com/scoute-dich/browser")), true);
             } else if (position == 0) {
-                ninjaWebView.loadUrl(sp.getString("favoriteURL", "https://github.com/scoute-dich/browser"));
+                ninjaWebView.loadUrl(Objects.requireNonNull(sp.getString("favoriteURL", "https://github.com/scoute-dich/browser")));
             } else if (position == 3) {
                 removeAlbum(currentAlbumController);
             } else if (position == 4) {
@@ -1684,34 +1668,42 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             }
         });
 
-        BottomNavigationView.OnNavigationItemSelectedListener navListener = menuItem -> {
-            if (menuItem.getItemId() == R.id.page_1) {
-                menu_grid_tab.setVisibility(View.VISIBLE);
-                menu_grid_share.setVisibility(View.GONE);
-                menu_grid_save.setVisibility(View.GONE);
-                menu_grid_other.setVisibility(View.GONE);
-            } else if (menuItem.getItemId() == R.id.page_2) {
-                menu_grid_tab.setVisibility(View.GONE);
-                menu_grid_share.setVisibility(View.VISIBLE);
-                menu_grid_save.setVisibility(View.GONE);
-                menu_grid_other.setVisibility(View.GONE);
-            } else if (menuItem.getItemId() == R.id.page_3) {
-                menu_grid_tab.setVisibility(View.GONE);
-                menu_grid_share.setVisibility(View.GONE);
-                menu_grid_save.setVisibility(View.VISIBLE);
-                menu_grid_other.setVisibility(View.GONE);
-            } else if (menuItem.getItemId() == R.id.page_4) {
-                menu_grid_tab.setVisibility(View.GONE);
-                menu_grid_share.setVisibility(View.GONE);
-                menu_grid_save.setVisibility(View.GONE);
-                menu_grid_other.setVisibility(View.VISIBLE);
+        TabLayout tabLayout= dialogView.findViewById(R.id.tabLayout);
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.icon_tab));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.icon_menu_share));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.icon_menu_save));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.icon_dots));
+        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                if (tab.getPosition() == 0) {
+                    menu_grid_tab.setVisibility(View.VISIBLE);
+                    menu_grid_share.setVisibility(View.GONE);
+                    menu_grid_save.setVisibility(View.GONE);
+                    menu_grid_other.setVisibility(View.GONE);
+                } else if (tab.getPosition() == 1) {
+                    menu_grid_tab.setVisibility(View.GONE);
+                    menu_grid_share.setVisibility(View.VISIBLE);
+                    menu_grid_save.setVisibility(View.GONE);
+                    menu_grid_other.setVisibility(View.GONE);
+                } else if (tab.getPosition() == 2) {
+                    menu_grid_tab.setVisibility(View.GONE);
+                    menu_grid_share.setVisibility(View.GONE);
+                    menu_grid_save.setVisibility(View.VISIBLE);
+                    menu_grid_other.setVisibility(View.GONE);
+                } else if (tab.getPosition() == 3) {
+                    menu_grid_tab.setVisibility(View.GONE);
+                    menu_grid_share.setVisibility(View.GONE);
+                    menu_grid_save.setVisibility(View.GONE);
+                    menu_grid_other.setVisibility(View.VISIBLE);
+                }
             }
-            return true;
-        };
-
-        BottomNavigationView bottom_navigation = dialogView.findViewById(R.id.bottom_navigation);
-        bottom_navigation.setOnNavigationItemSelectedListener(navListener);
-        bottom_navigation.setSelectedItemId(R.id.page_1);
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {}
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {}
+        });
     }
 
     private void show_contextMenu_list (final String title, final String url,
@@ -1722,7 +1714,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         View dialogView = View.inflate(context, R.layout.dialog_menu, null);
 
         TextView menuTitle = dialogView.findViewById(R.id.menuTitle);
-        menuTitle.setText(url);
+        menuTitle.setText(title);
 
         builder.setView(dialogView);
         AlertDialog dialog = builder.create();
@@ -1823,14 +1815,14 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                         GridView menu_grid2 = dialogViewFilter.findViewById(R.id.menu_grid);
 
                         final List<GridItem> gridList2 = new LinkedList<>();
-                        HelperUnit.addFilterItems(activity, gridList);
+                        HelperUnit.addFilterItems(activity, gridList2);
 
                         GridAdapter gridAdapter2 = new GridAdapter(context, gridList2);
                         menu_grid2.setAdapter(gridAdapter2);
                         gridAdapter2.notifyDataSetChanged();
 
                         menu_grid2.setOnItemClickListener((parent2, view2, position2, id2) -> {
-                            newIcon = gridList.get(position2).getData();
+                            newIcon = gridList2.get(position2).getData();
                             HelperUnit.setFilterIcons(ib_icon, newIcon);
                             dialogFilter.cancel();
                         });
@@ -1879,24 +1871,21 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     }
 
     private void show_dialogFilter() {
+        showOverview();
 
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
         View dialogView = View.inflate(context, R.layout.dialog_menu, null);
-
         builder.setView(dialogView);
         AlertDialog dialog = builder.create();
         dialog.show();
+
         Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
-
         GridView menu_grid = dialogView.findViewById(R.id.menu_grid);
-
         final List<GridItem> gridList = new LinkedList<>();
         HelperUnit.addFilterItems(activity, gridList);
-
         GridAdapter gridAdapter = new GridAdapter(context, gridList);
         menu_grid.setAdapter(gridAdapter);
         gridAdapter.notifyDataSetChanged();
-
         menu_grid.setOnItemClickListener((parent, view, position, id) -> {
             filter = true;
             filterBy = gridList.get(position).getData();

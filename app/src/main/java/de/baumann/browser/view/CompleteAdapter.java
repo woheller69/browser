@@ -9,6 +9,8 @@ import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.TextView;
 
+import androidx.core.content.ContextCompat;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
@@ -163,8 +165,10 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
 
         if (view == null) {
             view = LayoutInflater.from(context).inflate(layoutResId, null, false);
+            view.setBackgroundColor(ContextCompat.getColor(context, R.color.primaryDarkColor));
             holder = new Holder();
             holder.titleView = view.findViewById(R.id.record_item_title);
+            holder.titleView.setTextColor(ContextCompat.getColor(context, R.color.color_light));
             holder.urlView = view.findViewById(R.id.record_item_time);
             view.setTag(holder);
         } else {

@@ -96,7 +96,6 @@
     <string name="setting_title_whitelistJS">JavaScript beyaz listesi</string>
     <string name="setting_title_adblock">Reklam Engelleyici</string>
     <string name="setting_summary_adblock">Can sıkıcı reklamları engellemek için Reklam Engelleyiciyi etkinleştirin. Siteler de etkinleştirildiğinde daha hızlı yüklenir.</string>
-    <string name="setting_title_whitelist">Reklam Engelleyici beyaz listesi</string>
     <string name="setting_title_location">Konum</string>
     <string name="setting_summary_location">Web sitelerinin konumunuza erişmesine izin verin. Bazı web siteleri (navigasyon için Google Haritalar gibi) bunun etkinleştirilmesi gerekir.</string>
     <string name="setting_title_history">Geçmiş</string>

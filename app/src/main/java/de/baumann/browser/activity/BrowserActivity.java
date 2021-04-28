@@ -70,7 +70,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.VideoView;
 
-import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Locale;
@@ -143,7 +142,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     private SharedPreferences sp;
     private Javascript javaHosts;
     private Cookie cookieHosts;
-    private AdBlock adBlock;
     private Remote remote;
 
     private long newIcon;
@@ -583,6 +581,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         omniBox_overview.setOnClickListener(v -> showOverview());
         omniBox_overview.setOnLongClickListener(v -> {
             bottom_navigation.setSelectedItemId(R.id.page_2);
+            showOverview();
             show_dialogFilter();
             return false;
         });
@@ -599,6 +598,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         tab_openOverView.setOnLongClickListener(v -> {
             bottom_navigation.setSelectedItemId(R.id.page_2);
             hideTabView();
+            showOverview();
             show_dialogFilter();
             return false;
         });
@@ -923,13 +923,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         dialog.show();
         Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
 
-        Chip chip_settings = dialogView.findViewById(R.id.chip_settings);
-        chip_settings.setOnClickListener(v -> {
-            dialog.cancel();
-            Intent settings = new Intent(BrowserActivity.this, Settings_Activity.class);
-            startActivity(settings);
-        });
-
         //TabControl
 
         Chip chip_javaScript_Tab = dialogView.findViewById(R.id.chip_javaScript_Tab);
@@ -975,7 +968,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         javaHosts = new Javascript(context);
         cookieHosts = new Cookie(context);
-        adBlock = new AdBlock(context);
         remote = new Remote(context);
         ninjaWebView = (NinjaWebView) currentAlbumController;
 
@@ -1014,18 +1006,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             } else {
                 chip_cookie_WL.setChecked(true);
                 cookieHosts.addDomain(HelperUnit.domain(url));
-            }
-        });
-
-        Chip chip_adBlock_WL = dialogView.findViewById(R.id.chip_adBlock_WL);
-        chip_adBlock_WL.setChecked(adBlock.isWhite(url));
-        chip_adBlock_WL.setOnClickListener(v -> {
-            if (cookieHosts.isWhite(ninjaWebView.getUrl())) {
-                chip_adBlock_WL.setChecked(false);
-                adBlock.removeDomain(HelperUnit.domain(url));
-            } else {
-                chip_adBlock_WL.setChecked(true);
-                adBlock.addDomain(HelperUnit.domain(url));
             }
         });
 
@@ -1871,8 +1851,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     }
 
     private void show_dialogFilter() {
-        showOverview();
-
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
         View dialogView = View.inflate(context, R.layout.dialog_menu, null);
         builder.setView(dialogView);

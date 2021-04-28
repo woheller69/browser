@@ -3,22 +3,16 @@ package de.baumann.browser.fragment;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
-import com.google.android.material.bottomsheet.BottomSheetBehavior;
-import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
-
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.preference.PreferenceFragmentCompat;
 
 import de.baumann.browser.R;
-import de.baumann.browser.unit.HelperUnit;
 
 public class Fragment_clear extends PreferenceFragmentCompat {
 
+    @SuppressWarnings("ConstantConditions")
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         setPreferencesFromResource(R.xml.preference_clear, rootKey);

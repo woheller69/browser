@@ -5,9 +5,6 @@ import android.content.Context;
 import android.content.res.AssetManager;
 import android.util.Log;
 
-import de.baumann.browser.database.RecordAction;
-import de.baumann.browser.unit.RecordUnit;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -18,7 +15,6 @@ import java.util.*;
 public class AdBlock {
     private static final String FILE = "hosts.txt";
     private static final Set<String> hosts = new HashSet<>();
-    private static final List<String> whitelist = new ArrayList<>();
     @SuppressLint("ConstantLocale")
     private static final Locale locale = Locale.getDefault();
 
@@ -38,14 +34,6 @@ public class AdBlock {
         thread.start();
     }
 
-    private synchronized static void loadDomains(Context context) {
-        RecordAction action = new RecordAction(context);
-        action.open(false);
-        whitelist.clear();
-        whitelist.addAll(action.listDomains(RecordUnit.TABLE_WHITELIST));
-        action.close();
-    }
-
     private static String getDomain(String url) throws URISyntaxException {
         url = url.toLowerCase(locale);
 
@@ -62,24 +50,10 @@ public class AdBlock {
         return domain.startsWith("www.") ? domain.substring(4) : domain;
     }
 
-    private final Context context;
-
     public AdBlock(Context context) {
-        this.context = context;
-
         if (hosts.isEmpty()) {
             loadHosts(context);
         }
-        loadDomains(context);
-    }
-
-    public boolean isWhite(String url) {
-        for (String domain : whitelist) {
-            if (url != null && url.contains(domain)) {
-                return true;
-            }
-        }
-        return false;
     }
 
     boolean isAd(String url) {
@@ -90,29 +64,5 @@ public class AdBlock {
             return false;
         }
         return hosts.contains(domain.toLowerCase(locale));
-    }
-
-    public synchronized void addDomain(String domain) {
-        RecordAction action = new RecordAction(context);
-        action.open(true);
-        action.addDomain(domain, RecordUnit.TABLE_WHITELIST);
-        action.close();
-        whitelist.add(domain);
-    }
-
-    public synchronized void removeDomain(String domain) {
-        RecordAction action = new RecordAction(context);
-        action.open(true);
-        action.deleteDomain(domain, RecordUnit.TABLE_WHITELIST);
-        action.close();
-        whitelist.remove(domain);
-    }
-
-    public synchronized void clearDomains() {
-        RecordAction action = new RecordAction(context);
-        action.open(true);
-        action.clearTable(RecordUnit.TABLE_WHITELIST);
-        action.close();
-        whitelist.clear();
     }
 }

@@ -32,10 +32,6 @@
             android:title="@string/setting_title_adblock"
             android:summary="@string/setting_summary_adblock"/>
 
-        <Preference
-            android:key="start_AdBlock"
-            android:title="@string/setting_title_whitelist"/>
-
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/setting_title_javascript">

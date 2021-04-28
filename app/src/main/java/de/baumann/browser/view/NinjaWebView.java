@@ -164,6 +164,9 @@ public class NinjaWebView extends WebView implements AlbumController {
             webSettings.setJavaScriptCanOpenWindowsAutomatically(false);
             webSettings.setJavaScriptEnabled(false);
         }
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            this.setImportantForAutofill(View.IMPORTANT_FOR_AUTOFILL_YES);         }
     }
 
     private synchronized void initAlbum() {

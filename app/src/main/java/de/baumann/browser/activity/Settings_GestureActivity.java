@@ -10,7 +10,6 @@ import java.util.Objects;
 
 import de.baumann.browser.fragment.Fragment_settings_Gesture;
 import de.baumann.browser.R;
-import de.baumann.browser.unit.HelperUnit;
 
 public class Settings_GestureActivity extends AppCompatActivity {
 

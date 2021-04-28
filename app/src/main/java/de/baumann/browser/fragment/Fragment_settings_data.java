@@ -11,13 +11,8 @@ import android.os.Environment;
 import androidx.appcompat.app.AlertDialog;
 import androidx.preference.PreferenceManager;
 
-import com.google.android.material.bottomsheet.BottomSheetBehavior;
-import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.preference.PreferenceFragmentCompat;
@@ -47,11 +42,6 @@ import de.baumann.browser.view.NinjaToast;
 
 @SuppressWarnings({"ResultOfMethodCallIgnored", "ConstantConditions"})
 public class Fragment_settings_data extends PreferenceFragmentCompat {
-
-    private BottomSheetDialog dialog;
-    private View dialogView;
-    private TextView textView;
-    private Button action_ok;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -94,8 +84,6 @@ public class Fragment_settings_data extends PreferenceFragmentCompat {
                 }
             });
             builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
-            AlertDialog dialog = builder.create();
-            dialog.show();
             return false;
         });
 
@@ -132,46 +120,60 @@ public class Fragment_settings_data extends PreferenceFragmentCompat {
             dialog.show();
             return false;
         });
+
         findPreference("data_imBookmark").setOnPreferenceClickListener(preference -> {
-            try {
-                if (android.os.Build.VERSION.SDK_INT >= 23 && android.os.Build.VERSION.SDK_INT < 29) {
-                    int hasWRITE_EXTERNAL_STORAGE = getActivity().checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
-                    if (hasWRITE_EXTERNAL_STORAGE != PackageManager.PERMISSION_GRANTED) {
-                        HelperUnit.grantPermissionsStorage(getActivity());
-                        dialog.cancel();
+            MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(getActivity());
+            builder.setMessage(R.string.hint_database);
+            builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
+                dialog.cancel();
+                try {
+                    if (android.os.Build.VERSION.SDK_INT >= 23 && android.os.Build.VERSION.SDK_INT < 29) {
+                        int hasWRITE_EXTERNAL_STORAGE = getActivity().checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+                        if (hasWRITE_EXTERNAL_STORAGE != PackageManager.PERMISSION_GRANTED) {
+                            HelperUnit.grantPermissionsStorage(getActivity());
+                        } else {
+                            makeBackupDir();
+                            HelperUnit.restoreData(getActivity(), 4);
+                        }
                     } else {
                         makeBackupDir();
                         HelperUnit.restoreData(getActivity(), 4);
                     }
-                } else {
-                    makeBackupDir();
-                    HelperUnit.restoreData(getActivity(), 4);
-                }
 
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            });
+            builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
+            AlertDialog dialog = builder.create();
+            dialog.show();
             return false;
         });
+
         findPreference("data_exBookmark").setOnPreferenceClickListener(preference -> {
-            try {
-                if (android.os.Build.VERSION.SDK_INT >= 23 && android.os.Build.VERSION.SDK_INT < 29) {
-                    int hasWRITE_EXTERNAL_STORAGE = getActivity().checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
-                    if (hasWRITE_EXTERNAL_STORAGE != PackageManager.PERMISSION_GRANTED) {
-                        HelperUnit.grantPermissionsStorage(getActivity());
-                        dialog.cancel();
+            MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(getActivity());
+            builder.setMessage(R.string.toast_backup);
+            builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
+                dialog.cancel();
+                try {
+                    if (android.os.Build.VERSION.SDK_INT >= 23 && android.os.Build.VERSION.SDK_INT < 29) {
+                        int hasWRITE_EXTERNAL_STORAGE = getActivity().checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+                        if (hasWRITE_EXTERNAL_STORAGE != PackageManager.PERMISSION_GRANTED) {
+                            HelperUnit.grantPermissionsStorage(getActivity());
+                        } else {
+                            makeBackupDir();
+                            HelperUnit.backupData(getActivity(), 4);
+                        }
                     } else {
                         makeBackupDir();
                         HelperUnit.backupData(getActivity(), 4);
                     }
-                } else {
-                    makeBackupDir();
-                    HelperUnit.backupData(getActivity(), 4);
-                }
 
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            });
+            builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
             return false;
         });
     }

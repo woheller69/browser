@@ -21,7 +21,7 @@ import de.baumann.browser.R;
 
 public class Fragment_settings extends PreferenceFragmentCompat implements SharedPreferences.OnSharedPreferenceChangeListener {
 
-
+    @SuppressWarnings("ConstantConditions")
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         setPreferencesFromResource(R.xml.preference_setting, rootKey);
@@ -81,6 +81,7 @@ public class Fragment_settings extends PreferenceFragmentCompat implements Share
         }
     }
 
+    @SuppressWarnings("ConstantConditions")
     private void showLicenseDialog(String title, String text) {
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(getContext());
         builder.setTitle(title);

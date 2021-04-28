@@ -19,31 +19,35 @@
 
             <ImageButton
                 android:id="@+id/omniBox_tab"
+                android:layout_alignParentStart="true"
                 android:layout_width="wrap_content"
                 android:layout_height="56dp"
                 android:layout_gravity="center_vertical|center_horizontal"
                 android:layout_marginStart="16dp"
+                android:layout_marginEnd="8dp"
                 android:background="?attr/actionBarItemBackground"
                 android:src="@drawable/icon_menu_light" />
 
             <ImageButton
                 android:id="@+id/omnibox_overflow"
                 android:layout_alignParentEnd="true"
-                android:layout_centerInParent="true"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="6dp"
+                android:layout_height="56dp"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="16dp"
                 android:src="@drawable/icon_overflow_light"
                 android:background="?attr/actionBarItemBackground"/>
 
             <ImageButton
                 android:id="@+id/omnibox_overview"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="56dp"
                 android:layout_centerVertical="true"
                 android:layout_toStartOf="@id/omnibox_overflow"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
                 android:background="?attr/actionBarItemBackground"
-                android:padding="6dp"
                 android:src="@drawable/icon_preview" />
 
             <com.google.android.material.textfield.MaterialAutoCompleteTextView
@@ -53,13 +57,13 @@
                 android:layout_centerInParent="true"
                 android:layout_toStartOf="@id/omnibox_overview"
                 android:layout_toEndOf="@id/omniBox_tab"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:hint="@string/main_omnibox_input_hint"
-                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textAppearance="?attr/textAppearanceBody1"
+                android:textStyle="bold"
                 android:textColor="@color/color_light"
                 android:textColorHint="@color/color_hint"
-                android:textStyle="bold"
                 android:selectAllOnFocus="true"
                 android:completionThreshold="1"
                 android:background="?attr/colorPrimaryDark"
@@ -108,7 +112,8 @@
                 android:src="@drawable/icon_arrow_up_gest"
                 android:background="?attr/actionBarItemBackground"/>
 
-            <EditText android:id="@+id/searchBox_input"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/searchBox_input"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_centerInParent="true"

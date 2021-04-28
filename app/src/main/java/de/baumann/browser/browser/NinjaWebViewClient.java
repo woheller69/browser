@@ -11,8 +11,7 @@ import android.os.Message;
 import androidx.appcompat.app.AlertDialog;
 import androidx.preference.PreferenceManager;
 import androidx.annotation.NonNull;
-import com.google.android.material.bottomsheet.BottomSheetBehavior;
-import com.google.android.material.bottomsheet.BottomSheetDialog;
+
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -24,10 +23,8 @@ import android.webkit.WebResourceRequest;
 import android.webkit.WebResourceResponse;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import java.io.ByteArrayInputStream;
 import java.util.Objects;
@@ -36,7 +33,6 @@ import de.baumann.browser.database.Record;
 import de.baumann.browser.database.RecordAction;
 import de.baumann.browser.R;
 import de.baumann.browser.unit.BrowserUnit;
-import de.baumann.browser.unit.HelperUnit;
 import de.baumann.browser.unit.RecordUnit;
 import de.baumann.browser.view.NinjaToast;
 import de.baumann.browser.view.NinjaWebView;
@@ -140,15 +136,11 @@ public class NinjaWebViewClient extends WebViewClient {
     public void onFormResubmission(WebView view, @NonNull final Message doNotResend, final Message resend) {
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
         builder.setMessage(R.string.dialog_content_resubmission);
-        builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
-            resend.sendToTarget();
-        });
+        builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> resend.sendToTarget());
         builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
         AlertDialog dialog = builder.create();
         dialog.show();
-        dialog.setOnCancelListener(dialog1 -> {
-            doNotResend.sendToTarget();
-        });
+        dialog.setOnCancelListener(dialog1 -> doNotResend.sendToTarget());
         Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
     }
 
@@ -180,15 +172,11 @@ public class NinjaWebViewClient extends WebViewClient {
 
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
         builder.setMessage(text);
-        builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
-            handler.proceed();
-        });
+        builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> handler.proceed());
         builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
         AlertDialog dialog = builder.create();
         dialog.show();
-        dialog.setOnCancelListener(dialog1 -> {
-            handler.cancel();
-        });
+        dialog.setOnCancelListener(dialog1 -> handler.cancel());
         Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
     }
 

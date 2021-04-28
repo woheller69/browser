@@ -1,10 +1,8 @@
 package de.baumann.browser.activity;
 
-import android.app.DownloadManager;
 import android.content.Intent;
 import android.os.Bundle;
-import com.google.android.material.bottomsheet.BottomSheetBehavior;
-import com.google.android.material.bottomsheet.BottomSheetDialog;
+
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import androidx.appcompat.app.AlertDialog;
@@ -13,14 +11,10 @@ import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
 
 import de.baumann.browser.fragment.Fragment_clear;
 import de.baumann.browser.R;
 import de.baumann.browser.service.ClearService;
-import de.baumann.browser.unit.HelperUnit;
 
 public class Settings_ClearActivity extends AppCompatActivity {
 

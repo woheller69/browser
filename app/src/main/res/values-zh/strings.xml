@@ -96,7 +96,6 @@
     <string name="setting_title_whitelistJS">JavaScript 白名单</string>
     <string name="setting_title_adblock">AdBlock</string>
     <string name="setting_summary_adblock">启用广告屏蔽可阻止恼人的广告。启用时网站的加载速度也更快。</string>
-    <string name="setting_title_whitelist">广告屏蔽白名单</string>
     <string name="setting_title_location">地理位置</string>
     <string name="setting_summary_location">允许网站访问您的位置。有些网站 (如谷歌地图导航) 需要启用此功能。</string>
     <string name="setting_title_history">历史记录</string>

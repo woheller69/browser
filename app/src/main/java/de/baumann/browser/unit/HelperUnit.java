@@ -37,12 +37,9 @@ import android.os.Build;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.preference.PreferenceManager;
-import androidx.annotation.NonNull;
 import androidx.webkit.WebSettingsCompat;
 import androidx.webkit.WebViewFeature;
 
-import com.google.android.material.bottomsheet.BottomSheetBehavior;
-import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import android.os.Environment;
@@ -61,7 +58,6 @@ import android.widget.ImageView;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
@@ -211,22 +207,6 @@ public class HelperUnit {
         NinjaToast.show(context, R.string.toast_fav);
     }
 
-    public static void setBottomSheetBehavior (final BottomSheetDialog dialog, final View view, int beh) {
-        BottomSheetBehavior<View> mBehavior = BottomSheetBehavior.from((View) view.getParent());
-        mBehavior.setState(beh);
-        mBehavior.addBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
-            @Override
-            public void onStateChanged(@NonNull View bottomSheet, int newState) {
-                if (newState == BottomSheetBehavior.STATE_HIDDEN) {
-                    dialog.cancel();
-                }
-            }
-            @Override
-            public void onSlide(@NonNull View bottomSheet, float slideOffset) {
-            }
-        });
-    }
-
     public static void createShortcut (Context context, String title, String url) {
         try {
             Intent i = new Intent();
@@ -351,45 +331,6 @@ public class HelperUnit {
     }
 
 
-    public static String[] filterMenu (Activity activity) {
-
-        String[] menuItems = new String[0];
-
-        if (sp.getBoolean("filter_01", true)){
-            menuItems = new String[]{sp.getString("icon_01", activity.getResources().getString(R.string.color_red))};
-        }
-        if (sp.getBoolean("filter_02", true)){
-            menuItems = new String[]{sp.getString("icon_02", activity.getResources().getString(R.string.color_pink))};
-        }
-        if (sp.getBoolean("filter_03", true)){
-            menuItems = new String[]{sp.getString("icon_03", activity.getResources().getString(R.string.color_purple))};
-        }
-        if (sp.getBoolean("filter_04", true)){
-            menuItems = new String[]{sp.getString("icon_04", activity.getResources().getString(R.string.color_blue))};
-        }
-        if (sp.getBoolean("filter_05", true)){
-            menuItems = new String[]{sp.getString("icon_05", activity.getResources().getString(R.string.color_teal))};
-        }
-        if (sp.getBoolean("filter_06", true)){
-            menuItems = new String[]{sp.getString("icon_06", activity.getResources().getString(R.string.color_green))};
-        }
-        if (sp.getBoolean("filter_07", true)){
-            menuItems = new String[]{sp.getString("icon_07", activity.getResources().getString(R.string.color_lime))};
-        }
-        if (sp.getBoolean("filter_08", true)){
-            menuItems = new String[]{sp.getString("icon_08", activity.getResources().getString(R.string.color_yellow))};
-        }
-        if (sp.getBoolean("filter_09", true)){
-            menuItems = new String[]{sp.getString("icon_09", activity.getResources().getString(R.string.color_orange))};
-        }
-        if (sp.getBoolean("filter_10", true)){
-            menuItems = new String[]{sp.getString("icon_10", activity.getResources().getString(R.string.color_brown))};
-        }
-        if (sp.getBoolean("filter_11", true)){
-            menuItems = new String[]{sp.getString("icon_11", activity.getResources().getString(R.string.color_grey))};
-        }
-        return menuItems;
-    }
     public static void setFilterIcons (ImageView ib_icon, long newIcon) {
         if (newIcon == 11) {
             ib_icon.setImageResource(R.drawable.circle_red_big);

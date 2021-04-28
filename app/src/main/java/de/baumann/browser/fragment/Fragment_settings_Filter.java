@@ -125,6 +125,7 @@ public class Fragment_settings_Filter extends PreferenceFragmentCompat {
         });
     }
 
+    @SuppressWarnings("ConstantConditions")
     private void editFilterNames (final String filter, final String filterDefault, final Preference preference) {
         SharedPreferences sp = getPreferenceScreen().getSharedPreferences();
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder (getActivity());

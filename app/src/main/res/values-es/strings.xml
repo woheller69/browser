@@ -96,7 +96,6 @@
     <string name="setting_title_whitelistJS">Lista blanca de JavaScript</string>
     <string name="setting_title_adblock">Bloqueador de anuncios</string>
     <string name="setting_summary_adblock">Activar para bloquear anuncios molestos. También provocará que los sitios se carguen más rápido.</string>
-    <string name="setting_title_whitelist">Lista blanca de anuncios</string>
     <string name="setting_title_location">Ubicación</string>
     <string name="setting_summary_location">Permitir a los sitios web acceder a su ubicación. Algunos sitios web (como Google maps para la navegación) necesitan esto habilitado.</string>
     <string name="setting_title_history">Historial</string>

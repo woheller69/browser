@@ -96,7 +96,6 @@
     <string name="setting_title_whitelistJS">Lista branca para JavaScript</string>
     <string name="setting_title_adblock">AdBlock</string>
     <string name="setting_summary_adblock">Habilita o AdBlock para bloquear anúncios irritantes. Sites também carregam mais rápido quando ativado.</string>
-    <string name="setting_title_whitelist">Lista branca para AdBlock</string>
     <string name="setting_title_location">Localização</string>
     <string name="setting_summary_location">Permite que sites acessem a sua localização. Alguns sites (como o Google Maps para navegação) precisam que esta opção esteja ativa.</string>
     <string name="setting_title_history">Histórico</string>

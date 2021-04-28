@@ -14,15 +14,10 @@ import android.os.Environment;
 import androidx.appcompat.app.AlertDialog;
 import androidx.preference.PreferenceManager;
 import android.util.Log;
-import android.view.View;
 import android.webkit.CookieManager;
 import android.webkit.URLUtil;
-import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.material.bottomsheet.BottomSheetBehavior;
-import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import java.io.BufferedReader;
@@ -39,7 +34,6 @@ import java.util.Locale;
 import java.util.Objects;
 import java.util.regex.Pattern;
 
-import de.baumann.browser.browser.AdBlock;
 import de.baumann.browser.browser.Cookie;
 import de.baumann.browser.browser.Javascript;
 import de.baumann.browser.browser.Remote;
@@ -253,18 +247,12 @@ public class BrowserUnit {
     }
 
     public static void importWhitelist (Context context, int i) {
-        int count = 0;
         try {
             String filename;
-            AdBlock adBlock = null;
             Javascript js = null;
             Cookie cookie = null;
             Remote remote = null;
             switch (i) {
-                case 0:
-                    adBlock= new AdBlock(context);
-                    filename = "export_whitelist_AdBlock.txt";
-                    break;
                 case 1:
                     js = new Javascript(context);
                     filename = "export_whitelist_java.txt";
@@ -285,28 +273,19 @@ public class BrowserUnit {
             String line;
             while ((line = reader.readLine()) != null) {
                 switch (i) {
-                    case 0:
-                        if (!action.checkDomain(line, RecordUnit.TABLE_WHITELIST)) {
-                            adBlock.addDomain(line);
-                            count++;
-                        }
-                        break;
                     case 1:
                         if (!action.checkDomain(line, RecordUnit.TABLE_JAVASCRIPT)) {
                             js.addDomain(line);
-                            count++;
                         }
                         break;
                     case 3:
                         if (!action.checkDomain(line, RecordUnit.TABLE_REMOTE)) {
                             remote.addDomain(line);
-                            count++;
                         }
                         break;
                     default:
                         if (!action.checkDomain(line, RecordUnit.TABLE_COOKIE)) {
                             cookie.addDomain(line);
-                            count++;
                         }
                         break;
                 }

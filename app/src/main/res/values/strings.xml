@@ -116,7 +116,6 @@
 
     <string name="setting_title_adblock">AdBlock</string>
     <string name="setting_summary_adblock">Enable AdBlock to block annoying ads. Sites also load faster when enabled.</string>
-    <string name="setting_title_whitelist">AdBlock whitelist</string>
 
     <string name="setting_title_location">Location</string>
     <string name="setting_summary_location">Allow websites to access your location. Some websites (like Google maps for navigation) need this enabled.</string>

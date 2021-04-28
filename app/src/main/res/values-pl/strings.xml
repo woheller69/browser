@@ -115,7 +115,6 @@
     <string name="setting_title_ui">Zachowanie i wygląd</string>
     <string name="setting_title_data">Kopia zapasowa</string>
     <string name="setting_summary_ui">Dostosuj aplikację do swoich upodobań.</string>
-    <string name="setting_summary_data">Importuj lub eksportuj wybrane dane (białe listy, zakładki).</string>
     <string name="setting_filter">Filtr zakładek</string>
     <string name="setting_filter_summary">Aby wyświetlić okno dialogowe filtrów, naciśnij ikonę zakładki w podglądzie. Zdecyduj, którego filtrów użyjesz.</string>
     <string name="setting_title_fav">Ulubione</string>
@@ -176,8 +175,6 @@
     <string name="hint_database">Spowoduje to usunięcie aktualnych danych. Kontynuować?</string>
     <!-- Others setting -->
     <string name="setting_title_others">Pozostałe</string>
-    <string name="setting_title_appSettings">Ustawienia aplikacji</string>
-    <string name="setting_summary_appSettings">Otwiera systemowy panel informacji o \"FOSS Browser\". Możesz tam ustalić indywidualne uprawienia, usunąć dane itd, w zależności od wersji twojego systemu Android.</string>
     <!-- Toast -->
     <string name="toast_add_to_home_successful">Poprawnie dodano do ważnych witryn</string>
     <string name="toast_add_to_home_failed">Błąd dodawania do ważnych witryn</string>

@@ -13,6 +13,7 @@ import androidx.preference.PreferenceManager;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
+import android.view.Gravity;
 import android.widget.Toast;
 
 import androidx.preference.PreferenceFragmentCompat;
@@ -40,7 +41,7 @@ import de.baumann.browser.unit.BrowserUnit;
 import de.baumann.browser.unit.HelperUnit;
 import de.baumann.browser.view.NinjaToast;
 
-@SuppressWarnings({"ResultOfMethodCallIgnored", "ConstantConditions"})
+@SuppressWarnings({"ResultOfMethodCallIgnored"})
 public class Fragment_settings_data extends PreferenceFragmentCompat {
 
     @Override
@@ -83,7 +84,9 @@ public class Fragment_settings_data extends PreferenceFragmentCompat {
                     e.printStackTrace();
                 }
             });
-            builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
+            builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());AlertDialog dialog = builder.create();
+            dialog.show();
+            Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
             return false;
         });
 
@@ -118,6 +121,7 @@ public class Fragment_settings_data extends PreferenceFragmentCompat {
             builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
             AlertDialog dialog = builder.create();
             dialog.show();
+            Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
             return false;
         });
 
@@ -147,6 +151,7 @@ public class Fragment_settings_data extends PreferenceFragmentCompat {
             builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
             AlertDialog dialog = builder.create();
             dialog.show();
+            Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
             return false;
         });
 
@@ -174,6 +179,9 @@ public class Fragment_settings_data extends PreferenceFragmentCompat {
                 }
             });
             builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
+            AlertDialog dialog = builder.create();
+            dialog.show();
+            Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
             return false;
         });
     }

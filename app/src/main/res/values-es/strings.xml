@@ -115,7 +115,6 @@
     <string name="setting_title_ui">Comportamiento/IU</string>
     <string name="setting_title_data">Respaldos</string>
     <string name="setting_summary_ui">Cambie el comportamiento de la interfaz de usuario de la aplicación para adaptarse a sus preferencias.</string>
-    <string name="setting_summary_data">Importar y exportar varios datos (listas blancas, marcadores, etc.).</string>
     <string name="setting_filter">Filtro de marcadores</string>
     <string name="setting_filter_summary">Para mostrar el cuadro de diálogo de filtro, mantenga presionado el icono de marcadores en la vista general.</string>
     <string name="setting_title_fav">Favorito</string>
@@ -176,8 +175,6 @@
     <string name="hint_database">Esto eliminará los datos actuales. ¿Proceder?</string>
     <!-- Others setting -->
     <string name="setting_title_others">Otros</string>
-    <string name="setting_title_appSettings">Configuración de la aplicación</string>
-    <string name="setting_summary_appSettings">Abre la configuración de la aplicación del sistema para \"Navegador FOSS\". Allí puedes, dependiendo de los permisos de la versión de Android, borrar los datos de la aplicación, etc.</string>
     <!-- Toast -->
     <string name="toast_add_to_home_successful">Agregado a la página principal</string>
     <string name="toast_add_to_home_failed">No se pudo agregar a la página principal</string>

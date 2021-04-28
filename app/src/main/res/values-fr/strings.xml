@@ -115,7 +115,6 @@
     <string name="setting_title_ui">Comportement/UI</string>
     <string name="setting_title_data">Sauvegarde</string>
     <string name="setting_summary_ui">Changez le comportement et l\'interface utilisateur de l\'application en fonction de vos préférences.</string>
-    <string name="setting_summary_data">Importer et exporter plusieurs données d\'applications (listes blanches, signets).</string>
     <string name="setting_filter">Filtre de signet</string>
     <string name="setting_filter_summary">Pour afficher la boîte de dialogue de filtre, appuyez longuement sur l\'icône de signet dans l\'aperçu. Décidez quels filtres vous utiliserez.</string>
     <string name="setting_title_fav">Favoris</string>
@@ -176,8 +175,6 @@
     <string name="hint_database">Cela va supprimer les données actuelles. Continuer ?</string>
     <!-- Others setting -->
     <string name="setting_title_others">Autres</string>
-    <string name="setting_title_appSettings">Paramètres</string>
-    <string name="setting_summary_appSettings">Ouvrez les paramètres de l\'application système pour \"Navigateur FOSS\". Là, vous pouvez, selon votre version d\'Android accorder les autorisations, effacer les données de l\'application, etc.</string>
     <!-- Toast -->
     <string name="toast_add_to_home_successful">Ajouté avec succès à l\'accueil</string>
     <string name="toast_add_to_home_failed">Échec de l’ajout à l\'accueil</string>

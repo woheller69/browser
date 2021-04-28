@@ -17,11 +17,11 @@
 
             <androidx.appcompat.widget.Toolbar
                 app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:popupTheme="@style/ThemeOverlay.AppCompat"
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:background="?attr/colorPrimary" />
+                android:background="?attr/colorPrimaryDark" />
 
         </com.google.android.material.appbar.AppBarLayout>
 

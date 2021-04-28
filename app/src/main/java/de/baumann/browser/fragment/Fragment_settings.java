@@ -2,13 +2,17 @@ package de.baumann.browser.fragment;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.net.Uri;
 import android.os.Bundle;
-import android.provider.Settings;
+import android.text.method.LinkMovementMethod;
+import android.view.Gravity;
+import android.widget.TextView;
+
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.preference.PreferenceFragmentCompat;
+
+import java.util.Objects;
 
 import de.baumann.browser.activity.Settings_ClearActivity;
 import de.baumann.browser.activity.Settings_DataActivity;
@@ -21,7 +25,6 @@ import de.baumann.browser.R;
 
 public class Fragment_settings extends PreferenceFragmentCompat implements SharedPreferences.OnSharedPreferenceChangeListener {
 
-    @SuppressWarnings("ConstantConditions")
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         setPreferencesFromResource(R.xml.preference_setting, rootKey);
@@ -64,14 +67,6 @@ public class Fragment_settings extends PreferenceFragmentCompat implements Share
             showLicenseDialog(getString(R.string.dialogHelp_tipTitle), getString(R.string.dialogHelp_tipText));
             return false;
         });
-        findPreference("settings_appSettings").setOnPreferenceClickListener(preference -> {
-            Intent intent = new Intent();
-            intent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
-            Uri uri = Uri.fromParts("package", requireActivity().getPackageName(), null);
-            intent.setData(uri);
-            getActivity().startActivity(intent);
-            return false;
-        });
     }
 
     @Override
@@ -81,12 +76,13 @@ public class Fragment_settings extends PreferenceFragmentCompat implements Share
         }
     }
 
-    @SuppressWarnings("ConstantConditions")
     private void showLicenseDialog(String title, String text) {
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(getContext());
         builder.setTitle(title);
         builder.setMessage(HelperUnit.textSpannable(text));
         AlertDialog dialog = builder.create();
         dialog.show();
+        ((TextView)dialog.findViewById(android.R.id.message)).setMovementMethod(LinkMovementMethod.getInstance());
+        Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
     }
 }

@@ -29,7 +29,6 @@
         <CheckBoxPreference
             android:key="@string/sp_ad_block"
             android:defaultValue="true"
-            android:title="@string/setting_title_adblock"
             android:summary="@string/setting_summary_adblock"/>
 
     </PreferenceCategory>
@@ -39,7 +38,6 @@
         <CheckBoxPreference
             android:key="@string/sp_javascript"
             android:defaultValue="true"
-            android:title="@string/setting_title_javascript"
             android:summary="@string/setting_summary_javascript"/>
 
         <Preference
@@ -53,7 +51,6 @@
         <CheckBoxPreference
             android:key="@string/sp_cookies"
             android:defaultValue="true"
-            android:title="@string/setting_title_cookie"
             android:summary="@string/setting_summary_cookie"/>
 
         <Preference
@@ -67,7 +64,6 @@
         <CheckBoxPreference
             android:key="sp_remote"
             android:defaultValue="true"
-            android:title="@string/setting_title_remote"
             android:summary="@string/setting_summary_remote"/>
 
         <Preference

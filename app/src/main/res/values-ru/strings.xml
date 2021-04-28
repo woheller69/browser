@@ -115,7 +115,6 @@
     <string name="setting_title_ui">Поведение и интерфейс</string>
     <string name="setting_title_data">Резервное копирование</string>
     <string name="setting_summary_ui">Измените поведение и интерфейс приложения в соответствии с вашими предпочтениями.</string>
-    <string name="setting_summary_data">Импортируйте и экспортируйте данные приложения (белые списки, закладки).</string>
     <string name="setting_filter">Фильтр закладок</string>
     <string name="setting_filter_summary">Чтобы отобразить диалоговое окно фильтра, удерживайте нажатие на значке закладок в окне. Определите, какие фильтры Вы будете использовать.</string>
     <string name="setting_title_fav">Главная</string>
@@ -176,8 +175,6 @@
     <string name="hint_database">Это удалит текущие данные. Продолжить?</string>
     <!-- Others setting -->
     <string name="setting_title_others">Другие</string>
-    <string name="setting_title_appSettings">Настройки</string>
-    <string name="setting_summary_appSettings">Откройте системные настройки \"FOSS Browser\". Там Вы можете предоставить разрешения, очистить данные приложения и так далее.</string>
     <!-- Toast -->
     <string name="toast_add_to_home_successful">Успешно добавлено на главную</string>
     <string name="toast_add_to_home_failed">Не удалось добавить на главную</string>

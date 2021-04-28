@@ -115,7 +115,6 @@
     <string name="setting_title_ui">Davranış/Arayüz</string>
     <string name="setting_title_data">Yedekleme</string>
     <string name="setting_summary_ui">Tercihlerinize uygun olarak uygulamanın davranışını ve arayüzünü değiştirin.</string>
-    <string name="setting_summary_data">Birkaç uygulama verisini (beyaz listeler, yer imleri) içe ve dışa aktarın.</string>
     <string name="setting_filter">Yer imi süzgeci</string>
     <string name="setting_filter_summary">Süzgeç iletişim kutusunu görüntülemek için, genel bakıştaki yer imi simgesine uzun basın. Hangi süzgeçleri kullanacağınıza karar verin.</string>
     <string name="setting_title_fav">Başlangıç sitesi</string>
@@ -176,8 +175,6 @@
     <string name="hint_database">Bu, mevcut verileri siler. Devam edilsin mi?</string>
     <!-- Others setting -->
     <string name="setting_title_others">Diğer</string>
-    <string name="setting_title_appSettings">Uygulama ayarları</string>
-    <string name="setting_summary_appSettings">\"FOSS Tarayıcı\" için sistem uygulaması ayarlarını açın. Orada, Android sürümünüzün izin vermesine bağlı olarak, uygulama verilerini temizleyebilirsiniz.</string>
     <!-- Toast -->
     <string name="toast_add_to_home_successful">Başarıyla ana sayfaya eklendi</string>
     <string name="toast_add_to_home_failed">Ana sayfaya eklenemedi</string>

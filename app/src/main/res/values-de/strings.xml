@@ -115,7 +115,6 @@
     <string name="setting_title_ui">Verhalten/Oberfläche</string>
     <string name="setting_title_data">Sicherung</string>
     <string name="setting_summary_ui">Ändere das Verhalten und die Benutzeroberfläche entsprechend deinen Wünschen.</string>
-    <string name="setting_summary_data">Verschiedene App-Daten importieren und exportieren (Ausnahmen, Lesezeichen,…).</string>
     <string name="setting_filter">Lesezeichen-Filter</string>
     <string name="setting_filter_summary">Um den Filterdialog anzuzeigen, lange auf das Lesezeichen-Icon in der Übersicht drücken. Entscheide hier, welche Filter du nutzen wirst.</string>
     <string name="setting_title_fav">Startseite</string>
@@ -176,8 +175,6 @@
     <string name="hint_database">Aktuelle Daten werden gelöscht. Fortfahren?</string>
     <!-- Others setting -->
     <string name="setting_title_others">Sonstiges</string>
-    <string name="setting_title_appSettings">App-Einstellungen</string>
-    <string name="setting_summary_appSettings">Gehe in Systemeinstellungen => Apps zu \"FOSS Browser\". Je nach Android Version kannst du dort Berechtigungen erteilen, die App-Daten löschen usw.</string>
     <!-- Toast -->
     <string name="toast_add_to_home_successful">Erfolgreich gespeichert.</string>
     <string name="toast_add_to_home_failed">Kann nicht gespeichert werden.</string>

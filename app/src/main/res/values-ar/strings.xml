@@ -115,7 +115,6 @@
     <string name="setting_title_ui">السلوك/واجهة المستخدم</string>
     <string name="setting_title_data">النسخ الاحتياطي</string>
     <string name="setting_summary_ui">غيّر سلوك التطبيق و واجهة المستخدم لتتناسب مع تفضيلاتك.</string>
-    <string name="setting_summary_data">استيراد وتصدير العديد من بيانات التطبيق (القوائم البيضاء، العلامات).</string>
     <string name="setting_filter">مرشح العلامات</string>
     <string name="setting_filter_summary">لعرض حوار العلامات اضغط مطولا على أيقونة العلامات في النظرة العامة. حدد المشرح الدي ستستخدم.</string>
     <string name="setting_title_fav">المفضلة</string>
@@ -176,8 +175,6 @@
     <string name="hint_database">هذا سيحذف البيانات الحالية. أواصل؟</string>
     <!-- Others setting -->
     <string name="setting_title_others">أخرى</string>
-    <string name="setting_title_appSettings">إعدادات التطبيق</string>
-    <string name="setting_summary_appSettings">افتح إعدادات تطبيق النظام للمتصفح الحر \"FOSS Browser\". هناك يمكنك، واعتمادا على الأذونات الممنوحة في إصدارك من أندرويد، أن تفرغ بيانات التطبيق وما شابه.</string>
     <!-- Toast -->
     <string name="toast_add_to_home_successful">أضيف إلى الرئيسية بنجاح</string>
     <string name="toast_add_to_home_failed">فشلت الإضافة الى الرئيسية</string>

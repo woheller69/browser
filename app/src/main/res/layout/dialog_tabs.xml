@@ -11,7 +11,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="56dp">
+        android:layout_height="?attr/actionBarSize">
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/dialog_title"
@@ -56,7 +56,6 @@
 
         <LinearLayout
             android:id="@+id/tab_container"
-            android:stackFromBottom="true"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>

@@ -11,7 +11,6 @@ import de.baumann.browser.R;
 
 public class Settings_UIActivity extends AppCompatActivity {
 
-    @SuppressWarnings("ConstantConditions")
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

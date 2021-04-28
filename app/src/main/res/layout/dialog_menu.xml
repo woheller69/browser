@@ -10,7 +10,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:layout_height="?attr/actionBarSize"
         android:text="@string/setting_filter"
         android:ellipsize="end"
         android:includeFontPadding="false"

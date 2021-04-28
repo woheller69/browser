@@ -429,7 +429,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     }
 
     public void showTabView () {
-
+        hideKeyboard();
         if (overViewTab.equals(getString(R.string.album_title_home))) {
             tab_openOverView.setImageResource(R.drawable.icon_web_light);
         } else if (overViewTab.equals(getString(R.string.album_title_bookmarks))) {
@@ -654,6 +654,21 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 break;
             case "10":
                 removeAlbum(currentAlbumController);
+                break;
+            case "11":
+                showTabView();
+                break;
+            case "12":
+                shareLink(ninjaWebView.getTitle(), ninjaWebView.getUrl());
+                break;
+            case "13":
+                searchOnSite();
+                break;
+            case "14":
+                saveBookmark();
+                break;
+            case "15":
+                save_atHome(ninjaWebView.getUrl().replace("http://www.", "").replace("https://www.", ""), ninjaWebView.getUrl());
                 break;
         }
     }
@@ -1400,6 +1415,25 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         context.startActivity(Intent.createChooser(sharingIntent, (context.getString(R.string.menu_share_link))));
     }
 
+    private void searchOnSite() {
+        searchOnSite = true;
+        fab_overflow.setVisibility(View.GONE);
+        omniBox.setVisibility(View.GONE);
+        searchPanel.setVisibility(View.VISIBLE);
+        toolBar.setVisibility(View.VISIBLE);
+    }
+
+    private void saveBookmark() {
+        RecordAction action = new RecordAction(context);
+        action.open(true);
+        if (action.checkUrl(ninjaWebView.getUrl(), RecordUnit.TABLE_BOOKMARK)) {
+            NinjaToast.show(context, getString(R.string.toast_already_exist_in_home));
+        } else {
+            action.addBookmark(new Record(ninjaWebView.getTitle(), ninjaWebView.getUrl(), System.currentTimeMillis(), 0));
+            NinjaToast.show(context, getString(R.string.toast_add_to_home_successful));
+        }
+        action.close();
+    }
     @Override
     public void onLongPress(final String url) {
         WebView.HitTestResult result = ninjaWebView.getHitTestResult();
@@ -1437,6 +1471,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
     private void showOmniBox() {
         if (!searchOnSite)  {
+            hideKeyboard();
             fab_overflow.setVisibility(View.GONE);
             searchPanel.setVisibility(View.GONE);
             omniBox.setVisibility(View.VISIBLE);
@@ -1445,6 +1480,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     }
 
     private void showOverflow() {
+        hideKeyboard();
 
         showOverflow = true;
         final String url = ninjaWebView.getUrl();
@@ -1565,14 +1601,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             } else if (position == 1) {
                 save_atHome(title, url);
             } else if (position == 2) {
-                action.open(true);
-                if (action.checkUrl(url, RecordUnit.TABLE_BOOKMARK)) {
-                    NinjaToast.show(context, getString(R.string.toast_already_exist_in_home));
-                } else {
-                    action.addBookmark(new Record(ninjaWebView.getTitle(), url, System.currentTimeMillis(), 0));
-                    NinjaToast.show(context, getString(R.string.toast_add_to_home_successful));
-                    bottom_navigation.setSelectedItemId(R.id.page_2);
-                }
+                saveBookmark();
                 action.close();
             } else if (position == 3) {
                 printPDF();
@@ -1635,11 +1664,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         menu_grid_other.setOnItemClickListener((parent, view1, position, id) -> {
             dialog_overflow.cancel();
             if (position == 0) {
-                searchOnSite = true;
-                fab_overflow.setVisibility(View.GONE);
-                omniBox.setVisibility(View.GONE);
-                searchPanel.setVisibility(View.VISIBLE);
-                toolBar.setVisibility(View.VISIBLE);
+                searchOnSite();
             } else if (position == 1) {
                 startActivity(new Intent(DownloadManager.ACTION_VIEW_DOWNLOADS));
             } else if (position == 2) {

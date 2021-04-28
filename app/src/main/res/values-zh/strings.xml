@@ -115,7 +115,6 @@
     <string name="setting_title_ui">行为/界面</string>
     <string name="setting_title_data">备份</string>
     <string name="setting_summary_ui">更改应用的行为和界面以适应您的设置。</string>
-    <string name="setting_summary_data">导入和导出应用数据 (白名单、书签)。</string>
     <string name="setting_filter">书签过滤器</string>
     <string name="setting_filter_summary">要显示过滤器选择对话框，请长按概览中的书签图标。选择您所需要的过滤器。</string>
     <string name="setting_title_fav">起始页设置</string>
@@ -176,8 +175,6 @@
     <string name="hint_database">这将删除当前数据。是否继续？</string>
     <!-- Others setting -->
     <string name="setting_title_others">其它</string>
-    <string name="setting_title_appSettings">应用设置</string>
-    <string name="setting_summary_appSettings">打开“FOSS浏览器”系统应用设置。您可以根据您的 Android 版本授予权限，清除应用数据等等。</string>
     <!-- Toast -->
     <string name="toast_add_to_home_successful">成功添加到桌面</string>
     <string name="toast_add_to_home_failed">添加到桌面失败</string>

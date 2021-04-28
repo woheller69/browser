@@ -115,7 +115,6 @@
     <string name="setting_title_ui">Chování/UI</string>
     <string name="setting_title_data">Záloha</string>
     <string name="setting_summary_ui">Změňte chování a UI aplikace podle svých představ.</string>
-    <string name="setting_summary_data">Importovat a exportovat některá data aplikace (seznamy povolených, záložky).</string>
     <string name="setting_filter">Filtr záložek</string>
     <string name="setting_filter_summary">Chcete-li zobrazit dialogové okno filtru, stiskněte v přehledu ikonu záložek. Rozhodněte, které filtry použijete.</string>
     <string name="setting_title_fav">Oblíbené</string>
@@ -176,8 +175,6 @@
     <string name="hint_database">Tímto odstraníte aktuální data. Chcete pokračovat?</string>
     <!-- Others setting -->
     <string name="setting_title_others">Další</string>
-    <string name="setting_title_appSettings">Nastavení aplikace</string>
-    <string name="setting_summary_appSettings">Otevřete systémová nastavení pro „FOSS Browser“. Tam můžete v závislosti na vaší verzi Android udělit oprávnění, vymazat data aplikace atd.</string>
     <!-- Toast -->
     <string name="toast_add_to_home_successful">Úspěšně přidáno na plochu</string>
     <string name="toast_add_to_home_failed">Přidání na plochu se nezdařilo</string>

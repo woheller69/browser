@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:ignore="ContentDescription"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="56dp">
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginTop="4dp">
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/overflow_title"
@@ -45,18 +45,17 @@
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
-        app:tabIndicatorHeight="0dp"/>
+        android:layout_height="wrap_content" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="?android:attr/textColorSecondary" />
+        android:background="?attr/colorPrimary" />
 
     <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp">
 
         <GridView
             android:id="@+id/overflow_tab"

@@ -115,7 +115,6 @@
     <string name="setting_title_ui">Behavior/UI</string>
     <string name="setting_title_data">Backup</string>
     <string name="setting_summary_ui">Change the behavior and ui of the app to suit your preferences.</string>
-    <string name="setting_summary_data">Import and export several app data (whitelists, bookmarks).</string>
     <string name="setting_filter">Bookmark filter</string>
     <string name="setting_filter_summary">To show the filter dialog long press on the bookmark icon in the overview. Decide which filters you will use.</string>
     <string name="setting_title_fav">Favorite</string>
@@ -176,8 +175,6 @@
     <string name="hint_database">This will delete current data. Proceed?</string>
     <!-- Others setting -->
     <string name="setting_title_others">Others</string>
-    <string name="setting_title_appSettings">App settings</string>
-    <string name="setting_summary_appSettings">Open the system app settings for \"FOSS Browser\". There you can, depending on your Android version grant permissions, clear the app data and so on.</string>
     <!-- Toast -->
     <string name="toast_add_to_home_successful">Successfully added to Home</string>
     <string name="toast_add_to_home_failed">Failed to add to Home</string>

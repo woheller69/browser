@@ -56,6 +56,11 @@
         <item>@string/setting_gesture_08</item>
         <item>@string/setting_gesture_09</item>
         <item>@string/setting_gesture_10</item>
+        <item>@string/album_title_tab</item>
+        <item>@string/menu_share_link</item>
+        <item>@string/menu_other_searchSite</item>
+        <item>@string/menu_save_bookmark</item>
+        <item>@string/menu_save_home</item>
     </string-array>
 
     <string-array name="setting_values_gestures">
@@ -69,6 +74,11 @@
         <item>08</item>
         <item>09</item>
         <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
     </string-array>
 
     <!-- Start tab -->

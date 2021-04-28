@@ -115,7 +115,6 @@
     <string name="setting_title_ui">Gedrag/Uiterlijk</string>
     <string name="setting_title_data">Back-up</string>
     <string name="setting_summary_ui">Wijzig het gedrag en uiterlijk van de app naar eigen inzicht.</string>
-    <string name="setting_summary_data">Importeer en exporteer app-gegevens (witte lijsten, bladwijzers).</string>
     <string name="setting_filter">Bladwijzer filter</string>
     <string name="setting_filter_summary">To show the filter dialog long press on the bookmark icon in the overview. Decide which filters you will use.</string>
     <string name="setting_title_fav">Favoriete</string>
@@ -176,8 +175,6 @@
     <string name="hint_database">This will delete current data. Proceed?</string>
     <!-- Others setting -->
     <string name="setting_title_others">Overig</string>
-    <string name="setting_title_appSettings">App-instellingen</string>
-    <string name="setting_summary_appSettings">Open the system app settings for \"FOSS Browser\". There you can, depending on your Android version grant permissions, clear the app data and so on.</string>
     <!-- Toast -->
     <string name="toast_add_to_home_successful">Toegevoegd aan beginscherm</string>
     <string name="toast_add_to_home_failed">Toevoegen mislukt</string>

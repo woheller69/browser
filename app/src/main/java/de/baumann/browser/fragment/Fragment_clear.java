@@ -12,7 +12,6 @@ import de.baumann.browser.R;
 
 public class Fragment_clear extends PreferenceFragmentCompat {
 
-    @SuppressWarnings("ConstantConditions")
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         setPreferencesFromResource(R.xml.preference_clear, rootKey);

@@ -115,7 +115,6 @@
     <string name="setting_title_ui">Comportamento/Interface</string>
     <string name="setting_title_data">Backup</string>
     <string name="setting_summary_ui">Altere o comportamento e a interface do aplicativo ao seu gosto.</string>
-    <string name="setting_summary_data">Importe e exporte os dados do aplicativo (lista branca, favoritos…).</string>
     <string name="setting_filter">Filtro de favoritos</string>
     <string name="setting_filter_summary">Para exibir a caixa de diálogo do filtro pressione e segure o ícone dos favoritos na visão geral. Decida quais filtros você usará.</string>
     <string name="setting_title_fav">Favorito</string>
@@ -176,8 +175,6 @@
     <string name="hint_database">Isto irá apagar os dados atuais. Continuar?</string>
     <!-- Others setting -->
     <string name="setting_title_others">Outros</string>
-    <string name="setting_title_appSettings">Configurações do aplicativo</string>
-    <string name="setting_summary_appSettings">Abre as configurações de aplicativo do sistema para o \"FOSS Browser\". Lá você pode, dependendo das permissões de acesso da versão do Android, limpar os dados do aplicativo e assim por diante.</string>
     <!-- Toast -->
     <string name="toast_add_to_home_successful">Adicionado ao Início com sucesso</string>
     <string name="toast_add_to_home_failed">Erro ao adicionar ao Início</string>

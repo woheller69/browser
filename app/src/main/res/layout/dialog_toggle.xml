@@ -13,7 +13,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        tools:ignore="ContentDescription">
+        tools:ignore="ContentDescription"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="4dp">
 
         <RelativeLayout
             android:layout_marginStart="20dp"
@@ -314,40 +316,6 @@
                 <com.google.android.material.chip.Chip
                     style="@style/Widget.MaterialComponents.Chip.Choice"
                     android:id="@+id/chip_cookie_WL"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="12dp"
-                    android:text=""
-                    app:chipEndPadding="4dp"
-                    app:chipIcon="@drawable/icon_check"
-                    app:chipIconEnabled="true"
-                    app:chipStartPadding="4dp"
-                    app:textEndPadding="0dp"
-                    app:textStartPadding="0dp"
-                    android:layout_alignParentEnd="true" />
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="?android:attr/listPreferredItemHeightSmall"
-                android:minHeight="?android:attr/listPreferredItemHeightSmall">
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_toStartOf="@+id/chip_adBlock_WL"
-                    android:layout_alignParentStart="true"
-                    android:gravity="center_vertical"
-                    android:text="@string/setting_title_adblock"
-                    android:textAppearance="?attr/textAppearanceBody1"
-                    android:ellipsize="end"
-                    android:includeFontPadding="false"
-                    android:maxLines="1" />
-
-                <com.google.android.material.chip.Chip
-                    style="@style/Widget.MaterialComponents.Chip.Choice"
-                    android:id="@+id/chip_adBlock_WL"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="12dp"

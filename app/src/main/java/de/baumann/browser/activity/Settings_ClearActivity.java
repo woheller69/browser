@@ -18,7 +18,6 @@ import de.baumann.browser.service.ClearService;
 
 public class Settings_ClearActivity extends AppCompatActivity {
 
-    @SuppressWarnings("ConstantConditions")
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -115,7 +115,6 @@
     <string name="setting_title_ui">動作/UI</string>
     <string name="setting_title_data">バックアップ</string>
     <string name="setting_summary_ui">好みの設定にするためにアプリの動作と UI を変更します。</string>
-    <string name="setting_summary_data">アプリデータ (ホワイトリスト、ブックマーク) のインポートとエクスポートをします。</string>
     <string name="setting_filter">ブックマークフィルター</string>
     <string name="setting_filter_summary">フィルターダイアログを表示するにはブックマークアイコンを一覧画面で長押しして下さい。どのフィルターを使うか決定して下さい。</string>
     <string name="setting_title_fav">スタートページ</string>
@@ -176,8 +175,6 @@
     <string name="hint_database">現在のデータを削除します。続行しますか?</string>
     <!-- Others setting -->
     <string name="setting_title_others">その他</string>
-    <string name="setting_title_appSettings">アプリ設定</string>
-    <string name="setting_summary_appSettings">\"FOSS Browser\" のシステムアプリ設定を開いて下さい。ここでは Android バージョンによって権限を付与、アプリデータ削除などができます。</string>
     <!-- Toast -->
     <string name="toast_add_to_home_successful">ホームへの追加に成功しました</string>
     <string name="toast_add_to_home_failed">ホームへの追加に失敗しました</string>

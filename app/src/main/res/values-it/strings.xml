@@ -115,7 +115,6 @@
     <string name="setting_title_ui">Comportamento/UI</string>
     <string name="setting_title_data">Backup</string>
     <string name="setting_summary_ui">Cambia il comportamento e UI dell\'app in base alle tue preferenze.</string>
-    <string name="setting_summary_data">Importazione ed esportazione di vari dati dell\' app (whitelist, segnalibri).</string>
     <string name="setting_filter">Filtro dei segnalibri</string>
     <string name="setting_filter_summary">Per mostrare la finestra di dialogo dei filtri, premere a lungo sull\'icona del segnalibro nella panoramica. Decidere quali filtri usare.</string>
     <string name="setting_title_fav">Preferito</string>
@@ -176,8 +175,6 @@
     <string name="hint_database">Questo eliminerà i dati correnti. Procedere?</string>
     <!-- Others setting -->
     <string name="setting_title_others">Altro</string>
-    <string name="setting_title_appSettings">Impostazioni App</string>
-    <string name="setting_summary_appSettings">Aprire le impostazioni dell\'app di sistema per \"FOSS Browser\". Ci è possibile, a seconda della tua versione di Android concedere i permessi, cancellare i dati dell\'app e così via.</string>
     <!-- Toast -->
     <string name="toast_add_to_home_successful">Aggiunto con successo a Home</string>
     <string name="toast_add_to_home_failed">Impossibile aggiungere a Home</string>

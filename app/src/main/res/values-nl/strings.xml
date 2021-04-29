@@ -67,7 +67,6 @@
     <string name="setting_summary_clear_control">Clear your browser data or decide what data will be cleared when you leave the application.</string>
     <string name="setting_summary_start_control">Decide which components of FOSS browser will be enabled on start.</string>
     <string name="setting_title_search_engine">Zoekmachine</string>
-    <string name="setting_summary_search_engine">Hier kun je je voorkeurszoekmachine opgeven of een aangepaste instellen.</string>
     <string name="setting_summary_search_engine_google">Google</string>
     <string name="setting_summary_search_engine_duckduckgo">DuckDuckGo</string>
     <string name="setting_summary_search_engine_startpage">StartPage</string>
@@ -78,7 +77,6 @@
     <string name="setting_summary_search_engine_qwant">Aantal</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_title_font">Lettertypegrootte</string>
-    <string name="setting_summary_font">Wijzig de lettertypegrootte die gebruikt wordt bij het tonen van websites.</string>
     <string name="setting_title_remote">Externe inhoud</string>
     <string name="setting_summary_remote">Enable remote content, which is not directly from the website you are visiting. Disabling this is more secure, faster and saves data volume. But some content will not be displayed anymore.</string>
     <string name="setting_title_save_data">Verzoek \'Gegevens opslaan\'</string>
@@ -118,11 +116,8 @@
     <string name="setting_filter">Bladwijzer filter</string>
     <string name="setting_filter_summary">To show the filter dialog long press on the bookmark icon in the overview. Decide which filters you will use.</string>
     <string name="setting_title_fav">Favoriete</string>
-    <string name="setting_summary_fav">Here you can change the default website which loads on start of \"FOSS Browser\". Enter \"about:blank\" to get an emty start site.</string>
     <string name="setting_title_searchEngine">Aangepaste zoekmachine</string>
-    <string name="setting_summary_searchEngine">Here you can enter a custom search URL. Also choose \"Custom search engine\" as search provider.</string>
     <string name="setting_title_userAgent">Aangepaste user agent</string>
-    <string name="setting_summary_userAgent">Hier kunt u een aangepaste gebruikersagent invoeren. Laat leeg om de standaard te gebruiken.</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">Werkbalk verbergen</string>
     <string name="setting_summary_hide">Use the whole screen when scrolling through websites. If you press the back button you will leave fullscreen mode.</string>
@@ -131,12 +126,10 @@
     <string name="setting_title_toolbarShow">Eerste werkbalk</string>
     <string name="setting_title_nav">Navigatieknop</string>
     <string name="setting_title_nav_pos">Positie</string>
-    <string name="setting_summary_nav_pos">Bepaal waar de \"Navigatieknop\" geplaatst moet worden.</string>
     <string name="setting_summary_nav_pos_right">Rechts</string>
     <string name="setting_summary_nav_pos_left">Links</string>
     <string name="setting_summary_nav_pos_center">Midden</string>
     <string name="setting_summary_nav_pos_null">Never show</string>
-    <string name="setting_summary_tab">What should be shown at the start of the \"Overview\"?</string>
     <string name="setting_title_confirm_exit">Afsluiten bevestigen</string>
     <string name="setting_summary_confirm_exit">Bevestigingsscherm tonen bij het afsluiten van de browser.</string>
     <string name="setting_title_confirm_tab_close">Tabblad sluiten bevestigen</string>

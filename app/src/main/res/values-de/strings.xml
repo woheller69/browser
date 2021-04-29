@@ -67,7 +67,6 @@
     <string name="setting_summary_clear_control">Lösche die Daten des Browsers oder entscheide, welche Daten beim Verlassen der Anwendung automatisch gelöscht werden.</string>
     <string name="setting_summary_start_control">Entscheide welche Funktionen des Browsers beim Start aktiviert sind.</string>
     <string name="setting_title_search_engine">Suchmaschine</string>
-    <string name="setting_summary_search_engine">Hier kannst du deine bevorzugte Suchmaschine auswählen, oder eine eigene einrichten.</string>
     <string name="setting_summary_search_engine_google">Google</string>
     <string name="setting_summary_search_engine_duckduckgo">DuckDuckGo</string>
     <string name="setting_summary_search_engine_startpage">StartPage</string>
@@ -78,7 +77,6 @@
     <string name="setting_summary_search_engine_qwant">Qwant</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_title_font">Schriftgröße</string>
-    <string name="setting_summary_font">Ändere die Schriftgröße für die Darstellung von Websites.</string>
     <string name="setting_title_remote">Entfernte Inhalte</string>
     <string name="setting_summary_remote">Aktiviere das Laden entfernter Inhalte, die nicht direkt von der besuchten Website stammen. Dies zu deaktivieren ist sicherer, schneller und spart Datenvolumen. Manche Inhalte werden dann allerdings nicht mehr angezeigt.</string>
     <string name="setting_title_save_data">\"Daten sparen\" verlangen</string>
@@ -118,11 +116,8 @@
     <string name="setting_filter">Lesezeichen-Filter</string>
     <string name="setting_filter_summary">Um den Filterdialog anzuzeigen, lange auf das Lesezeichen-Icon in der Übersicht drücken. Entscheide hier, welche Filter du nutzen wirst.</string>
     <string name="setting_title_fav">Startseite</string>
-    <string name="setting_summary_fav">Hier kannst du die voreingestellte Website ändern, die beim Start von \"FOSS-Browser\" lädt. Gib \"about:blank\" ein, um eine leere Startseite zu erhalten.</string>
     <string name="setting_title_searchEngine">Nutzerdefinierte Suchmaschine</string>
-    <string name="setting_summary_searchEngine">Hier kannst du eine benutzerdefinierte Such-URL eingeben. Wähle auch \"Benutzerdefinierte Suchmaschine\" als Suchanbieter aus.</string>
     <string name="setting_title_userAgent">Eigener Useragent</string>
-    <string name="setting_summary_userAgent">Hier kannst du einen eigenen Useragent eingeben. Leer lassen um den Standard zu verwenden.</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">Toolbar verstecken</string>
     <string name="setting_summary_hide">Benutze den ganzen Bildschirm, wenn du durch Internetseiten scrollst. Wenn du die \"Zurücktaste\" drückst, verlässt du den Vollbildmodus.</string>
@@ -131,12 +126,10 @@
     <string name="setting_title_toolbarShow">Zuerst die Toolbar</string>
     <string name="setting_title_nav">Navigationsknopf</string>
     <string name="setting_title_nav_pos">Position</string>
-    <string name="setting_summary_nav_pos">Entscheide, wo der \"Navigationsknopf\" platziert wird.</string>
     <string name="setting_summary_nav_pos_right">Rechts</string>
     <string name="setting_summary_nav_pos_left">Links</string>
     <string name="setting_summary_nav_pos_center">Mitte</string>
     <string name="setting_summary_nav_pos_null">Niemals anzeigen</string>
-    <string name="setting_summary_tab">Was soll am Anfang der \"Übersicht\" angezeigt werden?</string>
     <string name="setting_title_confirm_exit">Verlassen des Browsers bestätigen</string>
     <string name="setting_summary_confirm_exit">Bestätigungsdialog beim Schließen des Browsers.</string>
     <string name="setting_title_confirm_tab_close">Schließen des Tabs bestätigen</string>

@@ -67,7 +67,6 @@
     <string name="setting_summary_clear_control">Vymažte data prohlížeče nebo se rozhodněte, která data budou vymazána, když opustíte aplikaci.</string>
     <string name="setting_summary_start_control">Rozhodněte, které komponenty prohlížeče FOSS budou při spuštění povoleny.</string>
     <string name="setting_title_search_engine">Vyhledávač</string>
-    <string name="setting_summary_search_engine">Zde můžete zvolit oblíbený vyhledávač nebo nastavit vlastní.</string>
     <string name="setting_summary_search_engine_google">Google</string>
     <string name="setting_summary_search_engine_duckduckgo">DuckDuckGo</string>
     <string name="setting_summary_search_engine_startpage">StartPage</string>
@@ -78,7 +77,6 @@
     <string name="setting_summary_search_engine_qwant">Qwant</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_title_font">Velikost písma</string>
-    <string name="setting_summary_font">Změna velikosti písma zobrazených webových stránek.</string>
     <string name="setting_title_remote">Vzdálený obsah</string>
     <string name="setting_summary_remote">Povolte vzdálený obsah, který není přímo z navštívené webové stránky. Zakázání je bezpečnější, rychlejší a šetří spotřebu dat. Určitý obsah se však již nebude nadále zobrazovat.</string>
     <string name="setting_title_save_data">Požadavek „Ušetřit data“</string>
@@ -118,11 +116,8 @@
     <string name="setting_filter">Filtr záložek</string>
     <string name="setting_filter_summary">Chcete-li zobrazit dialogové okno filtru, stiskněte v přehledu ikonu záložek. Rozhodněte, které filtry použijete.</string>
     <string name="setting_title_fav">Oblíbené</string>
-    <string name="setting_summary_fav">Zde můžete změnit výchozí webovou stránku, která se načte při spuštění aplikace „FOSS Browser“. Zadáním „about:blank“ zobrazíte prázdnou úvodní stránku.</string>
     <string name="setting_title_searchEngine">Vlastní vyhledávač</string>
-    <string name="setting_summary_searchEngine">Zde můžete zadat vlastní adresu URL pro vyhledávání. Taky zvolit „Vlastní vyhledávač“ jako poskytovatele vyhledávání.</string>
     <string name="setting_title_userAgent">Vlastní uživatelský agent</string>
-    <string name="setting_summary_userAgent">Zde můžete zadat vlastní uživatelský agent. Ponechte prázdné pro použití výchozího.</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">Skrýt Panel nástrojů</string>
     <string name="setting_summary_hide">Při procházení webovými stránkami použít celou obrazovku. Pokud stisknete tlačítko Zpět, opustíte režim celé obrazovky.</string>
@@ -131,12 +126,10 @@
     <string name="setting_title_toolbarShow">První Panel nástrojů</string>
     <string name="setting_title_nav">Navigační tlačítka</string>
     <string name="setting_title_nav_pos">Pozice</string>
-    <string name="setting_summary_nav_pos">Rozhodněte, kde budou umístěna „Navigační tlačítka“.</string>
     <string name="setting_summary_nav_pos_right">Vpravo</string>
     <string name="setting_summary_nav_pos_left">Vlevo</string>
     <string name="setting_summary_nav_pos_center">Uprostřed</string>
     <string name="setting_summary_nav_pos_null">Nikdy nezobrazovat</string>
-    <string name="setting_summary_tab">Co by se mělo zobrazit na začátku „Přehledu“?</string>
     <string name="setting_title_confirm_exit">Potvrdit ukončení prohlížeče</string>
     <string name="setting_summary_confirm_exit">Okno potvrzení při ukončení prohlížeče.</string>
     <string name="setting_title_confirm_tab_close">Potvrdit zavření karty</string>

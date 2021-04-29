@@ -67,7 +67,6 @@
     <string name="setting_summary_clear_control">ブラウザのデータを消去するか、アプリを終了する時に何のデータを消去するか選択します。</string>
     <string name="setting_summary_start_control">起動時に FOSS Browser のどのコンポーネントが有効になるかを決定します。</string>
     <string name="setting_title_search_engine">検索エンジン</string>
-    <string name="setting_summary_search_engine">ここでおすすめの検索エンジンや独自の検索エンジンを選択できます。</string>
     <string name="setting_summary_search_engine_google">Google</string>
     <string name="setting_summary_search_engine_duckduckgo">DuckDuckGo</string>
     <string name="setting_summary_search_engine_startpage">StartPage</string>
@@ -78,7 +77,6 @@
     <string name="setting_summary_search_engine_qwant">Qwant</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_title_font">フォントサイズ</string>
-    <string name="setting_summary_font">表示中のウェブサイトに合わせてフォントサイズを変更します。</string>
     <string name="setting_title_remote">リモートコンテンツ</string>
     <string name="setting_summary_remote">アクセスしている Web サイトから直接ではないリモートコンテンツを有効にします。これを無効にすると、より安全で高速になりデータ量が節約されます。ただし一部のコンテンツは表示されなくなります。</string>
     <string name="setting_title_save_data">「データを保存」のリクエスト</string>
@@ -118,11 +116,8 @@
     <string name="setting_filter">ブックマークフィルター</string>
     <string name="setting_filter_summary">フィルターダイアログを表示するにはブックマークアイコンを一覧画面で長押しして下さい。どのフィルターを使うか決定して下さい。</string>
     <string name="setting_title_fav">スタートページ</string>
-    <string name="setting_summary_fav">ここでは \"FOSS Browser\" 開始時に読み込む既定のウェブサイトを変更できます。\"about:blank\" と入力するとページを読み込まず開始します。</string>
     <string name="setting_title_searchEngine">カスタム検索エンジン</string>
-    <string name="setting_summary_searchEngine">ここではカスタム検索 URL を入力できます。入力後は \"カスタム検索エンジン\" を検索エンジンで選択して下さい。</string>
     <string name="setting_title_userAgent">カスタムユーザーエージェント</string>
-    <string name="setting_summary_userAgent">ここではカスタムユーザーエージェントを入力できます。空白で既定のものを使用します。</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">ツールバーを非表示</string>
     <string name="setting_summary_hide">ウェブサイトスクロール時に画面全体を使用します。戻るボタンを押すとフルスクリーンモードを終了します。</string>
@@ -131,12 +126,10 @@
     <string name="setting_title_toolbarShow">ツールバーを最初に表示</string>
     <string name="setting_title_nav">ナビゲーションボタン</string>
     <string name="setting_title_nav_pos">位置</string>
-    <string name="setting_summary_nav_pos">\"ナビゲーションボタン\" をどこに配置するか決定します。</string>
     <string name="setting_summary_nav_pos_right">右</string>
     <string name="setting_summary_nav_pos_left">左</string>
     <string name="setting_summary_nav_pos_center">中央</string>
     <string name="setting_summary_nav_pos_null">非表示</string>
-    <string name="setting_summary_tab">「一覧画面」の最初に表示されるものを選択します。</string>
     <string name="setting_title_confirm_exit">ブラウザ終了の確認</string>
     <string name="setting_summary_confirm_exit">ブラウザ終了時の確認ダイアログです。</string>
     <string name="setting_title_confirm_tab_close">タブ削除の確認</string>

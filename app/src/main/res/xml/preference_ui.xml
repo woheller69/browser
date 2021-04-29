@@ -27,7 +27,6 @@
             android:key="sp_fontSize"
             android:defaultValue="100"
             android:title="@string/setting_title_font"
-            android:summary="@string/setting_summary_font"
             android:entries="@array/setting_entries_font"
             android:entryValues="@array/setting_values_font"/>
 
@@ -49,7 +48,6 @@
 
         <ListPreference
             android:title="@string/setting_title_nav_pos"
-            android:summary="@string/setting_summary_nav_pos"
             android:key="nav_position"
             android:defaultValue="0"
             android:entries="@array/setting_entries_nav_pos"
@@ -67,7 +65,6 @@
 
         <ListPreference
             android:title="@string/setting_overView"
-            android:summary="@string/setting_summary_tab"
             android:key="start_tab"
             android:defaultValue="0"
             android:entries="@array/setting_entries_tab"

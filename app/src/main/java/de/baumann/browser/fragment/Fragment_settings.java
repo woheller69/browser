@@ -10,9 +10,16 @@ import android.widget.TextView;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import androidx.appcompat.app.AlertDialog;
+import androidx.preference.EditTextPreference;
+import androidx.preference.ListPreference;
+import androidx.preference.MultiSelectListPreference;
+import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
+import androidx.preference.PreferenceGroup;
+import androidx.preference.PreferenceManager;
 
 import java.util.Objects;
+import java.util.prefs.Preferences;
 
 import de.baumann.browser.activity.Settings_ClearActivity;
 import de.baumann.browser.activity.Settings_DataActivity;
@@ -28,6 +35,8 @@ public class Fragment_settings extends PreferenceFragmentCompat implements Share
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         setPreferencesFromResource(R.xml.preference_setting, rootKey);
+        PreferenceManager.setDefaultValues(getContext(), R.xml.preference_setting, false);
+        initSummary(getPreferenceScreen());
 
        findPreference("settings_filter").setOnPreferenceClickListener(preference -> {
            Intent intent = new Intent(getActivity(), Settings_FilterActivity.class);
@@ -69,11 +78,55 @@ public class Fragment_settings extends PreferenceFragmentCompat implements Share
         });
     }
 
+    private void initSummary(Preference p) {
+        if (p instanceof PreferenceGroup) {
+            PreferenceGroup pGrp = (PreferenceGroup) p;
+            for (int i = 0; i < pGrp.getPreferenceCount(); i++) {
+                initSummary(pGrp.getPreference(i));
+            }
+        } else {
+            updatePrefSummary(p);
+        }
+    }
+
+    private void updatePrefSummary(Preference p) {
+        if (p instanceof ListPreference) {
+            ListPreference listPref = (ListPreference) p;
+            p.setSummary(listPref.getEntry());
+        }
+        if (p instanceof EditTextPreference) {
+            EditTextPreference editTextPref = (EditTextPreference) p;
+            if (p.getTitle().toString().toLowerCase().contains("password"))
+            {
+                p.setSummary("******");
+            } else {
+                p.setSummary(editTextPref.getText());
+            }
+        }
+        if (p instanceof MultiSelectListPreference) {
+            EditTextPreference editTextPref = (EditTextPreference) p;
+            p.setSummary(editTextPref.getText());
+        }
+    }
+
     @Override
     public void onSharedPreferenceChanged(final SharedPreferences sp, String key) {
         if (key.equals("userAgent") || key.equals("sp_search_engine_custom") || key.equals("@string/sp_search_engine")) {
             sp.edit().putInt("restart_changed", 1).apply();
         }
+        updatePrefSummary(findPreference(key));
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        getPreferenceScreen().getSharedPreferences().registerOnSharedPreferenceChangeListener(this);
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        getPreferenceScreen().getSharedPreferences().unregisterOnSharedPreferenceChangeListener(this);
     }
 
     private void showLicenseDialog(String title, String text) {

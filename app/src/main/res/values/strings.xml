@@ -80,7 +80,6 @@
     <string name="setting_summary_start_control">Decide which components of FOSS browser will be enabled on start.</string>
 
     <string name="setting_title_search_engine">Search Engine</string>
-    <string name="setting_summary_search_engine">Here you can choose your preferred search engine or set a custom one.</string>
     <string name="setting_summary_search_engine_google">Google</string>
     <string name="setting_summary_search_engine_duckduckgo">DuckDuckGo</string>
     <string name="setting_summary_search_engine_startpage">StartPage</string>
@@ -92,7 +91,6 @@
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
 
     <string name="setting_title_font">Font size</string>
-    <string name="setting_summary_font">Change the font size for displaying websites.</string>
 
     <string name="setting_title_remote">Remote content</string>
     <string name="setting_summary_remote">Enable remote content, which is not directly from the website you are visiting. Disabling this is more secure, faster and saves data volume. But some content will not be displayed anymore.</string>
@@ -147,13 +145,10 @@
     <string name="setting_filter_summary">To show the filter dialog long press on the bookmark icon in the overview. Decide which filters you will use.</string>
 
     <string name="setting_title_fav">Favorite</string>
-    <string name="setting_summary_fav">Here you can change the default website which loads on start of \"FOSS Browser\". Enter \"about:blank\" to get an emty start site.</string>
 
     <string name="setting_title_searchEngine">Custom search engine</string>
-    <string name="setting_summary_searchEngine">Here you can enter a custom search URL. Also choose \"Custom search engine\" as search provider.</string>
 
     <string name="setting_title_userAgent">Custom user agent</string>
-    <string name="setting_summary_userAgent">Here you can enter a custom user agent. Let empty to use default one.</string>
 
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">Hide toolbar</string>
@@ -166,13 +161,10 @@
 
     <string name="setting_title_nav">Navigation button</string>
     <string name="setting_title_nav_pos">Position</string>
-    <string name="setting_summary_nav_pos">Decide where the \"Navigation Button\" will be placed.</string>
     <string name="setting_summary_nav_pos_right">Right</string>
     <string name="setting_summary_nav_pos_left">Left</string>
     <string name="setting_summary_nav_pos_center">Center</string>
     <string name="setting_summary_nav_pos_null">Never show</string>
-
-    <string name="setting_summary_tab">What should be shown at the start of the \"Overview\"?</string>
 
     <string name="setting_title_confirm_exit">Confirm browser exit</string>
     <string name="setting_summary_confirm_exit">Confirmation dialog when closing browser.</string>

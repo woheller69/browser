@@ -67,7 +67,6 @@
     <string name="setting_summary_clear_control">Elimina los datos de tu navegador o decide qué datos se borrarán cuando salgas de la aplicación.</string>
     <string name="setting_summary_start_control">Decide qué componentes del navegador FOSS serán habilitados al iniciar.</string>
     <string name="setting_title_search_engine">Motor de búsqueda</string>
-    <string name="setting_summary_search_engine">Aquí puede elegir su motor de búsqueda preferido o establecer uno personalizado.</string>
     <string name="setting_summary_search_engine_google">Google</string>
     <string name="setting_summary_search_engine_duckduckgo">DuckDuckGo</string>
     <string name="setting_summary_search_engine_startpage">Página de Inicio</string>
@@ -78,7 +77,6 @@
     <string name="setting_summary_search_engine_qwant">Qwant</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_title_font">Tamaño de fuente</string>
-    <string name="setting_summary_font">Ajustar el tamaño del texto en sitios web.</string>
     <string name="setting_title_remote">Contenido remoto</string>
     <string name="setting_summary_remote">Activar contenido remoto, que no es directamente del sitio web que está visitando. Deshabilitar esto es más seguro, más rápido y guarda el volumen de datos. Pero algunos contenidos ya no se mostrarán.</string>
     <string name="setting_title_save_data">Solicitar \"reducir datos\"</string>
@@ -118,11 +116,8 @@
     <string name="setting_filter">Filtro de marcadores</string>
     <string name="setting_filter_summary">Para mostrar el cuadro de diálogo de filtro, mantenga presionado el icono de marcadores en la vista general.</string>
     <string name="setting_title_fav">Favorito</string>
-    <string name="setting_summary_fav">Aquí puede cambiar el sitio web predeterminado que carga al principio de \"navegador FOSS. Escriba \"about:blank\" para obtener un sitio de inicio emy.</string>
     <string name="setting_title_searchEngine">Motor de búsqueda personalizado</string>
-    <string name="setting_summary_searchEngine">Aquí puede introducir una URL de búsqueda personalizada. También elija \"Motor de búsqueda personalizado\" como proveedor de búsqueda.</string>
     <string name="setting_title_userAgent">Agente de usuario personalizado</string>
-    <string name="setting_summary_userAgent">Aquí puede introducir un agente de usuario personalizado. Dejar en blanco para usar el valor por defecto.</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">Ocultar barra de herramientas</string>
     <string name="setting_summary_hide">Utilice la pantalla completa al desplazarse por sitios web. Si pulsa el botón \"volver\", dejará el modo de pantalla completa.</string>
@@ -131,12 +126,10 @@
     <string name="setting_title_toolbarShow">Primero la barra de herramientas</string>
     <string name="setting_title_nav">Botón de navegación</string>
     <string name="setting_title_nav_pos">Posición</string>
-    <string name="setting_summary_nav_pos">Decida dónde se colocará el \"botón de navegación\".</string>
     <string name="setting_summary_nav_pos_right">Derecha</string>
     <string name="setting_summary_nav_pos_left">Izquierda</string>
     <string name="setting_summary_nav_pos_center">Centro</string>
     <string name="setting_summary_nav_pos_null">Nunca se muestra</string>
-    <string name="setting_summary_tab">¿Qué debe mostrarse al principio de la vista general?</string>
     <string name="setting_title_confirm_exit">Confirmar salida del navegador</string>
     <string name="setting_summary_confirm_exit">Mostrar un diálogo de confirmación al cerrar el navegador.</string>
     <string name="setting_title_confirm_tab_close">Confirmar cerrado de pestañas</string>

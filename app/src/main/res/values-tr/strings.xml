@@ -67,7 +67,6 @@
     <string name="setting_summary_clear_control">Tarayıcı verilerinizi temizleyin veya uygulamadan ayrıldığınızda	hangi verilerin silineceğine karar verin.</string>
     <string name="setting_summary_start_control">Başlangıçta FOSS tarayıcısının hangi bileşenlerinin etkinleştirileceğine karar verin.</string>
     <string name="setting_title_search_engine">Arama Motoru</string>
-    <string name="setting_summary_search_engine">Buradan tercih ettiğiniz arama motorunu seçebilir veya özel bir tane ayarlayabilirsiniz.</string>
     <string name="setting_summary_search_engine_google">Google</string>
     <string name="setting_summary_search_engine_duckduckgo">DuckDuckGo</string>
     <string name="setting_summary_search_engine_startpage">StartPage</string>
@@ -78,7 +77,6 @@
     <string name="setting_summary_search_engine_qwant">Qwant</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_title_font">Yazı boyutu</string>
-    <string name="setting_summary_font">Web sitelerini görüntülemek için yazı tipi boyutunu değiştirin.</string>
     <string name="setting_title_remote">Uzaktan içerik</string>
     <string name="setting_summary_remote">Doğrudan ziyaret ettiğiniz web sitesinde olmayan uzak içeriği etkinleştirin. Bunu devre dışı bırakmak daha güvenli, daha hızlı ve veri hacminden tasarruf sağlar. Ancak bazı içerikler artık görüntülenmeyecektir.</string>
     <string name="setting_title_save_data">\'Veri Kaydetme\' İsteği</string>
@@ -118,11 +116,8 @@
     <string name="setting_filter">Yer imi süzgeci</string>
     <string name="setting_filter_summary">Süzgeç iletişim kutusunu görüntülemek için, genel bakıştaki yer imi simgesine uzun basın. Hangi süzgeçleri kullanacağınıza karar verin.</string>
     <string name="setting_title_fav">Başlangıç sitesi</string>
-    <string name="setting_summary_fav">Buradan, \"FOSS Browser\"ın başlangıcında yüklenen varsayılan web sitesini değiştirebilirsiniz. Boş bir başlangıç sitesi almak için \"about: blank\" girin.</string>
     <string name="setting_title_searchEngine">Özel arama motoru</string>
-    <string name="setting_summary_searchEngine">Buradan özel bir arama URL\'si girebilirsiniz. Ayrıca arama sağlayıcısı olarak \"Özel arama motoru\"nu seçin.</string>
     <string name="setting_title_userAgent">Özel kullanıcı aracısı</string>
-    <string name="setting_summary_userAgent">Burada özel bir kullanıcı aracısı girebilirsiniz. Varsayılanı kullanmak için boş bırakın.</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">Araç çubuğunu gizle</string>
     <string name="setting_summary_hide">Web sitelerinde gezinirken tüm ekranı kullanın. Geri düğmesine basarsanız, tam ekran modundan çıkacaksınız.</string>
@@ -131,12 +126,10 @@
     <string name="setting_title_toolbarShow">İlk araç çubuğu</string>
     <string name="setting_title_nav">Gezinme düğmesi</string>
     <string name="setting_title_nav_pos">Konum</string>
-    <string name="setting_summary_nav_pos">\"Gezinti düğmesi\"nin nereye yerleştirileceğine karar verin.</string>
     <string name="setting_summary_nav_pos_right">Sağ</string>
     <string name="setting_summary_nav_pos_left">Sol</string>
     <string name="setting_summary_nav_pos_center">Orta</string>
     <string name="setting_summary_nav_pos_null">Asla gösterme</string>
-    <string name="setting_summary_tab">\"Genel bakış\"ın başlangıcında ne gösterilmelidir?</string>
     <string name="setting_title_confirm_exit">Tarayıcı çıkışını onayla</string>
     <string name="setting_summary_confirm_exit">Tarayıcıyı kapatırken onay iletişim kutusu gösterilir.</string>
     <string name="setting_title_confirm_tab_close">Sekme kapatmayı onayla</string>

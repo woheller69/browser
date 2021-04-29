@@ -136,7 +136,7 @@ public class HelperUnit {
         }
     }
 
-    public static void save_as (final Activity activity, final String url) {
+    public static void save_as (AlertDialog dialogToCancel, final Activity activity, final String url) {
 
         try {
             MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(activity);
@@ -164,7 +164,6 @@ public class HelperUnit {
                 if (title.isEmpty() || extension1.isEmpty() || !extension1.startsWith(".")) {
                     NinjaToast.show(activity, activity.getString(R.string.toast_input_empty));
                 } else {
-
                     if (Build.VERSION.SDK_INT >= 23 && Build.VERSION.SDK_INT < 29) {
                         int hasWRITE_EXTERNAL_STORAGE = activity.checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
                         if (hasWRITE_EXTERNAL_STORAGE != PackageManager.PERMISSION_GRANTED) {
@@ -178,6 +177,7 @@ public class HelperUnit {
                             DownloadManager dm = (DownloadManager) activity.getSystemService(DOWNLOAD_SERVICE);
                             assert dm != null;
                             dm.enqueue(request);
+                            dialogToCancel.cancel();
                         }
                     } else {
                         Uri source = Uri.parse(url);
@@ -188,6 +188,7 @@ public class HelperUnit {
                         DownloadManager dm = (DownloadManager) activity.getSystemService(DOWNLOAD_SERVICE);
                         assert dm != null;
                         dm.enqueue(request);
+                        dialogToCancel.cancel();
                     }
                 }
             });

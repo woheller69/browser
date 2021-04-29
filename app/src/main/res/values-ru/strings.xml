@@ -67,7 +67,6 @@
     <string name="setting_summary_clear_control">Очистить данные браузера или решить, какие данные будут очищены при выходе из приложения.</string>
     <string name="setting_summary_start_control">Определите, какие компоненты FOSS browser будут включены при запуске.</string>
     <string name="setting_title_search_engine">Поисковая система</string>
-    <string name="setting_summary_search_engine">Здесь вы можете выбрать предпочтительную поисковую систему или установить свою.</string>
     <string name="setting_summary_search_engine_google">Google</string>
     <string name="setting_summary_search_engine_duckduckgo">DuckDuckGo</string>
     <string name="setting_summary_search_engine_startpage">Стартовая страница</string>
@@ -78,7 +77,6 @@
     <string name="setting_summary_search_engine_qwant">Qwant</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_title_font">Размер шрифта</string>
-    <string name="setting_summary_font">Измените размер шрифта для отображения веб-сайтов.</string>
     <string name="setting_title_remote">Удаленный контент</string>
     <string name="setting_summary_remote">Включите удаленный контент, который не находится непосредственно на посещаемом Вами сайте. Отключение сделает работу более безопасной, быстрой и позволит экономить объем данных. Но некоторое содержимое больше не будет отображаться.</string>
     <string name="setting_title_save_data">Запрос \'Сохранить данные\'</string>
@@ -118,11 +116,8 @@
     <string name="setting_filter">Фильтр закладок</string>
     <string name="setting_filter_summary">Чтобы отобразить диалоговое окно фильтра, удерживайте нажатие на значке закладок в окне. Определите, какие фильтры Вы будете использовать.</string>
     <string name="setting_title_fav">Главная</string>
-    <string name="setting_summary_fav">Здесь Вы можете изменить веб-сайт по умолчанию, который загружается при запуске \"FOSS Browser\". Введите \"about:blank\", чтобы открывалась пуcтая вкладка.</string>
     <string name="setting_title_searchEngine">Пользовательская поисковая система</string>
-    <string name="setting_summary_searchEngine">Здесь Вы можете ввести свой адрес для поиска. Также можно выбрать \"Пользовательская поисковая система\" для поиска по умолчанию.</string>
     <string name="setting_title_userAgent">Произвольный юзер-агент</string>
-    <string name="setting_summary_userAgent">Здесь вы можете ввести произвольный юзер-агент. Пустое значение для использования юзер-агента по умолчанию.</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">Скрыть панель инструментов</string>
     <string name="setting_summary_hide">Используйте весь экран при прокрутке сайтов. Если Вы нажмете кнопку Назад, то покинете полноэкранный режим.</string>
@@ -131,12 +126,10 @@
     <string name="setting_title_toolbarShow">Сначала панель инструментов</string>
     <string name="setting_title_nav">Кнопка навигации</string>
     <string name="setting_title_nav_pos">Положение</string>
-    <string name="setting_summary_nav_pos">Определите, где будет размещена \"Кнопка навигации \".</string>
     <string name="setting_summary_nav_pos_right">Справа</string>
     <string name="setting_summary_nav_pos_left">Cлева</string>
     <string name="setting_summary_nav_pos_center">По центру</string>
     <string name="setting_summary_nav_pos_null">Не показывать</string>
-    <string name="setting_summary_tab">Что должно быть показано при запуске «Обзора»?</string>
     <string name="setting_title_confirm_exit">Подтвердить выход из браузера</string>
     <string name="setting_summary_confirm_exit">Диалоговое окно подтверждения при закрытии браузера.</string>
     <string name="setting_title_confirm_tab_close">Подтвердить закрытие вкладки</string>

@@ -3,7 +3,13 @@ package de.baumann.browser.fragment;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
+import androidx.preference.EditTextPreference;
+import androidx.preference.ListPreference;
+import androidx.preference.MultiSelectListPreference;
+import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
+import androidx.preference.PreferenceGroup;
+import androidx.preference.PreferenceManager;
 
 import de.baumann.browser.R;
 
@@ -12,13 +18,45 @@ public class Fragment_settings_Gesture extends PreferenceFragmentCompat implemen
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         setPreferencesFromResource(R.xml.preference_gesture, rootKey);
+        PreferenceManager.setDefaultValues(getContext(), R.xml.preference_gesture, false);
+        initSummary(getPreferenceScreen());
+    }
+
+    private void initSummary(Preference p) {
+        if (p instanceof PreferenceGroup) {
+            PreferenceGroup pGrp = (PreferenceGroup) p;
+            for (int i = 0; i < pGrp.getPreferenceCount(); i++) {
+                initSummary(pGrp.getPreference(i));
+            }
+        } else {
+            updatePrefSummary(p);
+        }
+    }
+
+    private void updatePrefSummary(Preference p) {
+        if (p instanceof ListPreference) {
+            ListPreference listPref = (ListPreference) p;
+            p.setSummary(listPref.getEntry());
+        }
+        if (p instanceof EditTextPreference) {
+            EditTextPreference editTextPref = (EditTextPreference) p;
+            if (p.getTitle().toString().toLowerCase().contains("password"))
+            {
+                p.setSummary("******");
+            } else {
+                p.setSummary(editTextPref.getText());
+            }
+        }
+        if (p instanceof MultiSelectListPreference) {
+            EditTextPreference editTextPref = (EditTextPreference) p;
+            p.setSummary(editTextPref.getText());
+        }
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        SharedPreferences sp = getPreferenceScreen().getSharedPreferences();
-        sp.registerOnSharedPreferenceChangeListener(this);
+        getPreferenceScreen().getSharedPreferences().registerOnSharedPreferenceChangeListener(this);
     }
 
     @Override
@@ -29,9 +67,9 @@ public class Fragment_settings_Gesture extends PreferenceFragmentCompat implemen
 
     @Override
     public void onSharedPreferenceChanged(final SharedPreferences sp, String key) {
-
         if (key.equals("sp_gestures_use") || key.equals("sp_gesture_action")) {
             sp.edit().putInt("restart_changed", 1).apply();
         }
+        updatePrefSummary(findPreference(key));
     }
 }

@@ -503,7 +503,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         omniBox = findViewById(R.id.omniBox);
         omniBox_text = findViewById(R.id.omniBox_input);
         omniBox_overview = findViewById(R.id.omnibox_overview);
-        ImageButton omniBox_overflow = findViewById(R.id.omnibox_overflow);
         ImageButton omniBox_tab = findViewById(R.id.omniBox_tab);
         omniBox_tab.setOnClickListener(v -> showTabView());
 
@@ -524,17 +523,21 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 break;
         }
 
+        fab_overflow.setAlpha(0.0f);
+        fab_overflow.setVisibility(View.GONE);
+        fab_overflow.setOnClickListener(v -> showOverflow());
         fab_overflow.setOnLongClickListener(v -> {
             show_dialogFastToggle();
             return false;
         });
+
+        ImageButton omniBox_overflow = findViewById(R.id.omnibox_overflow);
+        omniBox_overflow.setOnClickListener(v -> showOverflow());
         omniBox_overflow.setOnLongClickListener(v -> {
             show_dialogFastToggle();
             return false;
         });
 
-        fab_overflow.setOnClickListener(v -> showOverflow());
-        omniBox_overflow.setOnClickListener(v -> showOverflow());
 
         if (sp.getBoolean("sp_gestures_use", true)) {
             fab_overflow.setOnTouchListener(new SwipeTouchListener(context) {
@@ -668,7 +671,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 saveBookmark();
                 break;
             case "15":
-                save_atHome(ninjaWebView.getUrl().replace("http://www.", "").replace("https://www.", ""), ninjaWebView.getUrl());
+                save_atHome(Objects.requireNonNull(ninjaWebView.getUrl()).replace("http://www.", "").replace("https://www.", ""), ninjaWebView.getUrl());
                 break;
         }
     }
@@ -1145,8 +1148,11 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 if (scrollY > oldScrollY && cutoff >= scrollY) {
                     toolBar.setVisibility(View.GONE);
                     fab_overflow.setVisibility(View.VISIBLE);
+                    fab_overflow.animate().alpha(1.0f).setDuration(250);
                 } else if (scrollY < oldScrollY){
-                    showOmniBox();
+                    toolBar.setVisibility(View.VISIBLE);
+                    fab_overflow.animate().alpha(0.0f).setDuration(0);
+                    fab_overflow.setVisibility(View.GONE);
                 }
             }
         });
@@ -1396,8 +1402,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     dialog.cancel();
                     break;
                 case 4:
-                    HelperUnit.save_as(activity, url);
-                    dialog.cancel();
+                    HelperUnit.save_as(dialog, activity, url);
                     break;
                 case 5:
                     save_atHome(url.replace("http://www.", "").replace("https://www.", ""), url);
@@ -1595,20 +1600,24 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         menu_grid_save.setOnItemClickListener((parent, view13, position, id) -> {
             RecordAction action = new RecordAction(context);
-            dialog_overflow.cancel();
             if (position == 0) {
+                dialog_overflow.cancel();
                 HelperUnit.setFavorite(context, url);
             } else if (position == 1) {
+                dialog_overflow.cancel();
                 save_atHome(title, url);
             } else if (position == 2) {
+                dialog_overflow.cancel();
                 saveBookmark();
                 action.close();
             } else if (position == 3) {
+                dialog_overflow.cancel();
                 printPDF();
             } else if (position == 4) {
+                dialog_overflow.cancel();
                 HelperUnit.createShortcut(context, ninjaWebView.getTitle(), ninjaWebView.getUrl());
             } else if (position == 5) {
-                HelperUnit.save_as(activity, url);
+                HelperUnit.save_as(dialog_overflow, activity, url);
             }
         });
 

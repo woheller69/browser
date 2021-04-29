@@ -67,7 +67,6 @@
     <string name="setting_summary_clear_control">Wyczyść dane przeglądarki lub zdecyduj jakie dane zostaną usunięte po opuszczeniu aplikacji.</string>
     <string name="setting_summary_start_control">Zdecyduj, które elementy przeglądarki FOSS będą włączone na starcie.</string>
     <string name="setting_title_search_engine">Wyszukiwarka</string>
-    <string name="setting_summary_search_engine">Zdecyduj o domyślnej wyszukiwarce internetowej lub wprowadź własną.</string>
     <string name="setting_summary_search_engine_google">Google</string>
     <string name="setting_summary_search_engine_duckduckgo">DuckDuckGo</string>
     <string name="setting_summary_search_engine_startpage">StartPage</string>
@@ -78,7 +77,6 @@
     <string name="setting_summary_search_engine_qwant">Qwant</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_title_font">Rozmiar czcionki</string>
-    <string name="setting_summary_font">Zmień podstawowy rozmiar czcionek wyświetlanych na stronach.</string>
     <string name="setting_title_remote">Zawartość zdalna</string>
     <string name="setting_summary_remote">Włącz zdalną zawartość, która nie jest bezpośrednio z odwiedzanej strony. Wyłączenie tego jest bezpieczniejsze, szybsze i zapisuje głośność danych. Jednak niektóre treści nie będą już wyświetlane.</string>
     <string name="setting_title_save_data">Zażądaj \'Zapisz dane\'</string>
@@ -118,11 +116,8 @@
     <string name="setting_filter">Filtr zakładek</string>
     <string name="setting_filter_summary">Aby wyświetlić okno dialogowe filtrów, naciśnij ikonę zakładki w podglądzie. Zdecyduj, którego filtrów użyjesz.</string>
     <string name="setting_title_fav">Ulubione</string>
-    <string name="setting_summary_fav">Tutaj możesz zmienić domyślną witrynę, która ładuje się na początku \"FOSS Browser\". Wpisz \"about:blank\", aby uzyskać stronę startową.</string>
     <string name="setting_title_searchEngine">Własna wyszukiwarka</string>
-    <string name="setting_summary_searchEngine">Tutaj możesz wprowadzić niestandardowy adres URL wyszukiwania. Wybierz również \"Własny silnik wyszukiwania\" jako dostawcę.</string>
     <string name="setting_title_userAgent">Niestandardowy agent użytkownika</string>
-    <string name="setting_summary_userAgent">Tutaj możesz wprowadzić niestandardowego agenta użytkownika. Pozostaw puste, aby użyć domyślnego.</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">Ukryj dolny panel</string>
     <string name="setting_summary_hide">Pokazuj witryny na całym ekranie. Dotykając przycisku wstecz wyjdziesz z trybu pełnoekranowego.</string>
@@ -131,12 +126,10 @@
     <string name="setting_title_toolbarShow">Pierwszy pasek narzędzi</string>
     <string name="setting_title_nav">Przycisk nawigacyjny</string>
     <string name="setting_title_nav_pos">Położenie</string>
-    <string name="setting_summary_nav_pos">Zdecyduj o położeniu \”Przycisku nawigacyjnego\”</string>
     <string name="setting_summary_nav_pos_right">Po prawej</string>
     <string name="setting_summary_nav_pos_left">Po lewej</string>
     <string name="setting_summary_nav_pos_center">Pośrodku</string>
     <string name="setting_summary_nav_pos_null">Nigdy nie pokazuj</string>
-    <string name="setting_summary_tab">Co należy pokazać na początku „przeglądu”?</string>
     <string name="setting_title_confirm_exit">Potwierdzaj zamknięcie przeglądarki</string>
     <string name="setting_summary_confirm_exit">Wyświetlaj komunikat przy zamykaniu apki.</string>
     <string name="setting_title_confirm_tab_close">Potwierdzaj zamknięcie karty</string>

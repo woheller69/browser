@@ -67,7 +67,6 @@
     <string name="setting_summary_clear_control">清除您的浏览器数据，或选择当您退出应用时哪些数据会被清除。</string>
     <string name="setting_summary_start_control">选择那些FOSS浏览器的组件会在启动时开启。</string>
     <string name="setting_title_search_engine">搜索引擎</string>
-    <string name="setting_summary_search_engine">您可以在此选择喜欢的搜索引擎或设置自定义搜索引擎。</string>
     <string name="setting_summary_search_engine_google">Google</string>
     <string name="setting_summary_search_engine_duckduckgo">DuckDuckGo</string>
     <string name="setting_summary_search_engine_startpage">StartPage</string>
@@ -78,7 +77,6 @@
     <string name="setting_summary_search_engine_qwant">Qwant</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_title_font">字体大小</string>
-    <string name="setting_summary_font">更改网站的字体大小。</string>
     <string name="setting_title_remote">远程内容</string>
     <string name="setting_summary_remote">启用远程内容，它不是直接从你正在访问的网站上进行的。 禁用此功能更安全、更快捷、更节省数据量。 但有些内容将无法再显示。</string>
     <string name="setting_title_save_data">请求“保存数据”</string>
@@ -118,11 +116,8 @@
     <string name="setting_filter">书签过滤器</string>
     <string name="setting_filter_summary">要显示过滤器选择对话框，请长按概览中的书签图标。选择您所需要的过滤器。</string>
     <string name="setting_title_fav">起始页设置</string>
-    <string name="setting_summary_fav">在这里您可以更改\"FOSS浏览器\"的起始页。输入\"about:blank\"来获取一个空的起始站点。</string>
     <string name="setting_title_searchEngine">自定义搜索引擎</string>
-    <string name="setting_summary_searchEngine">您可以在此输入一个自定义的搜索URL。同时选择\"自定义搜索引擎\"作为搜索提供者。</string>
     <string name="setting_title_userAgent">自定义User Agent</string>
-    <string name="setting_summary_userAgent">在这里您可以输入一个自定义的User Agent。留空则使用默认。</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">隐藏工具栏</string>
     <string name="setting_summary_hide">当在网页中滑动时使用全屏浏览。当您按下返回键会退出全屏模式。</string>
@@ -131,12 +126,10 @@
     <string name="setting_title_toolbarShow">第一个工具栏</string>
     <string name="setting_title_nav">导航栏按钮</string>
     <string name="setting_title_nav_pos">位置</string>
-    <string name="setting_summary_nav_pos">决定“导航按钮”放在哪里。</string>
     <string name="setting_summary_nav_pos_right">右侧</string>
     <string name="setting_summary_nav_pos_left">左侧</string>
     <string name="setting_summary_nav_pos_center">居中</string>
     <string name="setting_summary_nav_pos_null">从不显示</string>
-    <string name="setting_summary_tab">在“概览”开头应该显示什么？</string>
     <string name="setting_title_confirm_exit">浏览器退出确认</string>
     <string name="setting_summary_confirm_exit">关闭浏览器时的确认对话框。</string>
     <string name="setting_title_confirm_tab_close">确认关闭标签页</string>

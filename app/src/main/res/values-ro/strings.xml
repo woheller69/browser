@@ -78,9 +78,9 @@
     <string name="setting_title_remote">Conținut la distanță</string>
     <string name="setting_summary_remote">Enable remote content, which is not directly from the website you are visiting. Disabling this is more secure, faster and saves data volume. But some content will not be displayed anymore.</string>
     <string name="setting_title_save_data">Solicită \'Salvare date\'</string>
-    <string name="setting_summary_save_data">Tell websites that you would prefer to save data. Supported websites will load faster.</string>
+    <string name="setting_summary_save_data">Spuneți site-urilor că doriți să salvați date. Site-urile suportate se vor încărca mai repede.</string>
     <!-- browser start -->
-    <string name="setting_title_images">Images</string>
+    <string name="setting_title_images">Imagini</string>
     <string name="setting_summary_images">Enable Network images. Disabling could be useful to save mobile data and to load websites faster.</string>
     <string name="setting_title_cookie">Cookies</string>
     <string name="setting_summary_cookie_delete">If enabled, all cookies will be deleted. Also the Cookies of trusted websites.</string>

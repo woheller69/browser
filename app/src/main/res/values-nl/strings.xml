@@ -4,6 +4,8 @@
     <string name="app_name">FOSS-browser</string>
     <string name="app_ok">Oké</string>
     <string name="app_cancel">Annuleren</string>
+    <string name="app_done">Done</string>
+    <string name="app_error">Error</string>
     <string name="list_empty">List is empty</string>
     <string name="album_title_bookmarks">Bladwijzers</string>
     <string name="album_title_history">Geschiedenis</string>
@@ -128,6 +130,7 @@
     <string name="setting_summary_reopenLastTab">Heropen een nieuwe tab als het laatste tabblad is gesloten in plaats van de browser te sluiten.</string>
     <!-- gestures -->
     <string name="setting_title_toolbar">Werkbalk</string>
+    <string name="setting_title_toolbar_buttons">Toolbar buttons</string>
     <string name="setting_gesture_up">Veeg omhoog</string>
     <string name="setting_gesture_down">Omlaag vegen</string>
     <string name="setting_gesture_left">Naar links vegen</string>
@@ -142,6 +145,7 @@
     <string name="setting_gesture_08">Overzicht weergeven</string>
     <string name="setting_gesture_09">Nieuw tabblad openen</string>
     <string name="setting_gesture_10">Tabblad sluiten</string>
+    <string name="setting_gesture_hint">Long click the menu button to open fast settings dialog. Long press the home/bookmark/history icon to open the bookmark filter.</string>
     <!-- Data -->
     <string name="setting_title_export_bookmarks">Export bookmarks as HTML-file</string>
     <string name="setting_title_import_bookmarks">Import bookmarks</string>

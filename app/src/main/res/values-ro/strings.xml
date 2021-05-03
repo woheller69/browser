@@ -4,6 +4,8 @@
     <string name="app_name">Browserul FOSS</string>
     <string name="app_ok">Confirmă</string>
     <string name="app_cancel">Anulează</string>
+    <string name="app_done">Done</string>
+    <string name="app_error">Error</string>
     <string name="list_empty">List is empty</string>
     <string name="album_title_bookmarks">Marcaje</string>
     <string name="album_title_history">Istoric</string>
@@ -128,6 +130,7 @@
     <string name="setting_summary_reopenLastTab">Reopen a new tab when the last tab is closed instead of exiting the browser.</string>
     <!-- gestures -->
     <string name="setting_title_toolbar">Toolbar</string>
+    <string name="setting_title_toolbar_buttons">Toolbar buttons</string>
     <string name="setting_gesture_up">Swipe up</string>
     <string name="setting_gesture_down">Swipe down</string>
     <string name="setting_gesture_left">Swipe left</string>
@@ -142,6 +145,7 @@
     <string name="setting_gesture_08">Show overview</string>
     <string name="setting_gesture_09">Open new tab</string>
     <string name="setting_gesture_10">Close tab</string>
+    <string name="setting_gesture_hint">Long click the menu button to open fast settings dialog. Long press the home/bookmark/history icon to open the bookmark filter.</string>
     <!-- Data -->
     <string name="setting_title_export_bookmarks">Export bookmarks as HTML-file</string>
     <string name="setting_title_import_bookmarks">Import bookmarks</string>

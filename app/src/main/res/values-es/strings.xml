@@ -122,14 +122,7 @@
     <string name="setting_title_hideToolbar">Ocultar barra de herramientas</string>
     <string name="setting_summary_hide">Utilice la pantalla completa al desplazarse por sitios web. Si pulsa el botón \"volver\", dejará el modo de pantalla completa.</string>
     <string name="setting_title_behavior">Comportamiento</string>
-    <string name="setting_summary_toolbarShow">Presionar \"volver\" hará visible la barra de herramientas, antes de retroceder en el historial.</string>
-    <string name="setting_title_toolbarShow">Primero la barra de herramientas</string>
     <string name="setting_title_nav">Botón de navegación</string>
-    <string name="setting_title_nav_pos">Posición</string>
-    <string name="setting_summary_nav_pos_right">Derecha</string>
-    <string name="setting_summary_nav_pos_left">Izquierda</string>
-    <string name="setting_summary_nav_pos_center">Centro</string>
-    <string name="setting_summary_nav_pos_null">Nunca se muestra</string>
     <string name="setting_title_confirm_exit">Confirmar salida del navegador</string>
     <string name="setting_summary_confirm_exit">Mostrar un diálogo de confirmación al cerrar el navegador.</string>
     <string name="setting_title_confirm_tab_close">Confirmar cerrado de pestañas</string>
@@ -180,9 +173,6 @@
     <string name="toast_input_empty">No ha introducido nada</string>
     <string name="toast_invalid_domain">Dominio no válido</string>
     <string name="toast_load_error">No se puede cargar esta dirección URL</string>
-    <string name="toast_new_tab_successful">Abierto con éxito en una nueva pestaña</string>
-    <string name="toast_share_failed">No se puede compartir esta página</string>
-    <string name="toast_start_download">Iniciando descarga</string>
     <string name="toast_webview_forward">No se puede cargar el sitio</string>
     <string name="toast_permission_sdCard">\"FOSS Browser\" necesita el permiso para \"leer y escribir en su almacenamiento\". Esto es necesario para descargar archivos, tomar capturas de pantalla y hacer copias de seguridad de sus datos.</string>
     <string name="toast_restart">Debe reiniciar \"Navegador FOSS\" para aplicar cambios. ¿Cerrar ahora?</string>

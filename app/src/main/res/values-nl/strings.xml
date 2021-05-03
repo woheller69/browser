@@ -122,14 +122,7 @@
     <string name="setting_title_hideToolbar">Werkbalk verbergen</string>
     <string name="setting_summary_hide">Use the whole screen when scrolling through websites. If you press the back button you will leave fullscreen mode.</string>
     <string name="setting_title_behavior">Gedrag</string>
-    <string name="setting_summary_toolbarShow">Terugdrukken maakt de werkbalk zichtbaar, voordat je teruggaat in de geschiedenis.</string>
-    <string name="setting_title_toolbarShow">Eerste werkbalk</string>
     <string name="setting_title_nav">Navigatieknop</string>
-    <string name="setting_title_nav_pos">Positie</string>
-    <string name="setting_summary_nav_pos_right">Rechts</string>
-    <string name="setting_summary_nav_pos_left">Links</string>
-    <string name="setting_summary_nav_pos_center">Midden</string>
-    <string name="setting_summary_nav_pos_null">Never show</string>
     <string name="setting_title_confirm_exit">Afsluiten bevestigen</string>
     <string name="setting_summary_confirm_exit">Bevestigingsscherm tonen bij het afsluiten van de browser.</string>
     <string name="setting_title_confirm_tab_close">Tabblad sluiten bevestigen</string>
@@ -180,9 +173,6 @@
     <string name="toast_input_empty">Je hebt niks ingevoerd</string>
     <string name="toast_invalid_domain">Ongeldig domein</string>
     <string name="toast_load_error">Deze URL kan niet worden geladen</string>
-    <string name="toast_new_tab_successful">Geopend op nieuw tabblad</string>
-    <string name="toast_share_failed">Deze pagina kan niet worden gedeeld</string>
-    <string name="toast_start_download">Bezig met starten van download…</string>
     <string name="toast_webview_forward">Volgende site kan niet worden geladen</string>
     <string name="toast_permission_sdCard">\"FOSS Browser\" needs the permission to \"read and write on your storage\". This is needed to download files, taking screenshots and making backups of your data.</string>
     <string name="toast_restart">\"FOSS-browser\" moet worden herstart om de wijzigingen toe te passen. Wil je nu afsluiten?</string>

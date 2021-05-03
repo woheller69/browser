@@ -122,14 +122,7 @@
     <string name="setting_title_hideToolbar">أخفِ شريط الأدوات</string>
     <string name="setting_summary_hide">استخدم الشاشة بأكملها عند اللف عبر المواقع. إذا ضغطت زر الرجوع ستغادر وضع الشاشة الكاملة.</string>
     <string name="setting_title_behavior">السلوك</string>
-    <string name="setting_summary_toolbarShow">ضغط العودة سيجعل شريط الأدوات مرئيًا، قبل العودة في التاريخ.</string>
-    <string name="setting_title_toolbarShow">شريط الأدوات الأول</string>
     <string name="setting_title_nav">زر التنقل</string>
-    <string name="setting_title_nav_pos">الموضع</string>
-    <string name="setting_summary_nav_pos_right">يمينا</string>
-    <string name="setting_summary_nav_pos_left">يسارا</string>
-    <string name="setting_summary_nav_pos_center">الوسط</string>
-    <string name="setting_summary_nav_pos_null">لا تُظهر أبداً</string>
     <string name="setting_title_confirm_exit">تأكيد خروج المتصفح</string>
     <string name="setting_summary_confirm_exit">حوار التأكيد عند إغلاق المتصفح.</string>
     <string name="setting_title_confirm_tab_close">أكّد خروج التبويب</string>
@@ -180,9 +173,6 @@
     <string name="toast_input_empty">لم تُدخل أي شيء</string>
     <string name="toast_invalid_domain">نطاق غير سليم</string>
     <string name="toast_load_error">لا يمكن تحميل هذا الرابط</string>
-    <string name="toast_new_tab_successful">فُتح بنجاح في علامة تبويب جديدة</string>
-    <string name="toast_share_failed">لا يمكن مشاركة هذه الصفحة</string>
-    <string name="toast_start_download">بدء التحميل</string>
     <string name="toast_webview_forward">لا يمكن تحميل الموقع التالي</string>
     <string name="toast_permission_sdCard">يحتاج المتصفح الحر \"FOSS Browse\" إذن \"القراءة والكتابة على التخزين خاصتك\". هذا مطلوب لتحميل الملفات، التقاط لقطات الشاشة وعمل نسخ احتياطية من بياناتك.</string>
     <string name="toast_restart">يجب عليك إعادة تشغيل المتصفح الحر\"FOSS Browser\" لتطبيق التغييرات. أغلق الآن؟</string>

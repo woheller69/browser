@@ -31,8 +31,8 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
 
             resultList.clear();
             for (CompleteItem item : originalList) {
-                if (item.getTitle().contains(prefix) || item.getURL().contains(prefix)) {
-                    if (item.getTitle().contains(prefix)) {
+                if (item.getTitle().contains(prefix) || item.getTitle().toLowerCase().contains(prefix) || item.getURL().contains(prefix)) {
+                    if (item.getTitle().contains(prefix) || item.getTitle().toLowerCase().contains(prefix) ) {
                         item.setIndex(item.getTitle().indexOf(prefix.toString()));
                     } else if (item.getURL().contains(prefix)) {
                         item.setIndex(item.getURL().indexOf(prefix.toString()));

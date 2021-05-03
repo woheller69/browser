@@ -66,7 +66,7 @@ public class RecordAction {
                 null,
                 null,
                 null,
-                sortBy
+                sortBy + " COLLATE NOCASE;"
         );
         if (cursor == null) {
             return list;
@@ -117,14 +117,13 @@ public class RecordAction {
                 null,
                 null,
                 null,
-                sortBy
+                sortBy + " COLLATE NOCASE;"
         );
         if (cursor == null) {
             return list;
         }
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
-
             if (filter) {
                 if (getRecord(cursor).getTime() == filterBy) {
                     list.add(getRecord(cursor));
@@ -132,8 +131,6 @@ public class RecordAction {
             } else {
                 list.add(getRecord(cursor));
             }
-
-
             cursor.moveToNext();
         }
         cursor.close();
@@ -173,7 +170,7 @@ public class RecordAction {
                 null,
                 null,
                 null,
-                RecordUnit.COLUMN_TIME + " asc"
+                RecordUnit.COLUMN_TIME + " COLLATE NOCASE;"
         );
 
         cursor.moveToFirst();
@@ -290,7 +287,7 @@ public class RecordAction {
         action.open(false);
         list.addAll(action.listStartSite(activity));
         list.addAll(action.listHistory());
-        list.addAll(listBookmark(activity, false, 0));
+        list.addAll(action.listBookmark(activity, false, 0));
         return list;
     }
 }

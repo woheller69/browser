@@ -9,8 +9,12 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
+
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import java.util.Objects;
 
 import de.baumann.browser.fragment.Fragment_clear;
 import de.baumann.browser.R;
@@ -54,6 +58,7 @@ public class Settings_ClearActivity extends AppCompatActivity {
             builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
             AlertDialog dialog = builder.create();
             dialog.show();
+            Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
         }
         return true;
     }

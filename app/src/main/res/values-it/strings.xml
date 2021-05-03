@@ -122,14 +122,7 @@
     <string name="setting_title_hideToolbar">Nascondi barra degli strumenti</string>
     <string name="setting_summary_hide">Usa tutto lo schermo quando scorri sui siti web. Se premi il pulsante Indietro lascerai la modalità a schermo intero.</string>
     <string name="setting_title_behavior">Comportamento</string>
-    <string name="setting_summary_toolbarShow">Premendo il tasto indietro vedrai la barra degli strumenti, prima di tornare indietro nella storia.</string>
-    <string name="setting_title_toolbarShow">Prima barra degli strumenti</string>
     <string name="setting_title_nav">Pulsante di navigazione</string>
-    <string name="setting_title_nav_pos">Posizione</string>
-    <string name="setting_summary_nav_pos_right">Destra</string>
-    <string name="setting_summary_nav_pos_left">Sinistra</string>
-    <string name="setting_summary_nav_pos_center">Centro</string>
-    <string name="setting_summary_nav_pos_null">Non mostrare mai</string>
     <string name="setting_title_confirm_exit">Conferma l\'uscita dal browser</string>
     <string name="setting_summary_confirm_exit">Finestra di conferma per la chiusura del browser.</string>
     <string name="setting_title_confirm_tab_close">Confermare la chiusura delle schede</string>
@@ -180,9 +173,6 @@
     <string name="toast_input_empty">Non hai inserito nulla</string>
     <string name="toast_invalid_domain">Dominio non valido</string>
     <string name="toast_load_error">Non è possibile caricare questo URL</string>
-    <string name="toast_new_tab_successful">Aperto con successo in una nuova scheda</string>
-    <string name="toast_share_failed">Impossibile condividere questa pagina</string>
-    <string name="toast_start_download">Avvio del download</string>
     <string name="toast_webview_forward">Non è possibile caricare il sito successivo</string>
     <string name="toast_permission_sdCard">\"FOSS Browser\" ha bisogno del permesso di \"leggere e scrivere sul tuo storage\". Questo è necessario per scaricare i file, prendere screenshot e fare backup dei tuoi dati.</string>
     <string name="toast_restart">Per applicare le modifiche è necessario riavviare \"FOSS Browser\". Chiudere ora?</string>

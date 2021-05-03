@@ -14,9 +14,9 @@ import android.os.Environment;
 import androidx.appcompat.app.AlertDialog;
 import androidx.preference.PreferenceManager;
 import android.util.Log;
+import android.view.Gravity;
 import android.webkit.CookieManager;
 import android.webkit.URLUtil;
-import android.widget.Toast;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
@@ -40,7 +40,6 @@ import de.baumann.browser.browser.Remote;
 import de.baumann.browser.database.Record;
 import de.baumann.browser.database.RecordAction;
 import de.baumann.browser.R;
-import de.baumann.browser.view.NinjaToast;
 
 @SuppressWarnings("ResultOfMethodCallIgnored")
 public class BrowserUnit {
@@ -65,7 +64,6 @@ public class BrowserUnit {
     public static final String URL_SCHEME_MAIL_TO = "mailto:";
     private static final String URL_SCHEME_FILE = "file://";
     private static final String URL_SCHEME_HTTP = "https://";
-    public static final String URL_SCHEME_INTENT = "intent://";
 
     private static final String URL_PREFIX_GOOGLE_PLAY = "www.google.com/url?q=";
     private static final String URL_SUFFIX_GOOGLE_PLAY = "&sa";
@@ -189,24 +187,15 @@ public class BrowserUnit {
                     HelperUnit.grantPermissionsStorage(activity);
                 } else {
                     manager.enqueue(request);
-                    try {
-                        NinjaToast.show(context, R.string.toast_start_download);
-                    } catch (Exception e) {
-                        Toast.makeText(context, R.string.toast_start_download, Toast.LENGTH_SHORT).show();
-                    }
                 }
             } else {
                 manager.enqueue(request);
-                try {
-                    NinjaToast.show(context, R.string.toast_start_download);
-                } catch (Exception e) {
-                    Toast.makeText(context, R.string.toast_start_download, Toast.LENGTH_SHORT).show();
-                }
             }
         });
         builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
         AlertDialog dialog = builder.create();
         dialog.show();
+        Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
     }
 
     public static void exportWhitelist(Context context, int i) {

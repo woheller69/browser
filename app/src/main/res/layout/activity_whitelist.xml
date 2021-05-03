@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout android:layout_width="match_parent"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -19,11 +20,11 @@
 
             <androidx.appcompat.widget.Toolbar
                 app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.DayNight.ActionBar"
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:background="?attr/colorPrimary" />
+                android:background="?attr/colorPrimaryDark" />
 
         </com.google.android.material.appbar.AppBarLayout>
 
@@ -34,9 +35,9 @@
             <EditText android:id="@+id/whitelist_edit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/layout_margin_8dp"
-                android:layout_marginLeft="@dimen/layout_margin_8dp"
-                android:layout_marginRight="@dimen/layout_margin_8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
                 android:hint="@string/whitelist_edit_hint"
                 android:textCursorDrawable="@null"
                 android:textAppearance="?android:attr/textAppearanceMedium"
@@ -48,18 +49,13 @@
             <Button android:id="@+id/whitelist_add"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/layout_margin_8dp"
-                android:layout_marginRight="@dimen/layout_margin_8dp"
-                android:layout_marginBottom="@dimen/layout_margin_8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
                 android:text="@string/whitelist_add"
                 android:textAllCaps="true"/>
 
         </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="4dp"
-            android:background="@drawable/shadow_below"/>
 
         <ListView android:id="@+id/whitelist"
             android:layout_width="match_parent"

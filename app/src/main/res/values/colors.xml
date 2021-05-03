@@ -6,9 +6,7 @@
     <color name="primaryDarkColor">#424242</color>
     <color name="secondaryColor">#8bc34a</color>
 
-    <color name="color_transparent">@android:color/transparent</color>
     <color name="color_light">#fafafa</color>
     <color name="color_hint">#BDBDBD</color>
-    <color name="color_shadow_light">@color/cardview_shadow_start_color</color>
 
 </resources>

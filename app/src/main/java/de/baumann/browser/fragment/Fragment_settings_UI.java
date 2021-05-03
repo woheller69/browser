@@ -57,7 +57,7 @@ public class Fragment_settings_UI extends PreferenceFragmentCompat implements Sh
     public void onSharedPreferenceChanged(final SharedPreferences sp, String key) {
         if (key.equals("sp_exit") || key.equals("sp_toggle") || key.equals("sp_add") || key.equals("sp_theme")
                 || key.equals("nav_position")  || key.equals("sp_hideOmni") || key.equals("start_tab") || key.equals("sp_hideSB")
-                || key.equals("overView_place") || key.equals("overView_hide")) {
+                || key.equals("overView_place") || key.equals("overView_hide") || key.equals("hideToolbar")) {
             sp.edit().putInt("restart_changed", 1).apply();
         }
         updatePrefSummary(findPreference(key));

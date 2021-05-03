@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:ignore="ContentDescription"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <ListView
-        android:layout_above="@+id/bottom_navigationLayout"
+        android:layout_above="@+id/bottom_navigation"
         android:layout_marginTop="8dp"
         android:id="@+id/list_overView"
         android:stackFromBottom="true"
@@ -18,25 +17,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="4dp"
-        android:background="@drawable/shadow_above"
-        android:layout_above="@+id/bottom_navigationLayout"/>
-
-    <LinearLayout
-        android:id="@+id/bottom_navigationLayout"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_alignParentBottom="true"
+        android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottom_navigation"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:menu="@menu/menu_bottom_overview" />
-
-    </LinearLayout>
+        app:menu="@menu/menu_bottom_overview" />
 
 </RelativeLayout>

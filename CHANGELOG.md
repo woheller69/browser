@@ -13,6 +13,8 @@
 - fix: apply javaScript, cookies and remote content whitelists
 - fix: switching between system day/night mode
 - fix: dialogs in landscape
+- fix: alphabetical sorting of overview entries
+- fix: search in toolbar
 - fix: other small fixes
 
 ### v 7.2

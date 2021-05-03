@@ -122,14 +122,7 @@
     <string name="setting_title_hideToolbar">Cacher barre d\'outils</string>
     <string name="setting_summary_hide">Utiliser l\'écran entier lorsque vous faites défiler les sites Web. Si vous appuyez sur le bouton retour, vous quitterez le mode plein écran.</string>
     <string name="setting_title_behavior">Comportement</string>
-    <string name="setting_summary_toolbarShow">Appuyer sur retour rendra la barre d\'outils visible, avant de revenir dans l\'historique.</string>
-    <string name="setting_title_toolbarShow">Première barre d\'outils</string>
     <string name="setting_title_nav">Bouton de navigation</string>
-    <string name="setting_title_nav_pos">Position</string>
-    <string name="setting_summary_nav_pos_right">Droite</string>
-    <string name="setting_summary_nav_pos_left">Gauche</string>
-    <string name="setting_summary_nav_pos_center">Milieu</string>
-    <string name="setting_summary_nav_pos_null">Ne jamais montrer</string>
     <string name="setting_title_confirm_exit">Confirmer pour quitter</string>
     <string name="setting_summary_confirm_exit">Fenêtre de confirmation avant fermeture du navigateur.</string>
     <string name="setting_title_confirm_tab_close">Confirmer fermeture onglet</string>
@@ -180,9 +173,6 @@
     <string name="toast_input_empty">Vous n\'avez rien entré.</string>
     <string name="toast_invalid_domain">Domaine non valide</string>
     <string name="toast_load_error">Impossible de charger cette URL</string>
-    <string name="toast_new_tab_successful">Ouvert avec succès dans un nouvel onglet</string>
-    <string name="toast_share_failed">Impossible de partager cette page</string>
-    <string name="toast_start_download">Démarrage du téléchargement</string>
     <string name="toast_webview_forward">Impossible de charger le site</string>
     <string name="toast_permission_sdCard">\"FOSS Browser\" a besoin de la permission de \"lire et écrire sur votre stockage\". Ceci est nécessaire pour télécharger des fichiers, prendre des captures d\'écran et faire des sauvegardes de vos données.</string>
     <string name="toast_restart">Vous devez redémarrer \"FOSS Browser\" pour appliquer les modifications. Fermer maintenant?</string>

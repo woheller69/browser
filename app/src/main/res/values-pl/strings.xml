@@ -122,14 +122,7 @@
     <string name="setting_title_hideToolbar">Ukryj dolny panel</string>
     <string name="setting_summary_hide">Pokazuj witryny na całym ekranie. Dotykając przycisku wstecz wyjdziesz z trybu pełnoekranowego.</string>
     <string name="setting_title_behavior">Zachowanie</string>
-    <string name="setting_summary_toolbarShow">Naciśnięcie wstecz sprawi, że pasek narzędzi będzie widoczny, zanim wróci do historii.</string>
-    <string name="setting_title_toolbarShow">Pierwszy pasek narzędzi</string>
     <string name="setting_title_nav">Przycisk nawigacyjny</string>
-    <string name="setting_title_nav_pos">Położenie</string>
-    <string name="setting_summary_nav_pos_right">Po prawej</string>
-    <string name="setting_summary_nav_pos_left">Po lewej</string>
-    <string name="setting_summary_nav_pos_center">Pośrodku</string>
-    <string name="setting_summary_nav_pos_null">Nigdy nie pokazuj</string>
     <string name="setting_title_confirm_exit">Potwierdzaj zamknięcie przeglądarki</string>
     <string name="setting_summary_confirm_exit">Wyświetlaj komunikat przy zamykaniu apki.</string>
     <string name="setting_title_confirm_tab_close">Potwierdzaj zamknięcie karty</string>
@@ -180,9 +173,6 @@
     <string name="toast_input_empty">Nie wprowadziłeś niczego</string>
     <string name="toast_invalid_domain">Niewłaściwy adres</string>
     <string name="toast_load_error">Nie można załadować adresu</string>
-    <string name="toast_new_tab_successful">Załadowano w nowej karcie</string>
-    <string name="toast_share_failed">Nie można udostępnić</string>
-    <string name="toast_start_download">Rozpoczynanie pobierania</string>
     <string name="toast_webview_forward">Nie można załadować kolejnej strony</string>
     <string name="toast_permission_sdCard">\"FOSS Browser\" wymaga uprawnienia na \”odczytywanie i zapisywanie zawartości pamieci\”. Jest ono niezbędne do pobierania plików przez wbudowany manager plików i udostępniania zrzutów ekranu. Jeśli nie chcesz teraz udzielać uprawnienia, możesz to zrobić później w Preferencjach aplikacji.</string>
     <string name="toast_restart">Musisz uruchomić ponownie \"FOSS Browser\”, aby zachować te zmiany. Zamknąć teraz?</string>

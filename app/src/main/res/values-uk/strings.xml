@@ -122,14 +122,7 @@
     <string name="setting_title_hideToolbar">Приховати Панель інструментів</string>
     <string name="setting_summary_hide">Use the whole screen when scrolling through websites. If you press the back button you will leave fullscreen mode.</string>
     <string name="setting_title_behavior">Behavior</string>
-    <string name="setting_summary_toolbarShow">Pressing back will make the toolbar visible, before going back in history.</string>
-    <string name="setting_title_toolbarShow">First toolbar</string>
     <string name="setting_title_nav">Кнопка навігації</string>
-    <string name="setting_title_nav_pos">Положення</string>
-    <string name="setting_summary_nav_pos_right">Праворуч</string>
-    <string name="setting_summary_nav_pos_left">Зліва</string>
-    <string name="setting_summary_nav_pos_center">По центру</string>
-    <string name="setting_summary_nav_pos_null">Never show</string>
     <string name="setting_title_confirm_exit">Підтвердити вихід з браузера</string>
     <string name="setting_summary_confirm_exit">Діалогове вікно підтвердження при закритті браузера.</string>
     <string name="setting_title_confirm_tab_close">Підтвердити закриття вкладки</string>
@@ -180,9 +173,6 @@
     <string name="toast_input_empty">Ви нічого не ввели</string>
     <string name="toast_invalid_domain">Невірний домен</string>
     <string name="toast_load_error">Не вдається завантажити цю URL-адресу</string>
-    <string name="toast_new_tab_successful">Успішно відкрито в новій вкладці</string>
-    <string name="toast_share_failed">Не вдається поділитися цією сторінкою</string>
-    <string name="toast_start_download">Початок завантаження</string>
     <string name="toast_webview_forward">Не вдається завантажити наступний сайт</string>
     <string name="toast_permission_sdCard">\"FOSS Browser\" needs the permission to \"read and write on your storage\". This is needed to download files, taking screenshots and making backups of your data.</string>
     <string name="toast_restart">Щоб застосувати зміни, необхідно перезапустити \"FOSS Browser\". Закрити зараз?</string>

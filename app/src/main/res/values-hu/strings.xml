@@ -122,14 +122,7 @@
     <string name="setting_title_hideToolbar">Eszköztár elrejtése</string>
     <string name="setting_summary_hide">Használja a teljes képernyőt amikor a weboldalakat megtekinti. A vissza gomb megnyomásával, elhagyja a teljes képernyős módot.</string>
     <string name="setting_title_behavior">Viselkedés</string>
-    <string name="setting_summary_toolbarShow">A vissza megnyomása láthatóvá teszi az eszköztárat, mielőtt visszatér az előzményekhez.</string>
-    <string name="setting_title_toolbarShow">Első eszköztár</string>
     <string name="setting_title_nav">Navigációs gomb</string>
-    <string name="setting_title_nav_pos">Pozíció</string>
-    <string name="setting_summary_nav_pos_right">Jobbra</string>
-    <string name="setting_summary_nav_pos_left">Balra</string>
-    <string name="setting_summary_nav_pos_center">Középen</string>
-    <string name="setting_summary_nav_pos_null">Soha ne mutassa</string>
     <string name="setting_title_confirm_exit">Böngésző bezárásának megerősítése</string>
     <string name="setting_summary_confirm_exit">Megerősítő párbeszédpanel a böngésző bezárásakor.</string>
     <string name="setting_title_confirm_tab_close">Lap bezárásának megerősítése</string>
@@ -180,9 +173,6 @@
     <string name="toast_input_empty">Nem írt be semmit</string>
     <string name="toast_invalid_domain">Érvénytelen domain</string>
     <string name="toast_load_error">Nem tölthető be ez az URL cím</string>
-    <string name="toast_new_tab_successful">Sikeresen megnyitva új lapon</string>
-    <string name="toast_share_failed">Ez az oldal nem osztható meg</string>
-    <string name="toast_start_download">Letöltés indítása</string>
     <string name="toast_webview_forward">Nem tölthető be a következő oldal</string>
     <string name="toast_permission_sdCard">A \"FOSS Browser\"-nek \"tárhely olvasása és írása\" engedélyre van szüksége. Ez szükséges a fájlok letöltéséhez, képernyőképek készítéséhez és az adatok biztonsági másolatának készítéséhez.</string>
     <string name="toast_restart">A változások alkalmazásához újra kell indítania a \"FOSS Browser\"-t. Bezárja most?</string>

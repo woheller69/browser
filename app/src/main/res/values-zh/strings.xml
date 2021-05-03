@@ -122,14 +122,7 @@
     <string name="setting_title_hideToolbar">隐藏工具栏</string>
     <string name="setting_summary_hide">当在网页中滑动时使用全屏浏览。当您按下返回键会退出全屏模式。</string>
     <string name="setting_title_behavior">行为</string>
-    <string name="setting_summary_toolbarShow">在返回历史记录页面之前按下返回键将会使工具栏可见</string>
-    <string name="setting_title_toolbarShow">第一个工具栏</string>
     <string name="setting_title_nav">导航栏按钮</string>
-    <string name="setting_title_nav_pos">位置</string>
-    <string name="setting_summary_nav_pos_right">右侧</string>
-    <string name="setting_summary_nav_pos_left">左侧</string>
-    <string name="setting_summary_nav_pos_center">居中</string>
-    <string name="setting_summary_nav_pos_null">从不显示</string>
     <string name="setting_title_confirm_exit">浏览器退出确认</string>
     <string name="setting_summary_confirm_exit">关闭浏览器时的确认对话框。</string>
     <string name="setting_title_confirm_tab_close">确认关闭标签页</string>
@@ -180,9 +173,6 @@
     <string name="toast_input_empty">您没有输入任何内容</string>
     <string name="toast_invalid_domain">无效域名</string>
     <string name="toast_load_error">无法加载此 URL</string>
-    <string name="toast_new_tab_successful">成功在新标签页中打开</string>
-    <string name="toast_share_failed">无法分享此页面</string>
-    <string name="toast_start_download">正在开始下载</string>
     <string name="toast_webview_forward">无法加载下一个网站</string>
     <string name="toast_permission_sdCard">\"FOSS浏览器\"需要“在你的存储上读写”的权限。 这是下载文件，进行屏幕截图和备份您的数据所必要的。</string>
     <string name="toast_restart">您必须重启“FOSS浏览器”才能应用更改。现在关闭吗？</string>

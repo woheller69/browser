@@ -46,7 +46,6 @@
     <string name="menu_shareClipboard">クリップボードにコピー</string>
     <string name="menu_other_searchSite">サイト内の検索</string>
     <string name="menu_other_info">\"FOSS Browser\" について</string>
-    <string name="menu_other_help">ヘルプ</string>
     <!-- Dialog -->
     <string name="dialog_title_hint">タイトル:</string>
     <string name="dialog_extension_hint">拡張子 (例: \".jpg\"):</string>
@@ -62,10 +61,7 @@
     <string name="setting_label">設定</string>
     <!-- browser setting -->
     <string name="setting_title_browser">ブラウザ設定</string>
-    <string name="setting_title_clear_control">データコントロール</string>
     <string name="setting_title_start_control">スタートコントロール</string>
-    <string name="setting_summary_clear_control">ブラウザのデータを消去するか、アプリを終了する時に何のデータを消去するか選択します。</string>
-    <string name="setting_summary_start_control">起動時に FOSS Browser のどのコンポーネントが有効になるかを決定します。</string>
     <string name="setting_title_search_engine">検索エンジン</string>
     <string name="setting_summary_search_engine_google">Google</string>
     <string name="setting_summary_search_engine_duckduckgo">DuckDuckGo</string>
@@ -112,9 +108,7 @@
     <string name="setting_title_app">アプリ設定</string>
     <string name="setting_title_ui">動作/UI</string>
     <string name="setting_title_data">バックアップ</string>
-    <string name="setting_summary_ui">好みの設定にするためにアプリの動作と UI を変更します。</string>
     <string name="setting_filter">ブックマークフィルター</string>
-    <string name="setting_filter_summary">フィルターダイアログを表示するにはブックマークアイコンを一覧画面で長押しして下さい。どのフィルターを使うか決定して下さい。</string>
     <string name="setting_title_fav">スタートページ</string>
     <string name="setting_title_searchEngine">カスタム検索エンジン</string>
     <string name="setting_title_userAgent">カスタムユーザーエージェント</string>
@@ -122,7 +116,6 @@
     <string name="setting_title_hideToolbar">ツールバーを非表示</string>
     <string name="setting_summary_hide">ウェブサイトスクロール時に画面全体を使用します。戻るボタンを押すとフルスクリーンモードを終了します。</string>
     <string name="setting_title_behavior">動作</string>
-    <string name="setting_title_nav">ナビゲーションボタン</string>
     <string name="setting_title_confirm_exit">ブラウザ終了の確認</string>
     <string name="setting_summary_confirm_exit">ブラウザ終了時の確認ダイアログです。</string>
     <string name="setting_title_confirm_tab_close">タブ削除の確認</string>
@@ -131,8 +124,6 @@
     <string name="setting_overView_onStart_title">開始時に表示</string>
     <string name="setting_overView_onStart_summary">毎回のアプリ開始時に \"一覧画面\" を開きます。</string>
     <string name="setting_gestures">ジェスチャー</string>
-    <string name="setting_gestures_use_title">ジェスチャーを使用</string>
-    <string name="setting_gestures_use_summary">ツールバーと \"ナビゲーションボタン\" でジェスチャーを使用します。</string>
     <string name="setting_title_reopenLastTab">タブを再度開く</string>
     <string name="setting_summary_reopenLastTab">ブラウザ終了の代わりに最後のタブを閉じた時に新しいタブを開きます。</string>
     <!-- gestures -->
@@ -172,7 +163,6 @@
     <string name="toast_export_successful">&#160; としてエクスポートしました</string>
     <string name="toast_input_empty">何も入力していません</string>
     <string name="toast_invalid_domain">無効なドメイン</string>
-    <string name="toast_load_error">この URL を読み込めません</string>
     <string name="toast_webview_forward">次のサイトを読み込めません</string>
     <string name="toast_permission_sdCard">\"FOSS Browser\" は \"ストレージの読み書き\" の権限が必要です。これはファイルダウンロード、スクリーンショット取得、バックアップファイル作成に必要です。</string>
     <string name="toast_restart">変更を適用するには \"FOSS Browser\" を再起動する必要があります。今すぐ閉じますか?</string>
@@ -186,15 +176,6 @@
     <string name="whitelist_edit_hint">ドメイン</string>
     <string name="whitelist_add">追加</string>
     <!-- Dialog help -->
-    <string name="dialogHelp_tipTitle">ヒント</string>
-    <string name="dialogHelp_tipText">        &lt;b&gt;メニューとダイアログ&lt;/b&gt;&lt;br&gt;
-        全てのメニューとダイアログは画面の下部の開かれます。もしダイアログが大きかったらまず最初に上の部分が見えます。上スワイプしたら残りが表示されます。戻るボタンのタップ、下スワイプ、外側をタップすると閉じます。&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;長押し&lt;/b&gt;&lt;br&gt;
-        メニューアイコンや \"ナビゲーションボタン\" を長押しすると \"高速ダイアログ切り替え\" が表示されます。\"ブックマークアイコン\" を長押しすると \"フィルターダイアログ\" が表示されます。
-    </string>
-    <string name="dialogHelp_filterText">       フィルターをブックマークでマークできます。これによりブックマークをグループ化できます。ブックマークアイコンを長押しすると、フィルターダイアログを開くことができます。 エントリをアクティブにするとダイアログが表示され、そこでフィルターの名前を編集できます。
-    </string>
     <!-- Dialog changelog -->
     <string name="changelog_dialog">        あなたの言語にまだ翻訳されていませんか? FOSS Browser を翻訳してみませんか?  または既存の翻訳の改善をご希望でしょうか? お気軽に Crowdin: https://crowdin.com/project/foss-browser に参加して下さい。&lt;br&gt;&lt;br&gt;
 

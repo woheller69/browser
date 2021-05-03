@@ -12,22 +12,20 @@
             android:key="favoriteURL"
             android:title="@string/setting_title_fav" />
 
-        <Preference
-            android:key="settings_start"
-            android:title="@string/setting_title_start_control"
-            android:summary="@string/setting_summary_start_control" />
-
-        <Preference
-            android:key="settings_clear"
-            android:title="@string/setting_title_clear_control"
-            android:summary="@string/setting_summary_clear_control" />
-
         <ListPreference
             android:key="@string/sp_search_engine"
             android:defaultValue="0"
             android:title="@string/setting_title_search_engine"
             android:entries="@array/setting_entries_search_engine"
             android:entryValues="@array/setting_values_search_engine"/>
+
+        <Preference
+            android:key="settings_start"
+            android:title="@string/setting_title_start_control" />
+
+        <Preference
+            android:key="settings_clear"
+            android:title="@string/menu_delete" />
 
         <EditTextPreference
             android:defaultValue="https://www.ecosia.org/search?q="
@@ -47,18 +45,16 @@
 
         <Preference
             android:key="settings_ui"
-            android:title="@string/setting_title_ui"
-            android:summary="@string/setting_summary_ui"/>
+            android:title="@string/setting_title_ui"/>
 
         <Preference
             android:key="settings_filter"
-            android:title="@string/setting_filter"
-            android:summary="@string/setting_filter_summary"/>
+            android:title="@string/setting_filter"/>
 
         <Preference
             android:key="settings_gesture"
             android:title="@string/setting_gestures"
-            android:summary="@string/setting_gestures_use_summary"/>
+            android:summary="@string/setting_gesture_hint"/>
 
     </PreferenceCategory>
 
@@ -69,10 +65,6 @@
         <Preference
             android:key="settings_data"
             android:title="@string/setting_title_data"/>
-
-        <Preference
-            android:key="settings_help"
-            android:title="@string/menu_other_help"/>
 
         <Preference
             android:key="settings_info"

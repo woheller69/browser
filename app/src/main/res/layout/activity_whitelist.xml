@@ -46,7 +46,8 @@
                 android:selectAllOnFocus="true"
                 android:importantForAutofill="no" />
 
-            <Button android:id="@+id/whitelist_add"
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/whitelist_add"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"

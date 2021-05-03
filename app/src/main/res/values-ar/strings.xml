@@ -46,7 +46,6 @@
     <string name="menu_shareClipboard">انسخ إلى الحافظة</string>
     <string name="menu_other_searchSite">ابحث في الموقع</string>
     <string name="menu_other_info">حول \"FOSS Browser\"</string>
-    <string name="menu_other_help">مساعدة</string>
     <!-- Dialog -->
     <string name="dialog_title_hint">العنوان:</string>
     <string name="dialog_extension_hint">الامتداد (مثلا: \"‎.jpg\"):</string>
@@ -62,10 +61,7 @@
     <string name="setting_label">الاعدادات</string>
     <!-- browser setting -->
     <string name="setting_title_browser">إعدادات المتصفح</string>
-    <string name="setting_title_clear_control">التحكم في البيانات</string>
     <string name="setting_title_start_control">التحكم في بدأ التشغيل</string>
-    <string name="setting_summary_clear_control">امسح بيانات المتصفح أو حدد البيانات التي سيتم مسحها عند مغادرة التطبيق.</string>
-    <string name="setting_summary_start_control">حدد مكونات \"FOSS Browser\" التي ستمكن عند البدء.</string>
     <string name="setting_title_search_engine">محرك البحث</string>
     <string name="setting_summary_search_engine_google">غوغل</string>
     <string name="setting_summary_search_engine_duckduckgo">محرك DuckDuckGo</string>
@@ -112,9 +108,7 @@
     <string name="setting_title_app">إعدادات التطبيق</string>
     <string name="setting_title_ui">السلوك/واجهة المستخدم</string>
     <string name="setting_title_data">النسخ الاحتياطي</string>
-    <string name="setting_summary_ui">غيّر سلوك التطبيق و واجهة المستخدم لتتناسب مع تفضيلاتك.</string>
     <string name="setting_filter">مرشح العلامات</string>
-    <string name="setting_filter_summary">لعرض حوار العلامات اضغط مطولا على أيقونة العلامات في النظرة العامة. حدد المشرح الدي ستستخدم.</string>
     <string name="setting_title_fav">المفضلة</string>
     <string name="setting_title_searchEngine">محرك بحث مخصص</string>
     <string name="setting_title_userAgent">وكيل مستخدم مخصص</string>
@@ -122,7 +116,6 @@
     <string name="setting_title_hideToolbar">أخفِ شريط الأدوات</string>
     <string name="setting_summary_hide">استخدم الشاشة بأكملها عند اللف عبر المواقع. إذا ضغطت زر الرجوع ستغادر وضع الشاشة الكاملة.</string>
     <string name="setting_title_behavior">السلوك</string>
-    <string name="setting_title_nav">زر التنقل</string>
     <string name="setting_title_confirm_exit">تأكيد خروج المتصفح</string>
     <string name="setting_summary_confirm_exit">حوار التأكيد عند إغلاق المتصفح.</string>
     <string name="setting_title_confirm_tab_close">أكّد خروج التبويب</string>
@@ -131,8 +124,6 @@
     <string name="setting_overView_onStart_title">أَظهر عند البداية</string>
     <string name="setting_overView_onStart_summary">افتح \"نظرة عامة\" عند كل بداية للتطبيق.</string>
     <string name="setting_gestures">إيماءات</string>
-    <string name="setting_gestures_use_title">استخدام الإيماءات</string>
-    <string name="setting_gestures_use_summary">استخدم الإيماءات على شريط الأدوات و \"زر التنقل\".</string>
     <string name="setting_title_reopenLastTab">أعد فتح آخر تبويب</string>
     <string name="setting_summary_reopenLastTab">أعد فتح تبويب جديد عند غلق آخر تبويب بدلا من الخروج من المتصفح.</string>
     <!-- gestures -->
@@ -172,7 +163,6 @@
     <string name="toast_export_successful">صُدّر كـ:&#160;</string>
     <string name="toast_input_empty">لم تُدخل أي شيء</string>
     <string name="toast_invalid_domain">نطاق غير سليم</string>
-    <string name="toast_load_error">لا يمكن تحميل هذا الرابط</string>
     <string name="toast_webview_forward">لا يمكن تحميل الموقع التالي</string>
     <string name="toast_permission_sdCard">يحتاج المتصفح الحر \"FOSS Browse\" إذن \"القراءة والكتابة على التخزين خاصتك\". هذا مطلوب لتحميل الملفات، التقاط لقطات الشاشة وعمل نسخ احتياطية من بياناتك.</string>
     <string name="toast_restart">يجب عليك إعادة تشغيل المتصفح الحر\"FOSS Browser\" لتطبيق التغييرات. أغلق الآن؟</string>
@@ -186,15 +176,6 @@
     <string name="whitelist_edit_hint">النطاق</string>
     <string name="whitelist_add">أضف</string>
     <!-- Dialog help -->
-    <string name="dialogHelp_tipTitle">تلميحات</string>
-    <string name="dialogHelp_tipText">        &lt;b&gt;القوائم و الحواريات&lt;/b&gt;&lt;br&gt;
-        جميع القوائم و الحواريات تُفتح في الجزء السفلي من الشاشة. إذا كان مربع الحوار كبيرًا فسترى أولاً الجزء العلوي فقط. إذا سحبته لأعلى ، فسيصبح الباقي مرئيًا. يمكنك إغلاقها بالضغط على زر الرجوع أو التمرير لأسفل أو بالنقر خارجاً&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;اضغط مطولاً&lt;/b&gt;&lt;br&gt;
-        إذا ضغطت مطولاً على أيقونة القائمة أو \"زر التنقل\"، سيُعرض \"مربع حوار التبديل السريع\". إذا  ضغطت  مطولاً على \"أيقونة الإشارة المرجعية\"، فسيُعرض \"مربع حوار المرشحات\".
-    </string>
-    <string name="dialogHelp_filterText">        يمكنك توسيم إشاراتك المرجعية بعوامل التصفية. بهذه الطريقة يمكنك تجميع إشاراتك المرجعية. يمكنك فتح مربع حوار التصفية بالضغط مطولاً على أيقونة الإشارة المرجعية. إذا فعّلت عنصراً فسيظهر مربع حوار، حيث يمكنك تعديل اسم عامل التصفية.
-    </string>
     <!-- Dialog changelog -->
     <string name="changelog_dialog">        لغتك غير مدعومة بعد؟ تريد ترجمة المتصفح الحر FOSS Browser؟ أو إجراء تحسينات على الترجمات الموجودة؟ لا تتردد في الانضمام إلينا في Crowdin: https://crowdin.com/project/foss-browser.&lt;br&gt;&lt;br&gt;         &lt;b&gt;في المواقع التالية يمكنك الوصول إلى جميع المعلومات الهامة حول المتصفح الحر \"FOSS Browser\". رجاءا اقرأ أيضا حوار المساعدة داخل التطبيق.&lt;/b&gt;&lt;br&gt;&lt;br&gt;         \u25AA &lt;i&gt;موقع المشروع:&lt;/i&gt; https://github.com/scoute-dich/Browser&lt;br&gt;         \u25AA &lt;i&gt;سجلّ التغييرات:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/CHANGELOG.md&lt;br&gt;         \u25AA &lt;i&gt;أسئلة متكررة:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/FAQs.md&lt;br&gt;         \u25AA &lt;i&gt;الرخصة:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/LICENSE.md&lt;br&gt;         \u25AA &lt;i&gt;الخصوصية:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/PRIVACY.md
 

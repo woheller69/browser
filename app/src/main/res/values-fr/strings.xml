@@ -46,7 +46,6 @@
     <string name="menu_shareClipboard">Copier dans le presse-papiers</string>
     <string name="menu_other_searchSite">Rechercher sur le site</string>
     <string name="menu_other_info">À propos de \"FOSS Browser\"</string>
-    <string name="menu_other_help">Aide</string>
     <!-- Dialog -->
     <string name="dialog_title_hint">Titre:</string>
     <string name="dialog_extension_hint">Extension (par exemple: \".jpg\"):</string>
@@ -62,10 +61,7 @@
     <string name="setting_label">Réglages</string>
     <!-- browser setting -->
     <string name="setting_title_browser">Paramètres du navigateur</string>
-    <string name="setting_title_clear_control">Contrôle des données</string>
     <string name="setting_title_start_control">Contrôle du démarrage</string>
-    <string name="setting_summary_clear_control">Effacer les données du navigateur ou décider quelles données seront effacées en quittant l\'application.</string>
-    <string name="setting_summary_start_control">Décider quels composants du navigateur seront activés au démarrage.</string>
     <string name="setting_title_search_engine">Moteur de recherche</string>
     <string name="setting_summary_search_engine_google">Google</string>
     <string name="setting_summary_search_engine_duckduckgo">DuckDuckGo</string>
@@ -112,9 +108,7 @@
     <string name="setting_title_app">Paramètres</string>
     <string name="setting_title_ui">Comportement/UI</string>
     <string name="setting_title_data">Sauvegarde</string>
-    <string name="setting_summary_ui">Changez le comportement et l\'interface utilisateur de l\'application en fonction de vos préférences.</string>
     <string name="setting_filter">Filtre de signet</string>
-    <string name="setting_filter_summary">Pour afficher la boîte de dialogue de filtre, appuyez longuement sur l\'icône de signet dans l\'aperçu. Décidez quels filtres vous utiliserez.</string>
     <string name="setting_title_fav">Favoris</string>
     <string name="setting_title_searchEngine">Moteur de recherche personnalisé</string>
     <string name="setting_title_userAgent">Agent utilisateur personnalisé</string>
@@ -122,7 +116,6 @@
     <string name="setting_title_hideToolbar">Cacher barre d\'outils</string>
     <string name="setting_summary_hide">Utiliser l\'écran entier lorsque vous faites défiler les sites Web. Si vous appuyez sur le bouton retour, vous quitterez le mode plein écran.</string>
     <string name="setting_title_behavior">Comportement</string>
-    <string name="setting_title_nav">Bouton de navigation</string>
     <string name="setting_title_confirm_exit">Confirmer pour quitter</string>
     <string name="setting_summary_confirm_exit">Fenêtre de confirmation avant fermeture du navigateur.</string>
     <string name="setting_title_confirm_tab_close">Confirmer fermeture onglet</string>
@@ -131,8 +124,6 @@
     <string name="setting_overView_onStart_title">Montrer au démarrage</string>
     <string name="setting_overView_onStart_summary">Ouvrir \"vue d\'ensemble\" à chaque démarrage de l\'application.</string>
     <string name="setting_gestures">Gestes</string>
-    <string name="setting_gestures_use_title">Utiliser des gestes</string>
-    <string name="setting_gestures_use_summary">Utilisez des gestes dans barre d’outils et le \"Bouton de navigation\".</string>
     <string name="setting_title_reopenLastTab">Rouvrir dernier onglet</string>
     <string name="setting_summary_reopenLastTab">Rouvrir un nouvel onglet lorsque le dernier onglet est fermé au lieu de quitter le navigateur.</string>
     <!-- gestures -->
@@ -172,7 +163,6 @@
     <string name="toast_export_successful">Exporté en tant que:&#160;</string>
     <string name="toast_input_empty">Vous n\'avez rien entré.</string>
     <string name="toast_invalid_domain">Domaine non valide</string>
-    <string name="toast_load_error">Impossible de charger cette URL</string>
     <string name="toast_webview_forward">Impossible de charger le site</string>
     <string name="toast_permission_sdCard">\"FOSS Browser\" a besoin de la permission de \"lire et écrire sur votre stockage\". Ceci est nécessaire pour télécharger des fichiers, prendre des captures d\'écran et faire des sauvegardes de vos données.</string>
     <string name="toast_restart">Vous devez redémarrer \"FOSS Browser\" pour appliquer les modifications. Fermer maintenant?</string>
@@ -186,15 +176,6 @@
     <string name="whitelist_edit_hint">Domaine</string>
     <string name="whitelist_add">Ajouté</string>
     <!-- Dialog help -->
-    <string name="dialogHelp_tipTitle">Conseils</string>
-    <string name="dialogHelp_tipText">        &lt;b&gt;Menus et dialogues&lt;/b&gt;&lt;br&gt;
-        Tous les menus et boîtes de dialogue sont ouverts au bas de l\'écran. Si la boîte de dialogue est grande, vous ne verrez que la partie supérieure. Si vous la faites glisser vers le haut, le reste sera visible. Vous pouvez les fermer en appuyant sur le bouton retour, glisser vers le bas ou en cliquant en dehors de&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;Appuyez longuement&lt;/b&gt;&lt;br&gt;
-        Si vous appuyez longuement sur l\'icône du menu ou sur le \"bouton de navigation\", la boîte de dialogue \"Bascule rapide\" s\'affiche. Si vous appuyez longuement sur l\'icône \"Marque-page\", la boîte de dialogue \"Filtre\" s\'affichera.
-    </string>
-    <string name="dialogHelp_filterText">        Vous pouvez étiqueter vos signets avec des filtres. De cette façon, vous pouvez regrouper vos signets. Vous pouvez ouvrir la boîte de dialogue du filtre en appuyant longuement sur l\'icône du signet. Si vous activez une entrée une boîte de dialogue apparaît, où vous pouvez modifier le nom du filtre.
-    </string>
     <!-- Dialog changelog -->
     <string name="changelog_dialog">        Votre langue n\'est pas encore prise en charge ? Vous voulez traduire FOSS Browser? Ou apportez des améliorations aux traductions existantes ? N\'hésitez pas à nous rejoindre sur Crowdin : https://crowdin. om/project/foss-browser.&lt;br&gt;&lt;br&gt;
 

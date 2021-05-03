@@ -102,7 +102,7 @@ public class NinjaWebViewClient extends WebViewClient {
             ninjaWebView.loadUrl(url, ninjaWebView.getRequestHeaders());
             return true;
         } else {
-            NinjaToast.show(context, R.string.toast_load_error);
+            NinjaToast.show(context, R.string.app_error);
             return false;
         }
     }

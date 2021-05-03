@@ -46,7 +46,6 @@
     <string name="menu_shareClipboard">复制到剪切板</string>
     <string name="menu_other_searchSite">页面内搜索</string>
     <string name="menu_other_info">关于 \"FOSS浏览器\"</string>
-    <string name="menu_other_help">帮助</string>
     <!-- Dialog -->
     <string name="dialog_title_hint">标题:</string>
     <string name="dialog_extension_hint">扩展名 (例如: \".jpg\"):</string>
@@ -62,10 +61,7 @@
     <string name="setting_label">设置</string>
     <!-- browser setting -->
     <string name="setting_title_browser">浏览器设置</string>
-    <string name="setting_title_clear_control">数据控制</string>
     <string name="setting_title_start_control">开始控制</string>
-    <string name="setting_summary_clear_control">清除您的浏览器数据，或选择当您退出应用时哪些数据会被清除。</string>
-    <string name="setting_summary_start_control">选择那些FOSS浏览器的组件会在启动时开启。</string>
     <string name="setting_title_search_engine">搜索引擎</string>
     <string name="setting_summary_search_engine_google">Google</string>
     <string name="setting_summary_search_engine_duckduckgo">DuckDuckGo</string>
@@ -112,9 +108,7 @@
     <string name="setting_title_app">应用设置</string>
     <string name="setting_title_ui">行为/界面</string>
     <string name="setting_title_data">备份</string>
-    <string name="setting_summary_ui">更改应用的行为和界面以适应您的设置。</string>
     <string name="setting_filter">书签过滤器</string>
-    <string name="setting_filter_summary">要显示过滤器选择对话框，请长按概览中的书签图标。选择您所需要的过滤器。</string>
     <string name="setting_title_fav">起始页设置</string>
     <string name="setting_title_searchEngine">自定义搜索引擎</string>
     <string name="setting_title_userAgent">自定义User Agent</string>
@@ -122,7 +116,6 @@
     <string name="setting_title_hideToolbar">隐藏工具栏</string>
     <string name="setting_summary_hide">当在网页中滑动时使用全屏浏览。当您按下返回键会退出全屏模式。</string>
     <string name="setting_title_behavior">行为</string>
-    <string name="setting_title_nav">导航栏按钮</string>
     <string name="setting_title_confirm_exit">浏览器退出确认</string>
     <string name="setting_summary_confirm_exit">关闭浏览器时的确认对话框。</string>
     <string name="setting_title_confirm_tab_close">确认关闭标签页</string>
@@ -131,8 +124,6 @@
     <string name="setting_overView_onStart_title">启动时显示</string>
     <string name="setting_overView_onStart_summary">每次启动应用时打开“概览”</string>
     <string name="setting_gestures">手势</string>
-    <string name="setting_gestures_use_title">使用手势</string>
-    <string name="setting_gestures_use_summary">在工具栏和“导航按钮”上使用手势。</string>
     <string name="setting_title_reopenLastTab">重新打开上次打开的页面</string>
     <string name="setting_summary_reopenLastTab">当最后一个标签页被关闭时重新打开一个标签页，而不是退出浏览器。</string>
     <!-- gestures -->
@@ -172,7 +163,6 @@
     <string name="toast_export_successful">导出为&#160;</string>
     <string name="toast_input_empty">您没有输入任何内容</string>
     <string name="toast_invalid_domain">无效域名</string>
-    <string name="toast_load_error">无法加载此 URL</string>
     <string name="toast_webview_forward">无法加载下一个网站</string>
     <string name="toast_permission_sdCard">\"FOSS浏览器\"需要“在你的存储上读写”的权限。 这是下载文件，进行屏幕截图和备份您的数据所必要的。</string>
     <string name="toast_restart">您必须重启“FOSS浏览器”才能应用更改。现在关闭吗？</string>
@@ -186,15 +176,6 @@
     <string name="whitelist_edit_hint">域名</string>
     <string name="whitelist_add">添加</string>
     <!-- Dialog help -->
-    <string name="dialogHelp_tipTitle">提示</string>
-    <string name="dialogHelp_tipText">        &lt;b&gt;菜单和对话框&lt;/b&gt;&lt;br&gt;
-        所有菜单和对话框都是在屏幕底部打开的。 如果对话框是大的，您将先看到上面的部分。如果您向上滑动，您将会看到其余部分。 您可以通过按返回按钮关闭它们， 也可以向下滑动或单击外部&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;长按&lt;/b&gt;&lt;br&gt;
-        如果您长按菜单图标或“导航按钮”， 将显示“快速切换对话框”。 如果您长按\"书签图标\"，将会显示\"过滤对话框\"。
-    </string>
-    <string name="dialogHelp_filterText">        您可以用过滤器标记您的书签。这样您就可以将您的书签分组。 您可以长按书签图标打开过滤器对话框。 如果您激活一个条目，将出现一个对话框，您可以在那里编辑过滤器的名称。
-    </string>
     <!-- Dialog changelog -->
     <string name="changelog_dialog">您的语言还不被支持？您想要翻译FOSS Browser吗？或者改进现有的翻译？您随时都能在Crowdin上加入我们：https://crowdin.com/project/foss-browser.&lt;br&gt;&lt;br&gt;
         &lt;b&gt;在下列的网站上您可以了解所有关于FOSS Browser的重要信息。同时也请阅读应用内的帮助对话框。&lt;/b&gt;&lt;br&gt;&lt;br&gt;

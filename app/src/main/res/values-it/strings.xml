@@ -46,7 +46,6 @@
     <string name="menu_shareClipboard">Copia negli Appunti</string>
     <string name="menu_other_searchSite">Cerca nel sito</string>
     <string name="menu_other_info">Info su \"FOSS Browser\"</string>
-    <string name="menu_other_help">Aiuto</string>
     <!-- Dialog -->
     <string name="dialog_title_hint">Titolo:</string>
     <string name="dialog_extension_hint">Estensione (per esempio: \".jpg\"):</string>
@@ -62,10 +61,7 @@
     <string name="setting_label">Impostazioni</string>
     <!-- browser setting -->
     <string name="setting_title_browser">Impostazioni Browser</string>
-    <string name="setting_title_clear_control">Dati</string>
     <string name="setting_title_start_control">Opzioni iniziali</string>
-    <string name="setting_summary_clear_control">Cancellare i dati del browser o decidere quali dati verranno cancellati quando si lascia l\'applicazione.</string>
-    <string name="setting_summary_start_control">Decidi quali componenti del browser FOSS saranno abilitati all\'avvio.</string>
     <string name="setting_title_search_engine">Motore di ricerca</string>
     <string name="setting_summary_search_engine_google">Google</string>
     <string name="setting_summary_search_engine_duckduckgo">DuckDuckGo</string>
@@ -112,9 +108,7 @@
     <string name="setting_title_app">Impostazioni App</string>
     <string name="setting_title_ui">Comportamento/UI</string>
     <string name="setting_title_data">Backup</string>
-    <string name="setting_summary_ui">Cambia il comportamento e UI dell\'app in base alle tue preferenze.</string>
     <string name="setting_filter">Filtro dei segnalibri</string>
-    <string name="setting_filter_summary">Per mostrare la finestra di dialogo dei filtri, premere a lungo sull\'icona del segnalibro nella panoramica. Decidere quali filtri usare.</string>
     <string name="setting_title_fav">Preferito</string>
     <string name="setting_title_searchEngine">Motore di ricerca personalizzato</string>
     <string name="setting_title_userAgent">Agente utente personalizzato</string>
@@ -122,7 +116,6 @@
     <string name="setting_title_hideToolbar">Nascondi barra degli strumenti</string>
     <string name="setting_summary_hide">Usa tutto lo schermo quando scorri sui siti web. Se premi il pulsante Indietro lascerai la modalità a schermo intero.</string>
     <string name="setting_title_behavior">Comportamento</string>
-    <string name="setting_title_nav">Pulsante di navigazione</string>
     <string name="setting_title_confirm_exit">Conferma l\'uscita dal browser</string>
     <string name="setting_summary_confirm_exit">Finestra di conferma per la chiusura del browser.</string>
     <string name="setting_title_confirm_tab_close">Confermare la chiusura delle schede</string>
@@ -131,8 +124,6 @@
     <string name="setting_overView_onStart_title">Mostra all\'avvio</string>
     <string name="setting_overView_onStart_summary">Apri \"Panoramica\" all\'avvio dell\'app.</string>
     <string name="setting_gestures">Gesti</string>
-    <string name="setting_gestures_use_title">Usa gesti</string>
-    <string name="setting_gestures_use_summary">Usa gesti sulla barra degli strumenti e il pulsante \"Navigazione\".</string>
     <string name="setting_title_reopenLastTab">Riapri l\'ultima scheda</string>
     <string name="setting_summary_reopenLastTab">Apri una nuova scheda quando l\'ultima scheda viene chiusa, invece di uscire dal browser.</string>
     <!-- gestures -->
@@ -172,7 +163,6 @@
     <string name="toast_export_successful">Esportato come:&#160;</string>
     <string name="toast_input_empty">Non hai inserito nulla</string>
     <string name="toast_invalid_domain">Dominio non valido</string>
-    <string name="toast_load_error">Non è possibile caricare questo URL</string>
     <string name="toast_webview_forward">Non è possibile caricare il sito successivo</string>
     <string name="toast_permission_sdCard">\"FOSS Browser\" ha bisogno del permesso di \"leggere e scrivere sul tuo storage\". Questo è necessario per scaricare i file, prendere screenshot e fare backup dei tuoi dati.</string>
     <string name="toast_restart">Per applicare le modifiche è necessario riavviare \"FOSS Browser\". Chiudere ora?</string>
@@ -186,15 +176,6 @@
     <string name="whitelist_edit_hint">Dominio</string>
     <string name="whitelist_add">Aggiungi</string>
     <!-- Dialog help -->
-    <string name="dialogHelp_tipTitle">Consigli</string>
-    <string name="dialogHelp_tipText">        &lt;b&gt;Menù e finestre di dialogo&lt;/b&gt;&lt;br&gt;
-        Tutti i menu e le finestre di dialogo sono aperti nella parte inferiore dello schermo. Se la finestra di dialogo è grande vedrai prima solo la parte superiore. Se la scorri verso l\'alto, il resto diventerà visibile. Puoi chiuderli premendo il pulsante indietro, scorrendoli verso il basso o cliccando all\'esterno&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;Premi a lungo&lt;/b&gt;&lt;br&gt;
-        Se premi a lungo l\'icona del menu o il \"pulsante di navigazione\", verrà visualizzata la \"finestra di dialogo attiva\". Se premi a lungo \"Icona segnalibro\", verrà visualizzata la finestra di dialogo \"Filtro\".
-    </string>
-    <string name="dialogHelp_filterText">        Puoi etichettare i tuoi segnalibri con i filtri. In questo modo puoi raggruppare i segnalibri. È possibile aprire la finestra di dialogo del filtro premendo a lungo l\'icona del segnalibro. Se attivi una voce apparirà una finestra di dialogo, dove puoi modificare il nome del filtro.
-    </string>
     <!-- Dialog changelog -->
     <string name="changelog_dialog">        La tua lingua non è ancora supportata? Vuoi tradurre FOSS Browser? O apportare miglioramenti alle traduzioni esistenti? Sentitevi liberi di unirvi a noi su Crowdin: https://crowdin. om/project/foss-browser.&lt;br&gt;&lt;br&gt;
 

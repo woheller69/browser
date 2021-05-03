@@ -46,7 +46,6 @@
     <string name="menu_shareClipboard">Kopiuj do schowka</string>
     <string name="menu_other_searchSite">Wyszukaj na tej stronie</string>
     <string name="menu_other_info">O \"FOSS Browser\"</string>
-    <string name="menu_other_help">Pomoc</string>
     <!-- Dialog -->
     <string name="dialog_title_hint">Tytuł:</string>
     <string name="dialog_extension_hint">Rozszerzenie (np.: \".jpg\"):</string>
@@ -62,10 +61,7 @@
     <string name="setting_label">Preferencje</string>
     <!-- browser setting -->
     <string name="setting_title_browser">Preferencje przeglądarki</string>
-    <string name="setting_title_clear_control">Kontrola danych</string>
     <string name="setting_title_start_control">Kontrola przeglądania</string>
-    <string name="setting_summary_clear_control">Wyczyść dane przeglądarki lub zdecyduj jakie dane zostaną usunięte po opuszczeniu aplikacji.</string>
-    <string name="setting_summary_start_control">Zdecyduj, które elementy przeglądarki FOSS będą włączone na starcie.</string>
     <string name="setting_title_search_engine">Wyszukiwarka</string>
     <string name="setting_summary_search_engine_google">Google</string>
     <string name="setting_summary_search_engine_duckduckgo">DuckDuckGo</string>
@@ -112,9 +108,7 @@
     <string name="setting_title_app">Preferencje aplikacji</string>
     <string name="setting_title_ui">Zachowanie i wygląd</string>
     <string name="setting_title_data">Kopia zapasowa</string>
-    <string name="setting_summary_ui">Dostosuj aplikację do swoich upodobań.</string>
     <string name="setting_filter">Filtr zakładek</string>
-    <string name="setting_filter_summary">Aby wyświetlić okno dialogowe filtrów, naciśnij ikonę zakładki w podglądzie. Zdecyduj, którego filtrów użyjesz.</string>
     <string name="setting_title_fav">Ulubione</string>
     <string name="setting_title_searchEngine">Własna wyszukiwarka</string>
     <string name="setting_title_userAgent">Niestandardowy agent użytkownika</string>
@@ -122,7 +116,6 @@
     <string name="setting_title_hideToolbar">Ukryj dolny panel</string>
     <string name="setting_summary_hide">Pokazuj witryny na całym ekranie. Dotykając przycisku wstecz wyjdziesz z trybu pełnoekranowego.</string>
     <string name="setting_title_behavior">Zachowanie</string>
-    <string name="setting_title_nav">Przycisk nawigacyjny</string>
     <string name="setting_title_confirm_exit">Potwierdzaj zamknięcie przeglądarki</string>
     <string name="setting_summary_confirm_exit">Wyświetlaj komunikat przy zamykaniu apki.</string>
     <string name="setting_title_confirm_tab_close">Potwierdzaj zamknięcie karty</string>
@@ -131,8 +124,6 @@
     <string name="setting_overView_onStart_title">Wysuwaj na starcie</string>
     <string name="setting_overView_onStart_summary">Pokazuj panel \"Wszechglądu\" przy każdym uruchomieniu apki.</string>
     <string name="setting_gestures">Gesty</string>
-    <string name="setting_gestures_use_title">Używaj gestów</string>
-    <string name="setting_gestures_use_summary">Korzystaj z gestów na pasku narzędziowym oraz przycisku nawigacyjnym.</string>
     <string name="setting_title_reopenLastTab">Reopen last tab</string>
     <string name="setting_summary_reopenLastTab">Ponownie otwórz nową kartę, gdy ostatnia karta zostanie zamknięta zamiast zamykać przeglądarkę.</string>
     <!-- gestures -->
@@ -172,7 +163,6 @@
     <string name="toast_export_successful">Wyeksportowano jako:&#160;</string>
     <string name="toast_input_empty">Nie wprowadziłeś niczego</string>
     <string name="toast_invalid_domain">Niewłaściwy adres</string>
-    <string name="toast_load_error">Nie można załadować adresu</string>
     <string name="toast_webview_forward">Nie można załadować kolejnej strony</string>
     <string name="toast_permission_sdCard">\"FOSS Browser\" wymaga uprawnienia na \”odczytywanie i zapisywanie zawartości pamieci\”. Jest ono niezbędne do pobierania plików przez wbudowany manager plików i udostępniania zrzutów ekranu. Jeśli nie chcesz teraz udzielać uprawnienia, możesz to zrobić później w Preferencjach aplikacji.</string>
     <string name="toast_restart">Musisz uruchomić ponownie \"FOSS Browser\”, aby zachować te zmiany. Zamknąć teraz?</string>
@@ -186,15 +176,6 @@
     <string name="whitelist_edit_hint">Adres</string>
     <string name="whitelist_add">Dodaj</string>
     <!-- Dialog help -->
-    <string name="dialogHelp_tipTitle">Porady</string>
-    <string name="dialogHelp_tipText">        &lt;b&gt;Menu i okna dialogowe&lt;/b&gt;&lt;br&gt;
-        Wszystkie menu i okna dialogowe są otwierane na dole ekranu. Jeśli okno dialogowe jest duże, najpierw zobaczysz tylko górną część. Jeśli przesuniesz je w górę, reszta będzie widoczna. Możesz je zamknąć naciskając przycisk wstecz, przesuwając je w dół lub klikając na zewnątrz&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;Długie naciśnięcie&lt;/b&gt;&lt;br&gt;
-        Jeśli długo naciśniesz ikonę menu lub przycisk nawigacji Okno dialogowe \"Szybkie przełączanie\" pojawi się. Jeśli długo naciśniesz ikonę zakładki, pojawi się \"Filtr dialog\".
-    </string>
-    <string name="dialogHelp_filterText">        Możesz oznaczyć zakładki za pomocą filtrów. W ten sposób możesz grupować zakładki. Możesz otworzyć okno dialogowe filtrów przez długie naciśnięcie ikony zakładki. Jeśli aktywujesz wpis, pojawi się okno dialogowe, gdzie możesz edytować nazwę filtra.
-    </string>
     <!-- Dialog changelog -->
     <string name="changelog_dialog">        Twój język nie jest jeszcze obsługiwany? Chcesz przetłumaczyć FOSS Browser? Czy możesz ulepszyć istniejące tłumaczenia? Dołącz do nas na Crowdin: https://crowdin. om/project/foss-browser.&lt;br&gt;&lt;br&gt;
 

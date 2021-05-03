@@ -8,7 +8,7 @@ import android.view.MenuItem;
 
 import java.util.Objects;
 
-import de.baumann.browser.fragment.Fragment_settings_start;
+import de.baumann.browser.fragment.Fragment_settings_Start;
 import de.baumann.browser.R;
 
 public class Settings_StartActivity extends AppCompatActivity {
@@ -25,7 +25,7 @@ public class Settings_StartActivity extends AppCompatActivity {
 
         getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.content_frame, new Fragment_settings_start())
+                .replace(R.id.content_frame, new Fragment_settings_Start())
                 .commit();
     }
 

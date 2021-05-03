@@ -46,7 +46,6 @@
     <string name="menu_shareClipboard">Panoya kopyala</string>
     <string name="menu_other_searchSite">Sitede ara</string>
     <string name="menu_other_info">\"Foss Browser\" hakkında</string>
-    <string name="menu_other_help">Yardım</string>
     <!-- Dialog -->
     <string name="dialog_title_hint">Başlık:</string>
     <string name="dialog_extension_hint">Uzantı (örneğin: \".jpg\"):</string>
@@ -62,10 +61,7 @@
     <string name="setting_label">Ayarlar</string>
     <!-- browser setting -->
     <string name="setting_title_browser">Tarayıcı Ayarları</string>
-    <string name="setting_title_clear_control">Veri Denetimi</string>
     <string name="setting_title_start_control">Başlangıç Denetimi</string>
-    <string name="setting_summary_clear_control">Tarayıcı verilerinizi temizleyin veya uygulamadan ayrıldığınızda	hangi verilerin silineceğine karar verin.</string>
-    <string name="setting_summary_start_control">Başlangıçta FOSS tarayıcısının hangi bileşenlerinin etkinleştirileceğine karar verin.</string>
     <string name="setting_title_search_engine">Arama Motoru</string>
     <string name="setting_summary_search_engine_google">Google</string>
     <string name="setting_summary_search_engine_duckduckgo">DuckDuckGo</string>
@@ -112,9 +108,7 @@
     <string name="setting_title_app">Uygulama Ayarları</string>
     <string name="setting_title_ui">Davranış/Arayüz</string>
     <string name="setting_title_data">Yedekleme</string>
-    <string name="setting_summary_ui">Tercihlerinize uygun olarak uygulamanın davranışını ve arayüzünü değiştirin.</string>
     <string name="setting_filter">Yer imi süzgeci</string>
-    <string name="setting_filter_summary">Süzgeç iletişim kutusunu görüntülemek için, genel bakıştaki yer imi simgesine uzun basın. Hangi süzgeçleri kullanacağınıza karar verin.</string>
     <string name="setting_title_fav">Başlangıç sitesi</string>
     <string name="setting_title_searchEngine">Özel arama motoru</string>
     <string name="setting_title_userAgent">Özel kullanıcı aracısı</string>
@@ -122,7 +116,6 @@
     <string name="setting_title_hideToolbar">Araç çubuğunu gizle</string>
     <string name="setting_summary_hide">Web sitelerinde gezinirken tüm ekranı kullanın. Geri düğmesine basarsanız, tam ekran modundan çıkacaksınız.</string>
     <string name="setting_title_behavior">Davranış</string>
-    <string name="setting_title_nav">Gezinme düğmesi</string>
     <string name="setting_title_confirm_exit">Tarayıcı çıkışını onayla</string>
     <string name="setting_summary_confirm_exit">Tarayıcıyı kapatırken onay iletişim kutusu gösterilir.</string>
     <string name="setting_title_confirm_tab_close">Sekme kapatmayı onayla</string>
@@ -131,8 +124,6 @@
     <string name="setting_overView_onStart_title">Başlangıçta göster</string>
     <string name="setting_overView_onStart_summary">Her uygulama başlangıcında \"Genel Bakış\" açılır.</string>
     <string name="setting_gestures">Hareketler</string>
-    <string name="setting_gestures_use_title">Hareketleri kullan</string>
-    <string name="setting_gestures_use_summary">Araç çubuğunda ve \"Gezinme düğmesi\" üzerinde hareketleri kullanın.</string>
     <string name="setting_title_reopenLastTab">Son sekmeyi yeniden aç</string>
     <string name="setting_summary_reopenLastTab">Tarayıcıdan çıkmak yerine son sekme kapatıldığında yeni bir sekmeyi yeniden açın.</string>
     <!-- gestures -->
@@ -172,7 +163,6 @@
     <string name="toast_export_successful">Aktarıldı:&#160;</string>
     <string name="toast_input_empty">Hiçbir şey girmediniz</string>
     <string name="toast_invalid_domain">Geçersiz etki alanı</string>
-    <string name="toast_load_error">Bu URL yüklenemiyor</string>
     <string name="toast_webview_forward">Bir sonraki site yüklenemiyor</string>
     <string name="toast_permission_sdCard">\"FOSS Tarayıcı\" nın \"deponuzu okuma ve yazma\" iznine ihtiyacı var. Bu, dosyaları indirmek, ekran görüntüleri almak ve verilerinizin yedeğini almak için gereklidir.</string>
     <string name="toast_restart">Değişiklikleri uygulamak için \"FOSS Tarayıcı\"sını yeniden başlatmanız gerekir. Şimdi kapatılsın mı?</string>
@@ -186,15 +176,6 @@
     <string name="whitelist_edit_hint">Etki alanı</string>
     <string name="whitelist_add">Ekle</string>
     <!-- Dialog help -->
-    <string name="dialogHelp_tipTitle">İpuçları</string>
-    <string name="dialogHelp_tipText">        &lt;b&gt;Menüler ve iletişim kutuları&lt;/b&gt;&lt;br&gt;
-        Tüm menüler ve iletilim kutuları ekranın altında açılır.  İletişim kutusu büyükse, önce sadece üst kısmı göreceksiniz.  Yukarı kaydırırsanız, geri kalanı görünür hale gelir. Geri düğmesine basarak, aşağı kaydırarak veya dışını tıklayarak kapatabilirsiniz.&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;Uzun basma&lt;/b&gt;&lt;br&gt;
-        Menü simgesine veya \"Gezinme düğmesi\" ne uzun basarsanız, \"Hızlı geçiş iletişim kutusu\" gösterilecektir.  \"Yer imi simgesine\" uzun basarsanız, \"Süzgeç iletişim kutusu\" görünecektir.
-    </string>
-    <string name="dialogHelp_filterText">        Yer imlerinizi süzgeçlerle etiketleyebilirsiniz. Bu şekilde yer imlerinizi gruplayabilirsiniz. Yer imi simgesine uzun basarak süzgeö iletişim kutusunu açabilirsiniz. Bir girişi etkinleştirirseniz, süzgecin adını düzenleyebileceğiniz bir iletişim kutusu görünecektir.
-    </string>
     <!-- Dialog changelog -->
     <string name="changelog_dialog">        Diliniz henüz desteklenmiyor mu? FOSS tarayıcısını dilinize çevirmek ister misiniz? Veya mevcut çevirilerde iyileştirmeler yapmak ister misiniz? Crowdin\'de bize katılmaktan çekinmeyin: https://crowdin.com/project/foss-browser.&lt;br&gt;&lt;br&gt;
 

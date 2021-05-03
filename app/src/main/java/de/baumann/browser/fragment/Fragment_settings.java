@@ -19,14 +19,13 @@ import androidx.preference.PreferenceGroup;
 import androidx.preference.PreferenceManager;
 
 import java.util.Objects;
-import java.util.prefs.Preferences;
 
-import de.baumann.browser.activity.Settings_ClearActivity;
-import de.baumann.browser.activity.Settings_DataActivity;
-import de.baumann.browser.activity.Settings_FilterActivity;
-import de.baumann.browser.activity.Settings_GestureActivity;
+import de.baumann.browser.activity.Settings_Delete;
+import de.baumann.browser.activity.Settings_Backup;
+import de.baumann.browser.activity.Settings_Filter;
+import de.baumann.browser.activity.Settings_Gesture;
 import de.baumann.browser.activity.Settings_StartActivity;
-import de.baumann.browser.activity.Settings_UIActivity;
+import de.baumann.browser.activity.Settings_UI;
 import de.baumann.browser.unit.HelperUnit;
 import de.baumann.browser.R;
 
@@ -39,22 +38,22 @@ public class Fragment_settings extends PreferenceFragmentCompat implements Share
         initSummary(getPreferenceScreen());
 
        findPreference("settings_filter").setOnPreferenceClickListener(preference -> {
-           Intent intent = new Intent(getActivity(), Settings_FilterActivity.class);
+           Intent intent = new Intent(getActivity(), Settings_Filter.class);
            requireActivity().startActivity(intent);
            return false;
        });
         findPreference("settings_data").setOnPreferenceClickListener(preference -> {
-            Intent intent = new Intent(getActivity(), Settings_DataActivity.class);
+            Intent intent = new Intent(getActivity(), Settings_Backup.class);
             requireActivity().startActivity(intent);
             return false;
         });
         findPreference("settings_ui").setOnPreferenceClickListener(preference -> {
-            Intent intent = new Intent(getActivity(), Settings_UIActivity.class);
+            Intent intent = new Intent(getActivity(), Settings_UI.class);
             requireActivity().startActivity(intent);
             return false;
         });
         findPreference("settings_gesture").setOnPreferenceClickListener(preference -> {
-            Intent intent = new Intent(getActivity(), Settings_GestureActivity.class);
+            Intent intent = new Intent(getActivity(), Settings_Gesture.class);
             requireActivity().startActivity(intent);
             return false;
         });
@@ -64,16 +63,17 @@ public class Fragment_settings extends PreferenceFragmentCompat implements Share
             return false;
         });
         findPreference("settings_clear").setOnPreferenceClickListener(preference -> {
-            Intent intent = new Intent(getActivity(), Settings_ClearActivity.class);
+            Intent intent = new Intent(getActivity(), Settings_Delete.class);
             requireActivity().startActivity(intent);
             return false;
         });
-        findPreference("settings_info").setOnPreferenceClickListener(preference -> {
-            showLicenseDialog(getString(R.string.menu_other_info), getString(R.string.changelog_dialog));
-            return false;
-        });
-        findPreference("settings_help").setOnPreferenceClickListener(preference -> {
-            showLicenseDialog(getString(R.string.dialogHelp_tipTitle), getString(R.string.dialogHelp_tipText));
+        findPreference("settings_info").setOnPreferenceClickListener(preference -> {MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(getContext());
+            builder.setTitle(getString(R.string.menu_other_info));
+            builder.setMessage(HelperUnit.textSpannable(getString(R.string.changelog_dialog)));
+            AlertDialog dialog = builder.create();
+            dialog.show();
+            ((TextView)dialog.findViewById(android.R.id.message)).setMovementMethod(LinkMovementMethod.getInstance());
+            Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
             return false;
         });
     }
@@ -127,15 +127,5 @@ public class Fragment_settings extends PreferenceFragmentCompat implements Share
     public void onPause() {
         super.onPause();
         getPreferenceScreen().getSharedPreferences().unregisterOnSharedPreferenceChangeListener(this);
-    }
-
-    private void showLicenseDialog(String title, String text) {
-        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(getContext());
-        builder.setTitle(title);
-        builder.setMessage(HelperUnit.textSpannable(text));
-        AlertDialog dialog = builder.create();
-        dialog.show();
-        ((TextView)dialog.findViewById(android.R.id.message)).setMovementMethod(LinkMovementMethod.getInstance());
-        Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
     }
 }

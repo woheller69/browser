@@ -2,11 +2,8 @@
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <CheckBoxPreference
-        android:key="sp_gestures_use"
-        android:defaultValue="true"
-        android:title="@string/setting_gestures_use_title"
-        android:summary="@string/setting_gestures_use_summary"/>
+    <Preference
+        android:summary="@string/setting_gesture_hint"/>
 
     <PreferenceCategory android:title="@string/setting_title_toolbar">
 
@@ -40,7 +37,7 @@
 
     </PreferenceCategory>
 
-    <PreferenceCategory android:title="@string/setting_title_nav">
+    <PreferenceCategory android:title="@string/setting_title_toolbar_buttons">
 
         <ListPreference
             android:title="@string/setting_gesture_up"

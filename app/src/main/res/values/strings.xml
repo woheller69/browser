@@ -6,6 +6,8 @@
     <string name="app_name">FOSS Browser</string>
     <string name="app_ok">OK</string>
     <string name="app_cancel">Cancel</string>
+    <string name="app_done">Done</string>
+    <string name="app_error">Error</string>
     <string name="list_empty">List is empty</string>
     <string name="album_title_bookmarks">Bookmarks</string>
     <string name="album_title_history">History</string>
@@ -54,7 +56,6 @@
 
     <string name="menu_other_searchSite">Search on site</string>
     <string name="menu_other_info">About \"FOSS Browser\"</string>
-    <string name="menu_other_help">Help</string>
 
     <!-- Dialog -->
     <string name="dialog_title_hint">Title:</string>
@@ -74,10 +75,7 @@
 
     <!-- browser setting -->
     <string name="setting_title_browser">Browser Settings</string>
-    <string name="setting_title_clear_control">Data Control</string>
     <string name="setting_title_start_control">Start Control</string>
-    <string name="setting_summary_clear_control">Clear your browser data or decide what data will be cleared when you leave the application.</string>
-    <string name="setting_summary_start_control">Decide which components of FOSS browser will be enabled on start.</string>
 
     <string name="setting_title_search_engine">Search Engine</string>
     <string name="setting_summary_search_engine_google">Google</string>
@@ -139,10 +137,8 @@
     <string name="setting_title_app">App Settings</string>
     <string name="setting_title_ui">Behavior/UI</string>
     <string name="setting_title_data">Backup</string>
-    <string name="setting_summary_ui">Change the behavior and ui of the app to suit your preferences.</string>
 
     <string name="setting_filter">Bookmark filter</string>
-    <string name="setting_filter_summary">To show the filter dialog long press on the bookmark icon in the overview. Decide which filters you will use.</string>
 
     <string name="setting_title_fav">Favorite</string>
 
@@ -156,8 +152,6 @@
 
     <string name="setting_title_behavior">Behavior</string>
 
-    <string name="setting_title_nav">Navigation button</string>
-
     <string name="setting_title_confirm_exit">Confirm browser exit</string>
     <string name="setting_summary_confirm_exit">Confirmation dialog when closing browser.</string>
 
@@ -169,14 +163,13 @@
     <string name="setting_overView_onStart_summary">Open the \"Overview\" on every app start.</string>
 
     <string name="setting_gestures">Gestures</string>
-    <string name="setting_gestures_use_title">Use gestures</string>
-    <string name="setting_gestures_use_summary">Use gestures on the toolbar and the \"Navigation button\".</string>
 
     <string name="setting_title_reopenLastTab">Reopen last tab</string>
     <string name="setting_summary_reopenLastTab">Reopen a new tab when the last tab is closed instead of exiting the browser.</string>
 
     <!-- gestures -->
     <string name="setting_title_toolbar">Toolbar</string>
+    <string name="setting_title_toolbar_buttons">Toolbar buttons</string>
     <string name="setting_gesture_up">Swipe up</string>
     <string name="setting_gesture_down">Swipe down</string>
     <string name="setting_gesture_left">Swipe left</string>
@@ -191,6 +184,7 @@
     <string name="setting_gesture_08">Show overview</string>
     <string name="setting_gesture_09">Open new tab</string>
     <string name="setting_gesture_10">Close tab</string>
+    <string name="setting_gesture_hint">Long click the menu button to open fast settings dialog. Long press the home/bookmark/history icon to open the bookmark filter.</string>
 
     <!-- Data -->
     <string name="setting_title_export_bookmarks">Export bookmarks as HTML-file</string>
@@ -216,7 +210,6 @@
     <string name="toast_export_successful">Exported as:&#160;</string>
     <string name="toast_input_empty">You haven\'t input anything</string>
     <string name="toast_invalid_domain">Invalid domain</string>
-    <string name="toast_load_error">Can\'t load this URL</string>
     <string name="toast_webview_forward">Can\'t load next site</string>
     <string name="toast_permission_sdCard">\"FOSS Browser\" needs the permission to \"read and write on your storage\". This is needed to download files, taking screenshots and making backups of your data.</string>
     <string name="toast_restart">You must restart \"FOSS Browser\" to apply changes. Close now?</string>
@@ -235,19 +228,6 @@
 
 
     <!-- Dialog help -->
-
-    <string name="dialogHelp_tipTitle">Tips</string>
-    <string name="dialogHelp_tipText">
-        &lt;b>Menus and dialogs&lt;/b>&lt;br>
-        All menus and dialogs are opened at the bottom of the screen. If the dialog is large you will first see only the upper part. If you swipe it up, the rest will get visible. You can close them by pressing the back button, swiping them down or by clicking outside&lt;br>&lt;br>
-
-        &lt;b>Long press&lt;/b>&lt;br>
-        If you long press the menu icon or the \"Navigation button\", the \"Fast toggle dialog\" will show. If you long press the \"Bookmark icon\", the \"Filter dialog\" will show.
-    </string>
-
-    <string name="dialogHelp_filterText">
-        You can tag your bookmarks with filters. In this way you can group your bookmarks. You can open the filter dialog by long pressing the bookmark icon. If you activate an entry a dialog will appear, where you can edit the name of the filter.
-    </string>
 
 
     <!-- Dialog changelog -->

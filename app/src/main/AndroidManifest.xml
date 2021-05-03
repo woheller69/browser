@@ -90,27 +90,27 @@
             android:label="@string/setting_title_whitelistRemote"
             android:theme="@style/AppTheme"/>
 
-        <activity android:name="de.baumann.browser.activity.Settings_ClearActivity"
-            android:label="@string/setting_title_clear_control"
+        <activity android:name="de.baumann.browser.activity.Settings_Delete"
+            android:label="@string/menu_delete"
             android:theme="@style/AppTheme"/>
 
         <activity android:name="de.baumann.browser.activity.Settings_StartActivity"
             android:label="@string/setting_title_start_control"
             android:theme="@style/AppTheme"/>
 
-        <activity android:name="de.baumann.browser.activity.Settings_DataActivity"
+        <activity android:name="de.baumann.browser.activity.Settings_Backup"
             android:label="@string/setting_title_data"
             android:theme="@style/AppTheme"/>
 
-        <activity android:name="de.baumann.browser.activity.Settings_UIActivity"
+        <activity android:name="de.baumann.browser.activity.Settings_UI"
             android:label="@string/setting_title_ui"
             android:theme="@style/AppTheme"/>
 
-        <activity android:name="de.baumann.browser.activity.Settings_GestureActivity"
+        <activity android:name="de.baumann.browser.activity.Settings_Gesture"
             android:label="@string/setting_gestures"
             android:theme="@style/AppTheme"/>
 
-        <activity android:name="de.baumann.browser.activity.Settings_FilterActivity"
+        <activity android:name="de.baumann.browser.activity.Settings_Filter"
             android:label="@string/setting_filter"
             android:theme="@style/AppTheme"/>
 

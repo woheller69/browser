@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <Preference android:summary="@string/data_summary" />
+
+    <PreferenceCategory android:title="@string/title_appData">
+        <Preference
+            android:key="data_exDB"
+            android:title="@string/setting_title_export_appData"
+            android:summary="@string/setting_summary_export_appData"/>
+        <Preference
+            android:key="data_imDB"
+            android:title="@string/setting_title_import_appData"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/album_title_bookmarks">
+        <Preference
+            android:key="data_exBookmark"
+            android:title="@string/setting_title_export_bookmarks" />
+        <Preference
+            android:key="data_imBookmark"
+            android:title="@string/setting_title_import_bookmarks" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

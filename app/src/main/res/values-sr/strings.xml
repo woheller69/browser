@@ -46,7 +46,6 @@
     <string name="menu_shareClipboard">Копирај</string>
     <string name="menu_other_searchSite">Претражи на страници</string>
     <string name="menu_other_info">About \"FOSS Browser\"</string>
-    <string name="menu_other_help">Помоћ</string>
     <!-- Dialog -->
     <string name="dialog_title_hint">Наслов:</string>
     <string name="dialog_extension_hint">Наставак (на пример \".jpg\"):</string>
@@ -62,10 +61,7 @@
     <string name="setting_label">Подешавања</string>
     <!-- browser setting -->
     <string name="setting_title_browser">Подешавања прегледача</string>
-    <string name="setting_title_clear_control">Управљање подацима</string>
     <string name="setting_title_start_control">Start Control</string>
-    <string name="setting_summary_clear_control">Избришите податке прегледача или изаберите који подаци ће бити избрисани након што угасите апликацију.</string>
-    <string name="setting_summary_start_control">Изаберите који компоненти прегледача ће бити омогућени при подизању.</string>
     <string name="setting_title_search_engine">Претраживач</string>
     <string name="setting_summary_search_engine_google">Google</string>
     <string name="setting_summary_search_engine_duckduckgo">DuckDuckGo</string>
@@ -112,9 +108,7 @@
     <string name="setting_title_app">App Settings</string>
     <string name="setting_title_ui">Behavior/UI</string>
     <string name="setting_title_data">Backup</string>
-    <string name="setting_summary_ui">Change the behavior and ui of the app to suit your preferences.</string>
     <string name="setting_filter">Bookmark filter</string>
-    <string name="setting_filter_summary">To show the filter dialog long press on the bookmark icon in the overview. Decide which filters you will use.</string>
     <string name="setting_title_fav">Favorite</string>
     <string name="setting_title_searchEngine">Custom search engine</string>
     <string name="setting_title_userAgent">Custom user agent</string>
@@ -122,7 +116,6 @@
     <string name="setting_title_hideToolbar">Hide toolbar</string>
     <string name="setting_summary_hide">Use the whole screen when scrolling through websites. If you press the back button you will leave fullscreen mode.</string>
     <string name="setting_title_behavior">Behavior</string>
-    <string name="setting_title_nav">Navigation button</string>
     <string name="setting_title_confirm_exit">Confirm browser exit</string>
     <string name="setting_summary_confirm_exit">Confirmation dialog when closing browser.</string>
     <string name="setting_title_confirm_tab_close">Confirm tab close</string>
@@ -131,8 +124,6 @@
     <string name="setting_overView_onStart_title">Show on start</string>
     <string name="setting_overView_onStart_summary">Open the \"Overview\" on every app start.</string>
     <string name="setting_gestures">Gestures</string>
-    <string name="setting_gestures_use_title">Use gestures</string>
-    <string name="setting_gestures_use_summary">Use gestures on the toolbar and the \"Navigation button\".</string>
     <string name="setting_title_reopenLastTab">Reopen last tab</string>
     <string name="setting_summary_reopenLastTab">Reopen a new tab when the last tab is closed instead of exiting the browser.</string>
     <!-- gestures -->
@@ -172,7 +163,6 @@
     <string name="toast_export_successful">Exported as:&#160;</string>
     <string name="toast_input_empty">You haven\'t input anything</string>
     <string name="toast_invalid_domain">Invalid domain</string>
-    <string name="toast_load_error">Can\'t load this URL</string>
     <string name="toast_webview_forward">Can\'t load next site</string>
     <string name="toast_permission_sdCard">\"FOSS Browser\" needs the permission to \"read and write on your storage\". This is needed to download files, taking screenshots and making backups of your data.</string>
     <string name="toast_restart">You must restart \"FOSS Browser\" to apply changes. Close now?</string>
@@ -186,15 +176,6 @@
     <string name="whitelist_edit_hint">Domain</string>
     <string name="whitelist_add">Add</string>
     <!-- Dialog help -->
-    <string name="dialogHelp_tipTitle">Tips</string>
-    <string name="dialogHelp_tipText">        &lt;b&gt;Menus and dialogs&lt;/b&gt;&lt;br&gt;
-        All menus and dialogs are opened at the bottom of the screen. If the dialog is large you will first see only the upper part. If you swipe it up, the rest will get visible. You can close them by pressing the back button, swiping them down or by clicking outside&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;Long press&lt;/b&gt;&lt;br&gt;
-        If you long press the menu icon or the \"Navigation button\", the \"Fast toggle dialog\" will show. If you long press the \"Bookmark icon\", the \"Filter dialog\" will show.
-    </string>
-    <string name="dialogHelp_filterText">        You can tag your bookmarks with filters. In this way you can group your bookmarks. You can open the filter dialog by long pressing the bookmark icon. If you activate an entry a dialog will appear, where you can edit the name of the filter.
-    </string>
     <!-- Dialog changelog -->
     <string name="changelog_dialog">        Your language isn\'t supported yet? You want to translate FOSS Browser? Or make improvements to existing translations? Feel free to join us on Crowdin: https://crowdin.com/project/foss-browser.&lt;br&gt;&lt;br&gt;
 

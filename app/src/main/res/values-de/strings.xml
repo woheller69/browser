@@ -46,7 +46,6 @@
     <string name="menu_shareClipboard">In Zwischenablage kopieren</string>
     <string name="menu_other_searchSite">Auf Website suchen</string>
     <string name="menu_other_info">Über \"FOSS Browser\"</string>
-    <string name="menu_other_help">Hilfe</string>
     <!-- Dialog -->
     <string name="dialog_title_hint">Titel:</string>
     <string name="dialog_extension_hint">Dateiendung (z.B.: \".jpg\"):</string>
@@ -62,10 +61,7 @@
     <string name="setting_label">Einstellungen</string>
     <!-- browser setting -->
     <string name="setting_title_browser">Browser-Einstellungen</string>
-    <string name="setting_title_clear_control">Datenkontrolle</string>
     <string name="setting_title_start_control">Start-Einstellungen</string>
-    <string name="setting_summary_clear_control">Lösche die Daten des Browsers oder entscheide, welche Daten beim Verlassen der Anwendung automatisch gelöscht werden.</string>
-    <string name="setting_summary_start_control">Entscheide welche Funktionen des Browsers beim Start aktiviert sind.</string>
     <string name="setting_title_search_engine">Suchmaschine</string>
     <string name="setting_summary_search_engine_google">Google</string>
     <string name="setting_summary_search_engine_duckduckgo">DuckDuckGo</string>
@@ -112,9 +108,7 @@
     <string name="setting_title_app">App-Einstellungen</string>
     <string name="setting_title_ui">Verhalten/Oberfläche</string>
     <string name="setting_title_data">Sicherung</string>
-    <string name="setting_summary_ui">Ändere das Verhalten und die Benutzeroberfläche entsprechend deinen Wünschen.</string>
     <string name="setting_filter">Lesezeichen-Filter</string>
-    <string name="setting_filter_summary">Um den Filterdialog anzuzeigen, lange auf das Lesezeichen-Icon in der Übersicht drücken. Entscheide hier, welche Filter du nutzen wirst.</string>
     <string name="setting_title_fav">Startseite</string>
     <string name="setting_title_searchEngine">Nutzerdefinierte Suchmaschine</string>
     <string name="setting_title_userAgent">Eigener Useragent</string>
@@ -122,7 +116,6 @@
     <string name="setting_title_hideToolbar">Toolbar verstecken</string>
     <string name="setting_summary_hide">Benutze den ganzen Bildschirm, wenn du durch Internetseiten scrollst. Wenn du die \"Zurücktaste\" drückst, verlässt du den Vollbildmodus.</string>
     <string name="setting_title_behavior">Verhalten</string>
-    <string name="setting_title_nav">Navigationsknopf</string>
     <string name="setting_title_confirm_exit">Verlassen des Browsers bestätigen</string>
     <string name="setting_summary_confirm_exit">Bestätigungsdialog beim Schließen des Browsers.</string>
     <string name="setting_title_confirm_tab_close">Schließen des Tabs bestätigen</string>
@@ -131,8 +124,6 @@
     <string name="setting_overView_onStart_title">Beim Start anzeigen</string>
     <string name="setting_overView_onStart_summary">Die \"Übersicht\" bei jedem App-Start öffnen.</string>
     <string name="setting_gestures">Gesten</string>
-    <string name="setting_gestures_use_title">Gesten benutzen</string>
-    <string name="setting_gestures_use_summary">Gesten auf der Toolbar benutzen und den \"Navigationsknopf\".</string>
     <string name="setting_title_reopenLastTab">Letzten Tab neu öffnen</string>
     <string name="setting_summary_reopenLastTab">Einen neuen Tab öffnen, anstatt den Browser zu verlassen, wenn der letzte Tab geschlossen wird.</string>
     <!-- gestures -->
@@ -172,7 +163,6 @@
     <string name="toast_export_successful">Exportiert als:&#160;</string>
     <string name="toast_input_empty">Du hast nichts eingegeben</string>
     <string name="toast_invalid_domain">Ungültige Domain</string>
-    <string name="toast_load_error">Kann diese URL nicht laden.</string>
     <string name="toast_webview_forward">Kann die nächste Seite nicht laden.</string>
     <string name="toast_permission_sdCard">\"FOSS Browser\" braucht die Berechtigung \"Zugriff auf den Gerätespeicher\". Dies ist notwendig um Dateien herunterzuladen, Bildschirmfotos zu machen und deine Einstellungen zu sichern.</string>
     <string name="toast_restart">Du musst \"FOSS Browser\" neustarten, damit die Änderungen wirksam werden. Jetzt beenden?</string>
@@ -186,15 +176,6 @@
     <string name="whitelist_edit_hint">Domain</string>
     <string name="whitelist_add">Hinzufügen</string>
     <!-- Dialog help -->
-    <string name="dialogHelp_tipTitle">Tipps</string>
-    <string name="dialogHelp_tipText">        &lt;b&gt;Menüs und Dialoge&lt;/b&gt;&lt;br&gt;
-        Alle Dialoge und Menüs öffnen sich am unteren Bildschirmrand. Durch drücken der Zurücktaste, nach unten wischen oder klickern außerhalb kannst du sie schließen.&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;Lange Drücken&lt;/b&gt;&lt;br&gt;
-        Wenn du den Menüknopf oder den \"Navigation-Knopf\" lange drückst, öffnen sich die Schnelleinstellungen. Wenn du das Lesezeichen-Icon lang drückst, öffnet sich der Filterdialog.
-    </string>
-    <string name="dialogHelp_filterText">Du kannst deinen Lesezeichen eine Farbe als Filter zuordnen. So kannst du viele Lesezeichen in Gruppen ordnen. Den Filterdialog kannst du öffnen, indem du lange auf das Lesezeichen-Icon drückst. Wenn du lange auf einen Eintrag drückst, kannst du ihm einen anderen Namen geben. In den Einstellungen kannst du außerdem einzelne Einträge deaktivieren.
-    </string>
     <!-- Dialog changelog -->
     <string name="changelog_dialog">Deine Sprache wird noch nicht unterstützt? Du möchtest FOSS Browser übersetzen? Oder eine bestehende Übersetzung verbessern? Zögere nicht, uns auf Crowdin beizutreten: https://crowdin.com/project/foss-browser&lt;br&gt;&lt;br&gt;
 

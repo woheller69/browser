@@ -4,6 +4,8 @@
     <string name="app_name">FOSS Browser</string>
     <string name="app_ok">OK</string>
     <string name="app_cancel">Cancelar</string>
+    <string name="app_done">Done</string>
+    <string name="app_error">Error</string>
     <string name="list_empty">A lista está vazia</string>
     <string name="album_title_bookmarks">Favoritos</string>
     <string name="album_title_history">Histórico</string>
@@ -128,6 +130,7 @@
     <string name="setting_summary_reopenLastTab">Ao fechar a última aba, reabrir uma nova ao invés de sair do navegador.</string>
     <!-- gestures -->
     <string name="setting_title_toolbar">Barra de ferramentas</string>
+    <string name="setting_title_toolbar_buttons">Toolbar buttons</string>
     <string name="setting_gesture_up">Deslizar para cima</string>
     <string name="setting_gesture_down">Deslizar para baixo</string>
     <string name="setting_gesture_left">Deslizar para a esquerda</string>
@@ -142,6 +145,7 @@
     <string name="setting_gesture_08">Mostrar visão geral</string>
     <string name="setting_gesture_09">Abrir nova aba</string>
     <string name="setting_gesture_10">Fechar aba</string>
+    <string name="setting_gesture_hint">Long click the menu button to open fast settings dialog. Long press the home/bookmark/history icon to open the bookmark filter.</string>
     <!-- Data -->
     <string name="setting_title_export_bookmarks">Exportar favoritos como arquivo HTML</string>
     <string name="setting_title_import_bookmarks">Importar favoritos</string>

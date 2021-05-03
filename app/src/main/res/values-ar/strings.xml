@@ -4,6 +4,8 @@
     <string name="app_name">المتصفح الحر FOSS Browser</string>
     <string name="app_ok">موافق</string>
     <string name="app_cancel">ألغ</string>
+    <string name="app_done">Done</string>
+    <string name="app_error">Error</string>
     <string name="list_empty">القائمة فارغة</string>
     <string name="album_title_bookmarks">العلامات</string>
     <string name="album_title_history">التأريخ</string>
@@ -128,6 +130,7 @@
     <string name="setting_summary_reopenLastTab">أعد فتح تبويب جديد عند غلق آخر تبويب بدلا من الخروج من المتصفح.</string>
     <!-- gestures -->
     <string name="setting_title_toolbar">شريط الأدوات</string>
+    <string name="setting_title_toolbar_buttons">Toolbar buttons</string>
     <string name="setting_gesture_up">مرر لأعلى</string>
     <string name="setting_gesture_down">مرر لأسفل</string>
     <string name="setting_gesture_left">مرر لليسار</string>
@@ -142,6 +145,7 @@
     <string name="setting_gesture_08">أظهر نظرة عامة</string>
     <string name="setting_gesture_09">افتح تبويبا جديدا</string>
     <string name="setting_gesture_10">أغلق التبويب</string>
+    <string name="setting_gesture_hint">Long click the menu button to open fast settings dialog. Long press the home/bookmark/history icon to open the bookmark filter.</string>
     <!-- Data -->
     <string name="setting_title_export_bookmarks">صدّر العلامات كملف HTML</string>
     <string name="setting_title_import_bookmarks">استورد العلامات</string>

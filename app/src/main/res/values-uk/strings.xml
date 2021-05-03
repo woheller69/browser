@@ -4,6 +4,8 @@
     <string name="app_name">FOSS Browser</string>
     <string name="app_ok">ОК</string>
     <string name="app_cancel">Скасувати</string>
+    <string name="app_done">Done</string>
+    <string name="app_error">Error</string>
     <string name="list_empty">List is empty</string>
     <string name="album_title_bookmarks">Закладка</string>
     <string name="album_title_history">Історія</string>
@@ -128,6 +130,7 @@
     <string name="setting_summary_reopenLastTab">Reopen a new tab when the last tab is closed instead of exiting the browser.</string>
     <!-- gestures -->
     <string name="setting_title_toolbar">Панель інструментів</string>
+    <string name="setting_title_toolbar_buttons">Toolbar buttons</string>
     <string name="setting_gesture_up">Проведіть вгору</string>
     <string name="setting_gesture_down">Проведіть вниз</string>
     <string name="setting_gesture_left">Проведіть пальцем вліво</string>
@@ -142,6 +145,7 @@
     <string name="setting_gesture_08">Показати вигляд</string>
     <string name="setting_gesture_09">Відкрити нову вкладку</string>
     <string name="setting_gesture_10">Закрити вкладку</string>
+    <string name="setting_gesture_hint">Long click the menu button to open fast settings dialog. Long press the home/bookmark/history icon to open the bookmark filter.</string>
     <!-- Data -->
     <string name="setting_title_export_bookmarks">Export bookmarks as HTML-file</string>
     <string name="setting_title_import_bookmarks">Import bookmarks</string>

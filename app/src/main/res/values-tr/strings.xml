@@ -4,6 +4,8 @@
     <string name="app_name">FOSS Tarayıcı</string>
     <string name="app_ok">Tamam</string>
     <string name="app_cancel">İptal et</string>
+    <string name="app_done">Done</string>
+    <string name="app_error">Error</string>
     <string name="list_empty">Liste boş</string>
     <string name="album_title_bookmarks">Yer imleri</string>
     <string name="album_title_history">Geçmiş</string>
@@ -128,6 +130,7 @@
     <string name="setting_summary_reopenLastTab">Tarayıcıdan çıkmak yerine son sekme kapatıldığında yeni bir sekmeyi yeniden açın.</string>
     <!-- gestures -->
     <string name="setting_title_toolbar">Araç çubuğu</string>
+    <string name="setting_title_toolbar_buttons">Toolbar buttons</string>
     <string name="setting_gesture_up">Yukarı kaydır</string>
     <string name="setting_gesture_down">Aşağı kaydır</string>
     <string name="setting_gesture_left">Sola kaydır</string>
@@ -142,6 +145,7 @@
     <string name="setting_gesture_08">Genel bakışı göster</string>
     <string name="setting_gesture_09">Yeni sekme aç</string>
     <string name="setting_gesture_10">Sekmeyi kapat</string>
+    <string name="setting_gesture_hint">Long click the menu button to open fast settings dialog. Long press the home/bookmark/history icon to open the bookmark filter.</string>
     <!-- Data -->
     <string name="setting_title_export_bookmarks">Yer imlerini HTML olarak dışa aktar</string>
     <string name="setting_title_import_bookmarks">Yer işaretlerini içe aktar</string>

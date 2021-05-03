@@ -4,6 +4,8 @@
     <string name="app_name">FOSS Browser</string>
     <string name="app_ok">OK</string>
     <string name="app_cancel">Mégse</string>
+    <string name="app_done">Done</string>
+    <string name="app_error">Error</string>
     <string name="list_empty">A lista üres</string>
     <string name="album_title_bookmarks">Könyvjelzők</string>
     <string name="album_title_history">Előzmények</string>
@@ -128,6 +130,7 @@
     <string name="setting_summary_reopenLastTab">A bőngészőből való kilépés helyett nyisson új lapot, amikor az utolsó lapot is bezárja.</string>
     <!-- gestures -->
     <string name="setting_title_toolbar">Eszköztár</string>
+    <string name="setting_title_toolbar_buttons">Toolbar buttons</string>
     <string name="setting_gesture_up">Csúsztatás felfelé</string>
     <string name="setting_gesture_down">Csúsztatás lefelé</string>
     <string name="setting_gesture_left">Csúsztatás balra</string>
@@ -142,6 +145,7 @@
     <string name="setting_gesture_08">Áttekintés mutatása</string>
     <string name="setting_gesture_09">Új lap megnyitása</string>
     <string name="setting_gesture_10">Lap bezárása</string>
+    <string name="setting_gesture_hint">Long click the menu button to open fast settings dialog. Long press the home/bookmark/history icon to open the bookmark filter.</string>
     <!-- Data -->
     <string name="setting_title_export_bookmarks">Könyvjelzők exportálása HTML-fájlként</string>
     <string name="setting_title_import_bookmarks">Könyvjelzők importálása</string>

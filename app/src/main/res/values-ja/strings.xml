@@ -115,7 +115,7 @@
     <string name="setting_title_searchEngine">カスタム検索エンジン</string>
     <string name="setting_title_userAgent">カスタムユーザーエージェント</string>
     <!-- App behavior -->
-    <string name="setting_title_hideToolbar">ツールバーを非表示</string>
+    <string name="setting_title_hideToolbar">ツールバーを隠す</string>
     <string name="setting_summary_hide">ウェブサイトスクロール時に画面全体を使用します。戻るボタンを押すとフルスクリーンモードを終了します。</string>
     <string name="setting_title_behavior">動作</string>
     <string name="setting_title_confirm_exit">ブラウザ終了の確認</string>
@@ -130,7 +130,7 @@
     <string name="setting_summary_reopenLastTab">ブラウザ終了の代わりに最後のタブを閉じた時に新しいタブを開きます。</string>
     <!-- gestures -->
     <string name="setting_title_toolbar">ツールバー</string>
-    <string name="setting_title_toolbar_buttons">ツールバー ボタン</string>
+    <string name="setting_title_toolbar_buttons">ツールバーのボタン</string>
     <string name="setting_gesture_up">上スワイプ</string>
     <string name="setting_gesture_down">下スワイプ</string>
     <string name="setting_gesture_left">左スワイプ</string>
@@ -174,7 +174,7 @@
     <string name="toast_downloadComplete">ダウンロードが完了しました。ファイルマネージャーを開きますか?</string>
     <string name="toast_unsecured">ウェブサイトは安全でない接続 (\"http\") を使用しています。安全な接続を試してみますか (\"https\")?</string>
     <string name="toast_backup">データをバックアップしますか? これにより古いバックアップは上書きされます。</string>
-    <string name="toast_fav">スタートページとして保存しました</string>
+    <string name="toast_fav">スタートページとして保存しました。</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">消去</string>
     <string name="whitelist_edit_hint">ドメイン</string>

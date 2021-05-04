@@ -41,7 +41,6 @@ import androidx.webkit.WebSettingsCompat;
 import androidx.webkit.WebViewFeature;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
-import com.google.android.material.snackbar.Snackbar;
 
 import android.os.Environment;
 import android.os.Handler;
@@ -69,6 +68,7 @@ import java.util.concurrent.Executors;
 
 import de.baumann.browser.R;
 import de.baumann.browser.view.GridItem;
+import de.baumann.browser.view.NinjaToast;
 
 import static android.content.Context.DOWNLOAD_SERVICE;
 
@@ -163,7 +163,7 @@ public class HelperUnit {
                 String filename1 = title + extension1;
 
                 if (title.isEmpty() || extension1.isEmpty() || !extension1.startsWith(".")) {
-                    Snackbar.make(dialogToCancel.getWindow().getDecorView(), R.string.toast_input_empty, Snackbar.LENGTH_SHORT).show();
+                    NinjaToast.show(activity, activity.getString(R.string.toast_input_empty));
                 } else {
                     if (Build.VERSION.SDK_INT >= 23 && Build.VERSION.SDK_INT < 29) {
                         int hasWRITE_EXTERNAL_STORAGE = activity.checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);

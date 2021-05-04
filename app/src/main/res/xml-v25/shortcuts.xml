@@ -4,7 +4,7 @@
         android:shortcutId="sc_startPage"
         android:enabled="true"
         android:icon="@mipmap/qc_start"
-        android:shortcutShortLabel="@string/album_title_files"
+        android:shortcutShortLabel="@string/album_title_home"
         android:shortcutLongLabel="@string/album_title_home"
         android:shortcutDisabledMessage="@string/album_title_home">
         <intent

@@ -16,6 +16,7 @@ import java.util.Objects;
 
 import de.baumann.browser.R;
 
+@SuppressWarnings("ConstantConditions")
 public class Fragment_settings_Filter extends PreferenceFragmentCompat {
 
     @Override

@@ -1,7 +1,6 @@
 package de.baumann.browser.fragment;
 
 import android.Manifest;
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -14,7 +13,6 @@ import androidx.preference.PreferenceManager;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import android.view.Gravity;
-import android.widget.Toast;
 
 import androidx.preference.PreferenceFragmentCompat;
 
@@ -41,7 +39,7 @@ import de.baumann.browser.unit.BrowserUnit;
 import de.baumann.browser.unit.HelperUnit;
 import de.baumann.browser.view.NinjaToast;
 
-@SuppressWarnings({"ResultOfMethodCallIgnored"})
+@SuppressWarnings({"ResultOfMethodCallIgnored", "ConstantConditions"})
 public class Fragment_settings_Backup extends PreferenceFragmentCompat {
 
     @Override
@@ -266,7 +264,6 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat {
 
     private static void restoreUserPrefs(Context context) {
         final File backupFile = new File(context.getExternalFilesDir(null), "browser_backup/preferenceBackup.xml");
-        String error;
         try {
             SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
             SharedPreferences.Editor editor = sharedPreferences.edit();

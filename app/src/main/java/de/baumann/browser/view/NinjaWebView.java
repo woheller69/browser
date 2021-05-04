@@ -14,8 +14,6 @@ import android.view.*;
 import android.webkit.CookieManager;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
 
 import de.baumann.browser.browser.*;
 import de.baumann.browser.R;

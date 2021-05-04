@@ -8,7 +8,6 @@ import android.view.MenuItem;
 
 import java.util.Objects;
 
-import de.baumann.browser.fragment.Fragment_settings;
 import de.baumann.browser.fragment.Fragment_settings_UI;
 import de.baumann.browser.R;
 

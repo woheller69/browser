@@ -88,7 +88,7 @@
     <string name="setting_title_whitelistCookie">Whitelist cookie</string>
     <string name="setting_title_whitelistRemote">Whitelist remota</string>
     <string name="setting_title_javascript">JavaScript</string>
-    <string name="setting_summary_javascript">Abilita JavaScript. Molti siti web hanno bisogno di JavaScript per la loro funzionalità (menù, caricamento e visualizzazione delle immagini, …). Ma sono anche un rischio e possono essere utilizzati per gli attacchi.</string>
+    <string name="setting_summary_javascript">Abilita JavaScript. Molti siti web hanno bisogno di JavaScript per il loro funzionamento (menù, caricamento e visualizzazione delle immagini, …). Ma allo stesso rappresenta un punto debole che a volte viene sfruttato per attacchi malevoli.</string>
     <string name="setting_title_whitelistJS">Whitelist javaScript</string>
     <string name="setting_title_adblock">AdBlock</string>
     <string name="setting_summary_adblock">Abilita AdBlock per bloccare gli annunci fastidiosi. I siti si caricano anche più velocemente quando il blocco è abilitato.</string>

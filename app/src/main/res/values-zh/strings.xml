@@ -4,8 +4,8 @@
     <string name="app_name">开源浏览器</string>
     <string name="app_ok">确定</string>
     <string name="app_cancel">取消</string>
-    <string name="app_done">Done</string>
-    <string name="app_error">Error</string>
+    <string name="app_done">完成</string>
+    <string name="app_error">错误</string>
     <string name="list_empty">列表为空</string>
     <string name="album_title_bookmarks">书签</string>
     <string name="album_title_history">历史记录</string>
@@ -130,7 +130,7 @@
     <string name="setting_summary_reopenLastTab">当最后一个标签页被关闭时重新打开一个标签页，而不是退出浏览器。</string>
     <!-- gestures -->
     <string name="setting_title_toolbar">工具栏</string>
-    <string name="setting_title_toolbar_buttons">Toolbar buttons</string>
+    <string name="setting_title_toolbar_buttons">工具栏按钮</string>
     <string name="setting_gesture_up">向上滑动</string>
     <string name="setting_gesture_down">向下滑动</string>
     <string name="setting_gesture_left">向左滑动</string>
@@ -145,7 +145,7 @@
     <string name="setting_gesture_08">显示概览</string>
     <string name="setting_gesture_09">打开新标签页</string>
     <string name="setting_gesture_10">关闭标签页</string>
-    <string name="setting_gesture_hint">Long click the menu button to open fast settings dialog. Long press the home/bookmark/history icon to open the bookmark filter.</string>
+    <string name="setting_gesture_hint">长按菜单按钮打开快速设置对话框。长按主页/书签/历史图标打开书签过滤器。</string>
     <!-- Data -->
     <string name="setting_title_export_bookmarks">将书签导出为 HTML文件</string>
     <string name="setting_title_import_bookmarks">导入书签</string>

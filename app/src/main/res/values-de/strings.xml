@@ -145,7 +145,7 @@
     <string name="setting_gesture_08">Übersicht zeigen</string>
     <string name="setting_gesture_09">Neuen Tab öffnen</string>
     <string name="setting_gesture_10">Tab schließen</string>
-    <string name="setting_gesture_hint">Klicke lange auf die Menü-Taste, um den Schnelleinstellungsdialog zu öffnen. Drücke lange das Home/Bookmark/History Symbol, um den Lesezeichen-Filter zu öffnen.</string>
+    <string name="setting_gesture_hint">Klicke lange auf die Menü-Taste, um den Schnelleinstellungsdialog zu öffnen. Drücke lange das Startseiten-/Lesezeichen-/Verlaufs-Symbol, um den Lesezeichen-Filter zu öffnen.</string>
     <!-- Data -->
     <string name="setting_title_export_bookmarks">Lesezeichen als HTML-Datei exportieren</string>
     <string name="setting_title_import_bookmarks">Lesezeichen importieren</string>

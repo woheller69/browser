@@ -1,13 +1,3 @@
-## Important | Wichtig
-
-This is the default startsite of "Foss Browser". You can set every bookmark as startsite by longpressing. You can also set an empty
-startpage via the menu in your bookmarklist. PLEASE READ ALSO THE HELP DIALOG FOR FURTHER INSTRUCTIONS.
-
-Dies ist die Startseite von "FOSS Browser". Jedes Lesezeichen kann durch langes drücken als Startseite gesetzt werden. Im Menü
-deiner Lesezeichenliste kannst du außerdem eine leere Startseite zu setzen. BITTE LIES AUCH DEN HILFE DIALOG FÜR WEITERE HINWEISE.
-
---------
-
 # FOSS Browser
 
 "FOSS Browser" is fully free/libre (as in freedom) Android app. The source code is public. The app also does not need any unnecessary

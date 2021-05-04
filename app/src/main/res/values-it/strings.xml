@@ -97,7 +97,7 @@
     <string name="setting_title_history">Cronologia</string>
     <string name="setting_summary_history">Salva la cronologia dei site web visitati.</string>
     <!-- browser clear -->
-    <string name="data_summary">Tutti i file saranno esportati nella directory \"Android/data/de.baumann.browser/files/browser_backup/\" della tua scheda sd. Questa directory sarà DELETED, se si disinstalla \"FOSS Browser\". Quindi fare un backup regolarmente su un luogo di salvataggio.</string>
+    <string name="data_summary">Tutti i file saranno esportati nella directory \"Android/data/de.baumann.browser/files/browser_backup/\" della tua scheda SD. Questa directory sarà ELIMINATA se si disinstalla \"FOSS Browser\". Si raccomanda pertanto di fare un backup regolarmente su un supporto sicuro.</string>
     <string name="clear_title_quit">Cancella all\'uscita dell\'applicazione</string>
     <string name="clear_summary_quit">Ogni volta che si esce da \"FOSS Browser\" tutti i dati selezionati sopra vengono cancellati.</string>
     <string name="clear_title_cache">Elimina Cache</string>
@@ -181,14 +181,14 @@
     <string name="whitelist_add">Aggiungi</string>
     <!-- Dialog help -->
     <!-- Dialog changelog -->
-    <string name="changelog_dialog">        La tua lingua non è ancora supportata? Vuoi tradurre FOSS Browser? O apportare miglioramenti alle traduzioni esistenti? Sentitevi liberi di unirvi a noi su Crowdin: https://crowdin. om/project/foss-browser.&lt;br&gt;&lt;br&gt;
+    <string name="changelog_dialog">        La tua lingua non è ancora supportata? Vuoi tradurre FOSS Browser? O apportare miglioramenti alle traduzioni esistenti? Sentitevi liberi di unirvi a noi su Crowdin: https://crowdin.com/project/foss-browser.&lt;br&gt;&lt;br&gt;
 
         &lt;b&gt;Sui seguenti siti hai accesso a tutte le informazioni importanti su \"FOSS Browser\". Per favore leggi anche la finestra di aiuto all\'interno dell\'app.&lt;/b&gt;&lt;br&gt;&lt;br&gt;
 
         \u25AA &lt;i&gt;Sito del progetto:&lt;/i&gt; https://github.com/scoute-dich/Browser&lt;br&gt;
-        \u25AA &lt;i&gt;Changelog:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/CHANGELOG. d&lt;br&gt;
-        \u25AA &lt;i&gt;FAQ:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/FAQs. d&lt;br&gt;
-        \u25AA &lt;i&gt;Licenza:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/LICENSE. d&lt;br&gt;
-        \u25AA &lt;i&gt;Privacy:&lt;/i&gt; https://github. om/scoute-dich/browser/blob/master/PRIVACY.md    </string>
+        \u25AA &lt;i&gt;Changelog:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/CHANGELOG.md&lt;br&gt;
+        \u25AA &lt;i&gt;FAQ:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/FAQs.md&lt;br&gt;
+        \u25AA &lt;i&gt;Licenza:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/LICENSE.md&lt;br&gt;
+        \u25AA &lt;i&gt;Privacy:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/PRIVACY.md    </string>
     <!-- License changelog -->
 </resources>

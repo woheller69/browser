@@ -4,8 +4,8 @@
     <string name="app_name">FOSS Tarayıcı</string>
     <string name="app_ok">Tamam</string>
     <string name="app_cancel">İptal et</string>
-    <string name="app_done">Done</string>
-    <string name="app_error">Error</string>
+    <string name="app_done">Tamam</string>
+    <string name="app_error">Hata</string>
     <string name="list_empty">Liste boş</string>
     <string name="album_title_bookmarks">Yer imleri</string>
     <string name="album_title_history">Geçmiş</string>
@@ -130,7 +130,7 @@
     <string name="setting_summary_reopenLastTab">Tarayıcıdan çıkmak yerine son sekme kapatıldığında yeni bir sekmeyi yeniden açın.</string>
     <!-- gestures -->
     <string name="setting_title_toolbar">Araç çubuğu</string>
-    <string name="setting_title_toolbar_buttons">Toolbar buttons</string>
+    <string name="setting_title_toolbar_buttons">Araç Çubuğu düğmesi</string>
     <string name="setting_gesture_up">Yukarı kaydır</string>
     <string name="setting_gesture_down">Aşağı kaydır</string>
     <string name="setting_gesture_left">Sola kaydır</string>

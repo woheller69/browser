@@ -4,7 +4,7 @@
     <string name="app_name">Navegador FOSS</string>
     <string name="app_ok">ok</string>
     <string name="app_cancel">Cancelar</string>
-    <string name="app_done">Done</string>
+    <string name="app_done">Terminado</string>
     <string name="app_error">Error</string>
     <string name="list_empty">La lista está vacía</string>
     <string name="album_title_bookmarks">Marcadores</string>
@@ -130,7 +130,7 @@
     <string name="setting_summary_reopenLastTab">Abrir una nueva pestaña cuando se cierre la última, en lugar de salir del navegador.</string>
     <!-- gestures -->
     <string name="setting_title_toolbar">Barra de herramientas</string>
-    <string name="setting_title_toolbar_buttons">Toolbar buttons</string>
+    <string name="setting_title_toolbar_buttons">Barra de herramientas</string>
     <string name="setting_gesture_up">Deslizar hacia arriba</string>
     <string name="setting_gesture_down">Deslizar hacia abajo</string>
     <string name="setting_gesture_left">Deslizar a la izquierda</string>
@@ -145,7 +145,7 @@
     <string name="setting_gesture_08">Mostrar vista general</string>
     <string name="setting_gesture_09">Abrir nueva pestaña</string>
     <string name="setting_gesture_10">Cerrar pestaña</string>
-    <string name="setting_gesture_hint">Long click the menu button to open fast settings dialog. Long press the home/bookmark/history icon to open the bookmark filter.</string>
+    <string name="setting_gesture_hint">Pulsación larga en el botón de menú para abrir la ventana de ajustes rápidos. Mantenga pulsado el icono home/bookmark/histórico para abrir el filtro de marcadores.</string>
     <!-- Data -->
     <string name="setting_title_export_bookmarks">Exportar marcadores como archivo HTML</string>
     <string name="setting_title_import_bookmarks">Importar marcadores</string>

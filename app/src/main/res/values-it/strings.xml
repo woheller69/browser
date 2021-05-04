@@ -36,7 +36,7 @@
     <string name="menu_edit">Modifica</string>
     <string name="menu_closeTab">Chiudi scheda</string>
     <string name="menu_download">Apri download</string>
-    <string name="menu_fav">Set as start site</string>
+    <string name="menu_fav">Imposta come pagina iniziale</string>
     <string name="menu_sc">Crea collegamento nella Home</string>
     <string name="menu_sort">Ordina per …</string>
     <string name="menu_filter">Filtra per …</string>
@@ -62,7 +62,7 @@
     <!-- Settings -->
     <string name="setting_label">Impostazioni</string>
     <!-- browser setting -->
-    <string name="setting_title_browser">Impostazioni Browser</string>
+    <string name="setting_title_browser">Impostazioni browser</string>
     <string name="setting_title_start_control">Opzioni iniziali</string>
     <string name="setting_title_search_engine">Motore di ricerca</string>
     <string name="setting_summary_search_engine_google">Google</string>
@@ -76,7 +76,7 @@
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_title_font">Dimensione testo</string>
     <string name="setting_title_remote">Contenuti remoti</string>
-    <string name="setting_summary_remote">Abilita i contenuti remoti, che non sono direttamente dal sito web che stai visitando. Disabilitare questo è più sicuro, più veloce e salva il volume dei dati. Ma alcuni contenuti non verranno più visualizzati.</string>
+    <string name="setting_summary_remote">Abilita i contenuti remoti che non provengono direttamente dal sito web che stai visitando. Disabilitare questo è più sicuro, più veloce e riduce il volume dei dati. Ma alcuni contenuti non verranno più visualizzati.</string>
     <string name="setting_title_save_data">Richiedi \'Salva dati\'</string>
     <string name="setting_summary_save_data">Indica ai siti web che preferisci salvare i dati. I siti web supportati caricheranno più velocemente.</string>
     <!-- browser start -->
@@ -88,7 +88,7 @@
     <string name="setting_title_whitelistCookie">Whitelist cookie</string>
     <string name="setting_title_whitelistRemote">Whitelist remota</string>
     <string name="setting_title_javascript">JavaScript</string>
-    <string name="setting_summary_javascript">Abilita JavaScript. Molti siti web hanno bisogno di JavaScript per la loro funzionalità (menu, caricamento e visualizzazione delle immagini, …). Ma sono anche un rischio e possono essere utilizzati per gli attacchi.</string>
+    <string name="setting_summary_javascript">Abilita JavaScript. Molti siti web hanno bisogno di JavaScript per la loro funzionalità (menù, caricamento e visualizzazione delle immagini, …). Ma sono anche un rischio e possono essere utilizzati per gli attacchi.</string>
     <string name="setting_title_whitelistJS">Whitelist javaScript</string>
     <string name="setting_title_adblock">AdBlock</string>
     <string name="setting_summary_adblock">Abilita AdBlock per bloccare gli annunci fastidiosi. I siti si caricano anche più velocemente quando il blocco è abilitato.</string>
@@ -157,10 +157,10 @@
     <!-- Others setting -->
     <string name="setting_title_others">Altro</string>
     <!-- Toast -->
-    <string name="toast_add_to_home_successful">Aggiunto con successo a Home</string>
-    <string name="toast_add_to_home_failed">Impossibile aggiungere a Home</string>
+    <string name="toast_add_to_home_successful">Aggiunto con successo alla pagina iniziale</string>
+    <string name="toast_add_to_home_failed">Impossibile aggiungere alla pagina iniziale</string>
     <string name="toast_add_whitelist_successful">Dominio aggiunto con successo</string>
-    <string name="toast_already_exist_in_home">Già presente in Home</string>
+    <string name="toast_already_exist_in_home">Già presente nella pagina iniziale</string>
     <string name="toast_copy_successful">Copiato con successo</string>
     <string name="toast_delete_successful">Eliminato con successo</string>
     <string name="toast_domain_already_exists">Dominio già presente</string>
@@ -168,13 +168,13 @@
     <string name="toast_input_empty">Non hai inserito nulla</string>
     <string name="toast_invalid_domain">Dominio non valido</string>
     <string name="toast_webview_forward">Non è possibile caricare il sito successivo</string>
-    <string name="toast_permission_sdCard">\"FOSS Browser\" ha bisogno del permesso di \"leggere e scrivere sul tuo storage\". Questo è necessario per scaricare i file, prendere screenshot e fare backup dei tuoi dati.</string>
+    <string name="toast_permission_sdCard">\"FOSS Browser\" ha bisogno del permesso di \"leggere e scrivere nella memoria\". Quest\'autorizzazione è necessaria per scaricare i file, catturare una schermata e fare backup dei tuoi dati.</string>
     <string name="toast_restart">Per applicare le modifiche è necessario riavviare \"FOSS Browser\". Chiudere ora?</string>
     <string name="toast_quit">Vuoi uscire da \"FOSS Browser\"?</string>
     <string name="toast_downloadComplete">Download completato. Aprire File Manager?</string>
     <string name="toast_unsecured">Il sito web utilizza una connessione non protetta (\"http\"). Provare una connessione sicura (\"&lt;unk&gt; \")?</string>
-    <string name="toast_backup">Backup dei dati? Questo sovrascriverà il backup precedente.</string>
-    <string name="toast_fav">Successfully set as start site.</string>
+    <string name="toast_backup">Effettuare il backup dei dati? Questo sovrascriverà il backup precedente.</string>
+    <string name="toast_fav">Aggiunto con successo ai segnalibri.</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">Elimina</string>
     <string name="whitelist_edit_hint">Dominio</string>
@@ -185,7 +185,7 @@
 
         &lt;b&gt;Sui seguenti siti hai accesso a tutte le informazioni importanti su \"FOSS Browser\". Per favore leggi anche la finestra di aiuto all\'interno dell\'app.&lt;/b&gt;&lt;br&gt;&lt;br&gt;
 
-        \u25AA &lt;i&gt;Sito del progetto:&lt;/i&gt; https://github. om/scoute-dich/Browser&lt;br&gt;
+        \u25AA &lt;i&gt;Sito del progetto:&lt;/i&gt; https://github.com/scoute-dich/Browser&lt;br&gt;
         \u25AA &lt;i&gt;Changelog:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/CHANGELOG. d&lt;br&gt;
         \u25AA &lt;i&gt;FAQ:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/FAQs. d&lt;br&gt;
         \u25AA &lt;i&gt;Licenza:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/LICENSE. d&lt;br&gt;

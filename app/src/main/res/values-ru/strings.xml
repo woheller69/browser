@@ -4,8 +4,8 @@
     <string name="app_name">FOSS Browser</string>
     <string name="app_ok">Хорошо</string>
     <string name="app_cancel">Отмена</string>
-    <string name="app_done">Done</string>
-    <string name="app_error">Error</string>
+    <string name="app_done">Готово</string>
+    <string name="app_error">Ошибка</string>
     <string name="list_empty">Список пуст</string>
     <string name="album_title_bookmarks">Закладки</string>
     <string name="album_title_history">История</string>
@@ -130,7 +130,7 @@
     <string name="setting_summary_reopenLastTab">Открыть новую вкладку при закрытии последней вкладки вместо выхода из браузера.</string>
     <!-- gestures -->
     <string name="setting_title_toolbar">Панель инструментов</string>
-    <string name="setting_title_toolbar_buttons">Toolbar buttons</string>
+    <string name="setting_title_toolbar_buttons">Кнопки панели инструментов</string>
     <string name="setting_gesture_up">Свайп вверх</string>
     <string name="setting_gesture_down">Свайп вниз</string>
     <string name="setting_gesture_left">Свайп влево</string>
@@ -145,7 +145,7 @@
     <string name="setting_gesture_08">Показать обзор</string>
     <string name="setting_gesture_09">Открыть новую вкладку</string>
     <string name="setting_gesture_10">Закрыть вкладку</string>
-    <string name="setting_gesture_hint">Long click the menu button to open fast settings dialog. Long press the home/bookmark/history icon to open the bookmark filter.</string>
+    <string name="setting_gesture_hint">Долгое нажатие на кнопку меню, чтобы открыть диалог быстрых настроек. Длительное нажатие на значке home/bookmark/history открывает фильтр закладок.</string>
     <!-- Data -->
     <string name="setting_title_export_bookmarks">Экспортировать закладки в HTML-файл</string>
     <string name="setting_title_import_bookmarks">Импортировать закладки</string>

@@ -4,8 +4,8 @@
     <string name="app_name">FOSS Browser</string>
     <string name="app_ok">OK</string>
     <string name="app_cancel">中止</string>
-    <string name="app_done">Done</string>
-    <string name="app_error">Error</string>
+    <string name="app_done">完了</string>
+    <string name="app_error">エラー</string>
     <string name="list_empty">リストが空です</string>
     <string name="album_title_bookmarks">ブックマーク</string>
     <string name="album_title_history">履歴</string>
@@ -130,7 +130,7 @@
     <string name="setting_summary_reopenLastTab">ブラウザ終了の代わりに最後のタブを閉じた時に新しいタブを開きます。</string>
     <!-- gestures -->
     <string name="setting_title_toolbar">ツールバー</string>
-    <string name="setting_title_toolbar_buttons">Toolbar buttons</string>
+    <string name="setting_title_toolbar_buttons">ツールバー ボタン</string>
     <string name="setting_gesture_up">上スワイプ</string>
     <string name="setting_gesture_down">下スワイプ</string>
     <string name="setting_gesture_left">左スワイプ</string>
@@ -145,7 +145,7 @@
     <string name="setting_gesture_08">一覧画面を表示</string>
     <string name="setting_gesture_09">新しいタブを開く</string>
     <string name="setting_gesture_10">タブを閉じる</string>
-    <string name="setting_gesture_hint">Long click the menu button to open fast settings dialog. Long press the home/bookmark/history icon to open the bookmark filter.</string>
+    <string name="setting_gesture_hint">メニューボタンを長押しすると、高速設定ダイアログが開きます。ホーム/ブックマーク/履歴アイコンを長押しすると、ブックマークフィルタが開きます。</string>
     <!-- Data -->
     <string name="setting_title_export_bookmarks">ブックマークを HTML ファイルとしてエクスポート</string>
     <string name="setting_title_import_bookmarks">ブックマークをインポート</string>

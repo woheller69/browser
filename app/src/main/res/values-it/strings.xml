@@ -4,7 +4,7 @@
     <string name="app_name">FOSS Browser</string>
     <string name="app_ok">OK</string>
     <string name="app_cancel">Annulla</string>
-    <string name="app_done">Done</string>
+    <string name="app_done">Fatti</string>
     <string name="app_error">Error</string>
     <string name="list_empty">Elenco vuoto</string>
     <string name="album_title_bookmarks">Segnalibri</string>
@@ -130,7 +130,7 @@
     <string name="setting_summary_reopenLastTab">Apri una nuova scheda quando l\'ultima scheda viene chiusa, invece di uscire dal browser.</string>
     <!-- gestures -->
     <string name="setting_title_toolbar">Barra degli Strumenti</string>
-    <string name="setting_title_toolbar_buttons">Toolbar buttons</string>
+    <string name="setting_title_toolbar_buttons">Pulsanti barra strumenti</string>
     <string name="setting_gesture_up">Scorri verso l\'alto</string>
     <string name="setting_gesture_down">Scorri verso il basso</string>
     <string name="setting_gesture_left">Scorri a sinistra</string>
@@ -145,7 +145,7 @@
     <string name="setting_gesture_08">Mostra panoramica</string>
     <string name="setting_gesture_09">Apri una nuova scheda</string>
     <string name="setting_gesture_10">Chiudi scheda</string>
-    <string name="setting_gesture_hint">Long click the menu button to open fast settings dialog. Long press the home/bookmark/history icon to open the bookmark filter.</string>
+    <string name="setting_gesture_hint">Fare clic sul pulsante menu per aprire la finestra di dialogo delle impostazioni rapide. Premere a lungo l\'icona Home/segnalibro/cronologia per aprire il filtro dei segnalibri.</string>
     <!-- Data -->
     <string name="setting_title_export_bookmarks">Esporta segnalibri come file HTML</string>
     <string name="setting_title_import_bookmarks">Importa segnalibri</string>

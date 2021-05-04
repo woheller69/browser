@@ -4,8 +4,8 @@
     <string name="app_name">FOSS Browser</string>
     <string name="app_ok">OK</string>
     <string name="app_cancel">Zrušit</string>
-    <string name="app_done">Done</string>
-    <string name="app_error">Error</string>
+    <string name="app_done">Hotový</string>
+    <string name="app_error">Chyba</string>
     <string name="list_empty">Seznam je prázdný</string>
     <string name="album_title_bookmarks">Záložky</string>
     <string name="album_title_history">Historie</string>
@@ -130,7 +130,7 @@
     <string name="setting_summary_reopenLastTab">Znovu otevřít novou kartu po zavření poslední karty namísto ukončení prohlížeče.</string>
     <!-- gestures -->
     <string name="setting_title_toolbar">Panel nástrojů</string>
-    <string name="setting_title_toolbar_buttons">Toolbar buttons</string>
+    <string name="setting_title_toolbar_buttons">Tlačítka panelu nástrojů</string>
     <string name="setting_gesture_up">Přejetí nahoru</string>
     <string name="setting_gesture_down">Přejetí dolů</string>
     <string name="setting_gesture_left">Přejetí vlevo</string>
@@ -145,7 +145,7 @@
     <string name="setting_gesture_08">Zobrazit přehled</string>
     <string name="setting_gesture_09">Otevřít novou kartu</string>
     <string name="setting_gesture_10">Zavřít kartu</string>
-    <string name="setting_gesture_hint">Long click the menu button to open fast settings dialog. Long press the home/bookmark/history icon to open the bookmark filter.</string>
+    <string name="setting_gesture_hint">Dlouhým klepnutím na tlačítko menu otevřete dialogové okno rychlého nastavení. Dlouhým stiskem ikony domovské záložky/historie otevřete filtr záložek.</string>
     <!-- Data -->
     <string name="setting_title_export_bookmarks">Exportovat záložky jako soubor HTML</string>
     <string name="setting_title_import_bookmarks">Importovat záložky</string>

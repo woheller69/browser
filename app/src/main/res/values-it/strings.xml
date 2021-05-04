@@ -84,11 +84,11 @@
     <string name="setting_summary_images">Abilita le immagini di rete. La disattivazione potrebbe essere utile per salvare i dati mobili e caricare i siti Web più velocemente.</string>
     <string name="setting_title_cookie">Cookies</string>
     <string name="setting_summary_cookie_delete">Se attivata, tutti i cookie verranno eliminati. Anche i cookie di siti web di fiducia.</string>
-    <string name="setting_summary_cookie">Abilita i cookie. I cookie sono piccoli file di testo, che vengono memorizzati sul tuo dispositivo. I siti web li utilizzano, ad esempio, per memorizzare le impostazioni utente (ad esempio le impostazioni di ricerca). Ma potrebbero anche essere utilizzati per raccogliere dati personali degli utenti; i cookie di terze parti (raccolgono dati utente per la pubblicità) sono sempre disabilitati.</string>
+    <string name="setting_summary_cookie">Abilita i cookie. I cookie sono piccoli file di testo che vengono memorizzati sul tuo dispositivo. I siti web li utilizzano, ad esempio, per memorizzare le impostazioni utente (ad esempio le impostazioni di ricerca). Ma potrebbero anche essere utilizzati per raccogliere dati personali degli utenti; i cookie di terze parti (che raccolgono dati utente per la pubblicità) sono sempre disabilitati.</string>
     <string name="setting_title_whitelistCookie">Whitelist cookie</string>
     <string name="setting_title_whitelistRemote">Whitelist remota</string>
     <string name="setting_title_javascript">JavaScript</string>
-    <string name="setting_summary_javascript">Abilita JavaScript. Molti siti web hanno bisogno di JavaScript per la loro funzionalità (menù, caricamento e visualizzazione delle immagini, …). Ma sono anche un rischio e possono essere utilizzati per gli attacchi.</string>
+    <string name="setting_summary_javascript">Abilita JavaScript. Molti siti web hanno bisogno di JavaScript per il loro funzionamento (menù, caricamento e visualizzazione delle immagini, …). Ma allo stesso rappresenta un punto debole che a volte viene sfruttato per attacchi malevoli.</string>
     <string name="setting_title_whitelistJS">Whitelist javaScript</string>
     <string name="setting_title_adblock">AdBlock</string>
     <string name="setting_summary_adblock">Abilita AdBlock per bloccare gli annunci fastidiosi. I siti si caricano anche più velocemente quando il blocco è abilitato.</string>

@@ -4,8 +4,8 @@
     <string name="app_name">FOSS Browser</string>
     <string name="app_ok">OK</string>
     <string name="app_cancel">Mégse</string>
-    <string name="app_done">Done</string>
-    <string name="app_error">Error</string>
+    <string name="app_done">Kész</string>
+    <string name="app_error">Hiba</string>
     <string name="list_empty">A lista üres</string>
     <string name="album_title_bookmarks">Könyvjelzők</string>
     <string name="album_title_history">Előzmények</string>
@@ -130,7 +130,7 @@
     <string name="setting_summary_reopenLastTab">A bőngészőből való kilépés helyett nyisson új lapot, amikor az utolsó lapot is bezárja.</string>
     <!-- gestures -->
     <string name="setting_title_toolbar">Eszköztár</string>
-    <string name="setting_title_toolbar_buttons">Toolbar buttons</string>
+    <string name="setting_title_toolbar_buttons">Eszköztár gomb</string>
     <string name="setting_gesture_up">Csúsztatás felfelé</string>
     <string name="setting_gesture_down">Csúsztatás lefelé</string>
     <string name="setting_gesture_left">Csúsztatás balra</string>

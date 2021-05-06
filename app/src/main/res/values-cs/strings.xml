@@ -4,7 +4,7 @@
     <string name="app_name">FOSS Browser</string>
     <string name="app_ok">OK</string>
     <string name="app_cancel">Zrušit</string>
-    <string name="app_done">Hotový</string>
+    <string name="app_done">Hotovo</string>
     <string name="app_error">Chyba</string>
     <string name="list_empty">Seznam je prázdný</string>
     <string name="album_title_bookmarks">Záložky</string>
@@ -137,7 +137,7 @@
     <string name="setting_gesture_right">Přejetí vpravo</string>
     <string name="setting_gesture_01">Žádné gesto</string>
     <string name="setting_gesture_02">Vpřed v Historii</string>
-    <string name="setting_gesture_03">Zpět v historii</string>
+    <string name="setting_gesture_03">Zpět v Historii</string>
     <string name="setting_gesture_04">Posunout nahoru</string>
     <string name="setting_gesture_05">Posunout dolů</string>
     <string name="setting_gesture_06">Přepnout na levou kartu</string>

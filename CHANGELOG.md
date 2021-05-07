@@ -1,4 +1,4 @@
-### v 7.3 (WIP)
+### v 7.3
 - updated: translations (now 16 languages are supported!)
 - updated: build and theme libraries
 - updated: AdBlock-hosts

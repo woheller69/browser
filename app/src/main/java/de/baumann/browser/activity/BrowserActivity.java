@@ -130,7 +130,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
     // Layouts
 
-    private RelativeLayout toolBar;
     private RelativeLayout searchPanel;
     private FrameLayout contentFrame;
     private LinearLayout tab_container;
@@ -155,11 +154,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     private long newIcon;
     private boolean filter;
     private long filterBy;
-    private boolean showOverflow = false;
-    private TextView overflow_title;
 
     private int originalOrientation;
     private boolean searchOnSite;
+    private boolean keyboard;
 
     private ValueCallback<Uri[]> filePathCallback = null;
     private AlbumController currentAlbumController = null;
@@ -184,12 +182,16 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         @Override public void onGlobalLayout() {
             int currentContentHeight = findViewById(Window.ID_ANDROID_CONTENT).getHeight();
             if (mLastContentHeight > currentContentHeight + 100) {
-                //Keyboard is open
+                keyboard = true;
+                omniBox_text.setKeyListener(listener);
                 mLastContentHeight = currentContentHeight;
             } else if (currentContentHeight > mLastContentHeight + 100) {
-                //Keyboard is closed
+                keyboard = false;
                 mLastContentHeight = currentContentHeight;
                 omniBox_text.clearFocus();
+                omniBox_text.setEllipsize(TextUtils.TruncateAt.END);
+                omniBox_text.setKeyListener(null);
+                updateOmniBox();
             }
         }
     };
@@ -239,15 +241,11 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         }
 
         contentFrame = findViewById(R.id.main_content);
-        toolBar = findViewById(R.id.toolBar);
+        contentFrame.getViewTreeObserver().addOnGlobalLayoutListener(keyboardLayoutListener);
 
         if (sp.getBoolean("hideToolbar", true)) {
             contentFrame.setPadding(0,0,0,0);
         }
-
-        initOmniBox();
-        initSearchPanel();
-        initOverview();
 
         new AdBlock(context);
         new Javascript(context);
@@ -270,17 +268,17 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         IntentFilter filter = new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE);
         registerReceiver(downloadReceiver, filter);
-        dispatchIntent(getIntent());
 
         if (sp.getBoolean("start_tabStart", false)){
             showOverview();
         }
 
         mLastContentHeight = findViewById(Window.ID_ANDROID_CONTENT).getHeight();
-        ninjaWebView.getViewTreeObserver().addOnGlobalLayoutListener(keyboardLayoutListener);
 
-        bottomAppBar = findViewById(R.id.bottomAppBar);
-        bottomAppBar.setTitle("Foss Browser");
+        initOmniBox();
+        initSearchPanel();
+        initOverview();
+        dispatchIntent(getIntent());
     }
 
     @Override
@@ -359,9 +357,11 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 if (fullscreenHolder != null || customView != null || videoView != null) {
                     Log.v(TAG, "FOSS Browser in fullscreen mode");
                 } else if (searchPanel.getVisibility() == View.VISIBLE) {
+                    hideKeyboard();
                     searchOnSite = false;
                     searchBox.setText("");
-                    showOmniBox();
+                    searchPanel.setVisibility(View.GONE);
+                    omniBox.setVisibility(View.VISIBLE);
                 } else {
                     if (ninjaWebView.canGoBack()) {
                         ninjaWebView.goBack();
@@ -376,6 +376,9 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
     @Override
     public synchronized void showAlbum(AlbumController controller) {
+        ObjectAnimator animation = ObjectAnimator.ofFloat(bottomAppBar, "translationY", 0);
+        animation.setDuration(getResources().getInteger(android.R.integer.config_shortAnimTime));
+        animation.start();
         if (currentAlbumController != null) {
             currentAlbumController.deactivate();
             View av = (View) controller;
@@ -388,7 +391,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         currentAlbumController = controller;
         currentAlbumController.activate();
         updateOmniBox();
-        HelperUnit.initRendering(ninjaWebView, context);
     }
 
     @Override
@@ -397,7 +399,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         action.open(false);
         List<Record> list = action.listEntries(activity);
         action.close();
-        CompleteAdapter adapter = new CompleteAdapter(this, R.layout.list_item, list);
+        CompleteAdapter adapter = new CompleteAdapter(this, R.layout.item_icon_left, list);
         omniBox_text.setAdapter(adapter);
         adapter.notifyDataSetChanged();
         omniBox_text.setDropDownWidth(context.getResources().getDisplayMetrics().widthPixels);
@@ -507,6 +509,9 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         omniBox_tab = findViewById(R.id.omniBox_tab);
         omniBox_tab.setOnClickListener(v -> showTabView());
 
+        bottomAppBar = findViewById(R.id.bottomAppBar);
+        bottomAppBar.setTitle("Foss Browser");
+
         ImageButton omnibox_overflow = findViewById(R.id.omnibox_overflow);
         omnibox_overflow.setOnClickListener(v -> showOverflow());
         omnibox_overflow.setOnLongClickListener(v -> {
@@ -554,7 +559,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 omniBox_text.setText("");
             } else {
                 hideKeyboard();
-                updateOmniBox();
             }
         });
 
@@ -846,9 +850,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             @Override
             public void onSlide(@NonNull View bottomSheet, float slideOffset) {}
         });
-
-        bottomSheetDialog_OverView.setOnCancelListener(dialog ->
-                updateOmniBox());
     }
 
     private void initSearchPanel() {
@@ -883,7 +884,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             } else {
                 hideKeyboard();
                 searchOnSite = false;
-                showOmniBox();
+                searchPanel.setVisibility(View.GONE);
+                omniBox.setVisibility(View.VISIBLE);
             }
         });
     }
@@ -1112,25 +1114,41 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         ninjaWebView = new NinjaWebView(context);
         ninjaWebView.setBrowserController(this);
         ninjaWebView.setAlbumTitle(title);
+        ninjaWebView.setOnScrollChangeListener((scrollY, oldScrollY) -> {
+            if (!searchOnSite) {
+                hideKeyboard();
+                if (sp.getBoolean("hideToolbar", true)) {
+                    if (scrollY > oldScrollY) {
+                        ObjectAnimator animation = ObjectAnimator.ofFloat(bottomAppBar, "translationY", bottomAppBar.getHeight());
+                        animation.setDuration(getResources().getInteger(android.R.integer.config_shortAnimTime));
+                        animation.start();
+                    } else if (scrollY < oldScrollY){
+                        ObjectAnimator animation = ObjectAnimator.ofFloat(bottomAppBar, "translationY", 0);
+                        animation.setDuration(getResources().getInteger(android.R.integer.config_shortAnimTime));
+                        animation.start();
+                    }
+                }
+            }
+        });
         if (!url.isEmpty()) {
             ninjaWebView.initPreferences(url);
             ninjaWebView.loadUrl(url);
         }
-
-        final View albumView = ninjaWebView.getAlbumView();
         if (currentAlbumController != null) {
             int index = BrowserContainer.indexOf(currentAlbumController) + 1;
             BrowserContainer.add(ninjaWebView, index);
         } else {
             BrowserContainer.add(ninjaWebView);
         }
-        tab_container.addView(albumView, LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-
         if (!foreground) {
             ninjaWebView.deactivate();
         } else {
             showAlbum(ninjaWebView);
         }
+
+        View albumView = ninjaWebView.getAlbumView();
+        tab_container.addView(albumView, LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+        updateOmniBox();
     }
 
     private void closeTabConfirmation(final Runnable okAction) {
@@ -1191,15 +1209,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         }
 
         if (ninjaWebView == currentAlbumController) {
-
-            omniBox_text.setEllipsize(TextUtils.TruncateAt.END);
-            omniBox_text.setKeyListener(null);
-
-            if (Objects.requireNonNull(ninjaWebView.getTitle()).isEmpty()) {
-                omniBox_text.setText(ninjaWebView.getUrl());
-            } else {
-                omniBox_text.setText(ninjaWebView.getTitle());
-            }
             this.cookieHosts = new Cookie(this.context);
             CookieManager manager = CookieManager.getInstance();
             if (cookieHosts.isWhite(ninjaWebView.getUrl()) || sp.getBoolean(context.getString(R.string.sp_cookies), true)) {
@@ -1208,31 +1217,34 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             } else {
                 manager.setAcceptCookie(false);
             }
+            if (!keyboard) {
+                if (Objects.requireNonNull(ninjaWebView.getTitle()).isEmpty()) {
+                    omniBox_text.setText(ninjaWebView.getUrl());
+                } else {
+                    omniBox_text.setText(ninjaWebView.getTitle());
+                }
+            } else {
+                omniBox_text.setText("");
+            }
         } else {
             ninjaWebView = (NinjaWebView) currentAlbumController;
             updateProgress(ninjaWebView.getProgress());
-        }
-
-        if (showOverflow) {
-            if (Objects.requireNonNull(ninjaWebView.getTitle()).isEmpty()) {
-                overflow_title.setText(ninjaWebView.getUrl());
-            } else {
-                overflow_title.setText(ninjaWebView.getTitle());
-            }
         }
     }
 
     @Override
     public synchronized void updateProgress(int progress) {
-        updateOmniBox();
+
         CircularProgressIndicator progressBar = findViewById(R.id.main_progress_bar);
+        progressBar.setOnClickListener(v -> ninjaWebView.stopLoading());
         progressBar.setProgressCompat(progress, true);
+
         if (progress < BrowserUnit.PROGRESS_MAX) {
             progressBar.setVisibility(View.VISIBLE);
-            progressBar.setOnClickListener(v -> ninjaWebView.stopLoading());
             omniBox_tab.setVisibility(View.INVISIBLE);
         } else {
 
+            updateOmniBox();
             progressBar.setVisibility(View.GONE);
             omniBox_tab.setVisibility(View.VISIBLE);
 
@@ -1256,27 +1268,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 });
             }
         }
-
-        ninjaWebView.setOnScrollChangeListener((scrollY, oldScrollY) -> {
-            hideKeyboard();
-            if (sp.getBoolean("hideToolbar", true)) {
-                int height = (int) Math.floor(ninjaWebView.getContentHeight() * ninjaWebView.getResources().getDisplayMetrics().density);
-                int webViewHeight = ninjaWebView.getHeight();
-                int cutoff = height - webViewHeight - 112 * Math.round(getResources().getDisplayMetrics().density);
-                int translation = bottomAppBar.getHeight();
-                if (scrollY > oldScrollY && cutoff >= scrollY) {
-                    if (!searchOnSite)  {
-                        ObjectAnimator animation = ObjectAnimator.ofFloat(bottomAppBar, "translationY", translation);
-                        animation.setDuration(getResources().getInteger(android.R.integer.config_shortAnimTime));
-                        animation.start();
-                    }
-                } else if (scrollY < oldScrollY){
-                    ObjectAnimator animation = ObjectAnimator.ofFloat(bottomAppBar, "translationY", 0);
-                    animation.setDuration(getResources().getInteger(android.R.integer.config_shortAnimTime));
-                    animation.start();
-                }
-            }
-        });
     }
 
     @Override
@@ -1397,7 +1388,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     break;
                 case 1:
                     addAlbum(getString(R.string.app_name), url, false);
-                    updateOmniBox();
                     dialog.cancel();
                     break;
                 case 2:
@@ -1434,7 +1424,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         searchOnSite = true;
         omniBox.setVisibility(View.GONE);
         searchPanel.setVisibility(View.VISIBLE);
-        toolBar.setVisibility(View.VISIBLE);
     }
 
     private void saveBookmark() {
@@ -1482,19 +1471,9 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         }
     }
 
-    private void showOmniBox() {
-        if (!searchOnSite)  {
-            hideKeyboard();
-            searchPanel.setVisibility(View.GONE);
-            omniBox.setVisibility(View.VISIBLE);
-            toolBar.setVisibility(View.VISIBLE);
-        }
-    }
-
     private void showOverflow() {
         hideKeyboard();
 
-        showOverflow = true;
         final String url = ninjaWebView.getUrl();
         final String title = ninjaWebView.getTitle();
 
@@ -1505,10 +1484,13 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         AlertDialog dialog_overflow = builder.create();
         dialog_overflow.show();
         Objects.requireNonNull(dialog_overflow.getWindow()).setGravity(Gravity.BOTTOM);
-        dialog_overflow.setOnCancelListener(dialog -> showOverflow = false);
 
-        overflow_title = dialogView.findViewById(R.id.overflow_title);
-        updateOmniBox();
+        TextView overflow_title = dialogView.findViewById(R.id.overflow_title);
+        if (title.isEmpty()) {
+            overflow_title.setText(url);
+        } else {
+            overflow_title.setText(title);
+        }
 
         ImageButton overflow_reload = dialogView.findViewById(R.id.overflow_reload);
         overflow_reload.setOnClickListener(v -> {
@@ -1755,7 +1737,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     break;
                 case 1:
                     addAlbum(getString(R.string.app_name), url, false);
-                    updateOmniBox();
                     dialog.cancel();
                     break;
                 case 2:

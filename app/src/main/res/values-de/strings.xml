@@ -11,7 +11,6 @@
     <string name="album_title_history">Verlauf</string>
     <string name="album_title_home">Start</string>
     <string name="album_title_tab">Tabs</string>
-    <string name="album_title_files">Dateien</string>
     <string name="search_hint">Suche</string>
     <string name="color_red">Rot</string>
     <string name="color_pink">Pink</string>
@@ -164,7 +163,6 @@
     <string name="toast_copy_successful">Erfolgreich kopiert</string>
     <string name="toast_delete_successful">Erfolgreich gelöscht</string>
     <string name="toast_domain_already_exists">Domain existiert bereits</string>
-    <string name="toast_export_successful">Exportiert als:&#160;</string>
     <string name="toast_input_empty">Du hast nichts eingegeben</string>
     <string name="toast_invalid_domain">Ungültige Domain</string>
     <string name="toast_webview_forward">Kann die nächste Seite nicht laden.</string>

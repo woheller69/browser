@@ -3,7 +3,10 @@ package de.baumann.browser.fragment;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.Html;
+import android.text.SpannableString;
 import android.text.method.LinkMovementMethod;
+import android.text.util.Linkify;
 import android.view.Gravity;
 import android.widget.TextView;
 
@@ -29,7 +32,6 @@ import de.baumann.browser.activity.Settings_UI;
 import de.baumann.browser.unit.HelperUnit;
 import de.baumann.browser.R;
 
-@SuppressWarnings("ConstantConditions")
 public class Fragment_settings extends PreferenceFragmentCompat implements SharedPreferences.OnSharedPreferenceChangeListener {
 
     @Override
@@ -68,9 +70,19 @@ public class Fragment_settings extends PreferenceFragmentCompat implements Share
             requireActivity().startActivity(intent);
             return false;
         });
-        findPreference("settings_info").setOnPreferenceClickListener(preference -> {MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(getContext());
+        findPreference("settings_info").setOnPreferenceClickListener(preference -> {
+
+            SpannableString s;
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+                s = new SpannableString(Html.fromHtml(getString(R.string.changelog_dialog),Html.FROM_HTML_MODE_LEGACY));
+            } else {
+                s = new SpannableString(Html.fromHtml(getString(R.string.changelog_dialog)));
+            }
+            Linkify.addLinks(s, Linkify.WEB_URLS);
+
+            MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(getContext());
             builder.setTitle(getString(R.string.menu_other_info));
-            builder.setMessage(HelperUnit.textSpannable(getString(R.string.changelog_dialog)));
+            builder.setMessage(s);
             AlertDialog dialog = builder.create();
             dialog.show();
             ((TextView)dialog.findViewById(android.R.id.message)).setMovementMethod(LinkMovementMethod.getInstance());

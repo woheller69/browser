@@ -11,7 +11,6 @@
     <string name="album_title_history">履歴</string>
     <string name="album_title_home">ホーム</string>
     <string name="album_title_tab">開かれたタブ</string>
-    <string name="album_title_files">ファイル</string>
     <string name="search_hint">検索</string>
     <string name="color_red">赤</string>
     <string name="color_pink">ピンク</string>
@@ -164,7 +163,6 @@
     <string name="toast_copy_successful">正常にコピーされました</string>
     <string name="toast_delete_successful">正常に削除されました</string>
     <string name="toast_domain_already_exists">ドメインは既に存在します</string>
-    <string name="toast_export_successful">&#160; としてエクスポートしました</string>
     <string name="toast_input_empty">何も入力していません</string>
     <string name="toast_invalid_domain">無効なドメイン</string>
     <string name="toast_webview_forward">次のサイトを読み込めません</string>

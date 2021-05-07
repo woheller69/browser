@@ -11,7 +11,6 @@
     <string name="album_title_history">Історія</string>
     <string name="album_title_home">Головна</string>
     <string name="album_title_tab">Opened Tabs</string>
-    <string name="album_title_files">Файл</string>
     <string name="search_hint">Пошук</string>
     <string name="color_red">Червоний</string>
     <string name="color_pink">Рожевий</string>
@@ -164,7 +163,6 @@
     <string name="toast_copy_successful">Успішно скопійовано</string>
     <string name="toast_delete_successful">Успішно видалено</string>
     <string name="toast_domain_already_exists">Домен вже існує</string>
-    <string name="toast_export_successful">Експортовано як:</string>
     <string name="toast_input_empty">Ви нічого не ввели</string>
     <string name="toast_invalid_domain">Невірний домен</string>
     <string name="toast_webview_forward">Не вдається завантажити наступний сайт</string>

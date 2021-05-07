@@ -1,12 +1,13 @@
 ### v 7.3 (WIP)
-- updated and added translations (now 16 languages are supported!)
-- updated: build libraries
+- updated: translations (now 16 languages are supported!)
+- updated: build and theme libraries
 - updated: AdBlock-hosts
 - updated: Material Components
+- updated: settings activities
+- updated: tab handling
 - removed: multi-window support
 - removed: theme settings
 - new: support of: open target="_blank"
-- new: better tab handling
 - fix: Opting out of metrics collection
 - fix: export bookmarks
 - fix: tab handling
@@ -15,7 +16,7 @@
 - fix: dialogs in landscape
 - fix: alphabetical sorting of overview entries
 - fix: search in toolbar
-- fix: other small fixes
+- fix: many other small fixes
 
 ### v 7.2
 - fix: zooming on websites

@@ -255,17 +255,6 @@ public class HelperUnit {
         }
     }
 
-    public static SpannableString textSpannable (String text) {
-        SpannableString s;
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-            s = new SpannableString(Html.fromHtml(text,Html.FROM_HTML_MODE_LEGACY));
-        } else {
-            s = new SpannableString(Html.fromHtml(text));
-        }
-        Linkify.addLinks(s, Linkify.WEB_URLS);
-        return s;
-    }
-
     private static final float[] NEGATIVE_COLOR = {
             -1.0f, 0, 0, 0, 255, // Red
             0, -1.0f, 0, 0, 255, // Green
@@ -378,7 +367,7 @@ public class HelperUnit {
 
             handler.post(() -> {
                 //UI Thread work here
-                Toast.makeText(context, context.getString(R.string.toast_export_successful), Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, context.getString(R.string.app_done), Toast.LENGTH_SHORT).show();
             });
         });
     }
@@ -408,7 +397,7 @@ public class HelperUnit {
 
             handler.post(() -> {
                 //UI Thread work here
-                Toast.makeText(context, context.getString(R.string.toast_export_successful), Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, context.getString(R.string.app_done), Toast.LENGTH_SHORT).show();
             });
         });
     }

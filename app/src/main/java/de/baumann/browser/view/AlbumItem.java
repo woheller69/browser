@@ -43,7 +43,7 @@ class AlbumItem {
 
     @SuppressLint("InflateParams")
     private void initUI() {
-        albumView = LayoutInflater.from(context).inflate(R.layout.whitelist_item, null, false);
+        albumView = LayoutInflater.from(context).inflate(R.layout.item_icon_right, null, false);
         albumView.setOnLongClickListener(v -> {
             browserController.removeAlbum(albumController);
             return true;

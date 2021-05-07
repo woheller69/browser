@@ -45,7 +45,7 @@ public class Whitelist_Javascript extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
-        setContentView(R.layout.activity_whitelist);
+        setContentView(R.layout.activity_settings_whitelist);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);

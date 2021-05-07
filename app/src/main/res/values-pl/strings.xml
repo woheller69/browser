@@ -11,7 +11,6 @@
     <string name="album_title_history">Historia</string>
     <string name="album_title_home">Witryny</string>
     <string name="album_title_tab">Otwarte karty</string>
-    <string name="album_title_files">Pliki</string>
     <string name="search_hint">Wyszukaj</string>
     <string name="color_red">Czerwień</string>
     <string name="color_pink">Róż</string>
@@ -164,7 +163,6 @@
     <string name="toast_copy_successful">Kopiowanie zakończone</string>
     <string name="toast_delete_successful">Usuwanie zakończone</string>
     <string name="toast_domain_already_exists">Ten adres witryny już istnieje</string>
-    <string name="toast_export_successful">Wyeksportowano jako:&#160;</string>
     <string name="toast_input_empty">Nie wprowadziłeś niczego</string>
     <string name="toast_invalid_domain">Niewłaściwy adres</string>
     <string name="toast_webview_forward">Nie można załadować kolejnej strony</string>

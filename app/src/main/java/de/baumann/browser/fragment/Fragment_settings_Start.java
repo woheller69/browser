@@ -10,7 +10,6 @@ import de.baumann.browser.activity.Whitelist_Javascript;
 import de.baumann.browser.R;
 import de.baumann.browser.activity.Whitelist_Remote;
 
-@SuppressWarnings("ConstantConditions")
 public class Fragment_settings_Start extends PreferenceFragmentCompat {
 
     @Override

@@ -20,9 +20,9 @@ public class WhitelistAdapter extends ArrayAdapter<String> {
     private final List<String> list;
 
     public WhitelistAdapter(Context context, List<String> list){
-        super(context, R.layout.whitelist_item, list);
+        super(context, R.layout.item_icon_right, list);
         this.context = context;
-        this.layoutResId = R.layout.whitelist_item;
+        this.layoutResId = R.layout.item_icon_right;
         this.list = list;
     }
 

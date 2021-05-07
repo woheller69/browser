@@ -11,7 +11,6 @@
     <string name="album_title_history">Előzmények</string>
     <string name="album_title_home">Kezdőlap</string>
     <string name="album_title_tab">Megnyitott lapok</string>
-    <string name="album_title_files">Fájlok</string>
     <string name="search_hint">Keresés</string>
     <string name="color_red">Piros</string>
     <string name="color_pink">Rózsaszín</string>
@@ -164,7 +163,6 @@
     <string name="toast_copy_successful">Sikeresen másolva</string>
     <string name="toast_delete_successful">Sikeresen törölve</string>
     <string name="toast_domain_already_exists">A domain már létezik</string>
-    <string name="toast_export_successful">Exportálva mint:&#160;</string>
     <string name="toast_input_empty">Nem írt be semmit</string>
     <string name="toast_invalid_domain">Érvénytelen domain</string>
     <string name="toast_webview_forward">Nem tölthető be a következő oldal</string>

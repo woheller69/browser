@@ -2,9 +2,9 @@
 
 <resources>
 
-    <color name="primaryColor">#8bc34a</color>
+    <color name="primaryColor">#7cb342</color>
     <color name="primaryDarkColor">#424242</color>
-    <color name="secondaryColor">#8bc34a</color>
+    <color name="secondaryColor">#7cb342</color>
 
     <color name="color_light">#fafafa</color>
     <color name="color_hint">#BDBDBD</color>

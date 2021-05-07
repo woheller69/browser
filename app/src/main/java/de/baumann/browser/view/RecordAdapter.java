@@ -21,9 +21,9 @@ public class RecordAdapter extends ArrayAdapter<Record> {
     private final List<Record> list;
 
     public RecordAdapter(Context context, List<Record> list) {
-        super(context, R.layout.list_item, list);
+        super(context, R.layout.item_icon_left, list);
         this.context = context;
-        this.layoutResId = R.layout.list_item;
+        this.layoutResId = R.layout.item_icon_left;
         this.list = list;
     }
 

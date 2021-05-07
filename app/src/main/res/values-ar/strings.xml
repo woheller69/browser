@@ -11,7 +11,6 @@
     <string name="album_title_history">التأريخ</string>
     <string name="album_title_home">الصفحة الرئيسية</string>
     <string name="album_title_tab">الألسنة المفتوحة</string>
-    <string name="album_title_files">ملفات</string>
     <string name="search_hint">ابحث</string>
     <string name="color_red">أحمر</string>
     <string name="color_pink">وردي</string>
@@ -164,7 +163,6 @@
     <string name="toast_copy_successful">نُسخ بنجاح</string>
     <string name="toast_delete_successful">حُذف بنجاح</string>
     <string name="toast_domain_already_exists">النطاق موجود مسبقا</string>
-    <string name="toast_export_successful">صُدّر كـ:&#160;</string>
     <string name="toast_input_empty">لم تُدخل أي شيء</string>
     <string name="toast_invalid_domain">نطاق غير سليم</string>
     <string name="toast_webview_forward">لا يمكن تحميل الموقع التالي</string>

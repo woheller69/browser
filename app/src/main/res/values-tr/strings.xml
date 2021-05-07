@@ -11,7 +11,6 @@
     <string name="album_title_history">Geçmiş</string>
     <string name="album_title_home">Ana sayfa</string>
     <string name="album_title_tab">Açılan sekmeler</string>
-    <string name="album_title_files">Dosyalar</string>
     <string name="search_hint">Ara</string>
     <string name="color_red">Kırmızı</string>
     <string name="color_pink">Pembe</string>
@@ -164,7 +163,6 @@
     <string name="toast_copy_successful">Başarıyla kopyalandı</string>
     <string name="toast_delete_successful">Başarıyla silindi</string>
     <string name="toast_domain_already_exists">Etki alanı zaten mevcut</string>
-    <string name="toast_export_successful">Aktarıldı:&#160;</string>
     <string name="toast_input_empty">Hiçbir şey girmediniz</string>
     <string name="toast_invalid_domain">Geçersiz etki alanı</string>
     <string name="toast_webview_forward">Bir sonraki site yüklenemiyor</string>

@@ -11,7 +11,6 @@
     <string name="album_title_history">Historie</string>
     <string name="album_title_home">Plocha</string>
     <string name="album_title_tab">Otevřené karty</string>
-    <string name="album_title_files">Soubory</string>
     <string name="search_hint">Hledat</string>
     <string name="color_red">Červená</string>
     <string name="color_pink">Růžová</string>
@@ -164,7 +163,6 @@
     <string name="toast_copy_successful">Úspěšně zkopírováno</string>
     <string name="toast_delete_successful">Úspěšně smazáno</string>
     <string name="toast_domain_already_exists">Doména již existuje</string>
-    <string name="toast_export_successful">Exportováno jako&#160;</string>
     <string name="toast_input_empty">Nic jste nevložili</string>
     <string name="toast_invalid_domain">Neplatná doména</string>
     <string name="toast_webview_forward">Nelze načíst další stránku</string>

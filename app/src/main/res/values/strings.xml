@@ -13,7 +13,6 @@
     <string name="album_title_history">History</string>
     <string name="album_title_home">Home</string>
     <string name="album_title_tab">Opened Tabs</string>
-    <string name="album_title_files">Files</string>
     <string name="search_hint">Search</string>
 
     <string name="color_red">Red</string>
@@ -207,7 +206,6 @@
     <string name="toast_copy_successful">Successfully copied</string>
     <string name="toast_delete_successful">Successfully deleted</string>
     <string name="toast_domain_already_exists">Domain already exists</string>
-    <string name="toast_export_successful">Exported as:&#160;</string>
     <string name="toast_input_empty">You haven\'t input anything</string>
     <string name="toast_invalid_domain">Invalid domain</string>
     <string name="toast_webview_forward">Can\'t load next site</string>

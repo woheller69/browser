@@ -11,7 +11,6 @@
     <string name="album_title_history">History</string>
     <string name="album_title_home">Home</string>
     <string name="album_title_tab">已開啟的分頁</string>
-    <string name="album_title_files">Files</string>
     <string name="search_hint">Search</string>
     <string name="color_red">Red</string>
     <string name="color_pink">Pink</string>
@@ -164,7 +163,6 @@
     <string name="toast_copy_successful">複製成功</string>
     <string name="toast_delete_successful">刪除成功</string>
     <string name="toast_domain_already_exists">域名已存在</string>
-    <string name="toast_export_successful">已匯出至：&#160;</string>
     <string name="toast_input_empty">你尚未輸入任何內容</string>
     <string name="toast_invalid_domain">無效域名</string>
     <string name="toast_webview_forward">無法載入下個網頁</string>

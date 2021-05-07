@@ -35,8 +35,7 @@
         <activity android:name="de.baumann.browser.activity.BrowserActivity"
                   android:label="@string/app_name"
                   android:launchMode="singleTask"
-                  android:configChanges="orientation|keyboardHidden|screenSize|uiMode"
-                  android:windowSoftInputMode="adjustResize|stateAlwaysHidden"
+                  android:configChanges="orientation|screenSize|uiMode"
                   android:theme="@style/AppTheme">
 
             <intent-filter

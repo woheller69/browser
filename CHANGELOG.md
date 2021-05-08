@@ -1,3 +1,6 @@
+### v 7.4 (WIP)
+- fix: keyboard not showing on large input fields
+
 ### v 7.3
 - updated: translations (now 16 languages are supported!)
 - updated: build and theme libraries

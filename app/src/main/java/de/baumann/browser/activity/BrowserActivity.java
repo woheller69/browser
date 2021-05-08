@@ -183,14 +183,11 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             int currentContentHeight = findViewById(Window.ID_ANDROID_CONTENT).getHeight();
             if (mLastContentHeight > currentContentHeight + 100) {
                 keyboard = true;
-                omniBox_text.setKeyListener(listener);
                 mLastContentHeight = currentContentHeight;
             } else if (currentContentHeight > mLastContentHeight + 100) {
                 keyboard = false;
                 mLastContentHeight = currentContentHeight;
                 omniBox_text.clearFocus();
-                omniBox_text.setEllipsize(TextUtils.TruncateAt.END);
-                omniBox_text.setKeyListener(null);
                 updateOmniBox();
             }
         }
@@ -558,6 +555,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 omniBox_text.setKeyListener(listener);
                 omniBox_text.setText("");
             } else {
+                omniBox_text.clearFocus();
+                omniBox_text.setEllipsize(TextUtils.TruncateAt.END);
                 hideKeyboard();
             }
         });
@@ -1116,7 +1115,9 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         ninjaWebView.setAlbumTitle(title);
         ninjaWebView.setOnScrollChangeListener((scrollY, oldScrollY) -> {
             if (!searchOnSite) {
-                hideKeyboard();
+                if (omniBox_text.hasFocus()) {
+                    omniBox_text.clearFocus();
+                }
                 if (sp.getBoolean("hideToolbar", true)) {
                     if (scrollY > oldScrollY) {
                         ObjectAnimator animation = ObjectAnimator.ofFloat(bottomAppBar, "translationY", bottomAppBar.getHeight());

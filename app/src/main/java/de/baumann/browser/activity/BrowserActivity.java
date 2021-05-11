@@ -61,6 +61,7 @@ import android.view.WindowInsets;
 import android.view.WindowInsetsController;
 import android.view.inputmethod.InputMethodManager;
 import android.webkit.CookieManager;
+import android.webkit.CookieSyncManager;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
@@ -266,16 +267,16 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         IntentFilter filter = new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE);
         registerReceiver(downloadReceiver, filter);
 
-        if (sp.getBoolean("start_tabStart", false)){
-            showOverview();
-        }
-
         mLastContentHeight = findViewById(Window.ID_ANDROID_CONTENT).getHeight();
 
         initOmniBox();
         initSearchPanel();
         initOverview();
         dispatchIntent(getIntent());
+
+        if (sp.getBoolean("start_tabStart", false)){
+            showOverview();
+        }
     }
 
     @Override
@@ -408,7 +409,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     }
 
     private void showOverview() {
-        initOverview();
         updateOmniBox();
         bottomSheetDialog_OverView.show();
     }
@@ -556,6 +556,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 omniBox_text.setText("");
             } else {
                 omniBox_text.clearFocus();
+                omniBox_text.setKeyListener(null);
                 omniBox_text.setEllipsize(TextUtils.TruncateAt.END);
                 hideKeyboard();
             }
@@ -1360,12 +1361,12 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         dialog.show();
         Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
 
-        GridItem item_01 = new GridItem(0, getString(R.string.main_menu_new_tabOpen),  0);
-        GridItem item_02 = new GridItem(0, getString(R.string.main_menu_new_tab),  0);
-        GridItem item_03 = new GridItem(0, getString(R.string.menu_share_link),  0);
-        GridItem item_04 = new GridItem(0, getString(R.string.menu_open_with),  0);
-        GridItem item_05 = new GridItem(0, getString(R.string.menu_save_as),  0);
-        GridItem item_06 = new GridItem(0, getString(R.string.menu_save_home),  0);
+        GridItem item_01 = new GridItem(R.drawable.icon_close, getString(R.string.main_menu_new_tabOpen),  0);
+        GridItem item_02 = new GridItem(R.drawable.icon_close, getString(R.string.main_menu_new_tab),  0);
+        GridItem item_03 = new GridItem(R.drawable.icon_close, getString(R.string.menu_share_link),  0);
+        GridItem item_04 = new GridItem(R.drawable.icon_close, getString(R.string.menu_open_with),  0);
+        GridItem item_05 = new GridItem(R.drawable.icon_close, getString(R.string.menu_save_as),  0);
+        GridItem item_06 = new GridItem(R.drawable.icon_close, getString(R.string.menu_save_home),  0);
 
         final List<GridItem> gridList = new LinkedList<>();
 
@@ -1702,10 +1703,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         dialog.show();
         Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
 
-        GridItem item_01 = new GridItem(0, getString(R.string.main_menu_new_tabOpen),  0);
-        GridItem item_02 = new GridItem(0, getString(R.string.main_menu_new_tab),  0);
-        GridItem item_03 = new GridItem(0, getString(R.string.menu_delete),  0);
-        GridItem item_04 = new GridItem(0, getString(R.string.menu_edit),  0);
+        GridItem item_01 = new GridItem(R.drawable.icon_close, getString(R.string.main_menu_new_tabOpen),  0);
+        GridItem item_02 = new GridItem(R.drawable.icon_close, getString(R.string.main_menu_new_tab),  0);
+        GridItem item_03 = new GridItem(R.drawable.icon_close, getString(R.string.menu_delete),  0);
+        GridItem item_04 = new GridItem(R.drawable.icon_close, getString(R.string.menu_edit),  0);
 
         final List<GridItem> gridList = new LinkedList<>();
 

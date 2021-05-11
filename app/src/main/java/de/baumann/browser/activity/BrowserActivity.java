@@ -409,6 +409,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     }
 
     private void showOverview() {
+        initOmniBox();
         updateOmniBox();
         bottomSheetDialog_OverView.show();
     }

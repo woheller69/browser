@@ -61,7 +61,6 @@ import android.view.WindowInsets;
 import android.view.WindowInsetsController;
 import android.view.inputmethod.InputMethodManager;
 import android.webkit.CookieManager;
-import android.webkit.CookieSyncManager;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
@@ -128,6 +127,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     private VideoView videoView;
     private ImageButton omniBox_tab;
     private KeyListener listener;
+    private BadgeDrawable badgeDrawable;
 
     // Layouts
 
@@ -189,7 +189,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 keyboard = false;
                 mLastContentHeight = currentContentHeight;
                 omniBox_text.clearFocus();
-                updateOmniBox();
             }
         }
     };
@@ -270,6 +269,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         mLastContentHeight = findViewById(Window.ID_ANDROID_CONTENT).getHeight();
 
         initOmniBox();
+        initTabDialog();
         initSearchPanel();
         initOverview();
         dispatchIntent(getIntent());
@@ -374,9 +374,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
     @Override
     public synchronized void showAlbum(AlbumController controller) {
-        ObjectAnimator animation = ObjectAnimator.ofFloat(bottomAppBar, "translationY", 0);
-        animation.setDuration(getResources().getInteger(android.R.integer.config_shortAnimTime));
-        animation.start();
         if (currentAlbumController != null) {
             currentAlbumController.deactivate();
             View av = (View) controller;
@@ -409,8 +406,14 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     }
 
     private void showOverview() {
-        initOmniBox();
         updateOmniBox();
+        if (overViewTab.equals(getString(R.string.album_title_home))) {
+            bottom_navigation.setSelectedItemId(R.id.page_1);
+        } else if (overViewTab.equals(getString(R.string.album_title_bookmarks))) {
+            bottom_navigation.setSelectedItemId(R.id.page_2);
+        } else if (overViewTab.equals(getString(R.string.album_title_history))) {
+            bottom_navigation.setSelectedItemId(R.id.page_3);
+        }
         bottomSheetDialog_OverView.show();
     }
 
@@ -495,20 +498,53 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         }
     }
 
-    @SuppressLint("ClickableViewAccessibility")
+    private void initTabDialog () {
+        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
+        View dialogView = View.inflate(context, R.layout.dialog_tabs, null);
+
+        tab_container = dialogView.findViewById(R.id.tab_container);
+        tab_openOverView = dialogView.findViewById(R.id.tab_openOverView);
+        tab_openOverView.setOnClickListener(view -> {
+            dialog_tabPreview.cancel();
+            showOverview();
+        });
+        tab_openOverView.setOnLongClickListener(v -> {
+            bottom_navigation.setSelectedItemId(R.id.page_2);
+            hideTabView();
+            showOverview();
+            show_dialogFilter();
+            return false;
+        });
+
+        builder.setView(dialogView);
+        dialog_tabPreview = builder.create();
+        Objects.requireNonNull(dialog_tabPreview.getWindow()).setGravity(Gravity.BOTTOM);
+        dialog_tabPreview.setOnCancelListener(dialog ->
+                dialog_tabPreview.hide());
+    }
+
+    @SuppressLint({"ClickableViewAccessibility", "UnsafeExperimentalUsageError"})
     private void initOmniBox() {
 
         omniBox = findViewById(R.id.omniBox);
         omniBox_text = findViewById(R.id.omniBox_input);
         listener = omniBox_text.getKeyListener(); // Save the default KeyListener!!!
+
         omniBox_text.setKeyListener(null); // Disable input
         omniBox_text.setEllipsize(TextUtils.TruncateAt.END);
         omniBox_overview = findViewById(R.id.omnibox_overview);
         omniBox_tab = findViewById(R.id.omniBox_tab);
         omniBox_tab.setOnClickListener(v -> showTabView());
 
+
         bottomAppBar = findViewById(R.id.bottomAppBar);
         bottomAppBar.setTitle("Foss Browser");
+
+        badgeDrawable = BadgeDrawable.create(context);
+        badgeDrawable.setBadgeGravity(BadgeDrawable.TOP_END);
+        badgeDrawable.setNumber(BrowserContainer.size());
+        badgeDrawable.setBackgroundColor(getResources().getColor(R.color.primaryColor));
+        BadgeUtils.attachBadgeDrawable(badgeDrawable, omniBox_tab, findViewById(R.id.layout));
 
         ImageButton omnibox_overflow = findViewById(R.id.omnibox_overflow);
         omnibox_overflow.setOnClickListener(v -> showOverflow());
@@ -556,10 +592,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 omniBox_text.setKeyListener(listener);
                 omniBox_text.setText("");
             } else {
-                omniBox_text.clearFocus();
                 omniBox_text.setKeyListener(null);
                 omniBox_text.setEllipsize(TextUtils.TruncateAt.END);
                 hideKeyboard();
+                updateOmniBox();
             }
         });
 
@@ -572,28 +608,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             return false;
         });
 
-        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
-        View dialogView = View.inflate(context, R.layout.dialog_tabs, null);
 
-        tab_container = dialogView.findViewById(R.id.tab_container);
-        tab_openOverView = dialogView.findViewById(R.id.tab_openOverView);
-        tab_openOverView.setOnClickListener(view -> {
-            dialog_tabPreview.cancel();
-            showOverview();
-        });
-        tab_openOverView.setOnLongClickListener(v -> {
-            bottom_navigation.setSelectedItemId(R.id.page_2);
-            hideTabView();
-            showOverview();
-            show_dialogFilter();
-            return false;
-        });
-        
-        builder.setView(dialogView);
-        dialog_tabPreview = builder.create();
-        Objects.requireNonNull(dialog_tabPreview.getWindow()).setGravity(Gravity.BOTTOM);
-        dialog_tabPreview.setOnCancelListener(dialog ->
-                dialog_tabPreview.hide());
     }
 
     private void performGesture (String gesture) {
@@ -838,6 +853,17 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             show_dialogFilter();
             return true;
         });
+
+        bottom_navigation.getOrCreateBadge(R.id.page_0).setNumber(BrowserContainer.size());
+        bottom_navigation.getOrCreateBadge(R.id.page_0).setBackgroundColor(getResources().getColor(R.color.primaryColor));
+
+        if (overViewTab.equals(getString(R.string.album_title_home))) {
+            bottom_navigation.setSelectedItemId(R.id.page_1);
+        } else if (overViewTab.equals(getString(R.string.album_title_bookmarks))) {
+            bottom_navigation.setSelectedItemId(R.id.page_2);
+        } else if (overViewTab.equals(getString(R.string.album_title_history))) {
+            bottom_navigation.setSelectedItemId(R.id.page_3);
+        }
 
         BottomSheetBehavior<View> mBehavior = BottomSheetBehavior.from((View) dialogView.getParent());
         mBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
@@ -1192,25 +1218,9 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
     @SuppressLint("UnsafeExperimentalUsageError")
     private void updateOmniBox() {
-
-        BadgeDrawable badgeDrawable = BadgeDrawable.create(context);
-        BadgeUtils.detachBadgeDrawable(badgeDrawable, omniBox_tab);
-        bottom_navigation.removeBadge(R.id.page_0);
-        badgeDrawable.setNumber(BrowserContainer.size());
-        badgeDrawable.setBadgeGravity(BadgeDrawable.TOP_END);
-        badgeDrawable.setBackgroundColor(getResources().getColor(R.color.primaryColor));
-        BadgeUtils.attachBadgeDrawable(badgeDrawable, omniBox_tab, findViewById(R.id.layout));
         bottom_navigation.getOrCreateBadge(R.id.page_0).setNumber(BrowserContainer.size());
-        bottom_navigation.getOrCreateBadge(R.id.page_0).setBackgroundColor(getResources().getColor(R.color.primaryColor));
-
-        if (overViewTab.equals(getString(R.string.album_title_home))) {
-            bottom_navigation.setSelectedItemId(R.id.page_1);
-        } else if (overViewTab.equals(getString(R.string.album_title_bookmarks))) {
-            bottom_navigation.setSelectedItemId(R.id.page_2);
-        } else if (overViewTab.equals(getString(R.string.album_title_history))) {
-            bottom_navigation.setSelectedItemId(R.id.page_3);
-        }
-
+        badgeDrawable.setNumber(BrowserContainer.size());
+        BadgeUtils.attachBadgeDrawable(badgeDrawable, omniBox_tab, findViewById(R.id.layout));
         if (ninjaWebView == currentAlbumController) {
             this.cookieHosts = new Cookie(this.context);
             CookieManager manager = CookieManager.getInstance();
@@ -1241,13 +1251,12 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         CircularProgressIndicator progressBar = findViewById(R.id.main_progress_bar);
         progressBar.setOnClickListener(v -> ninjaWebView.stopLoading());
         progressBar.setProgressCompat(progress, true);
+        updateOmniBox();
 
         if (progress < BrowserUnit.PROGRESS_MAX) {
             progressBar.setVisibility(View.VISIBLE);
             omniBox_tab.setVisibility(View.INVISIBLE);
         } else {
-
-            updateOmniBox();
             progressBar.setVisibility(View.GONE);
             omniBox_tab.setVisibility(View.VISIBLE);
 

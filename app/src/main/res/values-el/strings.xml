@@ -108,7 +108,7 @@
     <!-- App setting -->
     <string name="setting_title_app">Ρυθμίσεις Εφαρμογής</string>
     <string name="setting_title_ui">Συμπεριφορά/UI</string>
-    <string name="setting_title_data">Backup</string>
+    <string name="setting_title_data">Αντίγραφα ασφαλείας</string>
     <string name="setting_filter">Φίλτρο σελιδοδεικτών</string>
     <string name="setting_title_fav">Αγαπημένο</string>
     <string name="setting_title_searchEngine">Προσαρμοσμένη μηχανή αναζήτησης</string>

@@ -115,14 +115,14 @@
     <string name="setting_title_userAgent">Tác nhân người dùng tuỳ chỉnh</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">Ẩn thanh công cụ</string>
-    <string name="setting_summary_hide">Use the whole screen when scrolling through websites. If you press the back button you will leave fullscreen mode.</string>
-    <string name="setting_title_behavior">Behavior</string>
-    <string name="setting_title_confirm_exit">Confirm browser exit</string>
-    <string name="setting_summary_confirm_exit">Confirmation dialog when closing browser.</string>
-    <string name="setting_title_confirm_tab_close">Confirm tab close</string>
-    <string name="setting_summary_confirm_tab_close">Confirmation dialog when closing a tab.</string>
-    <string name="setting_overView">Overview</string>
-    <string name="setting_overView_onStart_title">Show on start</string>
+    <string name="setting_summary_hide">Sử dụng toàn bộ màn hình khi cuộn trong các trang web. Nếu bạn nhấn nút quay lại, bạn sẽ rời khỏi chế độ toàn màn hình.</string>
+    <string name="setting_title_behavior">Hành vi</string>
+    <string name="setting_title_confirm_exit">Xác nhận thoát trình duyệt</string>
+    <string name="setting_summary_confirm_exit">Hộp thoại xác nhận khi đóng trình duyệt.</string>
+    <string name="setting_title_confirm_tab_close">Xác nhận đóng tab</string>
+    <string name="setting_summary_confirm_tab_close">Hộp thoại xác nhận khi đóng một tab.</string>
+    <string name="setting_overView">Tổng quan</string>
+    <string name="setting_overView_onStart_title">Hiện khi khởi động</string>
     <string name="setting_overView_onStart_summary">Open the \"Overview\" on every app start.</string>
     <string name="setting_gestures">Gestures</string>
     <string name="setting_title_reopenLastTab">Reopen last tab</string>

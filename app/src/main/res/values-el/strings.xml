@@ -130,7 +130,7 @@
     <!-- gestures -->
     <string name="setting_title_toolbar">Γραμμή Εργαλείων</string>
     <string name="setting_title_toolbar_buttons">Πλήκτρα γραμμής εργαλείων</string>
-    <string name="setting_gesture_up">Swipe up</string>
+    <string name="setting_gesture_up">Σύρσιμο πάνω</string>
     <string name="setting_gesture_down">Swipe down</string>
     <string name="setting_gesture_left">Swipe left</string>
     <string name="setting_gesture_right">Swipe right</string>

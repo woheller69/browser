@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- App -->
-    <string name="app_name">FOSS Browser</string>
+    <string name="app_name">Trình duyệt FOSS</string>
     <string name="app_ok">OK</string>
     <string name="app_cancel">Hủy</string>
     <string name="app_done">Xong</string>
@@ -46,14 +46,14 @@
     <string name="menu_save_pdf">Lưu dưới dạng PDF</string>
     <string name="menu_shareClipboard">Sao chép vào bộ nhớ tạm</string>
     <string name="menu_other_searchSite">Tìm kiếm trên trang</string>
-    <string name="menu_other_info">About \"FOSS Browser\"</string>
+    <string name="menu_other_info">Giới thiệu về \"Trình duyệt FOSS\"</string>
     <!-- Dialog -->
-    <string name="dialog_title_hint">Title:</string>
-    <string name="dialog_extension_hint">Extension (for example: \".jpg\"):</string>
-    <string name="dialog_sign_in_username">Username</string>
-    <string name="dialog_sign_in_password">Password</string>
-    <string name="dialog_title_download">Download the file?</string>
-    <string name="dialog_content_resubmission">Resubmit your data?</string>
+    <string name="dialog_title_hint">Tiêu đề:</string>
+    <string name="dialog_extension_hint">Phần mở rộng (ví dụ: \".jpg\"):</string>
+    <string name="dialog_sign_in_username">Tên người dùng</string>
+    <string name="dialog_sign_in_password">Mật khẩu</string>
+    <string name="dialog_title_download">Tải tệp xuống?</string>
+    <string name="dialog_content_resubmission">Gửi lại dữ liệu của bạn?</string>
     <string name="dialog_content_ssl_error">The certificate of the site is not trusted. Proceed anyway?</string>
     <string name="dialog_sortName">Sort by name</string>
     <string name="dialog_sortIcon">Sort by icon</string>
@@ -109,12 +109,12 @@
     <string name="setting_title_app">App Settings</string>
     <string name="setting_title_ui">Behavior/UI</string>
     <string name="setting_title_data">Backup</string>
-    <string name="setting_filter">Bookmark filter</string>
-    <string name="setting_title_fav">Favorite</string>
-    <string name="setting_title_searchEngine">Custom search engine</string>
-    <string name="setting_title_userAgent">Custom user agent</string>
+    <string name="setting_filter">Bộ lọc dấu trang</string>
+    <string name="setting_title_fav">Yêu thích</string>
+    <string name="setting_title_searchEngine">Công cụ tìm kiếm tuỳ chỉnh</string>
+    <string name="setting_title_userAgent">Tác nhân người dùng tuỳ chỉnh</string>
     <!-- App behavior -->
-    <string name="setting_title_hideToolbar">Hide toolbar</string>
+    <string name="setting_title_hideToolbar">Ẩn thanh công cụ</string>
     <string name="setting_summary_hide">Use the whole screen when scrolling through websites. If you press the back button you will leave fullscreen mode.</string>
     <string name="setting_title_behavior">Behavior</string>
     <string name="setting_title_confirm_exit">Confirm browser exit</string>

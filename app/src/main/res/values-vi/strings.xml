@@ -80,9 +80,9 @@
     <string name="setting_summary_save_data">Bảo các trang web rằng bạn muốn tiết kiệm dữ liệu. Các trang web được hỗ trợ sẽ tải nhanh hơn.</string>
     <!-- browser start -->
     <string name="setting_title_images">Hình ảnh</string>
-    <string name="setting_summary_images">Enable Network images. Disabling could be useful to save mobile data and to load websites faster.</string>
-    <string name="setting_title_cookie">Cookies</string>
-    <string name="setting_summary_cookie_delete">If enabled, all cookies will be deleted. Also the Cookies of trusted websites.</string>
+    <string name="setting_summary_images">Bật Hình ảnh trên mạng. Việc tắt có thể hữu ích cho việc tiết kiệm dữ liệu di động và tải các trang web nhanh hơn.</string>
+    <string name="setting_title_cookie">Cookie</string>
+    <string name="setting_summary_cookie_delete">Nếu được bật, tất cả cookie sẽ bị xoá. Cũng sẽ xoá các cookie của các trang web được tin cậy.</string>
     <string name="setting_summary_cookie">Enable Cookies. Cookies are small text files, which are stored on your device. Websites use them for example to store user settings (for example search settings). But they could also be used to collect personal user data. Third party cookies (they collect user data for advertising) are always disabled.</string>
     <string name="setting_title_whitelistCookie">Cookie whitelist</string>
     <string name="setting_title_whitelistRemote">Remote whitelist</string>

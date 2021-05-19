@@ -104,11 +104,11 @@
     <string name="clear_title_history">Xóa lịch sử</string>
     <string name="clear_title_indexedDB">Xoá \"các cơ sở dữ liệu được tạo mục lục\" và \"bộ nhớ WebView cục bộ\"</string>
     <string name="clear_title_deleteDatabase">Xoá cơ sở dữ liệu</string>
-    <string name="clear_summary_deleteDatabase">Delete the whole database (Startpage, bookmarks, history and all whitelists).</string>
+    <string name="clear_summary_deleteDatabase">Xoá toàn bộ cơ sở dữ liệu (Trang bắt đầu, dấu trang, lịch sử và tất cả danh sách trắng).</string>
     <!-- App setting -->
-    <string name="setting_title_app">App Settings</string>
-    <string name="setting_title_ui">Behavior/UI</string>
-    <string name="setting_title_data">Backup</string>
+    <string name="setting_title_app">Cài đặt ứng dụng</string>
+    <string name="setting_title_ui">Hành vi/Giao diện</string>
+    <string name="setting_title_data">Sao lưu</string>
     <string name="setting_filter">Bộ lọc dấu trang</string>
     <string name="setting_title_fav">Yêu thích</string>
     <string name="setting_title_searchEngine">Công cụ tìm kiếm tuỳ chỉnh</string>
@@ -164,12 +164,12 @@
     <string name="toast_delete_successful">Xóa thành công</string>
     <string name="toast_domain_already_exists">Miền đã tồn tại</string>
     <string name="toast_input_empty">Bạn chưa nhập gì cả</string>
-    <string name="toast_invalid_domain">Invalid domain</string>
-    <string name="toast_webview_forward">Can\'t load next site</string>
-    <string name="toast_permission_sdCard">\"FOSS Browser\" needs the permission to \"read and write on your storage\". This is needed to download files, taking screenshots and making backups of your data.</string>
-    <string name="toast_restart">You must restart \"FOSS Browser\" to apply changes. Close now?</string>
-    <string name="toast_quit">Do you want to quit \"FOSS Browser\"?</string>
-    <string name="toast_downloadComplete">Download complete. Open file manager?</string>
+    <string name="toast_invalid_domain">Miền không hợp lệ</string>
+    <string name="toast_webview_forward">Không thể tải trang tiếp theo</string>
+    <string name="toast_permission_sdCard">\"Trình duyệt FOSS\" cần quyền \"đọc và ghi lên bộ nhớ\". Quyền này là cần thiết để tải các tệp xuống, chụp ảnh màn hình và tạo các bản sao lưu dữ liệu của bạn.</string>
+    <string name="toast_restart">Bạn phải khởi động lại \"Trình duyệt FOSS\" để áp dụng các thay đổi. Đóng ngay?</string>
+    <string name="toast_quit">Bạn có muốn thoát \"Trình duyệt FOSS\" không?</string>
+    <string name="toast_downloadComplete">Tải xuống hoàn tất. Mở trình quản lý tệp?</string>
     <string name="toast_unsecured">Website uses an unsecured connection (\"http\"). Try a secure connection (\"https\")?</string>
     <string name="toast_backup">Backup data? This will overwrite the old backup.</string>
     <string name="toast_fav">Successfully set as start site.</string>

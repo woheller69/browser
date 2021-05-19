@@ -83,12 +83,12 @@
     <string name="setting_summary_images">Bật Hình ảnh trên mạng. Việc tắt có thể hữu ích cho việc tiết kiệm dữ liệu di động và tải các trang web nhanh hơn.</string>
     <string name="setting_title_cookie">Cookie</string>
     <string name="setting_summary_cookie_delete">Nếu được bật, tất cả cookie sẽ bị xoá. Cũng sẽ xoá các cookie của các trang web được tin cậy.</string>
-    <string name="setting_summary_cookie">Enable Cookies. Cookies are small text files, which are stored on your device. Websites use them for example to store user settings (for example search settings). But they could also be used to collect personal user data. Third party cookies (they collect user data for advertising) are always disabled.</string>
-    <string name="setting_title_whitelistCookie">Cookie whitelist</string>
-    <string name="setting_title_whitelistRemote">Remote whitelist</string>
+    <string name="setting_summary_cookie">Bật Cookie. Cookie là các tệp văn bản nhỏ được lưu trữ trên thiết bị của bạn. Các trang web sử dụng chúng chẳng hạn để lưu trữ các cài đặt người dùng (ví dụ là cài đặt tìm kiếm). Nhưng chúng cũng có thể được sử dụng để thu thập thông tin cá nhân của người dùng. Các cookie bên thứ ba (chúng thu thập dữ liệu người dùng để quảng cáo) luôn được tắt.</string>
+    <string name="setting_title_whitelistCookie">Danh sách trắng cookie</string>
+    <string name="setting_title_whitelistRemote">Danh sách trắng từ xa</string>
     <string name="setting_title_javascript">JavaScript</string>
-    <string name="setting_summary_javascript">Enable JavaScript. Many websites need JavaScript for their functionality (menus, loading and displaying images, …). But they are also a risk and can be used for attacks.</string>
-    <string name="setting_title_whitelistJS">JavaScript whitelist</string>
+    <string name="setting_summary_javascript">Bật JavaScript. Nhiều trang web cần JavaScript để thực hiện chức năng của chúng (menu, tải và hiển thị hình ảnh,…). Nhưng chúng cũng là một rủi ro và có thể được sử dụng để thực hiện các cuộc tấn công.</string>
+    <string name="setting_title_whitelistJS">Danh sách trắng JavaScript</string>
     <string name="setting_title_adblock">AdBlock</string>
     <string name="setting_summary_adblock">Enable AdBlock to block annoying ads. Sites also load faster when enabled.</string>
     <string name="setting_title_location">Location</string>

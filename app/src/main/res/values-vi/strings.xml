@@ -62,7 +62,7 @@
     <string name="setting_label">Cài đặt</string>
     <!-- browser setting -->
     <string name="setting_title_browser">Cài đặt trình duyệt</string>
-    <string name="setting_title_start_control">Start Control</string>
+    <string name="setting_title_start_control">Bắt đầu kiểm soát</string>
     <string name="setting_title_search_engine">Công cụ tìm kiếm</string>
     <string name="setting_summary_search_engine_google">Google</string>
     <string name="setting_summary_search_engine_duckduckgo">DuckDuckGo</string>
@@ -170,13 +170,13 @@
     <string name="toast_restart">Bạn phải khởi động lại \"Trình duyệt FOSS\" để áp dụng các thay đổi. Đóng ngay?</string>
     <string name="toast_quit">Bạn có muốn thoát \"Trình duyệt FOSS\" không?</string>
     <string name="toast_downloadComplete">Tải xuống hoàn tất. Mở trình quản lý tệp?</string>
-    <string name="toast_unsecured">Website uses an unsecured connection (\"http\"). Try a secure connection (\"https\")?</string>
-    <string name="toast_backup">Backup data? This will overwrite the old backup.</string>
+    <string name="toast_unsecured">Trang web sử dụng kết nối không bảo mật (\"http\"). Thử kết nối bảo mật (\"https\")?</string>
+    <string name="toast_backup">Sao lưu dữ liệu? Việc này sẽ ghi đè lên bản sao lưu cũ.</string>
     <string name="toast_fav">Successfully set as start site.</string>
     <!-- Whitelist -->
-    <string name="whitelist_menu_clear">Clear</string>
-    <string name="whitelist_edit_hint">Domain</string>
-    <string name="whitelist_add">Add</string>
+    <string name="whitelist_menu_clear">Xoá</string>
+    <string name="whitelist_edit_hint">Miền</string>
+    <string name="whitelist_add">Thêm</string>
     <!-- Dialog help -->
     <!-- Dialog changelog -->
     <string name="changelog_dialog">        Your language isn\'t supported yet? You want to translate FOSS Browser? Or make improvements to existing translations? Feel free to join us on Crowdin: https://crowdin.com/project/foss-browser.&lt;br&gt;&lt;br&gt;

@@ -77,9 +77,9 @@
     <string name="setting_title_remote">Nội dung từ xa</string>
     <string name="setting_summary_remote">Bật nội dung từ xa không bắt nguồn trực tiếp từ trang web bạn đang đi đến. Việc tắt tuỳ chọn này là bảo mật hơn, nhanh hơn và tiết kiệm dữ liệu. Nhưng một số nội dung sẽ không được hiển thị nữa.</string>
     <string name="setting_title_save_data">Yêu cầu \'Tiết kiệm dữ liệu\'</string>
-    <string name="setting_summary_save_data">Tell websites that you would prefer to save data. Supported websites will load faster.</string>
+    <string name="setting_summary_save_data">Bảo các trang web rằng bạn muốn tiết kiệm dữ liệu. Các trang web được hỗ trợ sẽ tải nhanh hơn.</string>
     <!-- browser start -->
-    <string name="setting_title_images">Images</string>
+    <string name="setting_title_images">Hình ảnh</string>
     <string name="setting_summary_images">Enable Network images. Disabling could be useful to save mobile data and to load websites faster.</string>
     <string name="setting_title_cookie">Cookies</string>
     <string name="setting_summary_cookie_delete">If enabled, all cookies will be deleted. Also the Cookies of trusted websites.</string>

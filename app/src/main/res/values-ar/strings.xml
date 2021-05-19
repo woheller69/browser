@@ -41,18 +41,18 @@
     <string name="menu_filter">فرز بواسطة…</string>
     <string name="menu_share_link">مشاركة الرابط</string>
     <string name="menu_save_home">حفظ في الصفحة الرئيسية</string>
-    <string name="menu_save_bookmark">احفظ كعلامة</string>
+    <string name="menu_save_bookmark">حفظ كإشارة مرجعية</string>
     <string name="menu_save_as">حفظ كـ …</string>
-    <string name="menu_save_pdf">إحفظ ك PDF</string>
-    <string name="menu_shareClipboard">انسخ إلى الحافظة</string>
-    <string name="menu_other_searchSite">ابحث في الموقع</string>
+    <string name="menu_save_pdf">حفظ كـ PDF</string>
+    <string name="menu_shareClipboard">نسخ للحافظة</string>
+    <string name="menu_other_searchSite">البحث في الموقع</string>
     <string name="menu_other_info">حول \"FOSS Browser\"</string>
     <!-- Dialog -->
     <string name="dialog_title_hint">العنوان:</string>
     <string name="dialog_extension_hint">الامتداد (مثلا: \"‎.jpg\"):</string>
     <string name="dialog_sign_in_username">اسم المستخدم</string>
     <string name="dialog_sign_in_password">كلمة السر</string>
-    <string name="dialog_title_download">تريد تنزيل الملف؟</string>
+    <string name="dialog_title_download">تنزيل الملف؟</string>
     <string name="dialog_content_resubmission">هل تريد اعادة إرسال بياناتك؟</string>
     <string name="dialog_content_ssl_error">شهادة الموقع غير موثوق بها. هل تريد المتابعة على أية حال؟</string>
     <string name="dialog_sortName">افرز حسب الاسم</string>

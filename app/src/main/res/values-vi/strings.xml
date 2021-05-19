@@ -92,9 +92,9 @@
     <string name="setting_title_adblock">Chặn quảng cáo</string>
     <string name="setting_summary_adblock">Bật Chặn quảng cáo để chặn các quảng cáo gây phiền nhiễu. Các trang web cũng tải nhanh hơn khi được bật.</string>
     <string name="setting_title_location">Vị trí</string>
-    <string name="setting_summary_location">Allow websites to access your location. Some websites (like Google maps for navigation) need this enabled.</string>
-    <string name="setting_title_history">History</string>
-    <string name="setting_summary_history">Save the history of visited websites.</string>
+    <string name="setting_summary_location">Cho phép các trang web truy cập vị trí của bạn. Một số trang web (như Google Maps để điều hướng) cần tuỳ chọn này được bật.</string>
+    <string name="setting_title_history">Lịch sử</string>
+    <string name="setting_summary_history">Lưu lịch sử các trang web đã đi đến.</string>
     <!-- browser clear -->
     <string name="data_summary">All files will be exported to the \"Android/data/de.baumann.browser/files/browser_backup/\" directory of your sd-card. This directory will be DELETED, if you uninstall \"FOSS Browser\". So make a backup regularly on a save place.</string>
     <string name="clear_title_quit">Clear on application exit</string>

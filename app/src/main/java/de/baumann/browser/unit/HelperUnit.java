@@ -127,7 +127,7 @@ public class HelperUnit {
             int hasACCESS_FINE_LOCATION = activity.checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION);
             if (hasACCESS_FINE_LOCATION != PackageManager.PERMISSION_GRANTED) {
                 MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(activity);
-                builder.setMessage(R.string.toast_quit);
+                builder.setMessage(R.string.setting_summary_location);
                 builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> activity.requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_CODE_ASK_PERMISSIONS_1));
                 builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
                 AlertDialog dialog = builder.create();
@@ -212,7 +212,7 @@ public class HelperUnit {
                 Intent installer = new Intent();
                 installer.putExtra("android.intent.extra.shortcut.INTENT", i);
                 installer.putExtra("android.intent.extra.shortcut.NAME", title);
-                installer.putExtra(Intent.EXTRA_SHORTCUT_ICON_RESOURCE, Intent.ShortcutIconResource.fromContext(context.getApplicationContext(), R.mipmap.qc_bookmarks));
+                installer.putExtra(Intent.EXTRA_SHORTCUT_ICON_RESOURCE, Intent.ShortcutIconResource.fromContext(context.getApplicationContext(), R.mipmap.ic_launcher));
                 installer.setAction("com.android.launcher.action.INSTALL_SHORTCUT");
                 context.sendBroadcast(installer);
             } else {
@@ -223,7 +223,7 @@ public class HelperUnit {
                             new ShortcutInfo.Builder(context, url)
                                     .setShortLabel(title)
                                     .setLongLabel(title)
-                                    .setIcon(Icon.createWithResource(context, R.mipmap.qc_bookmarks))
+                                    .setIcon(Icon.createWithResource(context, R.mipmap.ic_launcher))
                                     .setIntent(new Intent(Intent.ACTION_VIEW, Uri.parse(url)))
                                     .build();
                     shortcutManager.requestPinShortcut(pinShortcutInfo, null);

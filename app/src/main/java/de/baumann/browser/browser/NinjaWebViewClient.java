@@ -2,6 +2,7 @@ package de.baumann.browser.browser;
 
 import android.annotation.TargetApi;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.net.http.SslError;
@@ -27,6 +28,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 
 import java.io.ByteArrayInputStream;
+import java.net.URISyntaxException;
 import java.util.Objects;
 
 import de.baumann.browser.database.Record;
@@ -34,7 +36,6 @@ import de.baumann.browser.database.RecordAction;
 import de.baumann.browser.R;
 import de.baumann.browser.unit.BrowserUnit;
 import de.baumann.browser.unit.RecordUnit;
-import de.baumann.browser.view.NinjaToast;
 import de.baumann.browser.view.NinjaWebView;
 
 public class NinjaWebViewClient extends WebViewClient {
@@ -95,16 +96,31 @@ public class NinjaWebViewClient extends WebViewClient {
     }
 
     private boolean handleUri(final Uri uri) {
+
         String url = uri.toString();
+
         if (url.startsWith("http")) {
             ninjaWebView.getSettings();
             ninjaWebView.initPreferences(url);
             ninjaWebView.loadUrl(url, ninjaWebView.getRequestHeaders());
             return true;
-        } else {
-            NinjaToast.show(context, R.string.app_error);
-            return false;
         }
+
+        if (url.startsWith("intent:")) {
+            try {
+                Intent intent = Intent.parseUri(url, Intent.URI_INTENT_SCHEME);
+                //try to find fallback url
+                String fallbackUrl = intent.getStringExtra("browser_fallback_url");
+                if (fallbackUrl != null) {
+                    this.ninjaWebView.loadUrl(fallbackUrl);
+                    return true;
+                }
+            } catch (URISyntaxException e) {
+                //not an intent uri
+                return false;
+            }
+        }
+        return true;//do nothing in other cases
     }
 
     @Override

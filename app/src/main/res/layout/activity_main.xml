@@ -9,9 +9,8 @@
     <FrameLayout
         android:id="@+id/main_content"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="?attr/actionBarSize"
-        app:layout_anchorGravity="top|bottom"/>
+        android:layout_height="match_parent"
+        android:paddingBottom="?attr/actionBarSize"/>
 
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/bottomAppBar"

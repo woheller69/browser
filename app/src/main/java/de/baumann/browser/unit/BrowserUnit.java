@@ -409,12 +409,45 @@ public class BrowserUnit {
 
     public static void clearIndexedDB (Context context) {
         File data = Environment.getDataDirectory();
-        String indexedDB = "//data//" + context.getPackageName() + "//app_webview//" + "//IndexedDB";
-        String localStorage = "//data//" + context.getPackageName()  + "//app_webview//" + "//Local Storage";
-        final File indexedDB_dir = new File(data, indexedDB);
-        final File localStorage_dir = new File(data, localStorage);
-        BrowserUnit.deleteDir(indexedDB_dir);
-        BrowserUnit.deleteDir(localStorage_dir);
+
+        String blob_storage = "//data//" + context.getPackageName() + "//app_webview//" + "//Default//" + "//blob_storage";
+        String databases = "//data//" + context.getPackageName()  + "//app_webview//" + "//Default//" + "//databases";
+        String indexedDB = "//data//" + context.getPackageName() + "//app_webview//" + "//Default//" + "//IndexedDB";
+        String localStorage = "//data//" + context.getPackageName()  + "//app_webview//" + "//Default//" + "//Local Storage";
+        String serviceWorker = "//data//" + context.getPackageName() + "//app_webview//" + "//Default//" + "//Service Worker";
+        String sessionStorage = "//data//" + context.getPackageName()  + "//app_webview//" + "//Default//" + "//Session Storage";
+        String shared_proto_db = "//data//" + context.getPackageName() + "//app_webview//" + "//Default//" + "//shared_proto_db";
+        String VideoDecodeStats = "//data//" + context.getPackageName()  + "//app_webview//" + "//Default//" + "//VideoDecodeStats";
+        String QuotaManager = "//data//" + context.getPackageName() + "//app_webview//" + "//Default//" + "//QuotaManager";
+        String QuotaManager_journal = "//data//" + context.getPackageName()  + "//app_webview//" + "//Default//" + "//QuotaManager-journal";
+        String webData = "//data//" + context.getPackageName()  + "//app_webview//" + "//Default//" + "//Web Data";
+        String WebDataJournal = "//data//" + context.getPackageName() + "//app_webview//" + "//Default//" + "//Web Data-journal";
+
+        final File blob_storage_file = new File(data, blob_storage);
+        final File databases_file = new File(data, databases);
+        final File indexedDB_file = new File(data, indexedDB);
+        final File localStorage_file = new File(data, localStorage);
+        final File serviceWorker_file = new File(data, serviceWorker);
+        final File sessionStorage_file = new File(data, sessionStorage);
+        final File shared_proto_db_file = new File(data, shared_proto_db);
+        final File VideoDecodeStats_file = new File(data, VideoDecodeStats);
+        final File QuotaManager_file = new File(data, QuotaManager);
+        final File QuotaManager_journal_file = new File(data, QuotaManager_journal);
+        final File webData_file = new File(data, webData);
+        final File WebDataJournal_file = new File(data, WebDataJournal);
+
+        BrowserUnit.deleteDir(blob_storage_file);
+        BrowserUnit.deleteDir(databases_file);
+        BrowserUnit.deleteDir(indexedDB_file);
+        BrowserUnit.deleteDir(localStorage_file);
+        BrowserUnit.deleteDir(serviceWorker_file);
+        BrowserUnit.deleteDir(sessionStorage_file);
+        BrowserUnit.deleteDir(shared_proto_db_file);
+        BrowserUnit.deleteDir(VideoDecodeStats_file);
+        BrowserUnit.deleteDir(QuotaManager_file);
+        BrowserUnit.deleteDir(QuotaManager_journal_file);
+        BrowserUnit.deleteDir(webData_file);
+        BrowserUnit.deleteDir(WebDataJournal_file);
     }
 
     public static boolean deleteDir(File dir) {

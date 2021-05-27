@@ -64,10 +64,6 @@
             </intent-filter>
 
             <meta-data
-                android:name="android.app.shortcuts"
-                android:resource="@xml/shortcuts" />
-
-            <meta-data
                 android:name="android.webkit.WebView.MetricsOptOut"
                 android:value="true" />
 

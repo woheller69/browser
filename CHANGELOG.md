@@ -1,7 +1,11 @@
 ### v 7.4 (WIP)
+- removed: app shortcuts
 - fix: keyboard not showing on large input fields
 - fix: app crash when displaying overview on start
 - fix: app crash when showing some dialogs
+- fix: clearing data
+- fix: open fallback urls
+- fix: crashing on fullscreen on older Android versions
 
 ### v 7.3
 - updated: translations (now 16 languages are supported!)

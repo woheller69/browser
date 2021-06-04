@@ -13,3 +13,6 @@ local.properties
 .gradle
 gradle
 *.iml
+/app/debug/
+/app/release/
+/app/build/

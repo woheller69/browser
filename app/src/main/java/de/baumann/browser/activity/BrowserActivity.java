@@ -26,7 +26,6 @@ import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.PopupMenu;
 import androidx.preference.PreferenceManager;
 
-import android.os.Handler;
 import android.print.PrintAttributes;
 import android.print.PrintDocumentAdapter;
 import android.print.PrintManager;
@@ -41,7 +40,6 @@ import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.progressindicator.CircularProgressIndicator;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -376,17 +374,19 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
     @Override
     public synchronized void showAlbum(AlbumController controller) {
+
+        View av = (View) controller;
+
         if (currentAlbumController != null) {
             currentAlbumController.deactivate();
-            View av = (View) controller;
-            contentFrame.removeAllViews();
-            contentFrame.addView(av);
-        } else {
-            contentFrame.removeAllViews();
-            contentFrame.addView((View) controller);
         }
+
         currentAlbumController = controller;
         currentAlbumController.activate();
+
+        contentFrame.removeAllViews();
+        contentFrame.addView(av);
+
         updateOmniBox();
 
         if (sp.getBoolean("hideToolbar", true)) {
@@ -572,11 +572,18 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 ninjaWebView.stopLoading();
                 omniBox_text.setKeyListener(listener);
                 omniBox_text.postDelayed(() -> {
+                    String url = ninjaWebView.getUrl();
                     InputMethodManager keyboard=(InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
                     keyboard.showSoftInput(omniBox_text,0);
+                    assert url != null;
+                    if (url.equals("about:blank")) {
+                        omniBox_text.requestFocus();
+                        omniBox_text.setText("");
+                    } else {
+                        omniBox_text.setText(url);
+                    }
                     omniBox_text.selectAll();
-                    //omniBox_text.setText("");
-                },58);
+                },50);
             } else {
                 omniBox_text.setKeyListener(null);
                 omniBox_text.setEllipsize(TextUtils.TruncateAt.END);
@@ -604,7 +611,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 if (ninjaWebView.canGoForward()) {
                     ninjaWebView.goForward();
                 } else {
-                    Snackbar.make(contentFrame, R.string.toast_webview_forward, Snackbar.LENGTH_SHORT).show();
+                    NinjaToast.show(this, R.string.toast_webview_forward);
                 }
                 break;
             case "03":
@@ -1125,6 +1132,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     private synchronized void addAlbum(String title, final String url, final boolean foreground) {
         ninjaWebView = new NinjaWebView(context);
         ninjaWebView.setBrowserController(this);
+        ninjaWebView.initPreferences(url);
         ninjaWebView.setAlbumTitle(title);
         ninjaWebView.setOnScrollChangeListener((scrollY, oldScrollY) -> {
             if (!searchOnSite) {
@@ -1146,7 +1154,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         });
 
         if (!url.isEmpty()) {
-            ninjaWebView.initPreferences(url);
             ninjaWebView.loadUrl(url);
         } else {
             ninjaWebView.loadUrl("about:blank");
@@ -1161,6 +1168,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         if (!foreground) {
             ninjaWebView.deactivate();
         } else {
+            ninjaWebView.activate();
             showAlbum(ninjaWebView);
         }
 
@@ -1207,10 +1215,12 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
     @SuppressLint("UnsafeExperimentalUsageError")
     private void updateOmniBox() {
+
         bottom_navigation.getOrCreateBadge(R.id.page_0).setNumber(BrowserContainer.size());
         badgeDrawable.setNumber(BrowserContainer.size());
         BadgeUtils.attachBadgeDrawable(badgeDrawable, omniBox_tab, findViewById(R.id.layout));
         omniBox_text.clearFocus();
+
         if (ninjaWebView == currentAlbumController) {
             this.cookieHosts = new Cookie(this.context);
             CookieManager manager = CookieManager.getInstance();
@@ -1220,18 +1230,18 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             } else {
                 manager.setAcceptCookie(false);
             }
-            if (!keyboard) {
-                if (Objects.requireNonNull(ninjaWebView.getTitle()).isEmpty()) {
-                    omniBox_text.setText(ninjaWebView.getUrl());
-                } else {
-                    omniBox_text.setText(ninjaWebView.getTitle());
-                }
-            } else {
-                omniBox_text.setText("");
-            }
         } else {
             ninjaWebView = (NinjaWebView) currentAlbumController;
-            updateProgress(ninjaWebView.getProgress());
+        }
+
+        if (!keyboard) {
+            if (Objects.requireNonNull(ninjaWebView.getTitle()).isEmpty()) {
+                omniBox_text.setText(ninjaWebView.getUrl());
+            } else {
+                omniBox_text.setText(ninjaWebView.getTitle());
+            }
+        } else {
+            omniBox_text.setText("");
         }
     }
 
@@ -1249,13 +1259,15 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         } else {
             progressBar.setVisibility(View.GONE);
             omniBox_tab.setVisibility(View.VISIBLE);
-
             String url = Objects.requireNonNull(ninjaWebView.getUrl());
             if (url.startsWith("https://")) {
                 omniBox_tab.setImageResource(R.drawable.icon_menu_light);
                 omniBox_tab.setOnClickListener(v -> showTabView());
-            } else {
-                omniBox_tab.setImageResource(R.drawable.icon_alert);
+            } else if (url.equals("about:blank")){
+                omniBox_tab.setImageResource(R.drawable.icon_menu_light);
+                omniBox_tab.setOnClickListener(v -> showTabView());
+                omniBox_text.requestFocus();
+            } else {omniBox_tab.setImageResource(R.drawable.icon_alert);
                 omniBox_tab.setOnClickListener(v -> {
                     MaterialAlertDialogBuilder builderR = new MaterialAlertDialogBuilder(context);
                     builderR.setMessage(R.string.toast_unsecured);
@@ -1269,9 +1281,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     dialog.show();
                     Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
                 });
-                if (url.equals("about:blank") || url.isEmpty()) {
-                    omniBox_text.requestFocus();
-                }
             }
         }
     }
@@ -1350,6 +1359,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             videoView = null;
         }
         setRequestedOrientation(originalOrientation);
+        contentFrame.requestFocus();
     }
 
     private void showContextMenuLink (final String url) {
@@ -1436,10 +1446,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         RecordAction action = new RecordAction(context);
         action.open(true);
         if (action.checkUrl(ninjaWebView.getUrl(), RecordUnit.TABLE_BOOKMARK)) {
-            Snackbar.make(contentFrame, R.string.app_error, Snackbar.LENGTH_SHORT).show();
+            NinjaToast.show(this, R.string.app_error);
         } else {
-            action.addBookmark(new Record(ninjaWebView.getTitle(), ninjaWebView.getUrl(), System.currentTimeMillis(), 0));
-            Snackbar.make(contentFrame, R.string.app_done, Snackbar.LENGTH_SHORT).show();
+            action.addBookmark(new Record(ninjaWebView.getTitle(), ninjaWebView.getUrl(), 11, 0));
+            NinjaToast.show(this, R.string.app_done);
         }
         action.close();
     }
@@ -1579,7 +1589,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             if (position == 0) {
                 dialog_overflow.cancel();
                 sp.edit().putString("favoriteURL", url).apply();
-                Snackbar.make(contentFrame, R.string.toast_fav, Snackbar.LENGTH_SHORT).show();
+                NinjaToast.show(this, R.string.app_done);
             } else if (position == 1) {
                 dialog_overflow.cancel();
                 save_atHome(title, url);
@@ -1620,7 +1630,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
                 ClipData clip = ClipData.newPlainText("text", url);
                 Objects.requireNonNull(clipboard).setPrimaryClip(clip);
-                Snackbar.make(contentFrame, R.string.toast_copy_successful, Snackbar.LENGTH_SHORT).show();
+                NinjaToast.show(this, R.string.toast_copy_successful);
             } else if (position == 2) {
                 Intent intent = new Intent(Intent.ACTION_VIEW);
                 intent.setData(Uri.parse(url));
@@ -1835,15 +1845,15 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         RecordAction action = new RecordAction(context);
         action.open(true);
         if (action.checkUrl(url, RecordUnit.TABLE_GRID)) {
-            Snackbar.make(contentFrame, R.string.app_error, Snackbar.LENGTH_SHORT).show();
+            NinjaToast.show(this, R.string.app_error);
         } else {
             int counter = sp.getInt("counter", 0);
             counter = counter + 1;
             sp.edit().putInt("counter", counter).apply();
             if (action.addGridItem(new Record(title, url, 0, counter))) {
-                Snackbar.make(contentFrame, R.string.app_done, Snackbar.LENGTH_SHORT).show();
+                NinjaToast.show(this, R.string.app_done);
             } else {
-                Snackbar.make(contentFrame, R.string.app_error, Snackbar.LENGTH_SHORT).show();
+                NinjaToast.show(this, R.string.app_error);
             }
         }
         action.close();

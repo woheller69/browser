@@ -74,7 +74,7 @@
     <string name="setting_summary_search_engine_qwant">Qwant</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_title_font">Величина слова</string>
-    <string name="setting_title_remote">Remote content</string>
+    <string name="setting_title_remote">Спољни садржај</string>
     <string name="setting_summary_remote">Enable remote content, which is not directly from the website you are visiting. Disabling this is more secure, faster and saves data volume. But some content will not be displayed anymore.</string>
     <string name="setting_title_save_data">Request \'Save Data\'</string>
     <string name="setting_summary_save_data">Tell websites that you would prefer to save data. Supported websites will load faster.</string>

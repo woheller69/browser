@@ -35,7 +35,7 @@
     <string name="menu_edit">Измени</string>
     <string name="menu_closeTab">Затвори језичак</string>
     <string name="menu_download">Отвори преузимања</string>
-    <string name="menu_fav">Set as start site</string>
+    <string name="menu_fav">Сачувај као почетну страницу</string>
     <string name="menu_sc">Пречица на почетном екрану</string>
     <string name="menu_sort">Сортирај по …</string>
     <string name="menu_filter">Филтрирај по …</string>
@@ -52,7 +52,7 @@
     <string name="dialog_extension_hint">Наставак (на пример \".jpg\"):</string>
     <string name="dialog_sign_in_username">Корисничко име</string>
     <string name="dialog_sign_in_password">Лозинка</string>
-    <string name="dialog_title_download">Преузмите датотеку?</string>
+    <string name="dialog_title_download">Преузми датотеку?</string>
     <string name="dialog_content_resubmission">Поново пошаљите Ваше податке?</string>
     <string name="dialog_content_ssl_error">Сертификат ове странице је неважећи. Ипак наставите?</string>
     <string name="dialog_sortName">Сортирај по имену</string>
@@ -84,11 +84,11 @@
     <string name="setting_title_cookie">Колачићи</string>
     <string name="setting_summary_cookie_delete">Ако је укључена опција, сви колачићи ће бити избрисани, чак и они са поузданих сајтова.</string>
     <string name="setting_summary_cookie">Омогући колачиће. Колачићи су ситне текстуалне датотеке које се налазе на Вашем уређају. Њиме сајтови забележавају подешавања корисника (на пример, подешавања претраге). Међутим, могу се користити и за сакупљање приватних података. Колачићи трећих лица (који сакупљају податке у интерес рекламирања) су увек онемогућени.</string>
-    <string name="setting_title_whitelistCookie">Cookie whitelist</string>
-    <string name="setting_title_whitelistRemote">Remote whitelist</string>
+    <string name="setting_title_whitelistCookie">Бели списак колачића</string>
+    <string name="setting_title_whitelistRemote">Бели списак спољног садржаја</string>
     <string name="setting_title_javascript">Џава-скрипт</string>
-    <string name="setting_summary_javascript">Enable JavaScript. Many websites need JavaScript for their functionality (menus, loading and displaying images, …). But they are also a risk and can be used for attacks.</string>
-    <string name="setting_title_whitelistJS">JavaScript whitelist</string>
+    <string name="setting_summary_javascript">Омогући Џава-скрипт. Многим сајтовима је Џава-скрипт потребан за основне функције (отварање менија, учитавање и приказивање слика …). Међутим, такође представља опасност и њиме се могу вржити напади.</string>
+    <string name="setting_title_whitelistJS">Бели списак Џава-скрипта</string>
     <string name="setting_title_adblock">AdBlock</string>
     <string name="setting_summary_adblock">Enable AdBlock to block annoying ads. Sites also load faster when enabled.</string>
     <string name="setting_title_location">Location</string>

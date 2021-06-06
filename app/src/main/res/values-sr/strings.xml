@@ -77,9 +77,9 @@
     <string name="setting_title_remote">Спољни садржај</string>
     <string name="setting_summary_remote">Омогући спољни садржај, који се не налази директно на сајту који посећујете. Онемогућавање ове могућности је сигурније, брже и смањује потрошњу података. Међутим, неки садржај неће бити приказан.</string>
     <string name="setting_title_save_data">Захтевај уштеду података</string>
-    <string name="setting_summary_save_data">Tell websites that you would prefer to save data. Supported websites will load faster.</string>
+    <string name="setting_summary_save_data">Захтевај од страница да штеде податке. Подржани сајтови ће се брже учитавати.</string>
     <!-- browser start -->
-    <string name="setting_title_images">Images</string>
+    <string name="setting_title_images">Слике</string>
     <string name="setting_summary_images">Enable Network images. Disabling could be useful to save mobile data and to load websites faster.</string>
     <string name="setting_title_cookie">Cookies</string>
     <string name="setting_summary_cookie_delete">If enabled, all cookies will be deleted. Also the Cookies of trusted websites.</string>

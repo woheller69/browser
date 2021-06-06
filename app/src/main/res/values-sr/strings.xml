@@ -26,7 +26,7 @@
     <!-- Menu -->
     <string name="main_menu_tabPreview">Отвори претпреглед језичка</string>
     <string name="main_menu_new_tab">Нови језичак (у позадини)</string>
-    <string name="main_menu_new_tabOpen">Нови језичак</string>
+    <string name="main_menu_new_tabOpen">Нови језичак (у предњем плану)</string>
     <string name="main_omnibox_input_hint">Претражите или унесите адресу</string>
     <string name="menu_open_with">Отвори везу помоћу…</string>
     <string name="menu_quit">Изађи</string>
@@ -40,7 +40,7 @@
     <string name="menu_sort">Сортирај по …</string>
     <string name="menu_filter">Филтрирај по …</string>
     <string name="menu_share_link">Подели везу</string>
-    <string name="menu_save_home">Сачувај на почетној</string>
+    <string name="menu_save_home">Сачувај на главној страници</string>
     <string name="menu_save_bookmark">Сачувај као забелешку</string>
     <string name="menu_save_as">Сачувај као …</string>
     <string name="menu_save_pdf">Сачувај као PDF датотеку</string>
@@ -53,7 +53,7 @@
     <string name="dialog_sign_in_username">Корисничко име</string>
     <string name="dialog_sign_in_password">Лозинка</string>
     <string name="dialog_title_download">Преузмите датотеку?</string>
-    <string name="dialog_content_resubmission">Поново пошаљите ваше податке?</string>
+    <string name="dialog_content_resubmission">Поново пошаљите Ваше податке?</string>
     <string name="dialog_content_ssl_error">Сертификат ове странице је неважећи. Ипак наставите?</string>
     <string name="dialog_sortName">Сортирај по имену</string>
     <string name="dialog_sortIcon">Сортирај по иконици</string>
@@ -64,15 +64,15 @@
     <string name="setting_title_browser">Подешавања прегледача</string>
     <string name="setting_title_start_control">Подешавања покретања</string>
     <string name="setting_title_search_engine">Претраживач</string>
-    <string name="setting_summary_search_engine_google">Google</string>
-    <string name="setting_summary_search_engine_duckduckgo">DuckDuckGo</string>
-    <string name="setting_summary_search_engine_startpage">StartPage</string>
-    <string name="setting_summary_search_engine_bing">Bing</string>
-    <string name="setting_summary_search_engine_baidu">Baidu</string>
-    <string name="setting_summary_search_engine_startpage_de">StartPage (de)</string>
-    <string name="setting_summary_search_engine_searx">Searx</string>
-    <string name="setting_summary_search_engine_qwant">Qwant</string>
-    <string name="setting_summary_search_engine_ecosia">Ecosia</string>
+    <string name="setting_summary_search_engine_google">Гугл</string>
+    <string name="setting_summary_search_engine_duckduckgo">Дакдакго</string>
+    <string name="setting_summary_search_engine_startpage">Стартпејџ</string>
+    <string name="setting_summary_search_engine_bing">Бинг</string>
+    <string name="setting_summary_search_engine_baidu">Бајду</string>
+    <string name="setting_summary_search_engine_startpage_de">Стартпејџ (de)</string>
+    <string name="setting_summary_search_engine_searx">Серкс</string>
+    <string name="setting_summary_search_engine_qwant">Квант</string>
+    <string name="setting_summary_search_engine_ecosia">Екозија</string>
     <string name="setting_title_font">Величина слова</string>
     <string name="setting_title_remote">Спољни садржај</string>
     <string name="setting_summary_remote">Омогући спољни садржај, који се не налази директно на сајту који посећујете. Онемогућавање ове опције је сигурније, брже и смањује потрошњу података. Међутим, неки садржај више неће бити приказан.</string>
@@ -83,10 +83,10 @@
     <string name="setting_summary_images">Омогући приказивање слика. Онемогућавањем ове опције, прегледач ће мање трошити податке и брже учитавати странице.</string>
     <string name="setting_title_cookie">Колачићи</string>
     <string name="setting_summary_cookie_delete">Ако је укључена опција, сви колачићи ће бити избрисани, чак и они са поузданих сајтова.</string>
-    <string name="setting_summary_cookie">Омогући колачиће. Колачићи су ситне текстуалне датотеке које се налазе на Вашем уређају. Њиме сајтови забележавају подешавања корисника (на пример, подешавања претраге). Међутим,</string>
+    <string name="setting_summary_cookie">Омогући колачиће. Колачићи су ситне текстуалне датотеке које се налазе на Вашем уређају. Њиме сајтови забележавају подешавања корисника (на пример, подешавања претраге). Међутим, могу се користити и за сакупљање приватних података. Колачићи трећих лица (који сакупљају податке у интерес рекламирања) су увек онемогућени.</string>
     <string name="setting_title_whitelistCookie">Cookie whitelist</string>
     <string name="setting_title_whitelistRemote">Remote whitelist</string>
-    <string name="setting_title_javascript">JavaScript</string>
+    <string name="setting_title_javascript">Џава-скрипт</string>
     <string name="setting_summary_javascript">Enable JavaScript. Many websites need JavaScript for their functionality (menus, loading and displaying images, …). But they are also a risk and can be used for attacks.</string>
     <string name="setting_title_whitelistJS">JavaScript whitelist</string>
     <string name="setting_title_adblock">AdBlock</string>

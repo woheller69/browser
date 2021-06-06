@@ -89,7 +89,7 @@
     <string name="setting_title_javascript">Џава-скрипт</string>
     <string name="setting_summary_javascript">Омогући Џава-скрипт. Многим сајтовима је Џава-скрипт потребан за основне функције (отварање менија, учитавање и приказивање слика …). Међутим, такође представља опасност и њиме се могу вржити напади.</string>
     <string name="setting_title_whitelistJS">Бели списак Џава-скрипта</string>
-    <string name="setting_title_adblock">AdBlock</string>
+    <string name="setting_title_adblock">Блокер реклама</string>
     <string name="setting_summary_adblock">Enable AdBlock to block annoying ads. Sites also load faster when enabled.</string>
     <string name="setting_title_location">Location</string>
     <string name="setting_summary_location">Allow websites to access your location. Some websites (like Google maps for navigation) need this enabled.</string>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- App -->
-    <string name="app_name">FOSS Browser</string>
+    <string name="app_name">FOSS прегледач</string>
     <string name="app_ok">У реду</string>
     <string name="app_cancel">Откажи</string>
     <string name="app_done">Готово</string>
@@ -46,7 +46,7 @@
     <string name="menu_save_pdf">Сачувај као PDF датотеку</string>
     <string name="menu_shareClipboard">Копирај</string>
     <string name="menu_other_searchSite">Претражи на страници</string>
-    <string name="menu_other_info">About \"FOSS Browser\"</string>
+    <string name="menu_other_info">О FOSS прегледачу</string>
     <!-- Dialog -->
     <string name="dialog_title_hint">Наслов:</string>
     <string name="dialog_extension_hint">Наставак (на пример \".jpg\"):</string>
@@ -90,18 +90,18 @@
     <string name="setting_summary_javascript">Омогући Џава-скрипт. Многим сајтовима је Џава-скрипт потребан за основне функције (отварање менија, учитавање и приказивање слика …). Међутим, такође представља опасност и њиме се могу вржити напади.</string>
     <string name="setting_title_whitelistJS">Бели списак Џава-скрипта</string>
     <string name="setting_title_adblock">Блокер реклама</string>
-    <string name="setting_summary_adblock">Enable AdBlock to block annoying ads. Sites also load faster when enabled.</string>
-    <string name="setting_title_location">Location</string>
-    <string name="setting_summary_location">Allow websites to access your location. Some websites (like Google maps for navigation) need this enabled.</string>
-    <string name="setting_title_history">History</string>
-    <string name="setting_summary_history">Save the history of visited websites.</string>
+    <string name="setting_summary_adblock">Омогиући блокер реклама како би блокирао досадне рекламе. Сајтови се такође брже учитавају кад је омогућен.</string>
+    <string name="setting_title_location">Локација</string>
+    <string name="setting_summary_location">Дозволи сајтовима приступ локацији. Неким сајтовима је ова опција неопходна (нпр. Гугл мапама ради навигације).</string>
+    <string name="setting_title_history">Историјат</string>
+    <string name="setting_summary_history">Чувај историјат посећених сајтова.</string>
     <!-- browser clear -->
-    <string name="data_summary">All files will be exported to the \"Android/data/de.baumann.browser/files/browser_backup/\" directory of your sd-card. This directory will be DELETED, if you uninstall \"FOSS Browser\". So make a backup regularly on a save place.</string>
+    <string name="data_summary">Све датотеке ће бити извезене у директоријум \"Android/data/de.baumann.browser/files/browser_backup/\" на Вашој СД картици. Ова фасцикла ће бити ИЗБРИСАНА ако уклоните FOSS прегледач, зато редовно правите резервне копије на сигурном месту.</string>
     <string name="clear_title_quit">Clear on application exit</string>
     <string name="clear_summary_quit">Every time you quit \"FOSS Browser\" all above checked data will be deleted.</string>
-    <string name="clear_title_cache">Clear Cache</string>
-    <string name="clear_title_cookie">Clear Cookies</string>
-    <string name="clear_title_history">Clear History</string>
+    <string name="clear_title_cache">Очисти кеш</string>
+    <string name="clear_title_cookie">Избриши колачиће</string>
+    <string name="clear_title_history">Очисти историјат</string>
     <string name="clear_title_indexedDB">Clear \"indexed databases\" and \"local webview storage\"</string>
     <string name="clear_title_deleteDatabase">Delete database</string>
     <string name="clear_summary_deleteDatabase">Delete the whole database (Startpage, bookmarks, history and all whitelists).</string>

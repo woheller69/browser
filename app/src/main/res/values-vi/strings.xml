@@ -156,10 +156,7 @@
     <!-- Others setting -->
     <string name="setting_title_others">Khác</string>
     <!-- Toast -->
-    <string name="toast_add_to_home_successful">Thêm vào Trang chủ thành công</string>
-    <string name="toast_add_to_home_failed">Thêm vào Trang chủ thất bại</string>
     <string name="toast_add_whitelist_successful">Thêm Miền thành công</string>
-    <string name="toast_already_exist_in_home">Đã tồn tại trong trang chủ</string>
     <string name="toast_copy_successful">Sao chép thành công</string>
     <string name="toast_delete_successful">Xóa thành công</string>
     <string name="toast_domain_already_exists">Miền đã tồn tại</string>
@@ -172,7 +169,6 @@
     <string name="toast_downloadComplete">Tải xuống hoàn tất. Mở trình quản lý tệp?</string>
     <string name="toast_unsecured">Trang web sử dụng kết nối không bảo mật (\"http\"). Thử kết nối bảo mật (\"https\")?</string>
     <string name="toast_backup">Sao lưu dữ liệu? Việc này sẽ ghi đè lên bản sao lưu cũ.</string>
-    <string name="toast_fav">Successfully set as start site.</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">Xoá</string>
     <string name="whitelist_edit_hint">Miền</string>

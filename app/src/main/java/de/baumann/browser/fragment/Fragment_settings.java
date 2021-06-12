@@ -29,7 +29,6 @@ import de.baumann.browser.activity.Settings_Filter;
 import de.baumann.browser.activity.Settings_Gesture;
 import de.baumann.browser.activity.Settings_StartActivity;
 import de.baumann.browser.activity.Settings_UI;
-import de.baumann.browser.unit.HelperUnit;
 import de.baumann.browser.R;
 
 public class Fragment_settings extends PreferenceFragmentCompat implements SharedPreferences.OnSharedPreferenceChangeListener {

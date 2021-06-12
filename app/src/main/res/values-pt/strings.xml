@@ -156,10 +156,7 @@
     <!-- Others setting -->
     <string name="setting_title_others">Outros</string>
     <!-- Toast -->
-    <string name="toast_add_to_home_successful">Adicionado ao Início com sucesso</string>
-    <string name="toast_add_to_home_failed">Erro ao adicionar ao Início</string>
     <string name="toast_add_whitelist_successful">Domínio adicionado com sucesso</string>
-    <string name="toast_already_exist_in_home">Já existe em Início</string>
     <string name="toast_copy_successful">Copiado com sucesso</string>
     <string name="toast_delete_successful">Apagado com sucesso</string>
     <string name="toast_domain_already_exists">O domínio já existente</string>
@@ -172,7 +169,6 @@
     <string name="toast_downloadComplete">Download finalizado. Abrir gerenciador de arquivos?</string>
     <string name="toast_unsecured">O site usa uma conexão insegura (\"http\"). Tentar uma conexão segura (\"https\")?</string>
     <string name="toast_backup">Criar backup? Irá substituir os dados do backup anterior.</string>
-    <string name="toast_fav">Definido como favorito.</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">Limpar</string>
     <string name="whitelist_edit_hint">Domínio</string>

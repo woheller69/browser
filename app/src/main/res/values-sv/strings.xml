@@ -156,10 +156,7 @@
     <!-- Others setting -->
     <string name="setting_title_others">Others</string>
     <!-- Toast -->
-    <string name="toast_add_to_home_successful">Successfully added to Home</string>
-    <string name="toast_add_to_home_failed">Failed to add to Home</string>
     <string name="toast_add_whitelist_successful">Successfully added Domain</string>
-    <string name="toast_already_exist_in_home">Already exist in home</string>
     <string name="toast_copy_successful">Successfully copied</string>
     <string name="toast_delete_successful">Successfully deleted</string>
     <string name="toast_domain_already_exists">Domain already exists</string>
@@ -172,7 +169,6 @@
     <string name="toast_downloadComplete">Hämtning slutförd. Öppna filhanterare?</string>
     <string name="toast_unsecured">Website uses an unsecured connection (\"http\"). Try a secure connection (\"https\")?</string>
     <string name="toast_backup">Säkerhetskopiera data? Detta skriver över den gamla säkerhetskopian.</string>
-    <string name="toast_fav">Successfully set as start site.</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">Clear</string>
     <string name="whitelist_edit_hint">Domain</string>

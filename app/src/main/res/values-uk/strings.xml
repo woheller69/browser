@@ -156,10 +156,7 @@
     <!-- Others setting -->
     <string name="setting_title_others">Інший</string>
     <!-- Toast -->
-    <string name="toast_add_to_home_successful">Успішно додано на головну</string>
-    <string name="toast_add_to_home_failed">Не вдалося додати на головну</string>
     <string name="toast_add_whitelist_successful">Успішно додано домен</string>
-    <string name="toast_already_exist_in_home">Вже існує на головній</string>
     <string name="toast_copy_successful">Успішно скопійовано</string>
     <string name="toast_delete_successful">Успішно видалено</string>
     <string name="toast_domain_already_exists">Домен вже існує</string>
@@ -172,7 +169,6 @@
     <string name="toast_downloadComplete">Завантаження завершене. Відкрити файловий менеджер?</string>
     <string name="toast_unsecured">Website uses an unsecured connection (\"http\"). Try a secure connection (\"https\")?</string>
     <string name="toast_backup">Зберегти дані? Це перезапише стару резервну копію.</string>
-    <string name="toast_fav">Успішно обрано як улюблене.</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">Очистити</string>
     <string name="whitelist_edit_hint">Домен</string>

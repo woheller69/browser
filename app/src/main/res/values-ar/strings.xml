@@ -156,10 +156,7 @@
     <!-- Others setting -->
     <string name="setting_title_others">أخرى</string>
     <!-- Toast -->
-    <string name="toast_add_to_home_successful">أضيف إلى الرئيسية بنجاح</string>
-    <string name="toast_add_to_home_failed">فشلت الإضافة الى الرئيسية</string>
     <string name="toast_add_whitelist_successful">أضيف النطاق بنجاح</string>
-    <string name="toast_already_exist_in_home">موجود مسبقا في الرئيسية</string>
     <string name="toast_copy_successful">نُسخ بنجاح</string>
     <string name="toast_delete_successful">حُذف بنجاح</string>
     <string name="toast_domain_already_exists">النطاق موجود مسبقا</string>
@@ -172,7 +169,6 @@
     <string name="toast_downloadComplete">اكتمل التحميل. أفتح مدير الملفات؟</string>
     <string name="toast_unsecured">يستخدم الموقع اتصالا غير آمن (\"http\"). أجرب اتصالا آمنا (\"https\")؟</string>
     <string name="toast_backup">اعمل نسخا احتياطيا للبيانات؟ هذا سيستبدل النسخ الاحتياطي القديم.</string>
-    <string name="toast_fav">Successfully set as start site.</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">إفراغ</string>
     <string name="whitelist_edit_hint">النطاق</string>

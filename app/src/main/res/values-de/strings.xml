@@ -156,10 +156,7 @@
     <!-- Others setting -->
     <string name="setting_title_others">Sonstiges</string>
     <!-- Toast -->
-    <string name="toast_add_to_home_successful">Erfolgreich gespeichert.</string>
-    <string name="toast_add_to_home_failed">Kann nicht gespeichert werden.</string>
     <string name="toast_add_whitelist_successful">Domain erfolgreich hinzugefügt</string>
-    <string name="toast_already_exist_in_home">Ist bereits gespeichert.</string>
     <string name="toast_copy_successful">Erfolgreich kopiert</string>
     <string name="toast_delete_successful">Erfolgreich gelöscht</string>
     <string name="toast_domain_already_exists">Domain existiert bereits</string>
@@ -172,7 +169,6 @@
     <string name="toast_downloadComplete">Download vollständig. Dateimanager öffnen?</string>
     <string name="toast_unsecured">Diese Website benutzt eine ungesicherte Verbindung (\"http\"). Möchtest du eine sichere Verbindung (\"https\") versuchen?</string>
     <string name="toast_backup">Daten sichern? Das überschreibt die alte Sicherung.</string>
-    <string name="toast_fav">Erfolgreich als Startseite gespeichert.</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">Löschen</string>
     <string name="whitelist_edit_hint">Domain</string>

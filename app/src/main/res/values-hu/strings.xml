@@ -156,10 +156,7 @@
     <!-- Others setting -->
     <string name="setting_title_others">Egyebek</string>
     <!-- Toast -->
-    <string name="toast_add_to_home_successful">Sikeresen hozzáadva a Kezdőlaphoz</string>
-    <string name="toast_add_to_home_failed">Nem sikerült hozzáadni a Kezdőlaphoz</string>
     <string name="toast_add_whitelist_successful">A Domain sikeresen hozzáadva</string>
-    <string name="toast_already_exist_in_home">Már létezik a kezdőlapon</string>
     <string name="toast_copy_successful">Sikeresen másolva</string>
     <string name="toast_delete_successful">Sikeresen törölve</string>
     <string name="toast_domain_already_exists">A domain már létezik</string>
@@ -172,7 +169,6 @@
     <string name="toast_downloadComplete">Befejezve a letöltés. Megnyitja a fájlkezelőt?</string>
     <string name="toast_unsecured">A weboldal nem biztonságos kapcsolatot használ (\"http\"). Megpróbálja a biztonságos kapcsolatot (\"https\")?</string>
     <string name="toast_backup">Biztonsági másolat az adatokról? Ez felülírja a régi biztonsági másolatot.</string>
-    <string name="toast_fav">Sikeresen beállítva kedvencként.</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">Törlés</string>
     <string name="whitelist_edit_hint">Domain</string>

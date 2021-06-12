@@ -156,10 +156,7 @@
     <!-- Others setting -->
     <string name="setting_title_others">Pozostałe</string>
     <!-- Toast -->
-    <string name="toast_add_to_home_successful">Poprawnie dodano do ważnych witryn</string>
-    <string name="toast_add_to_home_failed">Błąd dodawania do ważnych witryn</string>
     <string name="toast_add_whitelist_successful">Poprawnie dodano adres witryny</string>
-    <string name="toast_already_exist_in_home">Ta strona już istnieje w ważnych witrynach</string>
     <string name="toast_copy_successful">Kopiowanie zakończone</string>
     <string name="toast_delete_successful">Usuwanie zakończone</string>
     <string name="toast_domain_already_exists">Ten adres witryny już istnieje</string>
@@ -172,7 +169,6 @@
     <string name="toast_downloadComplete">Pobieranie ukończone. Otworzyć katalog pobierania?</string>
     <string name="toast_unsecured">Ta witryna używa nieszyfrowanego połączenia (\"http\"). Spróbować przejść na szyfrowane (\"https\")?</string>
     <string name="toast_backup">Dokonać nowej kopii bezpieczeństwa danych? Nadpisze ona poprzednią kopię.</string>
-    <string name="toast_fav">Ustawiono jako ulubioną na start.</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">Wymaż</string>
     <string name="whitelist_edit_hint">Adres</string>

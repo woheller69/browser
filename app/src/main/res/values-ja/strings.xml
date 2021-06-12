@@ -156,10 +156,7 @@
     <!-- Others setting -->
     <string name="setting_title_others">その他</string>
     <!-- Toast -->
-    <string name="toast_add_to_home_successful">ホームへの追加に成功しました</string>
-    <string name="toast_add_to_home_failed">ホームへの追加に失敗しました</string>
     <string name="toast_add_whitelist_successful">ドメインの追加に成功しました</string>
-    <string name="toast_already_exist_in_home">既にホームに存在します</string>
     <string name="toast_copy_successful">正常にコピーされました</string>
     <string name="toast_delete_successful">正常に削除されました</string>
     <string name="toast_domain_already_exists">ドメインは既に存在します</string>
@@ -172,7 +169,6 @@
     <string name="toast_downloadComplete">ダウンロードが完了しました。ファイルマネージャーを開きますか?</string>
     <string name="toast_unsecured">ウェブサイトは安全でない接続 (\"http\") を使用しています。安全な接続を試してみますか (\"https\")?</string>
     <string name="toast_backup">データをバックアップしますか? これにより古いバックアップは上書きされます。</string>
-    <string name="toast_fav">スタートページとして保存しました。</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">消去</string>
     <string name="whitelist_edit_hint">ドメイン</string>

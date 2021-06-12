@@ -156,10 +156,7 @@
     <!-- Others setting -->
     <string name="setting_title_others">Другие</string>
     <!-- Toast -->
-    <string name="toast_add_to_home_successful">Успешно добавлено на главную</string>
-    <string name="toast_add_to_home_failed">Не удалось добавить на главную</string>
     <string name="toast_add_whitelist_successful">Успешно добавлен домен</string>
-    <string name="toast_already_exist_in_home">Уже существует на главной</string>
     <string name="toast_copy_successful">Успешно скопировано</string>
     <string name="toast_delete_successful">Успешно удалено</string>
     <string name="toast_domain_already_exists">Домен уже существует</string>
@@ -172,7 +169,6 @@
     <string name="toast_downloadComplete">Загрузка завершена. Открыть файловый менеджер?</string>
     <string name="toast_unsecured">Сайт использует незащищенное соединение (\"http\"). Попробовать безопасное соединение (\"https\")?</string>
     <string name="toast_backup">Сохранить данные? Это перезапишет старую резервную копию.</string>
-    <string name="toast_fav">Успешно установлено главной.</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">Очистить</string>
     <string name="whitelist_edit_hint">Домен</string>

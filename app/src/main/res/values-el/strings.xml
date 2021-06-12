@@ -156,10 +156,7 @@
     <!-- Others setting -->
     <string name="setting_title_others">Άλλα</string>
     <!-- Toast -->
-    <string name="toast_add_to_home_successful">Προστέθηκε επιτυχώς στην Αρχική</string>
-    <string name="toast_add_to_home_failed">Αποτυχία προσθήκης στην Αρχική</string>
     <string name="toast_add_whitelist_successful">Ο Domain προστέθηκε με επιτυχία</string>
-    <string name="toast_already_exist_in_home">Υπάρχει ήδη στην αρχική</string>
     <string name="toast_copy_successful">Αντιγράφτηκε με επιτυχία</string>
     <string name="toast_delete_successful">Διαγράφηκε με επιτυχία</string>
     <string name="toast_domain_already_exists">Ο domain υπάρχει ήδη</string>
@@ -172,7 +169,6 @@
     <string name="toast_downloadComplete">Η λήψη ολοκληρώθηκε. Άνοιγμα διαχειριστή αρχείων;</string>
     <string name="toast_unsecured">Η ιστοσελίδα χρησιμοποιεί μια μη ασφαλή σύνδεση (\"http\"). Δοκιμάστε μια ασφαλή σύνδεση (\"https\");</string>
     <string name="toast_backup">Αντίγραφο ασφαλείας δεδομένων? Αυτό θα αντικαταστήσει το παλιό αντίγραφο ασφαλείας.</string>
-    <string name="toast_fav">Successfully set as start site.</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">Εκκαθάριση</string>
     <string name="whitelist_edit_hint">Domain</string>

@@ -156,10 +156,7 @@
     <!-- Others setting -->
     <string name="setting_title_others">Overig</string>
     <!-- Toast -->
-    <string name="toast_add_to_home_successful">Toegevoegd aan beginscherm</string>
-    <string name="toast_add_to_home_failed">Toevoegen mislukt</string>
     <string name="toast_add_whitelist_successful">Domein toegevoegd</string>
-    <string name="toast_already_exist_in_home">Staat al op het beginscherm</string>
     <string name="toast_copy_successful">Gekopieerd</string>
     <string name="toast_delete_successful">Verwijderd</string>
     <string name="toast_domain_already_exists">Domein is al aanwezig</string>
@@ -172,7 +169,6 @@
     <string name="toast_downloadComplete">Downloaden voltooid. Wil je bestandsbeheer openen?</string>
     <string name="toast_unsecured">Website uses an unsecured connection (\"http\"). Try a secure connection (\"https\")?</string>
     <string name="toast_backup">Wil je de gegevens back-uppen? Dit overschrijft de oude back-up.</string>
-    <string name="toast_fav">Successfully set as start site.</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">Wissen</string>
     <string name="whitelist_edit_hint">Domein</string>

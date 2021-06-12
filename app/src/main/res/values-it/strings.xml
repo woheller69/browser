@@ -156,10 +156,7 @@
     <!-- Others setting -->
     <string name="setting_title_others">Altro</string>
     <!-- Toast -->
-    <string name="toast_add_to_home_successful">Aggiunto con successo alla pagina iniziale</string>
-    <string name="toast_add_to_home_failed">Impossibile aggiungere alla pagina iniziale</string>
     <string name="toast_add_whitelist_successful">Dominio aggiunto con successo</string>
-    <string name="toast_already_exist_in_home">Già presente nella pagina iniziale</string>
     <string name="toast_copy_successful">Copiato con successo</string>
     <string name="toast_delete_successful">Eliminato con successo</string>
     <string name="toast_domain_already_exists">Dominio già presente</string>
@@ -172,7 +169,6 @@
     <string name="toast_downloadComplete">Download completato. Aprire File Manager?</string>
     <string name="toast_unsecured">Il sito web utilizza una connessione non protetta (\"http\"). Provare una connessione sicura (\"&lt;unk&gt; \")?</string>
     <string name="toast_backup">Effettuare il backup dei dati? Questo sovrascriverà il backup precedente.</string>
-    <string name="toast_fav">Aggiunto con successo ai segnalibri.</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">Elimina</string>
     <string name="whitelist_edit_hint">Dominio</string>

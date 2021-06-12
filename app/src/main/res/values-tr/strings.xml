@@ -156,10 +156,7 @@
     <!-- Others setting -->
     <string name="setting_title_others">Diğer</string>
     <!-- Toast -->
-    <string name="toast_add_to_home_successful">Başarıyla ana sayfaya eklendi</string>
-    <string name="toast_add_to_home_failed">Ana sayfaya eklenemedi</string>
     <string name="toast_add_whitelist_successful">Başarıyla etki alanı eklendi</string>
-    <string name="toast_already_exist_in_home">Ana sayfada zaten mevcut</string>
     <string name="toast_copy_successful">Başarıyla kopyalandı</string>
     <string name="toast_delete_successful">Başarıyla silindi</string>
     <string name="toast_domain_already_exists">Etki alanı zaten mevcut</string>
@@ -172,7 +169,6 @@
     <string name="toast_downloadComplete">İndirme tamamlandı. Dosya yöneticisi açılsın mı?</string>
     <string name="toast_unsecured">Web sitesi güvenli olmayan bir bağlantı (\"http\") kullanıyor. Güvenli bir bağlantı (\"https\") denensin mi?</string>
     <string name="toast_backup">Veri yedeklensin mi? Bu eski yedeklemenin üzerine yazacaktır.</string>
-    <string name="toast_fav">Başarıyla başlangıç sitesi olarak ayarlandı.</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">Temzile</string>
     <string name="whitelist_edit_hint">Etki alanı</string>

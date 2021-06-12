@@ -156,10 +156,7 @@
     <!-- Others setting -->
     <string name="setting_title_others">Další</string>
     <!-- Toast -->
-    <string name="toast_add_to_home_successful">Úspěšně přidáno na plochu</string>
-    <string name="toast_add_to_home_failed">Přidání na plochu se nezdařilo</string>
     <string name="toast_add_whitelist_successful">Doména byla úspěšně přidána</string>
-    <string name="toast_already_exist_in_home">Na ploše již existuje</string>
     <string name="toast_copy_successful">Úspěšně zkopírováno</string>
     <string name="toast_delete_successful">Úspěšně smazáno</string>
     <string name="toast_domain_already_exists">Doména již existuje</string>
@@ -172,7 +169,6 @@
     <string name="toast_downloadComplete">Stahování dokončeno. Otevřít správce souborů?</string>
     <string name="toast_unsecured">Stránka používá nezabezpečené připojení („http“). Chcete zkusit zabezpečné připojení („https“)?</string>
     <string name="toast_backup">Zálohovat data? Tato akce přepíše starou zálohu.</string>
-    <string name="toast_fav">Úspěšně nastaveno jako oblíbené.</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">Vymazat</string>
     <string name="whitelist_edit_hint">Doména</string>

@@ -156,10 +156,7 @@
     <!-- Others setting -->
     <string name="setting_title_others">其他</string>
     <!-- Toast -->
-    <string name="toast_add_to_home_successful">釘選至主頁成功</string>
-    <string name="toast_add_to_home_failed">釘選至主頁失敗</string>
     <string name="toast_add_whitelist_successful">域名新增成功</string>
-    <string name="toast_already_exist_in_home">已釘選在主頁</string>
     <string name="toast_copy_successful">複製成功</string>
     <string name="toast_delete_successful">刪除成功</string>
     <string name="toast_domain_already_exists">域名已存在</string>
@@ -172,7 +169,6 @@
     <string name="toast_downloadComplete">下載完成。是否開啟檔案管理器？</string>
     <string name="toast_unsecured">此網站使用不安全的連線（http），是否嘗試使用安全連線（https）？</string>
     <string name="toast_backup">是否備份資料？舊的資料將被覆蓋！</string>
-    <string name="toast_fav">成功設為首頁</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">清除</string>
     <string name="whitelist_edit_hint">域名</string>

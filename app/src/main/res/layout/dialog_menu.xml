@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:layoutDirection="locale"
+    android:orientation="vertical">
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/menuTitle"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:text="@string/setting_filter"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:ellipsize="end"
+        android:gravity="center_vertical"
         android:includeFontPadding="false"
         android:maxLines="1"
-        android:gravity="center_vertical"
+        android:text="@string/setting_filter"
         android:textAppearance="?attr/textAppearanceBody1"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 
     <View
         android:layout_width="match_parent"
@@ -31,7 +32,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:gravity="center"
-        android:stretchMode="columnWidth"
-        android:numColumns="1" />
+        android:numColumns="1"
+        android:stretchMode="columnWidth" />
 
 </LinearLayout>

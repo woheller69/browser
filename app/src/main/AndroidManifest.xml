@@ -29,7 +29,8 @@
         android:hardwareAccelerated="true"
         android:usesCleartextTraffic="true"
         android:resizeableActivity="false"
-        tools:targetApi="n">
+        tools:targetApi="n"
+        android:supportsRtl="true">
 
         <!-- BrowserActivity -->
         <activity android:name="de.baumann.browser.activity.BrowserActivity"

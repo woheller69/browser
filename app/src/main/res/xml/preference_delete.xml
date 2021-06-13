@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <CheckBoxPreference android:key="@string/sp_clear_cache"
         android:defaultValue="false"
@@ -10,9 +11,11 @@
         android:defaultValue="false"
         android:title="@string/clear_title_history"/>
 
-    <CheckBoxPreference android:key="sp_clearIndexedDB"
+    <CheckBoxPreference
         android:defaultValue="false"
-        android:title="@string/clear_title_indexedDB"/>
+        android:key="sp_clearIndexedDB"
+        android:title="@string/clear_title_indexedDB"
+        app:singleLineTitle="false" />
 
     <CheckBoxPreference android:key="@string/sp_clear_cookie"
         android:defaultValue="false"

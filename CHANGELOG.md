@@ -1,4 +1,7 @@
 ### v 7.5 (WIP)
+
+- Added right to left layout support (thanks to @M3hdiRostami)
+- Added Farsi (Persian) language support (thanks to @M3hdiRostami)
 - fix: New bookmarks are not shown in red-filtered bookmark view
 - fix: Application crash when trying to watch video in full screen mode
 - fix: showing keyboard when leaving fullscreen mode

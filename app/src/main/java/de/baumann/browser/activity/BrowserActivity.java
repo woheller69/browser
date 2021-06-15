@@ -1221,17 +1221,14 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         BadgeUtils.attachBadgeDrawable(badgeDrawable, omniBox_tab, findViewById(R.id.layout));
         omniBox_text.clearFocus();
 
-        if (ninjaWebView == currentAlbumController) {
-            this.cookieHosts = new Cookie(this.context);
-            CookieManager manager = CookieManager.getInstance();
-            if (cookieHosts.isWhite(ninjaWebView.getUrl()) || sp.getBoolean(context.getString(R.string.sp_cookies), true)) {
-                manager.setAcceptCookie(true);
-                manager.getCookie(ninjaWebView.getUrl());
-            } else {
-                manager.setAcceptCookie(false);
-            }
+        ninjaWebView = (NinjaWebView) currentAlbumController;
+        this.cookieHosts = new Cookie(this.context);
+        CookieManager manager = CookieManager.getInstance();
+        if (cookieHosts.isWhite(ninjaWebView.getUrl()) || sp.getBoolean(context.getString(R.string.sp_cookies), true)) {
+            manager.setAcceptCookie(true);
+            manager.getCookie(ninjaWebView.getUrl());
         } else {
-            ninjaWebView = (NinjaWebView) currentAlbumController;
+            manager.setAcceptCookie(false);
         }
 
         if (!keyboard) {

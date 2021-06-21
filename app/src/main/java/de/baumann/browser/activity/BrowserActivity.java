@@ -115,6 +115,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     private RecordAdapter adapter;
     private RelativeLayout omniBox;
     private ImageButton omniBox_overview;
+    private ImageButton omniBox_bookmark;
     private AutoCompleteTextView omniBox_text;
     private ImageButton tab_openOverView;
 
@@ -152,6 +153,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     private Javascript javaHosts;
     private Cookie cookieHosts;
     private Remote remote;
+    private boolean desktopMode=false;
 
     private long newIcon;
     private boolean filter;
@@ -383,7 +385,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     searchPanel.setVisibility(View.GONE);
                     omniBox.setVisibility(View.VISIBLE);
                 } else if (ninjaWebView.canGoBack()) {
-                        ninjaWebView.goBack();
+                    ninjaWebView.goBack();
                 } else {
                     removeAlbum(currentAlbumController);
                 }
@@ -538,6 +540,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         omniBox_text.setKeyListener(null); // Disable input
         omniBox_text.setEllipsize(TextUtils.TruncateAt.END);
         omniBox_overview = findViewById(R.id.omnibox_overview);
+        omniBox_bookmark=findViewById(R.id.omnibox_bookmark);
         omniBox_tab = findViewById(R.id.omniBox_tab);
         omniBox_tab.setOnClickListener(v -> showTabView());
 
@@ -619,6 +622,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             show_dialogFilter();
             return false;
         });
+        omniBox_bookmark.setOnClickListener(v-> saveBookmark());
         updateAutoComplete();
     }
 
@@ -1097,7 +1101,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             if (sp.getBoolean("saveHistory", true)) {
                 chip_history.setChecked(false);
                 sp.edit().putBoolean("saveHistory", false).apply();
-        } else {
+            } else {
                 chip_history.setChecked(true);
                 sp.edit().putBoolean("saveHistory", true).apply();
             }
@@ -1550,7 +1554,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         GridItem item_02 = new GridItem(0, getString(R.string.main_menu_new_tabOpen),  0);
         GridItem item_03 = new GridItem(0, getString(R.string.menu_openFav),  0);
         GridItem item_04 = new GridItem(0, getString(R.string.menu_closeTab),  0);
-        GridItem item_05 = new GridItem(0, getString(R.string.menu_quit),  0);
+        GridItem item_05;
+        if (desktopMode) item_05 = new GridItem(0,getString((R.string.menu_mobileView)),0);
+        else item_05 = new GridItem(0,getString((R.string.menu_desktopView)),0);
+        GridItem item_06 = new GridItem(0, getString(R.string.menu_quit),  0);
 
         final List<GridItem> gridList_tab = new LinkedList<>();
 
@@ -1559,6 +1566,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         gridList_tab.add(gridList_tab.size(), item_02);
         gridList_tab.add(gridList_tab.size(), item_04);
         gridList_tab.add(gridList_tab.size(), item_05);
+        gridList_tab.add(gridList_tab.size(), item_06);
 
         GridAdapter gridAdapter_tab = new GridAdapter(context, gridList_tab);
         menu_grid_tab.setAdapter(gridAdapter_tab);
@@ -1577,8 +1585,11 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             } else if (position == 3) {
                 dialog_overflow.cancel();
                 removeAlbum(currentAlbumController);
-            } else if (position == 4) {
+            } else if (position == 5) {
                 doubleTapsQuit();
+            } else if (position == 4) {
+                dialog_overflow.cancel();
+                toggleDesktopMode(ninjaWebView);
             }
         });
 
@@ -1722,8 +1733,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     }
 
     private void showContextMenuList (final String title, final String url,
-                                     final RecordAdapter adapterRecord, final List<Record> recordList, final int location,
-                                     final long icon) {
+                                      final RecordAdapter adapterRecord, final List<Record> recordList, final int location,
+                                      final long icon) {
 
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
         View dialogView = View.inflate(context, R.layout.dialog_menu, null);
@@ -1948,4 +1959,27 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         }
         return list.get(index);
     }
+
+    public void toggleDesktopMode(WebView webView) {
+        desktopMode=!desktopMode;
+
+        String newUserAgent = webView.getSettings().getUserAgentString();
+        if (desktopMode) {
+            try {
+                String ua = webView.getSettings().getUserAgentString();
+                String androidOSString = webView.getSettings().getUserAgentString().substring(ua.indexOf("("), ua.indexOf(")") + 1);
+                newUserAgent = webView.getSettings().getUserAgentString().replace(androidOSString, "(X11; Linux x86_64)");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else {
+            sp = PreferenceManager.getDefaultSharedPreferences(context);
+            newUserAgent = sp.getString("userAgent", "");
+        }
+        webView.getSettings().setUserAgentString(newUserAgent);
+        webView.getSettings().setUseWideViewPort(desktopMode);
+        webView.getSettings().setSupportZoom(desktopMode);
+        webView.reload();
+    }
+
 }

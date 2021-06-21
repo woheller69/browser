@@ -64,7 +64,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.webkit.CookieManager;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
-import android.webkit.WebSettings;
+import android.webkit.WebStorage;
 import android.webkit.WebView;
 import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
@@ -94,7 +94,6 @@ import de.baumann.browser.database.BookmarkList;
 import de.baumann.browser.database.Record;
 import de.baumann.browser.database.RecordAction;
 import de.baumann.browser.R;
-import de.baumann.browser.service.ClearService;
 import de.baumann.browser.unit.BrowserUnit;
 import de.baumann.browser.unit.HelperUnit;
 import de.baumann.browser.unit.RecordUnit;
@@ -339,14 +338,34 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
     @Override
     public void onDestroy() {
+
         if (sp.getBoolean(getString(R.string.sp_clear_quit), false)) {
-            Intent toClearService = new Intent(this, ClearService.class);
-            startService(toClearService);
+
+            boolean clearCache = sp.getBoolean(getString(R.string.sp_clear_cache), false);
+            boolean clearCookie = sp.getBoolean(getString(R.string.sp_clear_cookie), false);
+            boolean clearHistory = sp.getBoolean(getString(R.string.sp_clear_history), false);
+            boolean clearIndexedDB = sp.getBoolean(("sp_clearIndexedDB"), false);
+
+            if (clearCache) {
+                BrowserUnit.clearCache(this);
+            }
+            if (clearCookie) {
+                BrowserUnit.clearCookie();
+            }
+            if (clearHistory) {
+                BrowserUnit.clearHistory(this);
+            }
+            if (clearIndexedDB) {
+                BrowserUnit.clearIndexedDB(this);
+                WebStorage.getInstance().deleteAllData();
+            }
         }
+
         BrowserContainer.clear();
         unregisterReceiver(downloadReceiver);
         ninjaWebView.getViewTreeObserver().removeOnGlobalLayoutListener(keyboardLayoutListener);
-        finish();
+
+        System.exit(0);
         super.onDestroy();
     }
 
@@ -1298,6 +1317,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         contentSelectionIntent.setType("*/*");
         Intent chooserIntent = new Intent(Intent.ACTION_CHOOSER);
         chooserIntent.putExtra(Intent.EXTRA_INTENT, contentSelectionIntent);
+        //noinspection deprecation
         startActivityForResult(chooserIntent, INPUT_FILE_REQUEST_CODE);
     }
 

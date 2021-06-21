@@ -84,7 +84,7 @@ public class NinjaWebViewClient extends WebViewClient {
 
     @Override
     public void onLoadResource(WebView view, String url) {
-        view.evaluateJavascript("document.querySelector('meta[name=\"viewport\"]').setAttribute('content', 'width=1024px, initial-scale=' + (document.documentElement.clientWidth / 1024));", null);
+       if (view.getWidth()<1300) view.evaluateJavascript("document.querySelector('meta[name=\"viewport\"]').setAttribute('content', 'width=1200px, initial-scale=' + (document.documentElement.clientWidth / 1200));", null);
     }
 
     @Override

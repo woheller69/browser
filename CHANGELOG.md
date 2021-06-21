@@ -1,15 +1,18 @@
-### v 7.5 (WIP)
+### v 7.5
 
 - Added right to left layout support (thanks to @M3hdiRostami)
 - Added Farsi (Persian) language support (thanks to @M3hdiRostami)
+- updated: AdBlock
+- updated: AppIcon
 - fix: New bookmarks are not shown in red-filtered bookmark view
 - fix: Application crash when trying to watch video in full screen mode
 - fix: showing keyboard when leaving fullscreen mode
 - fix: interaction with url in address line
 - fix: tab handling
+- fix: toolbar input handling
+- even more fixes
 
-
-### v 7.4 (WIP)
+### v 7.4
 - removed: app shortcuts
 - fix: keyboard not showing on large input fields
 - fix: app crash when displaying overview on start

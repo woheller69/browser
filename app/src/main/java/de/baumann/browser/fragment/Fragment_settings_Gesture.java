@@ -13,6 +13,7 @@ import androidx.preference.PreferenceManager;
 
 import de.baumann.browser.R;
 
+@SuppressWarnings("ConstantConditions")
 public class Fragment_settings_Gesture extends PreferenceFragmentCompat implements SharedPreferences.OnSharedPreferenceChangeListener {
 
     @Override

@@ -25,8 +25,6 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -63,12 +61,10 @@ public class BrowserUnit {
     public static final String URL_SCHEME_ABOUT = "about:";
     public static final String URL_SCHEME_MAIL_TO = "mailto:";
     private static final String URL_SCHEME_FILE = "file://";
-    private static final String URL_SCHEME_HTTP = "https://";
-
-    private static final String URL_PREFIX_GOOGLE_PLAY = "www.google.com/url?q=";
-    private static final String URL_SUFFIX_GOOGLE_PLAY = "&sa";
-    private static final String URL_PREFIX_GOOGLE_PLUS = "plus.url.google.com/url?q=";
-    private static final String URL_SUFFIX_GOOGLE_PLUS = "&rct";
+    private static final String URL_SCHEME_HTTPS = "https://";
+    private static final String URL_SCHEME_HTTP = "http://";
+    private static final String URL_SCHEME_FTP = "ftp://";
+    private static final String URL_SCHEME_INTENT = "intent://";
 
     private static final String BOOKMARK_TYPE = "<DT><A HREF=\"{url}\" ADD_DATE=\"{time}\">{title}</A>";
     private static final String BOOKMARK_TITLE = "{title}";
@@ -76,15 +72,17 @@ public class BrowserUnit {
     private static final String BOOKMARK_TIME = "{time}";
 
     public static boolean isURL(String url) {
-        if (url == null) {
-            return false;
-        }
+
 
         url = url.toLowerCase(Locale.getDefault());
+
         if (url.startsWith(URL_ABOUT_BLANK)
                 || url.startsWith(URL_SCHEME_MAIL_TO)
                 || url.startsWith(URL_SCHEME_FILE)
-                || url.startsWith(URL_SCHEME_HTTP)) {
+                || url.startsWith(URL_SCHEME_HTTP)
+                || url.startsWith(URL_SCHEME_HTTPS)
+                || url.startsWith(URL_SCHEME_FTP)
+                || url.startsWith(URL_SCHEME_INTENT)) {
             return true;
         }
 
@@ -103,17 +101,6 @@ public class BrowserUnit {
     }
 
     public static String queryWrapper(Context context, String query) {
-        // Use prefix and suffix to process some special links
-        String temp = query.toLowerCase(Locale.getDefault());
-        if (temp.contains(URL_PREFIX_GOOGLE_PLAY) && temp.contains(URL_SUFFIX_GOOGLE_PLAY)) {
-            int start = temp.indexOf(URL_PREFIX_GOOGLE_PLAY) + URL_PREFIX_GOOGLE_PLAY.length();
-            int end = temp.indexOf(URL_SUFFIX_GOOGLE_PLAY);
-            query = query.substring(start, end);
-        } else if (temp.contains(URL_PREFIX_GOOGLE_PLUS) && temp.contains(URL_SUFFIX_GOOGLE_PLUS)) {
-            int start = temp.indexOf(URL_PREFIX_GOOGLE_PLUS) + URL_PREFIX_GOOGLE_PLUS.length();
-            int end = temp.indexOf(URL_SUFFIX_GOOGLE_PLUS);
-            query = query.substring(start, end);
-        }
 
         if (isURL(query)) {
             if (query.startsWith(URL_SCHEME_ABOUT) || query.startsWith(URL_SCHEME_MAIL_TO)) {
@@ -125,12 +112,6 @@ public class BrowserUnit {
             }
 
             return query;
-        }
-
-        try {
-            query = URLEncoder.encode(query, URL_ENCODING);
-        } catch (UnsupportedEncodingException u) {
-            Log.w("browser", "Unsupported Encoding Exception");
         }
 
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);

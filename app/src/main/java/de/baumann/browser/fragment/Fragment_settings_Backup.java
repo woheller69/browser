@@ -39,7 +39,7 @@ import de.baumann.browser.unit.BrowserUnit;
 import de.baumann.browser.unit.HelperUnit;
 import de.baumann.browser.view.NinjaToast;
 
-@SuppressWarnings({"ResultOfMethodCallIgnored"})
+@SuppressWarnings({"ResultOfMethodCallIgnored", "ConstantConditions"})
 public class Fragment_settings_Backup extends PreferenceFragmentCompat {
 
     @Override

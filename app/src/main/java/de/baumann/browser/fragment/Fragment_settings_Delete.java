@@ -13,6 +13,7 @@ import java.util.Objects;
 
 import de.baumann.browser.R;
 
+@SuppressWarnings("ConstantConditions")
 public class Fragment_settings_Delete extends PreferenceFragmentCompat {
 
     @Override

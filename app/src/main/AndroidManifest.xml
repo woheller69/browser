@@ -111,11 +111,6 @@
             android:label="@string/setting_filter"
             android:theme="@style/AppTheme"/>
 
-        <!-- ClearService | Provider-->
-        <service android:name="de.baumann.browser.service.ClearService"
-                 android:label="@string/app_name"
-                 android:icon="@mipmap/ic_launcher"/>
-
     </application>
 
 </manifest>

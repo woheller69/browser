@@ -31,6 +31,7 @@ import de.baumann.browser.activity.Settings_StartActivity;
 import de.baumann.browser.activity.Settings_UI;
 import de.baumann.browser.R;
 
+@SuppressWarnings("ConstantConditions")
 public class Fragment_settings extends PreferenceFragmentCompat implements SharedPreferences.OnSharedPreferenceChangeListener {
 
     @Override

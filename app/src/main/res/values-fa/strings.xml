@@ -177,10 +177,7 @@
     <!-- Others setting -->
     <string name="setting_title_others">موارد دیگر</string>
     <!-- Toast -->
-    <string name="toast_add_to_home_successful">با موفقیت،به صفحه خانگی افزوده شد</string>
-    <string name="toast_add_to_home_failed">خطا در افزودن به صفحه خانگی</string>
     <string name="toast_add_whitelist_successful">دامنه با موفقیت افزوده شد</string>
-    <string name="toast_already_exist_in_home">از قبل در صفحه خانگی موجود می باشد</string>
     <string name="toast_copy_successful">کپی با موفقیت انجام شد</string>
     <string name="toast_delete_successful">با موفقیت حذف شد</string>
     <string name="toast_domain_already_exists">دامنه از قبل موجود می باشد</string>
@@ -199,7 +196,6 @@
         وبسایت مورد نظر از ارتباط نا امن (http) استفاده می کند.آیامایل به انتقال به نسخه امن (https) وبسایت هستید؟
     </string>
     <string name="toast_backup">این پشتیبان گیری  روی نسخه ی قبلی بازنویسی خواهد شد،در هرحال انجام شود؟</string>
-    <string name="toast_fav">این صفحه، مورد علاقه شما شد</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">پاک کن</string>
     <string name="whitelist_edit_hint">دامنه</string>

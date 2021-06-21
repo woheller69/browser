@@ -1,6 +1,6 @@
 package de.baumann.browser.activity;
 
-import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
@@ -9,16 +9,18 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
+import androidx.preference.PreferenceManager;
 
 import android.view.Gravity;
 import android.view.MenuItem;
+import android.webkit.WebStorage;
 import android.widget.Button;
 
 import java.util.Objects;
 
 import de.baumann.browser.fragment.Fragment_settings_Delete;
 import de.baumann.browser.R;
-import de.baumann.browser.service.ClearService;
+import de.baumann.browser.unit.BrowserUnit;
 
 public class Settings_Delete extends AppCompatActivity {
 
@@ -42,8 +44,26 @@ public class Settings_Delete extends AppCompatActivity {
             MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(this);
             builder.setMessage(R.string.hint_database);
             builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
-                Intent toClearService = new Intent(Settings_Delete.this, ClearService.class);
-                startService(toClearService);
+
+                SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
+                boolean clearCache = sp.getBoolean(getString(R.string.sp_clear_cache), false);
+                boolean clearCookie = sp.getBoolean(getString(R.string.sp_clear_cookie), false);
+                boolean clearHistory = sp.getBoolean(getString(R.string.sp_clear_history), false);
+                boolean clearIndexedDB = sp.getBoolean(("sp_clearIndexedDB"), false);
+
+                if (clearCache) {
+                    BrowserUnit.clearCache(this);
+                }
+                if (clearCookie) {
+                    BrowserUnit.clearCookie();
+                }
+                if (clearHistory) {
+                    BrowserUnit.clearHistory(this);
+                }
+                if (clearIndexedDB) {
+                    BrowserUnit.clearIndexedDB(this);
+                    WebStorage.getInstance().deleteAllData();
+                }
             });
             builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
             AlertDialog dialog = builder.create();

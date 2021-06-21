@@ -188,5 +188,7 @@
         \u25AA &lt;i&gt;Ochrana soukromí:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/PRIVACY.md
 
     </string>
+    <string name="menu_mobileView">Mobile view</string>
+    <string name="menu_desktopView">Desktop view</string>
     <!-- License changelog -->
 </resources>

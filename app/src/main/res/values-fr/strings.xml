@@ -186,5 +186,7 @@
         \u25AA &lt;i&gt;Confidentialité :&lt;/i&gt; https://github. om/scoute-dich/browser/blob/master/PRIVACY.md
 
     </string>
+    <string name="menu_mobileView">Mobile view</string>
+    <string name="menu_desktopView">Desktop view</string>
     <!-- License changelog -->
 </resources>

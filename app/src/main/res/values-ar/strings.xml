@@ -178,5 +178,7 @@
     <string name="changelog_dialog">        لغتك غير مدعومة بعد؟ تريد ترجمة المتصفح الحر FOSS Browser؟ أو إجراء تحسينات على الترجمات الموجودة؟ لا تتردد في الانضمام إلينا في Crowdin: https://crowdin.com/project/foss-browser.&lt;br&gt;&lt;br&gt;         &lt;b&gt;في المواقع التالية يمكنك الوصول إلى جميع المعلومات الهامة حول المتصفح الحر \"FOSS Browser\". رجاءا اقرأ أيضا حوار المساعدة داخل التطبيق.&lt;/b&gt;&lt;br&gt;&lt;br&gt;         \u25AA &lt;i&gt;موقع المشروع:&lt;/i&gt; https://github.com/scoute-dich/Browser&lt;br&gt;         \u25AA &lt;i&gt;سجلّ التغييرات:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/CHANGELOG.md&lt;br&gt;         \u25AA &lt;i&gt;أسئلة متكررة:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/FAQs.md&lt;br&gt;         \u25AA &lt;i&gt;الرخصة:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/LICENSE.md&lt;br&gt;         \u25AA &lt;i&gt;الخصوصية:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/PRIVACY.md
 
     </string>
+    <string name="menu_mobileView">Mobile view</string>
+    <string name="menu_desktopView">Desktop view</string>
     <!-- License changelog -->
 </resources>

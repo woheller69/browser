@@ -325,13 +325,15 @@ public class BrowserUnit {
                 }
                 String title = getBookmarkTitle(line);
                 String url = getBookmarkURL(line);
+                long date = getBookmarkDate(line);
+                if (date>11) date=11;  //if no color defined yet set it red
                 if (title.trim().isEmpty() || url.trim().isEmpty()) {
                     continue;
                 }
                 Record record = new Record();
                 record.setTitle(title);
                 record.setURL(url);
-                record.setTime(System.currentTimeMillis());
+                record.setTime(date);
                 if (!action.checkUrl(url, RecordUnit.TABLE_BOOKMARK)) {
                     list.add(record);
                 }
@@ -344,6 +346,16 @@ public class BrowserUnit {
             action.close();
         } catch (Exception ignored) {}
         list.size();
+    }
+
+    private static long getBookmarkDate(String line) {
+        for (String string : line.split(" +")) {
+            if (string.startsWith("ADD_DATE=\"")) {
+                int index= string.indexOf("\">");
+                return Long.parseLong(string.substring(10,index));
+            }
+        }
+        return 0;
     }
 
     private static String getBookmarkTitle(String line) {

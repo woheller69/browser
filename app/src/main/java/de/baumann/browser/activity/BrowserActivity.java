@@ -1979,6 +1979,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         webView.getSettings().setUserAgentString(newUserAgent);
         webView.getSettings().setUseWideViewPort(desktopMode);
         webView.getSettings().setSupportZoom(desktopMode);
+        webView.getSettings().setLoadWithOverviewMode(desktopMode);
         webView.reload();
     }
 

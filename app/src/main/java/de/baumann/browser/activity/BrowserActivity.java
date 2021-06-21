@@ -115,6 +115,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     private RecordAdapter adapter;
     private RelativeLayout omniBox;
     private ImageButton omniBox_overview;
+    private ImageButton omniBox_bookmark;
     private AutoCompleteTextView omniBox_text;
     private ImageButton tab_openOverView;
 
@@ -518,6 +519,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         omniBox_text.setKeyListener(null); // Disable input
         omniBox_text.setEllipsize(TextUtils.TruncateAt.END);
         omniBox_overview = findViewById(R.id.omnibox_overview);
+        omniBox_bookmark=findViewById(R.id.omnibox_bookmark);
         omniBox_tab = findViewById(R.id.omniBox_tab);
         omniBox_tab.setOnClickListener(v -> showTabView());
 
@@ -599,6 +601,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             show_dialogFilter();
             return false;
         });
+        omniBox_bookmark.setOnClickListener(v-> saveBookmark());
         updateAutoComplete();
     }
 

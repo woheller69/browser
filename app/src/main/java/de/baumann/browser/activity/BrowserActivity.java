@@ -115,7 +115,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     private RecordAdapter adapter;
     private RelativeLayout omniBox;
     private ImageButton omniBox_overview;
-    private ImageButton omniBox_bookmark;
     private AutoCompleteTextView omniBox_text;
     private ImageButton tab_openOverView;
 
@@ -540,7 +539,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         omniBox_text.setKeyListener(null); // Disable input
         omniBox_text.setEllipsize(TextUtils.TruncateAt.END);
         omniBox_overview = findViewById(R.id.omnibox_overview);
-        omniBox_bookmark=findViewById(R.id.omnibox_bookmark);
         omniBox_tab = findViewById(R.id.omniBox_tab);
         omniBox_tab.setOnClickListener(v -> showTabView());
 
@@ -622,7 +620,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             show_dialogFilter();
             return false;
         });
-        omniBox_bookmark.setOnClickListener(v-> saveBookmark());
         updateAutoComplete();
     }
 
@@ -1107,18 +1104,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             }
         });
 
-        Chip chip_location = dialogView.findViewById(R.id.chip_location);
-        chip_location.setChecked(sp.getBoolean(getString(R.string.sp_location), false));
-        chip_location.setOnClickListener(v -> {
-            if (sp.getBoolean("saveHistory", true)) {
-                chip_location.setChecked(false);
-                sp.edit().putBoolean("saveHistory", false).apply();
-            } else {
-                chip_location.setChecked(true);
-                sp.edit().putBoolean("saveHistory", true).apply();
-            }
-        });
-
         Chip chip_image = dialogView.findViewById(R.id.chip_image);
         chip_image.setChecked(sp.getBoolean(getString(R.string.sp_images), true));
         chip_image.setOnClickListener(v -> {
@@ -1131,16 +1116,25 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             }
         });
 
+        Chip chip_location = dialogView.findViewById(R.id.chip_location);
+        chip_location.setChecked(desktopMode);
+        chip_location.setOnClickListener(v -> {
+            toggleDesktopMode(ninjaWebView);
+            dialog.cancel();
+        });
+
         Chip chip_night = dialogView.findViewById(R.id.chip_night);
         chip_night.setChecked(sp.getBoolean("sp_invert", false));
-        chip_night.setOnClickListener(v -> {if (sp.getBoolean("sp_invert", false)) {
-            chip_image.setChecked(false);
-            sp.edit().putBoolean("sp_invert", false).apply();
-        } else {
-            chip_image.setChecked(true);
-            sp.edit().putBoolean("sp_invert", true).apply();
-        }
+        chip_night.setOnClickListener(v -> {
+            if (sp.getBoolean("sp_invert", false)) {
+                chip_image.setChecked(false);
+                sp.edit().putBoolean("sp_invert", false).apply();
+            } else {
+                chip_image.setChecked(true);
+                sp.edit().putBoolean("sp_invert", true).apply();
+            }
             HelperUnit.initRendering(ninjaWebView, context);
+            dialog.cancel();
         });
 
         ImageButton ib_reload = dialogView.findViewById(R.id.ib_reload);
@@ -1554,10 +1548,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         GridItem item_02 = new GridItem(0, getString(R.string.main_menu_new_tabOpen),  0);
         GridItem item_03 = new GridItem(0, getString(R.string.menu_openFav),  0);
         GridItem item_04 = new GridItem(0, getString(R.string.menu_closeTab),  0);
-        GridItem item_05;
-        if (desktopMode) item_05 = new GridItem(0,getString((R.string.menu_mobileView)),0);
-        else item_05 = new GridItem(0,getString((R.string.menu_desktopView)),0);
-        GridItem item_06 = new GridItem(0, getString(R.string.menu_quit),  0);
+        GridItem item_05 = new GridItem(0, getString(R.string.menu_quit),  0);
 
         final List<GridItem> gridList_tab = new LinkedList<>();
 
@@ -1566,7 +1557,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         gridList_tab.add(gridList_tab.size(), item_02);
         gridList_tab.add(gridList_tab.size(), item_04);
         gridList_tab.add(gridList_tab.size(), item_05);
-        gridList_tab.add(gridList_tab.size(), item_06);
 
         GridAdapter gridAdapter_tab = new GridAdapter(context, gridList_tab);
         menu_grid_tab.setAdapter(gridAdapter_tab);
@@ -1585,11 +1575,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             } else if (position == 3) {
                 dialog_overflow.cancel();
                 removeAlbum(currentAlbumController);
-            } else if (position == 5) {
-                doubleTapsQuit();
             } else if (position == 4) {
-                dialog_overflow.cancel();
-                toggleDesktopMode(ninjaWebView);
+                doubleTapsQuit();
             }
         });
 
@@ -1672,9 +1659,18 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         GridItem item_31 = new GridItem(0, getString(R.string.menu_other_searchSite),  0);
         GridItem item_32 = new GridItem(0, getString(R.string.menu_download),  0);
         GridItem item_33 = new GridItem(0, getString(R.string.setting_label),  0);
+        GridItem item_34;
+        if (desktopMode) item_34 = new GridItem(0,getString((R.string.menu_mobileView)),0);
+        else item_34 = new GridItem(0,getString((R.string.menu_desktopView)),0);
+
+        GridItem item_35;
+        if (sp.getBoolean("sp_invert", false)) item_35 = new GridItem(0,getString((R.string.menu_dayView)),0);
+        else item_35 = new GridItem(0,getString((R.string.menu_nightView)),0);
 
         final List<GridItem> gridList_other = new LinkedList<>();
         gridList_other.add(gridList_other.size(), item_31);
+        gridList_other.add(gridList_other.size(), item_34);
+        gridList_other.add(gridList_other.size(), item_35);
         gridList_other.add(gridList_other.size(), item_32);
         gridList_other.add(gridList_other.size(), item_33);
 
@@ -1687,8 +1683,19 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             if (position == 0) {
                 searchOnSite();
             } else if (position == 1) {
-                startActivity(new Intent(DownloadManager.ACTION_VIEW_DOWNLOADS));
+                dialog_overflow.cancel();
+                toggleDesktopMode(ninjaWebView);
             } else if (position == 2) {
+                if (sp.getBoolean("sp_invert", false)) {
+                    sp.edit().putBoolean("sp_invert", false).apply();
+                } else {
+                    sp.edit().putBoolean("sp_invert", true).apply();
+                }
+                HelperUnit.initRendering(ninjaWebView, context);
+                dialog_overflow.cancel();
+            } else if (position == 3) {
+                startActivity(new Intent(DownloadManager.ACTION_VIEW_DOWNLOADS));
+            } else if (position == 4) {
                 Intent settings = new Intent(BrowserActivity.this, Settings_Activity.class);
                 startActivity(settings);
             }

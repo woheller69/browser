@@ -54,7 +54,8 @@
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="8dp"
-            android:foregroundGravity="fill_horizontal|center_horizontal">
+            android:foregroundGravity="fill_horizontal|center_horizontal"
+            android:scrollbarSize="1dp">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -119,6 +120,32 @@
                         app:textEndPadding="0dp"
                         app:textStartPadding="0dp" />
 
+                </com.google.android.material.chip.ChipGroup>
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="8dp"
+            android:foregroundGravity="fill_horizontal|center_horizontal"
+            android:scrollbarSize="1dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <com.google.android.material.chip.ChipGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp">
+
                     <com.google.android.material.chip.Chip
                         android:id="@+id/chip_history"
                         style="@style/Widget.MaterialComponents.Chip.Choice"
@@ -133,19 +160,6 @@
                         app:textStartPadding="0dp" />
 
                     <com.google.android.material.chip.Chip
-                        android:id="@+id/chip_location"
-                        style="@style/Widget.MaterialComponents.Chip.Choice"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=""
-                        app:chipEndPadding="4dp"
-                        app:chipIcon="@drawable/icon_location"
-                        app:chipIconEnabled="true"
-                        app:chipStartPadding="4dp"
-                        app:textEndPadding="0dp"
-                        app:textStartPadding="0dp" />
-
-                    <com.google.android.material.chip.Chip
                         android:id="@+id/chip_image"
                         style="@style/Widget.MaterialComponents.Chip.Choice"
                         android:layout_width="wrap_content"
@@ -153,6 +167,19 @@
                         android:text=""
                         app:chipEndPadding="4dp"
                         app:chipIcon="@drawable/icon_image"
+                        app:chipIconEnabled="true"
+                        app:chipStartPadding="4dp"
+                        app:textEndPadding="0dp"
+                        app:textStartPadding="0dp" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_location"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        app:chipEndPadding="4dp"
+                        app:chipIcon="@drawable/icon_desktop"
                         app:chipIconEnabled="true"
                         app:chipStartPadding="4dp"
                         app:textEndPadding="0dp"

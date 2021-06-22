@@ -62,21 +62,10 @@
                     android:src="@drawable/icon_overflow_light" />
 
                 <ImageButton
-                    android:id="@+id/omnibox_bookmark"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_toStartOf="@id/omnibox_overflow"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:background="?attr/actionBarItemBackground"
-                    android:src="@drawable/icon_favorite_light" />
-
-                <ImageButton
                     android:id="@+id/omnibox_overview"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_toStartOf="@id/omnibox_bookmark"
+                    android:layout_toStartOf="@id/omnibox_overflow"
                     android:layout_centerVertical="true"
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"

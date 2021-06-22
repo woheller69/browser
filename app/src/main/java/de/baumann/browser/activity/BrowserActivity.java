@@ -1525,6 +1525,12 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             overflow_title.setText(title);
         }
 
+        ImageButton overflow_bookmark = dialogView.findViewById(R.id.overflow_bookmark);
+        overflow_bookmark.setOnClickListener(v -> {
+            dialog_overflow.cancel();
+            saveBookmark();
+        });
+
         ImageButton overflow_reload = dialogView.findViewById(R.id.overflow_reload);
         overflow_reload.setOnClickListener(v -> {
             dialog_overflow.cancel();

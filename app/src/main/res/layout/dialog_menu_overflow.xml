@@ -17,7 +17,7 @@
             android:id="@+id/overflow_title"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_toStartOf="@+id/overflow_reload"
+            android:layout_toStartOf="@+id/overflow_bookmark"
             android:layout_alignParentStart="true"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="8dp"
@@ -30,11 +30,22 @@
             android:textStyle="bold" />
 
         <ImageButton
+            android:id="@+id/overflow_bookmark"
+            android:layout_centerInParent="true"
+            android:layout_toStartOf="@+id/overflow_reload"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/icon_save_bookmark"
+            android:background="?attr/actionBarItemBackground" />
+
+        <ImageButton
             android:id="@+id/overflow_reload"
             android:layout_centerInParent="true"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="0dp"
             android:layout_marginEnd="16dp"
             android:layout_alignParentEnd="true"
             android:src="@drawable/icon_refresh"

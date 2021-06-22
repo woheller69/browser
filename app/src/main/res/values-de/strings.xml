@@ -189,5 +189,7 @@ Bitte lies auch den Hilfedialog in der Anwendung.&lt;/b&gt;&lt;br&gt;&lt;br&gt;
     </string>
     <string name="menu_mobileView">Mobile view</string>
     <string name="menu_desktopView">Desktop view</string>
+    <string name="menu_dayView">Day view</string>
+    <string name="menu_nightView">Night view</string>
     <!-- License changelog -->
 </resources>

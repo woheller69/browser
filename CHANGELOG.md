@@ -1,3 +1,8 @@
+### v 7.5 (WIP)
+
+- added: toggle mobile/desktop mode (thanks to @woheller69)
+- fix: correct icon colors when importing bookmarks (thanks to @woheller69)
+
 ### v 7.5
 
 - Added right to left layout support (thanks to @M3hdiRostami)

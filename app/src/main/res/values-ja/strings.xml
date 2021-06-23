@@ -186,9 +186,9 @@
         \u25AA &lt;i&gt;プライバシー:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/PRIVACY.md
 
     </string>
-    <string name="menu_mobileView">Mobile view</string>
-    <string name="menu_desktopView">Desktop view</string>
-    <string name="menu_dayView">Day view</string>
-    <string name="menu_nightView">Night view</string>
+    <string name="menu_mobileView">モバイル表示</string>
+    <string name="menu_desktopView">デスクトップ表示</string>
+    <string name="menu_dayView">明るい時での表示</string>
+    <string name="menu_nightView">暗い時での表示</string>
     <!-- License changelog -->
 </resources>

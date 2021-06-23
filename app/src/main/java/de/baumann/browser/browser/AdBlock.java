@@ -2,11 +2,9 @@ package de.baumann.browser.browser;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.content.res.AssetManager;
 import android.util.Log;
 
-import androidx.preference.PreferenceManager;
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.File;
@@ -22,8 +20,7 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.*;
 
-import de.baumann.browser.view.NinjaToast;
-
+@SuppressWarnings("ResultOfMethodCallIgnored")
 public class AdBlock {
     private static final String FILE = "hosts.txt";
     private static final String hostURL = "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts";
@@ -127,7 +124,6 @@ public class AdBlock {
     }
 
     public AdBlock(Context context) {
-        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
         File file = new File(context.getDir("filesdir", Context.MODE_PRIVATE) + "/"+FILE);
         if (!file.exists()) {
             //copy hosts.txt from assets if not available

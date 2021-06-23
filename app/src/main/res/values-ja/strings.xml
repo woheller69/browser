@@ -190,6 +190,5 @@
     <string name="menu_desktopView">デスクトップ表示</string>
     <string name="menu_dayView">明るい時での表示</string>
     <string name="menu_nightView">暗い時での表示</string>
-    <string name="setting_summary_adblock_update">Update AdBlock hosts file at start once per day</string>
     <!-- License changelog -->
 </resources>

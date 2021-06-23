@@ -97,6 +97,7 @@ public class AdBlock {
 
                 tempfile.delete();
 
+                hosts.clear();
                 loadHosts(context);  //reload hosts after update
 
             } catch (IOException i) {

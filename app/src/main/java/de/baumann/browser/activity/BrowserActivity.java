@@ -1503,6 +1503,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         }
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     private void showOverflow() {
         hideKeyboard();
 
@@ -1708,10 +1709,17 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         });
 
         TabLayout tabLayout= dialogView.findViewById(R.id.tabLayout);
-        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.icon_tab));
-        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.icon_menu_share));
-        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.icon_menu_save));
-        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.icon_dots));
+
+        TabLayout.Tab tab_tab = tabLayout.newTab().setIcon(R.drawable.icon_tab);
+        TabLayout.Tab tab_share = tabLayout.newTab().setIcon(R.drawable.icon_menu_share);
+        TabLayout.Tab tab_save = tabLayout.newTab().setIcon(R.drawable.icon_menu_save);
+        TabLayout.Tab tab_other = tabLayout.newTab().setIcon(R.drawable.icon_dots);
+
+        tabLayout.addTab(tab_tab);
+        tabLayout.addTab(tab_share);
+        tabLayout.addTab(tab_save);
+        tabLayout.addTab(tab_other);
+
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -1975,7 +1983,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
     public void toggleDesktopMode(WebView webView) {
         desktopMode=!desktopMode;
-
         String newUserAgent = webView.getSettings().getUserAgentString();
         if (desktopMode) {
             try {
@@ -1995,5 +2002,4 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         webView.getSettings().setLoadWithOverviewMode(desktopMode);
         webView.reload();
     }
-
 }

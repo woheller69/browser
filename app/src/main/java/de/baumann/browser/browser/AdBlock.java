@@ -22,6 +22,8 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.*;
 
+import de.baumann.browser.view.NinjaToast;
+
 public class AdBlock {
     private static final String FILE = "hosts.txt";
     private static final String hostURL = "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts";
@@ -99,6 +101,7 @@ public class AdBlock {
 
                 hosts.clear();
                 loadHosts(context);  //reload hosts after update
+                Log.w("browser", "AdBlock hosts updated");
 
             } catch (IOException i) {
                 Log.w("browser", "Error updating AdBlock hosts", i);
@@ -126,27 +129,26 @@ public class AdBlock {
     public AdBlock(Context context) {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
         File file = new File(context.getDir("filesdir", Context.MODE_PRIVATE) + "/"+FILE);
-        if (!file.exists()) { //copy hosts.txt from assets if not available
+        if (!file.exists()) {
+            //copy hosts.txt from assets if not available
             Log.d("Hosts file","does not exist");
             try {
                 AssetManager manager = context.getAssets();
                 copyFile(manager.open(FILE), new FileOutputStream(file));
                 downloadHosts(context);  //try to update hosts.txt from internet
-            }        catch(IOException e) {
+            } catch(IOException e) {
                 Log.e("browser", "Failed to copy asset file", e);
             }
         }
 
-        if (sp.getBoolean("sp_ad_block_update", false))
-        {
-            Calendar time = Calendar.getInstance();
-            time.add(Calendar.DAY_OF_YEAR,-1);
-            Date lastModified = new Date(file.lastModified());
-            if(lastModified.before(time.getTime())) {
-                //update if file is older than a day
-                downloadHosts(context);
-            }
+        Calendar time = Calendar.getInstance();
+        time.add(Calendar.DAY_OF_YEAR,-7);
+        Date lastModified = new Date(file.lastModified());
+        if(lastModified.before(time.getTime())) {
+            //update if file is older than a week
+            downloadHosts(context);
         }
+
         if (hosts.isEmpty()) {
             loadHosts(context);
         }

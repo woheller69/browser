@@ -31,11 +31,6 @@
             android:defaultValue="true"
             android:summary="@string/setting_summary_adblock"/>
 
-        <CheckBoxPreference
-            android:key="sp_ad_block_update"
-            android:defaultValue="false"
-            android:summary="@string/setting_summary_adblock_update"/>
-
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/setting_title_javascript">

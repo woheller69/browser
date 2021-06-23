@@ -37,7 +37,7 @@
             android:layout_height="match_parent"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
-            android:src="@drawable/icon_save_bookmark"
+            android:src="@drawable/icon_bookmark_plus"
             android:background="?attr/actionBarItemBackground" />
 
         <ImageButton
@@ -45,7 +45,7 @@
             android:layout_centerInParent="true"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginStart="0dp"
+            android:layout_marginStart="8dp"
             android:layout_marginEnd="16dp"
             android:layout_alignParentEnd="true"
             android:src="@drawable/icon_refresh"

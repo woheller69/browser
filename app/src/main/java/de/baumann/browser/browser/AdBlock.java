@@ -36,6 +36,7 @@ public class AdBlock {
                 BufferedReader reader = new BufferedReader(in) ;
                 String line;
                 while ((line = reader.readLine()) != null) {
+                    if (line.startsWith("#"))  continue;
                     hosts.add(line.toLowerCase(locale));
                 }
                 in.close();

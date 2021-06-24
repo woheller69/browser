@@ -186,9 +186,9 @@
         \u25AA &lt;i&gt;Απόρρητο:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/PRIVACY.md
 
     </string>
-    <string name="menu_mobileView">Mobile view</string>
-    <string name="menu_desktopView">Desktop view</string>
-    <string name="menu_dayView">Day view</string>
-    <string name="menu_nightView">Night view</string>
+    <string name="menu_mobileView">Προβολή κινητού</string>
+    <string name="menu_desktopView">Προβολή για υπολογιστή</string>
+    <string name="menu_dayView">Προβολή ημέρας</string>
+    <string name="menu_nightView">Νυχτερινή προβολή</string>
     <!-- License changelog -->
 </resources>

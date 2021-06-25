@@ -140,7 +140,7 @@ public class NinjaWebView extends WebView implements AlbumController {
         webSettings.setBuiltInZoomControls(true);
         webSettings.setDisplayZoomControls(false);
         webSettings.setSupportMultipleWindows(true);
-        webViewClient.enableAdBlock(sp.getBoolean(context.getString(R.string.sp_ad_block), true));
+        webViewClient.enableAdBlock(sp.getBoolean("sp_ad_block", true));
         webSettings.setTextZoom(Integer.parseInt(Objects.requireNonNull(sp.getString("sp_fontSize", "100"))));
         webSettings.setDomStorageEnabled(sp.getBoolean(("sp_remote"), false));
         webSettings.setBlockNetworkImage(!sp.getBoolean(context.getString(R.string.sp_images), true));

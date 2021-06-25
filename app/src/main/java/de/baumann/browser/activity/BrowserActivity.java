@@ -1080,14 +1080,14 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         });
 
         Chip chip_adBlock = dialogView.findViewById(R.id.chip_adBlock);
-        chip_adBlock.setChecked(sp.getBoolean(getString(R.string.sp_ad_block), true));
+        chip_adBlock.setChecked(sp.getBoolean("sp_ad_block", true));
         chip_adBlock.setOnClickListener(v -> {
-            if (sp.getBoolean(getString(R.string.sp_ad_block), true)) {
+            if (sp.getBoolean("sp_ad_block", true)) {
                 chip_adBlock.setChecked(false);
-                sp.edit().putBoolean(getString(R.string.sp_ad_block), false).apply();
+                sp.edit().putBoolean("sp_ad_block", false).apply();
             } else {
                 chip_adBlock.setChecked(true);
-                sp.edit().putBoolean(getString(R.string.sp_ad_block), true).apply();
+                sp.edit().putBoolean("sp_ad_block", true).apply();
             }
         });
 

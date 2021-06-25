@@ -152,7 +152,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     private Javascript javaHosts;
     private Cookie cookieHosts;
     private Remote remote;
-    private boolean desktopMode=false;
 
     private long newIcon;
     private boolean filter;
@@ -1117,9 +1116,9 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         });
 
         Chip chip_location = dialogView.findViewById(R.id.chip_location);
-        chip_location.setChecked(desktopMode);
+        chip_location.setChecked(ninjaWebView.isDesktopMode());
         chip_location.setOnClickListener(v -> {
-            toggleDesktopMode(ninjaWebView);
+            ninjaWebView.toggleDesktopMode();
             dialog.cancel();
         });
 
@@ -1667,7 +1666,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         GridItem item_32 = new GridItem(0, getString(R.string.menu_download),  0);
         GridItem item_33 = new GridItem(0, getString(R.string.setting_label),  0);
         GridItem item_34;
-        if (desktopMode) item_34 = new GridItem(0,getString((R.string.menu_mobileView)),0);
+        if (ninjaWebView.isDesktopMode()) item_34 = new GridItem(0,getString((R.string.menu_mobileView)),0);
         else item_34 = new GridItem(0,getString((R.string.menu_desktopView)),0);
 
         GridItem item_35;
@@ -1691,7 +1690,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 searchOnSite();
             } else if (position == 1) {
                 dialog_overflow.cancel();
-                toggleDesktopMode(ninjaWebView);
+                ninjaWebView.toggleDesktopMode();
             } else if (position == 2) {
                 if (sp.getBoolean("sp_invert", false)) {
                     sp.edit().putBoolean("sp_invert", false).apply();
@@ -1981,25 +1980,5 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         return list.get(index);
     }
 
-    public void toggleDesktopMode(WebView webView) {
-        desktopMode=!desktopMode;
-        String newUserAgent = webView.getSettings().getUserAgentString();
-        if (desktopMode) {
-            try {
-                String ua = webView.getSettings().getUserAgentString();
-                String androidOSString = webView.getSettings().getUserAgentString().substring(ua.indexOf("("), ua.indexOf(")") + 1);
-                newUserAgent = webView.getSettings().getUserAgentString().replace(androidOSString, "(X11; Linux x86_64)");
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        } else {
-            sp = PreferenceManager.getDefaultSharedPreferences(context);
-            newUserAgent = sp.getString("userAgent", "");
-        }
-        webView.getSettings().setUserAgentString(newUserAgent);
-        webView.getSettings().setUseWideViewPort(desktopMode);
-        webView.getSettings().setSupportZoom(desktopMode);
-        webView.getSettings().setLoadWithOverviewMode(desktopMode);
-        webView.reload();
-    }
+
 }

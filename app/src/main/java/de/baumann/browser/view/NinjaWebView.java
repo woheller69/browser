@@ -57,7 +57,7 @@ public class NinjaWebView extends WebView implements AlbumController {
     }
 
     private Context context;
-
+    private boolean desktopMode;
     private AlbumItem album;
     private NinjaWebViewClient webViewClient;
     private NinjaWebChromeClient webChromeClient;
@@ -92,7 +92,7 @@ public class NinjaWebView extends WebView implements AlbumController {
 
         this.context = context;
         this.foreground = false;
-
+        this.desktopMode=false;
         this.javaHosts = new Javascript(this.context);
         this.remoteHosts = new Remote(this.context);
         this.cookieHosts = new Cookie(this.context);
@@ -243,5 +243,32 @@ public class NinjaWebView extends WebView implements AlbumController {
         Message click = clickHandler.obtainMessage();
         click.setTarget(clickHandler);
         requestFocusNodeHref(click);
+    }
+
+    public boolean isDesktopMode() {
+        return desktopMode;
+    }
+
+    public void toggleDesktopMode() {
+
+        desktopMode=!desktopMode;
+        String newUserAgent = getSettings().getUserAgentString();
+        if (desktopMode) {
+            try {
+                String ua = getSettings().getUserAgentString();
+                String androidOSString = getSettings().getUserAgentString().substring(ua.indexOf("("), ua.indexOf(")") + 1);
+                newUserAgent = getSettings().getUserAgentString().replace(androidOSString, "(X11; Linux x86_64)");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else {
+            sp = PreferenceManager.getDefaultSharedPreferences(context);
+            newUserAgent = sp.getString("userAgent", "");
+        }
+        getSettings().setUserAgentString(newUserAgent);
+        getSettings().setUseWideViewPort(desktopMode);
+        getSettings().setSupportZoom(desktopMode);
+        getSettings().setLoadWithOverviewMode(desktopMode);
+        reload();
     }
 }

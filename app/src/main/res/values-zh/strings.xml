@@ -184,9 +184,9 @@
         \u25AA&lt;i&gt;隐私协议：&lt;/i&gt;https://github.com/scoute-dich/browser/blob/master/PRIVACY.md
 
     </string>
-    <string name="menu_mobileView">Mobile view</string>
-    <string name="menu_desktopView">Desktop view</string>
-    <string name="menu_dayView">Day view</string>
-    <string name="menu_nightView">Night view</string>
+    <string name="menu_mobileView">移动网站</string>
+    <string name="menu_desktopView">电脑模式</string>
+    <string name="menu_dayView">天视图</string>
+    <string name="menu_nightView">暗夜之眼</string>
     <!-- License changelog -->
 </resources>

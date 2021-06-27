@@ -188,7 +188,7 @@
     </string>
     <string name="menu_mobileView">Visualização para celular</string>
     <string name="menu_desktopView">Visualização para área de trabalho</string>
-    <string name="menu_dayView">Day view</string>
-    <string name="menu_nightView">Night view</string>
+    <string name="menu_dayView">Visão de dia</string>
+    <string name="menu_nightView">Visão de noite</string>
     <!-- License changelog -->
 </resources>

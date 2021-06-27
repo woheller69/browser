@@ -23,7 +23,7 @@ import java.util.*;
 @SuppressWarnings("ResultOfMethodCallIgnored")
 public class AdBlock {
     private static final String FILE = "hosts.txt";
-    private static final String hostURL = "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts";
+    private static final String hostURL = "https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn-social/hosts";
     private static final Set<String> hosts = new HashSet<>();
     @SuppressLint("ConstantLocale")
     private static final Locale locale = Locale.getDefault();
@@ -164,12 +164,13 @@ public class AdBlock {
         }
 
         Calendar time = Calendar.getInstance();
-        time.add(Calendar.DAY_OF_YEAR,-7);
+        time.add(Calendar.DAY_OF_YEAR,-1);
         Date lastModified = new Date(file.lastModified());
         if(lastModified.before(time.getTime())) {
             //update if file is older than a week
             downloadHosts(context);
         }
+        downloadHosts(context);
 
         if (hosts.isEmpty()) {
             loadHosts(context);

@@ -1,44 +1,15 @@
 package de.baumann.browser.browser;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.res.AssetManager;
-import android.util.Log;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Locale;
-import java.util.Set;
-
 import de.baumann.browser.database.RecordAction;
 import de.baumann.browser.unit.RecordUnit;
 
 public class Javascript {
-    private static final String FILE = "javaHosts.txt";
-    private static final Set<String> hostsJS = new HashSet<>();
-    private static final List<String> whitelistJS = new ArrayList<>();
-    @SuppressLint("ConstantLocale")
-    private static final Locale locale = Locale.getDefault();
 
-    private static void loadHosts(final Context context) {
-        Thread thread = new Thread(() -> {
-            AssetManager manager = context.getAssets();
-            try {
-                BufferedReader reader = new BufferedReader(new InputStreamReader(manager.open(FILE)));
-                String line;
-                while ((line = reader.readLine()) != null) {
-                    hostsJS.add(line.toLowerCase(locale));
-                }
-            } catch (IOException i) {
-                Log.w("browser", "Error loading hosts");
-            }
-        });
-        thread.start();
-    }
+    private final Context context;
+    private static final List<String> whitelistJS = new ArrayList<>();
 
     private synchronized static void loadDomains(Context context) {
         RecordAction action = new RecordAction(context);
@@ -48,14 +19,8 @@ public class Javascript {
         action.close();
     }
 
-    private final Context context;
-
     public Javascript(Context context) {
         this.context = context;
-
-        if (hostsJS.isEmpty()) {
-            loadHosts(context);
-        }
         loadDomains(context);
     }
 

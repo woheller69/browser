@@ -48,7 +48,7 @@ public class AdBlock {
                 }
                 in.close();
             } catch (IOException i) {
-                Log.w("browser", "Error loading hosts", i);
+                Log.w("browser", "Error getting hosts date", i);
             }
         return date;
     }
@@ -66,7 +66,7 @@ public class AdBlock {
                 }
                 in.close();
             } catch (IOException i) {
-                Log.w("browser", "Error loading hosts", i);
+                Log.w("browser", "Error loading adBlockHosts", i);
             }
         });
         thread.start();

@@ -187,9 +187,9 @@ Bitte lies auch den Hilfedialog in der Anwendung.&lt;/b&gt;&lt;br&gt;&lt;br&gt;
         \u25AA &lt;i&gt;Datenschutz:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/PRIVACY.md
 
     </string>
-    <string name="menu_mobileView">Mobile view</string>
-    <string name="menu_desktopView">Desktop view</string>
-    <string name="menu_dayView">Day view</string>
-    <string name="menu_nightView">Night view</string>
+    <string name="menu_mobileView">Mobile-Ansicht</string>
+    <string name="menu_desktopView">Desktop-Ansicht</string>
+    <string name="menu_dayView">Tagesansicht</string>
+    <string name="menu_nightView">Nachtsicht</string>
     <!-- License changelog -->
 </resources>

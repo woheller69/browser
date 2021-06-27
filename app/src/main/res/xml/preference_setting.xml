@@ -13,7 +13,7 @@
             android:key="favoriteURL"
             android:title="@string/setting_title_fav" />
         <ListPreference
-            android:key="@string/sp_search_engine"
+            android:key="sp_search_engine"
             android:defaultValue="0"
             android:title="@string/setting_title_search_engine"
             android:entries="@array/setting_entries_search_engine"

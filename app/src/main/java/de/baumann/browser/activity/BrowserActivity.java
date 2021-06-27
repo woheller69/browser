@@ -225,7 +225,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         if (Objects.requireNonNull(sp.getString("saved_key_ok", "no")).equals("no")) {
             if (Locale.getDefault().getCountry().equals("CN")) {
-                sp.edit().putString(getString(R.string.sp_search_engine), "2").apply();
+                sp.edit().putString("sp_search_engine", "2").apply();
             }
             sp.edit().putString("saved_key_ok", "yes")
                     .putString("setting_gesture_tb_up", "08")
@@ -236,7 +236,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     .putString("setting_gesture_nav_down", "05")
                     .putString("setting_gesture_nav_left", "03")
                     .putString("setting_gesture_nav_right", "02")
-                    .putBoolean(getString(R.string.sp_location), false).apply();
+                    .putBoolean("sp_location", false).apply();
         }
 
         contentFrame = findViewById(R.id.main_content);
@@ -337,12 +337,12 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     @Override
     public void onDestroy() {
 
-        if (sp.getBoolean(getString(R.string.sp_clear_quit), false)) {
+        if (sp.getBoolean("sp_clear_quit", false)) {
 
-            boolean clearCache = sp.getBoolean(getString(R.string.sp_clear_cache), false);
-            boolean clearCookie = sp.getBoolean(getString(R.string.sp_clear_cookie), false);
-            boolean clearHistory = sp.getBoolean(getString(R.string.sp_clear_history), false);
-            boolean clearIndexedDB = sp.getBoolean(("sp_clearIndexedDB"), false);
+            boolean clearCache = sp.getBoolean("sp_clear_cache", false);
+            boolean clearCookie = sp.getBoolean("sp_clear_cookie", false);
+            boolean clearHistory = sp.getBoolean("sp_clear_history", false);
+            boolean clearIndexedDB = sp.getBoolean("sp_clearIndexedDB", false);
 
             if (clearCache) {
                 BrowserUnit.clearCache(this);
@@ -1046,14 +1046,14 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         });
 
         Chip chip_javaScript = dialogView.findViewById(R.id.chip_javaScript);
-        chip_javaScript.setChecked(sp.getBoolean(getString(R.string.sp_javascript), true));
+        chip_javaScript.setChecked(sp.getBoolean("sp_javascript", true));
         chip_javaScript.setOnClickListener(v -> {
-            if (sp.getBoolean(getString(R.string.sp_javascript), true)) {
+            if (sp.getBoolean("sp_javascript", true)) {
                 chip_javaScript.setChecked(false);
-                sp.edit().putBoolean(getString(R.string.sp_javascript), false).apply();
+                sp.edit().putBoolean("sp_javascript", false).apply();
             } else {
                 chip_javaScript.setChecked(true);
-                sp.edit().putBoolean(getString(R.string.sp_javascript), true).apply();
+                sp.edit().putBoolean("sp_javascript", true).apply();
             }
         });
 
@@ -1070,14 +1070,14 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         });
 
         Chip chip_cookie = dialogView.findViewById(R.id.chip_cookie);
-        chip_cookie.setChecked(sp.getBoolean(getString(R.string.sp_cookies), true));
+        chip_cookie.setChecked(sp.getBoolean("sp_cookies", true));
         chip_cookie.setOnClickListener(v -> {
-            if (sp.getBoolean(getString(R.string.sp_cookies), true)) {
+            if (sp.getBoolean("sp_cookies", true)) {
                 chip_cookie.setChecked(false);
-                sp.edit().putBoolean(getString(R.string.sp_cookies), false).apply();
+                sp.edit().putBoolean("sp_cookies", false).apply();
             } else {
                 chip_cookie.setChecked(true);
-                sp.edit().putBoolean(getString(R.string.sp_cookies), true).apply();
+                sp.edit().putBoolean("sp_cookies", true).apply();
             }
         });
 
@@ -1106,14 +1106,14 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         });
 
         Chip chip_image = dialogView.findViewById(R.id.chip_image);
-        chip_image.setChecked(sp.getBoolean(getString(R.string.sp_images), true));
+        chip_image.setChecked(sp.getBoolean("sp_images", true));
         chip_image.setOnClickListener(v -> {
-            if (sp.getBoolean(getString(R.string.sp_images), true)) {
+            if (sp.getBoolean("sp_images", true)) {
                 chip_image.setChecked(false);
-                sp.edit().putBoolean(getString(R.string.sp_images), false).apply();
+                sp.edit().putBoolean("sp_images", false).apply();
             } else {
                 chip_image.setChecked(true);
-                sp.edit().putBoolean(getString(R.string.sp_images), true).apply();
+                sp.edit().putBoolean("sp_images", true).apply();
             }
         });
 
@@ -1243,7 +1243,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         ninjaWebView = (NinjaWebView) currentAlbumController;
         this.cookieHosts = new Cookie(this.context);
         CookieManager manager = CookieManager.getInstance();
-        if (cookieHosts.isWhite(ninjaWebView.getUrl()) || sp.getBoolean(context.getString(R.string.sp_cookies), true)) {
+        if (cookieHosts.isWhite(ninjaWebView.getUrl()) || sp.getBoolean("sp_cookies", true)) {
             manager.setAcceptCookie(true);
             manager.getCookie(ninjaWebView.getUrl());
         } else {

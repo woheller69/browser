@@ -4,12 +4,12 @@
 
 
     <CheckBoxPreference
-        android:key="@string/sp_images"
+        android:key="sp_images"
         android:defaultValue="true"
         android:title="@string/setting_title_images"
         android:summary="@string/setting_summary_images"/>
 
-    <CheckBoxPreference android:key="@string/sp_savedata"
+    <CheckBoxPreference android:key="sp_savedata"
         android:defaultValue="true"
         android:title="@string/setting_title_save_data"
         android:summary="@string/setting_summary_save_data"/>
@@ -19,7 +19,7 @@
         android:title="@string/setting_title_history"
         android:summary="@string/setting_summary_history"/>
 
-    <CheckBoxPreference android:key="@string/sp_location"
+    <CheckBoxPreference android:key="sp_location"
         android:defaultValue="false"
         android:title="@string/setting_title_location"
         android:summary="@string/setting_summary_location"/>
@@ -36,7 +36,7 @@
     <PreferenceCategory android:title="@string/setting_title_javascript">
 
         <CheckBoxPreference
-            android:key="@string/sp_javascript"
+            android:key="sp_javascript"
             android:defaultValue="true"
             android:summary="@string/setting_summary_javascript"/>
 
@@ -49,7 +49,7 @@
     <PreferenceCategory android:title="@string/setting_title_cookie">
 
         <CheckBoxPreference
-            android:key="@string/sp_cookies"
+            android:key="sp_cookies"
             android:defaultValue="true"
             android:summary="@string/setting_summary_cookie"/>
 

@@ -409,6 +409,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         updateOmniBox();
 
+        HelperUnit.initRendering(ninjaWebView, context);
+
         if (sp.getBoolean("hideToolbar", true)) {
             ObjectAnimator animation = ObjectAnimator.ofFloat(bottomAppBar, "translationY", 0);
             animation.setDuration(getResources().getInteger(android.R.integer.config_shortAnimTime));

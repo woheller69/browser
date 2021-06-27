@@ -35,21 +35,23 @@ public class AdBlock {
         if (!file.exists()) {
             return "";
         }
-            try {
-                FileReader in = new FileReader(file);
-                BufferedReader reader = new BufferedReader(in) ;
-                String line;
-                while ((line = reader.readLine()) != null) {
-                    if (line.contains("Date:"))  {
-                        date="hosts.txt " + line.substring(2);
-                        in.close();
-                        break;
-                    }
+
+        try {
+            FileReader in = new FileReader(file);
+            BufferedReader reader = new BufferedReader(in) ;
+            String line;
+            while ((line = reader.readLine()) != null) {
+                if (line.contains("Date:"))  {
+                    date="hosts.txt " + line.substring(2);
+                    in.close();
+                    break;
                 }
-                in.close();
-            } catch (IOException i) {
-                Log.w("browser", "Error getting hosts date", i);
             }
+            in.close();
+
+        } catch (IOException i) {
+            Log.w("browser", "Error getting hosts date", i);
+        }
         return date;
     }
 
@@ -184,7 +186,6 @@ public class AdBlock {
             out.write(buffer, 0, read);
         }
     }
-
 
     boolean isAd(String url) {
         String domain;

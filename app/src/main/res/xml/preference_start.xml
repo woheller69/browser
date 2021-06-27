@@ -27,7 +27,7 @@
     <PreferenceCategory android:title="@string/setting_title_adblock">
 
         <CheckBoxPreference
-            android:key="@string/sp_ad_block"
+            android:key="sp_ad_block"
             android:defaultValue="true"
             android:summary="@string/setting_summary_adblock"/>
 

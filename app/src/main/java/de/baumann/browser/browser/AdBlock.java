@@ -28,6 +28,31 @@ public class AdBlock {
     @SuppressLint("ConstantLocale")
     private static final Locale locale = Locale.getDefault();
 
+
+    public static String getHostsDate(Context context){
+        File file = new File(context.getDir("filesdir", Context.MODE_PRIVATE) + "/"+FILE);
+        String date="";
+        if (!file.exists()) {
+            return "";
+        }
+            try {
+                FileReader in = new FileReader(file);
+                BufferedReader reader = new BufferedReader(in) ;
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    if (line.contains("Date:"))  {
+                        date="hosts.txt " + line.substring(2);
+                        in.close();
+                        break;
+                    }
+                }
+                in.close();
+            } catch (IOException i) {
+                Log.w("browser", "Error loading hosts", i);
+            }
+        return date;
+    }
+
     private static void loadHosts(final Context context) {
         Thread thread = new Thread(() -> {
             try {
@@ -36,6 +61,7 @@ public class AdBlock {
                 BufferedReader reader = new BufferedReader(in) ;
                 String line;
                 while ((line = reader.readLine()) != null) {
+                    if (line.startsWith("#"))  continue;
                     hosts.add(line.toLowerCase(locale));
                 }
                 in.close();

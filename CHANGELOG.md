@@ -1,13 +1,14 @@
-### v 7.5 (WIP)
+### v 7.6 (WIP)
 
 - added: toggle mobile/desktop mode (thanks to @woheller69)
+- updated: translations
 - new: auto update of hosts once per day
 - fix: correct icon colors when importing bookmarks (thanks to @woheller69)
 
 ### v 7.5
 
-- Added right to left layout support (thanks to @M3hdiRostami)
-- Added Farsi (Persian) language support (thanks to @M3hdiRostami)
+- added: right to left layout support (thanks to @M3hdiRostami)
+- added: Farsi (Persian) language support (thanks to @M3hdiRostami)
 - updated: AdBlock
 - updated: AppIcon
 - fix: New bookmarks are not shown in red-filtered bookmark view

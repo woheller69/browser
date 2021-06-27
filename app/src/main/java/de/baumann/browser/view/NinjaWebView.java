@@ -249,7 +249,7 @@ public class NinjaWebView extends WebView implements AlbumController {
         return desktopMode;
     }
 
-    public void toggleDesktopMode() {
+    public void toggleDesktopMode(boolean reload) {
 
         desktopMode=!desktopMode;
         String newUserAgent = getSettings().getUserAgentString();
@@ -269,6 +269,9 @@ public class NinjaWebView extends WebView implements AlbumController {
         getSettings().setUseWideViewPort(desktopMode);
         getSettings().setSupportZoom(desktopMode);
         getSettings().setLoadWithOverviewMode(desktopMode);
-        reload();
+
+        if (reload) {
+            reload();
+        }
     }
 }

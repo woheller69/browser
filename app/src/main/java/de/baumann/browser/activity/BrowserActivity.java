@@ -1120,7 +1120,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         Chip chip_location = dialogView.findViewById(R.id.chip_location);
         chip_location.setChecked(ninjaWebView.isDesktopMode());
         chip_location.setOnClickListener(v -> {
-            ninjaWebView.toggleDesktopMode();
+            ninjaWebView.toggleDesktopMode(true);
             dialog.cancel();
         });
 
@@ -1394,10 +1394,15 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         GridItem item_01 = new GridItem(R.drawable.icon_close, getString(R.string.main_menu_new_tabOpen),  0);
         GridItem item_02 = new GridItem(R.drawable.icon_close, getString(R.string.main_menu_new_tab),  0);
-        GridItem item_03 = new GridItem(R.drawable.icon_close, getString(R.string.menu_share_link),  0);
-        GridItem item_04 = new GridItem(R.drawable.icon_close, getString(R.string.menu_open_with),  0);
-        GridItem item_05 = new GridItem(R.drawable.icon_close, getString(R.string.menu_save_as),  0);
-        GridItem item_06 = new GridItem(R.drawable.icon_close, getString(R.string.menu_save_home),  0);
+
+        GridItem item_03;
+        if (ninjaWebView.isDesktopMode()) item_03 = new GridItem(0,getString((R.string.menu_mobileView)),0);
+        else item_03 = new GridItem(0,getString((R.string.menu_desktopView)),0);
+
+        GridItem item_04 = new GridItem(R.drawable.icon_close, getString(R.string.menu_share_link),  0);
+        GridItem item_05 = new GridItem(R.drawable.icon_close, getString(R.string.menu_open_with),  0);
+        GridItem item_06 = new GridItem(R.drawable.icon_close, getString(R.string.menu_save_as),  0);
+        GridItem item_07 = new GridItem(R.drawable.icon_close, getString(R.string.menu_save_home),  0);
 
         final List<GridItem> gridList = new LinkedList<>();
 
@@ -1424,20 +1429,26 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     dialog.cancel();
                     break;
                 case 2:
+                    ninjaWebView.toggleDesktopMode(false);
+                    ninjaWebView.loadUrl(url);
+                    dialog.cancel();
+                    hideOverview();
+                    break;
+                case 3:
                     shareLink("", url);
                     dialog.cancel();
                     break;
-                case 3:
+                case 4:
                     Intent intent = new Intent(Intent.ACTION_VIEW);
                     intent.setData(Uri.parse(url));
                     Intent chooser = Intent.createChooser(intent, getString(R.string.menu_open_with));
                     startActivity(chooser);
                     dialog.cancel();
                     break;
-                case 4:
+                case 5:
                     HelperUnit.saveAs(dialog, activity, url);
                     break;
-                case 5:
+                case 6:
                     save_atHome(url.replace("http://www.", "").replace("https://www.", ""), url);
                     dialog.cancel();
                     break;
@@ -1692,7 +1703,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 searchOnSite();
             } else if (position == 1) {
                 dialog_overflow.cancel();
-                ninjaWebView.toggleDesktopMode();
+                ninjaWebView.toggleDesktopMode(true);
             } else if (position == 2) {
                 if (sp.getBoolean("sp_invert", false)) {
                     sp.edit().putBoolean("sp_invert", false).apply();
@@ -1771,8 +1782,13 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         GridItem item_01 = new GridItem(R.drawable.icon_close, getString(R.string.main_menu_new_tabOpen),  0);
         GridItem item_02 = new GridItem(R.drawable.icon_close, getString(R.string.main_menu_new_tab),  0);
-        GridItem item_03 = new GridItem(R.drawable.icon_close, getString(R.string.menu_delete),  0);
-        GridItem item_04 = new GridItem(R.drawable.icon_close, getString(R.string.menu_edit),  0);
+
+        GridItem item_03;
+        if (ninjaWebView.isDesktopMode()) item_03 = new GridItem(0,getString((R.string.menu_mobileView)),0);
+        else item_03 = new GridItem(0,getString((R.string.menu_desktopView)),0);
+
+        GridItem item_04 = new GridItem(R.drawable.icon_close, getString(R.string.menu_delete),  0);
+        GridItem item_05 = new GridItem(R.drawable.icon_close, getString(R.string.menu_edit),  0);
 
         final List<GridItem> gridList = new LinkedList<>();
 
@@ -1781,10 +1797,12 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             gridList.add(gridList.size(), item_02);
             gridList.add(gridList.size(), item_03);
             gridList.add(gridList.size(), item_04);
+            gridList.add(gridList.size(), item_05);
         } else {
             gridList.add(gridList.size(), item_01);
             gridList.add(gridList.size(), item_02);
             gridList.add(gridList.size(), item_03);
+            gridList.add(gridList.size(), item_04);
         }
 
         GridView menu_grid = dialogView.findViewById(R.id.menu_grid);
@@ -1808,6 +1826,12 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     dialog.cancel();
                     break;
                 case 2:
+                    ninjaWebView.toggleDesktopMode(false);
+                    ninjaWebView.loadUrl(url);
+                    dialog.cancel();
+                    hideOverview();
+                    break;
+                case 3:
                     builderSubMenu = new MaterialAlertDialogBuilder(context);
                     builderSubMenu.setMessage(R.string.hint_database);
                     builderSubMenu.setPositiveButton(R.string.app_ok, (dialog2, whichButton) -> {
@@ -1832,7 +1856,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     dialogSubMenu.show();
                     Objects.requireNonNull(dialogSubMenu.getWindow()).setGravity(Gravity.BOTTOM);
                     break;
-                case 3:
+                case 4:
                     builderSubMenu = new MaterialAlertDialogBuilder(context);
                     View dialogViewSubMenu = View.inflate(context, R.layout.dialog_edit_title, null);
 

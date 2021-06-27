@@ -186,9 +186,9 @@
         \u25AA &lt;i&gt;Confidentialité :&lt;/i&gt; https://github. om/scoute-dich/browser/blob/master/PRIVACY.md
 
     </string>
-    <string name="menu_mobileView">Mobile view</string>
-    <string name="menu_desktopView">Desktop view</string>
-    <string name="menu_dayView">Day view</string>
-    <string name="menu_nightView">Night view</string>
+    <string name="menu_mobileView">Vue mobile</string>
+    <string name="menu_desktopView">Vue bureau</string>
+    <string name="menu_dayView">Vue Jour</string>
+    <string name="menu_nightView">Vue nocturne</string>
     <!-- License changelog -->
 </resources>

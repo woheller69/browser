@@ -144,7 +144,7 @@
     <string name="setting_gesture_08">Áttekintés mutatása</string>
     <string name="setting_gesture_09">Új lap megnyitása</string>
     <string name="setting_gesture_10">Lap bezárása</string>
-    <string name="setting_gesture_hint">Long click the menu button to open fast settings dialog. Long press the home/bookmark/history icon to open the bookmark filter.</string>
+    <string name="setting_gesture_hint">Hosszan kattintson a menü gombra a gyors beállítások párbeszédpanel megnyitásához. Hosszan nyomja meg a home / bookmark / history ikont a könyvjelzőszűrő megnyitásához.</string>
     <!-- Data -->
     <string name="setting_title_export_bookmarks">Könyvjelzők exportálása HTML-fájlként</string>
     <string name="setting_title_import_bookmarks">Könyvjelzők importálása</string>
@@ -186,9 +186,9 @@
         \u25AA &lt;i&gt;Adatvédelem:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/PRIVACY.md
 
     </string>
-    <string name="menu_mobileView">Mobile view</string>
-    <string name="menu_desktopView">Desktop view</string>
-    <string name="menu_dayView">Day view</string>
-    <string name="menu_nightView">Night view</string>
+    <string name="menu_mobileView">Mobil nézet</string>
+    <string name="menu_desktopView">Asztali nézet</string>
+    <string name="menu_dayView">Napi nézet</string>
+    <string name="menu_nightView">Éjszakai nézet</string>
     <!-- License changelog -->
 </resources>

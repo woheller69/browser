@@ -169,10 +169,9 @@ public class AdBlock {
         time.add(Calendar.DAY_OF_YEAR,-1);
         Date lastModified = new Date(file.lastModified());
         if(lastModified.before(time.getTime())) {
-            //update if file is older than a week
+            //update if file is older than a day
             downloadHosts(context);
         }
-        downloadHosts(context);
 
         if (hosts.isEmpty()) {
             loadHosts(context);

@@ -46,10 +46,10 @@ public class Settings_Delete extends AppCompatActivity {
             builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
 
                 SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
-                boolean clearCache = sp.getBoolean(getString(R.string.sp_clear_cache), false);
-                boolean clearCookie = sp.getBoolean(getString(R.string.sp_clear_cookie), false);
-                boolean clearHistory = sp.getBoolean(getString(R.string.sp_clear_history), false);
-                boolean clearIndexedDB = sp.getBoolean(("sp_clearIndexedDB"), false);
+                boolean clearCache = sp.getBoolean("sp_clear_cache", false);
+                boolean clearCookie = sp.getBoolean("sp_clear_cookie", false);
+                boolean clearHistory = sp.getBoolean("sp_clear_history", false);
+                boolean clearIndexedDB = sp.getBoolean("sp_clearIndexedDB", false);
 
                 if (clearCache) {
                     BrowserUnit.clearCache(this);

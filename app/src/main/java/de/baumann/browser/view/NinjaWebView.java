@@ -143,21 +143,21 @@ public class NinjaWebView extends WebView implements AlbumController {
         webViewClient.enableAdBlock(sp.getBoolean("sp_ad_block", true));
         webSettings.setTextZoom(Integer.parseInt(Objects.requireNonNull(sp.getString("sp_fontSize", "100"))));
         webSettings.setDomStorageEnabled(sp.getBoolean(("sp_remote"), false));
-        webSettings.setBlockNetworkImage(!sp.getBoolean(context.getString(R.string.sp_images), true));
-        webSettings.setJavaScriptEnabled(sp.getBoolean(context.getString(R.string.sp_javascript), true));
-        webSettings.setJavaScriptCanOpenWindowsAutomatically(sp.getBoolean(context.getString(R.string.sp_javascript), true));
-        webSettings.setGeolocationEnabled(sp.getBoolean(context.getString(R.string.sp_location), false));
+        webSettings.setBlockNetworkImage(!sp.getBoolean("sp_images", true));
+        webSettings.setJavaScriptEnabled(sp.getBoolean("sp_javascript", true));
+        webSettings.setJavaScriptCanOpenWindowsAutomatically(sp.getBoolean("sp_javascript", true));
+        webSettings.setGeolocationEnabled(sp.getBoolean("sp_location", false));
         webSettings.setDomStorageEnabled(remoteHosts.isWhite(url) || sp.getBoolean("sp_remote", true));
         
         CookieManager manager = CookieManager.getInstance();
-        if (cookieHosts.isWhite(url) || sp.getBoolean(context.getString(R.string.sp_cookies), true)) {
+        if (cookieHosts.isWhite(url) || sp.getBoolean("sp_cookies", true)) {
             manager.setAcceptCookie(true);
             manager.getCookie(url);
         } else {
             manager.setAcceptCookie(false);
         }
 
-        if (javaHosts.isWhite(url) || sp.getBoolean(context.getString(R.string.sp_javascript), true)) {
+        if (javaHosts.isWhite(url) || sp.getBoolean("sp_javascript", true)) {
             webSettings.setJavaScriptCanOpenWindowsAutomatically(true);
             webSettings.setJavaScriptEnabled(true);
         } else {
@@ -177,7 +177,7 @@ public class NinjaWebView extends WebView implements AlbumController {
     public synchronized HashMap<String, String> getRequestHeaders() {
         HashMap<String, String> requestHeaders = new HashMap<>();
         requestHeaders.put("DNT", "1");
-        if (sp.getBoolean(context.getString(R.string.sp_savedata), false)) {
+        if (sp.getBoolean("sp_savedata", false)) {
             requestHeaders.put("Save-Data", "on");
         }
         return requestHeaders;

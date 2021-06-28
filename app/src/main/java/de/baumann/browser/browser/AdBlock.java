@@ -2,9 +2,11 @@ package de.baumann.browser.browser;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.res.AssetManager;
 import android.util.Log;
 
+import androidx.preference.PreferenceManager;
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.File;
@@ -166,13 +168,19 @@ public class AdBlock {
         }
 
         Calendar time = Calendar.getInstance();
-        time.add(Calendar.DAY_OF_YEAR,-1);
+
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
+        if (sp.getBoolean("sp_savedata", false)){
+            time.add(Calendar.DAY_OF_YEAR,-1);
+        }else{
+            time.add(Calendar.DAY_OF_YEAR,-7);
+        }
+
         Date lastModified = new Date(file.lastModified());
         if(lastModified.before(time.getTime())) {
-            //update if file is older than a week
+            //update if file is older than a day
             downloadHosts(context);
         }
-        downloadHosts(context);
 
         if (hosts.isEmpty()) {
             loadHosts(context);

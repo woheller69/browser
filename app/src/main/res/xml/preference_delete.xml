@@ -3,11 +3,11 @@
 <PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <CheckBoxPreference android:key="@string/sp_clear_cache"
+    <CheckBoxPreference android:key="sp_clear_cache"
         android:defaultValue="false"
         android:title="@string/clear_title_cache"/>
 
-    <CheckBoxPreference android:key="@string/sp_clear_history"
+    <CheckBoxPreference android:key="sp_clear_history"
         android:defaultValue="false"
         android:title="@string/clear_title_history"/>
 
@@ -17,12 +17,12 @@
         android:title="@string/clear_title_indexedDB"
         app:singleLineTitle="false" />
 
-    <CheckBoxPreference android:key="@string/sp_clear_cookie"
+    <CheckBoxPreference android:key="sp_clear_cookie"
         android:defaultValue="false"
         android:title="@string/clear_title_cookie"
         android:summary="@string/setting_summary_cookie_delete"/>
 
-    <CheckBoxPreference android:key="@string/sp_clear_quit"
+    <CheckBoxPreference android:key="sp_clear_quit"
         android:defaultValue="false"
         android:title="@string/clear_title_quit"
         android:summary="@string/clear_summary_quit"/>

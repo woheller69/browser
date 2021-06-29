@@ -31,7 +31,6 @@ import de.baumann.browser.activity.Settings_StartActivity;
 import de.baumann.browser.activity.Settings_UI;
 import de.baumann.browser.R;
 
-@SuppressWarnings("ConstantConditions")
 public class Fragment_settings extends PreferenceFragmentCompat implements SharedPreferences.OnSharedPreferenceChangeListener {
 
     @Override
@@ -71,7 +70,6 @@ public class Fragment_settings extends PreferenceFragmentCompat implements Share
             return false;
         });
         findPreference("settings_info").setOnPreferenceClickListener(preference -> {
-
             SpannableString s;
             if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
                 s = new SpannableString(Html.fromHtml(getString(R.string.changelog_dialog),Html.FROM_HTML_MODE_LEGACY));
@@ -109,8 +107,7 @@ public class Fragment_settings extends PreferenceFragmentCompat implements Share
         }
         if (p instanceof EditTextPreference) {
             EditTextPreference editTextPref = (EditTextPreference) p;
-            if (p.getTitle().toString().toLowerCase().contains("password"))
-            {
+            if (p.getTitle().toString().toLowerCase().contains("password")) {
                 p.setSummary("******");
             } else {
                 p.setSummary(editTextPref.getText());

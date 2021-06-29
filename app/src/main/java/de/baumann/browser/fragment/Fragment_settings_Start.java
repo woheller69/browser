@@ -11,7 +11,6 @@ import de.baumann.browser.R;
 import de.baumann.browser.activity.Whitelist_Remote;
 import de.baumann.browser.browser.AdBlock;
 
-@SuppressWarnings("ConstantConditions")
 public class Fragment_settings_Start extends PreferenceFragmentCompat {
 
     @Override

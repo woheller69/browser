@@ -680,7 +680,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 saveBookmark();
                 break;
             case "15":
-                save_atHome(Objects.requireNonNull(ninjaWebView.getUrl()).replace("http://www.", "").replace("https://www.", ""), ninjaWebView.getUrl());
+                save_atHome(ninjaWebView.getTitle(), ninjaWebView.getUrl());
                 break;
         }
     }
@@ -1186,11 +1186,15 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         } else {
             BrowserContainer.add(ninjaWebView);
         }
+
         if (!foreground) {
             ninjaWebView.deactivate();
         } else {
             ninjaWebView.activate();
             showAlbum(ninjaWebView);
+            if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.P) {
+                ninjaWebView.reload();
+            }
         }
 
         View albumView = ninjaWebView.getAlbumView();
@@ -1381,7 +1385,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         contentFrame.requestFocus();
     }
 
-    private void showContextMenuLink (final String url) {
+    private void showContextMenuLink (final String title, final String url) {
 
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
         View dialogView = View.inflate(context, R.layout.dialog_menu, null);
@@ -1396,15 +1400,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         GridItem item_01 = new GridItem(R.drawable.icon_close, getString(R.string.main_menu_new_tabOpen),  0);
         GridItem item_02 = new GridItem(R.drawable.icon_close, getString(R.string.main_menu_new_tab),  0);
-
-        GridItem item_03;
-        if (ninjaWebView.isDesktopMode()) item_03 = new GridItem(0,getString((R.string.menu_mobileView)),0);
-        else item_03 = new GridItem(0,getString((R.string.menu_desktopView)),0);
-
-        GridItem item_04 = new GridItem(R.drawable.icon_close, getString(R.string.menu_share_link),  0);
-        GridItem item_05 = new GridItem(R.drawable.icon_close, getString(R.string.menu_open_with),  0);
-        GridItem item_06 = new GridItem(R.drawable.icon_close, getString(R.string.menu_save_as),  0);
-        GridItem item_07 = new GridItem(R.drawable.icon_close, getString(R.string.menu_save_home),  0);
+        GridItem item_03 = new GridItem(R.drawable.icon_close, getString(R.string.menu_share_link),  0);
+        GridItem item_04 = new GridItem(R.drawable.icon_close, getString(R.string.menu_open_with),  0);
+        GridItem item_05 = new GridItem(R.drawable.icon_close, getString(R.string.menu_save_as),  0);
+        GridItem item_06 = new GridItem(R.drawable.icon_close, getString(R.string.menu_save_home),  0);
 
         final List<GridItem> gridList = new LinkedList<>();
 
@@ -1431,27 +1430,21 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     dialog.cancel();
                     break;
                 case 2:
-                    ninjaWebView.toggleDesktopMode(false);
-                    ninjaWebView.loadUrl(url);
-                    dialog.cancel();
-                    hideOverview();
-                    break;
-                case 3:
                     shareLink("", url);
                     dialog.cancel();
                     break;
-                case 4:
+                case 3:
                     Intent intent = new Intent(Intent.ACTION_VIEW);
                     intent.setData(Uri.parse(url));
                     Intent chooser = Intent.createChooser(intent, getString(R.string.menu_open_with));
                     startActivity(chooser);
                     dialog.cancel();
                     break;
-                case 5:
+                case 4:
                     HelperUnit.saveAs(dialog, activity, url);
                     break;
-                case 6:
-                    save_atHome(url.replace("http://www.", "").replace("https://www.", ""), url);
+                case 5:
+                    save_atHome(title, url);
                     dialog.cancel();
                     break;
             }
@@ -1487,13 +1480,14 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         }
         action.close();
     }
+
     @Override
     public void onLongPress(final String url) {
         WebView.HitTestResult result = ninjaWebView.getHitTestResult();
         if (url != null) {
-            showContextMenuLink(url);
+            showContextMenuLink(url.replace("https://", "").replace("http://", "").replace("www.", ""), url);
         } else if (result.getExtra() != null) {
-            showContextMenuLink(result.getExtra());
+            showContextMenuLink(result.getExtra().replace("https://", "").replace("http://", "").replace("www.", ""), result.getExtra());
         }
     }
 
@@ -1788,13 +1782,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         GridItem item_01 = new GridItem(R.drawable.icon_close, getString(R.string.main_menu_new_tabOpen),  0);
         GridItem item_02 = new GridItem(R.drawable.icon_close, getString(R.string.main_menu_new_tab),  0);
-
-        GridItem item_03;
-        if (ninjaWebView.isDesktopMode()) item_03 = new GridItem(0,getString((R.string.menu_mobileView)),0);
-        else item_03 = new GridItem(0,getString((R.string.menu_desktopView)),0);
-
-        GridItem item_04 = new GridItem(R.drawable.icon_close, getString(R.string.menu_delete),  0);
-        GridItem item_05 = new GridItem(R.drawable.icon_close, getString(R.string.menu_edit),  0);
+        GridItem item_03 = new GridItem(R.drawable.icon_close, getString(R.string.menu_delete),  0);
+        GridItem item_04 = new GridItem(R.drawable.icon_close, getString(R.string.menu_edit),  0);
 
         final List<GridItem> gridList = new LinkedList<>();
 
@@ -1803,12 +1792,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             gridList.add(gridList.size(), item_02);
             gridList.add(gridList.size(), item_03);
             gridList.add(gridList.size(), item_04);
-            gridList.add(gridList.size(), item_05);
         } else {
             gridList.add(gridList.size(), item_01);
             gridList.add(gridList.size(), item_02);
             gridList.add(gridList.size(), item_03);
-            gridList.add(gridList.size(), item_04);
         }
 
         GridView menu_grid = dialogView.findViewById(R.id.menu_grid);
@@ -1832,12 +1819,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     dialog.cancel();
                     break;
                 case 2:
-                    ninjaWebView.toggleDesktopMode(false);
-                    ninjaWebView.loadUrl(url);
-                    dialog.cancel();
-                    hideOverview();
-                    break;
-                case 3:
                     builderSubMenu = new MaterialAlertDialogBuilder(context);
                     builderSubMenu.setMessage(R.string.hint_database);
                     builderSubMenu.setPositiveButton(R.string.app_ok, (dialog2, whichButton) -> {
@@ -1862,7 +1843,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     dialogSubMenu.show();
                     Objects.requireNonNull(dialogSubMenu.getWindow()).setGravity(Gravity.BOTTOM);
                     break;
-                case 4:
+                case 3:
                     builderSubMenu = new MaterialAlertDialogBuilder(context);
                     View dialogViewSubMenu = View.inflate(context, R.layout.dialog_edit_title, null);
 

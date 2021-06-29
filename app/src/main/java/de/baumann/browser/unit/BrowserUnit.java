@@ -307,7 +307,7 @@ public class BrowserUnit {
                 String title = getBookmarkTitle(line);
                 String url = getBookmarkURL(line);
                 long date = getBookmarkDate(line);
-                if (date>11) date=11;  //if no color defined yet set it red
+                if (date>=27) date=11;  //if no color defined yet set it red (27 is max: 16 for desktop mode 11 for color
                 if (title.trim().isEmpty() || url.trim().isEmpty()) {
                     continue;
                 }

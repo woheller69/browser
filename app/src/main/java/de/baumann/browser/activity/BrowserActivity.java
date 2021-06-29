@@ -757,6 +757,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 adapter.notifyDataSetChanged();
                 filter = false;
                 listView.setOnItemClickListener((parent, view, position, id) -> {
+
+                    if (((list.get(position).getTime()&16) ==16) != ninjaWebView.isDesktopMode()) ninjaWebView.toggleDesktopMode(false);
                     ninjaWebView.loadUrl(list.get(position).getURL());
                     hideOverview();
                 });
@@ -1476,7 +1478,11 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         if (action.checkUrl(ninjaWebView.getUrl(), RecordUnit.TABLE_BOOKMARK)) {
             NinjaToast.show(this, R.string.app_error);
         } else {
-            action.addBookmark(new Record(ninjaWebView.getTitle(), ninjaWebView.getUrl(), 11, 0));
+            if (ninjaWebView.isDesktopMode()){
+                action.addBookmark(new Record(ninjaWebView.getTitle(), ninjaWebView.getUrl(), 27, 0));
+            }else{
+                action.addBookmark(new Record(ninjaWebView.getTitle(), ninjaWebView.getUrl(), 11, 0));
+            }
             NinjaToast.show(this, R.string.app_done);
         }
         action.close();
@@ -1891,8 +1897,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                             dialogFilter.cancel();
                         });
                     });
-
-                    newIcon = icon;
+                    newIcon = icon&15;
+                    boolean isDesktopMode=(icon&16)==16;
                     HelperUnit.setFilterIcons(ib_icon, newIcon);
 
                     builderSubMenu.setView(dialogViewSubMenu);
@@ -1901,6 +1907,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                         RecordAction action = new RecordAction(context);
                         action.open(true);
                         action.deleteURL(url, RecordUnit.TABLE_BOOKMARK);
+                        if (isDesktopMode) newIcon=newIcon+16; // use bit 4 for desktop mode
                         action.addBookmark(new Record(edit_title.getText().toString(), url, newIcon, 0));
                         action.close();
                         updateAutoComplete();

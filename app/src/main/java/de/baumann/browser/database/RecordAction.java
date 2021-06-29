@@ -125,7 +125,7 @@ public class RecordAction {
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
             if (filter) {
-                if (getRecord(cursor).getTime() == filterBy) {
+                if ((getRecord(cursor).getTime()&15) == filterBy) {
                     list.add(getRecord(cursor));
                 }
             } else {

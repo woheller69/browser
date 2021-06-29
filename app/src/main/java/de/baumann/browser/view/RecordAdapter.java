@@ -51,31 +51,32 @@ public class RecordAdapter extends ArrayAdapter<Record> {
         }
 
         Record record = list.get(position);
+        long filter = record.getTime()&15;
         SimpleDateFormat sdf = new SimpleDateFormat("MMM dd", Locale.getDefault());
         holder.title.setText(record.getTitle());
         holder.time.setText(sdf.format(record.getTime()));
 
-        if (record.getTime() == 11) {
+        if (filter == 11) {
             holder.icon.setImageResource(R.drawable.circle_red_big);
-        } else if (list.get(position).getTime() == 10) {
+        } else if (filter == 10) {
             holder.icon.setImageResource(R.drawable.circle_pink_big);
-        } else if (record.getTime() == 9) {
+        } else if (filter == 9) {
             holder.icon.setImageResource(R.drawable.circle_purple_big);
-        } else if (record.getTime() == 8) {
+        } else if (filter == 8) {
             holder.icon.setImageResource(R.drawable.circle_blue_big);
-        } else if (record.getTime() == 7) {
+        } else if (filter == 7) {
             holder.icon.setImageResource(R.drawable.circle_teal_big);
-        } else if (record.getTime() == 6) {
+        } else if (filter == 6) {
             holder.icon.setImageResource(R.drawable.circle_green_big);
-        } else if (record.getTime() == 5) {
+        } else if (filter == 5) {
             holder.icon.setImageResource(R.drawable.circle_lime_big);
-        } else if (record.getTime() == 4) {
+        } else if (filter == 4) {
             holder.icon.setImageResource(R.drawable.circle_yellow_big);
-        } else if (record.getTime() == 3) {
+        } else if (filter == 3) {
             holder.icon.setImageResource(R.drawable.circle_orange_big);
-        } else if (record.getTime() == 2) {
+        } else if (filter == 2) {
             holder.icon.setImageResource(R.drawable.circle_brown_big);
-        } else if (record.getTime() == 1) {
+        } else if (filter == 1) {
             holder.icon.setImageResource(R.drawable.circle_grey_big);
         } else {
             holder.icon.setImageResource(R.drawable.circle_red_big);

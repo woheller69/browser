@@ -314,6 +314,7 @@ public class HelperUnit {
 
 
     public static void setFilterIcons (ImageView ib_icon, long newIcon) {
+        newIcon=newIcon&15;
         if (newIcon == 11) {
             ib_icon.setImageResource(R.drawable.circle_red_big);
         } else if (newIcon == 10) {

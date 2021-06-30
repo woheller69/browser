@@ -4,6 +4,10 @@
 - new: auto update of AdBlock-hosts (thanks to @woheller69)
 - updated: translations
 - fix: correct icon colors when importing bookmarks (thanks to @woheller69)
+- fix: content hidden by toolbar
+- fix: opening new tabs on older Android versions
+- fix: Dark mode not applied to all tabs
+- fix: toolbar input handling
 
 ### v 7.5
 

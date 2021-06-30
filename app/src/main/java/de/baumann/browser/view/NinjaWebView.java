@@ -149,6 +149,15 @@ public class NinjaWebView extends WebView implements AlbumController {
         webSettings.setBlockNetworkImage(!sp.getBoolean("sp_images", true));
         webSettings.setGeolocationEnabled(sp.getBoolean("sp_location", false));
 
+        if (javaHosts.isWhite(url) || sp.getBoolean("sp_javascript", true)) {
+            webSettings.setJavaScriptCanOpenWindowsAutomatically(true);
+            webSettings.setJavaScriptEnabled(true);
+        } else {
+            webSettings.setJavaScriptCanOpenWindowsAutomatically(false);
+            webSettings.setJavaScriptEnabled(false);
+        }
+        webSettings.setDomStorageEnabled(remoteHosts.isWhite(url) || sp.getBoolean("sp_remote", true));
+
         CookieManager manager = CookieManager.getInstance();
         if (cookieHosts.isWhite(url) || sp.getBoolean("sp_cookies", true)) {
             manager.setAcceptCookie(true);
@@ -165,16 +174,18 @@ public class NinjaWebView extends WebView implements AlbumController {
             e.printStackTrace();
         }
 
-        if (!oldDomain.equals(domain)){
-            //do not change setting if staying within same domain
-            if (javaHosts.isWhite(url) || sp.getBoolean("sp_javascript", true)) {
-                webSettings.setJavaScriptCanOpenWindowsAutomatically(true);
-                webSettings.setJavaScriptEnabled(true);
-            } else {
-                webSettings.setJavaScriptCanOpenWindowsAutomatically(false);
-                webSettings.setJavaScriptEnabled(false);
+        if (oldDomain != null) {
+            if (!oldDomain.equals(domain)){
+                //do not change setting if staying within same domain
+                if (javaHosts.isWhite(url) || sp.getBoolean("sp_javascript", true)) {
+                    webSettings.setJavaScriptCanOpenWindowsAutomatically(true);
+                    webSettings.setJavaScriptEnabled(true);
+                } else {
+                    webSettings.setJavaScriptCanOpenWindowsAutomatically(false);
+                    webSettings.setJavaScriptEnabled(false);
+                }
+                webSettings.setDomStorageEnabled(remoteHosts.isWhite(url) || sp.getBoolean("sp_remote", true));
             }
-            webSettings.setDomStorageEnabled(remoteHosts.isWhite(url) || sp.getBoolean("sp_remote", true));
         }
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {

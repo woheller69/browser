@@ -1269,23 +1269,9 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 contentFrame.setPadding(0,0,0,bottomAppBar.getHeight());
             }
         }
-    }
 
-    @Override
-    public synchronized void updateProgress(int progress) {
-
-        CircularProgressIndicator progressBar = findViewById(R.id.main_progress_bar);
-        progressBar.setOnClickListener(v -> ninjaWebView.stopLoading());
-        progressBar.setProgressCompat(progress, true);
-        updateOmniBox();
-
-        if (progress < BrowserUnit.PROGRESS_MAX) {
-            progressBar.setVisibility(View.VISIBLE);
-            omniBox_tab.setVisibility(View.INVISIBLE);
-        } else {
-            progressBar.setVisibility(View.GONE);
-            omniBox_tab.setVisibility(View.VISIBLE);
-            String url = Objects.requireNonNull(ninjaWebView.getUrl());
+        String url = ninjaWebView.getUrl();
+        if (url != null) {
             if (url.startsWith("https://")) {
                 omniBox_tab.setImageResource(R.drawable.icon_menu_light);
                 omniBox_tab.setOnClickListener(v -> showTabView());
@@ -1293,7 +1279,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 omniBox_tab.setImageResource(R.drawable.icon_menu_light);
                 omniBox_tab.setOnClickListener(v -> showTabView());
                 omniBox_text.requestFocus();
-            } else {omniBox_tab.setImageResource(R.drawable.icon_alert);
+            } else {
+                omniBox_tab.setImageResource(R.drawable.icon_alert);
                 omniBox_tab.setOnClickListener(v -> {
                     MaterialAlertDialogBuilder builderR = new MaterialAlertDialogBuilder(context);
                     builderR.setMessage(R.string.toast_unsecured);
@@ -1308,6 +1295,21 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
                 });
             }
+        }
+    }
+
+    @Override
+    public synchronized void updateProgress(int progress) {
+        CircularProgressIndicator progressBar = findViewById(R.id.main_progress_bar);
+        progressBar.setOnClickListener(v -> ninjaWebView.stopLoading());
+        progressBar.setProgressCompat(progress, true);
+        updateOmniBox();
+        if (progress < BrowserUnit.PROGRESS_MAX) {
+            progressBar.setVisibility(View.VISIBLE);
+            omniBox_tab.setVisibility(View.INVISIBLE);
+        } else {
+            progressBar.setVisibility(View.GONE);
+            omniBox_tab.setVisibility(View.VISIBLE);
         }
     }
 

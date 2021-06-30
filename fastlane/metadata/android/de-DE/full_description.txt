@@ -29,12 +29,14 @@ ansprechend ist.
 • Navigations-Knopf (bei ausgeblendeter Toolbar, optional)
 • Schnelleinstellungen für die wichtigsten Dinge
 • Gestensteuerung (Toolbar und Navigationsknopf)
+• Wechsel zwischen Mobiler- und Desktopansicht
+• Wechsel zwischen Tag- Und Nachtansciht
 
 -------------------------------------------------
 <b>NICE TO HAVE</b>
 -------------------------------------------------
 
-• kleine Größé
+• kleine Größe
 • auf der Seite suchen
 • Websuche (über geteilten Text)
 • PDF speichern

@@ -30,6 +30,8 @@ browser with a nice looking user interface.
 • navigation button in fullscreen mode
 • fast toggle for most important settings
 • advanced gesture control for toolbar and navigation button
+• toggle mobile/desktop mode
+• toggle day/night mode
 
 -------------------------------------------------
 <b>NICE TO HAVE</b>

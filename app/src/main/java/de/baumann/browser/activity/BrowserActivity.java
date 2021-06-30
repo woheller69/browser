@@ -242,10 +242,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         contentFrame = findViewById(R.id.main_content);
         contentFrame.getViewTreeObserver().addOnGlobalLayoutListener(keyboardLayoutListener);
 
-        if (sp.getBoolean("hideToolbar", true)) {
-            contentFrame.setPadding(0,0,0,0);
-        }
-
         new AdBlock(context);
         new Javascript(context);
         new Cookie(context);
@@ -395,6 +391,12 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     @Override
     public synchronized void showAlbum(AlbumController controller) {
 
+        if (sp.getBoolean("hideToolbar", true)) {
+            ObjectAnimator animation = ObjectAnimator.ofFloat(bottomAppBar, "translationY", 0);
+            animation.setDuration(getResources().getInteger(android.R.integer.config_shortAnimTime));
+            animation.start();
+        }
+
         View av = (View) controller;
 
         if (currentAlbumController != null) {
@@ -410,12 +412,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         updateOmniBox();
 
         HelperUnit.initRendering(ninjaWebView, context);
-
-        if (sp.getBoolean("hideToolbar", true)) {
-            ObjectAnimator animation = ObjectAnimator.ofFloat(bottomAppBar, "translationY", 0);
-            animation.setDuration(getResources().getInteger(android.R.integer.config_shortAnimTime));
-            animation.start();
-        }
 
         if (searchPanel.getVisibility() == View.VISIBLE) {
             hideKeyboard();
@@ -1158,7 +1154,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         ninjaWebView.setOnScrollChangeListener((scrollY, oldScrollY) -> {
             if (!searchOnSite) {
                 if (omniBox_text.hasFocus()) {
-                    omniBox_text.clearFocus();
+                    hideKeyboard();
                 }
                 if (sp.getBoolean("hideToolbar", true)) {
                     if (scrollY > oldScrollY) {
@@ -1264,6 +1260,14 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             }
         } else {
             omniBox_text.setText("");
+        }
+
+        if (sp.getBoolean("hideToolbar", true)) {
+            if (ninjaWebView.canScrollVertically(1) || ninjaWebView.canScrollVertically(-1)) {
+                contentFrame.setPadding(0,0,0,0);
+            } else {
+                contentFrame.setPadding(0,0,0,bottomAppBar.getHeight());
+            }
         }
     }
 

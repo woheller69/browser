@@ -20,6 +20,8 @@ import de.baumann.browser.R;
 import de.baumann.browser.unit.BrowserUnit;
 import de.baumann.browser.unit.HelperUnit;
 
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.HashMap;
 import java.util.Objects;
 
@@ -58,6 +60,7 @@ public class NinjaWebView extends WebView implements AlbumController {
 
     private Context context;
     private boolean desktopMode;
+    private String oldDomain;
     private AlbumItem album;
     private NinjaWebViewClient webViewClient;
     private NinjaWebChromeClient webChromeClient;
@@ -93,6 +96,7 @@ public class NinjaWebView extends WebView implements AlbumController {
         this.context = context;
         this.foreground = false;
         this.desktopMode=false;
+        this.oldDomain="";
         this.javaHosts = new Javascript(this.context);
         this.remoteHosts = new Remote(this.context);
         this.cookieHosts = new Cookie(this.context);
@@ -144,8 +148,8 @@ public class NinjaWebView extends WebView implements AlbumController {
         webSettings.setTextZoom(Integer.parseInt(Objects.requireNonNull(sp.getString("sp_fontSize", "100"))));
         webSettings.setDomStorageEnabled(sp.getBoolean(("sp_remote"), false));
         webSettings.setBlockNetworkImage(!sp.getBoolean("sp_images", true));
-        webSettings.setJavaScriptEnabled(sp.getBoolean("sp_javascript", true));
-        webSettings.setJavaScriptCanOpenWindowsAutomatically(sp.getBoolean("sp_javascript", true));
+        //webSettings.setJavaScriptEnabled(sp.getBoolean("sp_javascript", true));
+        //webSettings.setJavaScriptCanOpenWindowsAutomatically(sp.getBoolean("sp_javascript", true));
         webSettings.setGeolocationEnabled(sp.getBoolean("sp_location", false));
         webSettings.setDomStorageEnabled(remoteHosts.isWhite(url) || sp.getBoolean("sp_remote", true));
         
@@ -157,17 +161,28 @@ public class NinjaWebView extends WebView implements AlbumController {
             manager.setAcceptCookie(false);
         }
 
-        if (javaHosts.isWhite(url) || sp.getBoolean("sp_javascript", true)) {
-            webSettings.setJavaScriptCanOpenWindowsAutomatically(true);
-            webSettings.setJavaScriptEnabled(true);
-        } else {
-            webSettings.setJavaScriptCanOpenWindowsAutomatically(false);
-            webSettings.setJavaScriptEnabled(false);
+        String  domain="";
+        try {
+            domain = new URI(url).getHost();
+        } catch (URISyntaxException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        if (!oldDomain.equals(domain)){   //do not change setting if staying within same domain
+            if (javaHosts.isWhite(url) || sp.getBoolean("sp_javascript", true)) {
+                webSettings.setJavaScriptCanOpenWindowsAutomatically(true);
+                webSettings.setJavaScriptEnabled(true);
+            } else {
+                webSettings.setJavaScriptCanOpenWindowsAutomatically(false);
+                webSettings.setJavaScriptEnabled(false);
+            }
         }
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            this.setImportantForAutofill(View.IMPORTANT_FOR_AUTOFILL_YES);
-        }
+            this.setImportantForAutofill(View.IMPORTANT_FOR_AUTOFILL_YES);         }
+
+        oldDomain=domain;
     }
 
     private synchronized void initAlbum() {

@@ -1,4 +1,4 @@
-# FOSS Browser
+<img src="https://github.com/scoute-dich/browser/blob/master/graphics/Zeichnung_features.png" height="200"/></a>
 
 "FOSS Browser" is fully free/libre (as in freedom) Android app. The source code is public. The app also does not need any unnecessary
 permissions. It's a simple Android browser based on webview. The intention is to provide a simple and light weight but powerful
@@ -42,6 +42,8 @@ browser with a nice looking user interface.
 - navigation button in fullscreen mode
 - fast toggle for most important settings
 - advanced gesture control for toolbar and navigation button
+- toggle mobile/desktop mode
+- toggle day/night mode
 
 
 ### Some nice extra features:

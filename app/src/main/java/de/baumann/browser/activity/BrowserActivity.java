@@ -443,6 +443,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                         ninjaWebView.setJavaScript(!((time&32) ==32));
                         ninjaWebView.setRemoteContent(!((time&64) ==64));
                         ninjaWebView.setOldDomain(url);
+                        break;
                     }
                 }
             }

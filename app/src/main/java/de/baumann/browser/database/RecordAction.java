@@ -293,9 +293,9 @@ public class RecordAction {
         List<Record> list = new ArrayList<>();
         RecordAction action = new RecordAction(activity);
         action.open(false);
+        list.addAll(action.listBookmark(activity, false, 0)); //move bookmarks to top of list
         list.addAll(action.listStartSite(activity));
         list.addAll(action.listHistory());
-        list.addAll(action.listBookmark(activity, false, 0));
         return list;
     }
 }

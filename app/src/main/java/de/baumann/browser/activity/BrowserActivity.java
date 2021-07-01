@@ -435,6 +435,17 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         omniBox_text.setDropDownWidth(context.getResources().getDisplayMetrics().widthPixels);
         omniBox_text.setOnItemClickListener((parent, view, position, id) -> {
             String url = ((TextView) view.findViewById(R.id.record_item_time)).getText().toString();
+            for (Record record:list){
+                if (record.getURL().equals(url)){
+                    long time = record.getTime();
+                    if (time>0 && time <=123) { //this is a bookmark: start page has 0 and history has time value, much higher
+                        if (((time&16) ==16) != ninjaWebView.isDesktopMode()) ninjaWebView.toggleDesktopMode(false);
+                        ninjaWebView.setJavaScript(!((time&32) ==32));
+                        ninjaWebView.setRemoteContent(!((time&64) ==64));
+                        ninjaWebView.setOldDomain(url);
+                    }
+                }
+            }
             ninjaWebView.loadUrl(url);
             hideKeyboard();
         });
@@ -1405,12 +1416,12 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         dialog.show();
         Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
 
-        GridItem item_01 = new GridItem(R.drawable.icon_close, getString(R.string.main_menu_new_tabOpen),  0);
-        GridItem item_02 = new GridItem(R.drawable.icon_close, getString(R.string.main_menu_new_tab),  0);
-        GridItem item_03 = new GridItem(R.drawable.icon_close, getString(R.string.menu_share_link),  0);
-        GridItem item_04 = new GridItem(R.drawable.icon_close, getString(R.string.menu_open_with),  0);
-        GridItem item_05 = new GridItem(R.drawable.icon_close, getString(R.string.menu_save_as),  0);
-        GridItem item_06 = new GridItem(R.drawable.icon_close, getString(R.string.menu_save_home),  0);
+        GridItem item_01 = new GridItem(0, getString(R.string.main_menu_new_tabOpen),  0);
+        GridItem item_02 = new GridItem(0, getString(R.string.main_menu_new_tab),  0);
+        GridItem item_03 = new GridItem(0, getString(R.string.menu_share_link),  0);
+        GridItem item_04 = new GridItem(0, getString(R.string.menu_open_with),  0);
+        GridItem item_05 = new GridItem(0, getString(R.string.menu_save_as),  0);
+        GridItem item_06 = new GridItem(0, getString(R.string.menu_save_home),  0);
 
         final List<GridItem> gridList = new LinkedList<>();
 
@@ -1791,10 +1802,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         dialog.show();
         Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
 
-        GridItem item_01 = new GridItem(R.drawable.icon_close, getString(R.string.main_menu_new_tabOpen),  0);
-        GridItem item_02 = new GridItem(R.drawable.icon_close, getString(R.string.main_menu_new_tab),  0);
-        GridItem item_03 = new GridItem(R.drawable.icon_close, getString(R.string.menu_delete),  0);
-        GridItem item_04 = new GridItem(R.drawable.icon_close, getString(R.string.menu_edit),  0);
+        GridItem item_01 = new GridItem(0, getString(R.string.main_menu_new_tabOpen),  0);
+        GridItem item_02 = new GridItem(0, getString(R.string.main_menu_new_tab),  0);
+        GridItem item_03 = new GridItem(0, getString(R.string.menu_delete),  0);
+        GridItem item_04 = new GridItem(0, getString(R.string.menu_edit),  0);
 
         final List<GridItem> gridList = new LinkedList<>();
 

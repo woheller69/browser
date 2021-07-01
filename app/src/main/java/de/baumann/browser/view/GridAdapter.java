@@ -45,6 +45,7 @@ public class GridAdapter extends BaseAdapter {
         GridItem item = list.get(position);
         holder.title.setText(item.getTitle());
         holder.icon.setImageResource(item.getIcon());
+        if (item.getIcon()!=0) holder.icon.setVisibility(View.VISIBLE);
 
         return view;
     }

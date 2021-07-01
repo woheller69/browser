@@ -1866,6 +1866,14 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     TextInputLayout edit_PW_layout = dialogViewSubMenu.findViewById(R.id.edit_PW_layout);
                     ImageView ib_icon = dialogViewSubMenu.findViewById(R.id.edit_icon);
                     ib_icon.setVisibility(View.VISIBLE);
+
+                    Chip chip_desktopMode = dialogViewSubMenu.findViewById(R.id.edit_bookmark_desktopMode);
+                    Chip chip_javascript = dialogViewSubMenu.findViewById(R.id.edit_bookmark_Javascript);
+                    Chip chip_remoteContent = dialogViewSubMenu.findViewById(R.id.edit_bookmark_RemoteContent);
+                    chip_desktopMode.setVisibility(View.VISIBLE);
+                    chip_javascript.setVisibility(View.VISIBLE);
+                    chip_remoteContent.setVisibility(View.VISIBLE);
+
                     edit_title_layout.setVisibility(View.VISIBLE);
                     edit_userName_layout.setVisibility(View.GONE);
                     edit_PW_layout.setVisibility(View.GONE);
@@ -1892,6 +1900,11 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                             dialogFilter.cancel();
                         });
                     });
+
+                    chip_desktopMode.setChecked((icon&16)==16);
+                    chip_javascript.setChecked(!((icon&32)==32));
+                    chip_remoteContent.setChecked(!((icon&64)==64));
+
                     newIcon = icon&15;
 
                     HelperUnit.setFilterIcons(ib_icon, newIcon);
@@ -1902,7 +1915,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                         RecordAction action = new RecordAction(context);
                         action.open(true);
                         action.deleteURL(url, RecordUnit.TABLE_BOOKMARK);
-                        newIcon=(icon&112)+newIcon; //keep bits for desktop mode, javascript, and remote content
+                        newIcon=newIcon+(long) (chip_desktopMode.isChecked()?16:0)+(long)(chip_javascript.isChecked()?0:32)+(long)(chip_remoteContent.isChecked()?0:64);
                         action.addBookmark(new Record(edit_title.getText().toString(), url, newIcon, 0));
                         action.close();
                         updateAutoComplete();

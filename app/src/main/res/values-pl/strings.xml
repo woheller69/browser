@@ -95,6 +95,8 @@
     <string name="setting_summary_location">Zezwól na dostęp do lokalizacji twojego urządzenia. Niektóre witryny (np. Google Maps do nawigacji) wymagają włączenia tej funkcji.</string>
     <string name="setting_title_history">Historia</string>
     <string name="setting_summary_history">Zezwól na zapisywanie historii odwiedzanych witryn.</string>
+    <string name="setting_title_autofill">Form Data</string>
+    <string name="setting_summary_autofill">Enable the saving of form data (Android Nougat and below) or autofill service (Android Oreo and above).</string>
     <!-- browser clear -->
     <string name="data_summary">Wszystkie pliki zostaną wyeksportowane do katalogu \"Android/data/de.baumann.browser/files/browser_backup/\" karty SD. Ten katalog zostanie wyłączony, jeśli odinstalujesz \"FOSS Browser\". Wykonaj regularnie kopię zapasową w miejscu zapisu.</string>
     <string name="clear_title_quit">Wymaż na zamknięciu</string>

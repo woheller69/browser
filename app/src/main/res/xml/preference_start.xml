@@ -2,6 +2,10 @@
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <CheckBoxPreference android:key="sp_autofill"
+        android:defaultValue="true"
+        android:title="@string/setting_title_autofill"
+        android:summary="@string/setting_summary_autofill"/>
 
     <CheckBoxPreference
         android:key="sp_images"

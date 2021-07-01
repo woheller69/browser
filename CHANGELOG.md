@@ -2,6 +2,7 @@
 
 - new: toggle mobile/desktop mode (thanks to @woheller69)
 - new: auto update of AdBlock-hosts (thanks to @woheller69)
+- new: save desktop mode/javascript/remote content settings in bookmarks (thanks to @woheller69)
 - updated: translations
 - fix: correct icon colors when importing bookmarks (thanks to @woheller69)
 - fix: content hidden by toolbar

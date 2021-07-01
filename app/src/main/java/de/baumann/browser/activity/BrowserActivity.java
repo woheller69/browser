@@ -236,6 +236,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     .putString("setting_gesture_nav_down", "05")
                     .putString("setting_gesture_nav_left", "03")
                     .putString("setting_gesture_nav_right", "02")
+                    .putBoolean("sp_autofill", true)
                     .putBoolean("sp_location", false).apply();
         }
 
@@ -751,7 +752,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
                 listView.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
-                listView.setSelection(0);
                 filter = false;
                 listView.setOnItemClickListener((parent, view, position, id) -> {
 

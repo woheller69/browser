@@ -123,6 +123,7 @@ public class NinjaWebView extends WebView implements AlbumController {
         });
     }
 
+    @SuppressWarnings("deprecation")
     @SuppressLint("SetJavaScriptEnabled")
     @TargetApi(Build.VERSION_CODES.O)
     public synchronized void initPreferences(String url) {
@@ -162,17 +163,33 @@ public class NinjaWebView extends WebView implements AlbumController {
             domain = new URI(url).getHost();
         } catch (URISyntaxException e) {
             // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-
-        if (!oldDomain.equals(domain)){
             //do not change setting if staying within same domain
             setJavaScript(javaHosts.isWhite(url) || sp.getBoolean("sp_javascript", true));
             setRemoteContent(remoteHosts.isWhite(url) || sp.getBoolean("sp_remote", true));
+            e.printStackTrace();
         }
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            this.setImportantForAutofill(View.IMPORTANT_FOR_AUTOFILL_YES);         }
+        if (oldDomain != null) {
+            if (!oldDomain.equals(domain)){
+                //do not change setting if staying within same domain
+                setJavaScript(javaHosts.isWhite(url) || sp.getBoolean("sp_javascript", true));
+                setRemoteContent(remoteHosts.isWhite(url) || sp.getBoolean("sp_remote", true));
+            }
+        }
+
+        if (sp.getBoolean("sp_autofill", true)) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                this.setImportantForAutofill(View.IMPORTANT_FOR_AUTOFILL_YES);
+            } else {
+                webSettings.setSavePassword(true);
+            }
+        } else {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                this.setImportantForAutofill(View.IMPORTANT_FOR_AUTOFILL_NO);
+            } else {
+                webSettings.setSavePassword(false);
+            }
+        }
 
         oldDomain=domain;
     }

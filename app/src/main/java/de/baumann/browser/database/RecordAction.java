@@ -6,12 +6,10 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.util.Log;
 
 import androidx.preference.PreferenceManager;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
@@ -108,7 +106,6 @@ public class RecordAction {
         List<Record> list = new LinkedList<>();
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
         String sortBy = Objects.requireNonNull(sp.getString("sort_bookmark", "title"));
-        Log.d("Bookmark",sortBy);
         Cursor cursor;
         cursor = database.query(
                 RecordUnit.TABLE_BOOKMARK,
@@ -139,7 +136,8 @@ public class RecordAction {
         }
         cursor.close();
 
-        if (sortBy.equals("time")){  //eliminate desktop mode when sorting colors
+        if (sortBy.equals("time")){  //ignore desktop mode, JavaScript, and remote content when sorting colors
+            Collections.sort(list, (first, second) -> first.getTitle().compareTo(second.getTitle()));
             Collections.sort(list,(first, second) -> Long.compare(first.getTime()&15, second.getTime()&15));
         }
         return list;

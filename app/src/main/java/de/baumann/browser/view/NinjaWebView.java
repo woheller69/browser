@@ -149,15 +149,6 @@ public class NinjaWebView extends WebView implements AlbumController {
         webSettings.setBlockNetworkImage(!sp.getBoolean("sp_images", true));
         webSettings.setGeolocationEnabled(sp.getBoolean("sp_location", false));
 
-        if (javaHosts.isWhite(url) || sp.getBoolean("sp_javascript", true)) {
-            webSettings.setJavaScriptCanOpenWindowsAutomatically(true);
-            webSettings.setJavaScriptEnabled(true);
-        } else {
-            webSettings.setJavaScriptCanOpenWindowsAutomatically(false);
-            webSettings.setJavaScriptEnabled(false);
-        }
-        webSettings.setDomStorageEnabled(remoteHosts.isWhite(url) || sp.getBoolean("sp_remote", true));
-
         CookieManager manager = CookieManager.getInstance();
         if (cookieHosts.isWhite(url) || sp.getBoolean("sp_cookies", true)) {
             manager.setAcceptCookie(true);
@@ -174,24 +165,38 @@ public class NinjaWebView extends WebView implements AlbumController {
             e.printStackTrace();
         }
 
-        if (oldDomain != null) {
-            if (!oldDomain.equals(domain)){
-                //do not change setting if staying within same domain
-                if (javaHosts.isWhite(url) || sp.getBoolean("sp_javascript", true)) {
-                    webSettings.setJavaScriptCanOpenWindowsAutomatically(true);
-                    webSettings.setJavaScriptEnabled(true);
-                } else {
-                    webSettings.setJavaScriptCanOpenWindowsAutomatically(false);
-                    webSettings.setJavaScriptEnabled(false);
-                }
-                webSettings.setDomStorageEnabled(remoteHosts.isWhite(url) || sp.getBoolean("sp_remote", true));
-            }
+        if (!oldDomain.equals(domain)){
+            //do not change setting if staying within same domain
+            setJavaScript(javaHosts.isWhite(url) || sp.getBoolean("sp_javascript", true));
+            setRemoteContent(remoteHosts.isWhite(url) || sp.getBoolean("sp_remote", true));
         }
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             this.setImportantForAutofill(View.IMPORTANT_FOR_AUTOFILL_YES);         }
 
         oldDomain=domain;
+    }
+
+    public void setOldDomain(String url){
+        String  domain="";
+        try {
+            domain = new URI(url).getHost();
+        } catch (URISyntaxException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        oldDomain=domain;
+    }
+
+    public void setJavaScript(boolean value){
+        WebSettings webSettings = this.getSettings();
+        webSettings.setJavaScriptCanOpenWindowsAutomatically(value);
+        webSettings.setJavaScriptEnabled(value);
+    }
+
+    public void setRemoteContent(boolean value){
+        WebSettings webSettings = this.getSettings();
+        webSettings.setDomStorageEnabled(value);
     }
 
     private synchronized void initAlbum() {

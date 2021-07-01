@@ -751,10 +751,15 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
                 listView.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
+                listView.setSelection(0);
                 filter = false;
                 listView.setOnItemClickListener((parent, view, position, id) -> {
 
                     if (((list.get(position).getTime()&16) ==16) != ninjaWebView.isDesktopMode()) ninjaWebView.toggleDesktopMode(false);
+                    ninjaWebView.setJavaScript(!((list.get(position).getTime()&32) ==32));
+                    ninjaWebView.setRemoteContent(!((list.get(position).getTime()&64) ==64));
+                    ninjaWebView.setOldDomain(list.get(position).getURL());
+
                     ninjaWebView.loadUrl(list.get(position).getURL());
                     hideOverview();
                 });
@@ -963,16 +968,14 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         if (ninjaWebView.getSettings().getJavaScriptEnabled()) {
             chip_javaScript_Tab.setChecked(true);
             chip_javaScript_Tab.setOnClickListener(view -> {
-                ninjaWebView.getSettings().setJavaScriptEnabled(false);
-                ninjaWebView.getSettings().setJavaScriptCanOpenWindowsAutomatically(false);
+                ninjaWebView.setJavaScript(false);
                 ninjaWebView.reload();
                 dialog.cancel();
             });
         } else {
             chip_javaScript_Tab.setChecked(false);
             chip_javaScript_Tab.setOnClickListener(view -> {
-                ninjaWebView.getSettings().setJavaScriptEnabled(true);
-                ninjaWebView.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
+                ninjaWebView.setJavaScript(true);
                 ninjaWebView.reload();
                 dialog.cancel();
             });
@@ -982,14 +985,14 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         if (ninjaWebView.getSettings().getDomStorageEnabled()) {
             chip_dom_Tab.setChecked(true);
             chip_dom_Tab.setOnClickListener(view -> {
-                ninjaWebView.getSettings().setDomStorageEnabled(false);
+                ninjaWebView.setRemoteContent(false);
                 ninjaWebView.reload();
                 dialog.cancel();
             });
         } else {
             chip_dom_Tab.setChecked(false);
             chip_dom_Tab.setOnClickListener(view -> {
-                ninjaWebView.getSettings().setDomStorageEnabled(true);
+                ninjaWebView.setRemoteContent(true);
                 ninjaWebView.reload();
                 dialog.cancel();
             });
@@ -1477,11 +1480,16 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         if (action.checkUrl(ninjaWebView.getUrl(), RecordUnit.TABLE_BOOKMARK)) {
             NinjaToast.show(this, R.string.app_error);
         } else {
-            if (ninjaWebView.isDesktopMode()){
-                action.addBookmark(new Record(ninjaWebView.getTitle(), ninjaWebView.getUrl(), 27, 0));
-            }else{
-                action.addBookmark(new Record(ninjaWebView.getTitle(), ninjaWebView.getUrl(), 11, 0));
-            }
+
+            // Bookmark time is used for color, desktop mode, javascript, and remote content
+            // bit 0..3  color
+            // bit 4: 1 = Desktop Mode
+            // bit 5: 0 = JavaScript (0 due backward compatibility)
+            // bit 6: 0 = Remote Content allowd (0 due to backward compatibility)
+
+            long value= 11 + (long) (ninjaWebView.isDesktopMode()?16:0) + (long) (ninjaWebView.getSettings().getJavaScriptEnabled()?0:32)  + (long) (ninjaWebView.getSettings().getDomStorageEnabled()?0:64);
+            action.addBookmark(new Record(ninjaWebView.getTitle(), ninjaWebView.getUrl(), value, 0));
+
             NinjaToast.show(this, R.string.app_done);
         }
         action.close();
@@ -1858,6 +1866,14 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     TextInputLayout edit_PW_layout = dialogViewSubMenu.findViewById(R.id.edit_PW_layout);
                     ImageView ib_icon = dialogViewSubMenu.findViewById(R.id.edit_icon);
                     ib_icon.setVisibility(View.VISIBLE);
+
+                    Chip chip_desktopMode = dialogViewSubMenu.findViewById(R.id.edit_bookmark_desktopMode);
+                    Chip chip_javascript = dialogViewSubMenu.findViewById(R.id.edit_bookmark_Javascript);
+                    Chip chip_remoteContent = dialogViewSubMenu.findViewById(R.id.edit_bookmark_RemoteContent);
+                    chip_desktopMode.setVisibility(View.VISIBLE);
+                    chip_javascript.setVisibility(View.VISIBLE);
+                    chip_remoteContent.setVisibility(View.VISIBLE);
+
                     edit_title_layout.setVisibility(View.VISIBLE);
                     edit_userName_layout.setVisibility(View.GONE);
                     edit_PW_layout.setVisibility(View.GONE);
@@ -1884,8 +1900,13 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                             dialogFilter.cancel();
                         });
                     });
+
+                    chip_desktopMode.setChecked((icon&16)==16);
+                    chip_javascript.setChecked(!((icon&32)==32));
+                    chip_remoteContent.setChecked(!((icon&64)==64));
+
                     newIcon = icon&15;
-                    boolean isDesktopMode=(icon&16)==16;
+
                     HelperUnit.setFilterIcons(ib_icon, newIcon);
 
                     builderSubMenu.setView(dialogViewSubMenu);
@@ -1894,7 +1915,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                         RecordAction action = new RecordAction(context);
                         action.open(true);
                         action.deleteURL(url, RecordUnit.TABLE_BOOKMARK);
-                        if (isDesktopMode) newIcon=newIcon+16; // use bit 4 for desktop mode
+                        newIcon=newIcon+(long) (chip_desktopMode.isChecked()?16:0)+(long)(chip_javascript.isChecked()?0:32)+(long)(chip_remoteContent.isChecked()?0:64);
                         action.addBookmark(new Record(edit_title.getText().toString(), url, newIcon, 0));
                         action.close();
                         updateAutoComplete();

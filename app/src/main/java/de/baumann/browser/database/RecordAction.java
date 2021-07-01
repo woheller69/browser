@@ -136,7 +136,8 @@ public class RecordAction {
         }
         cursor.close();
 
-        if (sortBy.equals("time")){  //eliminate desktop mode when sorting colors
+        if (sortBy.equals("time")){  //ignore desktop mode, JavaScript, and remote content when sorting colors
+            Collections.sort(list, (first, second) -> first.getTitle().compareTo(second.getTitle()));
             Collections.sort(list,(first, second) -> Long.compare(first.getTime()&15, second.getTime()&15));
         }
         return list;

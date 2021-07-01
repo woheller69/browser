@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Filter;
 import android.widget.Filterable;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.core.content.ContextCompat;
@@ -58,6 +59,7 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
 
     private static class CompleteItem {
         private final String title;
+        private final Long time;
 
         String getTitle() {
             return title;
@@ -75,13 +77,16 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
             return index;
         }
 
+        long getTime() { return time; }
+
         void setIndex(int index) {
             this.index = index;
         }
 
-        private CompleteItem(String title, String url) {
+        private CompleteItem(String title, String url, Long time) {
             this.title = title;
             this.url = url;
+            this.time = time;
         }
 
         @Override
@@ -105,6 +110,7 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
     }
 
     private static class Holder {
+        private ImageView iconView;
         private TextView titleView;
         private TextView urlView;
     }
@@ -129,7 +135,7 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
                     && !record.getTitle().isEmpty()
                     && record.getURL() != null
                     && !record.getURL().isEmpty()) {
-                originalList.add(new CompleteItem(record.getTitle(), record.getURL()));
+                originalList.add(new CompleteItem(record.getTitle(), record.getURL(), record.getTime()));
             }
         }
 
@@ -170,6 +176,7 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
             holder.titleView = view.findViewById(R.id.record_item_title);
             holder.titleView.setTextColor(ContextCompat.getColor(context, R.color.color_light));
             holder.urlView = view.findViewById(R.id.record_item_time);
+            holder.iconView = view.findViewById(R.id.record_item_icon);
             view.setTag(holder);
         } else {
             holder = (Holder) view.getTag();
@@ -179,6 +186,14 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
         holder.titleView.setText(item.title);
         holder.urlView.setVisibility(View.GONE);
         holder.urlView.setText(item.url);
+
+        if (item.getTime()==0){  //Item from start page
+            holder.iconView.setImageResource(R.drawable.icon_web_light);
+        }else if (item.getTime()>123){  //Item from history
+            holder.iconView.setImageResource(R.drawable.icon_history_light);
+        }else  holder.iconView.setImageResource(R.drawable.icon_bookmark_light);  //Item from bookmarks
+
+        holder.iconView.setVisibility(View.VISIBLE);
 
         return view;
     }

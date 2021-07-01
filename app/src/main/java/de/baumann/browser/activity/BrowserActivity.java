@@ -1143,8 +1143,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         ib_reload.setOnClickListener(view -> {
             if (ninjaWebView != null) {
                 dialog.cancel();
-                ninjaWebView.initPreferences(ninjaWebView.getUrl());
-                ninjaWebView.reload();
+                ninjaWebView.loadUrl(ninjaWebView.getUrl());
             }
         });
     }
@@ -1152,7 +1151,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     private synchronized void addAlbum(String title, final String url, final boolean foreground) {
         ninjaWebView = new NinjaWebView(context);
         ninjaWebView.setBrowserController(this);
-        ninjaWebView.initPreferences(url);
         ninjaWebView.setAlbumTitle(title);
         ninjaWebView.setOnScrollChangeListener((scrollY, oldScrollY) -> {
             if (!searchOnSite) {
@@ -1561,8 +1559,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         ImageButton overflow_reload = dialogView.findViewById(R.id.overflow_reload);
         overflow_reload.setOnClickListener(v -> {
             dialog_overflow.cancel();
-            ninjaWebView.initPreferences(ninjaWebView.getUrl());
-            ninjaWebView.reload();
+            ninjaWebView.loadUrl(ninjaWebView.getUrl());
         });
 
         final GridView menu_grid_tab = dialogView.findViewById(R.id.overflow_tab);

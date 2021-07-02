@@ -17,6 +17,7 @@ import android.util.Log;
 import android.view.Gravity;
 import android.webkit.CookieManager;
 import android.webkit.URLUtil;
+import android.widget.Toast;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
@@ -148,30 +149,36 @@ public class BrowserUnit {
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
         builder.setMessage(text);
         builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
-            DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
-            String filename = URLUtil.guessFileName(url, contentDisposition, mimeType); // Maybe unexpected filename.
+            try {
+                DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
+                String filename = URLUtil.guessFileName(url, contentDisposition, mimeType); // Maybe unexpected filename.
 
-            CookieManager cookieManager = CookieManager.getInstance();
-            String cookie = cookieManager.getCookie(url);
-            request.addRequestHeader("Cookie", cookie);
-            request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
-            request.setTitle(filename);
-            request.setMimeType(mimeType);
-            request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, filename);
-            DownloadManager manager = (DownloadManager) context.getSystemService(Context.DOWNLOAD_SERVICE);
-            assert manager != null;
+                CookieManager cookieManager = CookieManager.getInstance();
+                String cookie = cookieManager.getCookie(url);
+                request.addRequestHeader("Cookie", cookie);
+                request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+                request.setTitle(filename);
+                request.setMimeType(mimeType);
+                request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, filename);
+                DownloadManager manager = (DownloadManager) context.getSystemService(Context.DOWNLOAD_SERVICE);
+                assert manager != null;
 
-            if (Build.VERSION.SDK_INT >= 23 && Build.VERSION.SDK_INT < 29) {
-                int hasWRITE_EXTERNAL_STORAGE = context.checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
-                if (hasWRITE_EXTERNAL_STORAGE != PackageManager.PERMISSION_GRANTED) {
-                    Activity activity = (Activity) context;
-                    HelperUnit.grantPermissionsStorage(activity);
+                if (Build.VERSION.SDK_INT >= 23 && Build.VERSION.SDK_INT < 29) {
+                    int hasWRITE_EXTERNAL_STORAGE = context.checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+                    if (hasWRITE_EXTERNAL_STORAGE != PackageManager.PERMISSION_GRANTED) {
+                        Activity activity = (Activity) context;
+                        HelperUnit.grantPermissionsStorage(activity);
+                    } else {
+                        manager.enqueue(request);
+                    }
                 } else {
                     manager.enqueue(request);
                 }
-            } else {
-                manager.enqueue(request);
-            }
+            } catch (Exception e) {
+            System.out.println("Error Downloading File: " + e.toString());
+            Toast.makeText(context, context.getString(R.string.app_error)+e.toString().substring(e.toString().indexOf(":")),Toast.LENGTH_LONG).show();
+            e.printStackTrace();
+        }
         });
         builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
         AlertDialog dialog = builder.create();

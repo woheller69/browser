@@ -764,7 +764,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
                 listView.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
-                listView.setSelection(0);
                 filter = false;
                 listView.setOnItemClickListener((parent, view, position, id) -> {
 

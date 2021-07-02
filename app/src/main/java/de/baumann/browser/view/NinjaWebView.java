@@ -181,13 +181,13 @@ public class NinjaWebView extends WebView implements AlbumController {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 this.setImportantForAutofill(View.IMPORTANT_FOR_AUTOFILL_YES);
             } else {
-                webSettings.setSavePassword(true);
+                webSettings.setSaveFormData(true);
             }
         } else {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 this.setImportantForAutofill(View.IMPORTANT_FOR_AUTOFILL_NO);
             } else {
-                webSettings.setSavePassword(false);
+                webSettings.setSaveFormData(false);
             }
         }
 

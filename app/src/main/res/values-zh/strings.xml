@@ -95,8 +95,8 @@
     <string name="setting_summary_location">允许网站访问您的位置。有些网站 (如谷歌地图导航) 需要启用此功能。</string>
     <string name="setting_title_history">历史记录</string>
     <string name="setting_summary_history">保存访问过网站的历史记录。</string>
-    <string name="setting_title_autofill">Form Data</string>
-    <string name="setting_summary_autofill">Enable the saving of form data (Android Nougat and below) or autofill service (Android Oreo and above).</string>
+    <string name="setting_title_autofill">表单数据</string>
+    <string name="setting_summary_autofill">启用表单数据保存(Android Nougat及以下版本)或自动填充服务(Android Oreo及以上版本)。</string>
     <!-- browser clear -->
     <string name="data_summary">所有文件将导出到您SD卡的“Android/data/de.baumann.browser/files/browser_backup/”目录。 如果卸载\"FOSS浏览器\"，此目录将会被删除。所以请定期进行备份。</string>
     <string name="clear_title_quit">在应用退出时清除</string>

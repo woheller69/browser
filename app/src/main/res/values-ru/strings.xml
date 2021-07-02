@@ -95,8 +95,8 @@
     <string name="setting_summary_location">Разрешить сайтам доступ к Вашему местоположению. Некоторые сайты (например, карты Google) нуждаются в этом.</string>
     <string name="setting_title_history">История</string>
     <string name="setting_summary_history">Сохраните историю посещаемых веб-сайтов.</string>
-    <string name="setting_title_autofill">Form Data</string>
-    <string name="setting_summary_autofill">Enable the saving of form data (Android Nougat and below) or autofill service (Android Oreo and above).</string>
+    <string name="setting_title_autofill">Данные формы:</string>
+    <string name="setting_summary_autofill">Включить сохранение данных форм (Android Nougat и ниже) или службы автозаполнения (Android Oreo и выше).</string>
     <!-- browser clear -->
     <string name="data_summary">Все файлы будут экспортированы в папку \"Android/data/de.baumann.browser/files/browser_backup/\" Вашей sd-карты. Этот каталог будет УДАЛЕН, если вы удалите \"FOSS Browser\". Поэтому регулярно делайте резервную копию в надёжном месте.</string>
     <string name="clear_title_quit">Очистить при выходе из приложения</string>

@@ -95,8 +95,8 @@
     <string name="setting_summary_location">Povolit webům přístup k vaší poloze. Některé weby (jako Mapy Google pro navigaci) jej potřebují mít zapnutý.</string>
     <string name="setting_title_history">Historie</string>
     <string name="setting_summary_history">Uložit historii navštívených stránek.</string>
-    <string name="setting_title_autofill">Form Data</string>
-    <string name="setting_summary_autofill">Enable the saving of form data (Android Nougat and below) or autofill service (Android Oreo and above).</string>
+    <string name="setting_title_autofill">Data formulářů</string>
+    <string name="setting_summary_autofill">Povolit ukládání formulářových dat (Android Nougat a níže) nebo službu automatického vyplňování (Android Oreo a vyšší).</string>
     <!-- browser clear -->
     <string name="data_summary">Všechny soubory budou exportovány do adresáře „Android/data/de.baumann.browser/files/browser_backup/“ na vaší SD kartě. Tento adresář bude SMAZÁN, když „FOSS Browser“ odinstalujete. Proto si pravidelně na bezpečném místě vytvářejte zálohu.</string>
     <string name="clear_title_quit">Vymazat při ukončení aplikace</string>

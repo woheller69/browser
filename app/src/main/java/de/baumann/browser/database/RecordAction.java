@@ -79,6 +79,7 @@ public class RecordAction {
             cursor.moveToNext();
         }
         cursor.close();
+        Collections.reverse(list);
         return list;
     }
 
@@ -140,6 +141,7 @@ public class RecordAction {
             Collections.sort(list, (first, second) -> first.getTitle().compareTo(second.getTitle()));
             Collections.sort(list,(first, second) -> Long.compare(first.getTime()&15, second.getTime()&15));
         }
+        Collections.reverse(list);
         return list;
     }
 
@@ -185,7 +187,7 @@ public class RecordAction {
             cursor.moveToNext();
         }
         cursor.close();
-
+        Collections.reverse(list);
         return list;
     }
 

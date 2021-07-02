@@ -1,8 +1,12 @@
-### v 7.6 (WIP)
+### v 8.0
 
 - new: toggle mobile/desktop mode (thanks to @woheller69)
 - new: auto update of AdBlock-hosts (thanks to @woheller69)
 - new: save desktop mode/javascript/remote content settings in bookmarks (thanks to @woheller69)
+- new: show colored bookmark icon when editing bookmark category (thanks to @woheller69)
+- new: Use settings stored in bookmark when a bookmark is found in search (thanks to @woheller69)
+- new: Show icon source of item (start page, bookmarks, history) in search (thanks to @woheller69)
+- new: save form data/use autofill service in settings
 - updated: translations
 - fix: correct icon colors when importing bookmarks (thanks to @woheller69)
 - fix: content hidden by toolbar

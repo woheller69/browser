@@ -17,6 +17,7 @@ import android.util.Log;
 import android.view.Gravity;
 import android.webkit.CookieManager;
 import android.webkit.URLUtil;
+import android.widget.Toast;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
@@ -175,6 +176,7 @@ public class BrowserUnit {
                 }
             } catch (Exception e) {
             System.out.println("Error Downloading File: " + e.toString());
+            Toast.makeText(context, context.getString(R.string.app_error)+e.toString().substring(e.toString().indexOf(":")),Toast.LENGTH_LONG).show();
             e.printStackTrace();
         }
         });

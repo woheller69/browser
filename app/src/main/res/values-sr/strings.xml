@@ -77,6 +77,8 @@
     <string name="setting_title_font">Величина слова</string>
     <string name="setting_title_remote">Спољни садржај</string>
     <string name="setting_summary_remote">Омогући спољни садржај, који се не налази директно на сајту који посећујете. Онемогућавање ове опције је сигурније, брже и смањује потрошњу података. Међутим, неки садржај више неће бити приказан.</string>
+    <string name="setting_title_dom">DOM Storage</string>
+    <string name="setting_summary_dom">DOM Storage allows the application to store page elements that could include user sensitive information. Disabling this prevents local storage from being used.</string>
     <string name="setting_title_save_data">Захтевај уштеду података</string>
     <string name="setting_summary_save_data">Захтевај од сајтова да мање троше податке. Подржани сајтови ће се брже учитавати.</string>
     <!-- browser start -->

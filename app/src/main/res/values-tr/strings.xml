@@ -77,6 +77,8 @@
     <string name="setting_title_font">Yazı boyutu</string>
     <string name="setting_title_remote">Uzaktan içerik</string>
     <string name="setting_summary_remote">Doğrudan ziyaret ettiğiniz web sitesinde olmayan uzak içeriği etkinleştirin. Bunu devre dışı bırakmak daha güvenli, daha hızlı ve veri hacminden tasarruf sağlar. Ancak bazı içerikler artık görüntülenmeyecektir.</string>
+    <string name="setting_title_dom">DOM Storage</string>
+    <string name="setting_summary_dom">DOM Storage allows the application to store page elements that could include user sensitive information. Disabling this prevents local storage from being used.</string>
     <string name="setting_title_save_data">\'Veri Kaydetme\' İsteği</string>
     <string name="setting_summary_save_data">Web sitelerine verileri kaydetmeyi tercih edeceğinizi söyleyin. Desteklenen web siteleri daha hızlı yükleyecektir.</string>
     <!-- browser start -->

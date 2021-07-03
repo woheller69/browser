@@ -77,6 +77,8 @@
     <string name="setting_title_font">Dimensiune font</string>
     <string name="setting_title_remote">Conținut la distanță</string>
     <string name="setting_summary_remote">Enable remote content, which is not directly from the website you are visiting. Disabling this is more secure, faster and saves data volume. But some content will not be displayed anymore.</string>
+    <string name="setting_title_dom">DOM Storage</string>
+    <string name="setting_summary_dom">DOM Storage allows the application to store page elements that could include user sensitive information. Disabling this prevents local storage from being used.</string>
     <string name="setting_title_save_data">Solicită \'Salvare date\'</string>
     <string name="setting_summary_save_data">Spuneți site-urilor că doriți să salvați date. Site-urile suportate se vor încărca mai repede.</string>
     <!-- browser start -->

@@ -77,6 +77,8 @@
     <string name="setting_title_font">Μέγεθος γραμματοσειράς</string>
     <string name="setting_title_remote">Απομακρυσμένο περιεχόμενο</string>
     <string name="setting_summary_remote">Ενεργοποιήστε το απομακρυσμένο περιεχόμενο, το οποίο δεν είναι απευθείας από την ιστοσελίδα που επισκέπτεστε. Η απενεργοποίηση αυτού είναι πιο ασφαλής, πιο γρήγορη και αποθηκεύει την ένταση δεδομένων. Αλλά κάποιο περιεχόμενο δεν θα εμφανίζεται πια.</string>
+    <string name="setting_title_dom">DOM Storage</string>
+    <string name="setting_summary_dom">DOM Storage allows the application to store page elements that could include user sensitive information. Disabling this prevents local storage from being used.</string>
     <string name="setting_title_save_data">Αίτημα \'Αποθήκευση Δεδομένων\'</string>
     <string name="setting_summary_save_data">Πείτε στις ιστοσελίδες ότι θα προτιμούσατε να αποθηκεύσετε δεδομένα. Οι υποστηριζόμενες ιστοσελίδες θα φορτώσουν πιο γρήγορα.</string>
     <!-- browser start -->

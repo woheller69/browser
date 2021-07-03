@@ -2,31 +2,29 @@
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <CheckBoxPreference android:key="sp_autofill"
+    <CheckBoxPreference
+        android:key="sp_autofill"
         android:defaultValue="true"
         android:title="@string/setting_title_autofill"
         android:summary="@string/setting_summary_autofill"/>
 
     <CheckBoxPreference
+        android:key="saveHistory"
+        android:defaultValue="true"
+        android:title="@string/setting_title_history"/>
+
+    <CheckBoxPreference
         android:key="sp_images"
         android:defaultValue="true"
-        android:title="@string/setting_title_images"
-        android:summary="@string/setting_summary_images"/>
+        android:title="@string/setting_title_images"/>
 
     <CheckBoxPreference android:key="sp_savedata"
         android:defaultValue="true"
-        android:title="@string/setting_title_save_data"
-        android:summary="@string/setting_summary_save_data"/>
-
-    <CheckBoxPreference android:key="saveHistory"
-        android:defaultValue="true"
-        android:title="@string/setting_title_history"
-        android:summary="@string/setting_summary_history"/>
+        android:title="@string/setting_title_save_data"/>
 
     <CheckBoxPreference android:key="sp_location"
         android:defaultValue="false"
-        android:title="@string/setting_title_location"
-        android:summary="@string/setting_summary_location"/>
+        android:title="@string/setting_title_location"/>
 
     <PreferenceCategory android:title="@string/setting_title_adblock">
 
@@ -63,12 +61,12 @@
 
     </PreferenceCategory>
 
-    <PreferenceCategory android:title="@string/setting_title_remote">
+    <PreferenceCategory android:title="@string/setting_title_dom">
 
         <CheckBoxPreference
             android:key="sp_remote"
             android:defaultValue="true"
-            android:summary="@string/setting_summary_remote"/>
+            android:summary="@string/setting_summary_dom"/>
 
         <Preference
             android:key="start_remote"

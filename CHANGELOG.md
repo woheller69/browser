@@ -1,3 +1,10 @@
+### v 8.1 (WIP)
+
+- new: edit bookmark-url (thanks to @woheller69)
+- fix: sorting of tabs in overview
+- fix: DOM-storage description in settings
+
+
 ### v 8.0
 
 - new: toggle mobile/desktop mode (thanks to @woheller69)

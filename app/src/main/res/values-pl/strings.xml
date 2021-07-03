@@ -77,6 +77,8 @@
     <string name="setting_title_font">Rozmiar czcionki</string>
     <string name="setting_title_remote">Zawartość zdalna</string>
     <string name="setting_summary_remote">Włącz zdalną zawartość, która nie jest bezpośrednio z odwiedzanej strony. Wyłączenie tego jest bezpieczniejsze, szybsze i zapisuje głośność danych. Jednak niektóre treści nie będą już wyświetlane.</string>
+    <string name="setting_title_dom">DOM Storage</string>
+    <string name="setting_summary_dom">DOM Storage allows the application to store page elements that could include user sensitive information. Disabling this prevents local storage from being used.</string>
     <string name="setting_title_save_data">Zażądaj \'Zapisz dane\'</string>
     <string name="setting_summary_save_data">Powiedz stronom, że wolałbyś zapisać dane. Obsługiwane strony będą ładowane szybciej.</string>
     <!-- browser start -->

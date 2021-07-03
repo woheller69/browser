@@ -76,14 +76,11 @@
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_title_font">Dimensione testo</string>
     <string name="setting_title_remote">Contenuti remoti</string>
-    <string name="setting_summary_remote">Abilita i contenuti remoti che non provengono direttamente dal sito web che stai visitando. Disabilitare questo è più sicuro, più veloce e riduce il volume dei dati. Ma alcuni contenuti non verranno più visualizzati.</string>
     <string name="setting_title_dom">DOM Storage</string>
     <string name="setting_summary_dom">DOM Storage allows the application to store page elements that could include user sensitive information. Disabling this prevents local storage from being used.</string>
     <string name="setting_title_save_data">Richiedi \'Salva dati\'</string>
-    <string name="setting_summary_save_data">Indica ai siti web che preferisci salvare i dati. I siti web supportati caricheranno più velocemente.</string>
     <!-- browser start -->
     <string name="setting_title_images">Immagini</string>
-    <string name="setting_summary_images">Abilita le immagini di rete. La disattivazione potrebbe essere utile per salvare i dati mobili e caricare i siti Web più velocemente.</string>
     <string name="setting_title_cookie">Cookies</string>
     <string name="setting_summary_cookie_delete">Se attivata, tutti i cookie verranno eliminati. Anche i cookie di siti web di fiducia.</string>
     <string name="setting_summary_cookie">Abilita i cookie. I cookie sono piccoli file di testo che vengono memorizzati sul tuo dispositivo. I siti web li utilizzano, ad esempio, per memorizzare le impostazioni utente (ad esempio le impostazioni di ricerca). Ma potrebbero anche essere utilizzati per raccogliere dati personali degli utenti; i cookie di terze parti (che raccolgono dati utente per la pubblicità) sono sempre disabilitati.</string>
@@ -97,7 +94,6 @@
     <string name="setting_title_location">Posizione</string>
     <string name="setting_summary_location">Consenti ai siti web di accedere alla tua posizione. Alcuni siti web (come Google Maps per la navigazione) ne hanno bisogno.</string>
     <string name="setting_title_history">Cronologia</string>
-    <string name="setting_summary_history">Salva la cronologia dei site web visitati.</string>
     <string name="setting_title_autofill">Dati del Modulo</string>
     <string name="setting_summary_autofill">Abilita il salvataggio dei dati del modulo (Android Nougat e sotto) o servizio di riempimento automatico (Android Oreo e oltre).</string>
     <!-- browser clear -->
@@ -119,19 +115,14 @@
     <string name="setting_title_searchEngine">Motore di ricerca personalizzato</string>
     <string name="setting_title_userAgent">Agente utente personalizzato</string>
     <!-- App behavior -->
-    <string name="setting_title_hideToolbar">Nascondi barra degli strumenti</string>
     <string name="setting_summary_hide">Usa tutto lo schermo quando scorri sui siti web. Se premi il pulsante Indietro lascerai la modalità a schermo intero.</string>
     <string name="setting_title_behavior">Comportamento</string>
     <string name="setting_title_confirm_exit">Conferma l\'uscita dal browser</string>
-    <string name="setting_summary_confirm_exit">Finestra di conferma per la chiusura del browser.</string>
     <string name="setting_title_confirm_tab_close">Confermare la chiusura delle schede</string>
-    <string name="setting_summary_confirm_tab_close">Finestra di conferma per la chiusura delle schede.</string>
     <string name="setting_overView">Panoramica</string>
     <string name="setting_overView_onStart_title">Mostra all\'avvio</string>
-    <string name="setting_overView_onStart_summary">Apri \"Panoramica\" all\'avvio dell\'app.</string>
     <string name="setting_gestures">Gesti</string>
     <string name="setting_title_reopenLastTab">Riapri l\'ultima scheda</string>
-    <string name="setting_summary_reopenLastTab">Apri una nuova scheda quando l\'ultima scheda viene chiusa, invece di uscire dal browser.</string>
     <!-- gestures -->
     <string name="setting_title_toolbar">Barra degli Strumenti</string>
     <string name="setting_title_toolbar_buttons">Pulsanti barra strumenti</string>

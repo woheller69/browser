@@ -77,6 +77,8 @@
     <string name="setting_title_font">Cỡ chữ</string>
     <string name="setting_title_remote">Nội dung từ xa</string>
     <string name="setting_summary_remote">Bật nội dung từ xa không bắt nguồn trực tiếp từ trang web bạn đang đi đến. Việc tắt tuỳ chọn này là bảo mật hơn, nhanh hơn và tiết kiệm dữ liệu. Nhưng một số nội dung sẽ không được hiển thị nữa.</string>
+    <string name="setting_title_dom">DOM Storage</string>
+    <string name="setting_summary_dom">DOM Storage allows the application to store page elements that could include user sensitive information. Disabling this prevents local storage from being used.</string>
     <string name="setting_title_save_data">Yêu cầu \'Tiết kiệm dữ liệu\'</string>
     <string name="setting_summary_save_data">Bảo các trang web rằng bạn muốn tiết kiệm dữ liệu. Các trang web được hỗ trợ sẽ tải nhanh hơn.</string>
     <!-- browser start -->

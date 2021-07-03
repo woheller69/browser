@@ -49,6 +49,7 @@
     <string name="menu_other_info">О FOSS прегледачу</string>
     <!-- Dialog -->
     <string name="dialog_title_hint">Наслов:</string>
+    <string name="dialog_URL_hint">URL:</string>
     <string name="dialog_extension_hint">Наставак (на пример \".jpg\"):</string>
     <string name="dialog_sign_in_username">Корисничко име</string>
     <string name="dialog_sign_in_password">Лозинка</string>

@@ -77,6 +77,8 @@
     <string name="setting_title_font">Размер шрифта</string>
     <string name="setting_title_remote">Удаленный контент</string>
     <string name="setting_summary_remote">Включите удаленный контент, который не находится непосредственно на посещаемом Вами сайте. Отключение сделает работу более безопасной, быстрой и позволит экономить объем данных. Но некоторое содержимое больше не будет отображаться.</string>
+    <string name="setting_title_dom">DOM Storage</string>
+    <string name="setting_summary_dom">DOM Storage allows the application to store page elements that could include user sensitive information. Disabling this prevents local storage from being used.</string>
     <string name="setting_title_save_data">Запрос \'Сохранить данные\'</string>
     <string name="setting_summary_save_data">Расскажите веб-сайтам, что Вы хотели бы сохранить данные. Поддерживаемые веб-сайты будут загружаться быстрее.</string>
     <!-- browser start -->

@@ -49,6 +49,7 @@
     <string name="menu_other_info">О программе \"FOSS Browser\"</string>
     <!-- Dialog -->
     <string name="dialog_title_hint">Заголовок:</string>
+    <string name="dialog_URL_hint">URL:</string>
     <string name="dialog_extension_hint">Расширение (например: \".jpg\"):</string>
     <string name="dialog_sign_in_username">Имя пользователя</string>
     <string name="dialog_sign_in_password">Пароль</string>

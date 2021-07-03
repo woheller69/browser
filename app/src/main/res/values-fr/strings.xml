@@ -77,6 +77,8 @@
     <string name="setting_title_font">Taille de la police</string>
     <string name="setting_title_remote">Contenu à distance</string>
     <string name="setting_summary_remote">Activer le contenu à distance, qui n\'est pas directement à partir du site Web que vous visitez. Désactiver ceci est plus sécurisé, plus rapide et économise le volume de données. Mais certains contenus ne seront plus affichés.</string>
+    <string name="setting_title_dom">DOM Storage</string>
+    <string name="setting_summary_dom">DOM Storage allows the application to store page elements that could include user sensitive information. Disabling this prevents local storage from being used.</string>
     <string name="setting_title_save_data">Demande \'Enregistrer les données\'</string>
     <string name="setting_summary_save_data">Indiquez aux sites Web que vous préférez enregistrer les données. Les sites Web pris en charge se chargeront plus rapidement.</string>
     <!-- browser start -->

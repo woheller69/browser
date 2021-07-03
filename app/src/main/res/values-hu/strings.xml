@@ -77,6 +77,8 @@
     <string name="setting_title_font">Betűméret</string>
     <string name="setting_title_remote">Távoli tartalom</string>
     <string name="setting_summary_remote">Távoli tartalom engedélyezése, ami nem közvetlenül a meglátogatott weboldalról származik. Letiltása nagyobb biztonságot és sebességet eredményez alacsonyabb adatforgalom mellett, de a tartalom egy része nem fog megjelenni.</string>
+    <string name="setting_title_dom">DOM Storage</string>
+    <string name="setting_summary_dom">DOM Storage allows the application to store page elements that could include user sensitive information. Disabling this prevents local storage from being used.</string>
     <string name="setting_title_save_data">\'Save Data\' kérése</string>
     <string name="setting_summary_save_data">Értesíti a weboldalakat, hogy kéri az adatok mentését. A támogatott weboldalak gyorsabban fognak betöltődni.</string>
     <!-- browser start -->

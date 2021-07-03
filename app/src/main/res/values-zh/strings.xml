@@ -76,12 +76,9 @@
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_title_font">字体大小</string>
     <string name="setting_title_remote">远程内容</string>
-    <string name="setting_summary_remote">启用远程内容，它不是直接从你正在访问的网站上进行的。 禁用此功能更安全、更快捷、更节省数据量。 但有些内容将无法再显示。</string>
     <string name="setting_title_save_data">请求“保存数据”</string>
-    <string name="setting_summary_save_data">告诉网站您希望保存数据。支持的网站将加载更快。</string>
     <!-- browser start -->
     <string name="setting_title_images">图像</string>
-    <string name="setting_summary_images">启用网络图像。禁用可能有助于保存移动数据并更快地加载网站。</string>
     <string name="setting_title_cookie">Cookies</string>
     <string name="setting_summary_cookie_delete">如果启用，所有Cookies将被删除。包括信任的网站。</string>
     <string name="setting_summary_cookie">启用 Cookies。Cookies 是小型文本文件，存储在您的设备上。 网站使用它们来存储用户设置 (例如搜索设置)。 但它们也可以用来收集个人用户数据。第三方cookie (它们收集用户数据用于广告) 总是被禁用。</string>
@@ -95,7 +92,6 @@
     <string name="setting_title_location">地理位置</string>
     <string name="setting_summary_location">允许网站访问您的位置。有些网站 (如谷歌地图导航) 需要启用此功能。</string>
     <string name="setting_title_history">历史记录</string>
-    <string name="setting_summary_history">保存访问过网站的历史记录。</string>
     <string name="setting_title_autofill">表单数据</string>
     <string name="setting_summary_autofill">启用表单数据保存(Android Nougat及以下版本)或自动填充服务(Android Oreo及以上版本)。</string>
     <!-- browser clear -->
@@ -117,19 +113,14 @@
     <string name="setting_title_searchEngine">自定义搜索引擎</string>
     <string name="setting_title_userAgent">自定义User Agent</string>
     <!-- App behavior -->
-    <string name="setting_title_hideToolbar">隐藏工具栏</string>
     <string name="setting_summary_hide">当在网页中滑动时使用全屏浏览。当您按下返回键会退出全屏模式。</string>
     <string name="setting_title_behavior">行为</string>
     <string name="setting_title_confirm_exit">浏览器退出确认</string>
-    <string name="setting_summary_confirm_exit">关闭浏览器时的确认对话框。</string>
     <string name="setting_title_confirm_tab_close">确认关闭标签页</string>
-    <string name="setting_summary_confirm_tab_close">关闭标签时页的确认对话框</string>
     <string name="setting_overView">概览</string>
     <string name="setting_overView_onStart_title">启动时显示</string>
-    <string name="setting_overView_onStart_summary">每次启动应用时打开“概览”</string>
     <string name="setting_gestures">手势</string>
     <string name="setting_title_reopenLastTab">重新打开上次打开的页面</string>
-    <string name="setting_summary_reopenLastTab">当最后一个标签页被关闭时重新打开一个标签页，而不是退出浏览器。</string>
     <!-- gestures -->
     <string name="setting_title_toolbar">工具栏</string>
     <string name="setting_title_toolbar_buttons">工具栏按钮</string>

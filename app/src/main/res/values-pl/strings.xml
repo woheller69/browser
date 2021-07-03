@@ -76,12 +76,9 @@
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_title_font">Rozmiar czcionki</string>
     <string name="setting_title_remote">Zawartość zdalna</string>
-    <string name="setting_summary_remote">Włącz zdalną zawartość, która nie jest bezpośrednio z odwiedzanej strony. Wyłączenie tego jest bezpieczniejsze, szybsze i zapisuje głośność danych. Jednak niektóre treści nie będą już wyświetlane.</string>
     <string name="setting_title_save_data">Zażądaj \'Zapisz dane\'</string>
-    <string name="setting_summary_save_data">Powiedz stronom, że wolałbyś zapisać dane. Obsługiwane strony będą ładowane szybciej.</string>
     <!-- browser start -->
     <string name="setting_title_images">Grafiki</string>
-    <string name="setting_summary_images">Włącz obrazy sieciowe. Wyłączenie może być przydatne do zapisywania danych mobilnych i szybszego ładowania witryn.</string>
     <string name="setting_title_cookie">Ciasteczka</string>
     <string name="setting_summary_cookie_delete">Wszystkie ciasteczka zostaną usunięte, także te z witryn zaufanych.</string>
     <string name="setting_summary_cookie">Włącz ciasteczka. Pliki cookie to małe pliki tekstowe, które są przechowywane na twoim urządzeniu. Witryny używają ich na przykład do przechowywania ustawień użytkownika (np. ustawienia wyszukiwania). Ale mogą być one również wykorzystywane do zbierania danych osobowych. Pliki cookie stron trzecich (zbierają dane użytkowników do reklamy) są zawsze wyłączone.</string>
@@ -95,7 +92,6 @@
     <string name="setting_title_location">Lokalizacja</string>
     <string name="setting_summary_location">Zezwól na dostęp do lokalizacji twojego urządzenia. Niektóre witryny (np. Google Maps do nawigacji) wymagają włączenia tej funkcji.</string>
     <string name="setting_title_history">Historia</string>
-    <string name="setting_summary_history">Zezwól na zapisywanie historii odwiedzanych witryn.</string>
     <string name="setting_title_autofill">Dane fomrularza</string>
     <string name="setting_summary_autofill">Włącz zapisywanie danych formularzy (Android Nougat i poniżej) lub usługi autouzupełniania (Android Oreo i powyżej).</string>
     <!-- browser clear -->
@@ -117,19 +113,14 @@
     <string name="setting_title_searchEngine">Własna wyszukiwarka</string>
     <string name="setting_title_userAgent">Niestandardowy agent użytkownika</string>
     <!-- App behavior -->
-    <string name="setting_title_hideToolbar">Ukryj dolny panel</string>
     <string name="setting_summary_hide">Pokazuj witryny na całym ekranie. Dotykając przycisku wstecz wyjdziesz z trybu pełnoekranowego.</string>
     <string name="setting_title_behavior">Zachowanie</string>
     <string name="setting_title_confirm_exit">Potwierdzaj zamknięcie przeglądarki</string>
-    <string name="setting_summary_confirm_exit">Wyświetlaj komunikat przy zamykaniu apki.</string>
     <string name="setting_title_confirm_tab_close">Potwierdzaj zamknięcie karty</string>
-    <string name="setting_summary_confirm_tab_close">Wyświetlaj komunikat o zamykaniu karty.</string>
     <string name="setting_overView">Wszechgląd</string>
     <string name="setting_overView_onStart_title">Wysuwaj na starcie</string>
-    <string name="setting_overView_onStart_summary">Pokazuj panel \"Wszechglądu\" przy każdym uruchomieniu apki.</string>
     <string name="setting_gestures">Gesty</string>
     <string name="setting_title_reopenLastTab">Reopen last tab</string>
-    <string name="setting_summary_reopenLastTab">Ponownie otwórz nową kartę, gdy ostatnia karta zostanie zamknięta zamiast zamykać przeglądarkę.</string>
     <!-- gestures -->
     <string name="setting_title_toolbar">Pasek narzędziowy</string>
     <string name="setting_title_toolbar_buttons">Przyciski paska narzędzi</string>

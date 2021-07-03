@@ -76,12 +76,9 @@
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_title_font">Tamaño de fuente</string>
     <string name="setting_title_remote">Contenido remoto</string>
-    <string name="setting_summary_remote">Activar contenido remoto, que no es directamente del sitio web que está visitando. Deshabilitar esto es más seguro, más rápido y guarda el volumen de datos. Pero algunos contenidos ya no se mostrarán.</string>
     <string name="setting_title_save_data">Solicitar \"reducir datos\"</string>
-    <string name="setting_summary_save_data">Establecer que prefiere reducir el consumo de datos. Los sitios web soportados se cargarán más rápido.</string>
     <!-- browser start -->
     <string name="setting_title_images">Imágenes</string>
-    <string name="setting_summary_images">Habilitar imágenes en red. Desactivar puede ser útil para guardar datos móviles y para cargar sitios web más rápido.</string>
     <string name="setting_title_cookie">Cookies</string>
     <string name="setting_summary_cookie_delete">Si está activado, se borrarán todas las cookies. Incluyendo las de sitios web de confianza.</string>
     <string name="setting_summary_cookie">Habilitar cookies. Las cookies son archivos de texto pequeños, que se almacenan en su dispositivo. Los sitios web los utilizan, por ejemplo, para almacenar la configuración del usuario (por ejemplo, la configuración de búsqueda). Pero también podrían ser utilizados para recopilar datos personales de los usuarios. Las cookies de terceros (recogen datos de usuario para publicidad) están siempre deshabilitadas.</string>
@@ -95,7 +92,6 @@
     <string name="setting_title_location">Ubicación</string>
     <string name="setting_summary_location">Permitir a los sitios web acceder a su ubicación. Algunos sitios web (como Google maps para la navegación) necesitan esto habilitado.</string>
     <string name="setting_title_history">Historial</string>
-    <string name="setting_summary_history">Guardar el historial de sitios web visitados.</string>
     <string name="setting_title_autofill">Datos de Formulario</string>
     <string name="setting_summary_autofill">Habilitar el guardado de datos de formulario (Android Nougat y más abajo) o servicio de autorelleno (Android Oreo y superior).</string>
     <!-- browser clear -->
@@ -117,19 +113,14 @@
     <string name="setting_title_searchEngine">Motor de búsqueda personalizado</string>
     <string name="setting_title_userAgent">Agente de usuario personalizado</string>
     <!-- App behavior -->
-    <string name="setting_title_hideToolbar">Ocultar barra de herramientas</string>
     <string name="setting_summary_hide">Utilice la pantalla completa al desplazarse por sitios web. Si pulsa el botón \"volver\", dejará el modo de pantalla completa.</string>
     <string name="setting_title_behavior">Comportamiento</string>
     <string name="setting_title_confirm_exit">Confirmar salida del navegador</string>
-    <string name="setting_summary_confirm_exit">Mostrar un diálogo de confirmación al cerrar el navegador.</string>
     <string name="setting_title_confirm_tab_close">Confirmar cerrado de pestañas</string>
-    <string name="setting_summary_confirm_tab_close">Mostrar un diálogo de confirmación al cerrar pestañas.</string>
     <string name="setting_overView">Vista general</string>
     <string name="setting_overView_onStart_title">Mostrar al inicio</string>
-    <string name="setting_overView_onStart_summary">Abrir la vista general en cada inicio de la aplicación.</string>
     <string name="setting_gestures">Gestos</string>
     <string name="setting_title_reopenLastTab">Reabrir última pestaña</string>
-    <string name="setting_summary_reopenLastTab">Abrir una nueva pestaña cuando se cierre la última, en lugar de salir del navegador.</string>
     <!-- gestures -->
     <string name="setting_title_toolbar">Barra de herramientas</string>
     <string name="setting_title_toolbar_buttons">Barra de herramientas</string>

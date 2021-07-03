@@ -76,12 +76,9 @@
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_title_font">Taille de la police</string>
     <string name="setting_title_remote">Contenu à distance</string>
-    <string name="setting_summary_remote">Activer le contenu à distance, qui n\'est pas directement à partir du site Web que vous visitez. Désactiver ceci est plus sécurisé, plus rapide et économise le volume de données. Mais certains contenus ne seront plus affichés.</string>
     <string name="setting_title_save_data">Demande \'Enregistrer les données\'</string>
-    <string name="setting_summary_save_data">Indiquez aux sites Web que vous préférez enregistrer les données. Les sites Web pris en charge se chargeront plus rapidement.</string>
     <!-- browser start -->
     <string name="setting_title_images">Images</string>
-    <string name="setting_summary_images">Activer les images réseau. La désactivation peut être utile pour enregistrer les données mobiles et pour charger les sites Web plus rapidement.</string>
     <string name="setting_title_cookie">Cookies</string>
     <string name="setting_summary_cookie_delete">Si cette option est activée, tous les cookies seront supprimés. Aussi les cookies de sites de confiance.</string>
     <string name="setting_summary_cookie">Activez les cookies. Les cookies sont de petits fichiers texte, qui sont stockés sur votre appareil. Les sites Web les utilisent par exemple pour stocker les paramètres de l\'utilisateur (par exemple les paramètres de recherche). Les cookies de tiers (ils recueillent des données utilisateur pour la publicité) sont toujours désactivés.</string>
@@ -95,7 +92,6 @@
     <string name="setting_title_location">Localisation</string>
     <string name="setting_summary_location">Autoriser les sites Web à accéder à votre position. Certains sites Web (comme Google maps pour la navigation) ont besoin de cette option.</string>
     <string name="setting_title_history">Historique</string>
-    <string name="setting_summary_history">Sauvegarder l\'historique des sites visités.</string>
     <string name="setting_title_autofill">Données de formulaire</string>
     <string name="setting_summary_autofill">Activer l\'enregistrement des données du formulaire (Android Nougat et ci-dessous) ou le service de remplissage automatique (Android Oreo et au-delà).</string>
     <!-- browser clear -->
@@ -117,19 +113,14 @@
     <string name="setting_title_searchEngine">Moteur de recherche personnalisé</string>
     <string name="setting_title_userAgent">Agent utilisateur personnalisé</string>
     <!-- App behavior -->
-    <string name="setting_title_hideToolbar">Cacher barre d\'outils</string>
     <string name="setting_summary_hide">Utiliser l\'écran entier lorsque vous faites défiler les sites Web. Si vous appuyez sur le bouton retour, vous quitterez le mode plein écran.</string>
     <string name="setting_title_behavior">Comportement</string>
     <string name="setting_title_confirm_exit">Confirmer pour quitter</string>
-    <string name="setting_summary_confirm_exit">Fenêtre de confirmation avant fermeture du navigateur.</string>
     <string name="setting_title_confirm_tab_close">Confirmer fermeture onglet</string>
-    <string name="setting_summary_confirm_tab_close">Fenêtre de confirmation avant fermeture d\'un onglet.</string>
     <string name="setting_overView">Vue d\'ensemble</string>
     <string name="setting_overView_onStart_title">Montrer au démarrage</string>
-    <string name="setting_overView_onStart_summary">Ouvrir \"vue d\'ensemble\" à chaque démarrage de l\'application.</string>
     <string name="setting_gestures">Gestes</string>
     <string name="setting_title_reopenLastTab">Rouvrir dernier onglet</string>
-    <string name="setting_summary_reopenLastTab">Rouvrir un nouvel onglet lorsque le dernier onglet est fermé au lieu de quitter le navigateur.</string>
     <!-- gestures -->
     <string name="setting_title_toolbar">Barre d\'outils</string>
     <string name="setting_title_toolbar_buttons">Bouton de la barre d\'outils</string>

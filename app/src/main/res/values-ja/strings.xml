@@ -76,12 +76,9 @@
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_title_font">フォントサイズ</string>
     <string name="setting_title_remote">リモートコンテンツ</string>
-    <string name="setting_summary_remote">アクセスしている Web サイトから直接ではないリモートコンテンツを有効にします。これを無効にすると、より安全で高速になりデータ量が節約されます。ただし一部のコンテンツは表示されなくなります。</string>
     <string name="setting_title_save_data">「データを保存」のリクエスト</string>
-    <string name="setting_summary_save_data">ウェブサイトにデータを保存したいことを伝えます。サポートされる Web サイトはより高速にロードされます。</string>
     <!-- browser start -->
     <string name="setting_title_images">画像</string>
-    <string name="setting_summary_images">ネットワークの画像を有効にします。無効にすると、モバイルデータを削減し Web サイトをより速く読み込めます。</string>
     <string name="setting_title_cookie">クッキー</string>
     <string name="setting_summary_cookie_delete">有効にすると、信頼できる Web サイトも含め全てのクッキーが削除されます。</string>
     <string name="setting_summary_cookie">クッキーを有効にします。クッキーは小さなテキストファイルで、端末に保存されます。Web サイトは、例えばユーザー設定 (検索設定など) を保存するために使用します。ただし、個人データの収集にも使用できます。サードパーティのクッキー (広告用の個人データを収集している) は常に無効になっています。</string>
@@ -95,7 +92,6 @@
     <string name="setting_title_location">位置情報</string>
     <string name="setting_summary_location">ウェブサイトに位置情報へのアクセスを許可します。いくつかのウェブサイト (Google マップなど) は許可が必要です。</string>
     <string name="setting_title_history">履歴</string>
-    <string name="setting_summary_history">閲覧したウェブサイトの履歴を保存します。</string>
     <string name="setting_title_autofill">フォームの入力履歴</string>
     <string name="setting_summary_autofill">フォームのデータの保存 (Android 7 以下) または自動入力サービス (Android 8 以上) を有効にします。</string>
     <!-- browser clear -->
@@ -117,19 +113,14 @@
     <string name="setting_title_searchEngine">カスタム検索エンジン</string>
     <string name="setting_title_userAgent">カスタムユーザーエージェント</string>
     <!-- App behavior -->
-    <string name="setting_title_hideToolbar">ツールバーを隠す</string>
     <string name="setting_summary_hide">ウェブサイトスクロール時に画面全体を使用します。戻るボタンを押すとフルスクリーンモードを終了します。</string>
     <string name="setting_title_behavior">動作</string>
     <string name="setting_title_confirm_exit">ブラウザ終了の確認</string>
-    <string name="setting_summary_confirm_exit">ブラウザ終了時の確認ダイアログです。</string>
     <string name="setting_title_confirm_tab_close">タブ削除の確認</string>
-    <string name="setting_summary_confirm_tab_close">タブ終了時の確認ダイアログです。</string>
     <string name="setting_overView">一覧画面</string>
     <string name="setting_overView_onStart_title">開始時に表示</string>
-    <string name="setting_overView_onStart_summary">毎回のアプリ開始時に \"一覧画面\" を開きます。</string>
     <string name="setting_gestures">ジェスチャー</string>
     <string name="setting_title_reopenLastTab">タブを再度開く</string>
-    <string name="setting_summary_reopenLastTab">ブラウザ終了の代わりに最後のタブを閉じた時に新しいタブを開きます。</string>
     <!-- gestures -->
     <string name="setting_title_toolbar">ツールバー</string>
     <string name="setting_title_toolbar_buttons">ツールバーのボタン</string>

@@ -8,26 +8,22 @@
         <CheckBoxPreference
             android:key="hideToolbar"
             android:defaultValue="true"
-            android:title="@string/setting_title_hideToolbar"
             android:summary="@string/setting_summary_hide"/>
 
         <CheckBoxPreference
             android:defaultValue="true"
             android:key="sp_close_browser_confirm"
-            android:title="@string/setting_title_confirm_exit"
-            android:summary="@string/setting_summary_confirm_exit" />
+            android:title="@string/setting_title_confirm_exit"/>
 
         <CheckBoxPreference
             android:defaultValue="false"
             android:key="sp_close_tab_confirm"
-            android:title="@string/setting_title_confirm_tab_close"
-            android:summary="@string/setting_summary_confirm_tab_close" />
+            android:title="@string/setting_title_confirm_tab_close"/>
 
         <CheckBoxPreference
             android:key="sp_reopenLastTab"
             android:defaultValue="false"
-            android:title="@string/setting_title_reopenLastTab"
-            android:summary="@string/setting_summary_reopenLastTab"/>
+            android:title="@string/setting_title_reopenLastTab"/>
 
         <ListPreference
             android:key="sp_fontSize"
@@ -43,8 +39,7 @@
         <CheckBoxPreference
             android:key="start_tabStart"
             android:defaultValue="false"
-            android:title="@string/setting_overView_onStart_title"
-            android:summary="@string/setting_overView_onStart_summary"/>
+            android:title="@string/setting_overView_onStart_title"/>
 
         <ListPreference
             android:title="@string/setting_overView"

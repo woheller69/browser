@@ -76,8 +76,8 @@
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_title_font">フォントサイズ</string>
     <string name="setting_title_remote">リモートコンテンツ</string>
-    <string name="setting_title_dom">DOM Storage</string>
-    <string name="setting_summary_dom">DOM Storage allows the application to store page elements that could include user sensitive information. Disabling this prevents local storage from being used.</string>
+    <string name="setting_title_dom">ウェブストレージ</string>
+    <string name="setting_summary_dom">ウェブストレージ (DOM ストレージ) を使用するとアプリがユーザーの機密情報を含むページ要素を端末に保存することが可能になります。この機能の無効化によりローカルストレージは使用されなくなります。</string>
     <string name="setting_title_save_data">「データを保存」のリクエスト</string>
     <!-- browser start -->
     <string name="setting_title_images">画像</string>

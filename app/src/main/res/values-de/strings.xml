@@ -77,6 +77,8 @@
     <string name="setting_title_font">Schriftgröße</string>
     <string name="setting_title_remote">Entfernte Inhalte</string>
     <string name="setting_summary_remote">Aktiviere das Laden entfernter Inhalte, die nicht direkt von der besuchten Website stammen. Dies zu deaktivieren ist sicherer, schneller und spart Datenvolumen. Manche Inhalte werden dann allerdings nicht mehr angezeigt.</string>
+    <string name="setting_title_dom">DOM Storage</string>
+    <string name="setting_summary_dom">DOM Storage allows the application to store page elements that could include user sensitive information. Disabling this prevents local storage from being used.</string>
     <string name="setting_title_save_data">\"Daten sparen\" verlangen</string>
     <string name="setting_summary_save_data">Websites mitteilen, dass du Datenvolumen sparen willst. Unterstütze Websites werden schneller geladen.</string>
     <!-- browser start -->

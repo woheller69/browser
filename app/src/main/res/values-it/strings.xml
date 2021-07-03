@@ -77,6 +77,8 @@
     <string name="setting_title_font">Dimensione testo</string>
     <string name="setting_title_remote">Contenuti remoti</string>
     <string name="setting_summary_remote">Abilita i contenuti remoti che non provengono direttamente dal sito web che stai visitando. Disabilitare questo è più sicuro, più veloce e riduce il volume dei dati. Ma alcuni contenuti non verranno più visualizzati.</string>
+    <string name="setting_title_dom">DOM Storage</string>
+    <string name="setting_summary_dom">DOM Storage allows the application to store page elements that could include user sensitive information. Disabling this prevents local storage from being used.</string>
     <string name="setting_title_save_data">Richiedi \'Salva dati\'</string>
     <string name="setting_summary_save_data">Indica ai siti web che preferisci salvare i dati. I siti web supportati caricheranno più velocemente.</string>
     <!-- browser start -->

@@ -76,14 +76,11 @@
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_title_font">Schriftgröße</string>
     <string name="setting_title_remote">Entfernte Inhalte</string>
-    <string name="setting_summary_remote">Aktiviere das Laden entfernter Inhalte, die nicht direkt von der besuchten Website stammen. Dies zu deaktivieren ist sicherer, schneller und spart Datenvolumen. Manche Inhalte werden dann allerdings nicht mehr angezeigt.</string>
     <string name="setting_title_dom">DOM Storage</string>
     <string name="setting_summary_dom">DOM Storage allows the application to store page elements that could include user sensitive information. Disabling this prevents local storage from being used.</string>
     <string name="setting_title_save_data">\"Daten sparen\" verlangen</string>
-    <string name="setting_summary_save_data">Websites mitteilen, dass du Datenvolumen sparen willst. Unterstütze Websites werden schneller geladen.</string>
     <!-- browser start -->
     <string name="setting_title_images">Bilder</string>
-    <string name="setting_summary_images">Aktiviere das automatische Laden von Bildern. Wenn du dies deaktivierst, sparst du Datenvolumen und die Internetseiten laden schneller.</string>
     <string name="setting_title_cookie">Cookies</string>
     <string name="setting_summary_cookie_delete">Falls aktiviert, werden alle Cookies gelöscht. Auch die von vertrauenswürdigen Websites.</string>
     <string name="setting_summary_cookie">Aktiviere Cookies. Cookies sind kleine Textdateien, die auf deinem Gerät gespeichert werden. Internetseiten können sie nutzen um die Benutzereinstellungen (z.B. bei Suchmaschinen) zu speichern. Cookies von Dritten (sie sammeln zu Werbezwecken Nutzerdaten) sind immer deaktiviert.</string>
@@ -97,7 +94,6 @@
     <string name="setting_title_location">Standortbestimmung</string>
     <string name="setting_summary_location">Websites gestatten, auf den Standort zuzugreifen. Einige Websites (wie für Navigation Google Maps) benötigen dies um richtig zu funktionieren.</string>
     <string name="setting_title_history">Verlauf</string>
-    <string name="setting_summary_history">Speichere den Verlauf der besuchten Websites.</string>
     <string name="setting_title_autofill">Formulardaten</string>
     <string name="setting_summary_autofill">Aktiviere das Speichern von Formulardaten (Android Nougat und älter) oder den Autofill-Service (Android Oreo und neuer).</string>
     <!-- browser clear -->
@@ -119,19 +115,14 @@
     <string name="setting_title_searchEngine">Nutzerdefinierte Suchmaschine</string>
     <string name="setting_title_userAgent">Eigener Useragent</string>
     <!-- App behavior -->
-    <string name="setting_title_hideToolbar">Toolbar verstecken</string>
     <string name="setting_summary_hide">Benutze den ganzen Bildschirm, wenn du durch Internetseiten scrollst. Wenn du die \"Zurücktaste\" drückst, verlässt du den Vollbildmodus.</string>
     <string name="setting_title_behavior">Verhalten</string>
     <string name="setting_title_confirm_exit">Verlassen des Browsers bestätigen</string>
-    <string name="setting_summary_confirm_exit">Bestätigungsdialog beim Schließen des Browsers.</string>
     <string name="setting_title_confirm_tab_close">Schließen des Tabs bestätigen</string>
-    <string name="setting_summary_confirm_tab_close">Bestätigungsdialog beim Schließen eines Tabs.</string>
     <string name="setting_overView">Übersicht</string>
     <string name="setting_overView_onStart_title">Beim Start anzeigen</string>
-    <string name="setting_overView_onStart_summary">Die \"Übersicht\" bei jedem App-Start öffnen.</string>
     <string name="setting_gestures">Gesten</string>
     <string name="setting_title_reopenLastTab">Letzten Tab neu öffnen</string>
-    <string name="setting_summary_reopenLastTab">Einen neuen Tab öffnen, anstatt den Browser zu verlassen, wenn der letzte Tab geschlossen wird.</string>
     <!-- gestures -->
     <string name="setting_title_toolbar">Toolbar</string>
     <string name="setting_title_toolbar_buttons">Toolbar-Buttons</string>

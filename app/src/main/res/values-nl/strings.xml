@@ -76,14 +76,11 @@
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_title_font">Lettertypegrootte</string>
     <string name="setting_title_remote">Externe inhoud</string>
-    <string name="setting_summary_remote">Enable remote content, which is not directly from the website you are visiting. Disabling this is more secure, faster and saves data volume. But some content will not be displayed anymore.</string>
     <string name="setting_title_dom">DOM Storage</string>
     <string name="setting_summary_dom">DOM Storage allows the application to store page elements that could include user sensitive information. Disabling this prevents local storage from being used.</string>
     <string name="setting_title_save_data">Verzoek \'Gegevens opslaan\'</string>
-    <string name="setting_summary_save_data">Vertel websites dat je data liever zou willen besparen. Ondersteunde websites zullen sneller laden.</string>
     <!-- browser start -->
     <string name="setting_title_images">Afbeeldingen</string>
-    <string name="setting_summary_images">Enable Network images. Disabling could be useful to save mobile data and to load websites faster.</string>
     <string name="setting_title_cookie">Koekjes</string>
     <string name="setting_summary_cookie_delete">Als je dit inschakelt, dan worden alle cookies verwijderd, óók de cookies van vertrouwde websites.</string>
     <string name="setting_summary_cookie">Enable Cookies. Cookies are small text files, which are stored on your device. Websites use them for example to store user settings (for example search settings). But they could also be used to collect personal user data. Third party cookies (they collect user data for advertising) are always disabled.</string>
@@ -97,7 +94,6 @@
     <string name="setting_title_location">Locatie</string>
     <string name="setting_summary_location">Allow websites to access your location. Some websites (like Google maps for navigation) need this enabled.</string>
     <string name="setting_title_history">Geschiedenis</string>
-    <string name="setting_summary_history">Geschiedenis opslaan van bezochte websites.</string>
     <string name="setting_title_autofill">Form Data</string>
     <string name="setting_summary_autofill">Enable the saving of form data (Android Nougat and below) or autofill service (Android Oreo and above).</string>
     <!-- browser clear -->
@@ -119,19 +115,14 @@
     <string name="setting_title_searchEngine">Aangepaste zoekmachine</string>
     <string name="setting_title_userAgent">Aangepaste user agent</string>
     <!-- App behavior -->
-    <string name="setting_title_hideToolbar">Werkbalk verbergen</string>
     <string name="setting_summary_hide">Use the whole screen when scrolling through websites. If you press the back button you will leave fullscreen mode.</string>
     <string name="setting_title_behavior">Gedrag</string>
     <string name="setting_title_confirm_exit">Afsluiten bevestigen</string>
-    <string name="setting_summary_confirm_exit">Bevestigingsscherm tonen bij het afsluiten van de browser.</string>
     <string name="setting_title_confirm_tab_close">Tabblad sluiten bevestigen</string>
-    <string name="setting_summary_confirm_tab_close">Bevestigingsscherm tonen bij het sluiten van een tabblad.</string>
     <string name="setting_overView">Overview</string>
     <string name="setting_overView_onStart_title">Toon bij start</string>
-    <string name="setting_overView_onStart_summary">Open het \"Overzicht\" bij elke app start.</string>
     <string name="setting_gestures">Vingerbewegingen</string>
     <string name="setting_title_reopenLastTab">Reopen last tab</string>
-    <string name="setting_summary_reopenLastTab">Heropen een nieuwe tab als het laatste tabblad is gesloten in plaats van de browser te sluiten.</string>
     <!-- gestures -->
     <string name="setting_title_toolbar">Werkbalk</string>
     <string name="setting_title_toolbar_buttons">Toolbar buttons</string>

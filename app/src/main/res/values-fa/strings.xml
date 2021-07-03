@@ -78,6 +78,8 @@
     <string name="setting_title_remote">محتوای خارجی</string>
     <string name="setting_summary_remote">      فعال سازی نمایش محتوای خارجی ،که به صورت مستقیم از سایت مورد بازدید بارگذاری نمی شود.غیر فعال سازی این گزینه ،در سرعت بارگذاری صفحه،امنیت،صرفه جویی در مصرف بسته اینترنت تاثیر مثبت دارد اما ممکن است بعضی از محتوای خارجی مانند تصاویر،ویدیو ها نمایش داده نشوند.
     </string>
+    <string name="setting_title_dom">DOM Storage</string>
+    <string name="setting_summary_dom">DOM Storage allows the application to store page elements that could include user sensitive information. Disabling this prevents local storage from being used.</string>
     <string name="setting_title_save_data">درخواست صرفه جویی در مصرف شبکه</string>
     <string name="setting_summary_save_data">وبسایت هایی که از این امکان پشتیبانی میکنند سریع تر بارگذاری می شوند</string>
     <!-- browser start -->

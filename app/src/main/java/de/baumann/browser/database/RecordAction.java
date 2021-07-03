@@ -79,7 +79,9 @@ public class RecordAction {
             cursor.moveToNext();
         }
         cursor.close();
-        Collections.reverse(list);
+        if (!sortBy.equals("ordinal")) {
+            Collections.reverse(list);
+        }
         return list;
     }
 
@@ -187,7 +189,6 @@ public class RecordAction {
             cursor.moveToNext();
         }
         cursor.close();
-        Collections.reverse(list);
         return list;
     }
 

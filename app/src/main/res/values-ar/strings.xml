@@ -77,6 +77,8 @@
     <string name="setting_title_font">حجم الخط</string>
     <string name="setting_title_remote">المحتوى البعيد</string>
     <string name="setting_summary_remote">المحتوى البعيد، هو متحوى يحمل من مواقع أخرى يستخدمها الموقع الذي تزور. تعطيل هذا يجعل تحميل الموقع أكثر أمنا، أسرع ويقلل حجم البيانات. ولكن لن يعرض بعض المحتوى.</string>
+    <string name="setting_title_dom">DOM Storage</string>
+    <string name="setting_summary_dom">DOM Storage allows the application to store page elements that could include user sensitive information. Disabling this prevents local storage from being used.</string>
     <string name="setting_title_save_data">اطلب \'حفظ البيانات\'</string>
     <string name="setting_summary_save_data">أعلِم المواقع أنك تفضل حفظ البيانات. سيسرع تحميل المواقع المدعومة.</string>
     <!-- browser start -->

@@ -77,6 +77,8 @@
     <string name="setting_title_font">Velikost písma</string>
     <string name="setting_title_remote">Vzdálený obsah</string>
     <string name="setting_summary_remote">Povolte vzdálený obsah, který není přímo z navštívené webové stránky. Zakázání je bezpečnější, rychlejší a šetří spotřebu dat. Určitý obsah se však již nebude nadále zobrazovat.</string>
+    <string name="setting_title_dom">DOM Storage</string>
+    <string name="setting_summary_dom">DOM Storage allows the application to store page elements that could include user sensitive information. Disabling this prevents local storage from being used.</string>
     <string name="setting_title_save_data">Požadavek „Ušetřit data“</string>
     <string name="setting_summary_save_data">Oznámí webovým stránkám, že byste raději ukládali data. Podporované webové stránky se budou načítat rychleji.</string>
     <!-- browser start -->

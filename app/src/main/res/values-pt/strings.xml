@@ -49,6 +49,7 @@
     <string name="menu_other_info">Acerca de \"FOSS Browser\"</string>
     <!-- Dialog -->
     <string name="dialog_title_hint">Título:</string>
+    <string name="dialog_URL_hint">URL:</string>
     <string name="dialog_extension_hint">Extensão (por exemplo: \".jpg\"):</string>
     <string name="dialog_sign_in_username">Nome de utilizador</string>
     <string name="dialog_sign_in_password">Palavra-passe</string>

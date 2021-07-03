@@ -49,6 +49,7 @@
     <string name="menu_other_info">关于 \"FOSS浏览器\"</string>
     <!-- Dialog -->
     <string name="dialog_title_hint">标题:</string>
+    <string name="dialog_URL_hint">URL:</string>
     <string name="dialog_extension_hint">扩展名 (例如: \".jpg\"):</string>
     <string name="dialog_sign_in_username">用户名</string>
     <string name="dialog_sign_in_password">密码</string>

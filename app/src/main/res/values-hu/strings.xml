@@ -49,6 +49,7 @@
     <string name="menu_other_info">A \"FOSS Browser\" névjegye</string>
     <!-- Dialog -->
     <string name="dialog_title_hint">Cím:</string>
+    <string name="dialog_URL_hint">URL:</string>
     <string name="dialog_extension_hint">Kiterjesztés (például: \".jpg\"):</string>
     <string name="dialog_sign_in_username">Felhasználónév</string>
     <string name="dialog_sign_in_password">Jelszó</string>

@@ -49,6 +49,7 @@
     <string name="menu_other_info">حول \"FOSS Browser\"</string>
     <!-- Dialog -->
     <string name="dialog_title_hint">العنوان:</string>
+    <string name="dialog_URL_hint">URL:</string>
     <string name="dialog_extension_hint">الامتداد (مثلا: \"‎.jpg\"):</string>
     <string name="dialog_sign_in_username">اسم المستخدم</string>
     <string name="dialog_sign_in_password">كلمة السر</string>

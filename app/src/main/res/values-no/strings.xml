@@ -77,6 +77,8 @@
     <string name="setting_title_font">Font size</string>
     <string name="setting_title_remote">Remote content</string>
     <string name="setting_summary_remote">Enable remote content, which is not directly from the website you are visiting. Disabling this is more secure, faster and saves data volume. But some content will not be displayed anymore.</string>
+    <string name="setting_title_dom">DOM Storage</string>
+    <string name="setting_summary_dom">DOM Storage allows the application to store page elements that could include user sensitive information. Disabling this prevents local storage from being used.</string>
     <string name="setting_title_save_data">Request \'Save Data\'</string>
     <string name="setting_summary_save_data">Tell websites that you would prefer to save data. Supported websites will load faster.</string>
     <!-- browser start -->

@@ -77,6 +77,8 @@
     <string name="setting_title_font">フォントサイズ</string>
     <string name="setting_title_remote">リモートコンテンツ</string>
     <string name="setting_summary_remote">アクセスしている Web サイトから直接ではないリモートコンテンツを有効にします。これを無効にすると、より安全で高速になりデータ量が節約されます。ただし一部のコンテンツは表示されなくなります。</string>
+    <string name="setting_title_dom">DOM Storage</string>
+    <string name="setting_summary_dom">DOM Storage allows the application to store page elements that could include user sensitive information. Disabling this prevents local storage from being used.</string>
     <string name="setting_title_save_data">「データを保存」のリクエスト</string>
     <string name="setting_summary_save_data">ウェブサイトにデータを保存したいことを伝えます。サポートされる Web サイトはより高速にロードされます。</string>
     <!-- browser start -->

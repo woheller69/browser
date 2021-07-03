@@ -1890,6 +1890,12 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     EditText edit_title = dialogViewSubMenu.findViewById(R.id.edit_title);
                     edit_title.setText(title);
 
+                    TextInputLayout edit_URL_layout=dialogViewSubMenu.findViewById(R.id.edit_URL_layout);
+                    edit_URL_layout.setVisibility(View.VISIBLE);
+                    EditText edit_URL = dialogViewSubMenu.findViewById(R.id.edit_URL);
+                    edit_URL.setVisibility(View.VISIBLE);
+                    edit_URL.setText(url);
+
                     ib_icon.setOnClickListener(v -> {
                         MaterialAlertDialogBuilder builderFilter = new MaterialAlertDialogBuilder(context);
                         View dialogViewFilter = View.inflate(context, R.layout.dialog_menu, null);
@@ -1925,7 +1931,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                         action.open(true);
                         action.deleteURL(url, RecordUnit.TABLE_BOOKMARK);
                         newIcon=newIcon+(long) (chip_desktopMode.isChecked()?16:0)+(long)(chip_javascript.isChecked()?0:32)+(long)(chip_remoteContent.isChecked()?0:64);
-                        action.addBookmark(new Record(edit_title.getText().toString(), url, newIcon, 0));
+                        action.addBookmark(new Record(edit_title.getText().toString(), edit_URL.getText().toString(), newIcon, 0));
                         action.close();
                         updateAutoComplete();
                         bottom_navigation.setSelectedItemId(R.id.page_2);

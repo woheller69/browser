@@ -27,21 +27,38 @@
             android:scaleType="fitCenter"
             android:src="@drawable/circle_red_big"
             android:background="?attr/actionBarItemBackground" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/edit_title_layout"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/edit_title_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
 
-            <EditText
-                android:id="@+id/edit_title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="text"
-                android:hint="@string/dialog_title_hint" />
+                    <EditText
+                        android:id="@+id/edit_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:hint="@string/dialog_title_hint" />
+                </com.google.android.material.textfield.TextInputLayout>
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/edit_URL_layout"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
 
+                        <EditText
+                            android:id="@+id/edit_URL"
+                            android:visibility="gone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textUri"
+                            android:hint="@string/dialog_URL_hint" />
+                </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout

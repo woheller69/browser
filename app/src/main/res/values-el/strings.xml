@@ -49,7 +49,7 @@
     <string name="menu_other_info">Σχετικά με \"FOSS Browser\"</string>
     <!-- Dialog -->
     <string name="dialog_title_hint">Τίτλος:</string>
-    <string name="dialog_URL_hint">URL:</string>
+    <string name="dialog_URL_hint">url:</string>
     <string name="dialog_extension_hint">Επέκταση (για παράδειγμα: \".jpg\"):</string>
     <string name="dialog_sign_in_username">Όνομα χρήστη</string>
     <string name="dialog_sign_in_password">Κωδικός πρόσβασης</string>
@@ -76,9 +76,9 @@
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_title_font">Μέγεθος γραμματοσειράς</string>
     <string name="setting_title_remote">Απομακρυσμένο περιεχόμενο</string>
-    <string name="setting_title_dom">DOM Storage</string>
-    <string name="setting_title_dom_whitelist">DOM Whitelist</string>
-    <string name="setting_summary_dom">DOM Storage allows the application to store page elements that could include user sensitive information. Disabling this prevents local storage from being used.</string>
+    <string name="setting_title_dom">Αποθήκευση DOM</string>
+    <string name="setting_title_dom_whitelist">Άσπρη Λίστα Dom</string>
+    <string name="setting_summary_dom">Ο χώρος αποθήκευσης DOM επιτρέπει στην εφαρμογή να αποθηκεύει στοιχεία σελίδων που θα μπορούσαν να περιλαμβάνουν ευαίσθητες πληροφορίες χρήστη. Η απενεργοποίηση αυτού αποτρέπει τη χρήση του τοπικού αποθηκευτικού χώρου.</string>
     <string name="setting_title_save_data">Αίτημα \'Αποθήκευση Δεδομένων\'</string>
     <!-- browser start -->
     <string name="setting_title_images">Εικόνες</string>
@@ -103,7 +103,7 @@
     <string name="clear_title_cache">Εκκαθάριση προσωρινής μνήμης</string>
     <string name="clear_title_cookie">Εκκαθάριση Cookies</string>
     <string name="clear_title_history">Εκκαθάριση Ιστορικού</string>
-    <string name="localData">Clear on device stored data</string>
+    <string name="localData">Εκκαθάριση αποθηκευμένων δεδομένων συσκευής</string>
     <string name="clear_title_deleteDatabase">Διαγραφή βάσης δεδομένων</string>
     <string name="clear_summary_deleteDatabase">Διαγραφή ολόκληρης της βάσης δεδομένων (Startpage, σελιδοδείκτες, ιστορικό και όλες οι επιτρεπόμενες λίστες).</string>
     <!-- App setting -->
@@ -115,7 +115,7 @@
     <string name="setting_title_searchEngine">Προσαρμοσμένη μηχανή αναζήτησης</string>
     <string name="setting_title_userAgent">Προσαρμοσμένος user agent</string>
     <!-- App behavior -->
-    <string name="setting_title_hideToolbar">Hide toolbar</string>
+    <string name="setting_title_hideToolbar">Απόκρυψη γραμμής εργαλείων</string>
     <string name="setting_title_behavior">Συμπεριφορά</string>
     <string name="setting_title_confirm_exit">Επιβεβαίωση εξόδου προγράμματος περιήγησης</string>
     <string name="setting_title_confirm_tab_close">Επιβεβαίωση κλεισίματος καρτέλας</string>

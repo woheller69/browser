@@ -76,14 +76,12 @@
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_title_font">اندازه قلم</string>
     <string name="setting_title_remote">محتوای خارجی</string>
-    <string name="setting_summary_remote">Enable remote content, which is not directly from the website you are visiting. Disabling this is more secure, faster and saves data volume. But some content will not be displayed anymore.</string>
     <string name="setting_title_dom">DOM Storage</string>
+    <string name="setting_title_dom_whitelist">DOM Whitelist</string>
     <string name="setting_summary_dom">DOM Storage allows the application to store page elements that could include user sensitive information. Disabling this prevents local storage from being used.</string>
     <string name="setting_title_save_data">درخواست صرفه جویی در مصرف شبکه</string>
-    <string name="setting_summary_save_data">Tell websites that you would prefer to save data. Supported websites will load faster.</string>
     <!-- browser start -->
     <string name="setting_title_images">عکس ها</string>
-    <string name="setting_summary_images">Enable Network images. Disabling could be useful to save mobile data and to load websites faster.</string>
     <string name="setting_title_cookie">کوکی ها</string>
     <string name="setting_summary_cookie_delete">در صورت فعال سازی، تمامی کوکی ها حذف خواهد شد،حتی کوکی های سایت های مورد اعتماد</string>
     <string name="setting_summary_cookie">         فعال سازی کوکی ها.کوکی ها فایل های متنی کم حجمی هستند که در سیستم ذخیره می شوند.وبسایت ها از آنها برای ذخیره سازی تنظیمات مورد استفاده کاربران ( به عنوان مثال تنظیمات بخش جستجو،وضعیت ورود کاربر به سایت )استفاده می نمایند.
@@ -102,7 +100,6 @@
         بعضی از وبسایت ها مانند مسیریابی در نقشه نیاز به فعال بودن این گزینه دارند.
     </string>
     <string name="setting_title_history">تاریخچه</string>
-    <string name="setting_summary_history">Save the history of visited websites.</string>
     <string name="setting_title_autofill">داده‌‌ی فرم</string>
     <string name="setting_summary_autofill">Enable the saving of form data (Android Nougat and below) or autofill service (Android Oreo and above).</string>
     <!-- browser clear -->
@@ -112,11 +109,10 @@
           نیز حذف خواهد شد،لذا نسبت به پشتیبان گیری منظم از این پوشه در جای مطمئن اقدام نمایید.
     </string>
     <string name="clear_title_quit">پاک سازی هنگام خروج از برنامه</string>
-    <string name="clear_summary_quit">هر موقع ازمرورگر خارج شوید تمامی داده های انتخاب شده فوق پاکسازی خواهند شد.</string>
     <string name="clear_title_cache">پاکسازی کش</string>
     <string name="clear_title_cookie">پاک سازی کوکی ها</string>
     <string name="clear_title_history">پاکسازی تاریخچه</string>
-    <string name="clear_title_indexedDB">پاکسازی \"indexed databases\" و \"local webview storage\"</string>
+    <string name="localData">Clear on device stored data</string>
     <string name="clear_title_deleteDatabase">حذف دیتابیس</string>
     <string name="clear_summary_deleteDatabase">        حذف تمامی داده ها (تاریخچه ها،لیست های سفید،صفحه آغازین،نشانک ها).
     </string>
@@ -130,19 +126,13 @@
     <string name="setting_title_userAgent">سفارشی سازی user-agent مرورگر </string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">Hide toolbar</string>
-    <string name="setting_summary_hide">        هنگام پیمایش صفحه ،وبسایت تمام صفحه نمایش داده شودو با کلید برگشت به عقب از حالت تمام صفحه خارج شود.
-    </string>
     <string name="setting_title_behavior">رفتارها</string>
     <string name="setting_title_confirm_exit">تاییدیه خروج از مرورگر</string>
-    <string name="setting_summary_confirm_exit">Confirmation dialog when closing browser.</string>
     <string name="setting_title_confirm_tab_close">تاییدیه بستن زبانه</string>
-    <string name="setting_summary_confirm_tab_close">Confirmation dialog when closing a tab.</string>
     <string name="setting_overView">صفحه پیشفرض</string>
     <string name="setting_overView_onStart_title">نمایش صفحه آغازین</string>
-    <string name="setting_overView_onStart_summary">Open the \"Overview\" on every app start.</string>
     <string name="setting_gestures">اشارات انگشت</string>
     <string name="setting_title_reopenLastTab">بازکردن آخرین زبانه</string>
-    <string name="setting_summary_reopenLastTab">Reopen a new tab when the last tab is closed instead of exiting the browser.</string>
     <!-- gestures -->
     <string name="setting_title_toolbar">نوار ابزار</string>
     <string name="setting_title_toolbar_buttons">گزینه های نوار ابزار</string>

@@ -115,7 +115,7 @@
     <string name="setting_title_searchEngine">Özel arama motoru</string>
     <string name="setting_title_userAgent">Özel kullanıcı aracısı</string>
     <!-- App behavior -->
-    <string name="setting_title_hideToolbar">Hide toolbar</string>
+    <string name="setting_title_hideToolbar">Araç çubuğunu gizle</string>
     <string name="setting_title_behavior">Davranış</string>
     <string name="setting_title_confirm_exit">Tarayıcı çıkışını onayla</string>
     <string name="setting_title_confirm_tab_close">Sekme kapatmayı onayla</string>

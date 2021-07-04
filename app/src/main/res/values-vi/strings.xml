@@ -115,7 +115,7 @@
     <string name="setting_title_searchEngine">Công cụ tìm kiếm tuỳ chỉnh</string>
     <string name="setting_title_userAgent">Tác nhân người dùng tuỳ chỉnh</string>
     <!-- App behavior -->
-    <string name="setting_title_hideToolbar">Hide toolbar</string>
+    <string name="setting_title_hideToolbar">Ẩn thanh công cụ</string>
     <string name="setting_title_behavior">Hành vi</string>
     <string name="setting_title_confirm_exit">Xác nhận thoát trình duyệt</string>
     <string name="setting_title_confirm_tab_close">Xác nhận đóng tab</string>

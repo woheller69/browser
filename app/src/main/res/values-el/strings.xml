@@ -76,12 +76,11 @@
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_title_font">Μέγεθος γραμματοσειράς</string>
     <string name="setting_title_remote">Απομακρυσμένο περιεχόμενο</string>
-    <string name="setting_summary_remote">Ενεργοποιήστε το απομακρυσμένο περιεχόμενο, το οποίο δεν είναι απευθείας από την ιστοσελίδα που επισκέπτεστε. Η απενεργοποίηση αυτού είναι πιο ασφαλής, πιο γρήγορη και αποθηκεύει την ένταση δεδομένων. Αλλά κάποιο περιεχόμενο δεν θα εμφανίζεται πια.</string>
+    <string name="setting_title_dom">DOM Storage</string>
+    <string name="setting_summary_dom">DOM Storage allows the application to store page elements that could include user sensitive information. Disabling this prevents local storage from being used.</string>
     <string name="setting_title_save_data">Αίτημα \'Αποθήκευση Δεδομένων\'</string>
-    <string name="setting_summary_save_data">Πείτε στις ιστοσελίδες ότι θα προτιμούσατε να αποθηκεύσετε δεδομένα. Οι υποστηριζόμενες ιστοσελίδες θα φορτώσουν πιο γρήγορα.</string>
     <!-- browser start -->
     <string name="setting_title_images">Εικόνες</string>
-    <string name="setting_summary_images">Ενεργοποίηση εικόνων δικτύου. Η απενεργοποίηση μπορεί να είναι χρήσιμη για την αποθήκευση δεδομένων κινητής τηλεφωνίας και για τη γρήγορη φόρτωση ιστοσελίδων.</string>
     <string name="setting_title_cookie">Cookies</string>
     <string name="setting_summary_cookie_delete">Αν ενεργοποιηθεί, όλα τα cookies θα διαγραφούν. Επίσης τα Cookies των αξιόπιστων ιστοσελίδων.</string>
     <string name="setting_summary_cookie">Ενεργοποίηση Cookies. Τα cookies είναι μικρά αρχεία κειμένου, τα οποία αποθηκεύονται στη συσκευή σας. Οι ιστότοποι τα χρησιμοποιούν για παράδειγμα για την αποθήκευση των ρυθμίσεων χρήστη (για παράδειγμα ρυθμίσεις αναζήτησης). Αλλά θα μπορούσαν επίσης να χρησιμοποιηθούν για τη συλλογή προσωπικών δεδομένων χρηστών. Τα cookies τρίτων μερών (συλλέγουν δεδομένα χρηστών για διαφημίσεις) είναι πάντα απενεργοποιημένα.</string>
@@ -95,7 +94,6 @@
     <string name="setting_title_location">Τοποθεσία</string>
     <string name="setting_summary_location">Να επιτρέπεται σε ιστότοπους η πρόσβαση στην τοποθεσία σας. Ορισμένες ιστοσελίδες (όπως οι χάρτες Google για πλοήγηση) χρειάζονται αυτήν την επιλογή.</string>
     <string name="setting_title_history">Ιστορικό</string>
-    <string name="setting_summary_history">Αποθηκεύστε το ιστορικό των ιστότοπων που επισκέπτεστε.</string>
     <string name="setting_title_autofill">Δεδομένα Φόρμας</string>
     <string name="setting_summary_autofill">Ενεργοποιήστε την αποθήκευση δεδομένων φόρμας (Android Nougat και κάτω) ή την υπηρεσία αυτόματης συμπλήρωσης (Android Oreo και παραπάνω).</string>
     <!-- browser clear -->
@@ -117,19 +115,14 @@
     <string name="setting_title_searchEngine">Προσαρμοσμένη μηχανή αναζήτησης</string>
     <string name="setting_title_userAgent">Προσαρμοσμένος user agent</string>
     <!-- App behavior -->
-    <string name="setting_title_hideToolbar">Απόκρυψη γραμμής εργαλείων</string>
     <string name="setting_summary_hide">Χρησιμοποιήστε ολόκληρη την οθόνη κατά την κύλιση σε ιστοσελίδες. Αν πατήσετε το κουμπί πίσω θα αφήσετε λειτουργία πλήρους οθόνης.</string>
     <string name="setting_title_behavior">Συμπεριφορά</string>
     <string name="setting_title_confirm_exit">Επιβεβαίωση εξόδου προγράμματος περιήγησης</string>
-    <string name="setting_summary_confirm_exit">Διάλογος επιβεβαίωσης κατά το κλείσιμο του περιηγητή.</string>
     <string name="setting_title_confirm_tab_close">Επιβεβαίωση κλεισίματος καρτέλας</string>
-    <string name="setting_summary_confirm_tab_close">Διάλογος επιβεβαίωσης κατά το κλείσιμο μιας καρτέλας.</string>
     <string name="setting_overView">Επισκόπηση</string>
     <string name="setting_overView_onStart_title">Εμφάνιση κατά την έναρξη</string>
-    <string name="setting_overView_onStart_summary">Ανοίξτε την \"Επισκόπηση\" σε κάθε εκκίνηση της εφαρμογής.</string>
     <string name="setting_gestures">Χειρονομίες</string>
     <string name="setting_title_reopenLastTab">Ανοίξτε ξανά την τελευταία καρτέλα</string>
-    <string name="setting_summary_reopenLastTab">Ανοίξτε ξανά μια νέα καρτέλα όταν η τελευταία καρτέλα είναι κλειστή αντί για έξοδο από το πρόγραμμα περιήγησης.</string>
     <!-- gestures -->
     <string name="setting_title_toolbar">Γραμμή Εργαλείων</string>
     <string name="setting_title_toolbar_buttons">Πλήκτρα γραμμής εργαλείων</string>

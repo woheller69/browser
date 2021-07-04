@@ -76,12 +76,11 @@
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_title_font">Cỡ chữ</string>
     <string name="setting_title_remote">Nội dung từ xa</string>
-    <string name="setting_summary_remote">Bật nội dung từ xa không bắt nguồn trực tiếp từ trang web bạn đang đi đến. Việc tắt tuỳ chọn này là bảo mật hơn, nhanh hơn và tiết kiệm dữ liệu. Nhưng một số nội dung sẽ không được hiển thị nữa.</string>
+    <string name="setting_title_dom">DOM Storage</string>
+    <string name="setting_summary_dom">DOM Storage allows the application to store page elements that could include user sensitive information. Disabling this prevents local storage from being used.</string>
     <string name="setting_title_save_data">Yêu cầu \'Tiết kiệm dữ liệu\'</string>
-    <string name="setting_summary_save_data">Bảo các trang web rằng bạn muốn tiết kiệm dữ liệu. Các trang web được hỗ trợ sẽ tải nhanh hơn.</string>
     <!-- browser start -->
     <string name="setting_title_images">Hình ảnh</string>
-    <string name="setting_summary_images">Bật Hình ảnh trên mạng. Việc tắt có thể hữu ích cho việc tiết kiệm dữ liệu di động và tải các trang web nhanh hơn.</string>
     <string name="setting_title_cookie">Cookie</string>
     <string name="setting_summary_cookie_delete">Nếu được bật, tất cả cookie sẽ bị xoá. Cũng sẽ xoá các cookie của các trang web được tin cậy.</string>
     <string name="setting_summary_cookie">Bật Cookie. Cookie là các tệp văn bản nhỏ được lưu trữ trên thiết bị của bạn. Các trang web sử dụng chúng chẳng hạn để lưu trữ các cài đặt người dùng (ví dụ là cài đặt tìm kiếm). Nhưng chúng cũng có thể được sử dụng để thu thập thông tin cá nhân của người dùng. Các cookie bên thứ ba (chúng thu thập dữ liệu người dùng để quảng cáo) luôn được tắt.</string>
@@ -95,7 +94,6 @@
     <string name="setting_title_location">Vị trí</string>
     <string name="setting_summary_location">Cho phép các trang web truy cập vị trí của bạn. Một số trang web (như Google Maps để điều hướng) cần tuỳ chọn này được bật.</string>
     <string name="setting_title_history">Lịch sử</string>
-    <string name="setting_summary_history">Lưu lịch sử các trang web đã đi đến.</string>
     <string name="setting_title_autofill">Dữ liệu mẫu</string>
     <string name="setting_summary_autofill">Enable the saving of form data (Android Nougat and below) or autofill service (Android Oreo and above).</string>
     <!-- browser clear -->
@@ -117,19 +115,14 @@
     <string name="setting_title_searchEngine">Công cụ tìm kiếm tuỳ chỉnh</string>
     <string name="setting_title_userAgent">Tác nhân người dùng tuỳ chỉnh</string>
     <!-- App behavior -->
-    <string name="setting_title_hideToolbar">Ẩn thanh công cụ</string>
     <string name="setting_summary_hide">Sử dụng toàn bộ màn hình khi cuộn trong các trang web. Nếu bạn nhấn nút quay lại, bạn sẽ rời khỏi chế độ toàn màn hình.</string>
     <string name="setting_title_behavior">Hành vi</string>
     <string name="setting_title_confirm_exit">Xác nhận thoát trình duyệt</string>
-    <string name="setting_summary_confirm_exit">Hộp thoại xác nhận khi đóng trình duyệt.</string>
     <string name="setting_title_confirm_tab_close">Xác nhận đóng tab</string>
-    <string name="setting_summary_confirm_tab_close">Hộp thoại xác nhận khi đóng một tab.</string>
     <string name="setting_overView">Tổng quan</string>
     <string name="setting_overView_onStart_title">Hiện khi khởi động</string>
-    <string name="setting_overView_onStart_summary">Mở \"Tổng quan\" mỗi lần khởi động ứng dụng.</string>
     <string name="setting_gestures">Cử chỉ</string>
     <string name="setting_title_reopenLastTab">Mở lại tab cuối</string>
-    <string name="setting_summary_reopenLastTab">Mở lại một tab mới khi tab cuối được đóng thay vì thoát trình duyệt.</string>
     <!-- gestures -->
     <string name="setting_title_toolbar">Thanh công cụ</string>
     <string name="setting_title_toolbar_buttons">Nút trên thanh công cụ</string>

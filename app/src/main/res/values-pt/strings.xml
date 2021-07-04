@@ -76,12 +76,11 @@
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_title_font">Tamanho da letra</string>
     <string name="setting_title_remote">Conteúdo remoto</string>
-    <string name="setting_summary_remote">Habilitar conteúdo remoto, que não é diretamente do site que você está visitando. Desabilitar isto é mais seguro, mais rápido e salva o volume de dados. Mas alguns conteúdos não serão mais exibidos.</string>
+    <string name="setting_title_dom">DOM Storage</string>
+    <string name="setting_summary_dom">DOM Storage allows the application to store page elements that could include user sensitive information. Disabling this prevents local storage from being used.</string>
     <string name="setting_title_save_data">Solicitar \'Save Data\'</string>
-    <string name="setting_summary_save_data">Informar os sites de que deseja guardar os dados. Os sites suportados serão carregados mais rápido.</string>
     <!-- browser start -->
     <string name="setting_title_images">Imagens</string>
-    <string name="setting_summary_images">Habilita imagens de rede. Desabilitar pode ser útil para salvar dados móveis e carregar sites mais rápido.</string>
     <string name="setting_title_cookie">Cookies</string>
     <string name="setting_summary_cookie_delete">Se ativar a opção, todos os cookies serão apagados. Os cookies de sites fiáveis também serão apagados.</string>
     <string name="setting_summary_cookie">Habilite Cookies. Cookies são pequenos arquivos de texto, que são armazenados no seu dispositivo. Sites usam-nas por exemplo para armazenar as configurações do usuário (por exemplo, configurações de busca). Mas também podem ser usados para coletar dados pessoais do usuário. Os cookies de terceiros (coletam dados do usuário para publicidade) são sempre desativados.</string>
@@ -95,7 +94,6 @@
     <string name="setting_title_location">Localização</string>
     <string name="setting_summary_location">Permitir que sites acessem a sua localização. Alguns sites (como o Google maps para navegação) precisam dessa habilitação.</string>
     <string name="setting_title_history">Histórico</string>
-    <string name="setting_summary_history">Guardar histórico dos sites visitados.</string>
     <string name="setting_title_autofill">Dados dos formulários</string>
     <string name="setting_summary_autofill">Ativar o salvamento de dados do formulário (Android Nougat e abaixo) ou o serviço de autopreenchimento (Android Oreo e superior).</string>
     <!-- browser clear -->
@@ -117,19 +115,14 @@
     <string name="setting_title_searchEngine">Motor de pesquisa personalizado</string>
     <string name="setting_title_userAgent">Agente personalizado</string>
     <!-- App behavior -->
-    <string name="setting_title_hideToolbar">Ocultar barra de ferramentas</string>
     <string name="setting_summary_hide">Use a tela inteira ao rolar pelos sites. Se você pressionar o botão voltar, você deixará o modo de tela cheia.</string>
     <string name="setting_title_behavior">Comportamento</string>
     <string name="setting_title_confirm_exit">Confirmar ao sair</string>
-    <string name="setting_summary_confirm_exit">Mostrar diálogo para confirmar o fecho do navegador.</string>
     <string name="setting_title_confirm_tab_close">Confirmar fecho do separador</string>
-    <string name="setting_summary_confirm_tab_close">Mostrar diálogo para confirmar o fecho do separador.</string>
     <string name="setting_overView">Vista global</string>
     <string name="setting_overView_onStart_title">Mostrar ao iniciar</string>
-    <string name="setting_overView_onStart_summary">Abrir \"Vista global\" ao iniciar a aplicação.</string>
     <string name="setting_gestures">Gestos</string>
     <string name="setting_title_reopenLastTab">Reabrir último separador</string>
-    <string name="setting_summary_reopenLastTab">Ao fechar o último separador, abrir um novo separador em vez de fechar a aplicação.</string>
     <!-- gestures -->
     <string name="setting_title_toolbar">Barra de ferramentas</string>
     <string name="setting_title_toolbar_buttons">Botões da barra de ferramentas</string>

@@ -76,12 +76,11 @@
     <string name="setting_summary_search_engine_ecosia">محرك Ecosia</string>
     <string name="setting_title_font">حجم الخط</string>
     <string name="setting_title_remote">المحتوى البعيد</string>
-    <string name="setting_summary_remote">المحتوى البعيد، هو متحوى يحمل من مواقع أخرى يستخدمها الموقع الذي تزور. تعطيل هذا يجعل تحميل الموقع أكثر أمنا، أسرع ويقلل حجم البيانات. ولكن لن يعرض بعض المحتوى.</string>
+    <string name="setting_title_dom">DOM Storage</string>
+    <string name="setting_summary_dom">DOM Storage allows the application to store page elements that could include user sensitive information. Disabling this prevents local storage from being used.</string>
     <string name="setting_title_save_data">اطلب \'حفظ البيانات\'</string>
-    <string name="setting_summary_save_data">أعلِم المواقع أنك تفضل حفظ البيانات. سيسرع تحميل المواقع المدعومة.</string>
     <!-- browser start -->
     <string name="setting_title_images">الصور</string>
-    <string name="setting_summary_images">مكّن الصور. تعطيلها قد يكون مفيداً لحفظ بيانات الجوال وتحميل المواقع بشكل أسرع.</string>
     <string name="setting_title_cookie">الكعكات</string>
     <string name="setting_summary_cookie_delete">إذا فُعّل، ستحذف جميع الكعكات، حتى الخاصة بالمواقع الموثوقة.</string>
     <string name="setting_summary_cookie">مكّن الكعكات. الكعكات هي ملفات نصية صغيرة، يتم تخزينها على جهازك. تستخدمها المواقع لتخزين البيانات مثل إعدادات المستخدم (مثل إعدادات البحث). ولكن يمكن استخدامها أيضا لجمع بيانات المستخدم الشخصية. كعكات الطرف الثالث (تقوم بجمع بيانات المستخدم لتوجيه الإعلانات) تكون معطلة دائما.</string>
@@ -95,7 +94,6 @@
     <string name="setting_title_location">الموقع</string>
     <string name="setting_summary_location">اسمح للمواقع الوصول إلى موقعك. بعض المواقع (مثل خرائط غوغل) تحتاج لهذا.</string>
     <string name="setting_title_history">التأريخ</string>
-    <string name="setting_summary_history">حفظ تأريخ المواقع المزارة.</string>
     <string name="setting_title_autofill">إستمارة المعلومات</string>
     <string name="setting_summary_autofill">تمكين حفظ بيانات النموذج (أندرويد نوجات وما دونها) أو خدمة التعبئة التلقائية (أندرويد أوريو وما فوق).</string>
     <!-- browser clear -->
@@ -117,19 +115,14 @@
     <string name="setting_title_searchEngine">محرك بحث مخصص</string>
     <string name="setting_title_userAgent">وكيل مستخدم مخصص</string>
     <!-- App behavior -->
-    <string name="setting_title_hideToolbar">أخفِ شريط الأدوات</string>
     <string name="setting_summary_hide">استخدم الشاشة بأكملها عند اللف عبر المواقع. إذا ضغطت زر الرجوع ستغادر وضع الشاشة الكاملة.</string>
     <string name="setting_title_behavior">السلوك</string>
     <string name="setting_title_confirm_exit">تأكيد خروج المتصفح</string>
-    <string name="setting_summary_confirm_exit">حوار التأكيد عند إغلاق المتصفح.</string>
     <string name="setting_title_confirm_tab_close">أكّد خروج التبويب</string>
-    <string name="setting_summary_confirm_tab_close">حوار التأكيد عند إغلاق تبويب.</string>
     <string name="setting_overView">نظرة عامة</string>
     <string name="setting_overView_onStart_title">أَظهر عند البداية</string>
-    <string name="setting_overView_onStart_summary">افتح \"نظرة عامة\" عند كل بداية للتطبيق.</string>
     <string name="setting_gestures">إيماءات</string>
     <string name="setting_title_reopenLastTab">أعد فتح آخر تبويب</string>
-    <string name="setting_summary_reopenLastTab">أعد فتح تبويب جديد عند غلق آخر تبويب بدلا من الخروج من المتصفح.</string>
     <!-- gestures -->
     <string name="setting_title_toolbar">شريط الأدوات</string>
     <string name="setting_title_toolbar_buttons">أزرار شريط الأدوات</string>

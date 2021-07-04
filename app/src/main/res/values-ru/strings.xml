@@ -76,12 +76,11 @@
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_title_font">Размер шрифта</string>
     <string name="setting_title_remote">Удаленный контент</string>
-    <string name="setting_summary_remote">Включите удаленный контент, который не находится непосредственно на посещаемом Вами сайте. Отключение сделает работу более безопасной, быстрой и позволит экономить объем данных. Но некоторое содержимое больше не будет отображаться.</string>
+    <string name="setting_title_dom">DOM Storage</string>
+    <string name="setting_summary_dom">DOM Storage allows the application to store page elements that could include user sensitive information. Disabling this prevents local storage from being used.</string>
     <string name="setting_title_save_data">Запрос \'Сохранить данные\'</string>
-    <string name="setting_summary_save_data">Расскажите веб-сайтам, что Вы хотели бы сохранить данные. Поддерживаемые веб-сайты будут загружаться быстрее.</string>
     <!-- browser start -->
     <string name="setting_title_images">Изображения</string>
-    <string name="setting_summary_images">Включить сетевые изображения. Отключение может быть полезно для экономии мобильных данных и ускорения загрузки сайтов.</string>
     <string name="setting_title_cookie">Куки</string>
     <string name="setting_summary_cookie_delete">Если включено, все cookies будут удалены. Также файлы cookie надежных веб-сайтов.</string>
     <string name="setting_summary_cookie">Включить файлы cookie. Файлы cookie представляют собой небольшие текстовые файлы, которые хранятся на Вашем устройстве. Сайты используют их, например, для хранения пользовательских настроек (например, настроек поиска). Но они также могут использоваться для сбора личных данных пользователя. Сторонние файлы cookie (они собирают данные пользователя для рекламы) всегда отключены.</string>
@@ -95,7 +94,6 @@
     <string name="setting_title_location">Местоположение</string>
     <string name="setting_summary_location">Разрешить сайтам доступ к Вашему местоположению. Некоторые сайты (например, карты Google) нуждаются в этом.</string>
     <string name="setting_title_history">История</string>
-    <string name="setting_summary_history">Сохраните историю посещаемых веб-сайтов.</string>
     <string name="setting_title_autofill">Данные формы:</string>
     <string name="setting_summary_autofill">Включить сохранение данных форм (Android Nougat и ниже) или службы автозаполнения (Android Oreo и выше).</string>
     <!-- browser clear -->
@@ -117,19 +115,14 @@
     <string name="setting_title_searchEngine">Пользовательская поисковая система</string>
     <string name="setting_title_userAgent">Произвольный юзер-агент</string>
     <!-- App behavior -->
-    <string name="setting_title_hideToolbar">Скрыть панель инструментов</string>
     <string name="setting_summary_hide">Используйте весь экран при прокрутке сайтов. Если Вы нажмете кнопку Назад, то покинете полноэкранный режим.</string>
     <string name="setting_title_behavior">Поведение</string>
     <string name="setting_title_confirm_exit">Подтвердить выход из браузера</string>
-    <string name="setting_summary_confirm_exit">Диалоговое окно подтверждения при закрытии браузера.</string>
     <string name="setting_title_confirm_tab_close">Подтвердить закрытие вкладки</string>
-    <string name="setting_summary_confirm_tab_close">Диалоговое окно подтверждения при закрытии вкладки.</string>
     <string name="setting_overView">Обзор</string>
     <string name="setting_overView_onStart_title">Показывать при запуске</string>
-    <string name="setting_overView_onStart_summary">Открывать \"Обзор\" при каждом запуске приложения.</string>
     <string name="setting_gestures">Жесты</string>
     <string name="setting_title_reopenLastTab">Открыть последнюю вкладку</string>
-    <string name="setting_summary_reopenLastTab">Открыть новую вкладку при закрытии последней вкладки вместо выхода из браузера.</string>
     <!-- gestures -->
     <string name="setting_title_toolbar">Панель инструментов</string>
     <string name="setting_title_toolbar_buttons">Кнопки панели инструментов</string>

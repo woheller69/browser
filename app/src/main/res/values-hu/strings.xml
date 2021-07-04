@@ -76,12 +76,11 @@
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_title_font">Betűméret</string>
     <string name="setting_title_remote">Távoli tartalom</string>
-    <string name="setting_summary_remote">Távoli tartalom engedélyezése, ami nem közvetlenül a meglátogatott weboldalról származik. Letiltása nagyobb biztonságot és sebességet eredményez alacsonyabb adatforgalom mellett, de a tartalom egy része nem fog megjelenni.</string>
+    <string name="setting_title_dom">DOM Storage</string>
+    <string name="setting_summary_dom">DOM Storage allows the application to store page elements that could include user sensitive information. Disabling this prevents local storage from being used.</string>
     <string name="setting_title_save_data">\'Save Data\' kérése</string>
-    <string name="setting_summary_save_data">Értesíti a weboldalakat, hogy kéri az adatok mentését. A támogatott weboldalak gyorsabban fognak betöltődni.</string>
     <!-- browser start -->
     <string name="setting_title_images">Képek</string>
-    <string name="setting_summary_images">Hálózati képek engedélyezése. Letiltása hasznos lehet a mobil adatforgalom megtakarítása és a weboldalak gyorsabb betöltése érdekében.</string>
     <string name="setting_title_cookie">Sütik</string>
     <string name="setting_summary_cookie_delete">Engedélyezve, az összes süti törlésre kerül. A megbízható weboldalakhoz tartozó sütik is.</string>
     <string name="setting_summary_cookie">Sütik engedélyezése. A sütik kis szövegfájlok, amik az ön eszközén tárolódnak. A weboldalak például felhasználói beállítások tárolására használják (pl. keresési beállítások), de használhatók személyes felhasználói adatok gyűjtésére is. A harmadik féltől származó sütik (felhasználói adatokat gyűjtenek reklámozás céljából) mindig le vannak tiltva.</string>
@@ -95,7 +94,6 @@
     <string name="setting_title_location">Tartózkodási hely</string>
     <string name="setting_summary_location">Megengedi a weboldalaknak, hogy hozzáférjenek a tartózkodási helyéhez. Néhány weboldal számára (mint a Google Térkép navigáció) engedélyezni kell.</string>
     <string name="setting_title_history">Előzmények</string>
-    <string name="setting_summary_history">A meglátogatott weboldalak előzményeinek mentése.</string>
     <string name="setting_title_autofill">Űrlapadatok</string>
     <string name="setting_summary_autofill">Enable the saving of form data (Android Nougat and below) or autofill service (Android Oreo and above).</string>
     <!-- browser clear -->
@@ -117,19 +115,14 @@
     <string name="setting_title_searchEngine">Egyedi keresőmotor</string>
     <string name="setting_title_userAgent">Egyedi user agent</string>
     <!-- App behavior -->
-    <string name="setting_title_hideToolbar">Eszköztár elrejtése</string>
     <string name="setting_summary_hide">Használja a teljes képernyőt amikor a weboldalakat megtekinti. A vissza gomb megnyomásával, elhagyja a teljes képernyős módot.</string>
     <string name="setting_title_behavior">Viselkedés</string>
     <string name="setting_title_confirm_exit">Böngésző bezárásának megerősítése</string>
-    <string name="setting_summary_confirm_exit">Megerősítő párbeszédpanel a böngésző bezárásakor.</string>
     <string name="setting_title_confirm_tab_close">Lap bezárásának megerősítése</string>
-    <string name="setting_summary_confirm_tab_close">Megerősítő párbeszédpanel a lap bezárásakor.</string>
     <string name="setting_overView">Áttekintés</string>
     <string name="setting_overView_onStart_title">Mutassa indításkor</string>
-    <string name="setting_overView_onStart_summary">Az \"Áttekintés\" megnyitása minden alkalmazás indításkor.</string>
     <string name="setting_gestures">Kézmozdulatok</string>
     <string name="setting_title_reopenLastTab">Utolsó lap megnyitása</string>
-    <string name="setting_summary_reopenLastTab">A bőngészőből való kilépés helyett nyisson új lapot, amikor az utolsó lapot is bezárja.</string>
     <!-- gestures -->
     <string name="setting_title_toolbar">Eszköztár</string>
     <string name="setting_title_toolbar_buttons">Eszköztár gomb</string>

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App -->
+    <string name="app_name">FOSS瀏覽器</string>
+    <string name="app_ok">確定</string>
+    <string name="app_cancel">Cancel</string>
+    <string name="app_done">完成</string>
+    <string name="app_error">错误</string>
+    <string name="list_empty">清單是空的</string>
+    <string name="album_title_bookmarks">Bookmarks</string>
+    <string name="album_title_history">History</string>
+    <string name="album_title_home">Home</string>
+    <string name="album_title_tab">已開啟的分頁</string>
+    <string name="search_hint">Search</string>
+    <string name="color_red">Red</string>
+    <string name="color_pink">Pink</string>
+    <string name="color_purple">紫</string>
+    <string name="color_blue">藍</string>
+    <string name="color_teal">藍綠</string>
+    <string name="color_green">綠</string>
+    <string name="color_lime">青綠</string>
+    <string name="color_yellow">黃</string>
+    <string name="color_orange">橙</string>
+    <string name="color_brown">棕</string>
+    <string name="color_grey">灰</string>
+    <!-- Menu -->
+    <string name="main_menu_tabPreview">Open tab preview</string>
+    <string name="main_menu_new_tab">新增背景分頁</string>
+    <string name="main_menu_new_tabOpen">New tab (foreground)</string>
+    <string name="main_omnibox_input_hint">Search or type URL</string>
+    <string name="menu_open_with">Open link with …</string>
+    <string name="menu_quit">Quit</string>
+    <string name="menu_openFav">開啟首頁</string>
+    <string name="menu_delete">Delete</string>
+    <string name="menu_edit">Edit</string>
+    <string name="menu_closeTab">關閉分頁</string>
+    <string name="menu_download">開啟下載資料夾</string>
+    <string name="menu_fav">設為首頁</string>
+    <string name="menu_sc">於主屏幕新增捷徑</string>
+    <string name="menu_sort">以…排序</string>
+    <string name="menu_filter">以…篩選</string>
+    <string name="menu_share_link">分享連結</string>
+    <string name="menu_save_home">釘選至主頁</string>
+    <string name="menu_save_bookmark">儲存為書籤</string>
+    <string name="menu_save_as">儲存為…</string>
+    <string name="menu_save_pdf">儲存為PDF</string>
+    <string name="menu_shareClipboard">複製到剪貼簿</string>
+    <string name="menu_other_searchSite">在網頁中尋找</string>
+    <string name="menu_other_info">關於「FOSS瀏覽器」</string>
+    <!-- Dialog -->
+    <string name="dialog_title_hint">標題：</string>
+    <string name="dialog_URL_hint">URL:</string>
+    <string name="dialog_extension_hint">副檔名（例如：\".jpg\"）</string>
+    <string name="dialog_sign_in_username">使用者名稱</string>
+    <string name="dialog_sign_in_password">密碼</string>
+    <string name="dialog_title_download">下載此檔案？</string>
+    <string name="dialog_content_resubmission">重新提交資料？</string>
+    <string name="dialog_content_ssl_error">網站的憑證不受信任，仍要造訪？</string>
+    <string name="dialog_sortName">按名稱排序</string>
+    <string name="dialog_sortIcon">按圖示排序</string>
+    <string name="dialog_sortDate">按日期排序</string>
+    <!-- Settings -->
+    <string name="setting_label">設定</string>
+    <!-- browser setting -->
+    <string name="setting_title_browser">瀏覽器設定</string>
+    <string name="setting_title_start_control">啟動設定</string>
+    <string name="setting_title_search_engine">搜尋引擎</string>
+    <string name="setting_summary_search_engine_google">Google</string>
+    <string name="setting_summary_search_engine_duckduckgo">DuckDuckGo</string>
+    <string name="setting_summary_search_engine_startpage">StartPage</string>
+    <string name="setting_summary_search_engine_bing">Bing</string>
+    <string name="setting_summary_search_engine_baidu">百度</string>
+    <string name="setting_summary_search_engine_startpage_de">StartPage (德語)</string>
+    <string name="setting_summary_search_engine_searx">Searx</string>
+    <string name="setting_summary_search_engine_qwant">Qwant</string>
+    <string name="setting_summary_search_engine_ecosia">Ecosia</string>
+    <string name="setting_title_font">字體大小</string>
+    <string name="setting_title_remote">遠端內容</string>
+    <string name="setting_title_dom">DOM Storage</string>
+    <string name="setting_title_dom_whitelist">DOM Whitelist</string>
+    <string name="setting_summary_dom">DOM Storage allows the application to store page elements that could include user sensitive information. Disabling this prevents local storage from being used.</string>
+    <string name="setting_title_save_data">請求「儲存資料」</string>
+    <!-- browser start -->
+    <string name="setting_title_images">圖片</string>
+    <string name="setting_title_cookie">Cookies</string>
+    <string name="setting_summary_cookie_delete">若啟用此設定將會刪除所有的 Cookies，包含白名單網站的 Cookies。</string>
+    <string name="setting_summary_cookie">允許 Cookies。Cookies 是儲存在您裝置上的小型文字檔案，網站能用來記錄使用者的設定(例如搜尋設定)。但它也能用來蒐集個人資料。廣告用途的第三方 Cookies 已強制禁止。</string>
+    <string name="setting_title_whitelistCookie">Cookie 白名單</string>
+    <string name="setting_title_whitelistRemote">遠端白名單</string>
+    <string name="setting_title_javascript">JavaScript</string>
+    <string name="setting_summary_javascript">允許 JavaScript。很多網站需要使用 Javascript 實現功能（選單、載入和顯示圖片等等），但這些功能也存有被用以發動攻擊的風險。</string>
+    <string name="setting_title_whitelistJS">JavaScript 白名單</string>
+    <string name="setting_title_adblock">AdBlock</string>
+    <string name="setting_summary_adblock">啟用 AdBlock 阻擋惱人的廣告。網站也能更快開啟。</string>
+    <string name="setting_title_location">位置</string>
+    <string name="setting_summary_location">允許網站獲取你的位置。一些網站例(如 Google 地圖導航)需啟用此功能。</string>
+    <string name="setting_title_history">歷史紀錄</string>
+    <string name="setting_title_autofill">表單資料</string>
+    <string name="setting_summary_autofill">Enable the saving of form data (Android Nougat and below) or autofill service (Android Oreo and above).</string>
+    <!-- browser clear -->
+    <string name="data_summary">所有檔案將會被匯出至以下內部儲存空間間目錄\"Android/data/de.baumann.browser/files/browser_backup/\" 。若您刪除FOSS browser, 此目錄會被刪除！因此您應定期在其他儲存空間中備份此應用程式資料。</string>
+    <string name="clear_title_quit">離開後清除</string>
+    <string name="clear_title_cache">清除快取</string>
+    <string name="clear_title_cookie">清除 Cookies</string>
+    <string name="clear_title_history">清除瀏覽歷史</string>
+    <string name="localData">Clear on device stored data</string>
+    <string name="clear_title_deleteDatabase">刪除資料庫</string>
+    <string name="clear_summary_deleteDatabase">刪除全部資料庫（啟動頁的設定、書籤、歷史和所有白名單）</string>
+    <!-- App setting -->
+    <string name="setting_title_app">應用程式資訊</string>
+    <string name="setting_title_ui">行為/介面</string>
+    <string name="setting_title_data">備份</string>
+    <string name="setting_filter">書籤分類</string>
+    <string name="setting_title_fav">首頁</string>
+    <string name="setting_title_searchEngine">自訂搜尋引擎</string>
+    <string name="setting_title_userAgent">使用自訂的使用者代理</string>
+    <!-- App behavior -->
+    <string name="setting_title_hideToolbar">Hide toolbar</string>
+    <string name="setting_title_behavior">行爲</string>
+    <string name="setting_title_confirm_exit">確認退出瀏覽器</string>
+    <string name="setting_title_confirm_tab_close">確認關閉分頁</string>
+    <string name="setting_overView">概覽</string>
+    <string name="setting_overView_onStart_title">開啟時顯示</string>
+    <string name="setting_gestures">手勢</string>
+    <string name="setting_title_reopenLastTab">開啟最後關閉的分頁</string>
+    <!-- gestures -->
+    <string name="setting_title_toolbar">工具列</string>
+    <string name="setting_title_toolbar_buttons">工具列按鈕</string>
+    <string name="setting_gesture_up">上滑</string>
+    <string name="setting_gesture_down">下滑</string>
+    <string name="setting_gesture_left">左滑</string>
+    <string name="setting_gesture_right">右滑</string>
+    <string name="setting_gesture_01">無</string>
+    <string name="setting_gesture_02">下一頁</string>
+    <string name="setting_gesture_03">上一頁</string>
+    <string name="setting_gesture_04">捲動至頂</string>
+    <string name="setting_gesture_05">捲動至底</string>
+    <string name="setting_gesture_06">切換至左方分頁</string>
+    <string name="setting_gesture_07">切換至右方分頁</string>
+    <string name="setting_gesture_08">顯示概覽</string>
+    <string name="setting_gesture_09">開啟新分頁</string>
+    <string name="setting_gesture_10">關閉分頁</string>
+    <string name="setting_gesture_hint">長按菜單鍵以打開快速設定日志。長按主頁/書簽/歷史鍵以打開書簽。</string>
+    <!-- Data -->
+    <string name="setting_title_export_bookmarks">以HTML檔匯出書籤</string>
+    <string name="setting_title_import_bookmarks">匯入書籤</string>
+    <string name="setting_title_export_appData">匯出應用程式資料</string>
+    <string name="setting_title_import_appData">匯入應用程式資料</string>
+    <string name="setting_summary_export_appData">匯出所有資料庫和您的個人化設定</string>
+    <string name="title_appData">應用程式資料</string>
+    <string name="hint_database">這將會刪除所有資料。仍要繼續？</string>
+    <!-- Others setting -->
+    <string name="setting_title_others">其他</string>
+    <!-- Toast -->
+    <string name="toast_add_whitelist_successful">域名新增成功</string>
+    <string name="toast_copy_successful">複製成功</string>
+    <string name="toast_delete_successful">刪除成功</string>
+    <string name="toast_domain_already_exists">域名已存在</string>
+    <string name="toast_input_empty">你尚未輸入任何內容</string>
+    <string name="toast_invalid_domain">無效域名</string>
+    <string name="toast_webview_forward">無法載入下個網頁</string>
+    <string name="toast_permission_sdCard">FOSS Browser需要讀取以及編輯您的儲存空間的權限。此權限用來下載檔案，儲存螢幕截圖以及備份您的資料。</string>
+    <string name="toast_restart">你必需重啟FOSS瀏覽器以應用變更，現在關閉？</string>
+    <string name="toast_quit">是否退出FOSS瀏覽器？</string>
+    <string name="toast_downloadComplete">下載完成。是否開啟檔案管理器？</string>
+    <string name="toast_unsecured">此網站使用不安全的連線（http），是否嘗試使用安全連線（https）？</string>
+    <string name="toast_backup">是否備份資料？舊的資料將被覆蓋！</string>
+    <!-- Whitelist -->
+    <string name="whitelist_menu_clear">清除</string>
+    <string name="whitelist_edit_hint">域名</string>
+    <string name="whitelist_add">新增</string>
+    <!-- Dialog help -->
+    <!-- Dialog changelog -->
+    <string name="changelog_dialog">        您的語言尚不支援？您想要翻譯FOSS Browser嗎？或您想改進已經存在的翻譯嗎？歡迎在Crowdin自由加入我們的行列 : https://crowdin.com/project/foss-browser 。&lt;br&gt;&lt;br&gt;
+
+        &lt;b&gt;在以下網站中您可以存取所有關於FOSS Browser的重要資訊。請用閱讀程式中的幫助對話框。&lt;/b&gt;&lt;br&gt;&lt;br&gt;
+
+        \u25AA &lt;i&gt;專案網站:&lt;/i&gt; https://github.com/scoute-dich/Browser&lt;br&gt;
+        \u25AA &lt;i&gt;變更日誌:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/CHANGELOG.md&lt;br&gt;
+        \u25AA &lt;i&gt;常見問題:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/FAQs.md&lt;br&gt;
+        \u25AA &lt;i&gt;授權條款:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/LICENSE.md&lt;br&gt;
+        \u25AA &lt;i&gt;隱私:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/PRIVACY.md
+
+    </string>
+    <string name="menu_mobileView">行動檢視</string>
+    <string name="menu_desktopView">電腦版網站</string>
+    <string name="menu_dayView">日檢視</string>
+    <string name="menu_nightView">暗夜之眼</string>
+    <!-- License changelog -->
+</resources>

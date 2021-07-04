@@ -1155,7 +1155,16 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         ib_reload.setOnClickListener(view -> {
             if (ninjaWebView != null) {
                 dialog.cancel();
-                ninjaWebView.loadUrl(ninjaWebView.getUrl());
+                ninjaWebView.reload();
+            }
+        });
+
+        ImageButton ib_settings = dialogView.findViewById(R.id.ib_settings);
+        ib_settings.setOnClickListener(view -> {
+            if (ninjaWebView != null) {
+                dialog.cancel();
+                Intent settings = new Intent(BrowserActivity.this, Settings_Activity.class);
+                startActivity(settings);
             }
         });
     }
@@ -1570,16 +1579,17 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             overflow_title.setText(title);
         }
 
-        ImageButton overflow_bookmark = dialogView.findViewById(R.id.overflow_bookmark);
+        ImageButton overflow_bookmark = dialogView.findViewById(R.id.overflow_settings);
         overflow_bookmark.setOnClickListener(v -> {
             dialog_overflow.cancel();
-            saveBookmark();
+            Intent settings = new Intent(BrowserActivity.this, Settings_Activity.class);
+            startActivity(settings);
         });
 
         ImageButton overflow_reload = dialogView.findViewById(R.id.overflow_reload);
         overflow_reload.setOnClickListener(v -> {
             dialog_overflow.cancel();
-            ninjaWebView.loadUrl(ninjaWebView.getUrl());
+            ninjaWebView.reload();
         });
 
         final GridView menu_grid_tab = dialogView.findViewById(R.id.overflow_tab);

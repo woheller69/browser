@@ -18,16 +18,15 @@
         android:layout_marginTop="4dp">
 
         <RelativeLayout
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize">
 
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_toStartOf="@+id/ib_reload"
+                android:layout_toStartOf="@+id/ib_settings"
                 android:layout_alignParentStart="true"
+                android:layout_marginStart="20dp"
                 android:layout_marginEnd="8dp"
                 android:ellipsize="end"
                 android:includeFontPadding="false"
@@ -37,14 +36,27 @@
                 android:textAppearance="?attr/textAppearanceBody1"
                 android:textStyle="bold" />
 
-            <ImageButton android:id="@+id/ib_reload"
+            <ImageButton
+                android:id="@+id/ib_settings"
+                android:layout_centerInParent="true"
+                android:layout_toStartOf="@+id/ib_reload"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/icon_settings"
+                android:background="?attr/actionBarItemBackground" />
+
+            <ImageButton
+                android:id="@+id/ib_reload"
                 android:layout_centerInParent="true"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="16dp"
                 android:layout_alignParentEnd="true"
                 android:src="@drawable/icon_refresh"
-                android:background="?attr/actionBarItemBackground"
-                tools:ignore="ContentDescription" />
+                android:background="?attr/actionBarItemBackground" />
 
         </RelativeLayout>
 

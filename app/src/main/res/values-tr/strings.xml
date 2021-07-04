@@ -76,11 +76,14 @@
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_title_font">Yazı boyutu</string>
     <string name="setting_title_remote">Uzaktan içerik</string>
+    <string name="setting_summary_remote">Enable remote content, which is not directly from the website you are visiting. Disabling this is more secure, faster and saves data volume. But some content will not be displayed anymore.</string>
     <string name="setting_title_dom">DOM Storage</string>
     <string name="setting_summary_dom">DOM Storage allows the application to store page elements that could include user sensitive information. Disabling this prevents local storage from being used.</string>
     <string name="setting_title_save_data">\'Veri Kaydetme\' İsteği</string>
+    <string name="setting_summary_save_data">Tell websites that you would prefer to save data. Supported websites will load faster.</string>
     <!-- browser start -->
     <string name="setting_title_images">Görüntüler</string>
+    <string name="setting_summary_images">Enable Network images. Disabling could be useful to save mobile data and to load websites faster.</string>
     <string name="setting_title_cookie">Çerezler</string>
     <string name="setting_summary_cookie_delete">Etkinleştirilirse, tüm çerezler silinir. Ayrıca güvenilir web sitelerinin çerezleri de silinir.</string>
     <string name="setting_summary_cookie">Çerezleri etkinleştirin. Çerezler, cihazınızda depolanan küçük metin dosyalarıdır. Web siteleri bunları örneğin kullanıcı ayarlarını saklamak için kullanır (örneğin, arama ayarları). Ancak kişisel kullanıcı verilerini toplamak için de kullanılabilirler. Üçüncü taraf çerezleri (reklam için kullanıcı verilerini toplar) her zaman devre dışı bırakılır.</string>
@@ -94,6 +97,7 @@
     <string name="setting_title_location">Konum</string>
     <string name="setting_summary_location">Web sitelerinin konumunuza erişmesine izin verin. Bazı web siteleri (navigasyon için Google Haritalar gibi) bunun etkinleştirilmesi gerekir.</string>
     <string name="setting_title_history">Geçmiş</string>
+    <string name="setting_summary_history">Save the history of visited websites.</string>
     <string name="setting_title_autofill">Form verisi</string>
     <string name="setting_summary_autofill">Enable the saving of form data (Android Nougat and below) or autofill service (Android Oreo and above).</string>
     <!-- browser clear -->
@@ -115,14 +119,19 @@
     <string name="setting_title_searchEngine">Özel arama motoru</string>
     <string name="setting_title_userAgent">Özel kullanıcı aracısı</string>
     <!-- App behavior -->
+    <string name="setting_title_hideToolbar">Hide toolbar</string>
     <string name="setting_summary_hide">Web sitelerinde gezinirken tüm ekranı kullanın. Geri düğmesine basarsanız, tam ekran modundan çıkacaksınız.</string>
     <string name="setting_title_behavior">Davranış</string>
     <string name="setting_title_confirm_exit">Tarayıcı çıkışını onayla</string>
+    <string name="setting_summary_confirm_exit">Confirmation dialog when closing browser.</string>
     <string name="setting_title_confirm_tab_close">Sekme kapatmayı onayla</string>
+    <string name="setting_summary_confirm_tab_close">Confirmation dialog when closing a tab.</string>
     <string name="setting_overView">Genel Bakış</string>
     <string name="setting_overView_onStart_title">Başlangıçta göster</string>
+    <string name="setting_overView_onStart_summary">Open the \"Overview\" on every app start.</string>
     <string name="setting_gestures">Hareketler</string>
     <string name="setting_title_reopenLastTab">Son sekmeyi yeniden aç</string>
+    <string name="setting_summary_reopenLastTab">Reopen a new tab when the last tab is closed instead of exiting the browser.</string>
     <!-- gestures -->
     <string name="setting_title_toolbar">Araç çubuğu</string>
     <string name="setting_title_toolbar_buttons">Araç Çubuğu düğmesi</string>

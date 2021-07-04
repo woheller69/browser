@@ -1160,6 +1160,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         });
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     private synchronized void addAlbum(String title, final String url, final boolean foreground) {
         ninjaWebView = new NinjaWebView(context);
         ninjaWebView.setBrowserController(this);
@@ -1180,6 +1181,13 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                         animation.start();
                     }
                 }
+            }
+            if (scrollY==0) {ninjaWebView.setOnTouchListener((new SwipeTouchListener(context) {
+                    public void onSwipeBottom() {
+                        if (ninjaWebView.getScrollY() == 0) ninjaWebView.reload();
+                    }
+                }));} else {
+                ninjaWebView.setOnTouchListener(null);
             }
         });
 

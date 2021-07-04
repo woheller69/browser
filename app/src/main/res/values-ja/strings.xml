@@ -77,7 +77,7 @@
     <string name="setting_title_font">フォントサイズ</string>
     <string name="setting_title_remote">リモートコンテンツ</string>
     <string name="setting_title_dom">ウェブストレージ</string>
-    <string name="setting_title_dom_whitelist">DOM Whitelist</string>
+    <string name="setting_title_dom_whitelist">DOM ホワイトリスト</string>
     <string name="setting_summary_dom">ウェブストレージ (DOM ストレージ) を使用するとアプリがユーザーの機密情報を含むページ要素を端末に保存することが可能になります。この機能の無効化によりローカルストレージは使用されなくなります。</string>
     <string name="setting_title_save_data">「データを保存」のリクエスト</string>
     <!-- browser start -->
@@ -103,7 +103,7 @@
     <string name="clear_title_cache">キャッシュを削除</string>
     <string name="clear_title_cookie">クッキーを消去</string>
     <string name="clear_title_history">履歴を削除</string>
-    <string name="localData">Clear on device stored data</string>
+    <string name="localData">端末に保存されているデータを消去する</string>
     <string name="clear_title_deleteDatabase">データベースを削除</string>
     <string name="clear_summary_deleteDatabase">データベース全体 (スタートページ、ブックマーク、履歴、ホワイトリスト) を削除します。</string>
     <!-- App setting -->
@@ -115,7 +115,7 @@
     <string name="setting_title_searchEngine">カスタム検索エンジン</string>
     <string name="setting_title_userAgent">カスタムユーザーエージェント</string>
     <!-- App behavior -->
-    <string name="setting_title_hideToolbar">Hide toolbar</string>
+    <string name="setting_title_hideToolbar">ツールバーを隠す</string>
     <string name="setting_title_behavior">動作</string>
     <string name="setting_title_confirm_exit">ブラウザ終了の確認</string>
     <string name="setting_title_confirm_tab_close">タブ削除の確認</string>

@@ -76,11 +76,14 @@
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_title_font">Taille de la police</string>
     <string name="setting_title_remote">Contenu à distance</string>
+    <string name="setting_summary_remote">Enable remote content, which is not directly from the website you are visiting. Disabling this is more secure, faster and saves data volume. But some content will not be displayed anymore.</string>
     <string name="setting_title_dom">DOM Storage</string>
     <string name="setting_summary_dom">DOM Storage allows the application to store page elements that could include user sensitive information. Disabling this prevents local storage from being used.</string>
     <string name="setting_title_save_data">Demande \'Enregistrer les données\'</string>
+    <string name="setting_summary_save_data">Tell websites that you would prefer to save data. Supported websites will load faster.</string>
     <!-- browser start -->
     <string name="setting_title_images">Images</string>
+    <string name="setting_summary_images">Enable Network images. Disabling could be useful to save mobile data and to load websites faster.</string>
     <string name="setting_title_cookie">Cookies</string>
     <string name="setting_summary_cookie_delete">Si cette option est activée, tous les cookies seront supprimés. Aussi les cookies de sites de confiance.</string>
     <string name="setting_summary_cookie">Activez les cookies. Les cookies sont de petits fichiers texte, qui sont stockés sur votre appareil. Les sites Web les utilisent par exemple pour stocker les paramètres de l\'utilisateur (par exemple les paramètres de recherche). Les cookies de tiers (ils recueillent des données utilisateur pour la publicité) sont toujours désactivés.</string>
@@ -94,6 +97,7 @@
     <string name="setting_title_location">Localisation</string>
     <string name="setting_summary_location">Autoriser les sites Web à accéder à votre position. Certains sites Web (comme Google maps pour la navigation) ont besoin de cette option.</string>
     <string name="setting_title_history">Historique</string>
+    <string name="setting_summary_history">Save the history of visited websites.</string>
     <string name="setting_title_autofill">Données de formulaire</string>
     <string name="setting_summary_autofill">Activer l\'enregistrement des données du formulaire (Android Nougat et ci-dessous) ou le service de remplissage automatique (Android Oreo et au-delà).</string>
     <!-- browser clear -->
@@ -115,14 +119,19 @@
     <string name="setting_title_searchEngine">Moteur de recherche personnalisé</string>
     <string name="setting_title_userAgent">Agent utilisateur personnalisé</string>
     <!-- App behavior -->
+    <string name="setting_title_hideToolbar">Hide toolbar</string>
     <string name="setting_summary_hide">Utiliser l\'écran entier lorsque vous faites défiler les sites Web. Si vous appuyez sur le bouton retour, vous quitterez le mode plein écran.</string>
     <string name="setting_title_behavior">Comportement</string>
     <string name="setting_title_confirm_exit">Confirmer pour quitter</string>
+    <string name="setting_summary_confirm_exit">Confirmation dialog when closing browser.</string>
     <string name="setting_title_confirm_tab_close">Confirmer fermeture onglet</string>
+    <string name="setting_summary_confirm_tab_close">Confirmation dialog when closing a tab.</string>
     <string name="setting_overView">Vue d\'ensemble</string>
     <string name="setting_overView_onStart_title">Montrer au démarrage</string>
+    <string name="setting_overView_onStart_summary">Open the \"Overview\" on every app start.</string>
     <string name="setting_gestures">Gestes</string>
     <string name="setting_title_reopenLastTab">Rouvrir dernier onglet</string>
+    <string name="setting_summary_reopenLastTab">Reopen a new tab when the last tab is closed instead of exiting the browser.</string>
     <!-- gestures -->
     <string name="setting_title_toolbar">Barre d\'outils</string>
     <string name="setting_title_toolbar_buttons">Bouton de la barre d\'outils</string>

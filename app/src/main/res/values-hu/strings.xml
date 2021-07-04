@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App -->
+    <string name="app_name">FOSS Browser</string>
+    <string name="app_ok">OK</string>
+    <string name="app_cancel">Mégse</string>
+    <string name="app_done">Kész</string>
+    <string name="app_error">Hiba</string>
+    <string name="list_empty">A lista üres</string>
+    <string name="album_title_bookmarks">Könyvjelzők</string>
+    <string name="album_title_history">Előzmények</string>
+    <string name="album_title_home">Kezdőlap</string>
+    <string name="album_title_tab">Megnyitott lapok</string>
+    <string name="search_hint">Keresés</string>
+    <string name="color_red">Piros</string>
+    <string name="color_pink">Rózsaszín</string>
+    <string name="color_purple">Lila</string>
+    <string name="color_blue">Kék</string>
+    <string name="color_teal">Kékeszöld</string>
+    <string name="color_green">Zöld</string>
+    <string name="color_lime">Citromzöld</string>
+    <string name="color_yellow">Sárga</string>
+    <string name="color_orange">Narancssárga</string>
+    <string name="color_brown">Barna</string>
+    <string name="color_grey">Szürke</string>
+    <!-- Menu -->
+    <string name="main_menu_tabPreview">Lap előnézete</string>
+    <string name="main_menu_new_tab">Új lap (háttérben)</string>
+    <string name="main_menu_new_tabOpen">Új lap (előtérben)</string>
+    <string name="main_omnibox_input_hint">Keresés vagy írjon be URL címet</string>
+    <string name="menu_open_with">Hivatkozás megnyitása …</string>
+    <string name="menu_quit">Kilépés</string>
+    <string name="menu_openFav">Kedvencek</string>
+    <string name="menu_delete">Törlés</string>
+    <string name="menu_edit">Szerkesztés</string>
+    <string name="menu_closeTab">Lap bezárása</string>
+    <string name="menu_download">Letöltések</string>
+    <string name="menu_fav">Mentés kedvencként</string>
+    <string name="menu_sc">Parancsikon a kezdőképernyőn</string>
+    <string name="menu_sort">Rendezés …</string>
+    <string name="menu_filter">Szűrés …</string>
+    <string name="menu_share_link">Hivatkozás megosztása</string>
+    <string name="menu_save_home">Mentés kezdőlapként</string>
+    <string name="menu_save_bookmark">Mentés könyvjelzőként</string>
+    <string name="menu_save_as">Mentés másként …</string>
+    <string name="menu_save_pdf">Mentés PDF-ként</string>
+    <string name="menu_shareClipboard">Másolás a vágólapra</string>
+    <string name="menu_other_searchSite">Keresés az oldalon</string>
+    <string name="menu_other_info">A \"FOSS Browser\" névjegye</string>
+    <!-- Dialog -->
+    <string name="dialog_title_hint">Cím:</string>
+    <string name="dialog_URL_hint">URL:</string>
+    <string name="dialog_extension_hint">Kiterjesztés (például: \".jpg\"):</string>
+    <string name="dialog_sign_in_username">Felhasználónév</string>
+    <string name="dialog_sign_in_password">Jelszó</string>
+    <string name="dialog_title_download">Letölti a fájlt?</string>
+    <string name="dialog_content_resubmission">Újraküldi az adatait?</string>
+    <string name="dialog_content_ssl_error">A weboldal tanúsítványa nem megbízható. Mindenképpen továbblép?</string>
+    <string name="dialog_sortName">Rendezés név szerint</string>
+    <string name="dialog_sortIcon">Rendezés ikon szerint</string>
+    <string name="dialog_sortDate">Rendezés dátum szerint</string>
+    <!-- Settings -->
+    <string name="setting_label">Beállítások</string>
+    <!-- browser setting -->
+    <string name="setting_title_browser">Böngésző beállításai</string>
+    <string name="setting_title_start_control">Indítási beállítás</string>
+    <string name="setting_title_search_engine">Keresőmotor</string>
+    <string name="setting_summary_search_engine_google">Google</string>
+    <string name="setting_summary_search_engine_duckduckgo">DuckDuckGo</string>
+    <string name="setting_summary_search_engine_startpage">StartPage</string>
+    <string name="setting_summary_search_engine_bing">Bing</string>
+    <string name="setting_summary_search_engine_baidu">Baidu</string>
+    <string name="setting_summary_search_engine_startpage_de">StartPage (de)</string>
+    <string name="setting_summary_search_engine_searx">Searx</string>
+    <string name="setting_summary_search_engine_qwant">Qwant</string>
+    <string name="setting_summary_search_engine_ecosia">Ecosia</string>
+    <string name="setting_title_font">Betűméret</string>
+    <string name="setting_title_remote">Távoli tartalom</string>
+    <string name="setting_title_dom">DOM Storage</string>
+    <string name="setting_title_dom_whitelist">DOM Whitelist</string>
+    <string name="setting_summary_dom">DOM Storage allows the application to store page elements that could include user sensitive information. Disabling this prevents local storage from being used.</string>
+    <string name="setting_title_save_data">\'Save Data\' kérése</string>
+    <!-- browser start -->
+    <string name="setting_title_images">Képek</string>
+    <string name="setting_title_cookie">Sütik</string>
+    <string name="setting_summary_cookie_delete">Engedélyezve, az összes süti törlésre kerül. A megbízható weboldalakhoz tartozó sütik is.</string>
+    <string name="setting_summary_cookie">Sütik engedélyezése. A sütik kis szövegfájlok, amik az ön eszközén tárolódnak. A weboldalak például felhasználói beállítások tárolására használják (pl. keresési beállítások), de használhatók személyes felhasználói adatok gyűjtésére is. A harmadik féltől származó sütik (felhasználói adatokat gyűjtenek reklámozás céljából) mindig le vannak tiltva.</string>
+    <string name="setting_title_whitelistCookie">Süti engedélylista</string>
+    <string name="setting_title_whitelistRemote">Távoli tartalom engedélylista</string>
+    <string name="setting_title_javascript">JavaScript</string>
+    <string name="setting_summary_javascript">JavaScript engedélyezése. Számos weboldal működéséhez JavaScript szükséges (menük, képek betöltése és megjelenítése, …), de egyben kockázatot is jelentenek mert támadásokhoz is használhatók.</string>
+    <string name="setting_title_whitelistJS">JavaScript engedélylista</string>
+    <string name="setting_title_adblock">AdBlock</string>
+    <string name="setting_summary_adblock">AdBlock engedélyezése a bosszantó hirdetések blokkolására. A weboldalak is gyorsabban töltődnek be, ha engedélyezett.</string>
+    <string name="setting_title_location">Tartózkodási hely</string>
+    <string name="setting_summary_location">Megengedi a weboldalaknak, hogy hozzáférjenek a tartózkodási helyéhez. Néhány weboldal számára (mint a Google Térkép navigáció) engedélyezni kell.</string>
+    <string name="setting_title_history">Előzmények</string>
+    <string name="setting_title_autofill">Űrlapadatok</string>
+    <string name="setting_summary_autofill">Enable the saving of form data (Android Nougat and below) or autofill service (Android Oreo and above).</string>
+    <!-- browser clear -->
+    <string name="data_summary">Az összes fájl az SD kártya \"Android/data/de.baumann.browser/files/browser_backup/\" könyvtárába lesz exportálva. Ez a könyvtár TÖRÖLVE lesz, ha eltávolítja a \"FOSS Browser\"-t. Ezért rendszeresen készítsen biztonsági másolatot egy biztos helyre.</string>
+    <string name="clear_title_quit">Törlés az alkalmazás bezárásakor</string>
+    <string name="clear_title_cache">Gyorsítótár törlése</string>
+    <string name="clear_title_cookie">Sütik törlése</string>
+    <string name="clear_title_history">Előzmények törlése</string>
+    <string name="localData">Clear on device stored data</string>
+    <string name="clear_title_deleteDatabase">Adatbázis törlése</string>
+    <string name="clear_summary_deleteDatabase">A teljes adatbázis törlése (Kezdőoldal, könyvjelzők, előzmények és az összes engedélylista).</string>
+    <!-- App setting -->
+    <string name="setting_title_app">Alkalmazás beállításai</string>
+    <string name="setting_title_ui">Viselkedés/felhasználói felület</string>
+    <string name="setting_title_data">Biztonsági másolat</string>
+    <string name="setting_filter">Könyvjelző szűrő</string>
+    <string name="setting_title_fav">Kedvenc</string>
+    <string name="setting_title_searchEngine">Egyedi keresőmotor</string>
+    <string name="setting_title_userAgent">Egyedi user agent</string>
+    <!-- App behavior -->
+    <string name="setting_title_hideToolbar">Hide toolbar</string>
+    <string name="setting_title_behavior">Viselkedés</string>
+    <string name="setting_title_confirm_exit">Böngésző bezárásának megerősítése</string>
+    <string name="setting_title_confirm_tab_close">Lap bezárásának megerősítése</string>
+    <string name="setting_overView">Áttekintés</string>
+    <string name="setting_overView_onStart_title">Mutassa indításkor</string>
+    <string name="setting_gestures">Kézmozdulatok</string>
+    <string name="setting_title_reopenLastTab">Utolsó lap megnyitása</string>
+    <!-- gestures -->
+    <string name="setting_title_toolbar">Eszköztár</string>
+    <string name="setting_title_toolbar_buttons">Eszköztár gomb</string>
+    <string name="setting_gesture_up">Csúsztatás felfelé</string>
+    <string name="setting_gesture_down">Csúsztatás lefelé</string>
+    <string name="setting_gesture_left">Csúsztatás balra</string>
+    <string name="setting_gesture_right">Csúsztatás jobbra</string>
+    <string name="setting_gesture_01">Semmi</string>
+    <string name="setting_gesture_02">Előre az előzményekben</string>
+    <string name="setting_gesture_03">Vissza az előzményekben</string>
+    <string name="setting_gesture_04">Görgetés a tetejére</string>
+    <string name="setting_gesture_05">Görgetés az aljára</string>
+    <string name="setting_gesture_06">Váltás a bal lapra</string>
+    <string name="setting_gesture_07">Váltás a jobb lapra</string>
+    <string name="setting_gesture_08">Áttekintés mutatása</string>
+    <string name="setting_gesture_09">Új lap megnyitása</string>
+    <string name="setting_gesture_10">Lap bezárása</string>
+    <string name="setting_gesture_hint">Hosszan kattintson a menü gombra a gyors beállítások párbeszédpanel megnyitásához. Hosszan nyomja meg a home / bookmark / history ikont a könyvjelzőszűrő megnyitásához.</string>
+    <!-- Data -->
+    <string name="setting_title_export_bookmarks">Könyvjelzők exportálása HTML-fájlként</string>
+    <string name="setting_title_import_bookmarks">Könyvjelzők importálása</string>
+    <string name="setting_title_export_appData">Alkalmazásadatok exportálása</string>
+    <string name="setting_title_import_appData">Alkalmazásadatok importálása</string>
+    <string name="setting_summary_export_appData">A teljes adatbázis és a személyes beállítások exportálása.</string>
+    <string name="title_appData">Alkalmazásadatok</string>
+    <string name="hint_database">Ezzel törli az aktuális adatokat. Folytatja?</string>
+    <!-- Others setting -->
+    <string name="setting_title_others">Egyebek</string>
+    <!-- Toast -->
+    <string name="toast_add_whitelist_successful">A Domain sikeresen hozzáadva</string>
+    <string name="toast_copy_successful">Sikeresen másolva</string>
+    <string name="toast_delete_successful">Sikeresen törölve</string>
+    <string name="toast_domain_already_exists">A domain már létezik</string>
+    <string name="toast_input_empty">Nem írt be semmit</string>
+    <string name="toast_invalid_domain">Érvénytelen domain</string>
+    <string name="toast_webview_forward">Nem tölthető be a következő oldal</string>
+    <string name="toast_permission_sdCard">A \"FOSS Browser\"-nek \"tárhely olvasása és írása\" engedélyre van szüksége. Ez szükséges a fájlok letöltéséhez, képernyőképek készítéséhez és az adatok biztonsági másolatának készítéséhez.</string>
+    <string name="toast_restart">A változások alkalmazásához újra kell indítania a \"FOSS Browser\"-t. Bezárja most?</string>
+    <string name="toast_quit">Ki akar lépni a \"FOSS Browser\"-ből?</string>
+    <string name="toast_downloadComplete">Befejezve a letöltés. Megnyitja a fájlkezelőt?</string>
+    <string name="toast_unsecured">A weboldal nem biztonságos kapcsolatot használ (\"http\"). Megpróbálja a biztonságos kapcsolatot (\"https\")?</string>
+    <string name="toast_backup">Biztonsági másolat az adatokról? Ez felülírja a régi biztonsági másolatot.</string>
+    <!-- Whitelist -->
+    <string name="whitelist_menu_clear">Törlés</string>
+    <string name="whitelist_edit_hint">Domain</string>
+    <string name="whitelist_add">Hozzáad</string>
+    <!-- Dialog help -->
+    <!-- Dialog changelog -->
+    <string name="changelog_dialog">        Az ön nyelve még nem támogatott? Le szeretné fordítani a FOSS Browser-t? Vagy javítana a meglévő fordításon? Nyugodtan csatlakozzon hozzánk a Crowdin-on: https://crowdin.com/project/foss-browser.&lt;br&gt;&lt;br&gt;
+
+        &lt;b&gt;A következő oldalakon minden fontos információhoz hozzáférhet a \"FOSS Browser\"-ről. Kérem, olvassa el a súgó párbeszédpanelt is az alkalmazáson belül.&lt;/b&gt;&lt;br&gt;&lt;br&gt;
+
+        \u25AA &lt;i&gt;A program oldala:&lt;/i&gt; https://github.com/scoute-dich/Browser&lt;br&gt;
+        \u25AA &lt;i&gt;Változások:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/CHANGELOG.md&lt;br&gt;
+        \u25AA &lt;i&gt;GYIK:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/FAQs.md&lt;br&gt;
+        \u25AA &lt;i&gt;Licenc:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/LICENSE.md&lt;br&gt;
+        \u25AA &lt;i&gt;Adatvédelem:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/PRIVACY.md
+
+    </string>
+    <string name="menu_mobileView">Mobil nézet</string>
+    <string name="menu_desktopView">Asztali nézet</string>
+    <string name="menu_dayView">Napi nézet</string>
+    <string name="menu_nightView">Éjszakai nézet</string>
+    <!-- License changelog -->
+</resources>

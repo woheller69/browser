@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App -->
+    <string name="app_name">FOSS Browser</string>
+    <string name="app_ok">OK</string>
+    <string name="app_cancel">Zrušit</string>
+    <string name="app_done">Hotovo</string>
+    <string name="app_error">Chyba</string>
+    <string name="list_empty">Seznam je prázdný</string>
+    <string name="album_title_bookmarks">Záložky</string>
+    <string name="album_title_history">Historie</string>
+    <string name="album_title_home">Plocha</string>
+    <string name="album_title_tab">Otevřené karty</string>
+    <string name="search_hint">Hledat</string>
+    <string name="color_red">Červená</string>
+    <string name="color_pink">Růžová</string>
+    <string name="color_purple">Fialová</string>
+    <string name="color_blue">Modrá</string>
+    <string name="color_teal">Šedozelená</string>
+    <string name="color_green">Zelená</string>
+    <string name="color_lime">Limetková</string>
+    <string name="color_yellow">Žlutá</string>
+    <string name="color_orange">Oranžová</string>
+    <string name="color_brown">Hnědá</string>
+    <string name="color_grey">Šedá</string>
+    <!-- Menu -->
+    <string name="main_menu_tabPreview">Otevřít náhled karty</string>
+    <string name="main_menu_new_tab">Nová karta (na pozadí)</string>
+    <string name="main_menu_new_tabOpen">Nová karta (na popředí)</string>
+    <string name="main_omnibox_input_hint">Vyhledávejte nebo zadejte adresu URL</string>
+    <string name="menu_open_with">Otevřít odkaz pomocí …</string>
+    <string name="menu_quit">Ukončit</string>
+    <string name="menu_openFav">Otevřít oblíbené</string>
+    <string name="menu_delete">Smazat</string>
+    <string name="menu_edit">Upravit</string>
+    <string name="menu_closeTab">Zavřít kartu</string>
+    <string name="menu_download">Otevřít stažené</string>
+    <string name="menu_fav">Uložit jako oblíbené</string>
+    <string name="menu_sc">Zkratka na ploše</string>
+    <string name="menu_sort">Třídit podle …</string>
+    <string name="menu_filter">Filtrovat podle …</string>
+    <string name="menu_share_link">Sdílet odkaz</string>
+    <string name="menu_save_home">Uložit na plochu</string>
+    <string name="menu_save_bookmark">Uložit jako záložku</string>
+    <string name="menu_save_as">Uložit jako …</string>
+    <string name="menu_save_pdf">Uložit jako PDF</string>
+    <string name="menu_shareClipboard">Kopírovat do schránky</string>
+    <string name="menu_other_searchSite">Hledat na stránce</string>
+    <string name="menu_other_info">O aplikaci „FOSS Browser“</string>
+    <!-- Dialog -->
+    <string name="dialog_title_hint">Název:</string>
+    <string name="dialog_URL_hint">URL:</string>
+    <string name="dialog_extension_hint">Přípona (například: „.jpg“):</string>
+    <string name="dialog_sign_in_username">Uživatelské jméno</string>
+    <string name="dialog_sign_in_password">Heslo</string>
+    <string name="dialog_title_download">Stáhnout soubor?</string>
+    <string name="dialog_content_resubmission">Znovu obnovit data?</string>
+    <string name="dialog_content_ssl_error">Certifikát webové stránky není důvěryhodný. Přesto pokračovat?</string>
+    <string name="dialog_sortName">Řadit podle názvu</string>
+    <string name="dialog_sortIcon">Řadit podle ikony</string>
+    <string name="dialog_sortDate">Řadit podle data</string>
+    <!-- Settings -->
+    <string name="setting_label">Nastavení</string>
+    <!-- browser setting -->
+    <string name="setting_title_browser">Nastavení prohlížeče</string>
+    <string name="setting_title_start_control">Spustit nastavení</string>
+    <string name="setting_title_search_engine">Vyhledávač</string>
+    <string name="setting_summary_search_engine_google">Google</string>
+    <string name="setting_summary_search_engine_duckduckgo">DuckDuckGo</string>
+    <string name="setting_summary_search_engine_startpage">StartPage</string>
+    <string name="setting_summary_search_engine_bing">Bing</string>
+    <string name="setting_summary_search_engine_baidu">Baidu</string>
+    <string name="setting_summary_search_engine_startpage_de">StartPage (de)</string>
+    <string name="setting_summary_search_engine_searx">Searx</string>
+    <string name="setting_summary_search_engine_qwant">Qwant</string>
+    <string name="setting_summary_search_engine_ecosia">Ecosia</string>
+    <string name="setting_title_font">Velikost písma</string>
+    <string name="setting_title_remote">Vzdálený obsah</string>
+    <string name="setting_title_dom">DOM Storage</string>
+    <string name="setting_title_dom_whitelist">DOM Whitelist</string>
+    <string name="setting_summary_dom">DOM Storage allows the application to store page elements that could include user sensitive information. Disabling this prevents local storage from being used.</string>
+    <string name="setting_title_save_data">Požadavek „Ušetřit data“</string>
+    <!-- browser start -->
+    <string name="setting_title_images">Obrázky</string>
+    <string name="setting_title_cookie">Cookies</string>
+    <string name="setting_summary_cookie_delete">Pokud je povoleno, všechny cookies budou smazány. Včetně cookies důvěryhodných webových stránek.</string>
+    <string name="setting_summary_cookie">Povolit cookies. Cookies jsou malé textové soubory, které jsou uloženy ve vašem zařízení. Webové stránky je používají např. k uložení uživatelských nastavení (např. nastavení vyhledávání). Můžou však být použity ke sběru osobních uživatelských dat. Cookies třetích stran (ukládají uživatelská data pro zobrazení reklam) jsou vždy zakázány.</string>
+    <string name="setting_title_whitelistCookie">Seznam povolených – Cookies</string>
+    <string name="setting_title_whitelistRemote">Vzdálený seznam povolených</string>
+    <string name="setting_title_javascript">JavaScript</string>
+    <string name="setting_summary_javascript">Povolit JavaScript. Mnoho webových stránek potřebuje pro svou funkčnost JavaScript (nabídky, načítání a zobrazování obrázků, …). Je však také rizikem a může být použit k útokům.</string>
+    <string name="setting_title_whitelistJS">Seznam povolených – JavaScript</string>
+    <string name="setting_title_adblock">AdBlock</string>
+    <string name="setting_summary_adblock">Zapněte AdBlock pro blokování obtěžujících reklam. Stránky se budou načítat rychleji.</string>
+    <string name="setting_title_location">Poloha</string>
+    <string name="setting_summary_location">Povolit webům přístup k vaší poloze. Některé weby (jako Mapy Google pro navigaci) jej potřebují mít zapnutý.</string>
+    <string name="setting_title_history">Historie</string>
+    <string name="setting_title_autofill">Data formulářů</string>
+    <string name="setting_summary_autofill">Povolit ukládání formulářových dat (Android Nougat a níže) nebo službu automatického vyplňování (Android Oreo a vyšší).</string>
+    <!-- browser clear -->
+    <string name="data_summary">Všechny soubory budou exportovány do adresáře „Android/data/de.baumann.browser/files/browser_backup/“ na vaší SD kartě. Tento adresář bude SMAZÁN, když „FOSS Browser“ odinstalujete. Proto si pravidelně na bezpečném místě vytvářejte zálohu.</string>
+    <string name="clear_title_quit">Vymazat při ukončení aplikace</string>
+    <string name="clear_title_cache">Vymazat mezipaměť</string>
+    <string name="clear_title_cookie">Vymazat soubory cookie</string>
+    <string name="clear_title_history">Vymazat historii</string>
+    <string name="localData">Clear on device stored data</string>
+    <string name="clear_title_deleteDatabase">Vymazat databázi</string>
+    <string name="clear_summary_deleteDatabase">Vymazat celou databázi (úvodní stránku, záložky, historii a všechny seznamy povolených).</string>
+    <!-- App setting -->
+    <string name="setting_title_app">Nastavení aplikace</string>
+    <string name="setting_title_ui">Chování/UI</string>
+    <string name="setting_title_data">Záloha</string>
+    <string name="setting_filter">Filtr záložek</string>
+    <string name="setting_title_fav">Oblíbené</string>
+    <string name="setting_title_searchEngine">Vlastní vyhledávač</string>
+    <string name="setting_title_userAgent">Vlastní uživatelský agent</string>
+    <!-- App behavior -->
+    <string name="setting_title_hideToolbar">Hide toolbar</string>
+    <string name="setting_title_behavior">Chování</string>
+    <string name="setting_title_confirm_exit">Potvrdit ukončení prohlížeče</string>
+    <string name="setting_title_confirm_tab_close">Potvrdit zavření karty</string>
+    <string name="setting_overView">Přehled</string>
+    <string name="setting_overView_onStart_title">Zobrazit při spuštění</string>
+    <string name="setting_gestures">Gesta</string>
+    <string name="setting_title_reopenLastTab">Znovu otevřít poslední kartu</string>
+    <!-- gestures -->
+    <string name="setting_title_toolbar">Panel nástrojů</string>
+    <string name="setting_title_toolbar_buttons">Tlačítka panelu nástrojů</string>
+    <string name="setting_gesture_up">Přejetí nahoru</string>
+    <string name="setting_gesture_down">Přejetí dolů</string>
+    <string name="setting_gesture_left">Přejetí vlevo</string>
+    <string name="setting_gesture_right">Přejetí vpravo</string>
+    <string name="setting_gesture_01">Žádné gesto</string>
+    <string name="setting_gesture_02">Vpřed v Historii</string>
+    <string name="setting_gesture_03">Zpět v Historii</string>
+    <string name="setting_gesture_04">Posunout nahoru</string>
+    <string name="setting_gesture_05">Posunout dolů</string>
+    <string name="setting_gesture_06">Přepnout na levou kartu</string>
+    <string name="setting_gesture_07">Přepnout na pravou kartu</string>
+    <string name="setting_gesture_08">Zobrazit přehled</string>
+    <string name="setting_gesture_09">Otevřít novou kartu</string>
+    <string name="setting_gesture_10">Zavřít kartu</string>
+    <string name="setting_gesture_hint">Dlouhým klepnutím na tlačítko menu otevřete dialogové okno rychlého nastavení. Dlouhým stiskem ikony domovské záložky/historie otevřete filtr záložek.</string>
+    <!-- Data -->
+    <string name="setting_title_export_bookmarks">Exportovat záložky jako soubor HTML</string>
+    <string name="setting_title_import_bookmarks">Importovat záložky</string>
+    <string name="setting_title_export_appData">Exportovat data aplikace</string>
+    <string name="setting_title_import_appData">Importovat data aplikace</string>
+    <string name="setting_summary_export_appData">Exportovat celou databázi a vaše osobní nastavení.</string>
+    <string name="title_appData">Data aplikace</string>
+    <string name="hint_database">Tímto odstraníte aktuální data. Chcete pokračovat?</string>
+    <!-- Others setting -->
+    <string name="setting_title_others">Další</string>
+    <!-- Toast -->
+    <string name="toast_add_whitelist_successful">Doména byla úspěšně přidána</string>
+    <string name="toast_copy_successful">Úspěšně zkopírováno</string>
+    <string name="toast_delete_successful">Úspěšně smazáno</string>
+    <string name="toast_domain_already_exists">Doména již existuje</string>
+    <string name="toast_input_empty">Nic jste nevložili</string>
+    <string name="toast_invalid_domain">Neplatná doména</string>
+    <string name="toast_webview_forward">Nelze načíst další stránku</string>
+    <string name="toast_permission_sdCard">„FOSS Browser“ vyžaduje oprávnění „čtení a zápis do vašeho úložiště“. Toto je zapotřebí ke stahování souborů, pořizování snímků obrazovky a vytváření záloh vašich dat.</string>
+    <string name="toast_restart">Pro provedení změn musíte restartovat aplikaci „FOSS Browser“. Ukončit nyní?</string>
+    <string name="toast_quit">Opravdu chcete ukončit aplikaci „FOSS Browser“?</string>
+    <string name="toast_downloadComplete">Stahování dokončeno. Otevřít správce souborů?</string>
+    <string name="toast_unsecured">Stránka používá nezabezpečené připojení („http“). Chcete zkusit zabezpečné připojení („https“)?</string>
+    <string name="toast_backup">Zálohovat data? Tato akce přepíše starou zálohu.</string>
+    <!-- Whitelist -->
+    <string name="whitelist_menu_clear">Vymazat</string>
+    <string name="whitelist_edit_hint">Doména</string>
+    <string name="whitelist_add">Přidat</string>
+    <!-- Dialog help -->
+    <!-- Dialog changelog -->
+    <string name="changelog_dialog">        Váš jazyk zatím není podporován? Chcete přeložit FOSS Browser? Nebo vylepšit stávající překlady?
+        Neváhejte a připojte se k nám na Crowdinu: https://crowdin.com/project/foss-browser.&lt;br&gt;&lt;br&gt;
+
+        &lt;b&gt;Na následujících stránkách máte přístup ke všem důležitým informacím o aplikaci „FOSS Browser“.
+        Přečtěte si také dialog nápovědy v aplikaci.&lt;/b&gt;&lt;br&gt;&lt;br&gt;
+
+        \u25AA &lt;i&gt;Stránka projektu:&lt;/i&gt; https://github.com/scoute-dich/Browser&lt;br&gt;
+        \u25AA &lt;i&gt;Seznam změn:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/CHANGELOG.md&lt;br&gt;
+        \u25AA &lt;i&gt;FAQ:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/FAQs.md&lt;br&gt;
+        \u25AA &lt;i&gt;Licence:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/LICENSE.md&lt;br&gt;
+        \u25AA &lt;i&gt;Ochrana soukromí:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/PRIVACY.md
+
+    </string>
+    <string name="menu_mobileView">Mobilní zobrazení</string>
+    <string name="menu_desktopView">PC zobrazení</string>
+    <string name="menu_dayView">Denní přehled</string>
+    <string name="menu_nightView">Noční oči</string>
+    <!-- License changelog -->
+</resources>

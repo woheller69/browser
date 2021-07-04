@@ -70,7 +70,7 @@
 
         <Preference
             android:key="start_remote"
-            android:title="@string/setting_title_whitelistRemote"/>
+            android:title="@string/setting_title_dom_whitelist"/>
 
     </PreferenceCategory>
 

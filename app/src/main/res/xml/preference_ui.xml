@@ -2,13 +2,15 @@
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <Preference
+        android:summary="@string/setting_gesture_hint"/>
 
     <PreferenceCategory android:title="@string/setting_title_behavior">
 
         <CheckBoxPreference
             android:key="hideToolbar"
             android:defaultValue="true"
-            android:summary="@string/setting_summary_hide"/>
+            android:title="@string/setting_title_hideToolbar"/>
 
         <CheckBoxPreference
             android:defaultValue="true"
@@ -39,8 +41,7 @@
         <CheckBoxPreference
             android:key="start_tabStart"
             android:defaultValue="false"
-            android:title="@string/setting_overView_onStart_title"
-            android:summary="@string/setting_overView_onStart_summary"/>
+            android:title="@string/setting_overView_onStart_title"/>
 
         <ListPreference
             android:title="@string/setting_overView"

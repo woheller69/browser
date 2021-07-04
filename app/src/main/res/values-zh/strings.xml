@@ -49,7 +49,7 @@
     <string name="menu_other_info">关于 \"FOSS浏览器\"</string>
     <!-- Dialog -->
     <string name="dialog_title_hint">标题:</string>
-    <string name="dialog_URL_hint">URL:</string>
+    <string name="dialog_URL_hint">Url：</string>
     <string name="dialog_extension_hint">扩展名 (例如: \".jpg\"):</string>
     <string name="dialog_sign_in_username">用户名</string>
     <string name="dialog_sign_in_password">密码</string>
@@ -76,9 +76,9 @@
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_title_font">字体大小</string>
     <string name="setting_title_remote">远程内容</string>
-    <string name="setting_title_dom">DOM Storage</string>
-    <string name="setting_title_dom_whitelist">DOM Whitelist</string>
-    <string name="setting_summary_dom">DOM Storage allows the application to store page elements that could include user sensitive information. Disabling this prevents local storage from being used.</string>
+    <string name="setting_title_dom">DOM 存储</string>
+    <string name="setting_title_dom_whitelist">DOM 白名单</string>
+    <string name="setting_summary_dom">DOM 存储允许应用程序存储可能包含用户敏感信息的页面元素。禁用这会阻止本地存储被使用。</string>
     <string name="setting_title_save_data">请求“保存数据”</string>
     <!-- browser start -->
     <string name="setting_title_images">图像</string>
@@ -103,7 +103,7 @@
     <string name="clear_title_cache">清除缓存</string>
     <string name="clear_title_cookie">清除Cookies</string>
     <string name="clear_title_history">清除历史记录</string>
-    <string name="localData">Clear on device stored data</string>
+    <string name="localData">在设备存储的数据上清除</string>
     <string name="clear_title_deleteDatabase">删除数据</string>
     <string name="clear_summary_deleteDatabase">删除整个数据库(起始页、书签、历史和所有白名单)。</string>
     <!-- App setting -->
@@ -115,7 +115,7 @@
     <string name="setting_title_searchEngine">自定义搜索引擎</string>
     <string name="setting_title_userAgent">自定义User Agent</string>
     <!-- App behavior -->
-    <string name="setting_title_hideToolbar">Hide toolbar</string>
+    <string name="setting_title_hideToolbar">隐藏工具栏</string>
     <string name="setting_title_behavior">行为</string>
     <string name="setting_title_confirm_exit">浏览器退出确认</string>
     <string name="setting_title_confirm_tab_close">确认关闭标签页</string>

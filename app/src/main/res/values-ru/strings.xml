@@ -76,9 +76,9 @@
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_title_font">Размер шрифта</string>
     <string name="setting_title_remote">Удаленный контент</string>
-    <string name="setting_title_dom">DOM Storage</string>
-    <string name="setting_title_dom_whitelist">DOM Whitelist</string>
-    <string name="setting_summary_dom">DOM Storage allows the application to store page elements that could include user sensitive information. Disabling this prevents local storage from being used.</string>
+    <string name="setting_title_dom">Хранилище DOM</string>
+    <string name="setting_title_dom_whitelist">Белый список DOM</string>
+    <string name="setting_summary_dom">DOM Storage позволяет приложению хранить элементы страниц, которые могут включать конфиденциальную информацию пользователя. Отключение этой опции предотвращает использование локального хранилища.</string>
     <string name="setting_title_save_data">Запрос \'Сохранить данные\'</string>
     <!-- browser start -->
     <string name="setting_title_images">Изображения</string>
@@ -103,7 +103,7 @@
     <string name="clear_title_cache">Очистить кэш</string>
     <string name="clear_title_cookie">Очистить куки</string>
     <string name="clear_title_history">Очистить историю</string>
-    <string name="localData">Clear on device stored data</string>
+    <string name="localData">Очистить на данных, сохраненных на устройстве</string>
     <string name="clear_title_deleteDatabase">Удалить базу данных</string>
     <string name="clear_summary_deleteDatabase">Удалить всю базу данных (стартовую страницу, закладки, историю и все белые списки).</string>
     <!-- App setting -->
@@ -115,7 +115,7 @@
     <string name="setting_title_searchEngine">Пользовательская поисковая система</string>
     <string name="setting_title_userAgent">Произвольный юзер-агент</string>
     <!-- App behavior -->
-    <string name="setting_title_hideToolbar">Hide toolbar</string>
+    <string name="setting_title_hideToolbar">Скрыть панель инструментов</string>
     <string name="setting_title_behavior">Поведение</string>
     <string name="setting_title_confirm_exit">Подтвердить выход из браузера</string>
     <string name="setting_title_confirm_tab_close">Подтвердить закрытие вкладки</string>

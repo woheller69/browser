@@ -125,7 +125,7 @@
     <string name="setting_title_searchEngine">موتور جستجوی سفارشی</string>
     <string name="setting_title_userAgent">سفارشی سازی user-agent مرورگر </string>
     <!-- App behavior -->
-    <string name="setting_title_hideToolbar">Hide toolbar</string>
+    <string name="setting_title_hideToolbar">پنهان سازی نوار ابزار</string>
     <string name="setting_title_behavior">رفتارها</string>
     <string name="setting_title_confirm_exit">تاییدیه خروج از مرورگر</string>
     <string name="setting_title_confirm_tab_close">تاییدیه بستن زبانه</string>

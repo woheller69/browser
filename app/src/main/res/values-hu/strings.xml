@@ -49,7 +49,7 @@
     <string name="menu_other_info">A \"FOSS Browser\" névjegye</string>
     <!-- Dialog -->
     <string name="dialog_title_hint">Cím:</string>
-    <string name="dialog_URL_hint">URL:</string>
+    <string name="dialog_URL_hint">Url:</string>
     <string name="dialog_extension_hint">Kiterjesztés (például: \".jpg\"):</string>
     <string name="dialog_sign_in_username">Felhasználónév</string>
     <string name="dialog_sign_in_password">Jelszó</string>
@@ -115,7 +115,7 @@
     <string name="setting_title_searchEngine">Egyedi keresőmotor</string>
     <string name="setting_title_userAgent">Egyedi user agent</string>
     <!-- App behavior -->
-    <string name="setting_title_hideToolbar">Hide toolbar</string>
+    <string name="setting_title_hideToolbar">Eszköztár elrejtése</string>
     <string name="setting_title_behavior">Viselkedés</string>
     <string name="setting_title_confirm_exit">Böngésző bezárásának megerősítése</string>
     <string name="setting_title_confirm_tab_close">Lap bezárásának megerősítése</string>

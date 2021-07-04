@@ -76,9 +76,9 @@
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_title_font">Dimensione testo</string>
     <string name="setting_title_remote">Contenuti remoti</string>
-    <string name="setting_title_dom">DOM Storage</string>
-    <string name="setting_title_dom_whitelist">DOM Whitelist</string>
-    <string name="setting_summary_dom">DOM Storage allows the application to store page elements that could include user sensitive information. Disabling this prevents local storage from being used.</string>
+    <string name="setting_title_dom">Archivio DOM</string>
+    <string name="setting_title_dom_whitelist">Whitelist DOM</string>
+    <string name="setting_summary_dom">DOM Storage consente all\'applicazione di memorizzare gli elementi della pagina che potrebbero includere le informazioni sensibili all\'utente. Disabilitando questa opzione si impedisce l\'utilizzo della memoria locale.</string>
     <string name="setting_title_save_data">Richiedi \'Salva dati\'</string>
     <!-- browser start -->
     <string name="setting_title_images">Immagini</string>
@@ -103,7 +103,7 @@
     <string name="clear_title_cache">Elimina Cache</string>
     <string name="clear_title_cookie">Elimina Cookies</string>
     <string name="clear_title_history">Elimina Cronologia</string>
-    <string name="localData">Clear on device stored data</string>
+    <string name="localData">Cancella i dati memorizzati sul dispositivo</string>
     <string name="clear_title_deleteDatabase">Elimina database</string>
     <string name="clear_summary_deleteDatabase">Elimina l\'intero database (pagina iniziale, segnalibri, cronologia e tutte le whitelist).</string>
     <!-- App setting -->
@@ -115,7 +115,7 @@
     <string name="setting_title_searchEngine">Motore di ricerca personalizzato</string>
     <string name="setting_title_userAgent">Agente utente personalizzato</string>
     <!-- App behavior -->
-    <string name="setting_title_hideToolbar">Hide toolbar</string>
+    <string name="setting_title_hideToolbar">Nascondi barra degli strumenti</string>
     <string name="setting_title_behavior">Comportamento</string>
     <string name="setting_title_confirm_exit">Conferma l\'uscita dal browser</string>
     <string name="setting_title_confirm_tab_close">Confermare la chiusura delle schede</string>

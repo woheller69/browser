@@ -77,7 +77,7 @@
     <string name="setting_title_font">Rozmiar czcionki</string>
     <string name="setting_title_remote">Zawartość zdalna</string>
     <string name="setting_title_dom">Pamięć DOM</string>
-    <string name="setting_title_dom_whitelist">DOM Whitelist</string>
+    <string name="setting_title_dom_whitelist">Biała lista DOM</string>
     <string name="setting_summary_dom">Pamięć DOM pozwala aplikacji na przechowywanie elementów strony, które mogą zawierać poufne informacje użytkownika. Wyłączenie tego uniemożliwia korzystanie z pamięci lokalnej.</string>
     <string name="setting_title_save_data">Wysyłaj żądanie \'Oszczędzaj dane\'</string>
     <!-- browser start -->
@@ -103,7 +103,7 @@
     <string name="clear_title_cache">Wymaż dane podręczne</string>
     <string name="clear_title_cookie">Wymaż ciasteczka</string>
     <string name="clear_title_history">Wymaż historie</string>
-    <string name="localData">Clear on device stored data</string>
+    <string name="localData">Wyczyść przy przechowywanych danych urządzenia</string>
     <string name="clear_title_deleteDatabase">Wymaż bazę danych</string>
     <string name="clear_summary_deleteDatabase">Wyczyść wszystkie dane (widok strony głównej, zakładki, historię i białe listy).</string>
     <!-- App setting -->
@@ -115,7 +115,7 @@
     <string name="setting_title_searchEngine">Własna wyszukiwarka</string>
     <string name="setting_title_userAgent">Niestandardowy agent użytkownika</string>
     <!-- App behavior -->
-    <string name="setting_title_hideToolbar">Hide toolbar</string>
+    <string name="setting_title_hideToolbar">Ukryj dolny panel</string>
     <string name="setting_title_behavior">Zachowanie</string>
     <string name="setting_title_confirm_exit">Potwierdzaj zamknięcie przeglądarki</string>
     <string name="setting_title_confirm_tab_close">Potwierdzaj zamknięcie karty</string>

@@ -76,14 +76,12 @@
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_title_font">Betűméret</string>
     <string name="setting_title_remote">Távoli tartalom</string>
-    <string name="setting_summary_remote">Enable remote content, which is not directly from the website you are visiting. Disabling this is more secure, faster and saves data volume. But some content will not be displayed anymore.</string>
     <string name="setting_title_dom">DOM Storage</string>
+    <string name="setting_title_dom_whitelist">DOM Whitelist</string>
     <string name="setting_summary_dom">DOM Storage allows the application to store page elements that could include user sensitive information. Disabling this prevents local storage from being used.</string>
     <string name="setting_title_save_data">\'Save Data\' kérése</string>
-    <string name="setting_summary_save_data">Tell websites that you would prefer to save data. Supported websites will load faster.</string>
     <!-- browser start -->
     <string name="setting_title_images">Képek</string>
-    <string name="setting_summary_images">Enable Network images. Disabling could be useful to save mobile data and to load websites faster.</string>
     <string name="setting_title_cookie">Sütik</string>
     <string name="setting_summary_cookie_delete">Engedélyezve, az összes süti törlésre kerül. A megbízható weboldalakhoz tartozó sütik is.</string>
     <string name="setting_summary_cookie">Sütik engedélyezése. A sütik kis szövegfájlok, amik az ön eszközén tárolódnak. A weboldalak például felhasználói beállítások tárolására használják (pl. keresési beállítások), de használhatók személyes felhasználói adatok gyűjtésére is. A harmadik féltől származó sütik (felhasználói adatokat gyűjtenek reklámozás céljából) mindig le vannak tiltva.</string>
@@ -97,17 +95,15 @@
     <string name="setting_title_location">Tartózkodási hely</string>
     <string name="setting_summary_location">Megengedi a weboldalaknak, hogy hozzáférjenek a tartózkodási helyéhez. Néhány weboldal számára (mint a Google Térkép navigáció) engedélyezni kell.</string>
     <string name="setting_title_history">Előzmények</string>
-    <string name="setting_summary_history">Save the history of visited websites.</string>
     <string name="setting_title_autofill">Űrlapadatok</string>
     <string name="setting_summary_autofill">Enable the saving of form data (Android Nougat and below) or autofill service (Android Oreo and above).</string>
     <!-- browser clear -->
     <string name="data_summary">Az összes fájl az SD kártya \"Android/data/de.baumann.browser/files/browser_backup/\" könyvtárába lesz exportálva. Ez a könyvtár TÖRÖLVE lesz, ha eltávolítja a \"FOSS Browser\"-t. Ezért rendszeresen készítsen biztonsági másolatot egy biztos helyre.</string>
     <string name="clear_title_quit">Törlés az alkalmazás bezárásakor</string>
-    <string name="clear_summary_quit">Minden alkalommal amikor kilép a \"FOSS Browser\" alkalmazásból, az összes fent bejelölt adat törlésre kerül.</string>
     <string name="clear_title_cache">Gyorsítótár törlése</string>
     <string name="clear_title_cookie">Sütik törlése</string>
     <string name="clear_title_history">Előzmények törlése</string>
-    <string name="clear_title_indexedDB">Az \"indexelt adatbázisok\" és a \"helyi webview tároló\" törlése</string>
+    <string name="localData">Clear on device stored data</string>
     <string name="clear_title_deleteDatabase">Adatbázis törlése</string>
     <string name="clear_summary_deleteDatabase">A teljes adatbázis törlése (Kezdőoldal, könyvjelzők, előzmények és az összes engedélylista).</string>
     <!-- App setting -->
@@ -120,18 +116,13 @@
     <string name="setting_title_userAgent">Egyedi user agent</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">Hide toolbar</string>
-    <string name="setting_summary_hide">Használja a teljes képernyőt amikor a weboldalakat megtekinti. A vissza gomb megnyomásával, elhagyja a teljes képernyős módot.</string>
     <string name="setting_title_behavior">Viselkedés</string>
     <string name="setting_title_confirm_exit">Böngésző bezárásának megerősítése</string>
-    <string name="setting_summary_confirm_exit">Confirmation dialog when closing browser.</string>
     <string name="setting_title_confirm_tab_close">Lap bezárásának megerősítése</string>
-    <string name="setting_summary_confirm_tab_close">Confirmation dialog when closing a tab.</string>
     <string name="setting_overView">Áttekintés</string>
     <string name="setting_overView_onStart_title">Mutassa indításkor</string>
-    <string name="setting_overView_onStart_summary">Open the \"Overview\" on every app start.</string>
     <string name="setting_gestures">Kézmozdulatok</string>
     <string name="setting_title_reopenLastTab">Utolsó lap megnyitása</string>
-    <string name="setting_summary_reopenLastTab">Reopen a new tab when the last tab is closed instead of exiting the browser.</string>
     <!-- gestures -->
     <string name="setting_title_toolbar">Eszköztár</string>
     <string name="setting_title_toolbar_buttons">Eszköztár gomb</string>

@@ -49,7 +49,7 @@
     <string name="menu_other_info">حول \"FOSS Browser\"</string>
     <!-- Dialog -->
     <string name="dialog_title_hint">العنوان:</string>
-    <string name="dialog_URL_hint">URL:</string>
+    <string name="dialog_URL_hint">العنوان:</string>
     <string name="dialog_extension_hint">الامتداد (مثلا: \"‎.jpg\"):</string>
     <string name="dialog_sign_in_username">اسم المستخدم</string>
     <string name="dialog_sign_in_password">كلمة السر</string>
@@ -76,9 +76,9 @@
     <string name="setting_summary_search_engine_ecosia">محرك Ecosia</string>
     <string name="setting_title_font">حجم الخط</string>
     <string name="setting_title_remote">المحتوى البعيد</string>
-    <string name="setting_title_dom">DOM Storage</string>
-    <string name="setting_title_dom_whitelist">DOM Whitelist</string>
-    <string name="setting_summary_dom">DOM Storage allows the application to store page elements that could include user sensitive information. Disabling this prevents local storage from being used.</string>
+    <string name="setting_title_dom">تخزين DOM</string>
+    <string name="setting_title_dom_whitelist">القائمة البيضاء DOM</string>
+    <string name="setting_summary_dom">يسمح تخزين DOM للتطبيق بتخزين عناصر الصفحات التي يمكن أن تتضمن معلومات حساسة للمستخدم. تعطيل هذا يمنع التخزين المحلي من استخدامه.</string>
     <string name="setting_title_save_data">اطلب \'حفظ البيانات\'</string>
     <!-- browser start -->
     <string name="setting_title_images">الصور</string>
@@ -103,7 +103,7 @@
     <string name="clear_title_cache">امسح التخزين المؤقت</string>
     <string name="clear_title_cookie">امسح الكعكات</string>
     <string name="clear_title_history">حذف التأريخ</string>
-    <string name="localData">Clear on device stored data</string>
+    <string name="localData">مسح البيانات المخزنة على الجهاز</string>
     <string name="clear_title_deleteDatabase">احذف قاعدة البيانات</string>
     <string name="clear_summary_deleteDatabase">احذف قاعدة البيانات بأكملها (صفحة البدء، العلامات، التأريخ وجميع القوائم البيضاء).</string>
     <!-- App setting -->
@@ -115,7 +115,7 @@
     <string name="setting_title_searchEngine">محرك بحث مخصص</string>
     <string name="setting_title_userAgent">وكيل مستخدم مخصص</string>
     <!-- App behavior -->
-    <string name="setting_title_hideToolbar">Hide toolbar</string>
+    <string name="setting_title_hideToolbar">أخفِ شريط الأدوات</string>
     <string name="setting_title_behavior">السلوك</string>
     <string name="setting_title_confirm_exit">تأكيد خروج المتصفح</string>
     <string name="setting_title_confirm_tab_close">أكّد خروج التبويب</string>

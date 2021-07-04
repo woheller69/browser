@@ -76,14 +76,12 @@
     <string name="setting_summary_search_engine_ecosia">محرك Ecosia</string>
     <string name="setting_title_font">حجم الخط</string>
     <string name="setting_title_remote">المحتوى البعيد</string>
-    <string name="setting_summary_remote">Enable remote content, which is not directly from the website you are visiting. Disabling this is more secure, faster and saves data volume. But some content will not be displayed anymore.</string>
     <string name="setting_title_dom">DOM Storage</string>
+    <string name="setting_title_dom_whitelist">DOM Whitelist</string>
     <string name="setting_summary_dom">DOM Storage allows the application to store page elements that could include user sensitive information. Disabling this prevents local storage from being used.</string>
     <string name="setting_title_save_data">اطلب \'حفظ البيانات\'</string>
-    <string name="setting_summary_save_data">Tell websites that you would prefer to save data. Supported websites will load faster.</string>
     <!-- browser start -->
     <string name="setting_title_images">الصور</string>
-    <string name="setting_summary_images">Enable Network images. Disabling could be useful to save mobile data and to load websites faster.</string>
     <string name="setting_title_cookie">الكعكات</string>
     <string name="setting_summary_cookie_delete">إذا فُعّل، ستحذف جميع الكعكات، حتى الخاصة بالمواقع الموثوقة.</string>
     <string name="setting_summary_cookie">مكّن الكعكات. الكعكات هي ملفات نصية صغيرة، يتم تخزينها على جهازك. تستخدمها المواقع لتخزين البيانات مثل إعدادات المستخدم (مثل إعدادات البحث). ولكن يمكن استخدامها أيضا لجمع بيانات المستخدم الشخصية. كعكات الطرف الثالث (تقوم بجمع بيانات المستخدم لتوجيه الإعلانات) تكون معطلة دائما.</string>
@@ -97,17 +95,15 @@
     <string name="setting_title_location">الموقع</string>
     <string name="setting_summary_location">اسمح للمواقع الوصول إلى موقعك. بعض المواقع (مثل خرائط غوغل) تحتاج لهذا.</string>
     <string name="setting_title_history">التأريخ</string>
-    <string name="setting_summary_history">Save the history of visited websites.</string>
     <string name="setting_title_autofill">إستمارة المعلومات</string>
     <string name="setting_summary_autofill">تمكين حفظ بيانات النموذج (أندرويد نوجات وما دونها) أو خدمة التعبئة التلقائية (أندرويد أوريو وما فوق).</string>
     <!-- browser clear -->
     <string name="data_summary">ستستورد كل الملفات الى دليل في الذاكرة الخارجية \"Android/data/de.baumann.browser/files/browser_backup/\". سيُحذف هذا الدليل اذا أزلت \"FOSS Browser\". انسخه احتياطيا بانتظام في مكان آمن.</string>
     <string name="clear_title_quit">امسح عند خروج التطبيق</string>
-    <string name="clear_summary_quit">ستمسح كل البيانات المؤشرة فوق عند خروج \"FOSS Browser\".</string>
     <string name="clear_title_cache">امسح التخزين المؤقت</string>
     <string name="clear_title_cookie">امسح الكعكات</string>
     <string name="clear_title_history">حذف التأريخ</string>
-    <string name="clear_title_indexedDB">امسح \"قواعد البيانات المفهرسة\" و \"تخزين عرض الويب المحلي\"</string>
+    <string name="localData">Clear on device stored data</string>
     <string name="clear_title_deleteDatabase">احذف قاعدة البيانات</string>
     <string name="clear_summary_deleteDatabase">احذف قاعدة البيانات بأكملها (صفحة البدء، العلامات، التأريخ وجميع القوائم البيضاء).</string>
     <!-- App setting -->
@@ -120,18 +116,13 @@
     <string name="setting_title_userAgent">وكيل مستخدم مخصص</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">Hide toolbar</string>
-    <string name="setting_summary_hide">استخدم الشاشة بأكملها عند اللف عبر المواقع. إذا ضغطت زر الرجوع ستغادر وضع الشاشة الكاملة.</string>
     <string name="setting_title_behavior">السلوك</string>
     <string name="setting_title_confirm_exit">تأكيد خروج المتصفح</string>
-    <string name="setting_summary_confirm_exit">Confirmation dialog when closing browser.</string>
     <string name="setting_title_confirm_tab_close">أكّد خروج التبويب</string>
-    <string name="setting_summary_confirm_tab_close">Confirmation dialog when closing a tab.</string>
     <string name="setting_overView">نظرة عامة</string>
     <string name="setting_overView_onStart_title">أَظهر عند البداية</string>
-    <string name="setting_overView_onStart_summary">Open the \"Overview\" on every app start.</string>
     <string name="setting_gestures">إيماءات</string>
     <string name="setting_title_reopenLastTab">أعد فتح آخر تبويب</string>
-    <string name="setting_summary_reopenLastTab">Reopen a new tab when the last tab is closed instead of exiting the browser.</string>
     <!-- gestures -->
     <string name="setting_title_toolbar">شريط الأدوات</string>
     <string name="setting_title_toolbar_buttons">أزرار شريط الأدوات</string>

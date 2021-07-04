@@ -77,7 +77,7 @@
     <string name="setting_title_font">Rozmiar czcionki</string>
     <string name="setting_title_remote">Zawartość zdalna</string>
     <string name="setting_title_dom">Pamięć DOM</string>
-    <string name="setting_summary_dom">DOM Storage allows the application to store page elements that could include user sensitive information. Disabling this prevents local storage from being used.</string>
+    <string name="setting_summary_dom">Pamięć DOM pozwala aplikacji na przechowywanie elementów strony, które mogą zawierać poufne informacje użytkownika. Wyłączenie tego uniemożliwia korzystanie z pamięci lokalnej.</string>
     <string name="setting_title_save_data">Wysyłaj żądanie \'Oszczędzaj dane\'</string>
     <!-- browser start -->
     <string name="setting_title_images">Obrazy</string>

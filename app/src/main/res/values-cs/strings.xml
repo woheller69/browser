@@ -76,11 +76,14 @@
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_title_font">Velikost písma</string>
     <string name="setting_title_remote">Vzdálený obsah</string>
+    <string name="setting_summary_remote">Enable remote content, which is not directly from the website you are visiting. Disabling this is more secure, faster and saves data volume. But some content will not be displayed anymore.</string>
     <string name="setting_title_dom">DOM Storage</string>
     <string name="setting_summary_dom">DOM Storage allows the application to store page elements that could include user sensitive information. Disabling this prevents local storage from being used.</string>
     <string name="setting_title_save_data">Požadavek „Ušetřit data“</string>
+    <string name="setting_summary_save_data">Tell websites that you would prefer to save data. Supported websites will load faster.</string>
     <!-- browser start -->
     <string name="setting_title_images">Obrázky</string>
+    <string name="setting_summary_images">Enable Network images. Disabling could be useful to save mobile data and to load websites faster.</string>
     <string name="setting_title_cookie">Cookies</string>
     <string name="setting_summary_cookie_delete">Pokud je povoleno, všechny cookies budou smazány. Včetně cookies důvěryhodných webových stránek.</string>
     <string name="setting_summary_cookie">Povolit cookies. Cookies jsou malé textové soubory, které jsou uloženy ve vašem zařízení. Webové stránky je používají např. k uložení uživatelských nastavení (např. nastavení vyhledávání). Můžou však být použity ke sběru osobních uživatelských dat. Cookies třetích stran (ukládají uživatelská data pro zobrazení reklam) jsou vždy zakázány.</string>
@@ -94,6 +97,7 @@
     <string name="setting_title_location">Poloha</string>
     <string name="setting_summary_location">Povolit webům přístup k vaší poloze. Některé weby (jako Mapy Google pro navigaci) jej potřebují mít zapnutý.</string>
     <string name="setting_title_history">Historie</string>
+    <string name="setting_summary_history">Save the history of visited websites.</string>
     <string name="setting_title_autofill">Data formulářů</string>
     <string name="setting_summary_autofill">Povolit ukládání formulářových dat (Android Nougat a níže) nebo službu automatického vyplňování (Android Oreo a vyšší).</string>
     <!-- browser clear -->
@@ -115,14 +119,19 @@
     <string name="setting_title_searchEngine">Vlastní vyhledávač</string>
     <string name="setting_title_userAgent">Vlastní uživatelský agent</string>
     <!-- App behavior -->
+    <string name="setting_title_hideToolbar">Hide toolbar</string>
     <string name="setting_summary_hide">Při procházení webovými stránkami použít celou obrazovku. Pokud stisknete tlačítko Zpět, opustíte režim celé obrazovky.</string>
     <string name="setting_title_behavior">Chování</string>
     <string name="setting_title_confirm_exit">Potvrdit ukončení prohlížeče</string>
+    <string name="setting_summary_confirm_exit">Confirmation dialog when closing browser.</string>
     <string name="setting_title_confirm_tab_close">Potvrdit zavření karty</string>
+    <string name="setting_summary_confirm_tab_close">Confirmation dialog when closing a tab.</string>
     <string name="setting_overView">Přehled</string>
     <string name="setting_overView_onStart_title">Zobrazit při spuštění</string>
+    <string name="setting_overView_onStart_summary">Open the \"Overview\" on every app start.</string>
     <string name="setting_gestures">Gesta</string>
     <string name="setting_title_reopenLastTab">Znovu otevřít poslední kartu</string>
+    <string name="setting_summary_reopenLastTab">Reopen a new tab when the last tab is closed instead of exiting the browser.</string>
     <!-- gestures -->
     <string name="setting_title_toolbar">Panel nástrojů</string>
     <string name="setting_title_toolbar_buttons">Tlačítka panelu nástrojů</string>

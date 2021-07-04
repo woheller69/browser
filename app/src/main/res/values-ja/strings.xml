@@ -76,14 +76,12 @@
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_title_font">フォントサイズ</string>
     <string name="setting_title_remote">リモートコンテンツ</string>
-    <string name="setting_summary_remote">Enable remote content, which is not directly from the website you are visiting. Disabling this is more secure, faster and saves data volume. But some content will not be displayed anymore.</string>
     <string name="setting_title_dom">ウェブストレージ</string>
+    <string name="setting_title_dom_whitelist">DOM Whitelist</string>
     <string name="setting_summary_dom">ウェブストレージ (DOM ストレージ) を使用するとアプリがユーザーの機密情報を含むページ要素を端末に保存することが可能になります。この機能の無効化によりローカルストレージは使用されなくなります。</string>
     <string name="setting_title_save_data">「データを保存」のリクエスト</string>
-    <string name="setting_summary_save_data">Tell websites that you would prefer to save data. Supported websites will load faster.</string>
     <!-- browser start -->
     <string name="setting_title_images">画像</string>
-    <string name="setting_summary_images">Enable Network images. Disabling could be useful to save mobile data and to load websites faster.</string>
     <string name="setting_title_cookie">クッキー</string>
     <string name="setting_summary_cookie_delete">有効にすると、信頼できる Web サイトも含め全てのクッキーが削除されます。</string>
     <string name="setting_summary_cookie">クッキーを有効にします。クッキーは小さなテキストファイルで、端末に保存されます。Web サイトは、例えばユーザー設定 (検索設定など) を保存するために使用します。ただし、個人データの収集にも使用できます。サードパーティのクッキー (広告用の個人データを収集している) は常に無効になっています。</string>
@@ -97,17 +95,15 @@
     <string name="setting_title_location">位置情報</string>
     <string name="setting_summary_location">ウェブサイトに位置情報へのアクセスを許可します。いくつかのウェブサイト (Google マップなど) は許可が必要です。</string>
     <string name="setting_title_history">履歴</string>
-    <string name="setting_summary_history">Save the history of visited websites.</string>
     <string name="setting_title_autofill">フォームの入力履歴</string>
     <string name="setting_summary_autofill">フォームのデータの保存 (Android 7 以下) または自動入力サービス (Android 8 以上) を有効にします。</string>
     <!-- browser clear -->
     <string name="data_summary">全てのファイルは SD カードの \"Android/data/de.baumann.browser/files/browser_backup/\" に出力されます。\"FOSS Browser\" をアンインストールするとそのディレクトリは削除されます。ですので定期的に安全な場所にバックアップを作成して下さい。</string>
     <string name="clear_title_quit">アプリ終了時に消去</string>
-    <string name="clear_summary_quit">毎回 \"FOSS Browser\" を終了すると上記のチェックしたデータは消去されます。</string>
     <string name="clear_title_cache">キャッシュを削除</string>
     <string name="clear_title_cookie">クッキーを消去</string>
     <string name="clear_title_history">履歴を削除</string>
-    <string name="clear_title_indexedDB">\"インデックス済みデータベース\" と \"ローカルウェブサイトストレージ\" の消去</string>
+    <string name="localData">Clear on device stored data</string>
     <string name="clear_title_deleteDatabase">データベースを削除</string>
     <string name="clear_summary_deleteDatabase">データベース全体 (スタートページ、ブックマーク、履歴、ホワイトリスト) を削除します。</string>
     <!-- App setting -->
@@ -120,18 +116,13 @@
     <string name="setting_title_userAgent">カスタムユーザーエージェント</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">Hide toolbar</string>
-    <string name="setting_summary_hide">ウェブサイトスクロール時に画面全体を使用します。戻るボタンを押すとフルスクリーンモードを終了します。</string>
     <string name="setting_title_behavior">動作</string>
     <string name="setting_title_confirm_exit">ブラウザ終了の確認</string>
-    <string name="setting_summary_confirm_exit">Confirmation dialog when closing browser.</string>
     <string name="setting_title_confirm_tab_close">タブ削除の確認</string>
-    <string name="setting_summary_confirm_tab_close">Confirmation dialog when closing a tab.</string>
     <string name="setting_overView">一覧画面</string>
     <string name="setting_overView_onStart_title">開始時に表示</string>
-    <string name="setting_overView_onStart_summary">Open the \"Overview\" on every app start.</string>
     <string name="setting_gestures">ジェスチャー</string>
     <string name="setting_title_reopenLastTab">タブを再度開く</string>
-    <string name="setting_summary_reopenLastTab">Reopen a new tab when the last tab is closed instead of exiting the browser.</string>
     <!-- gestures -->
     <string name="setting_title_toolbar">ツールバー</string>
     <string name="setting_title_toolbar_buttons">ツールバーのボタン</string>

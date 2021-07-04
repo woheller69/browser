@@ -76,9 +76,9 @@
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_title_font">Velikost písma</string>
     <string name="setting_title_remote">Vzdálený obsah</string>
-    <string name="setting_title_dom">DOM Storage</string>
-    <string name="setting_title_dom_whitelist">DOM Whitelist</string>
-    <string name="setting_summary_dom">DOM Storage allows the application to store page elements that could include user sensitive information. Disabling this prevents local storage from being used.</string>
+    <string name="setting_title_dom">Úložiště DOM</string>
+    <string name="setting_title_dom_whitelist">Seznam povolených DOM</string>
+    <string name="setting_summary_dom">DOM Úložiště umožňuje aplikaci ukládat prvky stránek, které by mohly obsahovat citlivé informace uživatelů. Zakázání zabraňuje použití místního úložiště.</string>
     <string name="setting_title_save_data">Požadavek „Ušetřit data“</string>
     <!-- browser start -->
     <string name="setting_title_images">Obrázky</string>
@@ -103,7 +103,7 @@
     <string name="clear_title_cache">Vymazat mezipaměť</string>
     <string name="clear_title_cookie">Vymazat soubory cookie</string>
     <string name="clear_title_history">Vymazat historii</string>
-    <string name="localData">Clear on device stored data</string>
+    <string name="localData">Vymazat uložená data zařízení</string>
     <string name="clear_title_deleteDatabase">Vymazat databázi</string>
     <string name="clear_summary_deleteDatabase">Vymazat celou databázi (úvodní stránku, záložky, historii a všechny seznamy povolených).</string>
     <!-- App setting -->
@@ -115,7 +115,7 @@
     <string name="setting_title_searchEngine">Vlastní vyhledávač</string>
     <string name="setting_title_userAgent">Vlastní uživatelský agent</string>
     <!-- App behavior -->
-    <string name="setting_title_hideToolbar">Hide toolbar</string>
+    <string name="setting_title_hideToolbar">Skrýt Panel nástrojů</string>
     <string name="setting_title_behavior">Chování</string>
     <string name="setting_title_confirm_exit">Potvrdit ukončení prohlížeče</string>
     <string name="setting_title_confirm_tab_close">Potvrdit zavření karty</string>

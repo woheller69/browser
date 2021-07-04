@@ -76,14 +76,12 @@
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_title_font">Размер шрифта</string>
     <string name="setting_title_remote">Удаленный контент</string>
-    <string name="setting_summary_remote">Enable remote content, which is not directly from the website you are visiting. Disabling this is more secure, faster and saves data volume. But some content will not be displayed anymore.</string>
     <string name="setting_title_dom">DOM Storage</string>
+    <string name="setting_title_dom_whitelist">DOM Whitelist</string>
     <string name="setting_summary_dom">DOM Storage allows the application to store page elements that could include user sensitive information. Disabling this prevents local storage from being used.</string>
     <string name="setting_title_save_data">Запрос \'Сохранить данные\'</string>
-    <string name="setting_summary_save_data">Tell websites that you would prefer to save data. Supported websites will load faster.</string>
     <!-- browser start -->
     <string name="setting_title_images">Изображения</string>
-    <string name="setting_summary_images">Enable Network images. Disabling could be useful to save mobile data and to load websites faster.</string>
     <string name="setting_title_cookie">Куки</string>
     <string name="setting_summary_cookie_delete">Если включено, все cookies будут удалены. Также файлы cookie надежных веб-сайтов.</string>
     <string name="setting_summary_cookie">Включить файлы cookie. Файлы cookie представляют собой небольшие текстовые файлы, которые хранятся на Вашем устройстве. Сайты используют их, например, для хранения пользовательских настроек (например, настроек поиска). Но они также могут использоваться для сбора личных данных пользователя. Сторонние файлы cookie (они собирают данные пользователя для рекламы) всегда отключены.</string>
@@ -97,17 +95,15 @@
     <string name="setting_title_location">Местоположение</string>
     <string name="setting_summary_location">Разрешить сайтам доступ к Вашему местоположению. Некоторые сайты (например, карты Google) нуждаются в этом.</string>
     <string name="setting_title_history">История</string>
-    <string name="setting_summary_history">Save the history of visited websites.</string>
     <string name="setting_title_autofill">Данные формы:</string>
     <string name="setting_summary_autofill">Включить сохранение данных форм (Android Nougat и ниже) или службы автозаполнения (Android Oreo и выше).</string>
     <!-- browser clear -->
     <string name="data_summary">Все файлы будут экспортированы в папку \"Android/data/de.baumann.browser/files/browser_backup/\" Вашей sd-карты. Этот каталог будет УДАЛЕН, если вы удалите \"FOSS Browser\". Поэтому регулярно делайте резервную копию в надёжном месте.</string>
     <string name="clear_title_quit">Очистить при выходе из приложения</string>
-    <string name="clear_summary_quit">Каждый раз при выходе из \"FOSS Browser\" все вышеперечисленные проверенные данные будут удаляться.</string>
     <string name="clear_title_cache">Очистить кэш</string>
     <string name="clear_title_cookie">Очистить куки</string>
     <string name="clear_title_history">Очистить историю</string>
-    <string name="clear_title_indexedDB">Очистить \"индексированные базы данных\" и \"локальное хранилище webview\"</string>
+    <string name="localData">Clear on device stored data</string>
     <string name="clear_title_deleteDatabase">Удалить базу данных</string>
     <string name="clear_summary_deleteDatabase">Удалить всю базу данных (стартовую страницу, закладки, историю и все белые списки).</string>
     <!-- App setting -->
@@ -120,18 +116,13 @@
     <string name="setting_title_userAgent">Произвольный юзер-агент</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">Hide toolbar</string>
-    <string name="setting_summary_hide">Используйте весь экран при прокрутке сайтов. Если Вы нажмете кнопку Назад, то покинете полноэкранный режим.</string>
     <string name="setting_title_behavior">Поведение</string>
     <string name="setting_title_confirm_exit">Подтвердить выход из браузера</string>
-    <string name="setting_summary_confirm_exit">Confirmation dialog when closing browser.</string>
     <string name="setting_title_confirm_tab_close">Подтвердить закрытие вкладки</string>
-    <string name="setting_summary_confirm_tab_close">Confirmation dialog when closing a tab.</string>
     <string name="setting_overView">Обзор</string>
     <string name="setting_overView_onStart_title">Показывать при запуске</string>
-    <string name="setting_overView_onStart_summary">Open the \"Overview\" on every app start.</string>
     <string name="setting_gestures">Жесты</string>
     <string name="setting_title_reopenLastTab">Открыть последнюю вкладку</string>
-    <string name="setting_summary_reopenLastTab">Reopen a new tab when the last tab is closed instead of exiting the browser.</string>
     <!-- gestures -->
     <string name="setting_title_toolbar">Панель инструментов</string>
     <string name="setting_title_toolbar_buttons">Кнопки панели инструментов</string>

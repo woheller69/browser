@@ -99,11 +99,9 @@
     <!-- browser clear -->
     <string name="data_summary">Tất cả tệp sẽ được xuất ra thư mục \"Android/data/de.baumann.browser/files/browser_backup/\" của thẻ SD. Thư mục này sẽ bị XOÁ, nếu bạn gỡ cài đặt \"Trình duyệt FOSS\". Vậy nên hãy thường xuyên tạo một bản sao lưu ở một nơi an toàn.</string>
     <string name="clear_title_quit">Xoá khi thoát ứng dụng</string>
-    <string name="clear_summary_quit">Mỗi lần bạn thoát \"Trình duyệt FOSS\" tất cả dữ liệu được đánh dấu ở trên sẽ bị xoá.</string>
     <string name="clear_title_cache">Xóa bộ nhớ đệm</string>
     <string name="clear_title_cookie">Xóa cookie</string>
     <string name="clear_title_history">Xóa lịch sử</string>
-    <string name="clear_title_indexedDB">Xoá \"các cơ sở dữ liệu được tạo mục lục\" và \"bộ nhớ WebView cục bộ\"</string>
     <string name="clear_title_deleteDatabase">Xoá cơ sở dữ liệu</string>
     <string name="clear_summary_deleteDatabase">Xoá toàn bộ cơ sở dữ liệu (Trang bắt đầu, dấu trang, lịch sử và tất cả danh sách trắng).</string>
     <!-- App setting -->
@@ -115,7 +113,6 @@
     <string name="setting_title_searchEngine">Công cụ tìm kiếm tuỳ chỉnh</string>
     <string name="setting_title_userAgent">Tác nhân người dùng tuỳ chỉnh</string>
     <!-- App behavior -->
-    <string name="setting_summary_hide">Sử dụng toàn bộ màn hình khi cuộn trong các trang web. Nếu bạn nhấn nút quay lại, bạn sẽ rời khỏi chế độ toàn màn hình.</string>
     <string name="setting_title_behavior">Hành vi</string>
     <string name="setting_title_confirm_exit">Xác nhận thoát trình duyệt</string>
     <string name="setting_title_confirm_tab_close">Xác nhận đóng tab</string>

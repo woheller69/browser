@@ -99,11 +99,9 @@
     <!-- browser clear -->
     <string name="data_summary">全てのファイルは SD カードの \"Android/data/de.baumann.browser/files/browser_backup/\" に出力されます。\"FOSS Browser\" をアンインストールするとそのディレクトリは削除されます。ですので定期的に安全な場所にバックアップを作成して下さい。</string>
     <string name="clear_title_quit">アプリ終了時に消去</string>
-    <string name="clear_summary_quit">毎回 \"FOSS Browser\" を終了すると上記のチェックしたデータは消去されます。</string>
     <string name="clear_title_cache">キャッシュを削除</string>
     <string name="clear_title_cookie">クッキーを消去</string>
     <string name="clear_title_history">履歴を削除</string>
-    <string name="clear_title_indexedDB">\"インデックス済みデータベース\" と \"ローカルウェブサイトストレージ\" の消去</string>
     <string name="clear_title_deleteDatabase">データベースを削除</string>
     <string name="clear_summary_deleteDatabase">データベース全体 (スタートページ、ブックマーク、履歴、ホワイトリスト) を削除します。</string>
     <!-- App setting -->
@@ -115,7 +113,6 @@
     <string name="setting_title_searchEngine">カスタム検索エンジン</string>
     <string name="setting_title_userAgent">カスタムユーザーエージェント</string>
     <!-- App behavior -->
-    <string name="setting_summary_hide">ウェブサイトスクロール時に画面全体を使用します。戻るボタンを押すとフルスクリーンモードを終了します。</string>
     <string name="setting_title_behavior">動作</string>
     <string name="setting_title_confirm_exit">ブラウザ終了の確認</string>
     <string name="setting_title_confirm_tab_close">タブ削除の確認</string>

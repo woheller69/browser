@@ -99,11 +99,9 @@
     <!-- browser clear -->
     <string name="data_summary">所有文件将导出到您SD卡的“Android/data/de.baumann.browser/files/browser_backup/”目录。 如果卸载\"FOSS浏览器\"，此目录将会被删除。所以请定期进行备份。</string>
     <string name="clear_title_quit">在应用退出时清除</string>
-    <string name="clear_summary_quit">每次您退出“FOSS浏览器”时，所有以上选中的数据都将被删除。</string>
     <string name="clear_title_cache">清除缓存</string>
     <string name="clear_title_cookie">清除Cookies</string>
     <string name="clear_title_history">清除历史记录</string>
-    <string name="clear_title_indexedDB">清除\"索引数据\"和\"本地Webview存储\"</string>
     <string name="clear_title_deleteDatabase">删除数据</string>
     <string name="clear_summary_deleteDatabase">删除整个数据库(起始页、书签、历史和所有白名单)。</string>
     <!-- App setting -->
@@ -115,7 +113,6 @@
     <string name="setting_title_searchEngine">自定义搜索引擎</string>
     <string name="setting_title_userAgent">自定义User Agent</string>
     <!-- App behavior -->
-    <string name="setting_summary_hide">当在网页中滑动时使用全屏浏览。当您按下返回键会退出全屏模式。</string>
     <string name="setting_title_behavior">行为</string>
     <string name="setting_title_confirm_exit">浏览器退出确认</string>
     <string name="setting_title_confirm_tab_close">确认关闭标签页</string>

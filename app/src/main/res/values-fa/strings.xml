@@ -108,11 +108,9 @@
           نیز حذف خواهد شد،لذا نسبت به پشتیبان گیری منظم از این پوشه در جای مطمئن اقدام نمایید.
     </string>
     <string name="clear_title_quit">پاک سازی هنگام خروج از برنامه</string>
-    <string name="clear_summary_quit">هر موقع ازمرورگر خارج شوید تمامی داده های انتخاب شده فوق پاکسازی خواهند شد.</string>
     <string name="clear_title_cache">پاکسازی کش</string>
     <string name="clear_title_cookie">پاک سازی کوکی ها</string>
     <string name="clear_title_history">پاکسازی تاریخچه</string>
-    <string name="clear_title_indexedDB">پاکسازی \"indexed databases\" و \"local webview storage\"</string>
     <string name="clear_title_deleteDatabase">حذف دیتابیس</string>
     <string name="clear_summary_deleteDatabase">        حذف تمامی داده ها (تاریخچه ها،لیست های سفید،صفحه آغازین،نشانک ها).
     </string>
@@ -125,8 +123,6 @@
     <string name="setting_title_searchEngine">موتور جستجوی سفارشی</string>
     <string name="setting_title_userAgent">سفارشی سازی user-agent مرورگر </string>
     <!-- App behavior -->
-    <string name="setting_summary_hide">        هنگام پیمایش صفحه ،وبسایت تمام صفحه نمایش داده شودو با کلید برگشت به عقب از حالت تمام صفحه خارج شود.
-    </string>
     <string name="setting_title_behavior">رفتارها</string>
     <string name="setting_title_confirm_exit">تاییدیه خروج از مرورگر</string>
     <string name="setting_title_confirm_tab_close">تاییدیه بستن زبانه</string>

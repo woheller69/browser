@@ -99,11 +99,9 @@
     <!-- browser clear -->
     <string name="data_summary">Az összes fájl az SD kártya \"Android/data/de.baumann.browser/files/browser_backup/\" könyvtárába lesz exportálva. Ez a könyvtár TÖRÖLVE lesz, ha eltávolítja a \"FOSS Browser\"-t. Ezért rendszeresen készítsen biztonsági másolatot egy biztos helyre.</string>
     <string name="clear_title_quit">Törlés az alkalmazás bezárásakor</string>
-    <string name="clear_summary_quit">Minden alkalommal amikor kilép a \"FOSS Browser\" alkalmazásból, az összes fent bejelölt adat törlésre kerül.</string>
     <string name="clear_title_cache">Gyorsítótár törlése</string>
     <string name="clear_title_cookie">Sütik törlése</string>
     <string name="clear_title_history">Előzmények törlése</string>
-    <string name="clear_title_indexedDB">Az \"indexelt adatbázisok\" és a \"helyi webview tároló\" törlése</string>
     <string name="clear_title_deleteDatabase">Adatbázis törlése</string>
     <string name="clear_summary_deleteDatabase">A teljes adatbázis törlése (Kezdőoldal, könyvjelzők, előzmények és az összes engedélylista).</string>
     <!-- App setting -->
@@ -115,7 +113,6 @@
     <string name="setting_title_searchEngine">Egyedi keresőmotor</string>
     <string name="setting_title_userAgent">Egyedi user agent</string>
     <!-- App behavior -->
-    <string name="setting_summary_hide">Használja a teljes képernyőt amikor a weboldalakat megtekinti. A vissza gomb megnyomásával, elhagyja a teljes képernyős módot.</string>
     <string name="setting_title_behavior">Viselkedés</string>
     <string name="setting_title_confirm_exit">Böngésző bezárásának megerősítése</string>
     <string name="setting_title_confirm_tab_close">Lap bezárásának megerősítése</string>

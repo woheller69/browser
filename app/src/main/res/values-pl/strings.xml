@@ -99,11 +99,9 @@
     <!-- browser clear -->
     <string name="data_summary">Wszystkie pliki zostaną wyeksportowane do katalogu \"Android/data/de.baumann.browser/files/browser_backup/\" karty SD. Ten katalog zostanie wyłączony, jeśli odinstalujesz \"FOSS Browser\". Wykonaj regularnie kopię zapasową w miejscu zapisu.</string>
     <string name="clear_title_quit">Wymaż na zamknięciu</string>
-    <string name="clear_summary_quit">Za każdym razem, gdy zamkniesz \"FOSS Browser\" wszystkie zaznaczone powyżej dane zostaną wymazane.</string>
     <string name="clear_title_cache">Wymaż dane podręczne</string>
     <string name="clear_title_cookie">Wymaż ciasteczka</string>
     <string name="clear_title_history">Wymaż historie</string>
-    <string name="clear_title_indexedDB">Wymaż dane \”zindeksowane \" i \”sieciowe lokalne\”</string>
     <string name="clear_title_deleteDatabase">Wymaż bazę danych</string>
     <string name="clear_summary_deleteDatabase">Wyczyść wszystkie dane (widok strony głównej, zakładki, historię i białe listy).</string>
     <!-- App setting -->
@@ -115,7 +113,6 @@
     <string name="setting_title_searchEngine">Własna wyszukiwarka</string>
     <string name="setting_title_userAgent">Niestandardowy agent użytkownika</string>
     <!-- App behavior -->
-    <string name="setting_summary_hide">Pokazuj witryny na całym ekranie. Dotykając przycisku wstecz wyjdziesz z trybu pełnoekranowego.</string>
     <string name="setting_title_behavior">Zachowanie</string>
     <string name="setting_title_confirm_exit">Potwierdzaj zamknięcie przeglądarki</string>
     <string name="setting_title_confirm_tab_close">Potwierdzaj zamknięcie karty</string>

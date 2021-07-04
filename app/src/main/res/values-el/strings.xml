@@ -99,11 +99,9 @@
     <!-- browser clear -->
     <string name="data_summary">Όλα τα αρχεία θα εξαχθούν στον κατάλογο \"Android/data/de.baumann.browser/files/browser_backup/\" της κάρτας μνήμης σας. Αυτός ο κατάλογος θα ΔΙΑΓΡΑΦΕΙ, αν απεγκαταστήσετε το \"FOSS Browser\". Έτσι, κάνετε ένα αντίγραφο ασφαλείας τακτικά σε ένα μέρος αποθήκευσης.</string>
     <string name="clear_title_quit">Διαγραφή κατά την έξοδο της εφαρμογής</string>
-    <string name="clear_summary_quit">Κάθε φορά που κλείνετε το \"FOSS Browser\" όλα τα παραπάνω δεδομένα θα διαγράφονται.</string>
     <string name="clear_title_cache">Εκκαθάριση προσωρινής μνήμης</string>
     <string name="clear_title_cookie">Εκκαθάριση Cookies</string>
     <string name="clear_title_history">Εκκαθάριση Ιστορικού</string>
-    <string name="clear_title_indexedDB">Καθαρισμός \"ευρετηρίων βάσεων δεδομένων\" και \"τοπικός χώρος αποθήκευσης προβολής\"</string>
     <string name="clear_title_deleteDatabase">Διαγραφή βάσης δεδομένων</string>
     <string name="clear_summary_deleteDatabase">Διαγραφή ολόκληρης της βάσης δεδομένων (Startpage, σελιδοδείκτες, ιστορικό και όλες οι επιτρεπόμενες λίστες).</string>
     <!-- App setting -->
@@ -115,7 +113,6 @@
     <string name="setting_title_searchEngine">Προσαρμοσμένη μηχανή αναζήτησης</string>
     <string name="setting_title_userAgent">Προσαρμοσμένος user agent</string>
     <!-- App behavior -->
-    <string name="setting_summary_hide">Χρησιμοποιήστε ολόκληρη την οθόνη κατά την κύλιση σε ιστοσελίδες. Αν πατήσετε το κουμπί πίσω θα αφήσετε λειτουργία πλήρους οθόνης.</string>
     <string name="setting_title_behavior">Συμπεριφορά</string>
     <string name="setting_title_confirm_exit">Επιβεβαίωση εξόδου προγράμματος περιήγησης</string>
     <string name="setting_title_confirm_tab_close">Επιβεβαίωση κλεισίματος καρτέλας</string>

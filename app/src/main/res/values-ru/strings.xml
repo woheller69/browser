@@ -99,11 +99,9 @@
     <!-- browser clear -->
     <string name="data_summary">Все файлы будут экспортированы в папку \"Android/data/de.baumann.browser/files/browser_backup/\" Вашей sd-карты. Этот каталог будет УДАЛЕН, если вы удалите \"FOSS Browser\". Поэтому регулярно делайте резервную копию в надёжном месте.</string>
     <string name="clear_title_quit">Очистить при выходе из приложения</string>
-    <string name="clear_summary_quit">Каждый раз при выходе из \"FOSS Browser\" все вышеперечисленные проверенные данные будут удаляться.</string>
     <string name="clear_title_cache">Очистить кэш</string>
     <string name="clear_title_cookie">Очистить куки</string>
     <string name="clear_title_history">Очистить историю</string>
-    <string name="clear_title_indexedDB">Очистить \"индексированные базы данных\" и \"локальное хранилище webview\"</string>
     <string name="clear_title_deleteDatabase">Удалить базу данных</string>
     <string name="clear_summary_deleteDatabase">Удалить всю базу данных (стартовую страницу, закладки, историю и все белые списки).</string>
     <!-- App setting -->
@@ -115,7 +113,6 @@
     <string name="setting_title_searchEngine">Пользовательская поисковая система</string>
     <string name="setting_title_userAgent">Произвольный юзер-агент</string>
     <!-- App behavior -->
-    <string name="setting_summary_hide">Используйте весь экран при прокрутке сайтов. Если Вы нажмете кнопку Назад, то покинете полноэкранный режим.</string>
     <string name="setting_title_behavior">Поведение</string>
     <string name="setting_title_confirm_exit">Подтвердить выход из браузера</string>
     <string name="setting_title_confirm_tab_close">Подтвердить закрытие вкладки</string>

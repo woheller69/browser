@@ -99,11 +99,9 @@
     <!-- browser clear -->
     <string name="data_summary">All files will be exported to the \"Android/data/de.baumann.browser/files/browser_backup/\" directory of your sd-card. This directory will be DELETED, if you uninstall \"FOSS Browser\". So make a backup regularly on a save place.</string>
     <string name="clear_title_quit">Clear on application exit</string>
-    <string name="clear_summary_quit">Elke keer als je \"FOSS-browser\" afsluit, dan worden alle hierboven aangevinkte gegevens gewist.</string>
     <string name="clear_title_cache">Cache leegmaken</string>
     <string name="clear_title_cookie">Cookies wissen</string>
     <string name="clear_title_history">Geschiedenis wissen</string>
-    <string name="clear_title_indexedDB">\"Geïndexeerde databanken\" en \"lokale webview-opslag\"</string>
     <string name="clear_title_deleteDatabase">Databank verwijderen</string>
     <string name="clear_summary_deleteDatabase">Verwijder de gehele databank (startpagina, bladwijzers, geschiedenis en alle witte lijsten).</string>
     <!-- App setting -->
@@ -115,7 +113,6 @@
     <string name="setting_title_searchEngine">Aangepaste zoekmachine</string>
     <string name="setting_title_userAgent">Aangepaste user agent</string>
     <!-- App behavior -->
-    <string name="setting_summary_hide">Use the whole screen when scrolling through websites. If you press the back button you will leave fullscreen mode.</string>
     <string name="setting_title_behavior">Gedrag</string>
     <string name="setting_title_confirm_exit">Afsluiten bevestigen</string>
     <string name="setting_title_confirm_tab_close">Tabblad sluiten bevestigen</string>

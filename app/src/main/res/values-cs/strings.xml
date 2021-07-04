@@ -99,11 +99,9 @@
     <!-- browser clear -->
     <string name="data_summary">Všechny soubory budou exportovány do adresáře „Android/data/de.baumann.browser/files/browser_backup/“ na vaší SD kartě. Tento adresář bude SMAZÁN, když „FOSS Browser“ odinstalujete. Proto si pravidelně na bezpečném místě vytvářejte zálohu.</string>
     <string name="clear_title_quit">Vymazat při ukončení aplikace</string>
-    <string name="clear_summary_quit">Při každém ukončení aplikace „FOSS Browser“ budou všechna výše uvedená data smazána.</string>
     <string name="clear_title_cache">Vymazat mezipaměť</string>
     <string name="clear_title_cookie">Vymazat soubory cookie</string>
     <string name="clear_title_history">Vymazat historii</string>
-    <string name="clear_title_indexedDB">Vymazat „indexované databáze“ a „lokální úložiště webview“</string>
     <string name="clear_title_deleteDatabase">Vymazat databázi</string>
     <string name="clear_summary_deleteDatabase">Vymazat celou databázi (úvodní stránku, záložky, historii a všechny seznamy povolených).</string>
     <!-- App setting -->
@@ -115,7 +113,6 @@
     <string name="setting_title_searchEngine">Vlastní vyhledávač</string>
     <string name="setting_title_userAgent">Vlastní uživatelský agent</string>
     <!-- App behavior -->
-    <string name="setting_summary_hide">Při procházení webovými stránkami použít celou obrazovku. Pokud stisknete tlačítko Zpět, opustíte režim celé obrazovky.</string>
     <string name="setting_title_behavior">Chování</string>
     <string name="setting_title_confirm_exit">Potvrdit ukončení prohlížeče</string>
     <string name="setting_title_confirm_tab_close">Potvrdit zavření karty</string>

@@ -99,11 +99,9 @@
     <!-- browser clear -->
     <string name="data_summary">Todos los archivos serán exportados al directorio \"Android/data/de.baumann.browser/files/browser_backup/\" de tu tarjeta sd. Este directorio será DELETED, si desinstala \"FOSS Browser\", entonces haga una copia de seguridad regularmente en un lugar guardado.</string>
     <string name="clear_title_quit">Borrar al salir de la aplicación</string>
-    <string name="clear_summary_quit">Cada vez quesalga del \"Navegador FOSS\", se borrarán todos los ítems tildados anteriormente.</string>
     <string name="clear_title_cache">Borrar caché</string>
     <string name="clear_title_cookie">Borrar cookies</string>
     <string name="clear_title_history">Borrar el historial</string>
-    <string name="clear_title_indexedDB">Borrar \"BD indexadas\" y \"almacen. local de WebView\"</string>
     <string name="clear_title_deleteDatabase">Borrar base de datos</string>
     <string name="clear_summary_deleteDatabase">Elimine todos los datos del navegador (página de inicio, marcadores, historial y todas las listas blancas).</string>
     <!-- App setting -->
@@ -115,7 +113,6 @@
     <string name="setting_title_searchEngine">Motor de búsqueda personalizado</string>
     <string name="setting_title_userAgent">Agente de usuario personalizado</string>
     <!-- App behavior -->
-    <string name="setting_summary_hide">Utilice la pantalla completa al desplazarse por sitios web. Si pulsa el botón \"volver\", dejará el modo de pantalla completa.</string>
     <string name="setting_title_behavior">Comportamiento</string>
     <string name="setting_title_confirm_exit">Confirmar salida del navegador</string>
     <string name="setting_title_confirm_tab_close">Confirmar cerrado de pestañas</string>

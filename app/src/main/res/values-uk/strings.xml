@@ -99,11 +99,9 @@
     <!-- browser clear -->
     <string name="data_summary">All files will be exported to the \"Android/data/de.baumann.browser/files/browser_backup/\" directory of your sd-card. This directory will be DELETED, if you uninstall \"FOSS Browser\". So make a backup regularly on a save place.</string>
     <string name="clear_title_quit">Clear on application exit</string>
-    <string name="clear_summary_quit">Кожен раз при виході з \"Foss Browser\" всі перераховані вище перевірені дані будуть видалятися.</string>
     <string name="clear_title_cache">Очистити кеш</string>
     <string name="clear_title_cookie">Очистити куки</string>
     <string name="clear_title_history">Очистити історію</string>
-    <string name="clear_title_indexedDB">Очистити \"індексовані бази даних\" і \"локальне сховище webview\"</string>
     <string name="clear_title_deleteDatabase">Видалити базу даних</string>
     <string name="clear_summary_deleteDatabase">Видалити всю базу даних (стартову сторінку, закладки, історію і всі білі списки).</string>
     <!-- App setting -->
@@ -115,7 +113,6 @@
     <string name="setting_title_searchEngine">Custom search engine</string>
     <string name="setting_title_userAgent">Custom user agent</string>
     <!-- App behavior -->
-    <string name="setting_summary_hide">Use the whole screen when scrolling through websites. If you press the back button you will leave fullscreen mode.</string>
     <string name="setting_title_behavior">Behavior</string>
     <string name="setting_title_confirm_exit">Підтвердити вихід з браузера</string>
     <string name="setting_title_confirm_tab_close">Підтвердити закриття вкладки</string>

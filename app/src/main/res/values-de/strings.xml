@@ -99,11 +99,9 @@
     <!-- browser clear -->
     <string name="data_summary">Alle Dateien werden in das Verzeichnis \"Android/data/de.baumann.browser/files/browser_backup/\" der SD-Karte exportiert. Dieses Verzeichnis wird GELÖSCHT, wenn \"FOSS Browser\" deinstalliert wird, also erstelle regelmäßig ein Backup an einem sicheren Speicherort.</string>
     <string name="clear_title_quit">Beim Verlassen der Anwendung löschen</string>
-    <string name="clear_summary_quit">Jedesmal, wenn du \"FOSS Browser\" schließt, werden alle oben ausgewählte Daten gelöscht.</string>
     <string name="clear_title_cache">Cache löschen</string>
     <string name="clear_title_cookie">Cookies löschen</string>
     <string name="clear_title_history">Verlauf löschen</string>
-    <string name="clear_title_indexedDB">\"Indizierte Datenbanken\" und \"Lokalen WebView-Speicher\" löschen</string>
     <string name="clear_title_deleteDatabase">Datenbank löschen</string>
     <string name="clear_summary_deleteDatabase">Die gesamte Datenbank löschen (Startseite, Lesezeichen, Verlauf und alle Ausnahmen).</string>
     <!-- App setting -->
@@ -115,7 +113,6 @@
     <string name="setting_title_searchEngine">Nutzerdefinierte Suchmaschine</string>
     <string name="setting_title_userAgent">Eigener Useragent</string>
     <!-- App behavior -->
-    <string name="setting_summary_hide">Benutze den ganzen Bildschirm, wenn du durch Internetseiten scrollst. Wenn du die \"Zurücktaste\" drückst, verlässt du den Vollbildmodus.</string>
     <string name="setting_title_behavior">Verhalten</string>
     <string name="setting_title_confirm_exit">Verlassen des Browsers bestätigen</string>
     <string name="setting_title_confirm_tab_close">Schließen des Tabs bestätigen</string>

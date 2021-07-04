@@ -99,11 +99,9 @@
     <!-- browser clear -->
     <string name="data_summary">Све датотеке ће бити извезене у директоријум \"Android/data/de.baumann.browser/files/browser_backup/\" на Вашој СД картици. Ова фасцикла ће бити ИЗБРИСАНА ако уклоните FOSS прегледач, зато редовно правите резервне копије на сигурном месту.</string>
     <string name="clear_title_quit">Clear on application exit</string>
-    <string name="clear_summary_quit">Every time you quit \"FOSS Browser\" all above checked data will be deleted.</string>
     <string name="clear_title_cache">Очисти кеш</string>
     <string name="clear_title_cookie">Избриши колачиће</string>
     <string name="clear_title_history">Очисти историјат</string>
-    <string name="clear_title_indexedDB">Clear \"indexed databases\" and \"local webview storage\"</string>
     <string name="clear_title_deleteDatabase">Delete database</string>
     <string name="clear_summary_deleteDatabase">Delete the whole database (Startpage, bookmarks, history and all whitelists).</string>
     <!-- App setting -->
@@ -115,7 +113,6 @@
     <string name="setting_title_searchEngine">Custom search engine</string>
     <string name="setting_title_userAgent">Custom user agent</string>
     <!-- App behavior -->
-    <string name="setting_summary_hide">Use the whole screen when scrolling through websites. If you press the back button you will leave fullscreen mode.</string>
     <string name="setting_title_behavior">Behavior</string>
     <string name="setting_title_confirm_exit">Confirm browser exit</string>
     <string name="setting_title_confirm_tab_close">Confirm tab close</string>

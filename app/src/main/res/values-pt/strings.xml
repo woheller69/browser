@@ -99,11 +99,9 @@
     <!-- browser clear -->
     <string name="data_summary">Todos os arquivos serão exportados para o diretório \"Android/data/de.baumann.browser/files/browser_backup/\" do seu cartão-sd. Este diretório será EXCLUÍDO se você desinstalar o \"FOSS Browser\". Então faça um backup regularmente em um local salvo.</string>
     <string name="clear_title_quit">Limpar ao sair do aplicativo</string>
-    <string name="clear_summary_quit">Sempre que sair da aplicação, os dados assinalados serão apagados.</string>
     <string name="clear_title_cache">Limpar cache</string>
     <string name="clear_title_cookie">Limpar cookies</string>
     <string name="clear_title_history">Limpar histórico</string>
-    <string name="clear_title_indexedDB">Limpar \"indexed databases\" e \"local webview storage\"</string>
     <string name="clear_title_deleteDatabase">Apagar base de dados</string>
     <string name="clear_summary_deleteDatabase">Apaga toda a base de dados (Página inicial, marcadores, histórico e sites permitidos).</string>
     <!-- App setting -->
@@ -115,7 +113,6 @@
     <string name="setting_title_searchEngine">Motor de pesquisa personalizado</string>
     <string name="setting_title_userAgent">Agente personalizado</string>
     <!-- App behavior -->
-    <string name="setting_summary_hide">Use a tela inteira ao rolar pelos sites. Se você pressionar o botão voltar, você deixará o modo de tela cheia.</string>
     <string name="setting_title_behavior">Comportamento</string>
     <string name="setting_title_confirm_exit">Confirmar ao sair</string>
     <string name="setting_title_confirm_tab_close">Confirmar fecho do separador</string>

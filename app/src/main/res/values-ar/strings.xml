@@ -99,11 +99,9 @@
     <!-- browser clear -->
     <string name="data_summary">ستستورد كل الملفات الى دليل في الذاكرة الخارجية \"Android/data/de.baumann.browser/files/browser_backup/\". سيُحذف هذا الدليل اذا أزلت \"FOSS Browser\". انسخه احتياطيا بانتظام في مكان آمن.</string>
     <string name="clear_title_quit">امسح عند خروج التطبيق</string>
-    <string name="clear_summary_quit">ستمسح كل البيانات المؤشرة فوق عند خروج \"FOSS Browser\".</string>
     <string name="clear_title_cache">امسح التخزين المؤقت</string>
     <string name="clear_title_cookie">امسح الكعكات</string>
     <string name="clear_title_history">حذف التأريخ</string>
-    <string name="clear_title_indexedDB">امسح \"قواعد البيانات المفهرسة\" و \"تخزين عرض الويب المحلي\"</string>
     <string name="clear_title_deleteDatabase">احذف قاعدة البيانات</string>
     <string name="clear_summary_deleteDatabase">احذف قاعدة البيانات بأكملها (صفحة البدء، العلامات، التأريخ وجميع القوائم البيضاء).</string>
     <!-- App setting -->
@@ -115,7 +113,6 @@
     <string name="setting_title_searchEngine">محرك بحث مخصص</string>
     <string name="setting_title_userAgent">وكيل مستخدم مخصص</string>
     <!-- App behavior -->
-    <string name="setting_summary_hide">استخدم الشاشة بأكملها عند اللف عبر المواقع. إذا ضغطت زر الرجوع ستغادر وضع الشاشة الكاملة.</string>
     <string name="setting_title_behavior">السلوك</string>
     <string name="setting_title_confirm_exit">تأكيد خروج المتصفح</string>
     <string name="setting_title_confirm_tab_close">أكّد خروج التبويب</string>

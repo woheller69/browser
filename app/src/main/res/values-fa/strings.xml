@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App -->
+    <string name="app_name">مرورگر FOSS</string>
+    <string name="app_ok">تایید</string>
+    <string name="app_cancel">لغو</string>
+    <string name="app_done">انجام شد</string>
+    <string name="app_error">خطا</string>
+    <string name="list_empty">لیست خالی می باشد</string>
+    <string name="album_title_bookmarks">نشانک ها</string>
+    <string name="album_title_history">تاریخچه</string>
+    <string name="album_title_home">صفحه خانگی</string>
+    <string name="album_title_tab">زبانه های باز</string>
+    <string name="search_hint">جستجو</string>
+    <string name="color_red">قرمز</string>
+    <string name="color_pink">صورتی</string>
+    <string name="color_purple">بنفش</string>
+    <string name="color_blue">آبی</string>
+    <string name="color_teal">سرمه ای</string>
+    <string name="color_green">سبز</string>
+    <string name="color_lime">سبز لیمویی</string>
+    <string name="color_yellow">زرد</string>
+    <string name="color_orange">نارنجی</string>
+    <string name="color_brown">قهوه ای</string>
+    <string name="color_grey">خاکستری</string>
+    <!-- Menu -->
+    <string name="main_menu_tabPreview">زبانه ها</string>
+    <string name="main_menu_new_tab">زبانه جدید (پیش زمینه)</string>
+    <string name="main_menu_new_tabOpen">زبانه جدید (پس زمینه)</string>
+    <string name="main_omnibox_input_hint">جستجو یا آدرس را وارد نمایید</string>
+    <string name="menu_open_with">باز کردن لینک با…</string>
+    <string name="menu_quit">خروج</string>
+    <string name="menu_openFav">صفحه مورد علاقه</string>
+    <string name="menu_delete">پاکسازی</string>
+    <string name="menu_edit">ویرایش</string>
+    <string name="menu_closeTab">بستن زبانه</string>
+    <string name="menu_download">بارگیری ها</string>
+    <string name="menu_fav">ثبت به عنوان صفحه مورد علاقه</string>
+    <string name="menu_sc">افزودن میانبر صفحه به منو سیستم</string>
+    <string name="menu_sort">مرتب سازی بر اساس …</string>
+    <string name="menu_filter">فیلتر بر اساس …</string>
+    <string name="menu_share_link">اشتراک لینک</string>
+    <string name="menu_save_home">افزودن به صفحه خانگی</string>
+    <string name="menu_save_bookmark">ذخیره در نشانک ها</string>
+    <string name="menu_save_as">ذخیره به عتوان …</string>
+    <string name="menu_save_pdf">ذخیره به عنوان PDF</string>
+    <string name="menu_shareClipboard">کپی در حافظه</string>
+    <string name="menu_other_searchSite">جستجو در صفحه </string>
+    <string name="menu_other_info">درباره مرورگر FOSS </string>
+    <!-- Dialog -->
+    <string name="dialog_title_hint">عنوان:</string>
+    <string name="dialog_URL_hint">URL:</string>
+    <string name="dialog_extension_hint">پسوند: (مانند: jpg.):</string>
+    <string name="dialog_sign_in_username">نام کاربری</string>
+    <string name="dialog_sign_in_password">گذرواژه</string>
+    <string name="dialog_title_download">فایل بارگذاری شود؟</string>
+    <string name="dialog_content_resubmission">درخواست دوباره ارسال شود؟</string>
+    <string name="dialog_content_ssl_error">مجوز سایت مورد نظر مورد اعتماد نمی باشد،در هر صورت ادامه دهم؟</string>
+    <string name="dialog_sortName">مرتب سازی بر اساس نام</string>
+    <string name="dialog_sortIcon">مرتب سازی بر اساس آیکن</string>
+    <string name="dialog_sortDate">مرتب سازی بر اساس تاریخ</string>
+    <!-- Settings -->
+    <string name="setting_label">تنظیمات</string>
+    <!-- browser setting -->
+    <string name="setting_title_browser">تنظیمات مرورگر</string>
+    <string name="setting_title_start_control">تنظیمات پیشرفته</string>
+    <string name="setting_title_search_engine">موتور جستجو</string>
+    <string name="setting_summary_search_engine_google">گوگل</string>
+    <string name="setting_summary_search_engine_duckduckgo">داک‌داک‌گو</string>
+    <string name="setting_summary_search_engine_startpage">StartPage</string>
+    <string name="setting_summary_search_engine_bing">بینگ</string>
+    <string name="setting_summary_search_engine_baidu">بایدو</string>
+    <string name="setting_summary_search_engine_startpage_de">StartPage (De)</string>
+    <string name="setting_summary_search_engine_searx">Searx</string>
+    <string name="setting_summary_search_engine_qwant">کوانت</string>
+    <string name="setting_summary_search_engine_ecosia">Ecosia</string>
+    <string name="setting_title_font">اندازه قلم</string>
+    <string name="setting_title_remote">محتوای خارجی</string>
+    <string name="setting_summary_remote">      فعال سازی نمایش محتوای خارجی ،که به صورت مستقیم از سایت مورد بازدید بارگذاری نمی شود.غیر فعال سازی این گزینه ،در سرعت بارگذاری صفحه،امنیت،صرفه جویی در مصرف بسته اینترنت تاثیر مثبت دارد اما ممکن است بعضی از محتوای خارجی مانند تصاویر،ویدیو ها نمایش داده نشوند.
+    </string>
+    <string name="setting_title_save_data">درخواست صرفه جویی در مصرف شبکه</string>
+    <string name="setting_summary_save_data">وبسایت هایی که از این امکان پشتیبانی میکنند سریع تر بارگذاری می شوند</string>
+    <!-- browser start -->
+    <string name="setting_title_images">عکس ها</string>
+    <string name="setting_summary_images">فعال سازی بارگذاری تصاویر،در صورت غیر فعال بودن این گزینه،سرعت بارگذاری سایت ها افزایش پیدا خواهد کرد و در مصرف بسته اینترنت صرفه جویی خواهد شد. </string>
+    <string name="setting_title_cookie">کوکی ها</string>
+    <string name="setting_summary_cookie_delete">در صورت فعال سازی، تمامی کوکی ها حذف خواهد شد،حتی کوکی های سایت های مورد اعتماد</string>
+    <string name="setting_summary_cookie">         فعال سازی کوکی ها.کوکی ها فایل های متنی کم حجمی هستند که در سیستم ذخیره می شوند.وبسایت ها از آنها برای ذخیره سازی تنظیمات مورد استفاده کاربران ( به عنوان مثال تنظیمات بخش جستجو،وضعیت ورود کاربر به سایت )استفاده می نمایند.
+       امکان استفاده از آنها جهت جمع آوری اطلاعات کاربران برای تبلیعات نیز وجود دارد،اما این مورد به صورت پیشفرض غیر فعال شده است.
+    </string>
+    <string name="setting_title_whitelistCookie">لیست سفید کوکی </string>
+    <string name="setting_title_whitelistRemote">لیست سفید محتوای خارجی</string>
+    <string name="setting_title_javascript">جاواسکریپت</string>
+    <string name="setting_summary_javascript">        فعال سازی جاوا اسکریپت.اکثر وبسایت ها جهت کارکرد صحیح نیاز به جاوا اسکریپت دارند.اما ریسک سوءاستفاده هکر ها از آن در حملات سایبری وجود دارد.
+    </string>
+    <string name="setting_title_whitelistJS">لیست سفید جاوا اسکریپت</string>
+    <string name="setting_title_adblock">مسدودسازی تبلیغات</string>
+    <string name="setting_summary_adblock">با فعال سازی این گزینه، مانع نمایش تبلیغات آزار دهنده شوید،همچنین سرعت بارگذاری وبسایت ها را بهبود بخشید.</string>
+    <string name="setting_title_location">مکان جاری</string>
+    <string name="setting_summary_location">به وبسایت ها مجوز دسترسی به مکان جاری شما را می دهد.
+        بعضی از وبسایت ها مانند مسیریابی در نقشه نیاز به فعال بودن این گزینه دارند.
+    </string>
+    <string name="setting_title_history">تاریخچه</string>
+    <string name="setting_summary_history">ذخیره سازی سایت های بازدید شده در تاریخچه</string>
+    <string name="setting_title_autofill">داده‌‌ی فرم</string>
+    <string name="setting_summary_autofill">Enable the saving of form data (Android Nougat and below) or autofill service (Android Oreo and above).</string>
+    <!-- browser clear -->
+    <string name="data_summary">        کارت حافظه دستگاه استخراج خواهند شد.
+        در صورت حذف مرورگر از سیستم، تمامی فایل ها در مسیر
+        .Android/data/de.baumann.browser/files/browser_backup
+          نیز حذف خواهد شد،لذا نسبت به پشتیبان گیری منظم از این پوشه در جای مطمئن اقدام نمایید.
+    </string>
+    <string name="clear_title_quit">پاک سازی هنگام خروج از برنامه</string>
+    <string name="clear_summary_quit">هر موقع ازمرورگر خارج شوید تمامی داده های انتخاب شده فوق پاکسازی خواهند شد.</string>
+    <string name="clear_title_cache">پاکسازی کش</string>
+    <string name="clear_title_cookie">پاک سازی کوکی ها</string>
+    <string name="clear_title_history">پاکسازی تاریخچه</string>
+    <string name="clear_title_indexedDB">پاکسازی \"indexed databases\" و \"local webview storage\"</string>
+    <string name="clear_title_deleteDatabase">حذف دیتابیس</string>
+    <string name="clear_summary_deleteDatabase">        حذف تمامی داده ها (تاریخچه ها،لیست های سفید،صفحه آغازین،نشانک ها).
+    </string>
+    <!-- App setting -->
+    <string name="setting_title_app">تنظیمات برنامه</string>
+    <string name="setting_title_ui">رفتار ها/محیط کاربری</string>
+    <string name="setting_title_data">پشتیبان گیری</string>
+    <string name="setting_filter">فیلتر نشانک ها</string>
+    <string name="setting_title_fav">صفحه موردعلاقه</string>
+    <string name="setting_title_searchEngine">موتور جستجوی سفارشی</string>
+    <string name="setting_title_userAgent">سفارشی سازی user-agent مرورگر </string>
+    <!-- App behavior -->
+    <string name="setting_title_hideToolbar">پنهان سازی نوار ابزار</string>
+    <string name="setting_summary_hide">        هنگام پیمایش صفحه ،وبسایت تمام صفحه نمایش داده شودو با کلید برگشت به عقب از حالت تمام صفحه خارج شود.
+    </string>
+    <string name="setting_title_behavior">رفتارها</string>
+    <string name="setting_title_confirm_exit">تاییدیه خروج از مرورگر</string>
+    <string name="setting_summary_confirm_exit">درخواست تاییدیه هنگام خروج از مرورگر</string>
+    <string name="setting_title_confirm_tab_close">تاییدیه بستن زبانه</string>
+    <string name="setting_summary_confirm_tab_close">درخواست تاییدیه هنگام بستن زبانه</string>
+    <string name="setting_overView">صفحه پیشفرض</string>
+    <string name="setting_overView_onStart_title">نمایش صفحه آغازین</string>
+    <string name="setting_overView_onStart_summary">نمایش \"صفحه پیشفرض\" هنگام باز شدن برنامه</string>
+    <string name="setting_gestures">اشارات انگشت</string>
+    <string name="setting_title_reopenLastTab">بازکردن آخرین زبانه</string>
+    <string name="setting_summary_reopenLastTab">هنگام بستن آخرین زبانه،بجای خروج از مرورگر زبانه خالی جدید باز شود</string>
+    <!-- gestures -->
+    <string name="setting_title_toolbar">نوار ابزار</string>
+    <string name="setting_title_toolbar_buttons">گزینه های نوار ابزار</string>
+    <string name="setting_gesture_up">کشیدن به بالا</string>
+    <string name="setting_gesture_down">کشیدن به پایین</string>
+    <string name="setting_gesture_left">کشیدن به چپ</string>
+    <string name="setting_gesture_right">کشیدن به راست</string>
+    <string name="setting_gesture_01">هیچکدام</string>
+    <string name="setting_gesture_02">جلو رفتن در تاریخچه</string>
+    <string name="setting_gesture_03">عقب رفتن در تاریخجه</string>
+    <string name="setting_gesture_04">رفتن به بالای صفحه</string>
+    <string name="setting_gesture_05">رفتن به پایین صفحه</string>
+    <string name="setting_gesture_06">انتقال به زبانه قبلی</string>
+    <string name="setting_gesture_07">انتقال به زبانه بعدی</string>
+    <string name="setting_gesture_08">نمایش صفحه پیش فرض</string>
+    <string name="setting_gesture_09">باز کردن زبانه جدید</string>
+    <string name="setting_gesture_10">بستن زبانه</string>
+    <string name="setting_gesture_hint">         .جهت نمایش پنجره تنظیمات سریع روی دکمه منو لمس طولانی نمایید
+        جهت باز کردن فیلتر نشانک ها بر روی آیکن صفحه اصلی/نشانک ها/تاریخجه لمس طولانی نمایید.
+    </string>
+    <!-- Data -->
+    <string name="setting_title_export_bookmarks"> HTML استخراج نشانک ها به عنوان فایل </string>
+    <string name="setting_title_import_bookmarks">وارد کردن نشانک ها</string>
+    <string name="setting_title_export_appData">استخراج داده برنامه</string>
+    <string name="setting_title_import_appData">وارد کردن داده برنامه</string>
+    <string name="setting_summary_export_appData">استخراج کل دیتابیس و تنظیمات شخصی</string>
+    <string name="title_appData">داده برنامه</string>
+    <string name="hint_database">داده جاری حذف خواهد شد،انجام شود؟</string>
+    <!-- Others setting -->
+    <string name="setting_title_others">موارد دیگر</string>
+    <!-- Toast -->
+    <string name="toast_add_whitelist_successful">دامنه با موفقیت افزوده شد</string>
+    <string name="toast_copy_successful">کپی با موفقیت انجام شد</string>
+    <string name="toast_delete_successful">با موفقیت حذف شد</string>
+    <string name="toast_domain_already_exists">دامنه از قبل موجود می باشد</string>
+    <string name="toast_input_empty">فیلد خالی می باشد</string>
+    <string name="toast_invalid_domain">دامنه نامعتبر</string>
+    <string name="toast_webview_forward">خطا در بارگذاری صفحه بعدی</string>
+    <string name="toast_permission_sdCard">    مرورگر نیاز به مجوز    \"خواندن و نوشتن فایل ها در حافظه\"
+        جهت انجام اسکرین شات،بارگذاری فایل،پشتیبان گیری از داده ها دارد.
+    </string>
+    <string name="toast_restart">جهت اعمال تغییرات نیاز به راه اندازی مجدد  \"FOSS Browser\" می باشد،انجام شود؟</string>
+    <string name="toast_quit">آیا مایل به خروج از \"FOSS Browser\" هستید؟</string>
+    <string name="toast_downloadComplete">بارگذاری به اتمام رسید، صفحه مدیریت فایل ها باز شود؟</string>
+    <string name="toast_unsecured">        وبسایت مورد نظر از ارتباط نا امن (http) استفاده می کند.آیامایل به انتقال به نسخه امن (https) وبسایت هستید؟
+    </string>
+    <string name="toast_backup">این پشتیبان گیری  روی نسخه ی قبلی بازنویسی خواهد شد،در هرحال انجام شود؟</string>
+    <!-- Whitelist -->
+    <string name="whitelist_menu_clear">پاک کن</string>
+    <string name="whitelist_edit_hint">دامنه</string>
+    <string name="whitelist_add">افزودن</string>
+    <!-- Dialog help -->
+    <!-- Dialog changelog -->
+    <string name="changelog_dialog">        Your language isn\'t supported yet? You want to translate FOSS Browser? Or make improvements to existing translations? Feel free to join us on Crowdin: https://crowdin.com/project/foss-browser.&lt;br&gt;&lt;br&gt;
+
+        &lt;b&gt;On the following sites you have access to all important information about \"FOSS Browser\". Please read also the help dialog within the app.&lt;/b&gt;&lt;br&gt;&lt;br&gt;
+
+        \u25AA &lt;i&gt;Project site:&lt;/i&gt; https://github.com/scoute-dich/Browser&lt;br&gt;
+        \u25AA &lt;i&gt;Changelog:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/CHANGELOG.md&lt;br&gt;
+        \u25AA &lt;i&gt;FAQ:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/FAQs.md&lt;br&gt;
+        \u25AA &lt;i&gt;License:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/LICENSE.md&lt;br&gt;
+        \u25AA &lt;i&gt;Privacy:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/PRIVACY.md
+
+    </string>
+    <string name="menu_mobileView">نمای موبايل</string>
+    <string name="menu_desktopView">DesktopPC نماي</string>
+    <string name="menu_dayView">روز</string>
+    <string name="menu_nightView">دید شب</string>
+    <!-- License changelog -->
+</resources>

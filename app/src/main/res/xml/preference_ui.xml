@@ -39,7 +39,8 @@
         <CheckBoxPreference
             android:key="start_tabStart"
             android:defaultValue="false"
-            android:title="@string/setting_overView_onStart_title"/>
+            android:title="@string/setting_overView_onStart_title"
+            android:summary="@string/setting_overView_onStart_summary"/>
 
         <ListPreference
             android:title="@string/setting_overView"

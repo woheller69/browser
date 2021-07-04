@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App -->
+    <string name="app_name">FOSS Tarayıcı</string>
+    <string name="app_ok">Tamam</string>
+    <string name="app_cancel">İptal et</string>
+    <string name="app_done">Tamam</string>
+    <string name="app_error">Hata</string>
+    <string name="list_empty">Liste boş</string>
+    <string name="album_title_bookmarks">Yer imleri</string>
+    <string name="album_title_history">Geçmiş</string>
+    <string name="album_title_home">Ana sayfa</string>
+    <string name="album_title_tab">Açılan sekmeler</string>
+    <string name="search_hint">Ara</string>
+    <string name="color_red">Kırmızı</string>
+    <string name="color_pink">Pembe</string>
+    <string name="color_purple">Mor</string>
+    <string name="color_blue">Mavi</string>
+    <string name="color_teal">Camgöbeği</string>
+    <string name="color_green">Yeşil</string>
+    <string name="color_lime">Kireç</string>
+    <string name="color_yellow">Sarı</string>
+    <string name="color_orange">Turuncu</string>
+    <string name="color_brown">Kahverengi</string>
+    <string name="color_grey">Gri</string>
+    <!-- Menu -->
+    <string name="main_menu_tabPreview">Sekme önizlemesini aç</string>
+    <string name="main_menu_new_tab">Yeni sekme (arka plan)</string>
+    <string name="main_menu_new_tabOpen">Yeni sekme (ön plan)</string>
+    <string name="main_omnibox_input_hint">Arayın veya URL girin</string>
+    <string name="menu_open_with">Bağlantıyı aç…</string>
+    <string name="menu_quit">Çık</string>
+    <string name="menu_openFav">Sık Kullanılanı Aç</string>
+    <string name="menu_delete">Sil</string>
+    <string name="menu_edit">Düzenle</string>
+    <string name="menu_closeTab">Sekmeyi kapat</string>
+    <string name="menu_download">İndirmeleri aç</string>
+    <string name="menu_fav">Başlangıç sitesi olarak ayarla</string>
+    <string name="menu_sc">Ana ekranda kısayol</string>
+    <string name="menu_sort">Sırala …</string>
+    <string name="menu_filter">Renge göre filtrele…</string>
+    <string name="menu_share_link">Bağlantıyı paylaş</string>
+    <string name="menu_save_home">Başlangıca kaydet</string>
+    <string name="menu_save_bookmark">Yer imi olarak kaydet</string>
+    <string name="menu_save_as">Kaydet…</string>
+    <string name="menu_save_pdf">PDF olarak kaydet</string>
+    <string name="menu_shareClipboard">Panoya kopyala</string>
+    <string name="menu_other_searchSite">Sitede ara</string>
+    <string name="menu_other_info">\"Foss Browser\" hakkında</string>
+    <!-- Dialog -->
+    <string name="dialog_title_hint">Başlık:</string>
+    <string name="dialog_URL_hint">URL:</string>
+    <string name="dialog_extension_hint">Uzantı (örneğin: \".jpg\"):</string>
+    <string name="dialog_sign_in_username">Kullancı adı</string>
+    <string name="dialog_sign_in_password">Parola</string>
+    <string name="dialog_title_download">Dosya indir?</string>
+    <string name="dialog_content_resubmission">Verileriniz yeniden gönderilsin mi?</string>
+    <string name="dialog_content_ssl_error">Sitenin sertifikası güvenilir değil. Yine de devam edilsin mi?</string>
+    <string name="dialog_sortName">İsme göre sırala</string>
+    <string name="dialog_sortIcon">Simgeye göre sırala</string>
+    <string name="dialog_sortDate">Tarihe göre sırala</string>
+    <!-- Settings -->
+    <string name="setting_label">Ayarlar</string>
+    <!-- browser setting -->
+    <string name="setting_title_browser">Tarayıcı Ayarları</string>
+    <string name="setting_title_start_control">Başlangıç Denetimi</string>
+    <string name="setting_title_search_engine">Arama Motoru</string>
+    <string name="setting_summary_search_engine_google">Google</string>
+    <string name="setting_summary_search_engine_duckduckgo">DuckDuckGo</string>
+    <string name="setting_summary_search_engine_startpage">StartPage</string>
+    <string name="setting_summary_search_engine_bing">Bing</string>
+    <string name="setting_summary_search_engine_baidu">Baidu</string>
+    <string name="setting_summary_search_engine_startpage_de">StartPage (de)</string>
+    <string name="setting_summary_search_engine_searx">Searx</string>
+    <string name="setting_summary_search_engine_qwant">Qwant</string>
+    <string name="setting_summary_search_engine_ecosia">Ecosia</string>
+    <string name="setting_title_font">Yazı boyutu</string>
+    <string name="setting_title_remote">Uzaktan içerik</string>
+    <string name="setting_summary_remote">Doğrudan ziyaret ettiğiniz web sitesinde olmayan uzak içeriği etkinleştirin. Bunu devre dışı bırakmak daha güvenli, daha hızlı ve veri hacminden tasarruf sağlar. Ancak bazı içerikler artık görüntülenmeyecektir.</string>
+    <string name="setting_title_save_data">\'Veri Kaydetme\' İsteği</string>
+    <string name="setting_summary_save_data">Web sitelerine verileri kaydetmeyi tercih edeceğinizi söyleyin. Desteklenen web siteleri daha hızlı yükleyecektir.</string>
+    <!-- browser start -->
+    <string name="setting_title_images">Görüntüler</string>
+    <string name="setting_summary_images">Ağ görüntülerini etkinleştirin. Devre dışı bırakmak, mobil verileri tasarrufu ve web sitelerini daha hızlı yüklemek için yararlı olabilir.</string>
+    <string name="setting_title_cookie">Çerezler</string>
+    <string name="setting_summary_cookie_delete">Etkinleştirilirse, tüm çerezler silinir. Ayrıca güvenilir web sitelerinin çerezleri de silinir.</string>
+    <string name="setting_summary_cookie">Çerezleri etkinleştirin. Çerezler, cihazınızda depolanan küçük metin dosyalarıdır. Web siteleri bunları örneğin kullanıcı ayarlarını saklamak için kullanır (örneğin, arama ayarları). Ancak kişisel kullanıcı verilerini toplamak için de kullanılabilirler. Üçüncü taraf çerezleri (reklam için kullanıcı verilerini toplar) her zaman devre dışı bırakılır.</string>
+    <string name="setting_title_whitelistCookie">Çerez beyaz listesi</string>
+    <string name="setting_title_whitelistRemote">Uzak beyaz liste</string>
+    <string name="setting_title_javascript">JavaScript</string>
+    <string name="setting_summary_javascript">JavaScript\'i etkinleştirin. Birçok web sitesinin işlevselliği için Javascript\'e ihtiyacı vardır (menüler, resimler yükleme ve görüntüleme, …). Ancak bunlar aynı zamanda bir risktir ve saldırılar için kullanılabilir.</string>
+    <string name="setting_title_whitelistJS">JavaScript beyaz listesi</string>
+    <string name="setting_title_adblock">Reklam Engelleyici</string>
+    <string name="setting_summary_adblock">Can sıkıcı reklamları engellemek için Reklam Engelleyiciyi etkinleştirin. Siteler de etkinleştirildiğinde daha hızlı yüklenir.</string>
+    <string name="setting_title_location">Konum</string>
+    <string name="setting_summary_location">Web sitelerinin konumunuza erişmesine izin verin. Bazı web siteleri (navigasyon için Google Haritalar gibi) bunun etkinleştirilmesi gerekir.</string>
+    <string name="setting_title_history">Geçmiş</string>
+    <string name="setting_summary_history">Ziyaret edilen web sitelerinin geçmişini kaydedin.</string>
+    <string name="setting_title_autofill">Form verisi</string>
+    <string name="setting_summary_autofill">Enable the saving of form data (Android Nougat and below) or autofill service (Android Oreo and above).</string>
+    <!-- browser clear -->
+    <string name="data_summary">Tüm dosyalar SD kartınızın \"Android/data/de.baumann.browser/files/browser_backup/\" dizinine aktarılacaktır. Eğer \"FOSS Browser\"ı kaldırırsanız bu dizin SİLİNECEKTİR. Bu nedenle, kaydettiğiniz bir yerde düzenli olarak yedekleme yapın.</string>
+    <string name="clear_title_quit">Uygulama çıkışında temizle</string>
+    <string name="clear_summary_quit">\"FOSS Tarayıcısı\"ndan her çıkışta  yukarıdaki tüm kontrol edilen veriler silinecektir.</string>
+    <string name="clear_title_cache">Önbelleği Temizle</string>
+    <string name="clear_title_cookie">Çerezleri Temizle</string>
+    <string name="clear_title_history">Geçmişi Temizle</string>
+    <string name="clear_title_indexedDB">\"Dizinlenmiş veritabanları\"nı ve \"yerel web görünüm depolama\"sını temizle</string>
+    <string name="clear_title_deleteDatabase">Veritabanını sil</string>
+    <string name="clear_summary_deleteDatabase">Veritabanının tamamını (Başlangıç sayfası, yer imleri, geçmiş ve tüm beyaz listeler) silin.</string>
+    <!-- App setting -->
+    <string name="setting_title_app">Uygulama Ayarları</string>
+    <string name="setting_title_ui">Davranış/Arayüz</string>
+    <string name="setting_title_data">Yedekleme</string>
+    <string name="setting_filter">Yer imi süzgeci</string>
+    <string name="setting_title_fav">Başlangıç sitesi</string>
+    <string name="setting_title_searchEngine">Özel arama motoru</string>
+    <string name="setting_title_userAgent">Özel kullanıcı aracısı</string>
+    <!-- App behavior -->
+    <string name="setting_title_hideToolbar">Araç çubuğunu gizle</string>
+    <string name="setting_summary_hide">Web sitelerinde gezinirken tüm ekranı kullanın. Geri düğmesine basarsanız, tam ekran modundan çıkacaksınız.</string>
+    <string name="setting_title_behavior">Davranış</string>
+    <string name="setting_title_confirm_exit">Tarayıcı çıkışını onayla</string>
+    <string name="setting_summary_confirm_exit">Tarayıcıyı kapatırken onay iletişim kutusu gösterilir.</string>
+    <string name="setting_title_confirm_tab_close">Sekme kapatmayı onayla</string>
+    <string name="setting_summary_confirm_tab_close">Bir sekmeyi kapatırken onay iletişim kutusu gösterilir.</string>
+    <string name="setting_overView">Genel Bakış</string>
+    <string name="setting_overView_onStart_title">Başlangıçta göster</string>
+    <string name="setting_overView_onStart_summary">Her uygulama başlangıcında \"Genel Bakış\" açılır.</string>
+    <string name="setting_gestures">Hareketler</string>
+    <string name="setting_title_reopenLastTab">Son sekmeyi yeniden aç</string>
+    <string name="setting_summary_reopenLastTab">Tarayıcıdan çıkmak yerine son sekme kapatıldığında yeni bir sekmeyi yeniden açın.</string>
+    <!-- gestures -->
+    <string name="setting_title_toolbar">Araç çubuğu</string>
+    <string name="setting_title_toolbar_buttons">Araç Çubuğu düğmesi</string>
+    <string name="setting_gesture_up">Yukarı kaydır</string>
+    <string name="setting_gesture_down">Aşağı kaydır</string>
+    <string name="setting_gesture_left">Sola kaydır</string>
+    <string name="setting_gesture_right">Sağa kaydır</string>
+    <string name="setting_gesture_01">Hiçbir şey</string>
+    <string name="setting_gesture_02">Geçmişte ileri</string>
+    <string name="setting_gesture_03">Geçmişte geri</string>
+    <string name="setting_gesture_04">Yukarı kaydır</string>
+    <string name="setting_gesture_05">Aşağı kaydır</string>
+    <string name="setting_gesture_06">Sol sekmeye geç</string>
+    <string name="setting_gesture_07">Sağ sekmeye geç</string>
+    <string name="setting_gesture_08">Genel bakışı göster</string>
+    <string name="setting_gesture_09">Yeni sekme aç</string>
+    <string name="setting_gesture_10">Sekmeyi kapat</string>
+    <string name="setting_gesture_hint">Hızlı ayarlar iletişim kutusunu açmak için menü düğmesine uzun tıklayın. Yer imi filtresini açmak için ana sayfa/yer imi/geçmiş simgesine uzun basın.</string>
+    <!-- Data -->
+    <string name="setting_title_export_bookmarks">Yer imlerini HTML olarak dışa aktar</string>
+    <string name="setting_title_import_bookmarks">Yer işaretlerini içe aktar</string>
+    <string name="setting_title_export_appData">Uygulama verilerini dışa aktar</string>
+    <string name="setting_title_import_appData">Uygulama verilerini içe aktar</string>
+    <string name="setting_summary_export_appData">Tüm veritabanını ve kişisel ayarlarınızı dışa aktarın.</string>
+    <string name="title_appData">Uygulama verileri</string>
+    <string name="hint_database">Bu, mevcut verileri siler. Devam edilsin mi?</string>
+    <!-- Others setting -->
+    <string name="setting_title_others">Diğer</string>
+    <!-- Toast -->
+    <string name="toast_add_whitelist_successful">Başarıyla etki alanı eklendi</string>
+    <string name="toast_copy_successful">Başarıyla kopyalandı</string>
+    <string name="toast_delete_successful">Başarıyla silindi</string>
+    <string name="toast_domain_already_exists">Etki alanı zaten mevcut</string>
+    <string name="toast_input_empty">Hiçbir şey girmediniz</string>
+    <string name="toast_invalid_domain">Geçersiz etki alanı</string>
+    <string name="toast_webview_forward">Bir sonraki site yüklenemiyor</string>
+    <string name="toast_permission_sdCard">\"FOSS Tarayıcı\" nın \"deponuzu okuma ve yazma\" iznine ihtiyacı var. Bu, dosyaları indirmek, ekran görüntüleri almak ve verilerinizin yedeğini almak için gereklidir.</string>
+    <string name="toast_restart">Değişiklikleri uygulamak için \"FOSS Tarayıcı\"sını yeniden başlatmanız gerekir. Şimdi kapatılsın mı?</string>
+    <string name="toast_quit">\"FOSS Tarayıcı\"sından çıkmak istiyor musunuz?</string>
+    <string name="toast_downloadComplete">İndirme tamamlandı. Dosya yöneticisi açılsın mı?</string>
+    <string name="toast_unsecured">Web sitesi güvenli olmayan bir bağlantı (\"http\") kullanıyor. Güvenli bir bağlantı (\"https\") denensin mi?</string>
+    <string name="toast_backup">Veri yedeklensin mi? Bu eski yedeklemenin üzerine yazacaktır.</string>
+    <!-- Whitelist -->
+    <string name="whitelist_menu_clear">Temzile</string>
+    <string name="whitelist_edit_hint">Etki alanı</string>
+    <string name="whitelist_add">Ekle</string>
+    <!-- Dialog help -->
+    <!-- Dialog changelog -->
+    <string name="changelog_dialog">        Diliniz henüz desteklenmiyor mu? FOSS tarayıcısını dilinize çevirmek ister misiniz? Veya mevcut çevirilerde iyileştirmeler yapmak ister misiniz? Crowdin\'de bize katılmaktan çekinmeyin: https://crowdin.com/project/foss-browser.&lt;br&gt;&lt;br&gt;
+
+        &lt;b&gt;Aşağıdaki sitelerden \"FOSS tarayıcısı\" ile ilgili tüm önemli bilgilere erişebilirsiniz. Lütfen uygulama içindeki yardım iletişim kutusunu da okuyun.&lt;/b&gt;&lt;br&gt;&lt;br&gt;
+
+        \u25AA &lt;i&gt;Proje site:&lt;/i&gt; https://github.com/scoute-dich/Browser&lt;br&gt;
+        \u25AA &lt;i&gt;Değişiklikler:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/CHANGELOG.md&lt;br&gt;
+        \u25AA &lt;i&gt;SSS:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/FAQs.md&lt;br&gt;
+        \u25AA &lt;i&gt;Lisans:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/LICENSE.md&lt;br&gt;
+        \u25AA &lt;i&gt;Gizlilik:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/PRIVACY.md
+
+    </string>
+    <string name="menu_mobileView">Mobil görünümü</string>
+    <string name="menu_desktopView">Masaüstü görünümü</string>
+    <string name="menu_dayView">Gün görünümü</string>
+    <string name="menu_nightView">gece görüşü</string>
+    <!-- License changelog -->
+</resources>

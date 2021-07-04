@@ -76,9 +76,9 @@
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_title_font">Schriftgröße</string>
     <string name="setting_title_remote">Entfernte Inhalte</string>
-    <string name="setting_title_dom">DOM Storage</string>
-    <string name="setting_title_dom_whitelist">DOM Whitelist</string>
-    <string name="setting_summary_dom">DOM Storage allows the application to store page elements that could include user sensitive information. Disabling this prevents local storage from being used.</string>
+    <string name="setting_title_dom">DOM-Speicher</string>
+    <string name="setting_title_dom_whitelist">DOM-Ausnahmen</string>
+    <string name="setting_summary_dom">DOM-Speicher erlaubt es der Anwendung, Seitenelemente zu speichern, die benutzersensible Informationen enthalten könnten. Deaktivieren dieses Deaktivieren verhindert die Verwendung des lokalen Speichers.</string>
     <string name="setting_title_save_data">\"Daten sparen\" verlangen</string>
     <!-- browser start -->
     <string name="setting_title_images">Bilder</string>
@@ -103,7 +103,7 @@
     <string name="clear_title_cache">Cache löschen</string>
     <string name="clear_title_cookie">Cookies löschen</string>
     <string name="clear_title_history">Verlauf löschen</string>
-    <string name="localData">Clear on device stored data</string>
+    <string name="localData">Auf Gerät gespeicherte Daten löschen</string>
     <string name="clear_title_deleteDatabase">Datenbank löschen</string>
     <string name="clear_summary_deleteDatabase">Die gesamte Datenbank löschen (Startseite, Lesezeichen, Verlauf und alle Ausnahmen).</string>
     <!-- App setting -->
@@ -115,7 +115,7 @@
     <string name="setting_title_searchEngine">Nutzerdefinierte Suchmaschine</string>
     <string name="setting_title_userAgent">Eigener Useragent</string>
     <!-- App behavior -->
-    <string name="setting_title_hideToolbar">Hide toolbar</string>
+    <string name="setting_title_hideToolbar">Toolbar verstecken</string>
     <string name="setting_title_behavior">Verhalten</string>
     <string name="setting_title_confirm_exit">Verlassen des Browsers bestätigen</string>
     <string name="setting_title_confirm_tab_close">Schließen des Tabs bestätigen</string>

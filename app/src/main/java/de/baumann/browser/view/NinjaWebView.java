@@ -5,7 +5,6 @@ import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Build;
-import android.os.Message;
 
 import androidx.preference.PreferenceManager;
 
@@ -156,7 +155,7 @@ public class NinjaWebView extends WebView implements AlbumController {
             // TODO Auto-generated catch block
             //do not change setting if staying within same domain
             setJavaScript(javaHosts.isWhite(url) || sp.getBoolean("sp_javascript", true));
-            setRemoteContent(remoteHosts.isWhite(url) || sp.getBoolean("sp_remote", true));
+            setDomStorage(remoteHosts.isWhite(url) || sp.getBoolean("sp_remote", true));
             e.printStackTrace();
         }
 
@@ -164,7 +163,7 @@ public class NinjaWebView extends WebView implements AlbumController {
             if (!oldDomain.equals(domain)){
                 //do not change setting if staying within same domain
                 setJavaScript(javaHosts.isWhite(url) || sp.getBoolean("sp_javascript", true));
-                setRemoteContent(remoteHosts.isWhite(url) || sp.getBoolean("sp_remote", true));
+                setDomStorage(remoteHosts.isWhite(url) || sp.getBoolean("sp_remote", true));
             }
         }
 
@@ -202,7 +201,7 @@ public class NinjaWebView extends WebView implements AlbumController {
         webSettings.setJavaScriptEnabled(value);
     }
 
-    public void setRemoteContent(boolean value){
+    public void setDomStorage(boolean value){
         WebSettings webSettings = this.getSettings();
         webSettings.setDomStorageEnabled(value);
     }

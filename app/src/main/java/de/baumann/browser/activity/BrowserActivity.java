@@ -443,7 +443,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     if (time>0 && time <=123) { //this is a bookmark: start page has 0 and history has time value, much higher
                         if (((time&16) ==16) != ninjaWebView.isDesktopMode()) ninjaWebView.toggleDesktopMode(false);
                         ninjaWebView.setJavaScript(!((time&32) ==32));
-                        ninjaWebView.setRemoteContent(!((time&64) ==64));
+                        ninjaWebView.setDomStorage(!((time&64) ==64));
                         ninjaWebView.setOldDomain(url);
                         break;
                     }
@@ -777,7 +777,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
                     if (((list.get(position).getTime()&16) ==16) != ninjaWebView.isDesktopMode()) ninjaWebView.toggleDesktopMode(false);
                     ninjaWebView.setJavaScript(!((list.get(position).getTime()&32) ==32));
-                    ninjaWebView.setRemoteContent(!((list.get(position).getTime()&64) ==64));
+                    ninjaWebView.setDomStorage(!((list.get(position).getTime()&64) ==64));
                     ninjaWebView.setOldDomain(list.get(position).getURL());
 
                     ninjaWebView.loadUrl(list.get(position).getURL());
@@ -1005,14 +1005,14 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         if (ninjaWebView.getSettings().getDomStorageEnabled()) {
             chip_dom_Tab.setChecked(true);
             chip_dom_Tab.setOnClickListener(view -> {
-                ninjaWebView.setRemoteContent(false);
+                ninjaWebView.setDomStorage(false);
                 ninjaWebView.reload();
                 dialog.cancel();
             });
         } else {
             chip_dom_Tab.setChecked(false);
             chip_dom_Tab.setOnClickListener(view -> {
-                ninjaWebView.setRemoteContent(true);
+                ninjaWebView.setDomStorage(true);
                 ninjaWebView.reload();
                 dialog.cancel();
             });
@@ -1982,7 +1982,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             int counter = sp.getInt("counter", 0);
             counter = counter + 1;
             sp.edit().putInt("counter", counter).apply();
-            if (action.addGridItem(new Record(title, url, 0, counter))) {
+            if (action.addStartSite(new Record(title, url, 0, counter))) {
                 NinjaToast.show(this, R.string.app_done);
             } else {
                 NinjaToast.show(this, R.string.app_error);

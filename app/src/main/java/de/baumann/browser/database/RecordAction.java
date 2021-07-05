@@ -32,7 +32,7 @@ public class RecordAction {
 
     //StartSite
 
-    public boolean addGridItem(Record record) {
+    public boolean addStartSite(Record record) {
         if (record == null
                 || record.getTitle() == null
                 || record.getTitle().trim().isEmpty()

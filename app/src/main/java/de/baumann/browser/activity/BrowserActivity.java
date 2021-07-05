@@ -50,6 +50,7 @@ import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.text.method.KeyListener;
 import android.util.Log;
+import android.view.ContextMenu;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
@@ -63,6 +64,7 @@ import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.webkit.CookieManager;
 import android.webkit.ValueCallback;
+import android.webkit.WebBackForwardList;
 import android.webkit.WebChromeClient;
 import android.webkit.WebStorage;
 import android.webkit.WebView;
@@ -647,7 +649,13 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 break;
             case "03":
                 if (ninjaWebView.canGoBack()) {
-                    ninjaWebView.goBack();
+
+                    WebBackForwardList mWebBackForwardList = ninjaWebView.copyBackForwardList();
+                    String historyUrl = mWebBackForwardList.getItemAtIndex(mWebBackForwardList.getCurrentIndex()-2).getUrl();
+
+
+                    ninjaWebView.loadUrl(historyUrl);
+                    //ninjaWebView.goBack();
                 } else {
                     removeAlbum(currentAlbumController);
                 }
@@ -1174,6 +1182,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         ninjaWebView = new NinjaWebView(context);
         ninjaWebView.setBrowserController(this);
         ninjaWebView.setAlbumTitle(title);
+        activity.registerForContextMenu(ninjaWebView);
+
         ninjaWebView.setOnScrollChangeListener((scrollY, oldScrollY) -> {
             if (!searchOnSite) {
                 if (omniBox_text.hasFocus()) {
@@ -1523,11 +1533,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     }
 
     @Override
-    public void onLongPress(final String url) {
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo){
+        super.onCreateContextMenu(menu, v, menuInfo);
         WebView.HitTestResult result = ninjaWebView.getHitTestResult();
-        if (url != null) {
-            showContextMenuLink(url.replace("https://", "").replace("http://", "").replace("www.", ""), url);
-        } else if (result.getExtra() != null) {
+        if (result.getExtra() != null) {
             showContextMenuLink(result.getExtra().replace("https://", "").replace("http://", "").replace("www.", ""), result.getExtra());
         }
     }

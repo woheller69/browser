@@ -64,6 +64,7 @@ import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.webkit.CookieManager;
 import android.webkit.ValueCallback;
+import android.webkit.WebBackForwardList;
 import android.webkit.WebChromeClient;
 import android.webkit.WebStorage;
 import android.webkit.WebView;
@@ -648,7 +649,13 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 break;
             case "03":
                 if (ninjaWebView.canGoBack()) {
-                    ninjaWebView.goBack();
+
+                    WebBackForwardList mWebBackForwardList = ninjaWebView.copyBackForwardList();
+                    String historyUrl = mWebBackForwardList.getItemAtIndex(mWebBackForwardList.getCurrentIndex()-2).getUrl();
+
+
+                    ninjaWebView.loadUrl(historyUrl);
+                    //ninjaWebView.goBack();
                 } else {
                     removeAlbum(currentAlbumController);
                 }

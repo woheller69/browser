@@ -1191,13 +1191,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     }
                 }
             }
-            if (scrollY==0) {ninjaWebView.setOnTouchListener((new SwipeTouchListener(context) {
-                    public void onSwipeBottom() {
-                        if (ninjaWebView.getScrollY() == 0) ninjaWebView.reload();
-                    }
-                }));} else {
-                ninjaWebView.setOnTouchListener(null);
-            }
         });
 
         if (!url.isEmpty()) {

@@ -65,8 +65,6 @@ public class NinjaWebView extends WebView implements AlbumController {
     private NinjaWebViewClient webViewClient;
     private NinjaWebChromeClient webChromeClient;
     private NinjaDownloadListener downloadListener;
-    private NinjaClickHandler clickHandler;
-    private GestureDetector gestureDetector;
 
     private Javascript javaHosts;
     private Remote remoteHosts;
@@ -104,8 +102,6 @@ public class NinjaWebView extends WebView implements AlbumController {
         this.webViewClient = new NinjaWebViewClient(this);
         this.webChromeClient = new NinjaWebChromeClient(this);
         this.downloadListener = new NinjaDownloadListener(this.context);
-        this.clickHandler = new NinjaClickHandler(this);
-        this.gestureDetector = new GestureDetector(context, new NinjaGestureListener(this));
 
         initWebView();
         initAlbum();
@@ -117,13 +113,8 @@ public class NinjaWebView extends WebView implements AlbumController {
         setWebViewClient(webViewClient);
         setWebChromeClient(webChromeClient);
         setDownloadListener(downloadListener);
-        setOnTouchListener((view, motionEvent) -> {
-            gestureDetector.onTouchEvent(motionEvent);
-            return false;
-        });
     }
 
-    @SuppressWarnings("deprecation")
     @SuppressLint("SetJavaScriptEnabled")
     @TargetApi(Build.VERSION_CODES.O)
     public synchronized void initPreferences(String url) {
@@ -224,9 +215,6 @@ public class NinjaWebView extends WebView implements AlbumController {
     public synchronized HashMap<String, String> getRequestHeaders() {
         HashMap<String, String> requestHeaders = new HashMap<>();
         requestHeaders.put("DNT", "1");
-
-        //  Server-side detection for GlobalPrivacyControl
-        requestHeaders.put("Sec-GPC","1");
         if (sp.getBoolean("sp_savedata", false)) {
             requestHeaders.put("Save-Data", "on");
         }
@@ -287,12 +275,6 @@ public class NinjaWebView extends WebView implements AlbumController {
 
     public boolean isLoadFinish() {
         return getProgress() >= BrowserUnit.PROGRESS_MAX;
-    }
-
-    public void onLongPress() {
-        Message click = clickHandler.obtainMessage();
-        click.setTarget(clickHandler);
-        requestFocusNodeHref(click);
     }
 
     public boolean isDesktopMode() {

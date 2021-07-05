@@ -224,6 +224,9 @@ public class NinjaWebView extends WebView implements AlbumController {
     public synchronized HashMap<String, String> getRequestHeaders() {
         HashMap<String, String> requestHeaders = new HashMap<>();
         requestHeaders.put("DNT", "1");
+
+        //  Server-side detection for GlobalPrivacyControl
+        requestHeaders.put("Sec-GPC","1");
         if (sp.getBoolean("sp_savedata", false)) {
             requestHeaders.put("Save-Data", "on");
         }

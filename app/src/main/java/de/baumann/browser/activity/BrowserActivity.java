@@ -27,6 +27,10 @@ import androidx.appcompat.widget.PopupMenu;
 import androidx.constraintlayout.solver.state.State;
 import androidx.preference.PreferenceManager;
 
+import android.os.Handler;
+import android.os.HandlerThread;
+import android.os.Looper;
+import android.os.Message;
 import android.print.PrintAttributes;
 import android.print.PrintDocumentAdapter;
 import android.print.PrintManager;
@@ -69,6 +73,7 @@ import android.webkit.WebBackForwardList;
 import android.webkit.WebChromeClient;
 import android.webkit.WebStorage;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.FrameLayout;
@@ -79,6 +84,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.VideoView;
 
 import java.util.LinkedList;
@@ -163,7 +169,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     private boolean filter;
     private long filterBy;
 
-    private int originalOrientation;
     private boolean searchOnSite;
     private boolean keyboard;
 
@@ -172,6 +177,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
     private static final int INPUT_FILE_REQUEST_CODE = 1;
     private ValueCallback<Uri[]> mFilePathCallback;
+
+    private String mURL;
 
     // Classes
 
@@ -1383,8 +1390,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         }
 
         customView = view;
-        originalOrientation = getRequestedOrientation();
-
         fullscreenHolder = new FrameLayout(context);
         fullscreenHolder.addView(
                 customView,
@@ -1412,7 +1417,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 videoView.setOnCompletionListener(new VideoCompletionListener());
             }
         }
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
     }
 
     @Override
@@ -1431,7 +1435,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             videoView.setOnCompletionListener(null);
             videoView = null;
         }
-        setRequestedOrientation(originalOrientation);
         contentFrame.requestFocus();
     }
 
@@ -1447,7 +1450,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         if (type == SRC_ANCHOR_TYPE) {
             menu_icon.setImageResource(R.drawable.icon_link);
-        } else if (type == SRC_IMAGE_ANCHOR_TYPE) {
+        } else if (type == IMAGE_TYPE) {
             menu_icon.setImageResource(R.drawable.icon_image);
         } else {
             menu_icon.setImageResource(R.drawable.icon_unknown);
@@ -1479,33 +1482,28 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         menu_grid.setAdapter(gridAdapter);
         gridAdapter.notifyDataSetChanged();
         menu_grid.setOnItemClickListener((parent, view, position, id) -> {
-
+            dialog.cancel();
             switch (position) {
                 case 0:
                     addAlbum(getString(R.string.app_name), url, true);
-                    dialog.cancel();
                     break;
                 case 1:
                     addAlbum(getString(R.string.app_name), url, false);
-                    dialog.cancel();
                     break;
                 case 2:
                     shareLink("", url);
-                    dialog.cancel();
                     break;
                 case 3:
                     Intent intent = new Intent(Intent.ACTION_VIEW);
                     intent.setData(Uri.parse(url));
                     Intent chooser = Intent.createChooser(intent, getString(R.string.menu_open_with));
                     startActivity(chooser);
-                    dialog.cancel();
                     break;
                 case 4:
                     HelperUnit.saveAs(dialog, activity, url);
                     break;
                 case 5:
                     save_atHome(title, url);
-                    dialog.cancel();
                     break;
             }
         });
@@ -1546,6 +1544,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         action.close();
     }
 
+
+
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo){
         super.onCreateContextMenu(menu, v, menuInfo);
@@ -1553,8 +1553,18 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         if (result.getExtra() != null) {
             if (result.getType() == SRC_ANCHOR_TYPE) {
                 showContextMenuLink(HelperUnit.domain(result.getExtra()), result.getExtra(), SRC_ANCHOR_TYPE);
-            } else if (result.getType() == SRC_IMAGE_ANCHOR_TYPE || result.getType() == IMAGE_TYPE) {
-                showContextMenuLink(HelperUnit.domain(result.getExtra()), result.getExtra(), SRC_IMAGE_ANCHOR_TYPE);
+            } else if (result.getType() == SRC_IMAGE_ANCHOR_TYPE) {
+                // Create a background thread that has a Looper
+                HandlerThread handlerThread = new HandlerThread("HandlerThread");
+                handlerThread.start();
+                // Create a handler to execute tasks in the background thread.
+                Handler backgroundHandler = new Handler(handlerThread.getLooper());
+                Message msg = backgroundHandler.obtainMessage();
+                ninjaWebView.requestFocusNodeHref(msg);
+                String url = (String) msg.getData().get("url");
+                showContextMenuLink(HelperUnit.domain(url), url, SRC_ANCHOR_TYPE);
+            }  else if (result.getType() == IMAGE_TYPE) {
+                showContextMenuLink(HelperUnit.domain(result.getExtra()), result.getExtra(), IMAGE_TYPE);
             } else {
                 showContextMenuLink(HelperUnit.domain(result.getExtra()), result.getExtra(), 0);
             }
@@ -1608,8 +1618,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             overflow_title.setText(title);
         }
 
-        ImageButton overflow_bookmark = dialogView.findViewById(R.id.overflow_settings);
-        overflow_bookmark.setOnClickListener(v -> {
+        ImageButton overflow_settings = dialogView.findViewById(R.id.overflow_settings);
+        overflow_settings.setOnClickListener(v -> {
             dialog_overflow.cancel();
             Intent settings = new Intent(BrowserActivity.this, Settings_Activity.class);
             startActivity(settings);
@@ -1652,17 +1662,14 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         gridAdapter_tab.notifyDataSetChanged();
 
         menu_grid_tab.setOnItemClickListener((parent, view14, position, id) -> {
+            dialog_overflow.cancel();
             if (position == 1) {
                 showOverview();
-                dialog_overflow.cancel();
             } else if (position == 2) {
                 addAlbum(getString(R.string.app_name), Objects.requireNonNull(sp.getString("favoriteURL", "https://github.com/scoute-dich/browser")), true);
-                dialog_overflow.cancel();
             } else if (position == 0) {
                 ninjaWebView.loadUrl(Objects.requireNonNull(sp.getString("favoriteURL", "https://github.com/scoute-dich/browser")));
-                dialog_overflow.cancel();
             } else if (position == 3) {
-                dialog_overflow.cancel();
                 removeAlbum(currentAlbumController);
             } else if (position == 4) {
                 doubleTapsQuit();
@@ -1690,23 +1697,19 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         gridAdapter_save.notifyDataSetChanged();
 
         menu_grid_save.setOnItemClickListener((parent, view13, position, id) -> {
+            dialog_overflow.cancel();
             RecordAction action = new RecordAction(context);
             if (position == 0) {
-                dialog_overflow.cancel();
                 sp.edit().putString("favoriteURL", url).apply();
                 NinjaToast.show(this, R.string.app_done);
             } else if (position == 1) {
-                dialog_overflow.cancel();
                 save_atHome(title, url);
             } else if (position == 2) {
-                dialog_overflow.cancel();
                 saveBookmark();
                 action.close();
             } else if (position == 3) {
-                dialog_overflow.cancel();
                 printPDF();
             } else if (position == 4) {
-                dialog_overflow.cancel();
                 HelperUnit.createShortcut(context, ninjaWebView.getTitle(), ninjaWebView.getUrl());
             } else if (position == 5) {
                 HelperUnit.saveAs(dialog_overflow, activity, url);
@@ -1772,7 +1775,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             if (position == 0) {
                 searchOnSite();
             } else if (position == 1) {
-                dialog_overflow.cancel();
                 ninjaWebView.toggleDesktopMode(true);
             } else if (position == 2) {
                 if (sp.getBoolean("sp_invert", false)) {
@@ -1781,7 +1783,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     sp.edit().putBoolean("sp_invert", true).apply();
                 }
                 HelperUnit.initRendering(ninjaWebView, context);
-                dialog_overflow.cancel();
             } else if (position == 3) {
                 startActivity(new Intent(DownloadManager.ACTION_VIEW_DOWNLOADS));
             } else if (position == 4) {
@@ -1873,20 +1874,16 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         menu_grid.setAdapter(gridAdapter);
         gridAdapter.notifyDataSetChanged();
         menu_grid.setOnItemClickListener((parent, view, position, id) -> {
-
+            dialog.cancel();
             MaterialAlertDialogBuilder builderSubMenu;
             AlertDialog dialogSubMenu;
-
             switch (position) {
-
                 case 0:
                     addAlbum(getString(R.string.app_name), url, true);
                     hideOverview();
-                    dialog.cancel();
                     break;
                 case 1:
                     addAlbum(getString(R.string.app_name), url, false);
-                    dialog.cancel();
                     break;
                 case 2:
                     builderSubMenu = new MaterialAlertDialogBuilder(context);
@@ -1906,7 +1903,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                         recordList.remove(location);
                         updateAutoComplete();
                         adapterRecord.notifyDataSetChanged();
-                        dialog.cancel();
                     });
                     builderSubMenu.setNegativeButton(R.string.app_cancel, (dialog2, whichButton) -> builderSubMenu.setCancelable(true));
                     dialogSubMenu = builderSubMenu.create();
@@ -1982,7 +1978,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                         action.close();
                         updateAutoComplete();
                         bottom_navigation.setSelectedItemId(R.id.page_2);
-                        dialog.cancel();
                     });
                     builderSubMenu.setNegativeButton(R.string.app_cancel, (dialog3, whichButton) -> builderSubMenu.setCancelable(true));
                     dialogSubMenu = builderSubMenu.create();

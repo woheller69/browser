@@ -302,7 +302,7 @@
                     android:layout_alignParentStart="true"
                     android:layout_toStartOf="@+id/chip_dom_Tab"
                     android:gravity="center_vertical"
-                    android:text="@string/setting_title_remote"
+                    android:text="@string/setting_title_dom"
                     android:textAppearance="?attr/textAppearanceBody1"
                     android:ellipsize="end"
                     android:includeFontPadding="false"

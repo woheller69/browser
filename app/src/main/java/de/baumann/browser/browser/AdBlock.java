@@ -171,13 +171,13 @@ public class AdBlock {
 
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
         if (sp.getBoolean("sp_savedata", false)){
-            time.add(Calendar.DAY_OF_YEAR,-1);
-        }else{
             time.add(Calendar.DAY_OF_YEAR,-7);
+        }else{
+            time.add(Calendar.DAY_OF_YEAR,-1);
         }
 
         Date lastModified = new Date(file.lastModified());
-        if(lastModified.before(time.getTime())) {
+        if (lastModified.before(time.getTime())) {
             //update if file is older than a day
             downloadHosts(context);
         }

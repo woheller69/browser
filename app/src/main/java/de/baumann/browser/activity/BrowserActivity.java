@@ -24,6 +24,7 @@ import android.os.Bundle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.PopupMenu;
+import androidx.constraintlayout.solver.state.State;
 import androidx.preference.PreferenceManager;
 
 import android.print.PrintAttributes;
@@ -109,6 +110,9 @@ import de.baumann.browser.view.RecordAdapter;
 import de.baumann.browser.view.SwipeTouchListener;
 
 import static android.content.ContentValues.TAG;
+import static android.webkit.WebView.HitTestResult.IMAGE_TYPE;
+import static android.webkit.WebView.HitTestResult.SRC_ANCHOR_TYPE;
+import static android.webkit.WebView.HitTestResult.SRC_IMAGE_ANCHOR_TYPE;
 
 public class BrowserActivity extends AppCompatActivity implements BrowserController {
 
@@ -1431,13 +1435,23 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         contentFrame.requestFocus();
     }
 
-    private void showContextMenuLink (final String title, final String url) {
+    private void showContextMenuLink (final String title, final String url, int type) {
 
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
         View dialogView = View.inflate(context, R.layout.dialog_menu, null);
 
         TextView menuTitle = dialogView.findViewById(R.id.menuTitle);
         menuTitle.setText(url);
+        ImageButton menu_icon = dialogView.findViewById(R.id.menu_icon);
+        menu_icon.setVisibility(View.VISIBLE);
+
+        if (type == SRC_ANCHOR_TYPE) {
+            menu_icon.setImageResource(R.drawable.icon_link);
+        } else if (type == SRC_IMAGE_ANCHOR_TYPE) {
+            menu_icon.setImageResource(R.drawable.icon_image);
+        } else {
+            menu_icon.setImageResource(R.drawable.icon_unknown);
+        }
 
         builder.setView(dialogView);
         AlertDialog dialog = builder.create();
@@ -1537,7 +1551,13 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         super.onCreateContextMenu(menu, v, menuInfo);
         WebView.HitTestResult result = ninjaWebView.getHitTestResult();
         if (result.getExtra() != null) {
-            showContextMenuLink(result.getExtra().replace("https://", "").replace("http://", "").replace("www.", ""), result.getExtra());
+            if (result.getType() == SRC_ANCHOR_TYPE) {
+                showContextMenuLink(HelperUnit.domain(result.getExtra()), result.getExtra(), SRC_ANCHOR_TYPE);
+            } else if (result.getType() == SRC_IMAGE_ANCHOR_TYPE || result.getType() == IMAGE_TYPE) {
+                showContextMenuLink(HelperUnit.domain(result.getExtra()), result.getExtra(), SRC_IMAGE_ANCHOR_TYPE);
+            } else {
+                showContextMenuLink(HelperUnit.domain(result.getExtra()), result.getExtra(), 0);
+            }
         }
     }
 

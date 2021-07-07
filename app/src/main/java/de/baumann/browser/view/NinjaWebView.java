@@ -122,15 +122,12 @@ public class NinjaWebView extends WebView implements AlbumController {
         sp = PreferenceManager.getDefaultSharedPreferences(context);
         WebSettings webSettings = getSettings();
 
-        String userAgent = sp.getString("userAgent", "");
+        String userAgent = getUserAgent(desktopMode);
         if (android.os.Build.VERSION.SDK_INT >= 26) {
             webSettings.setSafeBrowsingEnabled(true);
         }
-        assert userAgent != null;
-        if (!userAgent.isEmpty()) {
-            webSettings.setUserAgentString(userAgent);
-        }
 
+        webSettings.setUserAgentString(userAgent);
         webSettings.setSupportZoom(true);
         webSettings.setBuiltInZoomControls(true);
         webSettings.setDisplayZoomControls(false);
@@ -283,22 +280,37 @@ public class NinjaWebView extends WebView implements AlbumController {
         return desktopMode;
     }
 
-    public void toggleDesktopMode(boolean reload) {
+    public String getUserAgent(boolean desktopMode){
+        String mobilePrefix = "Mozilla/5.0 (Linux; Android "+ Build.VERSION.RELEASE + ")";
+        String desktopPrefix = "Mozilla/5.0 (X11; Linux "+ System.getProperty("os.arch") +")";
 
-        desktopMode=!desktopMode;
-        String newUserAgent = getSettings().getUserAgentString();
+        String newUserAgent=WebSettings.getDefaultUserAgent(context);
+        String prefix = newUserAgent.substring(0, newUserAgent.indexOf(")") + 1);
+
         if (desktopMode) {
             try {
-                String ua = getSettings().getUserAgentString();
-                String androidOSString = getSettings().getUserAgentString().substring(ua.indexOf("("), ua.indexOf(")") + 1);
-                newUserAgent = getSettings().getUserAgentString().replace(androidOSString, "(X11; Linux x86_64)");
+                newUserAgent=newUserAgent.replace(prefix,desktopPrefix);
             } catch (Exception e) {
                 e.printStackTrace();
             }
         } else {
-            sp = PreferenceManager.getDefaultSharedPreferences(context);
-            newUserAgent = sp.getString("userAgent", "");
+            try {
+                newUserAgent=newUserAgent.replace(prefix,mobilePrefix);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
+
+        //Override UserAgent if own UserAgent is defined
+        String ownUserAgent = sp.getString("userAgent", "");
+        if (!ownUserAgent.equals("")) newUserAgent=ownUserAgent;
+        return newUserAgent;
+    }
+
+    public void toggleDesktopMode(boolean reload) {
+
+        desktopMode=!desktopMode;
+        String newUserAgent=getUserAgent(desktopMode);
         getSettings().setUserAgentString(newUserAgent);
         getSettings().setUseWideViewPort(desktopMode);
         getSettings().setSupportZoom(desktopMode);

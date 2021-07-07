@@ -127,7 +127,6 @@ public class NinjaWebViewClient extends WebViewClient {
         String url = uri.toString();
 
         if (url.startsWith("http")) {
-            ninjaWebView.getSettings();
             ninjaWebView.initPreferences(url);
             ninjaWebView.loadUrl(url, ninjaWebView.getRequestHeaders());
             return true;

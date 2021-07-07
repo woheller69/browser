@@ -3,8 +3,10 @@
 - new: edit bookmark-url (thanks to @woheller69)
 - new: Reload on swipeDown when at top of webpage (thanks to @woheller69)
 - new: Added GlobalPrivacyControl (thanks to @woheller69)
+- new: Remove device info from useragent, use prefixes like DuckDuckGo browser (thanks to @woheller69)
 - fix: sorting of tabs in overview
 - fix: DOM-storage description in settings
+- fix: apply settings on back/forward navigation
 
 
 ### v 8.0

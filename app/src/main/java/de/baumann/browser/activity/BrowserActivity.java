@@ -393,6 +393,9 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     searchPanel.setVisibility(View.GONE);
                     omniBox.setVisibility(View.VISIBLE);
                 } else if (ninjaWebView.canGoBack()) {
+                    WebBackForwardList mWebBackForwardList = ninjaWebView.copyBackForwardList();
+                    String historyUrl = mWebBackForwardList.getItemAtIndex(mWebBackForwardList.getCurrentIndex()-1).getUrl();
+                    ninjaWebView.initPreferences(historyUrl);
                     ninjaWebView.goBack();
                 } else {
                     removeAlbum(currentAlbumController);
@@ -653,6 +656,9 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 break;
             case "02":
                 if (ninjaWebView.canGoForward()) {
+                    WebBackForwardList mWebBackForwardList = ninjaWebView.copyBackForwardList();
+                    String historyUrl = mWebBackForwardList.getItemAtIndex(mWebBackForwardList.getCurrentIndex()+1).getUrl();
+                    ninjaWebView.initPreferences(historyUrl);
                     ninjaWebView.goForward();
                 } else {
                     NinjaToast.show(this, R.string.toast_webview_forward);
@@ -660,13 +666,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 break;
             case "03":
                 if (ninjaWebView.canGoBack()) {
-
                     WebBackForwardList mWebBackForwardList = ninjaWebView.copyBackForwardList();
-                    String historyUrl = mWebBackForwardList.getItemAtIndex(mWebBackForwardList.getCurrentIndex()-2).getUrl();
-
-
-                    ninjaWebView.loadUrl(historyUrl);
-                    //ninjaWebView.goBack();
+                    String historyUrl = mWebBackForwardList.getItemAtIndex(mWebBackForwardList.getCurrentIndex()-1).getUrl();
+                    ninjaWebView.initPreferences(historyUrl);
+                    ninjaWebView.goBack();
                 } else {
                     removeAlbum(currentAlbumController);
                 }
@@ -678,7 +681,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 ninjaWebView.pageDown(true);
                 break;
             case "06":
-                //
                 // currentAlbumController = nextAlbumController(false);
                 showAlbum(nextAlbumController(false));
                 break;

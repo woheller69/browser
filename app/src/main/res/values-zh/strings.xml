@@ -91,21 +91,21 @@
     <string name="setting_summary_javascript">启用 JavaScript。许多网站的功能需要 JavaScript (菜单，加载和显示图像， …)。 但它们也有被用于发动攻击的危险。</string>
     <string name="setting_title_whitelistJS">JavaScript 白名单</string>
     <string name="setting_title_adblock">AdBlock</string>
-    <string name="setting_summary_adblock">启用广告屏蔽可阻止恼人的广告。启用时网站的加载速度也更快。</string>
+    <string name="setting_summary_adblock">启用AdBlock可阻止烦人的广告。网站的加载速度也会更快。</string>
     <string name="setting_title_location">地理位置</string>
     <string name="setting_summary_location">允许网站访问您的位置。有些网站 (如谷歌地图导航) 需要启用此功能。</string>
     <string name="setting_title_history">历史记录</string>
     <string name="setting_title_autofill">表单数据</string>
-    <string name="setting_summary_autofill">启用表单数据保存(Android Nougat及以下版本)或自动填充服务(Android Oreo及以上版本)。</string>
+    <string name="setting_summary_autofill">启用表单数据保存（Android 7及以下版本）或自动填充服务（Android 8及以上版本）。</string>
     <!-- browser clear -->
-    <string name="data_summary">所有文件将导出到您SD卡的“Android/data/de.baumann.browser/files/browser_backup/”目录。 如果卸载\"FOSS浏览器\"，此目录将会被删除。所以请定期进行备份。</string>
+    <string name="data_summary">所有文件将导出至内部存储的“/Android/data/de.baumann.browser/files/browser_backup/”目录。 如果卸载\"FOSS浏览器\"，此目录将会被删除。所以请定期进行备份。</string>
     <string name="clear_title_quit">在应用退出时清除</string>
     <string name="clear_title_cache">清除缓存</string>
     <string name="clear_title_cookie">清除Cookies</string>
     <string name="clear_title_history">清除历史记录</string>
-    <string name="localData">在设备存储的数据上清除</string>
-    <string name="clear_title_deleteDatabase">删除数据</string>
-    <string name="clear_summary_deleteDatabase">删除整个数据库(起始页、书签、历史和所有白名单)。</string>
+    <string name="localData">清除设备上存储的数据</string>
+    <string name="clear_title_deleteDatabase">删除数据库</string>
+    <string name="clear_summary_deleteDatabase">删除整个数据库（起始页、书签、历史和所有白名单）。</string>
     <!-- App setting -->
     <string name="setting_title_app">应用设置</string>
     <string name="setting_title_ui">行为/界面</string>
@@ -117,12 +117,12 @@
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">隐藏工具栏</string>
     <string name="setting_title_behavior">行为</string>
-    <string name="setting_title_confirm_exit">浏览器退出确认</string>
+    <string name="setting_title_confirm_exit">确认退出浏览器</string>
     <string name="setting_title_confirm_tab_close">确认关闭标签页</string>
     <string name="setting_overView">概览</string>
     <string name="setting_overView_onStart_title">启动时显示</string>
     <string name="setting_gestures">手势</string>
-    <string name="setting_title_reopenLastTab">重新打开上次打开的页面</string>
+    <string name="setting_title_reopenLastTab">重新打开最后的页面</string>
     <!-- gestures -->
     <string name="setting_title_toolbar">工具栏</string>
     <string name="setting_title_toolbar_buttons">工具栏按钮</string>
@@ -131,8 +131,8 @@
     <string name="setting_gesture_left">向左滑动</string>
     <string name="setting_gesture_right">向右滑动</string>
     <string name="setting_gesture_01">无</string>
-    <string name="setting_gesture_02">转发历史记录</string>
-    <string name="setting_gesture_03">回到历史记录</string>
+    <string name="setting_gesture_02">下一页</string>
+    <string name="setting_gesture_03">上一页</string>
     <string name="setting_gesture_04">滚动到顶部</string>
     <string name="setting_gesture_05">滚动到底部</string>
     <string name="setting_gesture_06">切换到左侧标签</string>
@@ -152,18 +152,18 @@
     <!-- Others setting -->
     <string name="setting_title_others">其它</string>
     <!-- Toast -->
-    <string name="toast_add_whitelist_successful">成功添加域名</string>
+    <string name="toast_add_whitelist_successful">添加域名成功</string>
     <string name="toast_copy_successful">复制成功</string>
     <string name="toast_delete_successful">删除成功</string>
     <string name="toast_domain_already_exists">域名已存在</string>
     <string name="toast_input_empty">您没有输入任何内容</string>
     <string name="toast_invalid_domain">无效域名</string>
     <string name="toast_webview_forward">无法加载下一个网站</string>
-    <string name="toast_permission_sdCard">\"FOSS浏览器\"需要“在你的存储上读写”的权限。 这是下载文件，进行屏幕截图和备份您的数据所必要的。</string>
+    <string name="toast_permission_sdCard">\"FOSS浏览器\"需要“读写存储空间”权限。 这是下载文件，进行屏幕截图和备份您的数据所必要的。</string>
     <string name="toast_restart">您必须重启“FOSS浏览器”才能应用更改。现在关闭吗？</string>
     <string name="toast_quit">您想要退出“FOSS浏览器”吗？</string>
     <string name="toast_downloadComplete">下载完成。打开文件管理器？</string>
-    <string name="toast_unsecured">网站使用不安全的连接 (\"http\")。尝试安全连接 (\"https://\")？</string>
+    <string name="toast_unsecured">网站使用不安全的连接 (\"http://\")。尝试安全连接 (\"https://\")？</string>
     <string name="toast_backup">备份数据？这将覆盖旧的备份。</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">清除</string>
@@ -180,9 +180,9 @@
         \u25AA&lt;i&gt;隐私协议：&lt;/i&gt;https://github.com/scoute-dich/browser/blob/master/PRIVACY.md
 
     </string>
-    <string name="menu_mobileView">移动网站</string>
-    <string name="menu_desktopView">电脑模式</string>
-    <string name="menu_dayView">天视图</string>
-    <string name="menu_nightView">暗夜之眼</string>
+    <string name="menu_mobileView">移动设备视图</string>
+    <string name="menu_desktopView">桌面端网页</string>
+    <string name="menu_dayView">日间模式</string>
+    <string name="menu_nightView">夜间模式</string>
     <!-- License changelog -->
 </resources>

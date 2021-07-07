@@ -1,4 +1,4 @@
-<img src="https://github.com/scoute-dich/browser/blob/master/graphics/Zeichnung_features.png" height="200"/></a>
+<img src="https://github.com/scoute-dich/browser/blob/master/graphics/Zeichnung_features.png" /></a>
 
 "FOSS Browser" is fully free/libre (as in freedom) Android app. The source code is public. The app also does not need any unnecessary
 permissions. It's a simple Android browser based on webview. The intention is to provide a simple and light weight but powerful

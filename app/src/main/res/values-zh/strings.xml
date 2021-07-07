@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- App -->
-    <string name="app_name">开源浏览器</string>
+    <string name="app_name">FOSS浏览器</string>
     <string name="app_ok">确定</string>
     <string name="app_cancel">取消</string>
     <string name="app_done">完成</string>
@@ -16,7 +16,7 @@
     <string name="color_pink">粉色</string>
     <string name="color_purple">紫色</string>
     <string name="color_blue">蓝色</string>
-    <string name="color_teal">水鸭青</string>
+    <string name="color_teal">青色</string>
     <string name="color_green">绿色</string>
     <string name="color_lime">黄绿色</string>
     <string name="color_yellow">黄色</string>
@@ -42,14 +42,14 @@
     <string name="menu_share_link">分享链接</string>
     <string name="menu_save_home">保存到桌面</string>
     <string name="menu_save_bookmark">保存为书签</string>
-    <string name="menu_save_as">另存为..。</string>
+    <string name="menu_save_as">另存为…</string>
     <string name="menu_save_pdf">保存为 PDF</string>
     <string name="menu_shareClipboard">复制到剪切板</string>
     <string name="menu_other_searchSite">页面内搜索</string>
     <string name="menu_other_info">关于 \"FOSS浏览器\"</string>
     <!-- Dialog -->
     <string name="dialog_title_hint">标题:</string>
-    <string name="dialog_URL_hint">Url：</string>
+    <string name="dialog_URL_hint">URL：</string>
     <string name="dialog_extension_hint">扩展名 (例如: \".jpg\"):</string>
     <string name="dialog_sign_in_username">用户名</string>
     <string name="dialog_sign_in_password">密码</string>
@@ -63,7 +63,7 @@
     <string name="setting_label">设置</string>
     <!-- browser setting -->
     <string name="setting_title_browser">浏览器设置</string>
-    <string name="setting_title_start_control">开始控制</string>
+    <string name="setting_title_start_control">控制</string>
     <string name="setting_title_search_engine">搜索引擎</string>
     <string name="setting_summary_search_engine_google">Google</string>
     <string name="setting_summary_search_engine_duckduckgo">DuckDuckGo</string>
@@ -78,17 +78,17 @@
     <string name="setting_title_remote">远程内容</string>
     <string name="setting_title_dom">DOM 存储</string>
     <string name="setting_title_dom_whitelist">DOM 白名单</string>
-    <string name="setting_summary_dom">DOM 存储允许应用程序存储可能包含用户敏感信息的页面元素。禁用这会阻止本地存储被使用。</string>
+    <string name="setting_summary_dom">DOM 存储允许应用存储可能包含用户敏感信息的页面元素。禁用该项会阻止本地存储被使用。</string>
     <string name="setting_title_save_data">请求“保存数据”</string>
     <!-- browser start -->
     <string name="setting_title_images">图像</string>
     <string name="setting_title_cookie">Cookies</string>
-    <string name="setting_summary_cookie_delete">如果启用，所有Cookies将被删除。包括信任的网站。</string>
-    <string name="setting_summary_cookie">启用 Cookies。Cookies 是小型文本文件，存储在您的设备上。 网站使用它们来存储用户设置 (例如搜索设置)。 但它们也可以用来收集个人用户数据。第三方cookie (它们收集用户数据用于广告) 总是被禁用。</string>
+    <string name="setting_summary_cookie_delete">如果启用，所有Cookies都将被删除。包括信任的网站。</string>
+    <string name="setting_summary_cookie">启用 Cookies。Cookies 是小型文本文件，存储在您的设备上。 网站使用它们来存储用户设置 (例如搜索设置)。 但它们也可以用来收集用户数据。第三方cookies (它们收集用户数据以用于广告) 总是被禁用。</string>
     <string name="setting_title_whitelistCookie">Cookie 白名单</string>
     <string name="setting_title_whitelistRemote">远程白名单</string>
     <string name="setting_title_javascript">JavaScript</string>
-    <string name="setting_summary_javascript">启用 JavaScript。许多网站的功能需要 JavaScript (菜单，加载和显示图像， …)。 但它们也是一种危险，可能会被用于攻击。</string>
+    <string name="setting_summary_javascript">启用 JavaScript。许多网站的功能需要 JavaScript (菜单，加载和显示图像， …)。 但它们也有被用于发动攻击的危险。</string>
     <string name="setting_title_whitelistJS">JavaScript 白名单</string>
     <string name="setting_title_adblock">AdBlock</string>
     <string name="setting_summary_adblock">启用广告屏蔽可阻止恼人的广告。启用时网站的加载速度也更快。</string>

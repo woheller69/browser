@@ -173,8 +173,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     private static final int INPUT_FILE_REQUEST_CODE = 1;
     private ValueCallback<Uri[]> mFilePathCallback;
 
-    private String mURL;
-
     // Classes
 
     private class VideoCompletionListener implements MediaPlayer.OnCompletionListener, MediaPlayer.OnErrorListener {
@@ -1179,6 +1177,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         ib_reload.setOnClickListener(view -> {
             if (ninjaWebView != null) {
                 dialog.cancel();
+                ninjaWebView.initPreferences(ninjaWebView.getUrl());
                 ninjaWebView.reload();
             }
         });
@@ -1245,6 +1244,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             ninjaWebView.activate();
             showAlbum(ninjaWebView);
             if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.P) {
+                ninjaWebView.initPreferences(ninjaWebView.getUrl());
                 ninjaWebView.reload();
             }
         }
@@ -1633,6 +1633,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         ImageButton overflow_reload = dialogView.findViewById(R.id.overflow_reload);
         overflow_reload.setOnClickListener(v -> {
             dialog_overflow.cancel();
+            ninjaWebView.initPreferences(ninjaWebView.getUrl());
             ninjaWebView.reload();
         });
 

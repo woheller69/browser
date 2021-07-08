@@ -71,13 +71,10 @@ public class NinjaWebView extends WebView implements AlbumController {
     private SharedPreferences sp;
 
     private boolean foreground;
-
     public boolean isForeground() {
         return foreground;
     }
-
     private BrowserController browserController = null;
-
     public BrowserController getBrowserController() {
         return browserController;
     }
@@ -89,7 +86,6 @@ public class NinjaWebView extends WebView implements AlbumController {
 
     public NinjaWebView(Context context) {
         super(context); // Cannot create a dialog, the WebView context is not an activity
-
         this.context = context;
         this.foreground = false;
         this.desktopMode=false;
@@ -101,13 +97,10 @@ public class NinjaWebView extends WebView implements AlbumController {
         this.webViewClient = new NinjaWebViewClient(this);
         this.webChromeClient = new NinjaWebChromeClient(this);
         this.downloadListener = new NinjaDownloadListener(this.context);
-
         initWebView();
         initAlbum();
     }
 
-    @SuppressWarnings("SameReturnValue")
-    @SuppressLint("ClickableViewAccessibility")
     private synchronized void initWebView() {
         setWebViewClient(webViewClient);
         setWebChromeClient(webChromeClient);
@@ -136,6 +129,7 @@ public class NinjaWebView extends WebView implements AlbumController {
         webSettings.setTextZoom(Integer.parseInt(Objects.requireNonNull(sp.getString("sp_fontSize", "100"))));
         webSettings.setBlockNetworkImage(!sp.getBoolean("sp_images", true));
         webSettings.setGeolocationEnabled(sp.getBoolean("sp_location", false));
+        webSettings.setMediaPlaybackRequiresUserGesture(false);
 
         CookieManager manager = CookieManager.getInstance();
         if (cookieHosts.isWhite(url) || sp.getBoolean("sp_cookies", true)) {
@@ -149,7 +143,6 @@ public class NinjaWebView extends WebView implements AlbumController {
         try {
             domain = new URI(url).getHost();
         } catch (URISyntaxException e) {
-            // TODO Auto-generated catch block
             //do not change setting if staying within same domain
             setJavaScript(javaHosts.isWhite(url) || sp.getBoolean("sp_javascript", true));
             setDomStorage(remoteHosts.isWhite(url) || sp.getBoolean("sp_remote", true));
@@ -157,8 +150,8 @@ public class NinjaWebView extends WebView implements AlbumController {
         }
 
         if (oldDomain != null) {
+            //do not change setting if staying within same domain
             if (!oldDomain.equals(domain)){
-                //do not change setting if staying within same domain
                 setJavaScript(javaHosts.isWhite(url) || sp.getBoolean("sp_javascript", true));
                 setDomStorage(remoteHosts.isWhite(url) || sp.getBoolean("sp_remote", true));
             }
@@ -177,7 +170,6 @@ public class NinjaWebView extends WebView implements AlbumController {
                 webSettings.setSaveFormData(false);
             }
         }
-
         oldDomain=domain;
     }
 
@@ -186,7 +178,6 @@ public class NinjaWebView extends WebView implements AlbumController {
         try {
             domain = new URI(url).getHost();
         } catch (URISyntaxException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         oldDomain=domain;

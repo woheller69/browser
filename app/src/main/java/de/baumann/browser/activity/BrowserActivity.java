@@ -14,7 +14,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
-import android.content.pm.ActivityInfo;
 import android.database.Cursor;
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -24,12 +23,10 @@ import android.os.Bundle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.PopupMenu;
-import androidx.constraintlayout.solver.state.State;
 import androidx.preference.PreferenceManager;
 
 import android.os.Handler;
 import android.os.HandlerThread;
-import android.os.Looper;
 import android.os.Message;
 import android.print.PrintAttributes;
 import android.print.PrintDocumentAdapter;
@@ -73,7 +70,6 @@ import android.webkit.WebBackForwardList;
 import android.webkit.WebChromeClient;
 import android.webkit.WebStorage;
 import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.FrameLayout;
@@ -84,7 +80,6 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.VideoView;
 
 import java.util.LinkedList;
@@ -1030,6 +1025,14 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 dialog.cancel();
             });
         }
+
+        Chip chip_allow_popups_WL = dialogView.findViewById(R.id.chip_allow_popups_WL);
+        chip_allow_popups_WL.setChecked(ninjaWebView.getSettings().getJavaScriptCanOpenWindowsAutomatically());
+        chip_allow_popups_WL.setOnClickListener(v -> {
+            if (ninjaWebView.getSettings().getJavaScriptEnabled()) ninjaWebView.getSettings().setJavaScriptCanOpenWindowsAutomatically(chip_allow_popups_WL.isChecked());
+            ninjaWebView.reload();
+            dialog.cancel();
+        });
 
         // CheckBox
 

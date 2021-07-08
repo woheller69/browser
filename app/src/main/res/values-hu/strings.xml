@@ -186,5 +186,6 @@
     <string name="menu_desktopView">Asztali nézet</string>
     <string name="menu_dayView">Napi nézet</string>
     <string name="menu_nightView">Éjszakai nézet</string>
+    <string name="pop_ups">Pop-ups</string>
     <!-- License changelog -->
 </resources>

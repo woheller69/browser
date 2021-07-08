@@ -187,5 +187,6 @@ Bitte lies auch den Hilfedialog in der Anwendung.&lt;/b&gt;&lt;br&gt;&lt;br&gt;
     <string name="menu_desktopView">Desktop-Ansicht</string>
     <string name="menu_dayView">Tagesansicht</string>
     <string name="menu_nightView">Nachtsicht</string>
+    <string name="pop_ups">Pop-ups</string>
     <!-- License changelog -->
 </resources>

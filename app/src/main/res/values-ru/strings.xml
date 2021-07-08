@@ -186,5 +186,6 @@
     <string name="menu_desktopView">Десктопный вид</string>
     <string name="menu_dayView">Просмотр дня</string>
     <string name="menu_nightView">Ночные Глаз</string>
+    <string name="pop_ups">Pop-ups</string>
     <!-- License changelog -->
 </resources>

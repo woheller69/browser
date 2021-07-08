@@ -186,5 +186,6 @@
     <string name="menu_desktopView">Masaüstü görünümü</string>
     <string name="menu_dayView">Gün görünümü</string>
     <string name="menu_nightView">gece görüşü</string>
+    <string name="pop_ups">Pop-ups</string>
     <!-- License changelog -->
 </resources>

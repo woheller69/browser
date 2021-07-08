@@ -186,5 +186,6 @@
     <string name="menu_desktopView">Xem kiểu Máy tính</string>
     <string name="menu_dayView">Dạng hiển thị theo Ngày</string>
     <string name="menu_nightView">viễn cảnh buổi đêm</string>
+    <string name="pop_ups">Pop-ups</string>
     <!-- License changelog -->
 </resources>

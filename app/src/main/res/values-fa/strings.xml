@@ -201,5 +201,6 @@
     <string name="menu_desktopView">DesktopPC نماي</string>
     <string name="menu_dayView">روز</string>
     <string name="menu_nightView">دید شب</string>
+    <string name="pop_ups">Pop-ups</string>
     <!-- License changelog -->
 </resources>

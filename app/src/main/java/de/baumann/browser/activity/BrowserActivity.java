@@ -15,6 +15,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.database.Cursor;
+import android.graphics.Bitmap;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Build;
@@ -94,6 +95,7 @@ import de.baumann.browser.browser.Cookie;
 import de.baumann.browser.browser.Javascript;
 import de.baumann.browser.browser.Remote;
 import de.baumann.browser.database.BookmarkList;
+import de.baumann.browser.database.FaviconHelper;
 import de.baumann.browser.database.Record;
 import de.baumann.browser.database.RecordAction;
 import de.baumann.browser.R;
@@ -1498,6 +1500,12 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     }
 
     private void saveBookmark() {
+
+        FaviconHelper faviconHelper = new FaviconHelper(context);
+        Bitmap favicon=ninjaWebView.getFavicon();
+        if (favicon!=null) faviconHelper.deleteFavicon(ninjaWebView.getUrl()); //Replace favicon
+        faviconHelper.addFavicon(ninjaWebView.getUrl(),ninjaWebView.getFavicon());
+
         RecordAction action = new RecordAction(context);
         action.open(true);
         if (action.checkUrl(ninjaWebView.getUrl(), RecordUnit.TABLE_BOOKMARK)) {
@@ -1953,6 +1961,12 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     }
 
     private void save_atHome (final String title, final String url) {
+
+        FaviconHelper faviconHelper = new FaviconHelper(context);
+        Bitmap favicon=ninjaWebView.getFavicon();
+        if (favicon!=null) faviconHelper.deleteFavicon(ninjaWebView.getUrl()); //Replace favicon
+        faviconHelper.addFavicon(ninjaWebView.getUrl(),ninjaWebView.getFavicon());
+
         RecordAction action = new RecordAction(context);
         action.open(true);
         if (action.checkUrl(url, RecordUnit.TABLE_GRID)) {

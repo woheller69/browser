@@ -2,10 +2,13 @@ package de.baumann.browser.view;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
+import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
 import android.os.Build;
 
+import androidx.annotation.Nullable;
 import androidx.preference.PreferenceManager;
 
 import android.util.AttributeSet;
@@ -17,12 +20,16 @@ import android.webkit.WebView;
 
 import de.baumann.browser.browser.*;
 import de.baumann.browser.R;
+import de.baumann.browser.database.FaviconHelper;
+import de.baumann.browser.database.Record;
+import de.baumann.browser.database.RecordAction;
 import de.baumann.browser.unit.BrowserUnit;
 import de.baumann.browser.unit.HelperUnit;
 
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Objects;
 
 public class NinjaWebView extends WebView implements AlbumController {
@@ -69,6 +76,7 @@ public class NinjaWebView extends WebView implements AlbumController {
     private Javascript javaHosts;
     private Remote remoteHosts;
     private Cookie cookieHosts;
+    private Bitmap favicon;
     private SharedPreferences sp;
 
     private boolean foreground;
@@ -216,6 +224,7 @@ public class NinjaWebView extends WebView implements AlbumController {
         initPreferences(BrowserUnit.queryWrapper(context, url.trim()));
         InputMethodManager imm = (InputMethodManager) this.context.getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(this.getWindowToken(), 0);
+        favicon=null;
         super.loadUrl(BrowserUnit.queryWrapper(context, url.trim()), getRequestHeaders());
     }
 
@@ -312,5 +321,38 @@ public class NinjaWebView extends WebView implements AlbumController {
         if (reload) {
             reload();
         }
+    }
+
+    public void setFavicon(Bitmap favicon) {
+        this.favicon = favicon;
+
+        //Save favicon for existing bookmarks or start site entries
+        FaviconHelper faviconHelper = new FaviconHelper(context);
+        RecordAction action = new RecordAction(context);
+        action.open(false);
+        List<Record> list;
+        list = action.listBookmark(context, false, 0);
+        action.close();
+        for (Record listitem: list){
+            if(listitem.getURL().equals(getUrl())){
+                if (faviconHelper.getFavicon(listitem.getURL())==null) faviconHelper.addFavicon(getUrl(),getFavicon());
+            }
+        }
+
+        action.open(false);
+        list = action.listStartSite((Activity) context);
+        action.close();
+        for (Record listitem: list){
+            if(listitem.getURL().equals(getUrl())){
+                if (faviconHelper.getFavicon(listitem.getURL())==null) faviconHelper.addFavicon(getUrl(),getFavicon());
+            }
+        }
+
+    }
+
+    @Nullable
+    @Override
+    public Bitmap getFavicon() {
+        return favicon;
     }
 }

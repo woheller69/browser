@@ -2,12 +2,14 @@ package de.baumann.browser.view;
 
 import android.content.Context;
 import androidx.annotation.NonNull;
+import android.graphics.Bitmap;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import de.baumann.browser.database.FaviconHelper;
 import de.baumann.browser.database.Record;
 import de.baumann.browser.R;
 
@@ -31,6 +33,7 @@ public class RecordAdapter extends ArrayAdapter<Record> {
         TextView title;
         TextView time;
         ImageView icon;
+        ImageView favicon;
     }
 
     @SuppressWarnings("NullableProblems")
@@ -45,6 +48,7 @@ public class RecordAdapter extends ArrayAdapter<Record> {
             holder.title = view.findViewById(R.id.record_item_title);
             holder.time = view.findViewById(R.id.record_item_time);
             holder.icon = view.findViewById(R.id.record_item_icon);
+            holder.favicon=view.findViewById(R.id.record_item_favicon);
             view.setTag(holder);
         } else {
             holder = (Holder) view.getTag();
@@ -81,6 +85,18 @@ public class RecordAdapter extends ArrayAdapter<Record> {
         } else {
             holder.icon.setImageResource(R.drawable.circle_red_big);
         }
+
+        FaviconHelper faviconHelper = new FaviconHelper(context);
+        Bitmap bitmap=faviconHelper.getFavicon(record.getURL());
+
+        if (bitmap != null){
+            holder.favicon.setImageBitmap(bitmap);
+            holder.favicon.setVisibility(View.VISIBLE);
+        }else {
+            holder.favicon.setImageResource(R.drawable.ic_background_transparent);
+            holder.favicon.setVisibility(View.VISIBLE);
+        }
+
         return view;
     }
 }

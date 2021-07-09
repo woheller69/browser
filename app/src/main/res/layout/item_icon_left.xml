@@ -30,6 +30,17 @@
         android:maxLines="1"
         android:ellipsize="end"/>
 
+    <ImageView
+        android:visibility="gone"
+        android:id="@+id/record_item_favicon"
+        android:layout_width="20dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="16dp"
+        android:gravity="center_vertical"
+        android:contentDescription="@null"
+        android:scaleType="fitCenter"
+        android:src="@drawable/icon_close" />
+
     <TextView
         android:id="@+id/record_item_title"
         android:layout_width="match_parent"

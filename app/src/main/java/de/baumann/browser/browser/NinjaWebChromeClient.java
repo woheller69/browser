@@ -3,6 +3,7 @@ package de.baumann.browser.browser;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.view.View;
 import android.webkit.*;
@@ -78,5 +79,11 @@ public class NinjaWebChromeClient extends WebChromeClient {
         HelperUnit.grantPermissionsLoc(activity);
         callback.invoke(origin, true, false);
         super.onGeolocationPermissionsShowPrompt(origin, callback);
+    }
+
+    @Override
+    public void onReceivedIcon(WebView view, Bitmap icon) {
+        ninjaWebView.setFavicon(icon);
+        super.onReceivedIcon(view, icon);
     }
 }

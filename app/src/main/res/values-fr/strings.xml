@@ -186,5 +186,6 @@
     <string name="menu_desktopView">Vue bureau</string>
     <string name="menu_dayView">Vue Jour</string>
     <string name="menu_nightView">Vue nocturne</string>
+    <string name="pop_ups">Pop-ups</string>
     <!-- License changelog -->
 </resources>

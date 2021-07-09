@@ -184,6 +184,5 @@
     <string name="menu_desktopView">Vista desktop</string>
     <string name="menu_dayView">Vista giorno</string>
     <string name="menu_nightView">Vista notturna</string>
-    <string name="pop_ups">Pop-ups</string>
     <!-- License changelog -->
 </resources>

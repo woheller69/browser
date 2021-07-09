@@ -76,9 +76,9 @@
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_title_font">اندازه قلم</string>
     <string name="setting_title_remote">محتوای خارجی</string>
-    <string name="setting_title_dom">DOM Storage</string>
-    <string name="setting_title_dom_whitelist">DOM Whitelist</string>
-    <string name="setting_summary_dom">DOM Storage allows the application to store page elements that could include user sensitive information. Disabling this prevents local storage from being used.</string>
+    <string name="setting_title_dom">ذخیره سازی DOM</string>
+    <string name="setting_title_dom_whitelist">لیست سفید DOM</string>
+    <string name="setting_summary_dom">DOM Storage به برنامه اجازه می دهد تا عناصر صفحه را که می تواند شامل اطلاعات حساس کاربر باشد ، ذخیره کند. غیرفعال کردن این امر از استفاده از حافظه محلی جلوگیری می کند.</string>
     <string name="setting_title_save_data">درخواست صرفه جویی در مصرف شبکه</string>
     <!-- browser start -->
     <string name="setting_title_images">عکس ها</string>
@@ -101,7 +101,7 @@
     </string>
     <string name="setting_title_history">تاریخچه</string>
     <string name="setting_title_autofill">داده‌‌ی فرم</string>
-    <string name="setting_summary_autofill">Enable the saving of form data (Android Nougat and below) or autofill service (Android Oreo and above).</string>
+    <string name="setting_summary_autofill">ذخیره داده های فرم (Android Nougat و پایین تر) یا سرویس تکمیل خودکار (Android Oreo و بالاتر) را فعال کنید.</string>
     <!-- browser clear -->
     <string name="data_summary">        کارت حافظه دستگاه استخراج خواهند شد.
         در صورت حذف مرورگر از سیستم، تمامی فایل ها در مسیر
@@ -112,7 +112,7 @@
     <string name="clear_title_cache">پاکسازی کش</string>
     <string name="clear_title_cookie">پاک سازی کوکی ها</string>
     <string name="clear_title_history">پاکسازی تاریخچه</string>
-    <string name="localData">Clear on device stored data</string>
+    <string name="localData">داده های ذخیره شده دستگاه را پاک کنید</string>
     <string name="clear_title_deleteDatabase">حذف دیتابیس</string>
     <string name="clear_summary_deleteDatabase">        حذف تمامی داده ها (تاریخچه ها،لیست های سفید،صفحه آغازین،نشانک ها).
     </string>
@@ -201,6 +201,5 @@
     <string name="menu_desktopView">DesktopPC نماي</string>
     <string name="menu_dayView">روز</string>
     <string name="menu_nightView">دید شب</string>
-    <string name="pop_ups">Pop-ups</string>
     <!-- License changelog -->
 </resources>

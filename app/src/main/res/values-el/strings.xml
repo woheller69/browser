@@ -186,6 +186,5 @@
     <string name="menu_desktopView">Προβολή για υπολογιστή</string>
     <string name="menu_dayView">Προβολή ημέρας</string>
     <string name="menu_nightView">Νυχτερινή προβολή</string>
-    <string name="pop_ups">Pop-ups</string>
     <!-- License changelog -->
 </resources>

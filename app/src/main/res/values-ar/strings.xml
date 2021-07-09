@@ -178,6 +178,5 @@
     <string name="menu_desktopView">عرض سطح المكتب</string>
     <string name="menu_dayView">عرض يومي</string>
     <string name="menu_nightView">عرض ليلي</string>
-    <string name="pop_ups">Pop-ups</string>
     <!-- License changelog -->
 </resources>

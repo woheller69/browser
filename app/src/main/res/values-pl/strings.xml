@@ -186,6 +186,5 @@
     <string name="menu_desktopView">Widok pulpitu</string>
     <string name="menu_dayView">Widok Dnia</string>
     <string name="menu_nightView">Widok nocny</string>
-    <string name="pop_ups">Pop-ups</string>
     <!-- License changelog -->
 </resources>

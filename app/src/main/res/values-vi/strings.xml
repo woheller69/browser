@@ -76,9 +76,9 @@
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_title_font">Cỡ chữ</string>
     <string name="setting_title_remote">Nội dung từ xa</string>
-    <string name="setting_title_dom">DOM Storage</string>
+    <string name="setting_title_dom">Bộ nhớ DOM</string>
     <string name="setting_title_dom_whitelist">DOM Whitelist</string>
-    <string name="setting_summary_dom">DOM Storage allows the application to store page elements that could include user sensitive information. Disabling this prevents local storage from being used.</string>
+    <string name="setting_summary_dom">DOM Storage cho phép ứng dụng lưu trữ các phần tử trang có thể bao gồm thông tin nhạy cảm của người dùng. Tắt tính năng này sẽ ngăn không cho sử dụng bộ nhớ cục bộ.</string>
     <string name="setting_title_save_data">Yêu cầu \'Tiết kiệm dữ liệu\'</string>
     <!-- browser start -->
     <string name="setting_title_images">Hình ảnh</string>
@@ -96,14 +96,14 @@
     <string name="setting_summary_location">Cho phép các trang web truy cập vị trí của bạn. Một số trang web (như Google Maps để điều hướng) cần tuỳ chọn này được bật.</string>
     <string name="setting_title_history">Lịch sử</string>
     <string name="setting_title_autofill">Dữ liệu mẫu</string>
-    <string name="setting_summary_autofill">Enable the saving of form data (Android Nougat and below) or autofill service (Android Oreo and above).</string>
+    <string name="setting_summary_autofill">Bật tính năng lưu dữ liệu biểu mẫu (Android Nougat trở xuống) hoặc dịch vụ tự động điền (Android Oreo trở lên).</string>
     <!-- browser clear -->
     <string name="data_summary">Tất cả tệp sẽ được xuất ra thư mục \"Android/data/de.baumann.browser/files/browser_backup/\" của thẻ SD. Thư mục này sẽ bị XOÁ, nếu bạn gỡ cài đặt \"Trình duyệt FOSS\". Vậy nên hãy thường xuyên tạo một bản sao lưu ở một nơi an toàn.</string>
     <string name="clear_title_quit">Xoá khi thoát ứng dụng</string>
     <string name="clear_title_cache">Xóa bộ nhớ đệm</string>
     <string name="clear_title_cookie">Xóa cookie</string>
     <string name="clear_title_history">Xóa lịch sử</string>
-    <string name="localData">Clear on device stored data</string>
+    <string name="localData">Xóa dữ liệu được lưu trữ trên thiết bị</string>
     <string name="clear_title_deleteDatabase">Xoá cơ sở dữ liệu</string>
     <string name="clear_summary_deleteDatabase">Xoá toàn bộ cơ sở dữ liệu (Trang bắt đầu, dấu trang, lịch sử và tất cả danh sách trắng).</string>
     <!-- App setting -->
@@ -186,6 +186,5 @@
     <string name="menu_desktopView">Xem kiểu Máy tính</string>
     <string name="menu_dayView">Dạng hiển thị theo Ngày</string>
     <string name="menu_nightView">viễn cảnh buổi đêm</string>
-    <string name="pop_ups">Pop-ups</string>
     <!-- License changelog -->
 </resources>

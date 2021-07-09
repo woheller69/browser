@@ -188,6 +188,5 @@
     <string name="menu_desktopView">PC zobrazení</string>
     <string name="menu_dayView">Denní přehled</string>
     <string name="menu_nightView">Noční oči</string>
-    <string name="pop_ups">Pop-ups</string>
     <!-- License changelog -->
 </resources>

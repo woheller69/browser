@@ -63,7 +63,6 @@ import android.view.Window;
 import android.view.WindowInsets;
 import android.view.WindowInsetsController;
 import android.view.WindowManager;
-import android.view.inputmethod.InputMethodManager;
 import android.webkit.CookieManager;
 import android.webkit.ValueCallback;
 import android.webkit.WebBackForwardList;
@@ -165,7 +164,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     private long filterBy;
 
     private boolean searchOnSite;
-    private boolean keyboard;
 
     private ValueCallback<Uri[]> filePathCallback = null;
     private AlbumController currentAlbumController = null;
@@ -190,13 +188,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         @Override public void onGlobalLayout() {
             int currentContentHeight = findViewById(Window.ID_ANDROID_CONTENT).getHeight();
             if (mLastContentHeight > currentContentHeight + 100) {
-                keyboard = true;
                 mLastContentHeight = currentContentHeight;
             } else if (currentContentHeight > mLastContentHeight + 100) {
-                keyboard = false;
                 mLastContentHeight = currentContentHeight;
                 omniBox_text.clearFocus();
-                updateOmniBox();
             }
         }
     };
@@ -361,11 +356,9 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 WebStorage.getInstance().deleteAllData();
             }
         }
-
         BrowserContainer.clear();
         unregisterReceiver(downloadReceiver);
         ninjaWebView.getViewTreeObserver().removeOnGlobalLayoutListener(keyboardLayoutListener);
-
         System.exit(0);
         super.onDestroy();
     }
@@ -380,7 +373,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 if (fullscreenHolder != null || customView != null || videoView != null) {
                     Log.v(TAG, "FOSS Browser in fullscreen mode");
                 } else if (searchPanel.getVisibility() == View.VISIBLE) {
-                    hideKeyboard();
                     searchOnSite = false;
                     searchBox.setText("");
                     searchPanel.setVisibility(View.GONE);
@@ -424,7 +416,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         HelperUnit.initRendering(ninjaWebView, context);
 
         if (searchPanel.getVisibility() == View.VISIBLE) {
-            hideKeyboard();
             searchOnSite = false;
             searchBox.setText("");
             searchPanel.setVisibility(View.GONE);
@@ -457,7 +448,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 }
             }
             ninjaWebView.loadUrl(url);
-            hideKeyboard();
         });
     }
 
@@ -479,7 +469,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     }
 
     public void showTabView () {
-        hideKeyboard();
         if (overViewTab.equals(getString(R.string.album_title_home))) {
             tab_openOverView.setImageResource(R.drawable.icon_web_light);
         } else if (overViewTab.equals(getString(R.string.album_title_bookmarks))) {
@@ -604,31 +593,25 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         omniBox_text.setOnEditorActionListener((v, actionId, event) -> {
             String query = omniBox_text.getText().toString().trim();
             ninjaWebView.loadUrl(query);
-            hideKeyboard();
             return false;
         });
         omniBox_text.setOnFocusChangeListener((v, hasFocus) -> {
             if (omniBox_text.hasFocus()) {
+                String url = ninjaWebView.getUrl();
                 ninjaWebView.stopLoading();
                 omniBox_text.setKeyListener(listener);
-                omniBox_text.postDelayed(() -> {
-                    String url = ninjaWebView.getUrl();
-                    InputMethodManager keyboard=(InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-                    keyboard.showSoftInput(omniBox_text,0);
-                    assert url != null;
-                    if (url.equals("about:blank")) {
-                        omniBox_text.requestFocus();
-                        omniBox_text.setText("");
-                    } else {
-                        omniBox_text.setText(url);
-                    }
-                    omniBox_text.selectAll();
-                },50);
+                assert url != null;
+                if (url.equals("about:blank")) {
+                    omniBox_text.requestFocus();
+                    omniBox_text.setText("");
+                } else {
+                    omniBox_text.setText(url);
+                }
+                omniBox_text.selectAll();
             } else {
                 omniBox_text.setKeyListener(null);
                 omniBox_text.setEllipsize(TextUtils.TruncateAt.END);
                 omniBox_text.setText(ninjaWebView.getTitle());
-                hideKeyboard();
                 updateOmniBox();
             }
         });
@@ -940,19 +923,12 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 }
             }
         });
-        searchUp.setOnClickListener(v -> {
-            hideKeyboard();
-            ((NinjaWebView) currentAlbumController).findNext(false);
-        });
-        searchDown.setOnClickListener(v -> {
-            hideKeyboard();
-            ((NinjaWebView) currentAlbumController).findNext(true);
-        });
+        searchUp.setOnClickListener(v -> ((NinjaWebView) currentAlbumController).findNext(false));
+        searchDown.setOnClickListener(v -> ((NinjaWebView) currentAlbumController).findNext(true));
         searchCancel.setOnClickListener(v -> {
             if (searchBox.getText().length() > 0) {
                 searchBox.setText("");
             } else {
-                hideKeyboard();
                 searchOnSite = false;
                 searchPanel.setVisibility(View.GONE);
                 omniBox.setVisibility(View.VISIBLE);
@@ -1201,9 +1177,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         ninjaWebView.setOnScrollChangeListener((scrollY, oldScrollY) -> {
             if (!searchOnSite) {
-                if (omniBox_text.hasFocus()) {
-                    hideKeyboard();
-                }
                 if (sp.getBoolean("hideToolbar", true)) {
                     if (scrollY > oldScrollY) {
                         ObjectAnimator animation = ObjectAnimator.ofFloat(bottomAppBar, "translationY", bottomAppBar.getHeight());
@@ -1308,14 +1281,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             manager.setAcceptCookie(false);
         }
 
-        if (!keyboard) {
-            if (Objects.requireNonNull(ninjaWebView.getTitle()).isEmpty()) {
-                omniBox_text.setText(ninjaWebView.getUrl());
-            } else {
-                omniBox_text.setText(ninjaWebView.getTitle());
-            }
+        if (Objects.requireNonNull(ninjaWebView.getTitle()).isEmpty()) {
+            omniBox_text.setText(ninjaWebView.getUrl());
         } else {
-            omniBox_text.setText("");
+            omniBox_text.setText(ninjaWebView.getTitle());
         }
 
         if (sp.getBoolean("hideToolbar", true)) {
@@ -1590,19 +1559,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         }
     }
 
-    private void hideKeyboard () {
-        View view = activity.getCurrentFocus();
-        if (view != null) {
-            view.clearFocus();
-            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-            assert imm != null;
-            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
-        }
-    }
-
     @SuppressLint("ClickableViewAccessibility")
     private void showOverflow() {
-        hideKeyboard();
 
         final String url = ninjaWebView.getUrl();
         final String title = ninjaWebView.getTitle();

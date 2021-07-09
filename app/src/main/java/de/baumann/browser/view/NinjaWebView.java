@@ -10,6 +10,7 @@ import androidx.preference.PreferenceManager;
 
 import android.util.AttributeSet;
 import android.view.*;
+import android.view.inputmethod.InputMethodManager;
 import android.webkit.CookieManager;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -202,7 +203,6 @@ public class NinjaWebView extends WebView implements AlbumController {
     public synchronized HashMap<String, String> getRequestHeaders() {
         HashMap<String, String> requestHeaders = new HashMap<>();
         requestHeaders.put("DNT", "1");
-
         //  Server-side detection for GlobalPrivacyControl
         requestHeaders.put("Sec-GPC","1");
         if (sp.getBoolean("sp_savedata", false)) {
@@ -214,6 +214,8 @@ public class NinjaWebView extends WebView implements AlbumController {
     @Override
     public synchronized void loadUrl(String url) {
         initPreferences(BrowserUnit.queryWrapper(context, url.trim()));
+        InputMethodManager imm = (InputMethodManager) this.context.getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(this.getWindowToken(), 0);
         super.loadUrl(BrowserUnit.queryWrapper(context, url.trim()), getRequestHeaders());
     }
 

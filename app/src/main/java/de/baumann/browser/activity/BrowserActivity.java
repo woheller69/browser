@@ -949,7 +949,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             action.addBookmark(new Record(
                     cursor.getString(cursor.getColumnIndexOrThrow("edit_title")),
                     cursor.getString(cursor.getColumnIndexOrThrow("pass_content")),
-                    1, 0));
+                    1, 0,2));
             cursor.moveToNext();
             action.close();
         }
@@ -1519,7 +1519,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             // bit 6: 0 = Remote Content allowd (0 due to backward compatibility)
 
             long value= 11 + (long) (ninjaWebView.isDesktopMode()?16:0) + (long) (ninjaWebView.getSettings().getJavaScriptEnabled()?0:32)  + (long) (ninjaWebView.getSettings().getDomStorageEnabled()?0:64);
-            action.addBookmark(new Record(ninjaWebView.getTitle(), ninjaWebView.getUrl(), value, 0));
+            action.addBookmark(new Record(ninjaWebView.getTitle(), ninjaWebView.getUrl(), value, 0,2));
 
             NinjaToast.show(this, R.string.app_done);
         }
@@ -1946,7 +1946,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                         action.open(true);
                         action.deleteURL(url, RecordUnit.TABLE_BOOKMARK);
                         newIcon=newIcon+(long) (chip_desktopMode.isChecked()?16:0)+(long)(chip_javascript.isChecked()?0:32)+(long)(chip_remoteContent.isChecked()?0:64);
-                        action.addBookmark(new Record(edit_title.getText().toString(), edit_URL.getText().toString(), newIcon, 0));
+                        action.addBookmark(new Record(edit_title.getText().toString(), edit_URL.getText().toString(), newIcon, 0,2));
                         action.close();
                         updateAutoComplete();
                         bottom_navigation.setSelectedItemId(R.id.page_2);
@@ -1975,7 +1975,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             int counter = sp.getInt("counter", 0);
             counter = counter + 1;
             sp.edit().putInt("counter", counter).apply();
-            if (action.addStartSite(new Record(title, url, 0, counter))) {
+            if (action.addStartSite(new Record(title, url, 0, counter,1))) {
                 NinjaToast.show(this, R.string.app_done);
             } else {
                 NinjaToast.show(this, R.string.app_error);

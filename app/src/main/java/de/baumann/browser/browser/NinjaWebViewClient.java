@@ -107,6 +107,9 @@ public class NinjaWebViewClient extends WebViewClient {
         //  See the License for the specific language governing permissions and
         //  limitations under the License.
         //
+        view.evaluateJavascript("if (navigator.doNotTrack === null) { Object.defineProperty(navigator, 'doNotTrack', { value: 1, writable: false,configurable: false});} else {try { navigator.doNotTrack = 1;} catch (e) { console.error('doNotTrack is not writable: ', e); }};",null);
+        view.evaluateJavascript("if (window.doNotTrack === undefined) { Object.defineProperty(window, 'doNotTrack', { value: 1, writable: false,configurable: false});} else {try { windows.doNotTrack = 1;} catch (e) { console.error('doNotTrack is not writable: ', e); }};",null);
+        view.evaluateJavascript("if (navigator.msDoNotTrack === undefined) { Object.defineProperty(navigator, 'msDoNotTrack', { value: 1, writable: false,configurable: false});} else {try { navigator.msDoNotTrack = 1;} catch (e) { console.error('msDoNotTrack is not writable: ', e); }};",null);
     }
 
     @Override

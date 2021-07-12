@@ -116,6 +116,7 @@ public class NinjaWebView extends WebView implements AlbumController {
         sp = PreferenceManager.getDefaultSharedPreferences(context);
         WebSettings webSettings = getSettings();
 
+        this.desktopMode = false;
         String userAgent = getUserAgent(desktopMode);
         if (android.os.Build.VERSION.SDK_INT >= 26) {
             webSettings.setSafeBrowsingEnabled(true);

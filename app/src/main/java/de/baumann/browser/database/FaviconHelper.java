@@ -73,6 +73,7 @@ public class FaviconHelper extends SQLiteOpenHelper {
     public void deleteAllFavicons() throws SQLiteException {
         SQLiteDatabase database = this.getWritableDatabase();
         database.delete(TABLE_FAVICON, null, null);
+        database.close();
     }
 
     public Bitmap getFavicon(String url){
@@ -93,9 +94,11 @@ public class FaviconHelper extends SQLiteOpenHelper {
         if (cursor != null && cursor.moveToFirst()){
             image = cursor.getBlob(1);
             cursor.close();
+            database.close();
             return getBitmap(image);
         }else{
             cursor.close();
+            database.close();
             return null;
         }
     }

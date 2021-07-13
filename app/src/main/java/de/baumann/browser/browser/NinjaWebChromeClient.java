@@ -3,14 +3,19 @@ package de.baumann.browser.browser;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.view.View;
 import android.webkit.*;
 
+import androidx.preference.PreferenceManager;
 import java.util.Objects;
 
+import de.baumann.browser.database.Record;
+import de.baumann.browser.database.RecordAction;
 import de.baumann.browser.unit.HelperUnit;
+import de.baumann.browser.unit.RecordUnit;
 import de.baumann.browser.view.NinjaWebView;
 
 public class NinjaWebChromeClient extends WebChromeClient {
@@ -85,5 +90,20 @@ public class NinjaWebChromeClient extends WebChromeClient {
     public void onReceivedIcon(WebView view, Bitmap icon) {
         ninjaWebView.setFavicon(icon);
         super.onReceivedIcon(view, icon);
+    }
+
+    @Override
+    public void onReceivedTitle(WebView view, String sTitle) {
+        SharedPreferences sp= PreferenceManager.getDefaultSharedPreferences(ninjaWebView.getContext());
+        super.onReceivedTitle(view, sTitle);
+        if (sp.getBoolean("saveHistory", true)) {
+            RecordAction action = new RecordAction(ninjaWebView.getContext());
+            action.open(true);
+            if (action.checkUrl(ninjaWebView.getUrl(), RecordUnit.TABLE_HISTORY)) {
+                action.deleteURL(ninjaWebView.getUrl(), RecordUnit.TABLE_HISTORY);
+            }
+            action.addHistory(new Record(sTitle, ninjaWebView.getUrl(), System.currentTimeMillis(), 0,0));
+            action.close();
+        }
     }
 }

@@ -1,5 +1,6 @@
 package de.baumann.browser.browser;
 
+import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.Intent;
@@ -116,6 +117,7 @@ public class NinjaWebViewClient extends WebViewClient {
         return handleUri(uri);
     }
 
+    @SuppressLint("QueryPermissionsNeeded")
     private boolean handleUri(final Uri uri) {
 
         String url = uri.toString();
@@ -127,20 +129,28 @@ public class NinjaWebViewClient extends WebViewClient {
         }
 
         if (url.startsWith("intent:")) {
-            try {
-                Intent intent = Intent.parseUri(url, Intent.URI_INTENT_SCHEME);
-                //try to find fallback url
-                String fallbackUrl = intent.getStringExtra("browser_fallback_url");
-                if (fallbackUrl != null) {
-                    this.ninjaWebView.loadUrl(fallbackUrl);
-                    return true;
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse(url));
+            Intent chooser = Intent.createChooser(intent, context.getString(R.string.menu_open_with));
+            if (intent.resolveActivity(context.getPackageManager()) != null) {
+                context.startActivity(chooser);
+            } else {
+                try {
+                    Intent fallback = Intent.parseUri(url, Intent.URI_INTENT_SCHEME);
+                    //try to find fallback url
+                    String fallbackUrl = fallback.getStringExtra("browser_fallback_url");
+                    if (fallbackUrl != null) {
+                        this.ninjaWebView.loadUrl(fallbackUrl);
+                        return true;
+                    }
+                } catch (URISyntaxException e) {
+                    //not an intent uri
+                    return false;
                 }
-            } catch (URISyntaxException e) {
-                //not an intent uri
-                return false;
             }
         }
-        return true;//do nothing in other cases
+        //do nothing in other cases
+        return true;
     }
 
     @Override

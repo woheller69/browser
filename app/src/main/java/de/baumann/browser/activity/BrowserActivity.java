@@ -14,7 +14,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
-import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -94,7 +93,6 @@ import de.baumann.browser.browser.BrowserController;
 import de.baumann.browser.browser.Cookie;
 import de.baumann.browser.browser.Javascript;
 import de.baumann.browser.browser.Remote;
-import de.baumann.browser.database.BookmarkList;
 import de.baumann.browser.database.FaviconHelper;
 import de.baumann.browser.database.Record;
 import de.baumann.browser.database.RecordAction;
@@ -605,8 +603,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 ninjaWebView.stopLoading();
                 omniBox_text.setKeyListener(listener);
                 assert url != null;
-                if (url.equals("about:blank")) {
-                    omniBox_text.requestFocus();
+                if (url.contains("about:blank")) {
                     omniBox_text.setText("");
                 } else {
                     omniBox_text.setText(url);
@@ -778,7 +775,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     showContextMenuList(list.get(position).getTitle(), list.get(position).getURL(), adapter, list, position, list.get(position).getTime());
                     return true;
                 });
-                initBookmarkList();
             } else if (menuItem.getItemId() == R.id.page_3) {
                 omniBox_overview.setImageResource(R.drawable.icon_history_light);
                 overViewTab = getString(R.string.album_title_history);
@@ -935,23 +931,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 omniBox.setVisibility(View.VISIBLE);
             }
         });
-    }
-
-    private void initBookmarkList() {
-        BookmarkList db = new BookmarkList(context);
-        db.open();
-        Cursor cursor = db.fetchAllData(activity);
-        cursor.moveToFirst();
-        while (!cursor.isAfterLast()) {
-            RecordAction action = new RecordAction(context);
-            action.open(true);
-            action.addBookmark(new Record(
-                    cursor.getString(cursor.getColumnIndexOrThrow("edit_title")),
-                    cursor.getString(cursor.getColumnIndexOrThrow("pass_content")),
-                    1, 0,2));
-            cursor.moveToNext();
-            action.close();
-        }
     }
 
     @SuppressLint("SetJavaScriptEnabled")
@@ -1199,10 +1178,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             }
         });
 
-        if (!url.isEmpty()) {
-            ninjaWebView.loadUrl(url);
+        if (url.isEmpty() || url.equals("about:blank")) {
+            ninjaWebView.loadData("about:blank","","");
         } else {
-            ninjaWebView.loadUrl("about:blank");
+            ninjaWebView.loadUrl(url);
         }
 
         if (currentAlbumController != null) {
@@ -1303,10 +1282,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             if (url.startsWith("https://")) {
                 omniBox_tab.setImageResource(R.drawable.icon_menu_light);
                 omniBox_tab.setOnClickListener(v -> showTabView());
-            } else if (url.equals("about:blank")){
+            } else if (url.contains("about:blank")){
                 omniBox_tab.setImageResource(R.drawable.icon_menu_light);
                 omniBox_tab.setOnClickListener(v -> showTabView());
-                omniBox_text.requestFocus();
+                omniBox_text.setText("");
             } else {
                 omniBox_tab.setImageResource(R.drawable.icon_alert);
                 omniBox_tab.setOnClickListener(v -> {

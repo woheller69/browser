@@ -4,9 +4,14 @@
 - new: Reload on swipeDown when at top of webpage (thanks to @woheller69)
 - new: Added GlobalPrivacyControl (thanks to @woheller69)
 - new: Remove device info from useragent, use prefixes like DuckDuckGo browser (thanks to @woheller69)
+- new: fivicons in bookmarklist (thanks to @woheller69)
+- updated: do not track (thanks to @woheller69)
+- updated: translations
 - fix: sorting of tabs in overview
 - fix: DOM-storage description in settings
 - fix: apply settings on back/forward navigation
+- fix: Ad-Blocking also blocks "social" media
+- fix: open link externally
 
 
 ### v 8.0
@@ -18,8 +23,6 @@
 - new: Use settings stored in bookmark when a bookmark is found in search (thanks to @woheller69)
 - new: Show icon source of item (start page, bookmarks, history) in search (thanks to @woheller69)
 - new: save form data/use autofill service in settings
-- updated: do not track (thanks to @woheller69)
-- updated: translations
 - fix: correct icon colors when importing bookmarks (thanks to @woheller69)
 - fix: content hidden by toolbar
 - fix: opening new tabs on older Android versions

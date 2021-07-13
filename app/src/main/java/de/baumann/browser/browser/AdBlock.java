@@ -25,7 +25,7 @@ import java.util.*;
 @SuppressWarnings("ResultOfMethodCallIgnored")
 public class AdBlock {
     private static final String FILE = "hosts.txt";
-    private static final String hostURL = "https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn-social/hosts";
+    private static final String hostURL = "https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn/hosts";
     private static final Set<String> hosts = new HashSet<>();
     @SuppressLint("ConstantLocale")
     private static final Locale locale = Locale.getDefault();

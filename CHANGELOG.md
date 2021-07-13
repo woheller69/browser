@@ -18,6 +18,7 @@
 - new: Use settings stored in bookmark when a bookmark is found in search (thanks to @woheller69)
 - new: Show icon source of item (start page, bookmarks, history) in search (thanks to @woheller69)
 - new: save form data/use autofill service in settings
+- updated: do not track (thanks to @woheller69)
 - updated: translations
 - fix: correct icon colors when importing bookmarks (thanks to @woheller69)
 - fix: content hidden by toolbar

@@ -305,6 +305,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
+
         setIntent(intent);
     }
 
@@ -440,7 +441,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             for (Record record:list){
                 if (record.getURL().equals(url)){
                     long time = record.getTime();
-                    if (time>0 && time <=123) { //this is a bookmark: start page has 0 and history has time value, much higher
+                    if (time>0 && time <=123) {
+                        //this is a bookmark: start page has 0 and history has time value, much higher
                         if (((time&16) ==16) != ninjaWebView.isDesktopMode()) ninjaWebView.toggleDesktopMode(false);
                         ninjaWebView.setJavaScript(!((time&32) ==32));
                         ninjaWebView.setDomStorage(!((time&64) ==64));
@@ -765,16 +767,13 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 adapter.notifyDataSetChanged();
                 filter = false;
                 listView.setOnItemClickListener((parent, view, position, id) -> {
-
                     if (((list.get(position).getTime()&16) ==16) != ninjaWebView.isDesktopMode()) ninjaWebView.toggleDesktopMode(false);
                     ninjaWebView.setJavaScript(!((list.get(position).getTime()&32) ==32));
                     ninjaWebView.setDomStorage(!((list.get(position).getTime()&64) ==64));
                     ninjaWebView.setOldDomain(list.get(position).getURL());
-
                     ninjaWebView.loadUrl(list.get(position).getURL());
                     hideOverview();
                 });
-
                 listView.setOnItemLongClickListener((parent, view, position, id) -> {
                     showContextMenuList(list.get(position).getTitle(), list.get(position).getURL(), adapter, list, position, list.get(position).getTime());
                     return true;

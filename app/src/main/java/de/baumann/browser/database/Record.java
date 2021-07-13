@@ -31,17 +31,25 @@ public class Record {
         return ordinal;
     }
 
+    private int type;     //0 History, 1 Start site, 2 Bookmark
+    public int getType() {
+        return type;
+    }
+    public void setType(int type){this.type=type;}
+
     public Record() {
         this.title = null;
         this.url = null;
         this.time = 0L;
         this.ordinal = -1;
+        this.type=-1;
     }
 
-    public Record(String title, String url, long time, int ordinal) {
+    public Record(String title, String url, long time, int ordinal, int type) {
         this.title = title;
         this.url = url;
         this.time = time;
         this.ordinal = ordinal;
+        this.type=type;
     }
 }

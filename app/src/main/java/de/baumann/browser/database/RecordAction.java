@@ -75,7 +75,7 @@ public class RecordAction {
         }
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
-            list.add(getRecord(cursor));
+            list.add(getRecord(cursor,1));
             cursor.moveToNext();
         }
         cursor.close();
@@ -129,11 +129,11 @@ public class RecordAction {
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
             if (filter) {
-                if ((getRecord(cursor).getTime()&15) == filterBy) {
-                    list.add(getRecord(cursor));
+                if ((getRecord(cursor,2).getTime()&15) == filterBy) {
+                    list.add(getRecord(cursor,2));
                 }
             } else {
-                list.add(getRecord(cursor));
+                list.add(getRecord(cursor,2));
             }
             cursor.moveToNext();
         }
@@ -185,7 +185,7 @@ public class RecordAction {
 
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
-            list.add(getRecord(cursor));
+            list.add(getRecord(cursor,0));
             cursor.moveToNext();
         }
         cursor.close();
@@ -284,11 +284,12 @@ public class RecordAction {
         database.execSQL("DELETE FROM " + table);
     }
 
-    private Record getRecord(Cursor cursor) {
+    private Record getRecord(Cursor cursor, int type) {
         Record record = new Record();
         record.setTitle(cursor.getString(0));
         record.setURL(cursor.getString(1));
         record.setTime(cursor.getLong(2));
+        record.setType(type);
         return record;
     }
 

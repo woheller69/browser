@@ -15,6 +15,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.database.Cursor;
+import android.graphics.Bitmap;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Build;
@@ -94,6 +95,7 @@ import de.baumann.browser.browser.Cookie;
 import de.baumann.browser.browser.Javascript;
 import de.baumann.browser.browser.Remote;
 import de.baumann.browser.database.BookmarkList;
+import de.baumann.browser.database.FaviconHelper;
 import de.baumann.browser.database.Record;
 import de.baumann.browser.database.RecordAction;
 import de.baumann.browser.R;
@@ -946,7 +948,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             action.addBookmark(new Record(
                     cursor.getString(cursor.getColumnIndexOrThrow("edit_title")),
                     cursor.getString(cursor.getColumnIndexOrThrow("pass_content")),
-                    1, 0));
+                    1, 0,2));
             cursor.moveToNext();
             action.close();
         }
@@ -1273,29 +1275,31 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         ninjaWebView = (NinjaWebView) currentAlbumController;
         this.cookieHosts = new Cookie(this.context);
         CookieManager manager = CookieManager.getInstance();
-        if (cookieHosts.isWhite(ninjaWebView.getUrl()) || sp.getBoolean("sp_cookies", true)) {
-            manager.setAcceptCookie(true);
-            manager.getCookie(ninjaWebView.getUrl());
-        } else {
-            manager.setAcceptCookie(false);
-        }
-
-        if (Objects.requireNonNull(ninjaWebView.getTitle()).isEmpty()) {
-            omniBox_text.setText(ninjaWebView.getUrl());
-        } else {
-            omniBox_text.setText(ninjaWebView.getTitle());
-        }
-
-        if (sp.getBoolean("hideToolbar", true)) {
-            if (ninjaWebView.canScrollVertically(1) || ninjaWebView.canScrollVertically(-1)) {
-                contentFrame.setPadding(0,0,0,0);
-            } else {
-                contentFrame.setPadding(0,0,0,bottomAppBar.getHeight());
-            }
-        }
 
         String url = ninjaWebView.getUrl();
         if (url != null) {
+
+            if (cookieHosts.isWhite(url) || sp.getBoolean("sp_cookies", true)) {
+                manager.setAcceptCookie(true);
+                manager.getCookie(url);
+            } else {
+                manager.setAcceptCookie(false);
+            }
+
+            if (Objects.requireNonNull(ninjaWebView.getTitle()).isEmpty()) {
+                omniBox_text.setText(url);
+            } else {
+                omniBox_text.setText(ninjaWebView.getTitle());
+            }
+
+            if (sp.getBoolean("hideToolbar", true)) {
+                if (ninjaWebView.canScrollVertically(1) || ninjaWebView.canScrollVertically(-1)) {
+                    contentFrame.setPadding(0,0,0,0);
+                } else {
+                    contentFrame.setPadding(0,0,0,bottomAppBar.getHeight());
+                }
+            }
+
             if (url.startsWith("https://")) {
                 omniBox_tab.setImageResource(R.drawable.icon_menu_light);
                 omniBox_tab.setOnClickListener(v -> showTabView());
@@ -1308,7 +1312,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 omniBox_tab.setOnClickListener(v -> {
                     MaterialAlertDialogBuilder builderR = new MaterialAlertDialogBuilder(context);
                     builderR.setMessage(R.string.toast_unsecured);
-                    builderR.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> ninjaWebView.loadUrl(ninjaWebView.getUrl().replace("http://", "https://")));
+                    builderR.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> ninjaWebView.loadUrl(url.replace("http://", "https://")));
                     builderR.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> {
                         dialog.cancel();
                         omniBox_tab.setImageResource(R.drawable.icon_menu_light);
@@ -1497,6 +1501,12 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     }
 
     private void saveBookmark() {
+
+        FaviconHelper faviconHelper = new FaviconHelper(context);
+        Bitmap favicon=ninjaWebView.getFavicon();
+        if (favicon!=null) faviconHelper.deleteFavicon(ninjaWebView.getUrl()); //Replace favicon
+        faviconHelper.addFavicon(ninjaWebView.getUrl(),ninjaWebView.getFavicon());
+
         RecordAction action = new RecordAction(context);
         action.open(true);
         if (action.checkUrl(ninjaWebView.getUrl(), RecordUnit.TABLE_BOOKMARK)) {
@@ -1510,7 +1520,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             // bit 6: 0 = Remote Content allowd (0 due to backward compatibility)
 
             long value= 11 + (long) (ninjaWebView.isDesktopMode()?16:0) + (long) (ninjaWebView.getSettings().getJavaScriptEnabled()?0:32)  + (long) (ninjaWebView.getSettings().getDomStorageEnabled()?0:64);
-            action.addBookmark(new Record(ninjaWebView.getTitle(), ninjaWebView.getUrl(), value, 0));
+            action.addBookmark(new Record(ninjaWebView.getTitle(), ninjaWebView.getUrl(), value, 0,2));
 
             NinjaToast.show(this, R.string.app_done);
         }
@@ -1937,7 +1947,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                         action.open(true);
                         action.deleteURL(url, RecordUnit.TABLE_BOOKMARK);
                         newIcon=newIcon+(long) (chip_desktopMode.isChecked()?16:0)+(long)(chip_javascript.isChecked()?0:32)+(long)(chip_remoteContent.isChecked()?0:64);
-                        action.addBookmark(new Record(edit_title.getText().toString(), edit_URL.getText().toString(), newIcon, 0));
+                        action.addBookmark(new Record(edit_title.getText().toString(), edit_URL.getText().toString(), newIcon, 0,2));
                         action.close();
                         updateAutoComplete();
                         bottom_navigation.setSelectedItemId(R.id.page_2);
@@ -1952,6 +1962,12 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     }
 
     private void save_atHome (final String title, final String url) {
+
+        FaviconHelper faviconHelper = new FaviconHelper(context);
+        Bitmap favicon=ninjaWebView.getFavicon();
+        if (favicon!=null) faviconHelper.deleteFavicon(ninjaWebView.getUrl()); //Replace favicon
+        faviconHelper.addFavicon(ninjaWebView.getUrl(),ninjaWebView.getFavicon());
+
         RecordAction action = new RecordAction(context);
         action.open(true);
         if (action.checkUrl(url, RecordUnit.TABLE_GRID)) {
@@ -1960,7 +1976,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             int counter = sp.getInt("counter", 0);
             counter = counter + 1;
             sp.edit().putInt("counter", counter).apply();
-            if (action.addStartSite(new Record(title, url, 0, counter))) {
+            if (action.addStartSite(new Record(title, url, 0, counter,1))) {
                 NinjaToast.show(this, R.string.app_done);
             } else {
                 NinjaToast.show(this, R.string.app_error);

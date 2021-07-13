@@ -60,6 +60,9 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
     private static class CompleteItem {
         private final String title;
         private final Long time;
+        private int type;
+
+        private int getType(){return this.type;}
 
         String getTitle() {
             return title;
@@ -83,10 +86,11 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
             this.index = index;
         }
 
-        private CompleteItem(String title, String url, Long time) {
+        private CompleteItem(String title, String url, Long time, int type) {
             this.title = title;
             this.url = url;
             this.time = time;
+            this.type=type;
         }
 
         @Override
@@ -135,7 +139,7 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
                     && !record.getTitle().isEmpty()
                     && record.getURL() != null
                     && !record.getURL().isEmpty()) {
-                originalList.add(new CompleteItem(record.getTitle(), record.getURL(), record.getTime()));
+                originalList.add(new CompleteItem(record.getTitle(), record.getURL(), record.getTime(),record.getType()));
             }
         }
 
@@ -187,11 +191,11 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
         holder.urlView.setVisibility(View.GONE);
         holder.urlView.setText(item.url);
 
-        if (item.getTime()==0){  //Item from start page
+        if (item.getType()==1){  //Item from start page
             holder.iconView.setImageResource(R.drawable.icon_web_light);
-        }else if (item.getTime()>123){  //Item from history
+        }else if (item.getType()==0){  //Item from history
             holder.iconView.setImageResource(R.drawable.icon_history_light);
-        }else  holder.iconView.setImageResource(R.drawable.icon_bookmark_light);  //Item from bookmarks
+        }else if (item.getType()==2) holder.iconView.setImageResource(R.drawable.icon_bookmark_light);  //Item from bookmarks
 
         holder.iconView.setVisibility(View.VISIBLE);
 

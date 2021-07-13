@@ -65,16 +65,6 @@ public class NinjaWebViewClient extends WebViewClient {
     public void onPageFinished(WebView view, String url) {
         super.onPageFinished(view, url);
 
-        if (sp.getBoolean("saveHistory", true)) {
-            RecordAction action = new RecordAction(context);
-            action.open(true);
-            if (action.checkUrl(url, RecordUnit.TABLE_HISTORY)) {
-                action.deleteURL(url, RecordUnit.TABLE_HISTORY);
-            }
-            action.addHistory(new Record(ninjaWebView.getTitle(), url, System.currentTimeMillis(), 0));
-            action.close();
-        }
-
         if (ninjaWebView.isForeground()) {
             ninjaWebView.invalidate();
         } else {
@@ -107,10 +97,11 @@ public class NinjaWebViewClient extends WebViewClient {
         //  See the License for the specific language governing permissions and
         //  limitations under the License.
         //
+
         view.evaluateJavascript("if (navigator.doNotTrack === null) { Object.defineProperty(navigator, 'doNotTrack', { value: 1, writable: false,configurable: false});} else {try { navigator.doNotTrack = 1;} catch (e) { console.error('doNotTrack is not writable: ', e); }};",null);
-        view.evaluateJavascript("if (window.doNotTrack === undefined) { Object.defineProperty(window, 'doNotTrack', { value: 1, writable: false,configurable: false});} else {try { windows.doNotTrack = 1;} catch (e) { console.error('doNotTrack is not writable: ', e); }};",null);
+        view.evaluateJavascript("if (window.doNotTrack === undefined) { Object.defineProperty(window, 'doNotTrack', { value: 1, writable: false,configurable: false});} else {try { window.doNotTrack = 1;} catch (e) { console.error('doNotTrack is not writable: ', e); }};",null);
         view.evaluateJavascript("if (navigator.msDoNotTrack === undefined) { Object.defineProperty(navigator, 'msDoNotTrack', { value: 1, writable: false,configurable: false});} else {try { navigator.msDoNotTrack = 1;} catch (e) { console.error('msDoNotTrack is not writable: ', e); }};",null);
-    }
+}
 
     @Override
     public boolean shouldOverrideUrlLoading(WebView view, String url) {

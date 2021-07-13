@@ -1276,29 +1276,31 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         ninjaWebView = (NinjaWebView) currentAlbumController;
         this.cookieHosts = new Cookie(this.context);
         CookieManager manager = CookieManager.getInstance();
-        if (cookieHosts.isWhite(ninjaWebView.getUrl()) || sp.getBoolean("sp_cookies", true)) {
-            manager.setAcceptCookie(true);
-            manager.getCookie(ninjaWebView.getUrl());
-        } else {
-            manager.setAcceptCookie(false);
-        }
-
-        if (Objects.requireNonNull(ninjaWebView.getTitle()).isEmpty()) {
-            omniBox_text.setText(ninjaWebView.getUrl());
-        } else {
-            omniBox_text.setText(ninjaWebView.getTitle());
-        }
-
-        if (sp.getBoolean("hideToolbar", true)) {
-            if (ninjaWebView.canScrollVertically(1) || ninjaWebView.canScrollVertically(-1)) {
-                contentFrame.setPadding(0,0,0,0);
-            } else {
-                contentFrame.setPadding(0,0,0,bottomAppBar.getHeight());
-            }
-        }
 
         String url = ninjaWebView.getUrl();
         if (url != null) {
+
+            if (cookieHosts.isWhite(url) || sp.getBoolean("sp_cookies", true)) {
+                manager.setAcceptCookie(true);
+                manager.getCookie(url);
+            } else {
+                manager.setAcceptCookie(false);
+            }
+
+            if (Objects.requireNonNull(ninjaWebView.getTitle()).isEmpty()) {
+                omniBox_text.setText(url);
+            } else {
+                omniBox_text.setText(ninjaWebView.getTitle());
+            }
+
+            if (sp.getBoolean("hideToolbar", true)) {
+                if (ninjaWebView.canScrollVertically(1) || ninjaWebView.canScrollVertically(-1)) {
+                    contentFrame.setPadding(0,0,0,0);
+                } else {
+                    contentFrame.setPadding(0,0,0,bottomAppBar.getHeight());
+                }
+            }
+
             if (url.startsWith("https://")) {
                 omniBox_tab.setImageResource(R.drawable.icon_menu_light);
                 omniBox_tab.setOnClickListener(v -> showTabView());
@@ -1311,7 +1313,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 omniBox_tab.setOnClickListener(v -> {
                     MaterialAlertDialogBuilder builderR = new MaterialAlertDialogBuilder(context);
                     builderR.setMessage(R.string.toast_unsecured);
-                    builderR.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> ninjaWebView.loadUrl(ninjaWebView.getUrl().replace("http://", "https://")));
+                    builderR.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> ninjaWebView.loadUrl(url.replace("http://", "https://")));
                     builderR.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> {
                         dialog.cancel();
                         omniBox_tab.setImageResource(R.drawable.icon_menu_light);

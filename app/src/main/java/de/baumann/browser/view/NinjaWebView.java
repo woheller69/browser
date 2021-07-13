@@ -349,6 +349,15 @@ public class NinjaWebView extends WebView implements AlbumController {
             }
         }
 
+        action.open(false);
+        list = action.listHistory();
+        action.close();
+        for (Record listitem: list){
+            if(listitem.getURL().equals(getUrl())){
+                if (faviconHelper.getFavicon(listitem.getURL())==null) faviconHelper.addFavicon(getUrl(),getFavicon());
+            }
+        }
+
     }
 
     @Nullable

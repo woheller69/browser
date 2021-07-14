@@ -28,6 +28,13 @@
 
     <PreferenceCategory android:title="@string/setting_title_adblock">
 
+        <ListPreference
+            android:key="ab_hosts"
+            android:defaultValue="https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts"
+            android:title="@string/setting_title_adblockHost"
+            android:entries="@array/setting_entries_adBlock"
+            android:entryValues="@array/setting_values_adBlock"/>
+
         <CheckBoxPreference
             android:key="sp_ad_block"
             android:defaultValue="true"

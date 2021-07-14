@@ -4,9 +4,16 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.AssetManager;
+import android.graphics.ColorMatrix;
+import android.graphics.ColorMatrixColorFilter;
+import android.graphics.Paint;
 import android.util.Log;
+import android.view.View;
 
 import androidx.preference.PreferenceManager;
+import androidx.webkit.WebSettingsCompat;
+import androidx.webkit.WebViewFeature;
+
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.File;
@@ -25,7 +32,6 @@ import java.util.*;
 @SuppressWarnings("ResultOfMethodCallIgnored")
 public class AdBlock {
     private static final String FILE = "hosts.txt";
-    private static final String hostURL = "https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn/hosts";
     private static final Set<String> hosts = new HashSet<>();
     @SuppressLint("ConstantLocale")
     private static final Locale locale = Locale.getDefault();
@@ -76,8 +82,20 @@ public class AdBlock {
         thread.start();
     }
 
-    private static void downloadHosts(final Context context) {
+    public static void downloadHosts(final Context context) {
         Thread thread = new Thread(() -> {
+
+            SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
+            String hostURL = "https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn/hosts";
+
+            if (Objects.equals(sp.getString("ab_hosts", "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts"),
+                    "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts")) {
+                hostURL = "https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn/hosts";
+            } else if (Objects.equals(sp.getString("ab_hosts", "https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews/hosts"),
+                    "https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews/hosts")) {
+                hostURL = "https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews/hosts";
+            }
+
             try {
                 URL url = new URL(hostURL);
                 Log.d("browser","Download AdBlock hosts");

@@ -102,4 +102,43 @@
         <item>175</item>
     </string-array>
 
+    <!-- Start tab -->
+    <string-array name="setting_entries_adBlock">
+        <item>UH = (adware + malware)</item>
+        <item>UH + fakenews</item>
+        <item>UH + gambling</item>
+        <item>UH + porn</item>
+        <item>UH + social</item>
+        <item>UH + fakenews + gambling</item>
+        <item>UH + fakenews + porn</item>
+        <item>UH + fakenews + social</item>
+        <item>UH + gambling + porn</item>
+        <item>UH + gambling + social</item>
+        <item>UH + porn + social</item>
+        <item>UH + fakenews + gambling + porn</item>
+        <item>UH + fakenews + gambling + social</item>
+        <item>UH + fakenews + porn + social</item>
+        <item>UH + gambling + porn + social</item>
+        <item>UH + fakenews + gambling + porn + social</item>
+    </string-array>
+
+    <string-array name="setting_values_adBlock">
+        <item>https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts</item>
+        <item>https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews/hosts</item>
+        <item>https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/gambling/hosts</item>
+        <item>https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/porn/hosts</item>
+        <item>https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/social/hosts</item>
+        <item>https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling/hosts</item>
+        <item>https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-porn/hosts</item>
+        <item>https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-social/hosts</item>
+        <item>https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/gambling-porn/hosts</item>
+        <item>https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/gambling-social/hosts</item>
+        <item>https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/porn-social/hosts</item>
+        <item>https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn/hosts</item>
+        <item>https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-social/hosts</item>
+        <item>https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-porn-social/hosts</item>
+        <item>https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/gambling-porn-social/hosts</item>
+        <item>https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn-social/hosts</item>
+    </string-array>
+
 </resources>

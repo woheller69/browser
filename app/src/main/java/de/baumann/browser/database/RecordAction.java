@@ -19,10 +19,10 @@ import de.baumann.browser.unit.RecordUnit;
 
 public class RecordAction {
     private SQLiteDatabase database;
-    private final RecordHelper helper;
+    private static RecordHelper helper = null;
 
     public RecordAction(Context context) {
-        this.helper = new RecordHelper(context);
+        helper = new RecordHelper(context);
     }
     public void open(boolean rw) { database = rw ? helper.getWritableDatabase() : helper.getReadableDatabase(); }
     public void close() {
@@ -32,7 +32,7 @@ public class RecordAction {
 
     //StartSite
 
-    public boolean addStartSite(Record record) {
+    public static synchronized boolean addStartSite(Record record) {
         if (record == null
                 || record.getTitle() == null
                 || record.getTitle().trim().isEmpty()
@@ -45,6 +45,10 @@ public class RecordAction {
         values.put(RecordUnit.COLUMN_TITLE, record.getTitle().trim());
         values.put(RecordUnit.COLUMN_URL, record.getURL().trim());
         values.put(RecordUnit.COLUMN_ORDINAL, record.getOrdinal());
+
+
+        SQLiteDatabase database = helper.getWritableDatabase();
+
         database.insert(RecordUnit.TABLE_GRID, null, values);
         return true;
     }
@@ -252,10 +256,11 @@ public class RecordAction {
         return list;
     }
 
-    public boolean checkUrl (String url, String table) {
+    public synchronized static boolean checkUrl (String url, String table) {
         if (url == null || url.trim().isEmpty()) {
             return false;
         }
+        SQLiteDatabase database = helper.getWritableDatabase();
         Cursor cursor = database.query(
                 table,
                 new String[] {RecordUnit.COLUMN_URL},

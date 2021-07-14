@@ -92,6 +92,7 @@
     <string name="setting_title_whitelistJS">JavaScript engedélylista</string>
     <string name="setting_title_adblock">AdBlock</string>
     <string name="setting_summary_adblock">AdBlock engedélyezése a bosszantó hirdetések blokkolására. A weboldalak is gyorsabban töltődnek be, ha engedélyezett.</string>
+    <string name="setting_title_adblockHost">Blocked content</string>
     <string name="setting_title_location">Tartózkodási hely</string>
     <string name="setting_summary_location">Megengedi a weboldalaknak, hogy hozzáférjenek a tartózkodási helyéhez. Néhány weboldal számára (mint a Google Térkép navigáció) engedélyezni kell.</string>
     <string name="setting_title_history">Előzmények</string>

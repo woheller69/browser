@@ -92,6 +92,7 @@
     <string name="setting_title_whitelistJS">Λίστα επιτρεπόμενων JavaScript</string>
     <string name="setting_title_adblock">AdBlock</string>
     <string name="setting_summary_adblock">Ενεργοποιήστε το AdBlock για να αποκλείσετε ενοχλητικές διαφημίσεις. Οι ιστότοποι επίσης φορτώνουν γρηγορότερα όταν είναι ενεργοποιημένο.</string>
+    <string name="setting_title_adblockHost">Blocked content</string>
     <string name="setting_title_location">Τοποθεσία</string>
     <string name="setting_summary_location">Να επιτρέπεται σε ιστότοπους η πρόσβαση στην τοποθεσία σας. Ορισμένες ιστοσελίδες (όπως οι χάρτες Google για πλοήγηση) χρειάζονται αυτήν την επιλογή.</string>
     <string name="setting_title_history">Ιστορικό</string>

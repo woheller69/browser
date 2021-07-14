@@ -92,6 +92,7 @@
     <string name="setting_title_whitelistJS">JavaScript liste blanche</string>
     <string name="setting_title_adblock">AdBlock</string>
     <string name="setting_summary_adblock">Activez AdBlock pour bloquer les pubs ennuyeuses. Les sites se chargent plus rapidement quand activé.</string>
+    <string name="setting_title_adblockHost">Blocked content</string>
     <string name="setting_title_location">Localisation</string>
     <string name="setting_summary_location">Autoriser les sites Web à accéder à votre position. Certains sites Web (comme Google maps pour la navigation) ont besoin de cette option.</string>
     <string name="setting_title_history">Historique</string>

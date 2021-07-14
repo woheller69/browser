@@ -1,5 +1,6 @@
 package de.baumann.browser.database;
 
+import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -8,10 +9,13 @@ import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.util.Log;
 
 import java.io.ByteArrayOutputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class FaviconHelper extends SQLiteOpenHelper {
     // Database Version
@@ -49,7 +53,7 @@ public class FaviconHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public void addFavicon( String url, Bitmap bitmap) throws SQLiteException {
+    public synchronized void addFavicon( String url, Bitmap bitmap) throws SQLiteException {
         String domain=getDomain(url);
         if (domain==null || bitmap==null) return;
 
@@ -62,21 +66,19 @@ public class FaviconHelper extends SQLiteOpenHelper {
         database.close();
     }
 
-    public void deleteFavicon( String url) throws SQLiteException {
-        String domain=getDomain(url);
-        if (domain==null) return;
+    public synchronized void deleteFavicon( String domain) throws SQLiteException {
         SQLiteDatabase database = this.getWritableDatabase();
         database.delete(TABLE_FAVICON, DOMAIN + " = ?", new String[]{domain});
         database.close();
     }
 
-    public void deleteAllFavicons() throws SQLiteException {
+    public synchronized void deleteAllFavicons() throws SQLiteException {
         SQLiteDatabase database = this.getWritableDatabase();
         database.delete(TABLE_FAVICON, null, null);
         database.close();
     }
 
-    public Bitmap getFavicon(String url){
+    public synchronized Bitmap getFavicon(String url){
         String domain=getDomain(url);
         if (domain==null) return null;
 
@@ -100,6 +102,44 @@ public class FaviconHelper extends SQLiteOpenHelper {
             cursor.close();
             database.close();
             return null;
+        }
+    }
+    public synchronized List<String> getAllFaviconDomains(){
+        SQLiteDatabase database = this.getReadableDatabase();
+        List<String> result = new ArrayList<>();
+        Cursor cursor;
+        cursor = database.query(TABLE_FAVICON,
+                new String[]{DOMAIN,
+                        IMAGE},
+                null, null, null, null, null);
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()) {
+            result.add(cursor.getString(0));
+            cursor.moveToNext();
+        }
+        cursor.close();
+        database.close();
+        return result;
+    }
+
+    public void cleanUpFaviconDB(Context context){
+        List<String> faviconURLs=getAllFaviconDomains();
+        RecordAction action = new RecordAction(context);
+        List<Record> allEntries = action.listEntries((Activity)context);
+
+        for(String faviconURL:faviconURLs){
+            boolean found=false;
+            for(Record entry:allEntries){
+                if(getDomain(entry.getURL()).equals(faviconURL)){
+                    found=true;
+                    break;
+                }
+            }
+            //If there is no entry in StartSite, Bookmarks, or History using this Favicon -> delete it
+            if(!found) {
+                deleteFavicon(faviconURL);
+                Log.d("Favicon delete", faviconURL);
+            }
         }
     }
 

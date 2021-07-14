@@ -300,6 +300,7 @@ public class RecordAction {
         list.addAll(action.listBookmark(activity, false, 0)); //move bookmarks to top of list
         list.addAll(action.listStartSite(activity));
         list.addAll(action.listHistory());
+        action.close();
         return list;
     }
 }

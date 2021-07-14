@@ -92,6 +92,7 @@
     <string name="setting_title_whitelistJS">Бели списак Џава-скрипта</string>
     <string name="setting_title_adblock">Блокер реклама</string>
     <string name="setting_summary_adblock">Омогиући блокер реклама како би блокирао досадне рекламе. Сајтови се такође брже учитавају кад је омогућен.</string>
+    <string name="setting_title_adblockHost">Blocked content</string>
     <string name="setting_title_location">Локација</string>
     <string name="setting_summary_location">Дозволи сајтовима приступ локацији. Неким сајтовима је ова опција неопходна (нпр. Гугл мапама ради навигације).</string>
     <string name="setting_title_history">Историјат</string>

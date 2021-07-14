@@ -92,6 +92,7 @@
     <string name="setting_title_whitelistJS">Wite lijst</string>
     <string name="setting_title_adblock">Advertentieblokkering</string>
     <string name="setting_summary_adblock">Schakel advertentieblokkering in om vervelende reclame te blokkeren. Websites laden hierdoor ook sneller.</string>
+    <string name="setting_title_adblockHost">Blocked content</string>
     <string name="setting_title_location">Locatie</string>
     <string name="setting_summary_location">Allow websites to access your location. Some websites (like Google maps for navigation) need this enabled.</string>
     <string name="setting_title_history">Geschiedenis</string>

@@ -427,9 +427,9 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     @Override
     public void updateAutoComplete() {
         RecordAction action = new RecordAction(this);
-        action.open(false);
+
         List<Record> list = action.listEntries(activity);
-        action.close();
+
         CompleteAdapter adapter = new CompleteAdapter(this, R.layout.item_icon_left, list);
         omniBox_text.setAdapter(adapter);
         adapter.notifyDataSetChanged();
@@ -439,8 +439,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             for (Record record:list){
                 if (record.getURL().equals(url)){
                     long time = record.getTime();
-                    if (time>0 && time <=123) {
-                        //this is a bookmark: start page has 0 and history has time value, much higher
+                    if (record.getType()==2) {
+
                         if (((time&16) ==16) != ninjaWebView.isDesktopMode()) ninjaWebView.toggleDesktopMode(false);
                         ninjaWebView.setJavaScript(!((time&32) ==32));
                         ninjaWebView.setDomStorage(!((time&64) ==64));
@@ -1485,7 +1485,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         Bitmap favicon=ninjaWebView.getFavicon();
         if (favicon!=null) faviconHelper.deleteFavicon(ninjaWebView.getUrl()); //Replace favicon
         faviconHelper.addFavicon(ninjaWebView.getUrl(),ninjaWebView.getFavicon());
-
         RecordAction action = new RecordAction(context);
         action.open(true);
         if (action.checkUrl(ninjaWebView.getUrl(), RecordUnit.TABLE_BOOKMARK)) {
@@ -1539,7 +1538,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         } else {
             MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
             builder.setMessage(R.string.toast_quit);
-            builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> finish());
+            builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
+                FaviconHelper db=new FaviconHelper(context);
+                db.cleanUpFaviconDB(context);
+                finish();});
             builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
             AlertDialog dialog = builder.create();
             dialog.show();

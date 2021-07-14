@@ -92,6 +92,7 @@
     <string name="setting_title_whitelistJS">Білий список JavaScript</string>
     <string name="setting_title_adblock">AdBlock</string>
     <string name="setting_summary_adblock">Увімкніть AdBlock, щоб заблокувати дратівливу рекламу. Сайти завантажуються швидше при включенні.</string>
+    <string name="setting_title_adblockHost">Blocked content</string>
     <string name="setting_title_location">Місце розташування</string>
     <string name="setting_summary_location">Allow websites to access your location. Some websites (like Google maps for navigation) need this enabled.</string>
     <string name="setting_title_history">Історія</string>

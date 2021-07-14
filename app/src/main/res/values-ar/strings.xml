@@ -92,6 +92,7 @@
     <string name="setting_title_whitelistJS">القائمة البيضاء لجافا سكربت</string>
     <string name="setting_title_adblock">مانع الاعلانات</string>
     <string name="setting_summary_adblock">مكن مانع الاعلانات لمنع الإعلانات المزعجة. تمكينه يسرع تحميل المواقع.</string>
+    <string name="setting_title_adblockHost">Blocked content</string>
     <string name="setting_title_location">الموقع</string>
     <string name="setting_summary_location">اسمح للمواقع الوصول إلى موقعك. بعض المواقع (مثل خرائط غوغل) تحتاج لهذا.</string>
     <string name="setting_title_history">التأريخ</string>

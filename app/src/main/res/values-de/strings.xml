@@ -92,7 +92,7 @@
     <string name="setting_title_whitelistJS">JavaScript Ausnahmen</string>
     <string name="setting_title_adblock">AdBlock</string>
     <string name="setting_summary_adblock">Aktiviere AdBlock, um lästige Werbung zu blockieren. Websites laden auch schneller, falls eingeschaltet.</string>
-    <string name="setting_title_adblockHost">Blocked content</string>
+    <string name="setting_title_adblockHost">Blockierter Inhalt</string>
     <string name="setting_title_location">Standortbestimmung</string>
     <string name="setting_summary_location">Websites gestatten, auf den Standort zuzugreifen. Einige Websites (wie für Navigation Google Maps) benötigen dies um richtig zu funktionieren.</string>
     <string name="setting_title_history">Verlauf</string>

@@ -92,7 +92,7 @@
     <string name="setting_title_whitelistJS">Seznam povolených – JavaScript</string>
     <string name="setting_title_adblock">AdBlock</string>
     <string name="setting_summary_adblock">Zapněte AdBlock pro blokování obtěžujících reklam. Stránky se budou načítat rychleji.</string>
-    <string name="setting_title_adblockHost">Blocked content</string>
+    <string name="setting_title_adblockHost">Blokovaný obsah</string>
     <string name="setting_title_location">Poloha</string>
     <string name="setting_summary_location">Povolit webům přístup k vaší poloze. Některé weby (jako Mapy Google pro navigaci) jej potřebují mít zapnutý.</string>
     <string name="setting_title_history">Historie</string>

@@ -92,7 +92,7 @@
     <string name="setting_title_whitelistJS">JavaScript ホワイトリスト</string>
     <string name="setting_title_adblock">AdBlock</string>
     <string name="setting_summary_adblock">AdBlock を有効にして迷惑な広告をブロックします。有効にするとサイトの読み込みが速くなります。</string>
-    <string name="setting_title_adblockHost">Blocked content</string>
+    <string name="setting_title_adblockHost">ブロックされた内容</string>
     <string name="setting_title_location">位置情報</string>
     <string name="setting_summary_location">ウェブサイトに位置情報へのアクセスを許可します。いくつかのウェブサイト (Google マップなど) は許可が必要です。</string>
     <string name="setting_title_history">履歴</string>

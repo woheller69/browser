@@ -32,7 +32,7 @@ public class RecordAction {
 
     //StartSite
 
-    public static synchronized boolean addStartSite(Record record) {
+    public static synchronized boolean addStartSite(Context context, Record record) {
         if (record == null
                 || record.getTitle() == null
                 || record.getTitle().trim().isEmpty()
@@ -45,15 +45,16 @@ public class RecordAction {
         values.put(RecordUnit.COLUMN_TITLE, record.getTitle().trim());
         values.put(RecordUnit.COLUMN_URL, record.getURL().trim());
         values.put(RecordUnit.COLUMN_ORDINAL, record.getOrdinal());
-
-
+        RecordAction action = new RecordAction(context);
         SQLiteDatabase database = helper.getWritableDatabase();
-
+        action.open(false);
         database.insert(RecordUnit.TABLE_GRID, null, values);
+        database.close();
+        action.close();
         return true;
     }
 
-    public List<Record> listStartSite (Activity activity) {
+    public synchronized List<Record> listStartSite (Activity activity) {
 
         List<Record> list = new LinkedList<>();
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(activity);

@@ -86,15 +86,7 @@ public class AdBlock {
         Thread thread = new Thread(() -> {
 
             SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
-            String hostURL = "https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn/hosts";
-
-            if (Objects.equals(sp.getString("ab_hosts", "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts"),
-                    "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts")) {
-                hostURL = "https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn/hosts";
-            } else if (Objects.equals(sp.getString("ab_hosts", "https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews/hosts"),
-                    "https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews/hosts")) {
-                hostURL = "https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews/hosts";
-            }
+            String hostURL = sp.getString("ab_hosts", "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts");
 
             try {
                 URL url = new URL(hostURL);

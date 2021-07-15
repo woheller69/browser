@@ -1955,7 +1955,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             int counter = sp.getInt("counter", 0);
             counter = counter + 1;
             sp.edit().putInt("counter", counter).apply();
-            if (RecordAction.addStartSite(new Record(title, url, 0, counter,1))) {
+            if (RecordAction.addStartSite(context, new Record(title, url, 0, counter,1))) {
                 NinjaToast.show(this, R.string.app_done);
             } else {
                 NinjaToast.show(this, R.string.app_error);

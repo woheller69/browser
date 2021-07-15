@@ -92,7 +92,7 @@
     <string name="setting_title_whitelistJS">Белый список JavaScript</string>
     <string name="setting_title_adblock">AdBlock</string>
     <string name="setting_summary_adblock">Включите AdBlock, чтобы заблокировать раздражающую рекламу. Сайты загружаются быстрее при включении.</string>
-    <string name="setting_title_adblockHost">Blocked content</string>
+    <string name="setting_title_adblockHost">Блокированное содержимое</string>
     <string name="setting_title_location">Местоположение</string>
     <string name="setting_summary_location">Разрешить сайтам доступ к Вашему местоположению. Некоторые сайты (например, карты Google) нуждаются в этом.</string>
     <string name="setting_title_history">История</string>

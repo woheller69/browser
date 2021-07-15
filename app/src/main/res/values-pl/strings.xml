@@ -92,7 +92,7 @@
     <string name="setting_title_whitelistJS">Biała lista JavaScript</string>
     <string name="setting_title_adblock">AdBlock</string>
     <string name="setting_summary_adblock">Zezwól na AdBlock do blokady irytujących reklam. Poprawia on prędkość ładowania witryn.</string>
-    <string name="setting_title_adblockHost">Blocked content</string>
+    <string name="setting_title_adblockHost">Zablokowane treści</string>
     <string name="setting_title_location">Lokalizacja</string>
     <string name="setting_summary_location">Zezwól na dostęp do lokalizacji twojego urządzenia. Niektóre witryny (np. Google Maps do nawigacji) wymagają włączenia tej funkcji.</string>
     <string name="setting_title_history">Historia</string>

@@ -1310,7 +1310,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         CircularProgressIndicator progressBar = findViewById(R.id.main_progress_bar);
         progressBar.setOnClickListener(v -> ninjaWebView.stopLoading());
         progressBar.setProgressCompat(progress, true);
-        updateOmniBox();
+        if (progress != BrowserUnit.LOADING_STOPPED) updateOmniBox();
         if (progress < BrowserUnit.PROGRESS_MAX) {
             progressBar.setVisibility(View.VISIBLE);
             omniBox_tab.setVisibility(View.INVISIBLE);

@@ -95,7 +95,7 @@
     <string name="setting_title_whitelistJS">لیست سفید جاوا اسکریپت</string>
     <string name="setting_title_adblock">مسدودسازی تبلیغات</string>
     <string name="setting_summary_adblock">با فعال سازی این گزینه، مانع نمایش تبلیغات آزار دهنده شوید،همچنین سرعت بارگذاری وبسایت ها را بهبود بخشید.</string>
-    <string name="setting_title_adblockHost">Blocked content</string>
+    <string name="setting_title_adblockHost">محتوای مسدود شده</string>
     <string name="setting_title_location">مکان جاری</string>
     <string name="setting_summary_location">به وبسایت ها مجوز دسترسی به مکان جاری شما را می دهد.
         بعضی از وبسایت ها مانند مسیریابی در نقشه نیاز به فعال بودن این گزینه دارند.

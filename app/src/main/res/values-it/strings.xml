@@ -92,7 +92,7 @@
     <string name="setting_title_whitelistJS">Whitelist javaScript</string>
     <string name="setting_title_adblock">AdBlock</string>
     <string name="setting_summary_adblock">Abilita AdBlock per bloccare gli annunci fastidiosi. I siti si caricano anche più velocemente quando il blocco è abilitato.</string>
-    <string name="setting_title_adblockHost">Blocked content</string>
+    <string name="setting_title_adblockHost">Contenuto bloccato</string>
     <string name="setting_title_location">Posizione</string>
     <string name="setting_summary_location">Consenti ai siti web di accedere alla tua posizione. Alcuni siti web (come Google Maps per la navigazione) ne hanno bisogno.</string>
     <string name="setting_title_history">Cronologia</string>

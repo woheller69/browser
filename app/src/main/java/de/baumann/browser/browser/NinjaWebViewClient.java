@@ -5,6 +5,7 @@ import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.net.http.SslError;
 import android.os.Build;
@@ -70,6 +71,13 @@ public class NinjaWebViewClient extends WebViewClient {
         } else {
             ninjaWebView.postInvalidate();
         }
+    }
+
+    @Override
+    public void onPageStarted(WebView view, String url, Bitmap favicon) {
+        ninjaWebView.setStopped(false);
+        super.onPageStarted(view,url,favicon);
+
     }
 
     @Override

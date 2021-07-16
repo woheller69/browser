@@ -382,4 +382,6 @@ public class NinjaWebView extends WebView implements AlbumController {
     public Bitmap getFavicon() {
         return favicon;
     }
+
+    public void setStopped(boolean stopped){this.stopped=stopped;}
 }

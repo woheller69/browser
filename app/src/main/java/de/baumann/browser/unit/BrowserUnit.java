@@ -44,6 +44,7 @@ import de.baumann.browser.R;
 public class BrowserUnit {
 
     public static final int PROGRESS_MAX = 100;
+    public static final int LOADING_STOPPED = 101;  //Must be > PROGRESS_MAX !
     public static final String MIME_TYPE_TEXT_PLAIN = "text/plain";
 
     private static final String SEARCH_ENGINE_GOOGLE = "https://www.google.com/search?q=";

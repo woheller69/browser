@@ -67,6 +67,7 @@ public class NinjaWebView extends WebView implements AlbumController {
 
     private Context context;
     private boolean desktopMode;
+    private boolean stopped;
     private String oldDomain;
     private AlbumItem album;
     private NinjaWebViewClient webViewClient;
@@ -98,6 +99,7 @@ public class NinjaWebView extends WebView implements AlbumController {
         this.context = context;
         this.foreground = false;
         this.desktopMode=false;
+        this.stopped=false;
         this.oldDomain="";
         this.javaHosts = new Javascript(this.context);
         this.remoteHosts = new Remote(this.context);
@@ -139,7 +141,7 @@ public class NinjaWebView extends WebView implements AlbumController {
         webSettings.setTextZoom(Integer.parseInt(Objects.requireNonNull(sp.getString("sp_fontSize", "100"))));
         webSettings.setBlockNetworkImage(!sp.getBoolean("sp_images", true));
         webSettings.setGeolocationEnabled(sp.getBoolean("sp_location", false));
-        webSettings.setMediaPlaybackRequiresUserGesture(false);
+        webSettings.setMediaPlaybackRequiresUserGesture(sp.getBoolean("sp_savedata",true));
 
         CookieManager manager = CookieManager.getInstance();
         if (cookieHosts.isWhite(url) || sp.getBoolean("sp_cookies", true)) {
@@ -221,11 +223,18 @@ public class NinjaWebView extends WebView implements AlbumController {
     }
 
     @Override
+    public synchronized void stopLoading(){
+        stopped=true;
+        super.stopLoading();
+    }
+
+    @Override
     public synchronized void loadUrl(String url) {
         initPreferences(BrowserUnit.queryWrapper(context, url.trim()));
         InputMethodManager imm = (InputMethodManager) this.context.getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(this.getWindowToken(), 0);
         favicon=null;
+        stopped=false;
         super.loadUrl(BrowserUnit.queryWrapper(context, url.trim()), getRequestHeaders());
     }
 
@@ -253,10 +262,12 @@ public class NinjaWebView extends WebView implements AlbumController {
     }
 
     public synchronized void update(int progress) {
-        if (foreground) {
+        if (foreground && !stopped) {
             browserController.updateProgress(progress);
+        } else if (foreground && stopped) {
+            browserController.updateProgress(BrowserUnit.LOADING_STOPPED);
         }
-        if (isLoadFinish()) {
+        if (isLoadFinish() && !stopped) {
             browserController.updateAutoComplete();
         }
     }

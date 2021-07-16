@@ -32,11 +32,8 @@ import java.io.ByteArrayInputStream;
 import java.net.URISyntaxException;
 import java.util.Objects;
 
-import de.baumann.browser.database.Record;
-import de.baumann.browser.database.RecordAction;
 import de.baumann.browser.R;
 import de.baumann.browser.unit.BrowserUnit;
-import de.baumann.browser.unit.RecordUnit;
 import de.baumann.browser.view.NinjaWebView;
 
 public class NinjaWebViewClient extends WebViewClient {
@@ -65,7 +62,9 @@ public class NinjaWebViewClient extends WebViewClient {
     @Override
     public void onPageFinished(WebView view, String url) {
         super.onPageFinished(view, url);
-
+        if(sp.getBoolean("sp_savedata",true)) {
+            view.evaluateJavascript("document.getElementsByTagName('video')[0].pause();", null);
+        }
         if (ninjaWebView.isForeground()) {
             ninjaWebView.invalidate();
         } else {

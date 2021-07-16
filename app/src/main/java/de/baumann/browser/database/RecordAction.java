@@ -19,10 +19,10 @@ import de.baumann.browser.unit.RecordUnit;
 
 public class RecordAction {
     private SQLiteDatabase database;
-    private static RecordHelper helper = null;
+    private final RecordHelper helper;
 
     public RecordAction(Context context) {
-        helper = new RecordHelper(context);
+        this.helper = new RecordHelper(context);
     }
     public void open(boolean rw) { database = rw ? helper.getWritableDatabase() : helper.getReadableDatabase(); }
     public void close() {
@@ -32,7 +32,7 @@ public class RecordAction {
 
     //StartSite
 
-    public static synchronized boolean addStartSite(Context context, Record record) {
+    public boolean addStartSite(Record record) {
         if (record == null
                 || record.getTitle() == null
                 || record.getTitle().trim().isEmpty()
@@ -45,16 +45,11 @@ public class RecordAction {
         values.put(RecordUnit.COLUMN_TITLE, record.getTitle().trim());
         values.put(RecordUnit.COLUMN_URL, record.getURL().trim());
         values.put(RecordUnit.COLUMN_ORDINAL, record.getOrdinal());
-        RecordAction action = new RecordAction(context);
-        SQLiteDatabase database = helper.getWritableDatabase();
-        action.open(false);
         database.insert(RecordUnit.TABLE_GRID, null, values);
-        database.close();
-        action.close();
         return true;
     }
 
-    public synchronized List<Record> listStartSite (Activity activity) {
+    public List<Record> listStartSite (Activity activity) {
 
         List<Record> list = new LinkedList<>();
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(activity);
@@ -225,7 +220,6 @@ public class RecordAction {
             cursor.close();
             return result;
         }
-        cursor.close();
         return false;
     }
 
@@ -257,11 +251,10 @@ public class RecordAction {
         return list;
     }
 
-    public synchronized static boolean checkUrl (String url, String table) {
+    public boolean checkUrl (String url, String table) {
         if (url == null || url.trim().isEmpty()) {
             return false;
         }
-        SQLiteDatabase database = helper.getWritableDatabase();
         Cursor cursor = database.query(
                 table,
                 new String[] {RecordUnit.COLUMN_URL},
@@ -277,7 +270,6 @@ public class RecordAction {
 
             return result;
         }
-        cursor.close();
         return false;
     }
 

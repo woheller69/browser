@@ -1,4 +1,4 @@
-### v 8.1 (WIP)
+### v 8.1
 
 - new: edit bookmark-url (thanks to @woheller69)
 - new: Reload on swipeDown when at top of webpage (thanks to @woheller69)

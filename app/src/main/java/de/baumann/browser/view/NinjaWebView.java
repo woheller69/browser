@@ -229,6 +229,12 @@ public class NinjaWebView extends WebView implements AlbumController {
     }
 
     @Override
+    public synchronized void reload(){
+        stopped=false;
+        super.reload();
+    }
+
+    @Override
     public synchronized void loadUrl(String url) {
         initPreferences(BrowserUnit.queryWrapper(context, url.trim()));
         InputMethodManager imm = (InputMethodManager) this.context.getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -376,4 +382,6 @@ public class NinjaWebView extends WebView implements AlbumController {
     public Bitmap getFavicon() {
         return favicon;
     }
+
+    public void setStopped(boolean stopped){this.stopped=stopped;}
 }

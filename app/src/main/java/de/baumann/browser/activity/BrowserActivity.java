@@ -1949,18 +1949,21 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         if (favicon!=null) faviconHelper.deleteFavicon(ninjaWebView.getUrl()); //Replace favicon
         faviconHelper.addFavicon(ninjaWebView.getUrl(),ninjaWebView.getFavicon());
 
-        if (RecordAction.checkUrl(url, RecordUnit.TABLE_GRID)) {
+        RecordAction action = new RecordAction(context);
+        action.open(true);
+        if (action.checkUrl(url, RecordUnit.TABLE_GRID)) {
             NinjaToast.show(this, R.string.app_error);
         } else {
             int counter = sp.getInt("counter", 0);
             counter = counter + 1;
             sp.edit().putInt("counter", counter).apply();
-            if (RecordAction.addStartSite(context, new Record(title, url, 0, counter,1))) {
+            if (action.addStartSite(new Record(title, url, 0, counter,1))) {
                 NinjaToast.show(this, R.string.app_done);
             } else {
                 NinjaToast.show(this, R.string.app_error);
             }
         }
+        action.close();
     }
 
     private void show_dialogFilter() {

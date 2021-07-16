@@ -220,7 +220,6 @@ public class RecordAction {
             cursor.close();
             return result;
         }
-        cursor.close();
         return false;
     }
 
@@ -271,7 +270,6 @@ public class RecordAction {
 
             return result;
         }
-        cursor.close();
         return false;
     }
 

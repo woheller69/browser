@@ -216,6 +216,7 @@ public class NinjaWebView extends WebView implements AlbumController {
         requestHeaders.put("DNT", "1");
         //  Server-side detection for GlobalPrivacyControl
         requestHeaders.put("Sec-GPC","1");
+        requestHeaders.put("X-Requested-With","com.duckduckgo.mobile.android");
         if (sp.getBoolean("sp_savedata", false)) {
             requestHeaders.put("Save-Data", "on");
         }

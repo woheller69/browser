@@ -342,6 +342,8 @@ public class NinjaWebView extends WebView implements AlbumController {
         }
     }
 
+    public void resetFavicon(){this.favicon=null;}
+
     public void setFavicon(Bitmap favicon) {
         this.favicon = favicon;
 

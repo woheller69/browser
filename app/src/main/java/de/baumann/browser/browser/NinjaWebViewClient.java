@@ -64,7 +64,7 @@ public class NinjaWebViewClient extends WebViewClient {
     public void onPageFinished(WebView view, String url) {
         super.onPageFinished(view, url);
         if(sp.getBoolean("sp_savedata",true)) {
-            view.evaluateJavascript("document.getElementsByTagName('video')[0].pause();", null);
+            view.evaluateJavascript("var links=document.getElementsByTagName('video'); for(let i=0;i<links.length;i++){links[i].pause()};", null);
         }
         if (ninjaWebView.isForeground()) {
             ninjaWebView.invalidate();
@@ -76,6 +76,7 @@ public class NinjaWebViewClient extends WebViewClient {
     @Override
     public void onPageStarted(WebView view, String url, Bitmap favicon) {
         ninjaWebView.setStopped(false);
+        ninjaWebView.resetFavicon();
         super.onPageStarted(view,url,favicon);
 
     }

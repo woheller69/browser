@@ -14,7 +14,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
-import android.graphics.Bitmap;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Build;
@@ -1482,8 +1481,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     private void saveBookmark() {
 
         FaviconHelper faviconHelper = new FaviconHelper(context);
-        Bitmap favicon=ninjaWebView.getFavicon();
-        if (favicon!=null) faviconHelper.deleteFavicon(ninjaWebView.getUrl()); //Replace favicon
         faviconHelper.addFavicon(ninjaWebView.getUrl(),ninjaWebView.getFavicon());
         RecordAction action = new RecordAction(context);
         action.open(true);
@@ -1945,8 +1942,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     private void save_atHome (final String title, final String url) {
 
         FaviconHelper faviconHelper = new FaviconHelper(context);
-        Bitmap favicon=ninjaWebView.getFavicon();
-        if (favicon!=null) faviconHelper.deleteFavicon(ninjaWebView.getUrl()); //Replace favicon
         faviconHelper.addFavicon(ninjaWebView.getUrl(),ninjaWebView.getFavicon());
 
         RecordAction action = new RecordAction(context);

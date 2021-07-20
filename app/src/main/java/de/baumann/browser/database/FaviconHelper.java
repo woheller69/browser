@@ -16,6 +16,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class FaviconHelper extends SQLiteOpenHelper {
     // Database Version
@@ -54,11 +55,13 @@ public class FaviconHelper extends SQLiteOpenHelper {
     }
 
     public synchronized void addFavicon( String url, Bitmap bitmap) throws SQLiteException {
-        String domain=getDomain(url);
-        if (domain==null || bitmap==null) return;
+        String domain= Objects.requireNonNull(getDomain(url)).trim();
+        if (bitmap == null) return;
+        SQLiteDatabase database = this.getWritableDatabase();
+        //first delete existing Favicon for domain if available
+        database.delete(TABLE_FAVICON, DOMAIN + " = ?", new String[]{domain.trim()});
 
         byte[] byteimage= convertBytes(bitmap);
-        SQLiteDatabase database = this.getWritableDatabase();
         ContentValues values = new  ContentValues();
         values.put(DOMAIN,     domain);
         values.put(IMAGE,     byteimage);
@@ -68,7 +71,7 @@ public class FaviconHelper extends SQLiteOpenHelper {
 
     public synchronized void deleteFavicon( String domain) throws SQLiteException {
         SQLiteDatabase database = this.getWritableDatabase();
-        database.delete(TABLE_FAVICON, DOMAIN + " = ?", new String[]{domain});
+        database.delete(TABLE_FAVICON, DOMAIN + " = ?", new String[]{domain.trim()});
         database.close();
     }
 
@@ -99,7 +102,6 @@ public class FaviconHelper extends SQLiteOpenHelper {
             database.close();
             return getBitmap(image);
         }else{
-            cursor.close();
             database.close();
             return null;
         }
@@ -117,6 +119,21 @@ public class FaviconHelper extends SQLiteOpenHelper {
             result.add(cursor.getString(0));
             cursor.moveToNext();
         }
+        cursor.close();
+        database.close();
+        return result;
+    }
+
+    public synchronized int getNumFavicons(){
+        SQLiteDatabase database = this.getReadableDatabase();
+
+        Cursor cursor;
+        cursor = database.query(TABLE_FAVICON,
+                new String[]{DOMAIN,
+                        IMAGE},
+                null, null, null, null, null);
+
+        int result=cursor.getCount();
         cursor.close();
         database.close();
         return result;
@@ -160,6 +177,11 @@ public class FaviconHelper extends SQLiteOpenHelper {
             e.printStackTrace();
             return null;
         }
+    }
+
+    public static Bitmap createEmptyFavicon(){
+        Bitmap favicon = Bitmap.createBitmap(32, 32, Bitmap.Config.ARGB_8888);
+        return favicon;
     }
 
 }

@@ -1,77 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:layout_marginStart="5dp"
-    android:layout_marginEnd="5dp">
-    <ImageView
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="3dp"
-        android:id="@+id/Switch_Text_Preference_icon"/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="5dp"
-        android:padding="5dp">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="center_vertical"
-        android:baselineAligned="false">
-        <LinearLayout
+    android:paddingStart="?android:attr/listPreferredItemPaddingStart"
+    android:paddingEnd="?android:attr/listPreferredItemPaddingEnd"
+    android:background="?android:attr/selectableItemBackground">
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <androidx.preference.internal.PreferenceImageView
+            android:id="@+id/Switch_Text_Preference_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="center_vertical">
-            <TextView
-                android:id="@+id/Switch_Text_Preference_No_Switch_Title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                android:paddingRight="10dp"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
-
-            <androidx.appcompat.widget.SwitchCompat
-                android:id="@+id/Switch_Text_Preference_Switch"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:switchPadding="10dp"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:layout_gravity="center_vertical"
-            android:gravity="center_vertical|start">
-            <EditText
-                android:id="@+id/Switch_Text_Preference_Value_Text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:imeOptions="actionDone"
-                android:layout_marginStart="10dp"
-                android:autofillHints=""
-                android:hint=""
-                android:inputType="text"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
-        </LinearLayout>
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/Switch_Text_Preference_Summary"
+            android:layout_marginTop="16dp"
+            app:minWidth="48dp"
+            app:maxWidth="48dp"
+            app:maxHeight="48dp" />
+    </FrameLayout>
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
-        android:textColor="?android:attr/textColorSecondary"
-        android:visibility="gone"/>
-    </LinearLayout>
-</LinearLayout>
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dip"
+            android:layout_marginEnd="6dip"
+            android:orientation="horizontal"
+            android:layout_gravity="center_vertical"
+            android:baselineAligned="false">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="40dp"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical">
+                <TextView
+                    android:id="@+id/Switch_Text_Preference_No_Switch_Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:paddingRight="10dp"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/Switch_Text_Preference_Switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:switchPadding="10dp"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical|start">
+                <EditText
+                    android:id="@+id/Switch_Text_Preference_Value_Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionDone"
+                    android:layout_marginStart="10dp"
+                    android:autofillHints=""
+                    android:hint=""
+                    android:inputType="text"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginStart="15dip"
+            android:layout_marginEnd="6dip">
+            <TextView
+                android:id="@+id/Switch_Text_Preference_Summary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="40dp"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                android:textColor="?android:attr/textColorSecondary"
+                android:visibility="gone"/>
+        </LinearLayout>
+   </LinearLayout>
+</RelativeLayout>

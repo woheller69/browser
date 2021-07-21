@@ -24,6 +24,7 @@ import androidx.appcompat.widget.SwitchCompat;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceManager;
 import androidx.preference.PreferenceViewHolder;
+import androidx.preference.internal.PreferenceImageView;
 
 public class SwitchTextPreference extends Preference
 {
@@ -93,7 +94,7 @@ public class SwitchTextPreference extends Preference
         final ViewGroup rootView;
         final SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
         final CompoundButton.OnCheckedChangeListener checkedChangeListener;
-        final ImageView icon;
+        final PreferenceImageView icon;
 
         //get displays
         rootView = (ViewGroup)holder.itemView;

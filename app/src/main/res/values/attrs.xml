@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SwitchTextPreference">
+        <attr name="switchDefault" format="boolean"/>"
+        <attr name="icon"/>
+        <attr name="defaultText" format="string"/>
+        <attr name="switchKey" format="string"/>
+        <attr name="titleText" format="string"/>
+        <attr name="showSwitch" format="boolean"/>
+    </declare-styleable>
+</resources>

@@ -1,64 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <Preference
         android:summary="@string/setting_gesture_hint"/>
 
-    <CheckBoxPreference
-        android:key="filter_01"
-        android:defaultValue="true"
-        android:icon="@drawable/circle_red_big"
-        android:title="@string/color_red"/>
-    <CheckBoxPreference
-        android:key="filter_02"
-        android:defaultValue="true"
-        android:icon="@drawable/circle_pink_big"
-        android:title="@string/color_pink"/>
-    <CheckBoxPreference
-        android:key="filter_03"
-        android:defaultValue="true"
-        android:icon="@drawable/circle_purple_big"
-        android:title="@string/color_purple"/>
-    <CheckBoxPreference
-        android:key="filter_04"
-        android:defaultValue="true"
-        android:icon="@drawable/circle_blue_big"
-        android:title="@string/color_blue"/>
-    <CheckBoxPreference
-        android:key="filter_05"
-        android:defaultValue="true"
-        android:icon="@drawable/circle_teal_big"
-        android:title="@string/color_teal"/>
-    <CheckBoxPreference
-        android:key="filter_06"
-        android:defaultValue="true"
-        android:icon="@drawable/circle_green_big"
-        android:title="@string/color_green"/>
-    <CheckBoxPreference
-        android:key="filter_07"
-        android:defaultValue="true"
-        android:icon="@drawable/circle_lime_big"
-        android:title="@string/color_lime"/>
-    <CheckBoxPreference
-        android:key="filter_08"
-        android:defaultValue="true"
-        android:icon="@drawable/circle_yellow_big"
-        android:title="@string/color_yellow"/>
-    <CheckBoxPreference
-        android:key="filter_09"
-        android:defaultValue="true"
-        android:icon="@drawable/circle_orange_big"
-        android:title="@string/color_orange"/>
-    <CheckBoxPreference
-        android:key="filter_10"
-        android:defaultValue="true"
-        android:icon="@drawable/circle_brown_big"
-        android:title="@string/color_brown"/>
-    <CheckBoxPreference
-        android:key="filter_11"
-        android:defaultValue="true"
-        android:icon="@drawable/circle_grey_big"
-        android:title="@string/color_grey"/>
+    <de.baumann.browser.preferences.SwitchTextPreference
+        android:key="icon_01"
+        app:defaultText="@string/color_red"
+        app:switchKey="filter_01"
+        app:icon="@drawable/circle_red_big" />
+    <de.baumann.browser.preferences.SwitchTextPreference
+        android:key="icon_02"
+        app:defaultText="@string/color_pink"
+        app:switchKey="filter_02"
+        app:icon="@drawable/circle_pink_big" />
+    <de.baumann.browser.preferences.SwitchTextPreference
+        android:key="icon_03"
+        app:defaultText="@string/color_purple"
+        app:switchKey="filter_03"
+        app:icon="@drawable/circle_purple_big" />
+    <de.baumann.browser.preferences.SwitchTextPreference
+        android:key="icon_04"
+        app:defaultText="@string/color_blue"
+        app:switchKey="filter_04"
+        app:icon="@drawable/circle_blue_big" />
+    <de.baumann.browser.preferences.SwitchTextPreference
+        android:key="icon_05"
+        app:defaultText="@string/color_teal"
+        app:switchKey="filter_05"
+        app:icon="@drawable/circle_teal_big" />
+    <de.baumann.browser.preferences.SwitchTextPreference
+        android:key="icon_06"
+        app:defaultText="@string/color_green"
+        app:switchKey="filter_06"
+        app:icon="@drawable/circle_green_big" />
+    <de.baumann.browser.preferences.SwitchTextPreference
+        android:key="icon_07"
+        app:defaultText="@string/color_lime"
+        app:switchKey="filter_07"
+        app:icon="@drawable/circle_lime_big" />
+    <de.baumann.browser.preferences.SwitchTextPreference
+        android:key="icon_08"
+        app:defaultText="@string/color_yellow"
+        app:switchKey="filter_08"
+        app:icon="@drawable/circle_yellow_big" />
+    <de.baumann.browser.preferences.SwitchTextPreference
+        android:key="icon_09"
+        app:defaultText="@string/color_orange"
+        app:switchKey="filter_09"
+        app:icon="@drawable/circle_orange_big" />
+    <de.baumann.browser.preferences.SwitchTextPreference
+        android:key="icon_10"
+        app:defaultText="@string/color_brown"
+        app:switchKey="filter_10"
+        app:icon="@drawable/circle_brown_big" />
+    <de.baumann.browser.preferences.SwitchTextPreference
+        android:key="icon_11"
+        app:defaultText="@string/color_grey"
+        app:switchKey="filter_11"
+        app:icon="@drawable/circle_grey_big" />
 
 </PreferenceScreen>

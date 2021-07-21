@@ -1083,6 +1083,14 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             }
         });
 
+        Chip chip_fingerprint = dialogView.findViewById(R.id.chip_Fingerprint);
+        chip_fingerprint.setChecked(!sp.getBoolean("sp_allowFingerprinting",true));
+        chip_fingerprint.setOnClickListener(v -> {
+            sp.edit().putBoolean("sp_allowFingerprinting",!chip_fingerprint.isChecked()).apply();
+            ninjaWebView.reload();
+            dialog.cancel();
+        });
+
         Chip chip_history = dialogView.findViewById(R.id.chip_history);
         chip_history.setChecked(sp.getBoolean("saveHistory", true));
         chip_history.setOnClickListener(v -> {

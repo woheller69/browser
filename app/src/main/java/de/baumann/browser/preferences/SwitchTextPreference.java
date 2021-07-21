@@ -17,7 +17,6 @@ import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.CompoundButton;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.widget.SwitchCompat;
@@ -35,7 +34,7 @@ public class SwitchTextPreference extends Preference
     private boolean switchDefault;
     private String defaultText;
     private EditText valueView;
-    private TextView noSwitchTitle;
+    private TextView SwitchTextTitle;
     private SwitchCompat switchView;
     private int mIcon;
 
@@ -43,7 +42,6 @@ public class SwitchTextPreference extends Preference
     {
         super(context, attrs, defStyleAttr, defStyleRes);
 
-        this.setPersistent(false);
         this.setLayoutResource(R.layout.switch_text_preference_layout);
 
         TypedArray valueArray;
@@ -100,7 +98,7 @@ public class SwitchTextPreference extends Preference
         rootView = (ViewGroup)holder.itemView;
         valueView = rootView.findViewById(R.id.Switch_Text_Preference_Value_Text);
         summaryView = rootView.findViewById(R.id.Switch_Text_Preference_Summary);
-        noSwitchTitle = rootView.findViewById(R.id.Switch_Text_Preference_No_Switch_Title);
+        SwitchTextTitle = rootView.findViewById(R.id.Switch_Text_Preference_No_Switch_Title);
         switchView = rootView.findViewById(R.id.Switch_Text_Preference_Switch);
         valueText = sp.getString(preferenceName, defaultText);
         icon=rootView.findViewById(R.id.Switch_Text_Preference_icon);
@@ -177,7 +175,7 @@ public class SwitchTextPreference extends Preference
         }
         else
         {
-            noSwitchTitle.setText(titleText);
+            SwitchTextTitle.setText(titleText);
             updateValueText(false);
         }
         setShowSwitch(showSwitch);
@@ -196,10 +194,10 @@ public class SwitchTextPreference extends Preference
         showSwitch = show;
 
         //if views exist
-        if(noSwitchTitle != null)
+        if(SwitchTextTitle != null)
         {
             //hide if showing switch
-            noSwitchTitle.setVisibility(showSwitch ? View.GONE : View.VISIBLE);
+            SwitchTextTitle.setVisibility(showSwitch ? View.GONE : View.VISIBLE);
         }
         if(switchView != null)
         {

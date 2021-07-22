@@ -6,6 +6,7 @@
         <attr name="defaultText" format="string"/>
         <attr name="switchKey" format="string"/>
         <attr name="titleText" format="string"/>
+        <attr name="hint" format="string"/>
         <attr name="showSwitch" format="boolean"/>
     </declare-styleable>
 </resources>

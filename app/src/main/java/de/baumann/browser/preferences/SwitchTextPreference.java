@@ -31,6 +31,7 @@ public class SwitchTextPreference extends Preference
     private String switchKey;
     private String titleText;
     private String valueText;
+    private String hint;
     private boolean switchDefault;
     private String defaultText;
     private EditText valueView;
@@ -51,6 +52,7 @@ public class SwitchTextPreference extends Preference
         switchKey = null;
         switchDefault = true;
         valueText = "";
+        hint = "";
         defaultText="";
 
         //if there are attributes, retrieve them
@@ -62,6 +64,7 @@ public class SwitchTextPreference extends Preference
             switchDefault = valueArray.getBoolean(R.styleable.SwitchTextPreference_switchDefault,true);
             defaultText = valueArray.getString(R.styleable.SwitchTextPreference_defaultText);
             titleText = valueArray.getString(R.styleable.SwitchTextPreference_titleText);
+            hint = valueArray.getString(R.styleable.SwitchTextPreference_hint);
             mIcon=valueArray.getResourceId(R.styleable.SwitchTextPreference_icon,0);
             valueArray.recycle();
         }
@@ -111,7 +114,7 @@ public class SwitchTextPreference extends Preference
 
         //set displays
         rootView.setClickable(false);
-
+        valueView.setHint(hint);
         valueView.setOnTouchListener((v, event) -> {
             valueView.setFocusableInTouchMode(true);
             return false;

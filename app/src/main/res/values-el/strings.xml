@@ -115,6 +115,7 @@
     <string name="setting_title_fav">Αγαπημένο</string>
     <string name="setting_title_searchEngine">Προσαρμοσμένη μηχανή αναζήτησης</string>
     <string name="setting_title_userAgent">Προσαρμοσμένος user agent</string>
+    <string name="setting_title_fingerPrint">Fingerprint protection</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">Απόκρυψη γραμμής εργαλείων</string>
     <string name="setting_title_behavior">Συμπεριφορά</string>

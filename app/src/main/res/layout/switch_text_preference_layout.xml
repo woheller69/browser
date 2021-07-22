@@ -33,8 +33,8 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="40dp"
                 android:orientation="horizontal"
                 android:layout_gravity="center_vertical">
                 <TextView
@@ -50,33 +50,24 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="16sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="horizontal"
-                android:layout_gravity="center_vertical"
-                android:gravity="center_vertical|start">
                 <EditText
                     android:id="@+id/Switch_Text_Preference_Value_Text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
                     android:imeOptions="actionDone"
                     android:autofillHints=""
-                    android:hint=""
                     android:inputType="text"
-                    android:textSize="16sp"
-                    android:background="@android:color/transparent" />
+                    android:textSize="16sp" />
             </LinearLayout>
+
         </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:layout_marginStart="15dip"
-            android:layout_marginEnd="6dip">
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="6dp">
             <TextView
                 android:id="@+id/Switch_Text_Preference_Summary"
                 android:layout_width="match_parent"
@@ -87,5 +78,5 @@
                 android:textColor="?android:attr/textColorSecondary"
                 android:visibility="gone"/>
         </LinearLayout>
-   </LinearLayout>
+    </LinearLayout>
 </RelativeLayout>

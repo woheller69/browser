@@ -1,3 +1,11 @@
+### v 8.2
+
+- fix: chip desktop, javascript, remote should not be visible in settings when editing filter names (thanks to @woheller69)
+- fix: Sometimes Favicon is stored several times in database (thanks to @woheller69)
+- new: Privacy Enhancement #602 (thanks to @woheller69)
+- updated: Edit filter names (thanks to @woheller69)
+
+
 ### v 8.1
 
 - new: edit bookmark-url (thanks to @woheller69)
@@ -13,7 +21,6 @@
 - fix: apply settings on back/forward navigation
 - fix: Ad-Blocking also blocks "social" media
 - fix: open link externally
-
 
 ### v 8.0
 

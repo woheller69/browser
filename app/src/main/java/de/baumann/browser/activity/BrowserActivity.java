@@ -1084,11 +1084,9 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         });
 
         Chip chip_fingerprint = dialogView.findViewById(R.id.chip_Fingerprint);
-        chip_fingerprint.setChecked(!sp.getBoolean("sp_allowFingerprinting",true));
+        chip_fingerprint.setChecked(sp.getBoolean("sp_fingerPrintProtection",false));
         chip_fingerprint.setOnClickListener(v -> {
-            sp.edit().putBoolean("sp_allowFingerprinting",!chip_fingerprint.isChecked()).apply();
-            ninjaWebView.reload();
-            dialog.cancel();
+            sp.edit().putBoolean("sp_fingerPrintProtection",chip_fingerprint.isChecked()).apply();
         });
 
         Chip chip_history = dialogView.findViewById(R.id.chip_history);
@@ -1115,9 +1113,9 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             }
         });
 
-        Chip chip_location = dialogView.findViewById(R.id.chip_location);
-        chip_location.setChecked(ninjaWebView.isDesktopMode());
-        chip_location.setOnClickListener(v -> {
+        Chip chip_desktopMode = dialogView.findViewById(R.id.chip_desktopMode);
+        chip_desktopMode.setChecked(ninjaWebView.isDesktopMode());
+        chip_desktopMode.setOnClickListener(v -> {
             ninjaWebView.toggleDesktopMode(true);
             dialog.cancel();
         });
@@ -1126,14 +1124,13 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         chip_night.setChecked(sp.getBoolean("sp_invert", false));
         chip_night.setOnClickListener(v -> {
             if (sp.getBoolean("sp_invert", false)) {
-                chip_image.setChecked(false);
+                chip_night.setChecked(false);
                 sp.edit().putBoolean("sp_invert", false).apply();
             } else {
-                chip_image.setChecked(true);
+                chip_night.setChecked(true);
                 sp.edit().putBoolean("sp_invert", true).apply();
             }
             HelperUnit.initRendering(ninjaWebView, context);
-            dialog.cancel();
         });
 
         ImageButton ib_reload = dialogView.findViewById(R.id.ib_reload);

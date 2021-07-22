@@ -80,7 +80,7 @@ public class NinjaWebViewClient extends WebViewClient {
         super.onPageStarted(view,url,favicon);
 
 
-        if(!sp.getBoolean("sp_allowFingerprinting",true)) {
+        if(sp.getBoolean("sp_fingerPrintProtection",false)) {
 
             //Block WebRTC requests which can reveal local IP address
             //Tested with https://diafygi.github.io/webrtc-ips/

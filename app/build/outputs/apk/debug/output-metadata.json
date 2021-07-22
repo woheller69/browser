@@ -5,7 +5,7 @@
     "kind": "Directory"
   },
   "applicationId": "de.baumann.browser",
-  "variantName": "processDebugResources",
+  "variantName": "debug",
   "elements": [
     {
       "type": "SINGLE",

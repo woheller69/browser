@@ -18,11 +18,18 @@
         android:defaultValue="true"
         android:title="@string/setting_title_images"/>
 
-    <CheckBoxPreference android:key="sp_savedata"
-        android:defaultValue="true"
+    <CheckBoxPreference
+        android:key="sp_savedata"
+        android:defaultValue="false"
         android:title="@string/setting_title_save_data"/>
 
-    <CheckBoxPreference android:key="sp_location"
+    <CheckBoxPreference
+        android:key="sp_fingerPrintProtection"
+        android:defaultValue="false"
+        android:title="@string/setting_title_fingerPrint"/>
+
+    <CheckBoxPreference
+        android:key="sp_location"
         android:defaultValue="false"
         android:title="@string/setting_title_location"/>
 

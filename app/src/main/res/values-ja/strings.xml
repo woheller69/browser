@@ -115,6 +115,7 @@
     <string name="setting_title_fav">スタートページ</string>
     <string name="setting_title_searchEngine">カスタム検索エンジン</string>
     <string name="setting_title_userAgent">カスタムユーザーエージェント</string>
+    <string name="setting_title_fingerPrint">Fingerprint protection</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">ツールバーを隠す</string>
     <string name="setting_title_behavior">動作</string>

@@ -115,6 +115,7 @@
     <string name="setting_title_fav">Favorite</string>
     <string name="setting_title_searchEngine">Custom search engine</string>
     <string name="setting_title_userAgent">Custom user agent</string>
+    <string name="setting_title_fingerPrint">Fingerprint protection</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">Hide toolbar</string>
     <string name="setting_title_behavior">Behavior</string>

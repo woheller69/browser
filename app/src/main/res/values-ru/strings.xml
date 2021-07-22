@@ -115,6 +115,7 @@
     <string name="setting_title_fav">Главная</string>
     <string name="setting_title_searchEngine">Пользовательская поисковая система</string>
     <string name="setting_title_userAgent">Произвольный юзер-агент</string>
+    <string name="setting_title_fingerPrint">Fingerprint protection</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">Скрыть панель инструментов</string>
     <string name="setting_title_behavior">Поведение</string>

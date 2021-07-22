@@ -394,7 +394,7 @@ public class NinjaWebViewClient extends WebViewClient {
 
 
 
-        if(!sp.getBoolean("sp_allowFingerprinting",true)) {
+        if(sp.getBoolean("sp_fingerPrintProtection",false)) {
             view.evaluateJavascript("var test=document.querySelector(\"a[ping]\"); if(test!==null){test.removeAttribute('ping')};", null); //do not allow ping on http only pages (tested with http://tests.caniuse.com)
         }
 

@@ -115,6 +115,7 @@
     <string name="setting_title_fav">Kedvenc</string>
     <string name="setting_title_searchEngine">Egyedi keresőmotor</string>
     <string name="setting_title_userAgent">Egyedi user agent</string>
+    <string name="setting_title_fingerPrint">Fingerprint protection</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">Eszköztár elrejtése</string>
     <string name="setting_title_behavior">Viselkedés</string>

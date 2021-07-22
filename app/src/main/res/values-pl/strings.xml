@@ -115,6 +115,7 @@
     <string name="setting_title_fav">Ulubione</string>
     <string name="setting_title_searchEngine">Własna wyszukiwarka</string>
     <string name="setting_title_userAgent">Niestandardowy agent użytkownika</string>
+    <string name="setting_title_fingerPrint">Fingerprint protection</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">Ukryj dolny panel</string>
     <string name="setting_title_behavior">Zachowanie</string>

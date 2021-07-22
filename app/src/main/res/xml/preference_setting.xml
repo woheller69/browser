@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
     <PreferenceCategory android:title="@string/setting_title_browser"> <Preference
             android:key="settings_start"
@@ -40,14 +39,10 @@
         <Preference
             android:key="settings_data"
             android:title="@string/setting_title_data"/>
-
-        <de.baumann.browser.preferences.SwitchTextPreference
+        <EditTextPreference
+            android:selectable="true"
             android:key="userAgent"
-            app:defaultText=""
-            app:summary=""
-            app:titleText="@string/setting_title_userAgent"
-            app:switchKey="userAgentSwitch" />
-
+            android:title="@string/setting_title_userAgent" />
         <EditTextPreference
             android:defaultValue="https://www.ecosia.org/search?q="
             android:key="sp_search_engine_custom"

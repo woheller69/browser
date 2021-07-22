@@ -115,6 +115,9 @@
     <string name="setting_title_fav">المفضلة</string>
     <string name="setting_title_searchEngine">محرك بحث مخصص</string>
     <string name="setting_title_userAgent">وكيل مستخدم مخصص</string>
+    <string name="setting_title_fingerPrint">Fingerprint protection</string>
+    <string name="setting_title_whitelist">Exceptions</string>
+    <string name="setting_title_tab">This tab</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">أخفِ شريط الأدوات</string>
     <string name="setting_title_behavior">السلوك</string>

@@ -125,6 +125,9 @@
     <string name="setting_title_fav">صفحه موردعلاقه</string>
     <string name="setting_title_searchEngine">موتور جستجوی سفارشی</string>
     <string name="setting_title_userAgent">سفارشی سازی user-agent مرورگر </string>
+    <string name="setting_title_fingerPrint">Fingerprint protection</string>
+    <string name="setting_title_whitelist">Exceptions</string>
+    <string name="setting_title_tab">This tab</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">پنهان سازی نوار ابزار</string>
     <string name="setting_title_behavior">رفتارها</string>

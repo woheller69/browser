@@ -115,6 +115,9 @@
     <string name="setting_title_fav">Oblíbené</string>
     <string name="setting_title_searchEngine">Vlastní vyhledávač</string>
     <string name="setting_title_userAgent">Vlastní uživatelský agent</string>
+    <string name="setting_title_fingerPrint">Fingerprint protection</string>
+    <string name="setting_title_whitelist">Exceptions</string>
+    <string name="setting_title_tab">This tab</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">Skrýt Panel nástrojů</string>
     <string name="setting_title_behavior">Chování</string>

@@ -115,6 +115,9 @@
     <string name="setting_title_fav">Favoriete</string>
     <string name="setting_title_searchEngine">Aangepaste zoekmachine</string>
     <string name="setting_title_userAgent">Aangepaste user agent</string>
+    <string name="setting_title_fingerPrint">Fingerprint protection</string>
+    <string name="setting_title_whitelist">Exceptions</string>
+    <string name="setting_title_tab">This tab</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">Hide toolbar</string>
     <string name="setting_title_behavior">Gedrag</string>

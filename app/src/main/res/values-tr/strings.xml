@@ -115,6 +115,9 @@
     <string name="setting_title_fav">Başlangıç sitesi</string>
     <string name="setting_title_searchEngine">Özel arama motoru</string>
     <string name="setting_title_userAgent">Özel kullanıcı aracısı</string>
+    <string name="setting_title_fingerPrint">Fingerprint protection</string>
+    <string name="setting_title_whitelist">Exceptions</string>
+    <string name="setting_title_tab">This tab</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">Araç çubuğunu gizle</string>
     <string name="setting_title_behavior">Davranış</string>

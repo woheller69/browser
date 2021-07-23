@@ -40,10 +40,14 @@
         <Preference
             android:key="settings_data"
             android:title="@string/setting_title_data"/>
+        <SwitchPreference
+            android:title="@string/setting_title_userAgent"
+            android:key="userAgentSwitch"   />
         <EditTextPreference
+            android:dependency="userAgentSwitch"
             android:selectable="true"
             android:key="userAgent"
-            android:title="@string/setting_title_userAgent" />
+            android:title="" />
         <EditTextPreference
             android:defaultValue="https://www.ecosia.org/search?q="
             android:key="sp_search_engine_custom"

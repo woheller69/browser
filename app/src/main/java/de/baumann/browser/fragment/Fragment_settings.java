@@ -39,6 +39,13 @@ public class Fragment_settings extends PreferenceFragmentCompat implements Share
         PreferenceManager.setDefaultValues(getContext(), R.xml.preference_setting, false);
         initSummary(getPreferenceScreen());
 
+
+        androidx.preference.EditTextPreference editTextPreference = findPreference("userAgent");
+        if (editTextPreference.getText().equals("")) {
+            editTextPreference.setTitle("> " + getResources().getString(R.string.setting_enter_userAgent) + " <");
+            editTextPreference.setEnabled(true);
+        }
+
        findPreference("settings_filter").setOnPreferenceClickListener(preference -> {
            Intent intent = new Intent(getActivity(), Settings_Filter.class);
            requireActivity().startActivity(intent);
@@ -123,8 +130,18 @@ public class Fragment_settings extends PreferenceFragmentCompat implements Share
     public void onSharedPreferenceChanged(final SharedPreferences sp, String key) {
         if (key.equals("userAgent") || key.equals("sp_search_engine_custom") || key.equals("@string/sp_search_engine")) {
             sp.edit().putInt("restart_changed", 1).apply();
+            if (key.equals("userAgent") && !Objects.equals(sp.getString("userAgent", ""), "")) {
+                androidx.preference.EditTextPreference editTextPreference = findPreference("userAgent");
+                assert editTextPreference != null;
+                editTextPreference.setTitle("");
+                editTextPreference.setEnabled(true);
+            }else{
+                androidx.preference.EditTextPreference editTextPreference = findPreference("userAgent");
+                editTextPreference.setTitle("> "+getResources().getString(R.string.setting_enter_userAgent)+" <");
+                editTextPreference.setEnabled(true);
+            }
+            updatePrefSummary(findPreference(key));
         }
-        updatePrefSummary(findPreference(key));
     }
 
     @Override

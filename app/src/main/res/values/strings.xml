@@ -152,6 +152,7 @@
     <string name="setting_title_fingerPrint">Fingerprint protection</string>
     <string name="setting_title_whitelist">Exceptions</string>
     <string name="setting_title_tab">This tab</string>
+    <string name="setting_tab">Tab</string>
 
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">Hide toolbar</string>

@@ -63,9 +63,6 @@ public class NinjaWebViewClient extends WebViewClient {
     @Override
     public void onPageFinished(WebView view, String url) {
         super.onPageFinished(view, url);
-        if(sp.getBoolean("sp_savedata",true)) {
-            view.evaluateJavascript("var links=document.getElementsByTagName('video'); for(let i=0;i<links.length;i++){links[i].pause()};", null);
-        }
         if (ninjaWebView.isForeground()) {
             ninjaWebView.invalidate();
         } else {
@@ -78,9 +75,20 @@ public class NinjaWebViewClient extends WebViewClient {
         ninjaWebView.setStopped(false);
         ninjaWebView.resetFavicon();
         super.onPageStarted(view,url,favicon);
+    }
 
+    @Override
+    public void onLoadResource(WebView view, String url) {
 
-        if(sp.getBoolean("sp_fingerPrintProtection",false)) {
+        if(sp.getBoolean("sp_savedata",true)) {
+            view.evaluateJavascript("var links=document.getElementsByTagName('video'); for(let i=0;i<links.length;i++){links[i].pause()};", null);
+        }
+
+        if((sp.getBoolean("sp_fingerPrintProtection",false) &&
+                ninjaWebView.isFingerPrintProtection()) ||
+                ninjaWebView.isFingerPrintProtection()) {
+
+            view.evaluateJavascript("var test=document.querySelector(\"a[ping]\"); if(test!==null){test.removeAttribute('ping')};", null); //do not allow ping on http only pages (tested with http://tests.caniuse.com)
 
             //Block WebRTC requests which can reveal local IP address
             //Tested with https://diafygi.github.io/webrtc-ips/
@@ -385,21 +393,11 @@ public class NinjaWebViewClient extends WebViewClient {
                     "Object.defineProperty(navigator, 'mediaDevices',{value:null});" +
                     "Object.defineProperty(navigator, 'sendBeacon',{value:null});",null);
         }
-    }
 
-    @Override
-    public void onLoadResource(WebView view, String url) {
-       if (view.getSettings().getUseWideViewPort() && (view.getWidth()<1300)) view.evaluateJavascript("document.querySelector('meta[name=\"viewport\"]').setAttribute('content', 'width=1200px');", null);
-
-
-
-
-        if(sp.getBoolean("sp_fingerPrintProtection",false)) {
-            view.evaluateJavascript("var test=document.querySelector(\"a[ping]\"); if(test!==null){test.removeAttribute('ping')};", null); //do not allow ping on http only pages (tested with http://tests.caniuse.com)
-        }
+        if (view.getSettings().getUseWideViewPort() && (view.getWidth()<1300)) view.evaluateJavascript("document.querySelector('meta[name=\"viewport\"]').setAttribute('content', 'width=1200px');", null);
 
         //  Client-side detection for GlobalPrivacyControl
-       view.evaluateJavascript("if (navigator.globalPrivacyControl === undefined) { Object.defineProperty(navigator, 'globalPrivacyControl', { value: true, writable: false,configurable: false});} else {try { navigator.globalPrivacyControl = true;} catch (e) { console.error('globalPrivacyControl is not writable: ', e); }};",null);
+        view.evaluateJavascript("if (navigator.globalPrivacyControl === undefined) { Object.defineProperty(navigator, 'globalPrivacyControl', { value: true, writable: false,configurable: false});} else {try { navigator.globalPrivacyControl = true;} catch (e) { console.error('globalPrivacyControl is not writable: ', e); }};",null);
         //  Script taken from:
         //
         //  donotsell.js

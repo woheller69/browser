@@ -987,6 +987,16 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             dialog.cancel();
         });
 
+
+
+        Chip chip_fingerpint_tab = dialogView.findViewById(R.id.chip_fingerpint_tab);
+
+        chip_fingerpint_tab.setChecked(ninjaWebView.isFingerPrintProtection());
+        chip_fingerpint_tab.setOnClickListener(v -> {
+            ninjaWebView.toggleAllowFingerprint(true);
+            dialog.cancel();
+        });
+
         // CheckBox
 
         TextView dialog_title = dialogView.findViewById(R.id.dialog_title);
@@ -1131,6 +1141,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 sp.edit().putBoolean("sp_invert", true).apply();
             }
             HelperUnit.initRendering(ninjaWebView, context);
+            dialog.cancel();
         });
 
         ImageButton ib_reload = dialogView.findViewById(R.id.ib_reload);

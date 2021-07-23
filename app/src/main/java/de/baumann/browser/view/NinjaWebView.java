@@ -67,6 +67,7 @@ public class NinjaWebView extends WebView implements AlbumController {
 
     private Context context;
     private boolean desktopMode;
+    private boolean fingerPrintProtection;
     private boolean stopped;
     private String oldDomain;
     private AlbumItem album;
@@ -99,6 +100,10 @@ public class NinjaWebView extends WebView implements AlbumController {
         this.context = context;
         this.foreground = false;
         this.desktopMode=false;
+
+        sp = PreferenceManager.getDefaultSharedPreferences(context);
+        this.fingerPrintProtection=sp.getBoolean("sp_fingerPrintProtection",false);
+
         this.stopped=false;
         this.oldDomain="";
         this.javaHosts = new Javascript(this.context);
@@ -126,7 +131,6 @@ public class NinjaWebView extends WebView implements AlbumController {
         sp = PreferenceManager.getDefaultSharedPreferences(context);
         WebSettings webSettings = getSettings();
 
-        this.desktopMode = false;
         String userAgent = getUserAgent(desktopMode);
         if (android.os.Build.VERSION.SDK_INT >= 26) {
             webSettings.setSafeBrowsingEnabled(true);
@@ -301,6 +305,10 @@ public class NinjaWebView extends WebView implements AlbumController {
         return desktopMode;
     }
 
+    public boolean isFingerPrintProtection() {
+        return fingerPrintProtection;
+    }
+
     public String getUserAgent(boolean desktopMode){
         String mobilePrefix = "Mozilla/5.0 (Linux; Android "+ Build.VERSION.RELEASE + ")";
         String desktopPrefix = "Mozilla/5.0 (X11; Linux "+ System.getProperty("os.arch") +")";
@@ -336,6 +344,20 @@ public class NinjaWebView extends WebView implements AlbumController {
         getSettings().setUseWideViewPort(desktopMode);
         getSettings().setSupportZoom(desktopMode);
         getSettings().setLoadWithOverviewMode(desktopMode);
+
+        if (reload) {
+            reload();
+        }
+    }
+
+    public void toggleAllowFingerprint (boolean reload) {
+
+
+        if (isFingerPrintProtection()) {
+            fingerPrintProtection = false;
+        } else if (!isFingerPrintProtection()) {
+            fingerPrintProtection = true;
+        }
 
         if (reload) {
             reload();

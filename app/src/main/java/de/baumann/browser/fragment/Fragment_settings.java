@@ -41,9 +41,11 @@ public class Fragment_settings extends PreferenceFragmentCompat implements Share
 
 
         androidx.preference.EditTextPreference editTextPreference = findPreference("userAgent");
-        if (editTextPreference.getText().equals("")) {
-            editTextPreference.setTitle("> " + getResources().getString(R.string.setting_enter_userAgent) + " <");
+        if (editTextPreference!=null) {
             editTextPreference.setEnabled(true);
+            if ((editTextPreference.getText()!=null && editTextPreference.getText().equals("")) || (editTextPreference.getText()==null)){
+                editTextPreference.setTitle("> " + getResources().getString(R.string.setting_enter_userAgent) + " <");
+            }
         }
 
        findPreference("settings_filter").setOnPreferenceClickListener(preference -> {
@@ -132,13 +134,16 @@ public class Fragment_settings extends PreferenceFragmentCompat implements Share
             sp.edit().putInt("restart_changed", 1).apply();
             if (key.equals("userAgent") && !Objects.equals(sp.getString("userAgent", ""), "")) {
                 androidx.preference.EditTextPreference editTextPreference = findPreference("userAgent");
-                assert editTextPreference != null;
-                editTextPreference.setTitle("");
-                editTextPreference.setEnabled(true);
+                if (editTextPreference != null) {
+                    editTextPreference.setTitle("");
+                    editTextPreference.setEnabled(true);
+                }
             }else{
                 androidx.preference.EditTextPreference editTextPreference = findPreference("userAgent");
-                editTextPreference.setTitle("> "+getResources().getString(R.string.setting_enter_userAgent)+" <");
-                editTextPreference.setEnabled(true);
+                if (editTextPreference != null) {
+                    editTextPreference.setTitle("> " + getResources().getString(R.string.setting_enter_userAgent) + " <");
+                    editTextPreference.setEnabled(true);
+                }
             }
             updatePrefSummary(findPreference(key));
         }

@@ -115,9 +115,12 @@
     <string name="setting_title_fav">Preferito</string>
     <string name="setting_title_searchEngine">Motore di ricerca personalizzato</string>
     <string name="setting_title_userAgent">Agente utente personalizzato</string>
+    <string name="setting_enter_userAgent">Enter user agent</string>
     <string name="setting_title_fingerPrint">Fingerprint protection</string>
     <string name="setting_title_whitelist">Exceptions</string>
-    <string name="setting_title_tab">This tab</string>
+    <string name="setting_tab">Tab</string>
+    <string name="setting_theme">Theme</string>
+    <string name="setting_theme_system">System</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">Nascondi barra degli strumenti</string>
     <string name="setting_title_behavior">Comportamento</string>

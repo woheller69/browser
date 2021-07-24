@@ -115,12 +115,12 @@
     <string name="setting_title_fav">スタートページ</string>
     <string name="setting_title_searchEngine">カスタム検索エンジン</string>
     <string name="setting_title_userAgent">カスタムユーザーエージェント</string>
-    <string name="setting_enter_userAgent">Enter user agent</string>
-    <string name="setting_title_fingerPrint">Fingerprint protection</string>
-    <string name="setting_title_whitelist">Exceptions</string>
-    <string name="setting_tab">Tab</string>
-    <string name="setting_theme">Theme</string>
-    <string name="setting_theme_system">System</string>
+    <string name="setting_enter_userAgent">ユーザーエージェントを入力</string>
+    <string name="setting_title_fingerPrint">指紋の保護</string>
+    <string name="setting_title_whitelist">例外</string>
+    <string name="setting_tab">タブ</string>
+    <string name="setting_theme">テーマ</string>
+    <string name="setting_theme_system">システム</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">ツールバーを隠す</string>
     <string name="setting_title_behavior">動作</string>

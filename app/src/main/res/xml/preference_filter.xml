@@ -7,60 +7,82 @@
         app:iconSpaceReserved="false"
         android:summary="@string/setting_gesture_hint"/>
 
-    <de.baumann.browser.preferences.SwitchTextPreference
+    <de.baumann.browser.preferences.EditTextSwitchPreference
         android:key="icon_01"
-        app:defaultText="@string/color_red"
-        app:switchKey="filter_01"
-        app:icon="@drawable/circle_red_big" />
-    <de.baumann.browser.preferences.SwitchTextPreference
+        app:useSimpleSummaryProvider="true"
+        android:defaultValue="@string/color_red"
+        app:editTextSwitchKey="filter_01"
+        app:editTextSwitchKeyDefaultValue="true"
+        android:icon="@drawable/circle_red_big" />
+    <de.baumann.browser.preferences.EditTextSwitchPreference
         android:key="icon_02"
-        app:defaultText="@string/color_pink"
-        app:switchKey="filter_02"
-        app:icon="@drawable/circle_pink_big" />
-    <de.baumann.browser.preferences.SwitchTextPreference
+        app:useSimpleSummaryProvider="true"
+        android:defaultValue="@string/color_pink"
+        app:editTextSwitchKey="filter_02"
+        app:editTextSwitchKeyDefaultValue="true"
+        android:icon="@drawable/circle_pink_big" />
+    <de.baumann.browser.preferences.EditTextSwitchPreference
         android:key="icon_03"
-        app:defaultText="@string/color_purple"
-        app:switchKey="filter_03"
-        app:icon="@drawable/circle_purple_big" />
-    <de.baumann.browser.preferences.SwitchTextPreference
+        app:useSimpleSummaryProvider="true"
+        android:defaultValue="@string/color_purple"
+        app:editTextSwitchKey="filter_03"
+        app:editTextSwitchKeyDefaultValue="true"
+        android:icon="@drawable/circle_purple_big" />
+    <de.baumann.browser.preferences.EditTextSwitchPreference
         android:key="icon_04"
-        app:defaultText="@string/color_blue"
-        app:switchKey="filter_04"
-        app:icon="@drawable/circle_blue_big" />
-    <de.baumann.browser.preferences.SwitchTextPreference
+        app:useSimpleSummaryProvider="true"
+        android:defaultValue="@string/color_blue"
+        app:editTextSwitchKey="filter_04"
+        app:editTextSwitchKeyDefaultValue="true"
+        android:icon="@drawable/circle_blue_big" />
+    <de.baumann.browser.preferences.EditTextSwitchPreference
         android:key="icon_05"
-        app:defaultText="@string/color_teal"
-        app:switchKey="filter_05"
-        app:icon="@drawable/circle_teal_big" />
-    <de.baumann.browser.preferences.SwitchTextPreference
+        app:useSimpleSummaryProvider="true"
+        android:defaultValue="@string/color_teal"
+        app:editTextSwitchKey="filter_05"
+        app:editTextSwitchKeyDefaultValue="true"
+        android:icon="@drawable/circle_teal_big" />
+    <de.baumann.browser.preferences.EditTextSwitchPreference
         android:key="icon_06"
-        app:defaultText="@string/color_green"
-        app:switchKey="filter_06"
-        app:icon="@drawable/circle_green_big" />
-    <de.baumann.browser.preferences.SwitchTextPreference
+        app:useSimpleSummaryProvider="true"
+        android:defaultValue="@string/color_green"
+        app:editTextSwitchKey="filter_06"
+        app:editTextSwitchKeyDefaultValue="true"
+        android:icon="@drawable/circle_green_big" />
+    <de.baumann.browser.preferences.EditTextSwitchPreference
         android:key="icon_07"
-        app:defaultText="@string/color_lime"
-        app:switchKey="filter_07"
-        app:icon="@drawable/circle_lime_big" />
-    <de.baumann.browser.preferences.SwitchTextPreference
+        app:useSimpleSummaryProvider="true"
+        android:defaultValue="@string/color_lime"
+        app:editTextSwitchKey="filter_07"
+        app:editTextSwitchKeyDefaultValue="true"
+        android:icon="@drawable/circle_lime_big" />
+    <de.baumann.browser.preferences.EditTextSwitchPreference
         android:key="icon_08"
-        app:defaultText="@string/color_yellow"
-        app:switchKey="filter_08"
-        app:icon="@drawable/circle_yellow_big" />
-    <de.baumann.browser.preferences.SwitchTextPreference
+        app:useSimpleSummaryProvider="true"
+        android:defaultValue="@string/color_yellow"
+        app:editTextSwitchKey="filter_08"
+        app:editTextSwitchKeyDefaultValue="true"
+        android:icon="@drawable/circle_yellow_big" />
+    <de.baumann.browser.preferences.EditTextSwitchPreference
         android:key="icon_09"
-        app:defaultText="@string/color_orange"
-        app:switchKey="filter_09"
-        app:icon="@drawable/circle_orange_big" />
-    <de.baumann.browser.preferences.SwitchTextPreference
+        app:useSimpleSummaryProvider="true"
+        android:defaultValue="@string/color_orange"
+        app:editTextSwitchKey="filter_09"
+        app:editTextSwitchKeyDefaultValue="true"
+        android:icon="@drawable/circle_orange_big" />
+    <de.baumann.browser.preferences.EditTextSwitchPreference
         android:key="icon_10"
-        app:defaultText="@string/color_brown"
-        app:switchKey="filter_10"
-        app:icon="@drawable/circle_brown_big" />
-    <de.baumann.browser.preferences.SwitchTextPreference
+        app:useSimpleSummaryProvider="true"
+        android:defaultValue="@string/color_brown"
+        app:editTextSwitchKey="filter_10"
+        app:editTextSwitchKeyDefaultValue="true"
+        android:icon="@drawable/circle_brown_big" />
+    <de.baumann.browser.preferences.EditTextSwitchPreference
         android:key="icon_11"
-        app:defaultText="@string/color_grey"
-        app:switchKey="filter_11"
-        app:icon="@drawable/circle_grey_big" />
+        app:useSimpleSummaryProvider="true"
+        android:defaultValue="@string/color_grey"
+        app:editTextSwitchKey="filter_11"
+        app:editTextSwitchKeyDefaultValue="true"
+        android:icon="@drawable/circle_grey_big" />
 
 </PreferenceScreen>

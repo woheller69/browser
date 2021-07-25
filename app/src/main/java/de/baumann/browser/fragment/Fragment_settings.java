@@ -40,14 +40,6 @@ public class Fragment_settings extends PreferenceFragmentCompat implements Share
         initSummary(getPreferenceScreen());
 
 
-        androidx.preference.EditTextPreference editTextPreference = findPreference("userAgent");
-        if (editTextPreference!=null) {
-            editTextPreference.setEnabled(true);
-            if ((editTextPreference.getText()!=null && editTextPreference.getText().equals("")) || (editTextPreference.getText()==null)){
-                editTextPreference.setTitle("> " + getResources().getString(R.string.setting_enter_userAgent) + " <");
-            }
-        }
-
        findPreference("settings_filter").setOnPreferenceClickListener(preference -> {
            Intent intent = new Intent(getActivity(), Settings_Filter.class);
            requireActivity().startActivity(intent);
@@ -119,7 +111,7 @@ public class Fragment_settings extends PreferenceFragmentCompat implements Share
             if (p.getTitle().toString().toLowerCase().contains("password")) {
                 p.setSummary("******");
             } else {
-                p.setSummary(editTextPref.getText());
+                if (p.getSummaryProvider()==null)   p.setSummary(editTextPref.getText());
             }
         }
         if (p instanceof MultiSelectListPreference) {
@@ -132,19 +124,6 @@ public class Fragment_settings extends PreferenceFragmentCompat implements Share
     public void onSharedPreferenceChanged(final SharedPreferences sp, String key) {
         if (key.equals("userAgent") || key.equals("sp_search_engine_custom") || key.equals("@string/sp_search_engine")) {
             sp.edit().putInt("restart_changed", 1).apply();
-            if (key.equals("userAgent") && !Objects.equals(sp.getString("userAgent", ""), "")) {
-                androidx.preference.EditTextPreference editTextPreference = findPreference("userAgent");
-                if (editTextPreference != null) {
-                    editTextPreference.setTitle("");
-                    editTextPreference.setEnabled(true);
-                }
-            }else{
-                androidx.preference.EditTextPreference editTextPreference = findPreference("userAgent");
-                if (editTextPreference != null) {
-                    editTextPreference.setTitle("> " + getResources().getString(R.string.setting_enter_userAgent) + " <");
-                    editTextPreference.setEnabled(true);
-                }
-            }
             updatePrefSummary(findPreference(key));
         }
     }

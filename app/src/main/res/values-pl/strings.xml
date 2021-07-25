@@ -115,12 +115,12 @@
     <string name="setting_title_fav">Ulubione</string>
     <string name="setting_title_searchEngine">Własna wyszukiwarka</string>
     <string name="setting_title_userAgent">Niestandardowy agent użytkownika</string>
-    <string name="setting_enter_userAgent">Enter user agent</string>
-    <string name="setting_title_fingerPrint">Fingerprint protection</string>
-    <string name="setting_title_whitelist">Exceptions</string>
-    <string name="setting_tab">Tab</string>
-    <string name="setting_theme">Theme</string>
-    <string name="setting_theme_system">System</string>
+    <string name="setting_enter_userAgent">Wprowadź agenta użytkownika</string>
+    <string name="setting_title_fingerPrint">Ochrona przed fingerprintingiem</string>
+    <string name="setting_title_whitelist">Wyjątki</string>
+    <string name="setting_tab">Karta</string>
+    <string name="setting_theme">Motyw</string>
+    <string name="setting_theme_system">Systemowy</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">Ukryj dolny panel</string>
     <string name="setting_title_behavior">Zachowanie</string>
@@ -129,7 +129,7 @@
     <string name="setting_overView">Wszechgląd</string>
     <string name="setting_overView_onStart_title">Wysuwaj na starcie</string>
     <string name="setting_gestures">Gesty</string>
-    <string name="setting_title_reopenLastTab">Reopen last tab</string>
+    <string name="setting_title_reopenLastTab">Otwórz ostatnią kartę</string>
     <!-- gestures -->
     <string name="setting_title_toolbar">Pasek narzędziowy</string>
     <string name="setting_title_toolbar_buttons">Przyciski paska narzędzi</string>

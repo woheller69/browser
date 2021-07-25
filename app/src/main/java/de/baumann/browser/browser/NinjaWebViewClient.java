@@ -68,6 +68,9 @@ public class NinjaWebViewClient extends WebViewClient {
         } else {
             ninjaWebView.postInvalidate();
         }
+        if(sp.getBoolean("sp_savedata",true)) {
+            view.evaluateJavascript("var links=document.getElementsByTagName('video'); for(let i=0;i<links.length;i++){links[i].pause()};", null);
+        }
     }
 
     @Override
@@ -75,20 +78,8 @@ public class NinjaWebViewClient extends WebViewClient {
         ninjaWebView.setStopped(false);
         ninjaWebView.resetFavicon();
         super.onPageStarted(view,url,favicon);
-    }
 
-    @Override
-    public void onLoadResource(WebView view, String url) {
-
-        if(sp.getBoolean("sp_savedata",true)) {
-            view.evaluateJavascript("var links=document.getElementsByTagName('video'); for(let i=0;i<links.length;i++){links[i].pause()};", null);
-        }
-
-        if((sp.getBoolean("sp_fingerPrintProtection",false) &&
-                ninjaWebView.isFingerPrintProtection()) ||
-                ninjaWebView.isFingerPrintProtection()) {
-
-            view.evaluateJavascript("var test=document.querySelector(\"a[ping]\"); if(test!==null){test.removeAttribute('ping')};", null); //do not allow ping on http only pages (tested with http://tests.caniuse.com)
+        if(ninjaWebView.isFingerPrintProtection()) {
 
             //Block WebRTC requests which can reveal local IP address
             //Tested with https://diafygi.github.io/webrtc-ips/
@@ -392,6 +383,16 @@ public class NinjaWebViewClient extends WebViewClient {
                     "Object.defineProperty(navigator, 'keyboard',{value:null});" +
                     "Object.defineProperty(navigator, 'mediaDevices',{value:null});" +
                     "Object.defineProperty(navigator, 'sendBeacon',{value:null});",null);
+        }
+    }
+
+    @Override
+    public void onLoadResource(WebView view, String url) {
+
+        if(ninjaWebView.isFingerPrintProtection()) {
+
+            view.evaluateJavascript("var test=document.querySelector(\"a[ping]\"); if(test!==null){test.removeAttribute('ping')};", null); //do not allow ping on http only pages (tested with http://tests.caniuse.com)
+
         }
 
         if (view.getSettings().getUseWideViewPort() && (view.getWidth()<1300)) view.evaluateJavascript("document.querySelector('meta[name=\"viewport\"]').setAttribute('content', 'width=1200px');", null);

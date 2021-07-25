@@ -21,6 +21,7 @@ import java.util.Objects;
 import de.baumann.browser.fragment.Fragment_settings_Delete;
 import de.baumann.browser.R;
 import de.baumann.browser.unit.BrowserUnit;
+import de.baumann.browser.unit.HelperUnit;
 
 public class Settings_Delete extends AppCompatActivity {
 
@@ -29,6 +30,7 @@ public class Settings_Delete extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
+        HelperUnit.initTheme(this);
         setContentView(R.layout.activity_settings_delete);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

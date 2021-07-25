@@ -202,9 +202,9 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         super.onCreate(savedInstanceState);
 
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
-
         context = BrowserActivity.this;
         activity = BrowserActivity.this;
+        HelperUnit.initTheme(context);
 
         sp = PreferenceManager.getDefaultSharedPreferences(context);
         sp.edit().putInt("restart_changed", 0).apply();

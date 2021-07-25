@@ -81,6 +81,19 @@
         <item>4</item>
     </string-array>
 
+    <!-- Themes -->
+    <string-array name="setting_entries_theme">
+        <item>@string/setting_theme_system</item>
+        <item>@string/menu_dayView</item>
+        <item>@string/menu_nightView</item>
+    </string-array>
+
+    <string-array name="setting_values_theme">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
     <!-- Font size -->
     <string-array name="setting_entries_font">
         <item>75</item>

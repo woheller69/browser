@@ -259,6 +259,21 @@ public class HelperUnit {
             0, 0, 0, 1.0f, 0     // Alpha
     };
 
+    public static void initTheme(Context context) {
+        sp = PreferenceManager.getDefaultSharedPreferences(context);
+        switch (Objects.requireNonNull(sp.getString("sp_theme", "1"))) {
+            case "2":
+                context.setTheme(R.style.AppTheme_day);
+                break;
+            case "3":
+                context.setTheme(R.style.AppTheme_night);
+                break;
+            default:
+                context.setTheme(R.style.AppTheme);;
+                break;
+        }
+    }
+
     public static void initRendering(WebView webView, Context context) {
         sp = PreferenceManager.getDefaultSharedPreferences(context);
         if (sp.getBoolean("sp_invert", false)) {

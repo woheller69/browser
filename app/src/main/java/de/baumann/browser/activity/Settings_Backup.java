@@ -10,6 +10,7 @@ import java.util.Objects;
 
 import de.baumann.browser.fragment.Fragment_settings_Backup;
 import de.baumann.browser.R;
+import de.baumann.browser.unit.HelperUnit;
 
 public class Settings_Backup extends AppCompatActivity {
 
@@ -18,6 +19,7 @@ public class Settings_Backup extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
+        HelperUnit.initTheme(this);
         setContentView(R.layout.activity_settings);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

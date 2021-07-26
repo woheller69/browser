@@ -75,7 +75,6 @@
     <string name="setting_summary_search_engine_qwant">Qwant</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_title_font">フォントサイズ</string>
-    <string name="setting_title_remote">リモートコンテンツ</string>
     <string name="setting_title_dom">ウェブストレージ</string>
     <string name="setting_title_dom_whitelist">DOM ホワイトリスト</string>
     <string name="setting_summary_dom">ウェブストレージ (DOM ストレージ) を使用するとアプリがユーザーの機密情報を含むページ要素を端末に保存することが可能になります。この機能の無効化によりローカルストレージは使用されなくなります。</string>
@@ -115,7 +114,6 @@
     <string name="setting_title_fav">スタートページ</string>
     <string name="setting_title_searchEngine">カスタム検索エンジン</string>
     <string name="setting_title_userAgent">カスタムユーザーエージェント</string>
-    <string name="setting_enter_userAgent">ユーザーエージェントを入力</string>
     <string name="setting_title_fingerPrint">指紋の保護</string>
     <string name="setting_title_whitelist">例外</string>
     <string name="setting_tab">タブ</string>

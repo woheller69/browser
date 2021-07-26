@@ -75,7 +75,6 @@
     <string name="setting_summary_search_engine_qwant">Qwant</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_title_font">字体大小</string>
-    <string name="setting_title_remote">远程内容</string>
     <string name="setting_title_dom">DOM 存储</string>
     <string name="setting_title_dom_whitelist">DOM 白名单</string>
     <string name="setting_summary_dom">DOM 存储允许应用存储可能包含用户敏感信息的页面元素。禁用该项会阻止本地存储被使用。</string>
@@ -115,12 +114,12 @@
     <string name="setting_title_fav">起始页设置</string>
     <string name="setting_title_searchEngine">自定义搜索引擎</string>
     <string name="setting_title_userAgent">自定义User Agent</string>
-    <string name="setting_enter_userAgent">输入用户-代理</string>
+    <string name="setting_enter_userAgent">Enter user agent</string>
     <string name="setting_title_fingerPrint">指纹保护</string>
-    <string name="setting_title_whitelist">例外</string>
-    <string name="setting_tab">制表符</string>
-    <string name="setting_theme">主题</string>
-    <string name="setting_theme_system">系統</string>
+    <string name="setting_title_whitelist">Exceptions</string>
+    <string name="setting_tab">Tab</string>
+    <string name="setting_theme">Theme</string>
+    <string name="setting_theme_system">System</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">隐藏工具栏</string>
     <string name="setting_title_behavior">行为</string>

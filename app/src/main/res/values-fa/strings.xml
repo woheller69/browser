@@ -75,7 +75,6 @@
     <string name="setting_summary_search_engine_qwant">کوانت</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_title_font">اندازه قلم</string>
-    <string name="setting_title_remote">محتوای خارجی</string>
     <string name="setting_title_dom">ذخیره سازی DOM</string>
     <string name="setting_title_dom_whitelist">لیست سفید DOM</string>
     <string name="setting_summary_dom">DOM Storage به برنامه اجازه می دهد تا عناصر صفحه را که می تواند شامل اطلاعات حساس کاربر باشد ، ذخیره کند. غیرفعال کردن این امر از استفاده از حافظه محلی جلوگیری می کند.</string>
@@ -125,12 +124,12 @@
     <string name="setting_title_fav">صفحه موردعلاقه</string>
     <string name="setting_title_searchEngine">موتور جستجوی سفارشی</string>
     <string name="setting_title_userAgent">سفارشی سازی user-agent مرورگر </string>
-    <string name="setting_enter_userAgent">نماینده کاربری را وارد کنید</string>
-    <string name="setting_title_fingerPrint">محافظت از اثر انگشت</string>
-    <string name="setting_title_whitelist">استثناها</string>
-    <string name="setting_tab">زبانه</string>
-    <string name="setting_theme">زمینه</string>
-    <string name="setting_theme_system">سیستم</string>
+    <string name="setting_enter_userAgent">Enter user agent</string>
+    <string name="setting_title_fingerPrint">Fingerprint protection</string>
+    <string name="setting_title_whitelist">Exceptions</string>
+    <string name="setting_tab">Tab</string>
+    <string name="setting_theme">Theme</string>
+    <string name="setting_theme_system">System</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">پنهان سازی نوار ابزار</string>
     <string name="setting_title_behavior">رفتارها</string>

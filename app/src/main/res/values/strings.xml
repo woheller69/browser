@@ -90,8 +90,6 @@
 
     <string name="setting_title_font">Font size</string>
 
-    <string name="setting_title_remote">Remote content</string>
-
     <string name="setting_title_dom">DOM Storage</string>
     <string name="setting_title_dom_whitelist">DOM Whitelist</string>
     <string name="setting_summary_dom">DOM Storage allows the application to store page elements that could include user sensitive information. Disabling this prevents local storage from being used.</string>

@@ -3,6 +3,7 @@
 - fix: chip desktop, javascript, remote should not be visible in settings when editing filter names (thanks to @woheller69)
 - fix: Sometimes Favicon is stored several times in database (thanks to @woheller69)
 - new: Privacy Enhancement #602 (thanks to @woheller69)
+- new: choose preferred theme
 - updated: Edit filter names (thanks to @woheller69)
 
 

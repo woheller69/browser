@@ -75,7 +75,6 @@
     <string name="setting_summary_search_engine_qwant">Qwant</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_title_font">Cỡ chữ</string>
-    <string name="setting_title_remote">Nội dung từ xa</string>
     <string name="setting_title_dom">Bộ nhớ DOM</string>
     <string name="setting_title_dom_whitelist">DOM Whitelist</string>
     <string name="setting_summary_dom">DOM Storage cho phép ứng dụng lưu trữ các phần tử trang có thể bao gồm thông tin nhạy cảm của người dùng. Tắt tính năng này sẽ ngăn không cho sử dụng bộ nhớ cục bộ.</string>
@@ -115,12 +114,12 @@
     <string name="setting_title_fav">Yêu thích</string>
     <string name="setting_title_searchEngine">Công cụ tìm kiếm tuỳ chỉnh</string>
     <string name="setting_title_userAgent">Tác nhân người dùng tuỳ chỉnh</string>
-    <string name="setting_enter_userAgent">Nhập tác nhân người dùng</string>
-    <string name="setting_title_fingerPrint">Bảo vệ vân tay</string>
-    <string name="setting_title_whitelist">Ngoại lệ</string>
-    <string name="setting_tab">Chuyển hướng</string>
-    <string name="setting_theme">Chủ đề</string>
-    <string name="setting_theme_system">Hệ thống</string>
+    <string name="setting_enter_userAgent">Enter user agent</string>
+    <string name="setting_title_fingerPrint">Fingerprint protection</string>
+    <string name="setting_title_whitelist">Exceptions</string>
+    <string name="setting_tab">Tab</string>
+    <string name="setting_theme">Theme</string>
+    <string name="setting_theme_system">System</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">Ẩn thanh công cụ</string>
     <string name="setting_title_behavior">Hành vi</string>

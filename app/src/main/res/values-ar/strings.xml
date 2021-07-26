@@ -75,7 +75,6 @@
     <string name="setting_summary_search_engine_qwant">محرك Qwant</string>
     <string name="setting_summary_search_engine_ecosia">محرك Ecosia</string>
     <string name="setting_title_font">حجم الخط</string>
-    <string name="setting_title_remote">المحتوى البعيد</string>
     <string name="setting_title_dom">تخزين DOM</string>
     <string name="setting_title_dom_whitelist">القائمة البيضاء DOM</string>
     <string name="setting_summary_dom">يسمح تخزين DOM للتطبيق بتخزين عناصر الصفحات التي يمكن أن تتضمن معلومات حساسة للمستخدم. تعطيل هذا يمنع التخزين المحلي من استخدامه.</string>
@@ -115,7 +114,6 @@
     <string name="setting_title_fav">المفضلة</string>
     <string name="setting_title_searchEngine">محرك بحث مخصص</string>
     <string name="setting_title_userAgent">وكيل مستخدم مخصص</string>
-    <string name="setting_enter_userAgent">Enter user agent</string>
     <string name="setting_title_fingerPrint">Fingerprint protection</string>
     <string name="setting_title_whitelist">Exceptions</string>
     <string name="setting_tab">Tab</string>

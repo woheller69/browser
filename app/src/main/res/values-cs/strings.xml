@@ -114,11 +114,12 @@
     <string name="setting_title_fav">Oblíbené</string>
     <string name="setting_title_searchEngine">Vlastní vyhledávač</string>
     <string name="setting_title_userAgent">Vlastní uživatelský agent</string>
-    <string name="setting_title_fingerPrint">Fingerprint protection</string>
-    <string name="setting_title_whitelist">Exceptions</string>
+    <string name="setting_enter_userAgent">Vlastní uživatelský agent</string>
+    <string name="setting_title_fingerPrint">Ochrana otiskem prstu</string>
+    <string name="setting_title_whitelist">Výjimky</string>
     <string name="setting_tab">Tab</string>
-    <string name="setting_theme">Theme</string>
-    <string name="setting_theme_system">System</string>
+    <string name="setting_theme">Motiv</string>
+    <string name="setting_theme_system">Systém</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">Skrýt Panel nástrojů</string>
     <string name="setting_title_behavior">Chování</string>

@@ -114,12 +114,12 @@
     <string name="setting_title_fav">起始页设置</string>
     <string name="setting_title_searchEngine">自定义搜索引擎</string>
     <string name="setting_title_userAgent">自定义User Agent</string>
-    <string name="setting_enter_userAgent">Enter user agent</string>
+    <string name="setting_enter_userAgent">输入用户-代理</string>
     <string name="setting_title_fingerPrint">指纹保护</string>
-    <string name="setting_title_whitelist">Exceptions</string>
-    <string name="setting_tab">Tab</string>
-    <string name="setting_theme">Theme</string>
-    <string name="setting_theme_system">System</string>
+    <string name="setting_title_whitelist">例外</string>
+    <string name="setting_tab">制表符</string>
+    <string name="setting_theme">主题</string>
+    <string name="setting_theme_system">系統</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">隐藏工具栏</string>
     <string name="setting_title_behavior">行为</string>

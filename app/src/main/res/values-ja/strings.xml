@@ -114,6 +114,7 @@
     <string name="setting_title_fav">スタートページ</string>
     <string name="setting_title_searchEngine">カスタム検索エンジン</string>
     <string name="setting_title_userAgent">カスタムユーザーエージェント</string>
+    <string name="setting_enter_userAgent">ユーザーエージェントを入力</string>
     <string name="setting_title_fingerPrint">指紋の保護</string>
     <string name="setting_title_whitelist">例外</string>
     <string name="setting_tab">タブ</string>

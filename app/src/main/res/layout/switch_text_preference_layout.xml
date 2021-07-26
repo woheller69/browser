@@ -9,6 +9,7 @@
     <FrameLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
+        <!--suppress AndroidUnresolvableTag -->
         <androidx.preference.internal.PreferenceImageView
             android:id="@+id/Switch_Text_Preference_icon"
             android:layout_width="wrap_content"

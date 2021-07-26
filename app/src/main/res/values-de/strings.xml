@@ -114,10 +114,11 @@
     <string name="setting_title_fav">Startseite</string>
     <string name="setting_title_searchEngine">Nutzerdefinierte Suchmaschine</string>
     <string name="setting_title_userAgent">Eigener Useragent</string>
+    <string name="setting_enter_userAgent">Setze User-Agent</string>
     <string name="setting_title_fingerPrint">Fingerabdruck-Schutz</string>
     <string name="setting_title_whitelist">Ausnahmen</string>
     <string name="setting_tab">Tab</string>
-    <string name="setting_theme">Theme</string>
+    <string name="setting_theme">Stil</string>
     <string name="setting_theme_system">System</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">Toolbar verstecken</string>
@@ -190,7 +191,7 @@ Bitte lies auch den Hilfedialog in der Anwendung.&lt;/b&gt;&lt;br&gt;&lt;br&gt;
     </string>
     <string name="menu_mobileView">Mobile-Ansicht</string>
     <string name="menu_desktopView">Desktop-Ansicht</string>
-    <string name="menu_dayView">Tagesansicht</string>
-    <string name="menu_nightView">Nachtsicht</string>
+    <string name="menu_dayView">Tages-Ansicht</string>
+    <string name="menu_nightView">Nacht-Ansicht</string>
     <!-- License changelog -->
 </resources>

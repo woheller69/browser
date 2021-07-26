@@ -115,12 +115,12 @@
     <string name="setting_title_fav">Yêu thích</string>
     <string name="setting_title_searchEngine">Công cụ tìm kiếm tuỳ chỉnh</string>
     <string name="setting_title_userAgent">Tác nhân người dùng tuỳ chỉnh</string>
-    <string name="setting_enter_userAgent">Enter user agent</string>
-    <string name="setting_title_fingerPrint">Fingerprint protection</string>
-    <string name="setting_title_whitelist">Exceptions</string>
-    <string name="setting_tab">Tab</string>
-    <string name="setting_theme">Theme</string>
-    <string name="setting_theme_system">System</string>
+    <string name="setting_enter_userAgent">Nhập tác nhân người dùng</string>
+    <string name="setting_title_fingerPrint">Bảo vệ vân tay</string>
+    <string name="setting_title_whitelist">Ngoại lệ</string>
+    <string name="setting_tab">Chuyển hướng</string>
+    <string name="setting_theme">Chủ đề</string>
+    <string name="setting_theme_system">Hệ thống</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">Ẩn thanh công cụ</string>
     <string name="setting_title_behavior">Hành vi</string>

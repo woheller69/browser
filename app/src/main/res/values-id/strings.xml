@@ -35,7 +35,7 @@
     <string name="menu_edit">Edit</string>
     <string name="menu_closeTab">Close tab</string>
     <string name="menu_download">Open downloads</string>
-    <string name="menu_fav">Set as start site</string>
+    <string name="menu_fav">Save as favorite</string>
     <string name="menu_sc">Shortcut on home screen</string>
     <string name="menu_sort">Sort by …</string>
     <string name="menu_filter">Filter by …</string>
@@ -49,7 +49,7 @@
     <string name="menu_other_info">About \"FOSS Browser\"</string>
     <!-- Dialog -->
     <string name="dialog_title_hint">Title:</string>
-    <string name="dialog_URL_hint">Url:</string>
+    <string name="dialog_URL_hint">URL:</string>
     <string name="dialog_extension_hint">Extension (for example: \".jpg\"):</string>
     <string name="dialog_sign_in_username">Username</string>
     <string name="dialog_sign_in_password">Password</string>
@@ -115,7 +115,7 @@
     <string name="setting_title_fav">Favorite</string>
     <string name="setting_title_searchEngine">Custom search engine</string>
     <string name="setting_title_userAgent">Custom user agent</string>
-    <string name="setting_enter_userAgent">Set user agent</string>
+    <string name="setting_enter_userAgent">Enter user agent</string>
     <string name="setting_title_fingerPrint">Fingerprint protection</string>
     <string name="setting_title_whitelist">Exceptions</string>
     <string name="setting_tab">Tab</string>
@@ -192,6 +192,6 @@
     <string name="menu_mobileView">Mobile view</string>
     <string name="menu_desktopView">Desktop view</string>
     <string name="menu_dayView">Day view</string>
-    <string name="menu_nightView">Night View</string>
+    <string name="menu_nightView">Night view</string>
     <!-- License changelog -->
 </resources>

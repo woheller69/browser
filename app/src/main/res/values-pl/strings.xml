@@ -114,6 +114,7 @@
     <string name="setting_title_fav">Ulubione</string>
     <string name="setting_title_searchEngine">Własna wyszukiwarka</string>
     <string name="setting_title_userAgent">Niestandardowy agent użytkownika</string>
+    <string name="setting_enter_userAgent">Wprowadź agenta użytkownika</string>
     <string name="setting_title_fingerPrint">Ochrona przed fingerprintingiem</string>
     <string name="setting_title_whitelist">Wyjątki</string>
     <string name="setting_tab">Karta</string>

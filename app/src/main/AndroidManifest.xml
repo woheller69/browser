@@ -86,7 +86,7 @@
             android:theme="@style/AppTheme"/>
 
         <activity android:name="de.baumann.browser.activity.Whitelist_Remote"
-            android:label="@string/setting_title_whitelistRemote"
+            android:label="@string/setting_title_dom_whitelist"
             android:theme="@style/AppTheme"/>
 
         <activity android:name="de.baumann.browser.activity.Settings_Delete"

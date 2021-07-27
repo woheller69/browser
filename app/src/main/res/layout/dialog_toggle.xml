@@ -306,7 +306,7 @@
                 android:layout_height="wrap_content"
                 android:layout_toStartOf="@+id/chip_allow_popups_WL"
                 android:text=""
-                app:chipIcon="@drawable/ic_fingerprint"
+                app:chipIcon="@drawable/icon_fingerprint"
                 app:chipIconTint="@drawable/bg_chip_state_list"
                 app:chipIconEnabled="true"
                 app:chipStartPadding="4dp"

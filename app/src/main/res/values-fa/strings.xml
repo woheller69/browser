@@ -88,7 +88,6 @@
        امکان استفاده از آنها جهت جمع آوری اطلاعات کاربران برای تبلیعات نیز وجود دارد،اما این مورد به صورت پیشفرض غیر فعال شده است.
     </string>
     <string name="setting_title_whitelistCookie">لیست سفید کوکی </string>
-    <string name="setting_title_whitelistRemote">لیست سفید محتوای خارجی</string>
     <string name="setting_title_javascript">جاواسکریپت</string>
     <string name="setting_summary_javascript">        فعال سازی جاوا اسکریپت.اکثر وبسایت ها جهت کارکرد صحیح نیاز به جاوا اسکریپت دارند.اما ریسک سوءاستفاده هکر ها از آن در حملات سایبری وجود دارد.
     </string>

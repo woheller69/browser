@@ -48,10 +48,13 @@
             app:editTextSwitchKey="userAgentSwitch"
             android:title="@string/setting_title_userAgent" />
 
-        <EditTextPreference
-            android:defaultValue="https://www.ecosia.org/search?q="
+        <de.baumann.browser.preferences.EditTextSwitchPreference
+            android:selectable="true"
+            app:useSimpleSummaryProvider="true"
             android:key="sp_search_engine_custom"
-            android:title="@string/setting_title_searchEngine"/>
+            app:editTextSwitchKey="searchEngineSwitch"
+            android:title="@string/setting_title_searchEngine" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>

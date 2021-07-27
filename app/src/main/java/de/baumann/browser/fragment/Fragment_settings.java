@@ -122,7 +122,11 @@ public class Fragment_settings extends PreferenceFragmentCompat implements Share
 
     @Override
     public void onSharedPreferenceChanged(final SharedPreferences sp, String key) {
-        if (key.equals("userAgent") || key.equals("sp_search_engine_custom") || key.equals("@string/sp_search_engine")) {
+        if (key.equals("userAgent") ||
+                key.equals("sp_search_engine_custom") ||
+                key.equals("searchEngineSwitch") ||
+                key.equals("userAgentSwitch") ||
+                key.equals("sp_search_engine")) {
             sp.edit().putInt("restart_changed", 1).apply();
             updatePrefSummary(findPreference(key));
         }

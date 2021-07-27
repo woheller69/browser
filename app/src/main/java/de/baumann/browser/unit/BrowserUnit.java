@@ -50,10 +50,11 @@ public class BrowserUnit {
     private static final String SEARCH_ENGINE_GOOGLE = "https://www.google.com/search?q=";
     private static final String SEARCH_ENGINE_DUCKDUCKGO = "https://duckduckgo.com/?q=";
     private static final String SEARCH_ENGINE_STARTPAGE = "https://startpage.com/do/search?query=";
-    private static final String SEARCH_ENGINE_BING = "http://www.bing.com/search?q=";
+    private static final String SEARCH_ENGINE_BING = "https://www.bing.com/search?q=";
     private static final String SEARCH_ENGINE_BAIDU = "https://www.baidu.com/s?wd=";
     private static final String SEARCH_ENGINE_QWANT = "https://www.qwant.com/?q=";
     private static final String SEARCH_ENGINE_ECOSIA = "https://www.ecosia.org/search?q=";
+    private static final String SEARCH_ENGINE_Metager = "https://metager.org/meta/meta.ger3?eingabe=";
 
     private static final String SEARCH_ENGINE_STARTPAGE_DE = "https://startpage.com/do/search?lui=deu&language=deutsch&query=";
     private static final String SEARCH_ENGINE_SEARX = "https://searx.be/?q=";
@@ -110,37 +111,53 @@ public class BrowserUnit {
             }
 
             if (!query.contains("://")) {
-                query = URL_SCHEME_HTTP + query;
+                query = URL_SCHEME_HTTPS + query;
             }
 
             return query;
         }
 
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
-        String custom = sp.getString("sp_search_engine_custom", SEARCH_ENGINE_STARTPAGE);
-        final int i = Integer.parseInt(Objects.requireNonNull(sp.getString("sp_search_engine", "6")));
-        switch (i) {
-            case 0:
-                return SEARCH_ENGINE_STARTPAGE + query;
-            case 1:
-                return SEARCH_ENGINE_STARTPAGE_DE + query;
-            case 2:
-                return SEARCH_ENGINE_BAIDU + query;
-            case 3:
-                return SEARCH_ENGINE_BING + query;
-            case 4:
-                return SEARCH_ENGINE_DUCKDUCKGO + query;
-            case 5:
-                return SEARCH_ENGINE_GOOGLE + query;
-            case 6:
-                return SEARCH_ENGINE_SEARX + query;
-            case 7:
-                return SEARCH_ENGINE_QWANT + query;
-            case 8:
-                return custom + query;
-            case 9:
-            default:
-                return SEARCH_ENGINE_ECOSIA + query;
+        String customSearchEngine = sp.getString("sp_search_engine_custom", "");
+        assert customSearchEngine != null;
+
+        //Override UserAgent if own UserAgent is defined
+        if (!sp.contains("searchEngineSwitch")){  //if new switch_text_preference has never been used initialize the switch
+            if (customSearchEngine.equals("")) {
+                sp.edit().putBoolean("searchEngineSwitch", false).apply();
+            }else{
+                sp.edit().putBoolean("searchEngineSwitch", true).apply();
+            }
+        }
+
+        if (sp.getBoolean("searchEngineSwitch",false)){  //if new switch_text_preference has never been used initialize the switch
+            return customSearchEngine + query;
+        } else {
+            final int i = Integer.parseInt(Objects.requireNonNull(sp.getString("sp_search_engine", "0")));
+            switch (i) {
+                case 0:
+                    return SEARCH_ENGINE_STARTPAGE + query;
+                case 1:
+                    return SEARCH_ENGINE_STARTPAGE_DE + query;
+                case 2:
+                    return SEARCH_ENGINE_BAIDU + query;
+                case 3:
+                    return SEARCH_ENGINE_BING + query;
+                case 4:
+                    return SEARCH_ENGINE_DUCKDUCKGO + query;
+                case 5:
+                    return SEARCH_ENGINE_GOOGLE + query;
+                case 6:
+                    return SEARCH_ENGINE_SEARX + query;
+                case 7:
+                    return SEARCH_ENGINE_QWANT + query;
+                case 8:
+                    return SEARCH_ENGINE_ECOSIA + query;
+                case 9:
+                    return SEARCH_ENGINE_Metager + query;
+                default:
+                    return SEARCH_ENGINE_STARTPAGE + query;
+            }
         }
     }
 

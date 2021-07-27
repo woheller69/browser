@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.os.Environment;
 
 import androidx.appcompat.app.AlertDialog;
+import androidx.preference.Preference;
 import androidx.preference.PreferenceManager;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
@@ -43,7 +44,10 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat {
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
+
         setPreferencesFromResource(R.xml.preference_backup, rootKey);
+        Context context = getContext();
+        assert context != null;
 
         File sd = requireActivity().getExternalFilesDir(null);
         File data = Environment.getDataDirectory();
@@ -52,14 +56,16 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat {
         final File previewsFolder_app = new File(data, database_app);
         final File previewsFolder_backup = new File(sd, database_backup);
 
-        findPreference("data_exDB").setOnPreferenceClickListener(preference -> {
-            MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(getActivity());
+        Preference data_exDB = findPreference("data_exDB");
+        assert data_exDB != null;
+        data_exDB.setOnPreferenceClickListener(preference -> {
+            MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
             builder.setMessage(R.string.toast_backup);
             builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
                 dialog.cancel();
                 try {
                     if (android.os.Build.VERSION.SDK_INT >= 23 && android.os.Build.VERSION.SDK_INT < 29) {
-                        int hasWRITE_EXTERNAL_STORAGE = getActivity().checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+                        int hasWRITE_EXTERNAL_STORAGE = context.checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
                         if (hasWRITE_EXTERNAL_STORAGE != PackageManager.PERMISSION_GRANTED) {
                             HelperUnit.grantPermissionsStorage(getActivity());
                             dialog.cancel();
@@ -67,14 +73,14 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat {
                             makeBackupDir();
                             BrowserUnit.deleteDir(previewsFolder_backup);
                             copyDirectory(previewsFolder_app, previewsFolder_backup);
-                            backupUserPrefs(getActivity());
+                            backupUserPrefs(context);
                             NinjaToast.show(getActivity(), getString(R.string.app_done));
                         }
                     } else {
                         makeBackupDir();
                         BrowserUnit.deleteDir(previewsFolder_backup);
                         copyDirectory(previewsFolder_app, previewsFolder_backup);
-                        backupUserPrefs(getActivity());
+                        backupUserPrefs(context);
                         NinjaToast.show(getActivity(), getString(R.string.app_done));
                     }
                 } catch (Exception e) {
@@ -87,27 +93,29 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat {
             return false;
         });
 
-        findPreference("data_imDB").setOnPreferenceClickListener(preference -> {
-            MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(getActivity());
+        Preference data_imDB = findPreference("data_imDB");
+        assert data_imDB != null;
+        data_imDB.setOnPreferenceClickListener(preference -> {
+            MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
             builder.setMessage(R.string.hint_database);
             builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
                 dialog.cancel();
                 try {
                     if (android.os.Build.VERSION.SDK_INT >= 23 && android.os.Build.VERSION.SDK_INT < 29) {
-                        int hasWRITE_EXTERNAL_STORAGE = getActivity().checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+                        int hasWRITE_EXTERNAL_STORAGE = context.checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
                         if (hasWRITE_EXTERNAL_STORAGE != PackageManager.PERMISSION_GRANTED) {
                             HelperUnit.grantPermissionsStorage(getActivity());
                             dialog.cancel();
                         } else {
                             BrowserUnit.deleteDir(previewsFolder_app);
                             copyDirectory(previewsFolder_backup, previewsFolder_app);
-                            restoreUserPrefs(getActivity());
+                            restoreUserPrefs(context);
                             dialogRestart();
                         }
                     } else {
                         BrowserUnit.deleteDir(previewsFolder_app);
                         copyDirectory(previewsFolder_backup, previewsFolder_app);
-                        restoreUserPrefs(getActivity());
+                        restoreUserPrefs(context);
                         dialogRestart();
                     }
 
@@ -122,14 +130,16 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat {
             return false;
         });
 
-        findPreference("data_imBookmark").setOnPreferenceClickListener(preference -> {
-            MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(getActivity());
+        Preference data_imBookmark = findPreference("data_imBookmark");
+        assert data_imBookmark != null;
+        data_imBookmark.setOnPreferenceClickListener(preference -> {
+            MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
             builder.setMessage(R.string.hint_database);
             builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
                 dialog.cancel();
                 try {
                     if (android.os.Build.VERSION.SDK_INT >= 23 && android.os.Build.VERSION.SDK_INT < 29) {
-                        int hasWRITE_EXTERNAL_STORAGE = getActivity().checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+                        int hasWRITE_EXTERNAL_STORAGE = context.checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
                         if (hasWRITE_EXTERNAL_STORAGE != PackageManager.PERMISSION_GRANTED) {
                             HelperUnit.grantPermissionsStorage(getActivity());
                         } else {
@@ -140,7 +150,6 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat {
                         makeBackupDir();
                         HelperUnit.restoreData(getActivity(), 4);
                     }
-
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -152,14 +161,16 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat {
             return false;
         });
 
-        findPreference("data_exBookmark").setOnPreferenceClickListener(preference -> {
-            MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(getActivity());
+        Preference data_exBookmark = findPreference("data_exBookmark");
+        assert data_exBookmark != null;
+        data_exBookmark.setOnPreferenceClickListener(preference -> {
+            MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
             builder.setMessage(R.string.toast_backup);
             builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
                 dialog.cancel();
                 try {
                     if (android.os.Build.VERSION.SDK_INT >= 23 && android.os.Build.VERSION.SDK_INT < 29) {
-                        int hasWRITE_EXTERNAL_STORAGE = getActivity().checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+                        int hasWRITE_EXTERNAL_STORAGE = context.checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
                         if (hasWRITE_EXTERNAL_STORAGE != PackageManager.PERMISSION_GRANTED) {
                             HelperUnit.grantPermissionsStorage(getActivity());
                         } else {
@@ -190,21 +201,15 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat {
             if (hasWRITE_EXTERNAL_STORAGE != PackageManager.PERMISSION_GRANTED) {
                 HelperUnit.grantPermissionsStorage(getActivity());
             } else {
-                if(!backupDir.exists()) {
-                    try {
-                        backupDir.mkdirs();
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
+                boolean wasSuccessful = backupDir.mkdirs();
+                if (!wasSuccessful) {
+                    System.out.println("was not successful.");
                 }
             }
         } else {
-            if(!backupDir.exists()) {
-                try {
-                    backupDir.mkdirs();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+            boolean wasSuccessful = backupDir.mkdirs();
+            if (!wasSuccessful) {
+                System.out.println("was not successful.");
             }
         }
     }

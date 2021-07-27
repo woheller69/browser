@@ -1,5 +1,6 @@
 package de.baumann.browser.fragment;
 
+import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -7,6 +8,7 @@ import android.view.Gravity;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import androidx.appcompat.app.AlertDialog;
+import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 
 import java.util.Objects;
@@ -17,17 +19,23 @@ public class Fragment_settings_Delete extends PreferenceFragmentCompat {
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
+
         setPreferencesFromResource(R.xml.preference_delete, rootKey);
-        findPreference("sp_deleteDatabase").setOnPreferenceClickListener(preference -> {
+        Activity activity = getActivity();
+        assert activity != null;
+
+        Preference sp_deleteDatabase = findPreference("sp_deleteDatabase");
+        assert sp_deleteDatabase != null;
+        sp_deleteDatabase.setOnPreferenceClickListener(preference -> {
             final SharedPreferences sp = getPreferenceScreen().getSharedPreferences();
-            MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(getActivity());
+            MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(activity);
             builder.setMessage(R.string.hint_database);
             builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
                 dialog.cancel();
-                getActivity().deleteDatabase("Ninja4.db");
-                getActivity().deleteDatabase("favicon.db");
+                activity.deleteDatabase("Ninja4.db");
+                activity.deleteDatabase("favicon.db");
                 sp.edit().putInt("restart_changed", 1).apply();
-                getActivity().finish();
+                activity.finish();
             });
             builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
             AlertDialog dialog = builder.create();

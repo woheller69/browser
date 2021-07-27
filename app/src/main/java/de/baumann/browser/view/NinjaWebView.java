@@ -275,7 +275,7 @@ public class NinjaWebView extends WebView implements AlbumController {
     public synchronized void update(int progress) {
         if (foreground && !stopped) {
             browserController.updateProgress(progress);
-        } else if (foreground && stopped) {
+        } else if (foreground) {
             browserController.updateProgress(BrowserUnit.LOADING_STOPPED);
         }
         if (isLoadFinish() && !stopped) {
@@ -332,14 +332,15 @@ public class NinjaWebView extends WebView implements AlbumController {
 
         //Override UserAgent if own UserAgent is defined
         if (!sp.contains("userAgentSwitch")){  //if new switch_text_preference has never been used initialize the switch
-            if (sp.getString("userAgent", "").equals("")) {
+            if (Objects.requireNonNull(sp.getString("sp_userAgent", "")).equals("")) {
                 sp.edit().putBoolean("userAgentSwitch", false).apply();
             }else{
                 sp.edit().putBoolean("userAgentSwitch", true).apply();
             }
         }
 
-        String ownUserAgent = sp.getString("userAgent", "");
+        String ownUserAgent = sp.getString("sp_userAgent", "");
+        assert ownUserAgent != null;
         if (!ownUserAgent.equals("") && (sp.getBoolean("userAgentSwitch",false))) newUserAgent=ownUserAgent;
         return newUserAgent;
     }
@@ -384,18 +385,18 @@ public class NinjaWebView extends WebView implements AlbumController {
         List<Record> list;
         list = action.listBookmark(context, false, 0);
         action.close();
-        for (Record listitem: list){
-            if(listitem.getURL().equals(getUrl())){
-                if (faviconHelper.getFavicon(listitem.getURL())==null) faviconHelper.addFavicon(getUrl(),getFavicon());
+        for (Record listItem: list){
+            if(listItem.getURL().equals(getUrl())){
+                if (faviconHelper.getFavicon(listItem.getURL())==null) faviconHelper.addFavicon(getUrl(),getFavicon());
             }
         }
 
         action.open(false);
         list = action.listStartSite((Activity) context);
         action.close();
-        for (Record listitem: list){
-            if(listitem.getURL().equals(getUrl())){
-                if (faviconHelper.getFavicon(listitem.getURL())==null) faviconHelper.addFavicon(getUrl(),getFavicon());
+        for (Record listItem: list){
+            if(listItem.getURL().equals(getUrl())){
+                if (faviconHelper.getFavicon(listItem.getURL())==null) faviconHelper.addFavicon(getUrl(),getFavicon());
             }
         }
 

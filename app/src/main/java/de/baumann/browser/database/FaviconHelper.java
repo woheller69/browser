@@ -61,10 +61,10 @@ public class FaviconHelper extends SQLiteOpenHelper {
         //first delete existing Favicon for domain if available
         database.delete(TABLE_FAVICON, DOMAIN + " = ?", new String[]{domain.trim()});
 
-        byte[] byteimage= convertBytes(bitmap);
+        byte[] byteImage= convertBytes(bitmap);
         ContentValues values = new  ContentValues();
         values.put(DOMAIN,     domain);
-        values.put(IMAGE,     byteimage);
+        values.put(IMAGE,     byteImage);
         database.insert(TABLE_FAVICON, null, values );
         database.close();
     }
@@ -147,7 +147,7 @@ public class FaviconHelper extends SQLiteOpenHelper {
         for(String faviconURL:faviconURLs){
             boolean found=false;
             for(Record entry:allEntries){
-                if(getDomain(entry.getURL()).equals(faviconURL)){
+                if(Objects.equals(getDomain(entry.getURL()), faviconURL)){
                     found=true;
                     break;
                 }
@@ -180,8 +180,6 @@ public class FaviconHelper extends SQLiteOpenHelper {
     }
 
     public static Bitmap createEmptyFavicon(){
-        Bitmap favicon = Bitmap.createBitmap(32, 32, Bitmap.Config.ARGB_8888);
-        return favicon;
+        return Bitmap.createBitmap(32, 32, Bitmap.Config.ARGB_8888);
     }
-
 }

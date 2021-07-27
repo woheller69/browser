@@ -269,7 +269,7 @@ public class HelperUnit {
                 context.setTheme(R.style.AppTheme_night);
                 break;
             default:
-                context.setTheme(R.style.AppTheme);;
+                context.setTheme(R.style.AppTheme);
                 break;
         }
     }

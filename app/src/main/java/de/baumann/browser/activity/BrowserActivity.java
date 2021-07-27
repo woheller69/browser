@@ -1095,9 +1095,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         Chip chip_fingerprint = dialogView.findViewById(R.id.chip_Fingerprint);
         chip_fingerprint.setChecked(sp.getBoolean("sp_fingerPrintProtection",false));
-        chip_fingerprint.setOnClickListener(v -> {
-            sp.edit().putBoolean("sp_fingerPrintProtection",chip_fingerprint.isChecked()).apply();
-        });
+        chip_fingerprint.setOnClickListener(v -> sp.edit().putBoolean("sp_fingerPrintProtection",chip_fingerprint.isChecked()).apply());
 
         Chip chip_history = dialogView.findViewById(R.id.chip_history);
         chip_history.setChecked(sp.getBoolean("saveHistory", true));
@@ -1508,7 +1506,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             // bit 0..3  color
             // bit 4: 1 = Desktop Mode
             // bit 5: 0 = JavaScript (0 due backward compatibility)
-            // bit 6: 0 = Remote Content allowd (0 due to backward compatibility)
+            // bit 6: 0 = Remote Content allowed (0 due to backward compatibility)
 
             long value= 11 + (long) (ninjaWebView.isDesktopMode()?16:0) + (long) (ninjaWebView.getSettings().getJavaScriptEnabled()?0:32)  + (long) (ninjaWebView.getSettings().getDomStorageEnabled()?0:64);
             action.addBookmark(new Record(ninjaWebView.getTitle(), ninjaWebView.getUrl(), value, 0,2));

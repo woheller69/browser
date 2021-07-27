@@ -1,27 +1,16 @@
 package de.baumann.browser.fragment;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.text.Html;
-import android.text.SpannableString;
-import android.text.method.LinkMovementMethod;
-import android.text.util.Linkify;
-import android.view.Gravity;
-import android.widget.TextView;
 
-import com.google.android.material.dialog.MaterialAlertDialogBuilder;
-
-import androidx.appcompat.app.AlertDialog;
 import androidx.preference.EditTextPreference;
 import androidx.preference.ListPreference;
-import androidx.preference.MultiSelectListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceGroup;
 import androidx.preference.PreferenceManager;
-
-import java.util.Objects;
 
 import de.baumann.browser.activity.Settings_Delete;
 import de.baumann.browser.activity.Settings_Backup;
@@ -35,57 +24,58 @@ public class Fragment_settings extends PreferenceFragmentCompat implements Share
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
+
         setPreferencesFromResource(R.xml.preference_setting, rootKey);
-        PreferenceManager.setDefaultValues(getContext(), R.xml.preference_setting, false);
+        Context context = getContext();
+        assert context != null;
+        PreferenceManager.setDefaultValues(context, R.xml.preference_setting, false);
         initSummary(getPreferenceScreen());
 
-
-       findPreference("settings_filter").setOnPreferenceClickListener(preference -> {
+        Preference settings_filter = findPreference("settings_filter");
+        assert settings_filter != null;
+        settings_filter.setOnPreferenceClickListener(preference -> {
            Intent intent = new Intent(getActivity(), Settings_Filter.class);
            requireActivity().startActivity(intent);
            return false;
-       });
-        findPreference("settings_data").setOnPreferenceClickListener(preference -> {
+        });
+
+        Preference settings_data = findPreference("settings_data");
+        assert settings_data != null;
+        settings_data.setOnPreferenceClickListener(preference -> {
             Intent intent = new Intent(getActivity(), Settings_Backup.class);
             requireActivity().startActivity(intent);
             return false;
         });
-        findPreference("settings_ui").setOnPreferenceClickListener(preference -> {
+
+        Preference settings_ui = findPreference("settings_ui");
+        assert settings_ui != null;
+        settings_ui.setOnPreferenceClickListener(preference -> {
             Intent intent = new Intent(getActivity(), Settings_UI.class);
             requireActivity().startActivity(intent);
             return false;
         });
-        findPreference("settings_gesture").setOnPreferenceClickListener(preference -> {
+
+        Preference settings_gesture = findPreference("settings_gesture");
+        assert settings_gesture != null;
+        settings_gesture.setOnPreferenceClickListener(preference -> {
             Intent intent = new Intent(getActivity(), Settings_Gesture.class);
             requireActivity().startActivity(intent);
             return false;
         });
-        findPreference("settings_start").setOnPreferenceClickListener(preference -> {
+
+        Preference settings_start = findPreference("settings_start");
+        assert settings_start != null;
+        settings_start.setOnPreferenceClickListener(preference -> {
             Intent intent = new Intent(getActivity(), Settings_StartActivity.class);
             requireActivity().startActivity(intent);
             return false;
         });
-        findPreference("settings_clear").setOnPreferenceClickListener(preference -> {
+
+        Preference settings_clear = findPreference("settings_clear");
+        assert settings_clear != null;
+        settings_clear.setOnPreferenceClickListener(preference -> {
             Intent intent = new Intent(getActivity(), Settings_Delete.class);
             requireActivity().startActivity(intent);
-            return false;
-        });
-        findPreference("settings_info").setOnPreferenceClickListener(preference -> {
-            SpannableString s;
-            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-                s = new SpannableString(Html.fromHtml(getString(R.string.changelog_dialog),Html.FROM_HTML_MODE_LEGACY));
-            } else {
-                s = new SpannableString(Html.fromHtml(getString(R.string.changelog_dialog)));
-            }
-            Linkify.addLinks(s, Linkify.WEB_URLS);
-
-            MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(getContext());
-            builder.setTitle(getString(R.string.menu_other_info));
-            builder.setMessage(s);
-            AlertDialog dialog = builder.create();
-            dialog.show();
-            ((TextView)dialog.findViewById(android.R.id.message)).setMovementMethod(LinkMovementMethod.getInstance());
-            Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
             return false;
         });
     }
@@ -114,15 +104,11 @@ public class Fragment_settings extends PreferenceFragmentCompat implements Share
                 if (p.getSummaryProvider()==null)   p.setSummary(editTextPref.getText());
             }
         }
-        if (p instanceof MultiSelectListPreference) {
-            EditTextPreference editTextPref = (EditTextPreference) p;
-            p.setSummary(editTextPref.getText());
-        }
     }
 
     @Override
     public void onSharedPreferenceChanged(final SharedPreferences sp, String key) {
-        if (key.equals("userAgent") ||
+        if (key.equals("sp_userAgent") ||
                 key.equals("sp_search_engine_custom") ||
                 key.equals("searchEngineSwitch") ||
                 key.equals("userAgentSwitch") ||

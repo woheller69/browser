@@ -10,7 +10,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
-import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
@@ -120,32 +119,29 @@ public class SwitchTextPreference extends Preference
             return false;
         });
 
-        valueView.setOnEditorActionListener(new EditText.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if (actionId == EditorInfo.IME_ACTION_SEARCH || actionId == EditorInfo.IME_ACTION_DONE) {
-                    InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
-                    imm.hideSoftInputFromWindow(valueView.getWindowToken(), 0);
+        valueView.setOnEditorActionListener((v, actionId, event) -> {
+            if (actionId == EditorInfo.IME_ACTION_SEARCH || actionId == EditorInfo.IME_ACTION_DONE) {
+                InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(valueView.getWindowToken(), 0);
 
-                    String stringValue = v.getText().toString();
-                    boolean save = !stringValue.equals(sp.getString(preferenceName, defaultText));  //only save if changed
+                String stringValue = v.getText().toString();
+                boolean save = !stringValue.equals(sp.getString(preferenceName, defaultText));  //only save if changed
 
-                    if(save)
-                    {
-                        if(showSwitch && switchView != null && switchView.isChecked()){
-                            if (stringValue.equals("")) {    //if text deleted replace with defaultText
-                                stringValue=defaultText;
-                                valueView.setText(defaultText);
-                            }
-                            sp.edit().putString(preferenceName, stringValue).apply();
-                            valueText = stringValue;
-                            valueView.setFocusable(false);
+                if(save)
+                {
+                    if(showSwitch && switchView != null && switchView.isChecked()){
+                        if (stringValue.equals("")) {    //if text deleted replace with defaultText
+                            stringValue=defaultText;
+                            valueView.setText(defaultText);
                         }
+                        sp.edit().putString(preferenceName, stringValue).apply();
+                        valueText = stringValue;
+                        valueView.setFocusable(false);
                     }
-                    return true;
                 }
-                return false;
+                return true;
             }
+            return false;
         });
 
         if(summary != null && summary.length() > 0)

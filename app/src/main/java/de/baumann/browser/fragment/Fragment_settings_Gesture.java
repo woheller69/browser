@@ -1,11 +1,11 @@
 package de.baumann.browser.fragment;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.preference.EditTextPreference;
 import androidx.preference.ListPreference;
-import androidx.preference.MultiSelectListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceGroup;
@@ -17,8 +17,12 @@ public class Fragment_settings_Gesture extends PreferenceFragmentCompat implemen
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
+
         setPreferencesFromResource(R.xml.preference_gesture, rootKey);
-        PreferenceManager.setDefaultValues(getContext(), R.xml.preference_gesture, false);
+        Context context = getContext();
+        assert context != null;
+
+        PreferenceManager.setDefaultValues(context, R.xml.preference_gesture, false);
         initSummary(getPreferenceScreen());
     }
 
@@ -40,16 +44,11 @@ public class Fragment_settings_Gesture extends PreferenceFragmentCompat implemen
         }
         if (p instanceof EditTextPreference) {
             EditTextPreference editTextPref = (EditTextPreference) p;
-            if (p.getTitle().toString().toLowerCase().contains("password"))
-            {
+            if (p.getTitle().toString().toLowerCase().contains("password")) {
                 p.setSummary("******");
             } else {
                 p.setSummary(editTextPref.getText());
             }
-        }
-        if (p instanceof MultiSelectListPreference) {
-            EditTextPreference editTextPref = (EditTextPreference) p;
-            p.setSummary(editTextPref.getText());
         }
     }
 

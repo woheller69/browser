@@ -3,50 +3,30 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <PreferenceCategory android:title="@string/setting_title_browser"> <Preference
+    <Preference
+        android:summary="@string/setting_gesture_hint"/>
+
+    <PreferenceCategory android:title="@string/setting_title_browser">
+
+        <Preference
             android:key="settings_start"
             android:title="@string/setting_title_start_control" />
+
         <Preference
             android:key="settings_clear"
             android:title="@string/menu_delete" />
+
         <EditTextPreference
             android:defaultValue="https://github.com/scoute-dich/browser"
             android:key="favoriteURL"
             android:title="@string/setting_title_fav" />
+
         <ListPreference
             android:key="sp_search_engine"
             android:defaultValue="0"
             android:title="@string/setting_title_search_engine"
             android:entries="@array/setting_entries_search_engine"
             android:entryValues="@array/setting_values_search_engine"/>
-    </PreferenceCategory>
-
-    <PreferenceCategory android:title="@string/setting_title_app">
-        <Preference
-            android:key="settings_ui"
-            android:title="@string/setting_title_ui"/>
-        <Preference
-            android:key="settings_filter"
-            android:title="@string/setting_filter"/>
-        <Preference
-            android:key="settings_gesture"
-            android:title="@string/setting_gestures"/>
-    </PreferenceCategory>
-
-    <PreferenceCategory android:title="@string/setting_title_others">
-        <Preference
-            android:key="settings_info"
-            android:title="@string/menu_other_info"/>
-        <Preference
-            android:key="settings_data"
-            android:title="@string/setting_title_data"/>
-
-        <de.baumann.browser.preferences.EditTextSwitchPreference
-            android:selectable="true"
-            app:useSimpleSummaryProvider="true"
-            android:key="userAgent"
-            app:editTextSwitchKey="userAgentSwitch"
-            android:title="@string/setting_title_userAgent" />
 
         <de.baumann.browser.preferences.EditTextSwitchPreference
             android:selectable="true"
@@ -54,6 +34,33 @@
             android:key="sp_search_engine_custom"
             app:editTextSwitchKey="searchEngineSwitch"
             android:title="@string/setting_title_searchEngine" />
+
+        <de.baumann.browser.preferences.EditTextSwitchPreference
+            android:selectable="true"
+            app:useSimpleSummaryProvider="true"
+            android:key="sp_userAgent"
+            app:editTextSwitchKey="userAgentSwitch"
+            android:title="@string/setting_title_userAgent" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/setting_title_app">
+
+        <Preference
+            android:key="settings_ui"
+            android:title="@string/setting_title_ui"/>
+
+        <Preference
+            android:key="settings_filter"
+            android:title="@string/setting_filter"/>
+
+        <Preference
+            android:key="settings_gesture"
+            android:title="@string/setting_gestures"/>
+
+        <Preference
+            android:key="settings_data"
+            android:title="@string/setting_title_data"/>
 
     </PreferenceCategory>
 

@@ -1,12 +1,12 @@
 package de.baumann.browser.fragment;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.preference.EditTextPreference;
 import androidx.preference.ListPreference;
-import androidx.preference.MultiSelectListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceGroup;
@@ -24,22 +24,33 @@ public class Fragment_settings_Start extends PreferenceFragmentCompat implements
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
 
         setPreferencesFromResource(R.xml.preference_start, rootKey);
+        Context context = getContext();
+        assert context != null;
+
         PreferenceManager.setDefaultValues(getContext(), R.xml.preference_ui, false);
         initSummary(getPreferenceScreen());
 
-        findPreference("sp_ad_block").setSummary(getString(R.string.setting_summary_adblock)+"\n\n"+AdBlock.getHostsDate(getContext()));
+        Preference sp_ad_block = findPreference("sp_ad_block");
+        assert sp_ad_block != null;
+        sp_ad_block.setSummary(getString(R.string.setting_summary_adblock)+"\n\n"+AdBlock.getHostsDate(getContext()));
 
-        findPreference("start_java").setOnPreferenceClickListener(preference -> {
+        Preference start_java = findPreference("start_java");
+        assert start_java != null;
+        start_java.setOnPreferenceClickListener(preference -> {
             Intent intent = new Intent(getActivity(), Whitelist_Javascript.class);
             requireActivity().startActivity(intent);
             return false;
         });
-        findPreference("start_cookie").setOnPreferenceClickListener(preference -> {
+        Preference start_cookie = findPreference("start_cookie");
+        assert start_cookie != null;
+        start_cookie.setOnPreferenceClickListener(preference -> {
             Intent intent = new Intent(getActivity(), Whitelist_Cookie.class);
             requireActivity().startActivity(intent);
             return false;
         });
-        findPreference("start_remote").setOnPreferenceClickListener(preference -> {
+        Preference start_remote = findPreference("start_remote");
+        assert start_remote != null;
+        start_remote.setOnPreferenceClickListener(preference -> {
             Intent intent = new Intent(getActivity(), Whitelist_Remote.class);
             requireActivity().startActivity(intent);
             return false;
@@ -70,10 +81,6 @@ public class Fragment_settings_Start extends PreferenceFragmentCompat implements
             } else {
                 p.setSummary(editTextPref.getText());
             }
-        }
-        if (p instanceof MultiSelectListPreference) {
-            EditTextPreference editTextPref = (EditTextPreference) p;
-            p.setSummary(editTextPref.getText());
         }
     }
 

@@ -60,7 +60,7 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
     private static class CompleteItem {
         private final String title;
         private final Long time;
-        private int type;
+        private final int type;
 
         private int getType(){return this.type;}
 

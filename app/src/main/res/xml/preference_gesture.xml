@@ -2,9 +2,6 @@
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <Preference
-        android:summary="@string/setting_gesture_hint"/>
-
     <PreferenceCategory android:title="@string/setting_title_toolbar">
 
         <ListPreference

@@ -86,7 +86,6 @@
     <string name="setting_summary_cookie_delete">Αν ενεργοποιηθεί, όλα τα cookies θα διαγραφούν. Επίσης τα Cookies των αξιόπιστων ιστοσελίδων.</string>
     <string name="setting_summary_cookie">Ενεργοποίηση Cookies. Τα cookies είναι μικρά αρχεία κειμένου, τα οποία αποθηκεύονται στη συσκευή σας. Οι ιστότοποι τα χρησιμοποιούν για παράδειγμα για την αποθήκευση των ρυθμίσεων χρήστη (για παράδειγμα ρυθμίσεις αναζήτησης). Αλλά θα μπορούσαν επίσης να χρησιμοποιηθούν για τη συλλογή προσωπικών δεδομένων χρηστών. Τα cookies τρίτων μερών (συλλέγουν δεδομένα χρηστών για διαφημίσεις) είναι πάντα απενεργοποιημένα.</string>
     <string name="setting_title_whitelistCookie">Λίστα επιτρεπόμενων cookie</string>
-    <string name="setting_title_whitelistRemote">Απομακρυσμένη λίστα επιτρεπόμενων</string>
     <string name="setting_title_javascript">JavaScript</string>
     <string name="setting_summary_javascript">Ενεργοποίηση JavaScript. Πολλοί ιστότοποι χρειάζονται JavaScript για τη λειτουργικότητά τους (μενού, φόρτωση και εμφάνιση εικόνων, …). Αλλά είναι επίσης ένας κίνδυνος και μπορεί να χρησιμοποιηθεί για επιθέσεις.</string>
     <string name="setting_title_whitelistJS">Λίστα επιτρεπόμενων JavaScript</string>

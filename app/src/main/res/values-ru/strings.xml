@@ -74,6 +74,7 @@
     <string name="setting_summary_search_engine_searx">Searx</string>
     <string name="setting_summary_search_engine_qwant">Qwant</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
+    <string name="setting_summary_search_engine_metager">Metager</string>
     <string name="setting_title_font">Размер шрифта</string>
     <string name="setting_title_dom">Хранилище DOM</string>
     <string name="setting_title_dom_whitelist">Белый список DOM</string>

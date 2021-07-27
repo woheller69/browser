@@ -86,7 +86,6 @@
     <string name="setting_summary_cookie_delete">Etkinleştirilirse, tüm çerezler silinir. Ayrıca güvenilir web sitelerinin çerezleri de silinir.</string>
     <string name="setting_summary_cookie">Çerezleri etkinleştirin. Çerezler, cihazınızda depolanan küçük metin dosyalarıdır. Web siteleri bunları örneğin kullanıcı ayarlarını saklamak için kullanır (örneğin, arama ayarları). Ancak kişisel kullanıcı verilerini toplamak için de kullanılabilirler. Üçüncü taraf çerezleri (reklam için kullanıcı verilerini toplar) her zaman devre dışı bırakılır.</string>
     <string name="setting_title_whitelistCookie">Çerez beyaz listesi</string>
-    <string name="setting_title_whitelistRemote">Uzak beyaz liste</string>
     <string name="setting_title_javascript">JavaScript</string>
     <string name="setting_summary_javascript">JavaScript\'i etkinleştirin. Birçok web sitesinin işlevselliği için Javascript\'e ihtiyacı vardır (menüler, resimler yükleme ve görüntüleme, …). Ancak bunlar aynı zamanda bir risktir ve saldırılar için kullanılabilir.</string>
     <string name="setting_title_whitelistJS">JavaScript beyaz listesi</string>

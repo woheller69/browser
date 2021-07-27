@@ -86,7 +86,6 @@
     <string name="setting_summary_cookie_delete">Si está activado, se borrarán todas las cookies. Incluyendo las de sitios web de confianza.</string>
     <string name="setting_summary_cookie">Habilitar cookies. Las cookies son archivos de texto pequeños, que se almacenan en su dispositivo. Los sitios web los utilizan, por ejemplo, para almacenar la configuración del usuario (por ejemplo, la configuración de búsqueda). Pero también podrían ser utilizados para recopilar datos personales de los usuarios. Las cookies de terceros (recogen datos de usuario para publicidad) están siempre deshabilitadas.</string>
     <string name="setting_title_whitelistCookie">Lista blanca de cookies</string>
-    <string name="setting_title_whitelistRemote">Lista blanca remota</string>
     <string name="setting_title_javascript">JavaScript</string>
     <string name="setting_summary_javascript">Activa JavaScript. Muchos sitios web necesitan JavaScript para su funcionalidad (menús, carga y visualización de imágenes, …). Pero también son un riesgo y se pueden utilizar para los ataques.</string>
     <string name="setting_title_whitelistJS">Lista blanca de JavaScript</string>

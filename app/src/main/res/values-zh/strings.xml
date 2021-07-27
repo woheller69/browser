@@ -86,7 +86,6 @@
     <string name="setting_summary_cookie_delete">如果启用，所有Cookies都将被删除。包括信任的网站。</string>
     <string name="setting_summary_cookie">启用 Cookies。Cookies 是小型文本文件，存储在您的设备上。 网站使用它们来存储用户设置 (例如搜索设置)。 但它们也可以用来收集用户数据。第三方cookies (它们收集用户数据以用于广告) 总是被禁用。</string>
     <string name="setting_title_whitelistCookie">Cookie 白名单</string>
-    <string name="setting_title_whitelistRemote">远程白名单</string>
     <string name="setting_title_javascript">JavaScript</string>
     <string name="setting_summary_javascript">启用 JavaScript。许多网站的功能需要 JavaScript (菜单，加载和显示图像， …)。 但它们也有被用于发动攻击的危险。</string>
     <string name="setting_title_whitelistJS">JavaScript 白名单</string>

@@ -86,7 +86,6 @@
     <string name="setting_summary_cookie_delete">Если включено, все cookies будут удалены. Также файлы cookie надежных веб-сайтов.</string>
     <string name="setting_summary_cookie">Включить файлы cookie. Файлы cookie представляют собой небольшие текстовые файлы, которые хранятся на Вашем устройстве. Сайты используют их, например, для хранения пользовательских настроек (например, настроек поиска). Но они также могут использоваться для сбора личных данных пользователя. Сторонние файлы cookie (они собирают данные пользователя для рекламы) всегда отключены.</string>
     <string name="setting_title_whitelistCookie">Белый список куки</string>
-    <string name="setting_title_whitelistRemote">Удаленный белый список</string>
     <string name="setting_title_javascript">JavaScript</string>
     <string name="setting_summary_javascript">Включить JavaScript. Многим сайтам нужен JavaScript для их функциональности (меню, загрузка и отображение изображений, …). Но они также представляют собой риск и могут быть использованы для атак.</string>
     <string name="setting_title_whitelistJS">Белый список JavaScript</string>

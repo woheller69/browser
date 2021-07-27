@@ -86,7 +86,6 @@
     <string name="setting_summary_cookie_delete">Se ativar a opção, todos os cookies serão apagados. Os cookies de sites fiáveis também serão apagados.</string>
     <string name="setting_summary_cookie">Habilite Cookies. Cookies são pequenos arquivos de texto, que são armazenados no seu dispositivo. Sites usam-nas por exemplo para armazenar as configurações do usuário (por exemplo, configurações de busca). Mas também podem ser usados para coletar dados pessoais do usuário. Os cookies de terceiros (coletam dados do usuário para publicidade) são sempre desativados.</string>
     <string name="setting_title_whitelistCookie">Cookies permitidos</string>
-    <string name="setting_title_whitelistRemote">Whitelist remota</string>
     <string name="setting_title_javascript">JavaScript</string>
     <string name="setting_summary_javascript">Ative o JavaScript. Muitos sites precisam de JavaScript para suas funcionalidades (menus, carregando e exibindo imagens, …). Mas são também um risco e podem ser utilizados para ataques.</string>
     <string name="setting_title_whitelistJS">Lista branca JavaScript</string>

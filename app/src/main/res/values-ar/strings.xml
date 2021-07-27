@@ -86,7 +86,6 @@
     <string name="setting_summary_cookie_delete">إذا فُعّل، ستحذف جميع الكعكات، حتى الخاصة بالمواقع الموثوقة.</string>
     <string name="setting_summary_cookie">مكّن الكعكات. الكعكات هي ملفات نصية صغيرة، يتم تخزينها على جهازك. تستخدمها المواقع لتخزين البيانات مثل إعدادات المستخدم (مثل إعدادات البحث). ولكن يمكن استخدامها أيضا لجمع بيانات المستخدم الشخصية. كعكات الطرف الثالث (تقوم بجمع بيانات المستخدم لتوجيه الإعلانات) تكون معطلة دائما.</string>
     <string name="setting_title_whitelistCookie">القائمة البيضاء للكعكات</string>
-    <string name="setting_title_whitelistRemote">القائمة البيضاء البعيدة</string>
     <string name="setting_title_javascript">جافا سكريبت</string>
     <string name="setting_summary_javascript">مكّن جافا سكريبت. العديد من المواقع تحتاج إلى جافا سكريبت لوظائفها (القوائم، تحميل وعرض الصور، …). ولكنها تشكل خطرا ويمكن استخدامها في مهاجمتك.</string>
     <string name="setting_title_whitelistJS">القائمة البيضاء لجافا سكربت</string>

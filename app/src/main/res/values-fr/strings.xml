@@ -86,7 +86,6 @@
     <string name="setting_summary_cookie_delete">Si cette option est activée, tous les cookies seront supprimés. Aussi les cookies de sites de confiance.</string>
     <string name="setting_summary_cookie">Activez les cookies. Les cookies sont de petits fichiers texte, qui sont stockés sur votre appareil. Les sites Web les utilisent par exemple pour stocker les paramètres de l\'utilisateur (par exemple les paramètres de recherche). Les cookies de tiers (ils recueillent des données utilisateur pour la publicité) sont toujours désactivés.</string>
     <string name="setting_title_whitelistCookie">Cookie liste blanche</string>
-    <string name="setting_title_whitelistRemote">Liste blanche à distance</string>
     <string name="setting_title_javascript">JavaScript</string>
     <string name="setting_summary_javascript">Activer JavaScript. De nombreux sites Web ont besoin de JavaScript pour leurs fonctionnalités (menus, chargement et affichage des images, …). Mais elles constituent également un risque et peuvent être utilisées pour des attaques.</string>
     <string name="setting_title_whitelistJS">JavaScript liste blanche</string>

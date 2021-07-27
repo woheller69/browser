@@ -86,7 +86,6 @@
     <string name="setting_summary_cookie_delete">Wszystkie ciasteczka zostaną usunięte, także te z witryn zaufanych.</string>
     <string name="setting_summary_cookie">Włącz ciasteczka. Pliki cookie to małe pliki tekstowe, które są przechowywane na twoim urządzeniu. Witryny używają ich na przykład do przechowywania ustawień użytkownika (np. ustawienia wyszukiwania). Ale mogą być one również wykorzystywane do zbierania danych osobowych. Pliki cookie stron trzecich (zbierają dane użytkowników do reklamy) są zawsze wyłączone.</string>
     <string name="setting_title_whitelistCookie">Biała lista ciasteczek</string>
-    <string name="setting_title_whitelistRemote">Wykluczone aplikacje</string>
     <string name="setting_title_javascript">JavaScript</string>
     <string name="setting_summary_javascript">Zezwól na skrypty. Wiele witryn wykorzystuje je w ramach swojej funkcjonalności (rozwijane menu, ładowanie obrazków i elementów nawigacyjnych), jednak skrypty te podatne są na ataki.</string>
     <string name="setting_title_whitelistJS">Biała lista JavaScript</string>

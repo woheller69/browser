@@ -74,6 +74,7 @@
     <string name="setting_summary_search_engine_searx">Searx</string>
     <string name="setting_summary_search_engine_qwant">Qwant</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
+    <string name="setting_summary_search_engine_metager">Metager</string>
     <string name="setting_title_font">Tamanho da letra</string>
     <string name="setting_title_dom">Armazenamento DOM</string>
     <string name="setting_title_dom_whitelist">Lista Branca DOM</string>

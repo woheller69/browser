@@ -74,6 +74,7 @@
     <string name="setting_summary_search_engine_searx">محرك Searx</string>
     <string name="setting_summary_search_engine_qwant">محرك Qwant</string>
     <string name="setting_summary_search_engine_ecosia">محرك Ecosia</string>
+    <string name="setting_summary_search_engine_metager">Metager</string>
     <string name="setting_title_font">حجم الخط</string>
     <string name="setting_title_dom">تخزين DOM</string>
     <string name="setting_title_dom_whitelist">القائمة البيضاء DOM</string>

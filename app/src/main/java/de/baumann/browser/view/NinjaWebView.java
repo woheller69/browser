@@ -76,7 +76,7 @@ public class NinjaWebView extends WebView implements AlbumController {
     private NinjaDownloadListener downloadListener;
 
     private Javascript javaHosts;
-    private Remote remoteHosts;
+    private DOM DOMHosts;
     private Cookie cookieHosts;
     private Bitmap favicon;
     private SharedPreferences sp;
@@ -107,7 +107,7 @@ public class NinjaWebView extends WebView implements AlbumController {
         this.stopped=false;
         this.oldDomain="";
         this.javaHosts = new Javascript(this.context);
-        this.remoteHosts = new Remote(this.context);
+        this.DOMHosts = new DOM(this.context);
         this.cookieHosts = new Cookie(this.context);
         this.album = new AlbumItem(this.context, this, this.browserController);
         this.webViewClient = new NinjaWebViewClient(this);
@@ -161,7 +161,7 @@ public class NinjaWebView extends WebView implements AlbumController {
         } catch (URISyntaxException e) {
             //do not change setting if staying within same domain
             setJavaScript(javaHosts.isWhite(url) || sp.getBoolean("sp_javascript", true));
-            setDomStorage(remoteHosts.isWhite(url) || sp.getBoolean("sp_remote", true));
+            setDomStorage(DOMHosts.isWhite(url) || sp.getBoolean("sp_remote", true));
             e.printStackTrace();
         }
 
@@ -169,7 +169,7 @@ public class NinjaWebView extends WebView implements AlbumController {
             //do not change setting if staying within same domain
             if (!oldDomain.equals(domain)){
                 setJavaScript(javaHosts.isWhite(url) || sp.getBoolean("sp_javascript", true));
-                setDomStorage(remoteHosts.isWhite(url) || sp.getBoolean("sp_remote", true));
+                setDomStorage(DOMHosts.isWhite(url) || sp.getBoolean("sp_remote", true));
             }
         }
 

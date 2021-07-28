@@ -13909,7 +13909,7 @@ sdk.upush.co
 boxoffice.urbanairship.com
 c00162-dl.urbanairship.com
 combine.urbanairship.com
-remote-data.urbanairship.com
+DOM-data.urbanairship.com
 sbux-dl.urbanairship.com
 wallet-api.urbanairship.com
 web-sdk.urbanairship.com

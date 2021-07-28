@@ -390,13 +390,11 @@ public class NinjaWebViewClient extends WebViewClient {
     public void onLoadResource(WebView view, String url) {
 
         if(ninjaWebView.isFingerPrintProtection()) {
-
-            view.evaluateJavascript("var test=document.querySelector(\"a[ping]\"); if(test!==null){test.removeAttribute('ping')};", null); //do not allow ping on http only pages (tested with http://tests.caniuse.com)
-
+            view.evaluateJavascript("var test=document.querySelector(\"a[ping]\"); if(test!==null){test.removeAttribute('ping')};", null);
+            //do not allow ping on http only pages (tested with http://tests.caniuse.com)
         }
 
         if (view.getSettings().getUseWideViewPort() && (view.getWidth()<1300)) view.evaluateJavascript("document.querySelector('meta[name=\"viewport\"]').setAttribute('content', 'width=1200px');", null);
-
         //  Client-side detection for GlobalPrivacyControl
         view.evaluateJavascript("if (navigator.globalPrivacyControl === undefined) { Object.defineProperty(navigator, 'globalPrivacyControl', { value: true, writable: false,configurable: false});} else {try { navigator.globalPrivacyControl = true;} catch (e) { console.error('globalPrivacyControl is not writable: ', e); }};",null);
         //  Script taken from:
@@ -418,7 +416,6 @@ public class NinjaWebViewClient extends WebViewClient {
         //  See the License for the specific language governing permissions and
         //  limitations under the License.
         //
-
         view.evaluateJavascript("if (navigator.doNotTrack === null) { Object.defineProperty(navigator, 'doNotTrack', { value: 1, writable: false,configurable: false});} else {try { navigator.doNotTrack = 1;} catch (e) { console.error('doNotTrack is not writable: ', e); }};",null);
         view.evaluateJavascript("if (window.doNotTrack === undefined) { Object.defineProperty(window, 'doNotTrack', { value: 1, writable: false,configurable: false});} else {try { window.doNotTrack = 1;} catch (e) { console.error('doNotTrack is not writable: ', e); }};",null);
         view.evaluateJavascript("if (navigator.msDoNotTrack === undefined) { Object.defineProperty(navigator, 'msDoNotTrack', { value: 1, writable: false,configurable: false});} else {try { navigator.msDoNotTrack = 1;} catch (e) { console.error('msDoNotTrack is not writable: ', e); }};",null);
@@ -439,15 +436,12 @@ public class NinjaWebViewClient extends WebViewClient {
 
     @SuppressLint("QueryPermissionsNeeded")
     private boolean handleUri(final Uri uri) {
-
         String url = uri.toString();
-
         if (url.startsWith("http")) {
             ninjaWebView.initPreferences(url);
             ninjaWebView.loadUrl(url, ninjaWebView.getRequestHeaders());
             return true;
         }
-
         if (url.startsWith("intent:")) {
             Intent intent = new Intent(Intent.ACTION_VIEW);
             intent.setData(Uri.parse(url));
@@ -512,7 +506,6 @@ public class NinjaWebViewClient extends WebViewClient {
 
     @Override
     public void onReceivedSslError(WebView view, final SslErrorHandler handler, SslError error) {
-
         String message = "\"SSL Certificate error.\"";
         switch (error.getPrimaryError()) {
             case SslError.SSL_UNTRUSTED:
@@ -535,7 +528,6 @@ public class NinjaWebViewClient extends WebViewClient {
                 break;
         }
         String text = message + " - " + context.getString(R.string.dialog_content_ssl_error);
-
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
         builder.setMessage(text);
         builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> handler.proceed());
@@ -560,7 +552,6 @@ public class NinjaWebViewClient extends WebViewClient {
         edit_title_layout.setVisibility(View.GONE);
         edit_userName_layout.setVisibility(View.VISIBLE);
         edit_PW_layout.setVisibility(View.VISIBLE);
-
         EditText pass_userNameET = dialogView.findViewById(R.id.edit_userName);
         EditText pass_userPWET = dialogView.findViewById(R.id.edit_PW);
 

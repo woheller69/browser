@@ -25,7 +25,7 @@ import java.util.List;
 import java.util.Objects;
 
 import de.baumann.browser.R;
-import de.baumann.browser.browser.Remote;
+import de.baumann.browser.browser.DOM;
 import de.baumann.browser.database.RecordAction;
 import de.baumann.browser.unit.BrowserUnit;
 import de.baumann.browser.unit.HelperUnit;
@@ -37,7 +37,7 @@ public class Whitelist_Remote extends AppCompatActivity {
 
     private WhitelistAdapter adapter;
     private List<String> list;
-    private Remote remote;
+    private DOM DOM;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -50,7 +50,7 @@ public class Whitelist_Remote extends AppCompatActivity {
         setSupportActionBar(toolbar);
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
-        remote = new Remote(Whitelist_Remote.this);
+        DOM = new DOM(Whitelist_Remote.this);
 
         RecordAction action = new RecordAction(this);
         action.open(false);
@@ -67,7 +67,7 @@ public class Whitelist_Remote extends AppCompatActivity {
                 View v = super.getView(position, convertView, parent);
                 ImageButton whitelist_item_cancel = v.findViewById(R.id.whitelist_item_cancel);
                 whitelist_item_cancel.setOnClickListener(v1 -> {
-                    remote.removeDomain(list.get(position));
+                    DOM.removeDomain(list.get(position));
                     list.remove(position);
                     notifyDataSetChanged();
                     NinjaToast.show(Whitelist_Remote.this, R.string.toast_delete_successful);
@@ -92,7 +92,7 @@ public class Whitelist_Remote extends AppCompatActivity {
                 if (action1.checkDomain(domain, RecordUnit.TABLE_REMOTE)) {
                     NinjaToast.show(Whitelist_Remote.this, R.string.toast_domain_already_exists);
                 } else {
-                    remote.addDomain(domain.trim());
+                    DOM.addDomain(domain.trim());
                     list.add(0, domain.trim());
                     adapter.notifyDataSetChanged();
                     NinjaToast.show(Whitelist_Remote.this, R.string.toast_add_whitelist_successful);
@@ -117,8 +117,8 @@ public class Whitelist_Remote extends AppCompatActivity {
             MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(this);
             builder.setMessage(R.string.hint_database);
             builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
-                Remote remote = new Remote(Whitelist_Remote.this);
-                remote.clearDomains();
+                DOM DOM = new DOM(Whitelist_Remote.this);
+                DOM.clearDomains();
                 list.clear();
                 adapter.notifyDataSetChanged();
             });

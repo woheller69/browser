@@ -1,6 +1,6 @@
 ### v 8.2
 
-- fix: chip desktop, javascript, remote should not be visible in settings when editing filter names (thanks to @woheller69)
+- fix: chip desktop, javascript, DOM should not be visible in settings when editing filter names (thanks to @woheller69)
 - fix: Sometimes Favicon is stored several times in database (thanks to @woheller69)
 - new: Privacy Enhancement #602 (thanks to @woheller69)
 - new: choose preferred theme
@@ -27,7 +27,7 @@
 
 - new: toggle mobile/desktop mode (thanks to @woheller69)
 - new: auto update of AdBlock-hosts (thanks to @woheller69)
-- new: save desktop mode/javascript/remote content settings in bookmarks (thanks to @woheller69)
+- new: save desktop mode/javascript/DOM content settings in bookmarks (thanks to @woheller69)
 - new: show colored bookmark icon when editing bookmark category (thanks to @woheller69)
 - new: Use settings stored in bookmark when a bookmark is found in search (thanks to @woheller69)
 - new: Show icon source of item (start page, bookmarks, history) in search (thanks to @woheller69)
@@ -74,7 +74,7 @@
 - fix: Opting out of metrics collection
 - fix: export bookmarks
 - fix: tab handling
-- fix: apply javaScript, cookies and remote content whitelists
+- fix: apply javaScript, cookies and DOM content whitelists
 - fix: switching between system day/night mode
 - fix: dialogs in landscape
 - fix: alphabetical sorting of overview entries
@@ -94,7 +94,7 @@
 - updated: overview, menus and dialogs
 - fix: searx.me search
 - new: hide overflow button
-- new: whitelist for remote content
+- new: whitelist for DOM content
 - new: backup/restore bookmarks as html
 - many stability improvements -> removed ca. 5000 lines of unnecessary code!)
 
@@ -249,7 +249,7 @@
 - new: show unsecured connections and try reloading secure
 - new: search engines (Startpage DE, Searx)
 - new: notification when download or screenshot complete
-- new: block remote content
+- new: block DOM content
 - improved Chinese translation (thanks: lishoujun)
 - removed: Snackbar (replaced with toasts)
 - removed: request desktop site

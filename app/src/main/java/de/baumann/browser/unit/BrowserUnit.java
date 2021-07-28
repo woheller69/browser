@@ -34,8 +34,8 @@ import java.util.Objects;
 import java.util.regex.Pattern;
 
 import de.baumann.browser.browser.Cookie;
+import de.baumann.browser.browser.DOM;
 import de.baumann.browser.browser.Javascript;
-import de.baumann.browser.browser.Remote;
 import de.baumann.browser.database.Record;
 import de.baumann.browser.database.RecordAction;
 import de.baumann.browser.R;
@@ -246,14 +246,14 @@ public class BrowserUnit {
             String filename;
             Javascript js = null;
             Cookie cookie = null;
-            Remote remote = null;
+            DOM DOM = null;
             switch (i) {
                 case 1:
                     js = new Javascript(context);
                     filename = "export_whitelist_java.txt";
                     break;
                 case 3:
-                    remote = new Remote(context);
+                    DOM = new DOM(context);
                     filename = "export_whitelist_remote.txt";
                     break;
                 default:
@@ -275,7 +275,7 @@ public class BrowserUnit {
                         break;
                     case 3:
                         if (!action.checkDomain(line, RecordUnit.TABLE_REMOTE)) {
-                            remote.addDomain(line);
+                            DOM.addDomain(line);
                         }
                         break;
                     default:
@@ -332,7 +332,7 @@ public class BrowserUnit {
                 String title = getBookmarkTitle(line);
                 String url = getBookmarkURL(line);
                 long date = getBookmarkDate(line);
-                if (date >123) date=11;  //if no color defined yet set it red (123 is max: 11 for color + 16 for desktop mode + 32 for Javascript + 64 for Remote Content
+                if (date >123) date=11;  //if no color defined yet set it red (123 is max: 11 for color + 16 for desktop mode + 32 for Javascript + 64 for DOM Content
                 if (title.trim().isEmpty() || url.trim().isEmpty()) {
                     continue;
                 }

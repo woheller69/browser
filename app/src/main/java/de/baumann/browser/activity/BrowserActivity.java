@@ -90,8 +90,8 @@ import de.baumann.browser.browser.AlbumController;
 import de.baumann.browser.browser.BrowserContainer;
 import de.baumann.browser.browser.BrowserController;
 import de.baumann.browser.browser.Cookie;
+import de.baumann.browser.browser.DOM;
 import de.baumann.browser.browser.Javascript;
-import de.baumann.browser.browser.Remote;
 import de.baumann.browser.database.FaviconHelper;
 import de.baumann.browser.database.Record;
 import de.baumann.browser.database.RecordAction;
@@ -156,7 +156,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     private SharedPreferences sp;
     private Javascript javaHosts;
     private Cookie cookieHosts;
-    private Remote remote;
+    private DOM DOM;
 
     private long newIcon;
     private boolean filter;
@@ -246,7 +246,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         new AdBlock(context);
         new Javascript(context);
         new Cookie(context);
-        new Remote(context);
+        new DOM(context);
 
         downloadReceiver = new BroadcastReceiver() {
 
@@ -1004,7 +1004,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         javaHosts = new Javascript(context);
         cookieHosts = new Cookie(context);
-        remote = new Remote(context);
+        DOM = new DOM(context);
         ninjaWebView = (NinjaWebView) currentAlbumController;
 
         final String url = ninjaWebView.getUrl();
@@ -1022,14 +1022,14 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         });
 
         Chip chip_dom_WL = dialogView.findViewById(R.id.chip_dom_WL);
-        chip_dom_WL.setChecked(remote.isWhite(url));
+        chip_dom_WL.setChecked(DOM.isWhite(url));
         chip_dom_WL.setOnClickListener(v -> {
-            if (remote.isWhite(ninjaWebView.getUrl())) {
+            if (DOM.isWhite(ninjaWebView.getUrl())) {
                 chip_dom_WL.setChecked(false);
-                remote.removeDomain(HelperUnit.domain(url));
+                DOM.removeDomain(HelperUnit.domain(url));
             } else {
                 chip_dom_WL.setChecked(true);
-                remote.addDomain(HelperUnit.domain(url));
+                DOM.addDomain(HelperUnit.domain(url));
             }
         });
 
@@ -1502,11 +1502,11 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             NinjaToast.show(this, R.string.app_error);
         } else {
 
-            // Bookmark time is used for color, desktop mode, javascript, and remote content
+            // Bookmark time is used for color, desktop mode, javascript, and DOM content
             // bit 0..3  color
             // bit 4: 1 = Desktop Mode
             // bit 5: 0 = JavaScript (0 due backward compatibility)
-            // bit 6: 0 = Remote Content allowed (0 due to backward compatibility)
+            // bit 6: 0 = DOM Content allowed (0 due to backward compatibility)
 
             long value= 11 + (long) (ninjaWebView.isDesktopMode()?16:0) + (long) (ninjaWebView.getSettings().getJavaScriptEnabled()?0:32)  + (long) (ninjaWebView.getSettings().getDomStorageEnabled()?0:64);
             action.addBookmark(new Record(ninjaWebView.getTitle(), ninjaWebView.getUrl(), value, 0,2));

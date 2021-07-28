@@ -17,7 +17,7 @@ import java.util.Set;
 import de.baumann.browser.database.RecordAction;
 import de.baumann.browser.unit.RecordUnit;
 
-public class Remote {
+public class DOM {
     private static final String FILE = "remoteHosts.txt";
     private static final Set<String> hostsRemote = new HashSet<>();
     private static final List<String> whitelistRemote = new ArrayList<>();
@@ -50,7 +50,7 @@ public class Remote {
 
     private final Context context;
 
-    public Remote(Context context) {
+    public DOM(Context context) {
         this.context = context;
 
         if (hostsRemote.isEmpty()) {

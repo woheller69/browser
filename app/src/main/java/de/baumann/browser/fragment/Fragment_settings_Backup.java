@@ -1,9 +1,7 @@
 package de.baumann.browser.fragment;
 
-import android.Manifest;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Environment;
 
@@ -36,7 +34,6 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
 import de.baumann.browser.R;
-import de.baumann.browser.unit.BrowserUnit;
 import de.baumann.browser.unit.HelperUnit;
 import de.baumann.browser.view.NinjaToast;
 
@@ -49,7 +46,7 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat {
         Context context = getContext();
         assert context != null;
 
-        File sd = requireActivity().getExternalFilesDir(null);
+        File sd = context.getExternalFilesDir(null);
         File data = Environment.getDataDirectory();
         String database_app = "//data//" + requireActivity().getPackageName() + "//databases//Ninja4.db";
         String database_backup = "browser_backup//Ninja4.db";
@@ -63,28 +60,11 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat {
             builder.setMessage(R.string.toast_backup);
             builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
                 dialog.cancel();
-                try {
-                    if (android.os.Build.VERSION.SDK_INT >= 23 && android.os.Build.VERSION.SDK_INT < 29) {
-                        int hasWRITE_EXTERNAL_STORAGE = context.checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
-                        if (hasWRITE_EXTERNAL_STORAGE != PackageManager.PERMISSION_GRANTED) {
-                            HelperUnit.grantPermissionsStorage(getActivity());
-                            dialog.cancel();
-                        } else {
-                            makeBackupDir();
-                            BrowserUnit.deleteDir(previewsFolder_backup);
-                            copyDirectory(previewsFolder_app, previewsFolder_backup);
-                            backupUserPrefs(context);
-                            NinjaToast.show(getActivity(), getString(R.string.app_done));
-                        }
-                    } else {
-                        makeBackupDir();
-                        BrowserUnit.deleteDir(previewsFolder_backup);
-                        copyDirectory(previewsFolder_app, previewsFolder_backup);
-                        backupUserPrefs(context);
-                        NinjaToast.show(getActivity(), getString(R.string.app_done));
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
+                if (HelperUnit.hasPermissionStorage(this.getActivity())) {
+                    makeBackupDir();
+                    copyDirectory(previewsFolder_app, previewsFolder_backup);
+                    backupUserPrefs(context);
+                    NinjaToast.show(getActivity(), getString(R.string.app_done));
                 }
             });
             builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());AlertDialog dialog = builder.create();
@@ -100,27 +80,10 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat {
             builder.setMessage(R.string.hint_database);
             builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
                 dialog.cancel();
-                try {
-                    if (android.os.Build.VERSION.SDK_INT >= 23 && android.os.Build.VERSION.SDK_INT < 29) {
-                        int hasWRITE_EXTERNAL_STORAGE = context.checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
-                        if (hasWRITE_EXTERNAL_STORAGE != PackageManager.PERMISSION_GRANTED) {
-                            HelperUnit.grantPermissionsStorage(getActivity());
-                            dialog.cancel();
-                        } else {
-                            BrowserUnit.deleteDir(previewsFolder_app);
-                            copyDirectory(previewsFolder_backup, previewsFolder_app);
-                            restoreUserPrefs(context);
-                            dialogRestart();
-                        }
-                    } else {
-                        BrowserUnit.deleteDir(previewsFolder_app);
-                        copyDirectory(previewsFolder_backup, previewsFolder_app);
-                        restoreUserPrefs(context);
-                        dialogRestart();
-                    }
-
-                } catch (Exception e) {
-                    e.printStackTrace();
+                if (HelperUnit.hasPermissionStorage(this.getActivity())) {
+                    copyDirectory(previewsFolder_backup, previewsFolder_app);
+                    restoreUserPrefs(context);
+                    dialogRestart();
                 }
             });
             builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
@@ -137,21 +100,8 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat {
             builder.setMessage(R.string.hint_database);
             builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
                 dialog.cancel();
-                try {
-                    if (android.os.Build.VERSION.SDK_INT >= 23 && android.os.Build.VERSION.SDK_INT < 29) {
-                        int hasWRITE_EXTERNAL_STORAGE = context.checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
-                        if (hasWRITE_EXTERNAL_STORAGE != PackageManager.PERMISSION_GRANTED) {
-                            HelperUnit.grantPermissionsStorage(getActivity());
-                        } else {
-                            makeBackupDir();
-                            HelperUnit.restoreData(getActivity(), 4);
-                        }
-                    } else {
-                        makeBackupDir();
-                        HelperUnit.restoreData(getActivity(), 4);
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
+                if (HelperUnit.hasPermissionStorage(this.getActivity())) {
+                    HelperUnit.restoreData(getActivity(), 4);
                 }
             });
             builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
@@ -168,22 +118,9 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat {
             builder.setMessage(R.string.toast_backup);
             builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
                 dialog.cancel();
-                try {
-                    if (android.os.Build.VERSION.SDK_INT >= 23 && android.os.Build.VERSION.SDK_INT < 29) {
-                        int hasWRITE_EXTERNAL_STORAGE = context.checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
-                        if (hasWRITE_EXTERNAL_STORAGE != PackageManager.PERMISSION_GRANTED) {
-                            HelperUnit.grantPermissionsStorage(getActivity());
-                        } else {
-                            makeBackupDir();
-                            HelperUnit.backupData(getActivity(), 4);
-                        }
-                    } else {
-                        makeBackupDir();
-                        HelperUnit.backupData(getActivity(), 4);
-                    }
-
-                } catch (Exception e) {
-                    e.printStackTrace();
+                if (HelperUnit.hasPermissionStorage(this.getActivity())) {
+                    makeBackupDir();
+                    HelperUnit.backupData(getActivity(), 4);
                 }
             });
             builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
@@ -195,18 +132,10 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat {
     }
 
     private void makeBackupDir () {
-        File backupDir = new File(requireActivity().getExternalFilesDir(null), "browser_backup//");
-        if (android.os.Build.VERSION.SDK_INT >= 23 && android.os.Build.VERSION.SDK_INT < 29) {
-            int hasWRITE_EXTERNAL_STORAGE = requireActivity().checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
-            if (hasWRITE_EXTERNAL_STORAGE != PackageManager.PERMISSION_GRANTED) {
-                HelperUnit.grantPermissionsStorage(getActivity());
-            } else {
-                boolean wasSuccessful = backupDir.mkdirs();
-                if (!wasSuccessful) {
-                    System.out.println("was not successful.");
-                }
-            }
-        } else {
+        Context context = getContext();
+        assert context != null;
+        if (HelperUnit.hasPermissionStorage(this.getActivity())) {
+            File backupDir = new File(context.getExternalFilesDir(null), "browser_backup//");
             boolean wasSuccessful = backupDir.mkdirs();
             if (!wasSuccessful) {
                 System.out.println("was not successful.");
@@ -220,34 +149,37 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat {
     }
 
     // If targetLocation does not exist, it will be created.
-    private void copyDirectory(File sourceLocation, File targetLocation)
-            throws IOException {
+    private void copyDirectory(File sourceLocation, File targetLocation) {
 
-        if (sourceLocation.isDirectory()) {
-            if (!targetLocation.exists() && !targetLocation.mkdirs()) {
-                throw new IOException("Cannot create dir " + targetLocation.getAbsolutePath());
-            }
-            String[] children = sourceLocation.list();
-            for (String aChildren : Objects.requireNonNull(children)) {
-                copyDirectory(new File(sourceLocation, aChildren), new File(targetLocation, aChildren));
-            }
-        } else {
-            // make sure the directory we plan to store the recording in exists
-            File directory = targetLocation.getParentFile();
-            if (directory != null && !directory.exists() && !directory.mkdirs()) {
-                throw new IOException("Cannot create dir " + directory.getAbsolutePath());
-            }
+        try {
+            if (sourceLocation.isDirectory()) {
+                if (!targetLocation.exists() && !targetLocation.mkdirs()) {
+                    throw new IOException("Cannot create dir " + targetLocation.getAbsolutePath());
+                }
+                String[] children = sourceLocation.list();
+                for (String aChildren : Objects.requireNonNull(children)) {
+                    copyDirectory(new File(sourceLocation, aChildren), new File(targetLocation, aChildren));
+                }
+            } else {
+                // make sure the directory we plan to store the recording in exists
+                File directory = targetLocation.getParentFile();
+                if (directory != null && !directory.exists() && !directory.mkdirs()) {
+                    throw new IOException("Cannot create dir " + directory.getAbsolutePath());
+                }
 
-            InputStream in = new FileInputStream(sourceLocation);
-            OutputStream out = new FileOutputStream(targetLocation);
-            // Copy the bits from InputStream to OutputStream
-            byte[] buf = new byte[1024];
-            int len;
-            while ((len = in.read(buf)) > 0) {
-                out.write(buf, 0, len);
+                InputStream in = new FileInputStream(sourceLocation);
+                OutputStream out = new FileOutputStream(targetLocation);
+                // Copy the bits from InputStream to OutputStream
+                byte[] buf = new byte[1024];
+                int len;
+                while ((len = in.read(buf)) > 0) {
+                    out.write(buf, 0, len);
+                }
+                in.close();
+                out.close();
             }
-            in.close();
-            out.close();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 

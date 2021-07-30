@@ -75,6 +75,26 @@ public class HelperUnit {
     private static final int REQUEST_CODE_ASK_PERMISSIONS_1 = 1234;
     private static SharedPreferences sp;
 
+    public static boolean hasPermissionStorage (final Activity activity){
+        if (android.os.Build.VERSION.SDK_INT >= 23 && android.os.Build.VERSION.SDK_INT < 29) {
+            int hasWRITE_EXTERNAL_STORAGE = activity.checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+            if (hasWRITE_EXTERNAL_STORAGE != PackageManager.PERMISSION_GRANTED) {
+                if (!activity.shouldShowRequestPermissionRationale(Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
+                    MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(activity);
+                    builder.setMessage(R.string.toast_permission_sdCard);
+                    builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> activity.requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, REQUEST_CODE_ASK_PERMISSIONS));
+                    builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
+                    AlertDialog dialog = builder.create();
+                    dialog.show();
+                    Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
+                }
+            }
+            return false;
+        } else {
+            return true;
+        }
+    }
+
     public static void grantPermissionsStorage(final Activity activity) {
         if (android.os.Build.VERSION.SDK_INT >= 23 && android.os.Build.VERSION.SDK_INT < 29) {
             int hasWRITE_EXTERNAL_STORAGE = activity.checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);

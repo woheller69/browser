@@ -132,17 +132,7 @@ public class Whitelist_Javascript extends AppCompatActivity {
             MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(this);
             builder.setMessage(R.string.toast_backup);
             builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
-                if (android.os.Build.VERSION.SDK_INT >= 23 && android.os.Build.VERSION.SDK_INT < 29) {
-                    int hasWRITE_EXTERNAL_STORAGE = checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
-                    if (hasWRITE_EXTERNAL_STORAGE != PackageManager.PERMISSION_GRANTED) {
-                        HelperUnit.grantPermissionsStorage(Whitelist_Javascript.this);
-                        dialog.cancel();
-                    } else {
-                        dialog.cancel();
-                        HelperUnit.makeBackupDir(Whitelist_Javascript.this);
-                        HelperUnit.backupData(Whitelist_Javascript.this, 1);
-                    }
-                } else {
+                if (HelperUnit.hasPermissionStorage(this)) {
                     dialog.cancel();
                     HelperUnit.makeBackupDir(Whitelist_Javascript.this);
                     HelperUnit.backupData(Whitelist_Javascript.this, 1);
@@ -156,16 +146,7 @@ public class Whitelist_Javascript extends AppCompatActivity {
             MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(this);
             builder.setMessage(R.string.hint_database);
             builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
-                if (android.os.Build.VERSION.SDK_INT >= 23 && android.os.Build.VERSION.SDK_INT < 29) {
-                    int hasWRITE_EXTERNAL_STORAGE = checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
-                    if (hasWRITE_EXTERNAL_STORAGE != PackageManager.PERMISSION_GRANTED) {
-                        HelperUnit.grantPermissionsStorage(Whitelist_Javascript.this);
-                        dialog.cancel();
-                    } else {
-                        dialog.cancel();
-                        HelperUnit.restoreData(Whitelist_Javascript.this, 1);
-                    }
-                } else {
+                if (HelperUnit.hasPermissionStorage(this)) {
                     dialog.cancel();
                     HelperUnit.restoreData(Whitelist_Javascript.this, 1);
                 }

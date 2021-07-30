@@ -95,45 +95,13 @@ public class HelperUnit {
         }
     }
 
-    public static void grantPermissionsStorage(final Activity activity) {
-        if (android.os.Build.VERSION.SDK_INT >= 23 && android.os.Build.VERSION.SDK_INT < 29) {
-            int hasWRITE_EXTERNAL_STORAGE = activity.checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
-            if (hasWRITE_EXTERNAL_STORAGE != PackageManager.PERMISSION_GRANTED) {
-                if (!activity.shouldShowRequestPermissionRationale(Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
-                    MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(activity);
-                    builder.setMessage(R.string.toast_permission_sdCard);
-                    builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> activity.requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, REQUEST_CODE_ASK_PERMISSIONS));
-                    builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
-                    AlertDialog dialog = builder.create();
-                    dialog.show();
-                    Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
-                }
-            }
-        }
-    }
-
-    @SuppressWarnings("ResultOfMethodCallIgnored")
     public static void makeBackupDir (final Activity activity) {
         File backupDir = new File(Objects.requireNonNull(activity).getExternalFilesDir(null), "browser_backup//");
-        if (android.os.Build.VERSION.SDK_INT >= 23 && android.os.Build.VERSION.SDK_INT < 29) {
-            int hasWRITE_EXTERNAL_STORAGE = Objects.requireNonNull(activity).checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
-            if (hasWRITE_EXTERNAL_STORAGE != PackageManager.PERMISSION_GRANTED) {
-                HelperUnit.grantPermissionsStorage(activity);
-            } else {
-                if(!backupDir.exists()) {
-                    try {
-                        backupDir.mkdirs();
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
-        } else {
+        if (HelperUnit.hasPermissionStorage(activity)) {
             if(!backupDir.exists()) {
-                try {
-                    backupDir.mkdirs();
-                } catch (Exception e) {
-                    e.printStackTrace();
+                boolean wasSuccessful = backupDir.mkdirs();
+                if (!wasSuccessful) {
+                    System.out.println("was not successful.");
                 }
             }
         }
@@ -182,22 +150,7 @@ public class HelperUnit {
                 if (title.isEmpty() || extension1.isEmpty() || !extension1.startsWith(".")) {
                     NinjaToast.show(activity, activity.getString(R.string.toast_input_empty));
                 } else {
-                    if (Build.VERSION.SDK_INT >= 23 && Build.VERSION.SDK_INT < 29) {
-                        int hasWRITE_EXTERNAL_STORAGE = activity.checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
-                        if (hasWRITE_EXTERNAL_STORAGE != PackageManager.PERMISSION_GRANTED) {
-                            HelperUnit.grantPermissionsStorage(activity);
-                        } else {
-                            Uri source = Uri.parse(url);
-                            DownloadManager.Request request = new DownloadManager.Request(source);
-                            request.addRequestHeader("Cookie", CookieManager.getInstance().getCookie(url));
-                            request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED); //Notify client once download is completed!
-                            request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, filename1);
-                            DownloadManager dm = (DownloadManager) activity.getSystemService(DOWNLOAD_SERVICE);
-                            assert dm != null;
-                            dm.enqueue(request);
-                            dialogToCancel.cancel();
-                        }
-                    } else {
+                    if (HelperUnit.hasPermissionStorage(activity)) {
                         Uri source = Uri.parse(url);
                         DownloadManager.Request request = new DownloadManager.Request(source);
                         request.addRequestHeader("Cookie", CookieManager.getInstance().getCookie(url));

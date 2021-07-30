@@ -180,23 +180,15 @@ public class BrowserUnit {
                 request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, filename);
                 DownloadManager manager = (DownloadManager) context.getSystemService(Context.DOWNLOAD_SERVICE);
                 assert manager != null;
-
-                if (Build.VERSION.SDK_INT >= 23 && Build.VERSION.SDK_INT < 29) {
-                    int hasWRITE_EXTERNAL_STORAGE = context.checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
-                    if (hasWRITE_EXTERNAL_STORAGE != PackageManager.PERMISSION_GRANTED) {
-                        Activity activity = (Activity) context;
-                        HelperUnit.grantPermissionsStorage(activity);
-                    } else {
-                        manager.enqueue(request);
-                    }
-                } else {
+                Activity activity = (Activity) context;
+                if (HelperUnit.hasPermissionStorage(activity)) {
                     manager.enqueue(request);
                 }
             } catch (Exception e) {
             System.out.println("Error Downloading File: " + e.toString());
             Toast.makeText(context, context.getString(R.string.app_error)+e.toString().substring(e.toString().indexOf(":")),Toast.LENGTH_LONG).show();
             e.printStackTrace();
-        }
+            }
         });
         builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
         AlertDialog dialog = builder.create();

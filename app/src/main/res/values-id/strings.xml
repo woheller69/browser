@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- App -->
-    <string name="app_name">FOSS Browser</string>
-    <string name="app_ok">OK</string>
-    <string name="app_cancel">Cancel</string>
-    <string name="app_done">Done</string>
-    <string name="app_error">Error</string>
-    <string name="list_empty">List is empty</string>
+    <string name="app_name">Browser FOSS</string>
+    <string name="app_ok">Baik</string>
+    <string name="app_cancel">Batal</string>
+    <string name="app_done">Selesai</string>
+    <string name="app_error">Kesalahan</string>
+    <string name="list_empty">Daftar kosong</string>
     <string name="album_title_bookmarks">Bookmarks</string>
-    <string name="album_title_history">History</string>
-    <string name="album_title_home">Home</string>
-    <string name="album_title_tab">Opened Tabs</string>
-    <string name="search_hint">Search</string>
-    <string name="color_red">Red</string>
-    <string name="color_pink">Pink</string>
-    <string name="color_purple">Purple</string>
-    <string name="color_blue">Blue</string>
+    <string name="album_title_history">Riwayat</string>
+    <string name="album_title_home">Beranda</string>
+    <string name="album_title_tab">Tab Teebuka</string>
+    <string name="search_hint">Cari</string>
+    <string name="color_red">Merah</string>
+    <string name="color_pink">Merah Muda</string>
+    <string name="color_purple">Ungu</string>
+    <string name="color_blue">Biru</string>
     <string name="color_teal">Teal</string>
-    <string name="color_green">Green</string>
-    <string name="color_lime">Lime</string>
-    <string name="color_yellow">Yellow</string>
-    <string name="color_orange">Orange</string>
-    <string name="color_brown">Brown</string>
-    <string name="color_grey">Grey</string>
+    <string name="color_green">Hijau</string>
+    <string name="color_lime">Jeruk Nipis</string>
+    <string name="color_yellow">Kuning</string>
+    <string name="color_orange">Jingga</string>
+    <string name="color_brown">Coklat</string>
+    <string name="color_grey">Abu-abu</string>
     <!-- Menu -->
-    <string name="main_menu_tabPreview">Open tab preview</string>
+    <string name="main_menu_tabPreview">Buka tinjauan tab</string>
     <string name="main_menu_new_tab">New tab (background)</string>
     <string name="main_menu_new_tabOpen">New tab (foreground)</string>
     <string name="main_omnibox_input_hint">Search or type URL</string>

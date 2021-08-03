@@ -2,9 +2,9 @@
 <resources>
     <!-- App -->
     <string name="app_name">Navegador FOSS</string>
-    <string name="app_ok">ok</string>
+    <string name="app_ok">Ok</string>
     <string name="app_cancel">Cancelar</string>
-    <string name="app_done">Terminado</string>
+    <string name="app_done">Listo</string>
     <string name="app_error">Error</string>
     <string name="list_empty">La lista está vacía</string>
     <string name="album_title_bookmarks">Marcadores</string>
@@ -40,7 +40,7 @@
     <string name="menu_sort">Ordenar por …</string>
     <string name="menu_filter">Filtrar por …</string>
     <string name="menu_share_link">Compartir enlace</string>
-    <string name="menu_save_home">Guardar en inicio</string>
+    <string name="menu_save_home">Guardar en Inicio</string>
     <string name="menu_save_bookmark">Guardar como marcador</string>
     <string name="menu_save_as">Guardar como …</string>
     <string name="menu_save_pdf">Guardar como PDF</string>
@@ -48,10 +48,10 @@
     <string name="menu_other_searchSite">Buscar en sitio web</string>
     <string name="menu_other_info">Acerca de \"Navegador FOSS\"</string>
     <!-- Dialog -->
-    <string name="dialog_title_hint">Título de entrada</string>
+    <string name="dialog_title_hint">Título de entrada:</string>
     <string name="dialog_URL_hint">URL:</string>
     <string name="dialog_extension_hint">Extensión (por ejemplo: \".jpg\"):</string>
-    <string name="dialog_sign_in_username">Usuario</string>
+    <string name="dialog_sign_in_username">Nombre de usuario</string>
     <string name="dialog_sign_in_password">Contraseña</string>
     <string name="dialog_title_download">¿Descargar el archivo?</string>
     <string name="dialog_content_resubmission">¿Reenviar tus datos?</string>

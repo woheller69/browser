@@ -1184,7 +1184,12 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             }
             if (scrollY==0) {ninjaWebView.setOnTouchListener((new SwipeTouchListener(context) {
                     public void onSwipeBottom() {
-                        if (ninjaWebView.getScrollY() == 0) ninjaWebView.reload();
+                        if (ninjaWebView.getScrollY() == 0) {
+                            ninjaWebView.reload();
+                            ObjectAnimator animation = ObjectAnimator.ofFloat(bottomAppBar, "translationY", 0);
+                            animation.setDuration(getResources().getInteger(android.R.integer.config_shortAnimTime));
+                            animation.start();
+                        }
                     }
                     public void onSwipeTop(){
                         ObjectAnimator animation = ObjectAnimator.ofFloat(bottomAppBar, "translationY", bottomAppBar.getHeight());

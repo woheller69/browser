@@ -91,6 +91,7 @@ import de.baumann.browser.browser.BrowserContainer;
 import de.baumann.browser.browser.BrowserController;
 import de.baumann.browser.browser.Cookie;
 import de.baumann.browser.browser.DOM;
+import de.baumann.browser.browser.DataURIParser;
 import de.baumann.browser.browser.Javascript;
 import de.baumann.browser.database.FaviconHelper;
 import de.baumann.browser.database.Record;
@@ -1482,7 +1483,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     startActivity(chooser);
                     break;
                 case 4:
-                    HelperUnit.saveAs(dialog, activity, url);
+                    if (url.startsWith("data:")) {
+                        DataURIParser dataURIParser= new DataURIParser(url);
+                        HelperUnit.saveDataURI(dialog, activity, dataURIParser);
+                    } else HelperUnit.saveAs(dialog, activity, url);
                     break;
                 case 5:
                     save_atHome(title, url);

@@ -169,7 +169,7 @@
     <string name="toast_restart">Debe reiniciar \"Navegador FOSS\" para aplicar cambios. ¿Cerrar ahora?</string>
     <string name="toast_quit">¿Desea salir de \"Navegador FOSS\"?</string>
     <string name="toast_downloadComplete">Descarga completa. ¿Abrir el gestor de archivos?</string>
-    <string name="toast_unsecured">Sitio web utiliza una conexión no segura (\"http\"). ¿Intenta una conexión segura (\"https\")?</string>
+    <string name="toast_unsecured">El sitio web utiliza una conexión no segura (\"http\"). ¿Desea intentar una conexión segura (\"https\")?</string>
     <string name="toast_backup">¿Respaldar datos? Esto sobrescribirá el respaldo anterior.</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">Limpiar</string>
@@ -177,15 +177,15 @@
     <string name="whitelist_add">Añadir</string>
     <!-- Dialog help -->
     <!-- Dialog changelog -->
-    <string name="changelog_dialog">        ¿Su idioma aún no está soportado? ¿Desea traducir el navegador FOSS? ¿O hacer mejoras en las traducciones existentes? Siéntase libre de unirse a nosotros en Crowdin: https://crowdin. om/proyecto/foss-browser.&lt;br&gt;&lt;br&gt;
+    <string name="changelog_dialog">        ¿Su idioma aún no está soportado? ¿Desea traducir \"Navegador FOSS\"? ¿O hacer mejoras en las traducciones existentes? Siéntase libre de unirse a nosotros en Crowdin: https://crowdin.com/project/foss-browser.&lt;br&gt;&lt;br&gt;
 
-        &lt;b&gt;En los siguientes sitios tiene acceso a toda la información importante sobre \"FOSS Browser\". Por favor, lea también el diálogo de ayuda dentro de la aplicación.&lt;/b&gt;&lt;br&gt;&lt;br&gt;
+        &lt;b&gt;En los siguientes sitios tiene acceso a toda la información importante sobre \"Navegador FOSS\". Por favor, lea también el diálogo de ayuda dentro de la aplicación.&lt;/b&gt;&lt;br&gt;&lt;br&gt;
 
-        \u25AA &lt;i&gt;Sitio del proyecto:&lt;/i&gt; https://github. om/scoute-dich/Browser&lt;br&gt;
-        \u25AA &lt;i&gt;Changelog:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/CHANGELOG. d&lt;br&gt;
-        \u25AA &lt;i&gt;Preguntas frecuentes:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/FAQs. d&lt;br&gt;
-        \u25AA &lt;i&gt;Licencia:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/LICENSE. d&lt;br&gt;
-        \u25AA &lt;i&gt;Privacidad:&lt;/i&gt; https://github. om/scoute-dich/browser/blob/master/PRIVACY.md
+        \u25AA &lt;i&gt;Sitio del proyecto:&lt;/i&gt; https://github.com/scoute-dich/Browser&lt;br&gt;
+        \u25AA &lt;i&gt;Changelog:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/CHANGELOG.md&lt;br&gt;
+        \u25AA &lt;i&gt;Preguntas frecuentes:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/FAQs.md&lt;br&gt;
+        \u25AA &lt;i&gt;Licencia:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/LICENSE.md&lt;br&gt;
+        \u25AA &lt;i&gt;Privacidad:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/PRIVACY.md
 
     </string>
     <string name="menu_mobileView">Vista móvil</string>

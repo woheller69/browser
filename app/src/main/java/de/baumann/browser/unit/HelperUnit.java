@@ -55,6 +55,8 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.io.File;
+
+import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -64,6 +66,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import de.baumann.browser.R;
+import de.baumann.browser.browser.DataURIParser;
 import de.baumann.browser.view.GridItem;
 import de.baumann.browser.view.NinjaToast;
 
@@ -76,10 +79,10 @@ public class HelperUnit {
     private static SharedPreferences sp;
 
     public static boolean hasPermissionStorage (final Activity activity){
-        if (android.os.Build.VERSION.SDK_INT >= 23 && android.os.Build.VERSION.SDK_INT < 29) {
+        if (android.os.Build.VERSION.SDK_INT >= 23 ) {
             int hasWRITE_EXTERNAL_STORAGE = activity.checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
             if (hasWRITE_EXTERNAL_STORAGE != PackageManager.PERMISSION_GRANTED) {
-                if (!activity.shouldShowRequestPermissionRationale(Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
+               /* if (!activity.shouldShowRequestPermissionRationale(Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
                     MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(activity);
                     builder.setMessage(R.string.toast_permission_sdCard);
                     builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> activity.requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, REQUEST_CODE_ASK_PERMISSIONS));
@@ -87,9 +90,12 @@ public class HelperUnit {
                     AlertDialog dialog = builder.create();
                     dialog.show();
                     Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
-                }
+                }*/
+                activity.requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, REQUEST_CODE_ASK_PERMISSIONS);
+                return false;
+            }else{
+                return true;
             }
-            return false;
         } else {
             return true;
         }
@@ -386,5 +392,54 @@ public class HelperUnit {
                 Toast.makeText(context, context.getString(R.string.app_done), Toast.LENGTH_SHORT).show();
             });
         });
+    }
+
+    public static void saveDataURI(AlertDialog dialogToCancel, Activity activity, DataURIParser dataUriParser) {
+
+        byte[] imagedata = dataUriParser.getImagedata();
+        String filename=dataUriParser.getFilename();
+
+        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(activity);
+        View dialogView = View.inflate(activity, R.layout.dialog_edit_extension, null);
+
+        final EditText editTitle = dialogView.findViewById(R.id.dialog_edit_1);
+        final EditText editExtension = dialogView.findViewById(R.id.dialog_edit_2);
+
+        editTitle.setText(filename.substring(0,filename.indexOf(".")));
+
+        String extension = filename.substring(filename.lastIndexOf("."));
+        if(extension.length() <= 8) {
+            editExtension.setText(extension);
+        }
+
+        builder.setView(dialogView);
+        builder.setTitle(R.string.menu_save_as);
+        builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
+
+            String title = editTitle.getText().toString().trim();
+            String extension1 = editExtension.getText().toString().trim();
+            String filename1 = title + extension1;
+
+            if (title.isEmpty() || extension1.isEmpty() || !extension1.startsWith(".")) {
+                NinjaToast.show(activity, activity.getString(R.string.toast_input_empty));
+            } else {
+                if (HelperUnit.hasPermissionStorage(activity)) {
+                    File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), filename1);
+                    try {FileOutputStream fos = new FileOutputStream(file);
+                        fos.write(imagedata);
+                    }catch (Exception e){
+                        System.out.println("Error Downloading File: " + e.toString());
+                        e.printStackTrace();
+                    }
+                    dialogToCancel.cancel();
+                }else System.out.println("Error Downloading File: no storage permission ");
+            }
+        });
+        builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> builder.setCancelable(true));
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+        Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
+
     }
 }

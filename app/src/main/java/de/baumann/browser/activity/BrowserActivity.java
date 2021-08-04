@@ -91,6 +91,7 @@ import de.baumann.browser.browser.BrowserContainer;
 import de.baumann.browser.browser.BrowserController;
 import de.baumann.browser.browser.Cookie;
 import de.baumann.browser.browser.DOM;
+import de.baumann.browser.browser.DataURIParser;
 import de.baumann.browser.browser.Javascript;
 import de.baumann.browser.database.FaviconHelper;
 import de.baumann.browser.database.Record;
@@ -438,8 +439,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             for (Record record:list){
                 if (record.getURL().equals(url)){
                     long time = record.getTime();
-                    if (record.getType()==2) {
-
+                    if ((record.getType()==2)||(record.getType()==1) ) {
                         if (((time&16) ==16) != ninjaWebView.isDesktopMode()) ninjaWebView.toggleDesktopMode(false);
                         ninjaWebView.setJavaScript(!((time&32) ==32));
                         ninjaWebView.setDomStorage(!((time&64) ==64));
@@ -730,12 +730,16 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 adapter.notifyDataSetChanged();
 
                 listView.setOnItemClickListener((parent, view, position, id) -> {
+                    if (((list.get(position).getTime()&16) ==16) != ninjaWebView.isDesktopMode()) ninjaWebView.toggleDesktopMode(false);
+                    ninjaWebView.setJavaScript(!((list.get(position).getTime()&32) ==32));
+                    ninjaWebView.setDomStorage(!((list.get(position).getTime()&64) ==64));
+                    ninjaWebView.setOldDomain(list.get(position).getURL());
                     ninjaWebView.loadUrl(list.get(position).getURL());
                     hideOverview();
                 });
 
                 listView.setOnItemLongClickListener((parent, view, position, id) -> {
-                    showContextMenuList(list.get(position).getTitle(), list.get(position).getURL(), adapter, list, position, 0);
+                    showContextMenuList(list.get(position).getTitle(), list.get(position).getURL(), adapter, list, position, list.get(position).getTime());
                     return true;
                 });
             } else if (menuItem.getItemId() == R.id.page_2) {
@@ -1184,7 +1188,17 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             }
             if (scrollY==0) {ninjaWebView.setOnTouchListener((new SwipeTouchListener(context) {
                     public void onSwipeBottom() {
-                        if (ninjaWebView.getScrollY() == 0) ninjaWebView.reload();
+                        if (ninjaWebView.getScrollY() == 0) {
+                            ninjaWebView.reload();
+                            ObjectAnimator animation = ObjectAnimator.ofFloat(bottomAppBar, "translationY", 0);
+                            animation.setDuration(getResources().getInteger(android.R.integer.config_shortAnimTime));
+                            animation.start();
+                        }
+                    }
+                    public void onSwipeTop(){
+                        ObjectAnimator animation = ObjectAnimator.ofFloat(bottomAppBar, "translationY", bottomAppBar.getHeight());
+                        animation.setDuration(getResources().getInteger(android.R.integer.config_shortAnimTime));
+                        animation.start();
                     }
                 }));} else {
                 ninjaWebView.setOnTouchListener(null);
@@ -1469,7 +1483,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     startActivity(chooser);
                     break;
                 case 4:
-                    HelperUnit.saveAs(dialog, activity, url);
+                    if (url.startsWith("data:")) {
+                        DataURIParser dataURIParser= new DataURIParser(url);
+                        HelperUnit.saveDataURI(dialog, activity, dataURIParser);
+                    } else HelperUnit.saveAs(dialog, activity, url);
                     break;
                 case 5:
                     save_atHome(title, url);
@@ -1832,6 +1849,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             gridList.add(gridList.size(), item_01);
             gridList.add(gridList.size(), item_02);
             gridList.add(gridList.size(), item_03);
+            gridList.add(gridList.size(), item_04);
         }
 
         GridView menu_grid = dialogView.findViewById(R.id.menu_grid);
@@ -1882,8 +1900,9 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     TextInputLayout edit_userName_layout = dialogViewSubMenu.findViewById(R.id.edit_userName_layout);
                     TextInputLayout edit_PW_layout = dialogViewSubMenu.findViewById(R.id.edit_PW_layout);
                     ImageView ib_icon = dialogViewSubMenu.findViewById(R.id.edit_icon);
-                    ib_icon.setVisibility(View.VISIBLE);
-
+                    if (!overViewTab.equals(getString(R.string.album_title_bookmarks))) {
+                        ib_icon.setVisibility(View.GONE);
+                    }
                     Chip chip_desktopMode = dialogViewSubMenu.findViewById(R.id.edit_bookmark_desktopMode);
                     Chip chip_javascript = dialogViewSubMenu.findViewById(R.id.edit_bookmark_Javascript);
                     Chip chip_remoteContent = dialogViewSubMenu.findViewById(R.id.edit_bookmark_RemoteContent);
@@ -1935,14 +1954,28 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     builderSubMenu.setView(dialogViewSubMenu);
                     builderSubMenu.setTitle(getString(R.string.menu_edit));
                     builderSubMenu.setPositiveButton(R.string.app_ok, (dialog3, whichButton) -> {
-                        RecordAction action = new RecordAction(context);
-                        action.open(true);
-                        action.deleteURL(url, RecordUnit.TABLE_BOOKMARK);
-                        newIcon=newIcon+(long) (chip_desktopMode.isChecked()?16:0)+(long)(chip_javascript.isChecked()?0:32)+(long)(chip_remoteContent.isChecked()?0:64);
-                        action.addBookmark(new Record(edit_title.getText().toString(), edit_URL.getText().toString(), newIcon, 0,2));
-                        action.close();
-                        updateAutoComplete();
-                        bottom_navigation.setSelectedItemId(R.id.page_2);
+                        if (overViewTab.equals(getString(R.string.album_title_bookmarks))) {
+                            RecordAction action = new RecordAction(context);
+                            action.open(true);
+                            action.deleteURL(url, RecordUnit.TABLE_BOOKMARK);
+                            newIcon = newIcon + (long) (chip_desktopMode.isChecked() ? 16 : 0) + (long) (chip_javascript.isChecked() ? 0 : 32) + (long) (chip_remoteContent.isChecked() ? 0 : 64);
+                            action.addBookmark(new Record(edit_title.getText().toString(), edit_URL.getText().toString(), newIcon, 0, 2));
+                            action.close();
+                            updateAutoComplete();
+                            bottom_navigation.setSelectedItemId(R.id.page_2);
+                        } else {
+                            RecordAction action = new RecordAction(context);
+                            action.open(true);
+                            action.deleteURL(url, RecordUnit.TABLE_GRID);
+                            int counter = sp.getInt("counter", 0);
+                            counter = counter + 1;
+                            sp.edit().putInt("counter", counter).apply();
+                            long value = (long) (chip_desktopMode.isChecked() ? 16 : 0) + (long) (chip_javascript.isChecked() ? 0 : 32) + (long) (chip_remoteContent.isChecked() ? 0 : 64);
+                            action.addStartSite(new Record(edit_title.getText().toString(), edit_URL.getText().toString(), value, counter, 1));
+                            action.close();
+                            updateAutoComplete();
+                            bottom_navigation.setSelectedItemId(R.id.page_1);
+                        }
                     });
                     builderSubMenu.setNegativeButton(R.string.app_cancel, (dialog3, whichButton) -> builderSubMenu.setCancelable(true));
                     dialogSubMenu = builderSubMenu.create();
@@ -1966,7 +1999,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             int counter = sp.getInt("counter", 0);
             counter = counter + 1;
             sp.edit().putInt("counter", counter).apply();
-            if (action.addStartSite(new Record(title, url, 0, counter,1))) {
+            long value= (long) (ninjaWebView.isDesktopMode()?16:0) + (long) (ninjaWebView.getSettings().getJavaScriptEnabled()?0:32)  + (long) (ninjaWebView.getSettings().getDomStorageEnabled()?0:64);
+            if (action.addStartSite(new Record(title, url, value, counter,1))) {
                 NinjaToast.show(this, R.string.app_done);
             } else {
                 NinjaToast.show(this, R.string.app_error);

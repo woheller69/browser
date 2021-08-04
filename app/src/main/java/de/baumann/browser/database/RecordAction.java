@@ -44,6 +44,7 @@ public class RecordAction {
         ContentValues values = new ContentValues();
         values.put(RecordUnit.COLUMN_TITLE, record.getTitle().trim());
         values.put(RecordUnit.COLUMN_URL, record.getURL().trim());
+        values.put(RecordUnit.COLUMN_FILENAME, record.getTime());
         values.put(RecordUnit.COLUMN_ORDINAL, record.getOrdinal());
         database.insert(RecordUnit.TABLE_GRID, null, values);
         return true;

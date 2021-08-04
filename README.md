@@ -27,7 +27,8 @@ browser with a nice looking user interface.
 - enable/disable cookies, javascript, location access, history
 - whitelist for javascript, cookies and AdBlocker
 - toggle image/third party content loading
-- do not track me
+- do not track me / GPC (global privacy control)
+- measures agains browser fingerprinting
 - backup data
 - AdBlocker
 - delete data on exit (optional)

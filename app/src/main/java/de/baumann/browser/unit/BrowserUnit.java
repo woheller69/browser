@@ -24,6 +24,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.ArrayList;
@@ -35,6 +36,7 @@ import java.util.regex.Pattern;
 
 import de.baumann.browser.browser.Cookie;
 import de.baumann.browser.browser.DOM;
+import de.baumann.browser.browser.DataURIParser;
 import de.baumann.browser.browser.Javascript;
 import de.baumann.browser.database.Record;
 import de.baumann.browser.database.RecordAction;
@@ -168,21 +170,30 @@ public class BrowserUnit {
         builder.setMessage(text);
         builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
             try {
-                DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
                 String filename = URLUtil.guessFileName(url, contentDisposition, mimeType); // Maybe unexpected filename.
-
-                CookieManager cookieManager = CookieManager.getInstance();
-                String cookie = cookieManager.getCookie(url);
-                request.addRequestHeader("Cookie", cookie);
-                request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
-                request.setTitle(filename);
-                request.setMimeType(mimeType);
-                request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, filename);
-                DownloadManager manager = (DownloadManager) context.getSystemService(Context.DOWNLOAD_SERVICE);
-                assert manager != null;
-                Activity activity = (Activity) context;
-                if (HelperUnit.hasPermissionStorage(activity)) {
-                    manager.enqueue(request);
+                if (url.startsWith("data:")) {
+                    DataURIParser dataURIParser = new DataURIParser(url);
+                    Activity activity = (Activity) context;
+                    if (HelperUnit.hasPermissionStorage(activity)) {
+                        File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), filename);
+                        FileOutputStream fos = new FileOutputStream(file);
+                        fos.write(dataURIParser.getImagedata());
+                    } else System.out.println("Error Downloading File: no storage permission ");
+                }else {
+                    DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
+                    CookieManager cookieManager = CookieManager.getInstance();
+                    String cookie = cookieManager.getCookie(url);
+                    request.addRequestHeader("Cookie", cookie);
+                    request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+                    request.setTitle(filename);
+                    request.setMimeType(mimeType);
+                    request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, filename);
+                    DownloadManager manager = (DownloadManager) context.getSystemService(Context.DOWNLOAD_SERVICE);
+                    assert manager != null;
+                    Activity activity = (Activity) context;
+                    if (HelperUnit.hasPermissionStorage(activity)) {
+                        manager.enqueue(request);
+                    }
                 }
             } catch (Exception e) {
             System.out.println("Error Downloading File: " + e.toString());

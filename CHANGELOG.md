@@ -13,7 +13,7 @@
 - new: Reload on swipeDown when at top of webpage (thanks to @woheller69)
 - new: Added GlobalPrivacyControl (thanks to @woheller69)
 - new: Remove device info from useragent, use prefixes like DuckDuckGo browser (thanks to @woheller69)
-- new: fivicons in bookmarklist (thanks to @woheller69)
+- new: favicons in bookmarklist (thanks to @woheller69)
 - new: option to select blocked content
 - updated: do not track (thanks to @woheller69)
 - updated: translations

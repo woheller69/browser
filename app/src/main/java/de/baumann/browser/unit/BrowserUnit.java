@@ -42,6 +42,8 @@ import de.baumann.browser.database.Record;
 import de.baumann.browser.database.RecordAction;
 import de.baumann.browser.R;
 
+import static android.os.Environment.DIRECTORY_DOCUMENTS;
+
 @SuppressWarnings("ResultOfMethodCallIgnored")
 public class BrowserUnit {
 
@@ -300,7 +302,7 @@ public class BrowserUnit {
         action.open(false);
         List<Record> list = action.listBookmark(context, false, 0);
         action.close();
-        File file = new File(context.getExternalFilesDir(null), "browser_backup//export_Bookmark.html");
+        File file = new File(Environment.getExternalStoragePublicDirectory(DIRECTORY_DOCUMENTS), "browser_backup//export_Bookmark.html");
 
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(file, false));
@@ -319,7 +321,7 @@ public class BrowserUnit {
     }
 
     public static void importBookmarks(Context context) {
-        File file = new File(context.getExternalFilesDir(null), "browser_backup//export_Bookmark.html");
+        File file = new File(Environment.getExternalStoragePublicDirectory(DIRECTORY_DOCUMENTS), "browser_backup//export_Bookmark.html");
         List<Record> list = new ArrayList<>();
         try {
             RecordAction action = new RecordAction(context);

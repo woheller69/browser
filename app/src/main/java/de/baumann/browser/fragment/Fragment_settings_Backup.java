@@ -1,16 +1,26 @@
 package de.baumann.browser.fragment;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AlertDialog;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceManager;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
+import android.provider.Settings;
 import android.view.Gravity;
 
 import androidx.preference.PreferenceFragmentCompat;
@@ -37,19 +47,76 @@ import de.baumann.browser.R;
 import de.baumann.browser.unit.HelperUnit;
 import de.baumann.browser.view.NinjaToast;
 
+import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
+import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
+import static android.os.Build.VERSION.SDK_INT;
+import static android.os.Environment.DIRECTORY_DOCUMENTS;
+
 public class Fragment_settings_Backup extends PreferenceFragmentCompat {
+
+    public File sd;
+    public File data;
+    public Context context;
+    public Activity activity;
+    public ActivityResultLauncher<Intent> someActivityResultLauncher;
+    private static final int PERMISSION_REQUEST_CODE = 123;
+
+    private boolean checkPermission() {
+        if (SDK_INT >= Build.VERSION_CODES.R) {
+            return Environment.isExternalStorageManager();
+        } else {
+            int result = ContextCompat.checkSelfPermission(context, READ_EXTERNAL_STORAGE);
+            int result1 = ContextCompat.checkSelfPermission(context, WRITE_EXTERNAL_STORAGE);
+            return result == PackageManager.PERMISSION_GRANTED && result1 == PackageManager.PERMISSION_GRANTED;
+        }
+    }
+
+    private void requestPermission() {
+        if (SDK_INT >= Build.VERSION_CODES.R) {
+            try {
+                Intent intent = new Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION);
+                intent.addCategory("android.intent.category.DEFAULT");
+                intent.setData(Uri.parse(String.format("package:%s",context.getPackageName())));
+                openSomeActivityForResult(intent);
+            } catch (Exception e) {
+                Intent intent = new Intent();
+                intent.setAction(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
+                openSomeActivityForResult(intent);
+            }
+        } else {
+            //below android 11
+            ActivityCompat.requestPermissions(activity, new String[]{WRITE_EXTERNAL_STORAGE}, PERMISSION_REQUEST_CODE);
+        }
+    }
+
+    public void openSomeActivityForResult(Intent intent) {
+        someActivityResultLauncher.launch(intent);
+    }
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
 
         setPreferencesFromResource(R.xml.preference_backup, rootKey);
-        Context context = getContext();
+        context = getContext();
+        activity = getActivity();
         assert context != null;
+        assert activity != null;
 
-        File sd = context.getExternalFilesDir(null);
-        File data = Environment.getDataDirectory();
+        // You can do the assignment inside onAttach or onCreate, i.e, before the activity is displayed
+        someActivityResultLauncher = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                result -> {
+                    // There are no request codes
+                });
+
+        if (!checkPermission()) {
+            requestPermission();
+        }
+
+        sd = Environment.getExternalStoragePublicDirectory(DIRECTORY_DOCUMENTS);
+        data = Environment.getDataDirectory();
         String database_app = "//data//" + requireActivity().getPackageName() + "//databases//Ninja4.db";
-        String database_backup = "browser_backup//Ninja4.db";
+        String database_backup = "browser_backup//database.db";
         final File previewsFolder_app = new File(data, database_app);
         final File previewsFolder_backup = new File(sd, database_backup);
 
@@ -60,7 +127,7 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat {
             builder.setMessage(R.string.toast_backup);
             builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
                 dialog.cancel();
-                if (HelperUnit.hasPermissionStorage(this.getActivity())) {
+                if (checkPermission()) {
                     makeBackupDir();
                     copyDirectory(previewsFolder_app, previewsFolder_backup);
                     backupUserPrefs(context);
@@ -80,7 +147,7 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat {
             builder.setMessage(R.string.hint_database);
             builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
                 dialog.cancel();
-                if (HelperUnit.hasPermissionStorage(this.getActivity())) {
+                if (checkPermission()) {
                     copyDirectory(previewsFolder_backup, previewsFolder_app);
                     restoreUserPrefs(context);
                     dialogRestart();
@@ -100,7 +167,7 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat {
             builder.setMessage(R.string.hint_database);
             builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
                 dialog.cancel();
-                if (HelperUnit.hasPermissionStorage(this.getActivity())) {
+                if (checkPermission()) {
                     HelperUnit.restoreData(getActivity(), 4);
                 }
             });
@@ -118,7 +185,7 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat {
             builder.setMessage(R.string.toast_backup);
             builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
                 dialog.cancel();
-                if (HelperUnit.hasPermissionStorage(this.getActivity())) {
+                if (checkPermission()) {
                     makeBackupDir();
                     HelperUnit.backupData(getActivity(), 4);
                 }
@@ -135,7 +202,7 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat {
         Context context = getContext();
         assert context != null;
         if (HelperUnit.hasPermissionStorage(this.getActivity())) {
-            File backupDir = new File(context.getExternalFilesDir(null), "browser_backup//");
+            File backupDir = new File(data, "browser_backup//");
             boolean wasSuccessful = backupDir.mkdirs();
             if (!wasSuccessful) {
                 System.out.println("was not successful.");
@@ -183,9 +250,9 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat {
         }
     }
 
-    private static void backupUserPrefs(Context context) {
+    private void backupUserPrefs(Context context) {
         final File prefsFile = new File(context.getFilesDir(), "../shared_prefs/" + context.getPackageName() + "_preferences.xml");
-        final File backupFile = new File(context.getExternalFilesDir(null), "browser_backup/preferenceBackup.xml");
+        final File backupFile = new File(sd, "browser_backup/preferenceBackup.xml");
         try {
             FileChannel src = new FileInputStream(prefsFile).getChannel();
             FileChannel dst = new FileOutputStream(backupFile).getChannel();
@@ -198,8 +265,8 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat {
         }
     }
 
-    private static void restoreUserPrefs(Context context) {
-        final File backupFile = new File(context.getExternalFilesDir(null), "browser_backup/preferenceBackup.xml");
+    private void restoreUserPrefs(Context context) {
+        final File backupFile = new File(sd, "browser_backup/preferenceBackup.xml");
         try {
             SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
             SharedPreferences.Editor editor = sharedPreferences.edit();

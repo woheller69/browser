@@ -13,4 +13,8 @@
         <attr name="editTextSwitchKey" format="string"/>
         <attr name="editTextSwitchKeyDefaultValue" format="boolean" />
     </declare-styleable>
+    <declare-styleable name="ListSwitchPreference">
+        <attr name="listSwitchKey" format="string"/>
+        <attr name="listSwitchKeyDefaultValue" format="boolean" />
+    </declare-styleable>
 </resources>

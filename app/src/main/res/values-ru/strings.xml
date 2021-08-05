@@ -98,7 +98,7 @@
     <string name="setting_title_autofill">Данные формы:</string>
     <string name="setting_summary_autofill">Включить сохранение данных форм (Android Nougat и ниже) или службы автозаполнения (Android Oreo и выше).</string>
     <!-- browser clear -->
-    <string name="data_summary">Все файлы будут экспортированы в папку \"Android/data/de.baumann.browser/files/browser_backup/\" Вашей sd-карты. Этот каталог будет УДАЛЕН, если вы удалите \"FOSS Browser\". Поэтому регулярно делайте резервную копию в надёжном месте.</string>
+    <string name="data_summary">All files will be exported to the \"Documents/browser_backup/\" directory of your SD-card.</string>
     <string name="clear_title_quit">Очистить при выходе из приложения</string>
     <string name="clear_title_cache">Очистить кэш</string>
     <string name="clear_title_cookie">Очистить куки</string>

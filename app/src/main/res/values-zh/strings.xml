@@ -155,6 +155,8 @@
     <string name="setting_summary_export_appData">导出整个数据库和您的个人设置。</string>
     <string name="title_appData">应用数据</string>
     <string name="hint_database">这将删除当前数据。是否继续？</string>
+    <string name="settings_data_restore">Restore</string>
+    <string name="settings_data_backup">Backup</string>
     <!-- Others setting -->
     <string name="setting_title_others">其它</string>
     <!-- Toast -->

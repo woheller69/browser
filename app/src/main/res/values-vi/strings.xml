@@ -155,6 +155,8 @@
     <string name="setting_summary_export_appData">Xuất toàn bộ cơ sở dữ liệu và cài đặt cá nhân của bạn.</string>
     <string name="title_appData">Dữ liệu ứng dụng</string>
     <string name="hint_database">Việc này sẽ xoá dữ liệu hiện tại. Tiếp tục?</string>
+    <string name="settings_data_restore">Restore</string>
+    <string name="settings_data_backup">Backup</string>
     <!-- Others setting -->
     <string name="setting_title_others">Khác</string>
     <!-- Toast -->

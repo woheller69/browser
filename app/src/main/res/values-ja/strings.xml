@@ -155,6 +155,8 @@
     <string name="setting_summary_export_appData">データベースと個人設定全体をエクスポートします。</string>
     <string name="title_appData">アプリデータ</string>
     <string name="hint_database">現在のデータを削除します。続行しますか?</string>
+    <string name="settings_data_restore">復元</string>
+    <string name="settings_data_backup">バックアップ</string>
     <!-- Others setting -->
     <string name="setting_title_others">その他</string>
     <!-- Toast -->

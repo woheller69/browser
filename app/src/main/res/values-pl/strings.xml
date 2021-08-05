@@ -155,6 +155,8 @@
     <string name="setting_summary_export_appData">Eksportuj całą bazę danych i ustawienia osobiste.</string>
     <string name="title_appData">Dane aplikacji</string>
     <string name="hint_database">Spowoduje to usunięcie aktualnych danych. Kontynuować?</string>
+    <string name="settings_data_restore">Restore</string>
+    <string name="settings_data_backup">Backup</string>
     <!-- Others setting -->
     <string name="setting_title_others">Pozostałe</string>
     <!-- Toast -->

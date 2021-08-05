@@ -98,7 +98,7 @@
     <string name="setting_title_autofill">Dati del Modulo</string>
     <string name="setting_summary_autofill">Abilita il salvataggio dei dati del modulo (Android Nougat e sotto) o servizio di riempimento automatico (Android Oreo e oltre).</string>
     <!-- browser clear -->
-    <string name="data_summary">Tutti i file saranno esportati nella directory \"Android/data/de.baumann.browser/files/browser_backup/\" della tua scheda SD. Questa directory sarà ELIMINATA se si disinstalla \"FOSS Browser\". Si raccomanda pertanto di fare un backup regolarmente su un supporto sicuro.</string>
+    <string name="data_summary">All files will be exported to the \"Documents/browser_backup/\" directory of your SD-card.</string>
     <string name="clear_title_quit">Cancella all\'uscita dell\'applicazione</string>
     <string name="clear_title_cache">Elimina Cache</string>
     <string name="clear_title_cookie">Elimina Cookies</string>

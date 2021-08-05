@@ -98,7 +98,7 @@
     <string name="setting_title_autofill">Datos de Formulario</string>
     <string name="setting_summary_autofill">Habilitar el guardado de datos de formulario (Android Nougat y más abajo) o servicio de autorelleno (Android Oreo y superior).</string>
     <!-- browser clear -->
-    <string name="data_summary">All files will be exported to the \"Documents/browser_backup/\" directory of your SD-card.</string>
+    <string name="data_summary">Todos los archivos se exportarán al directorio \"Documentos / browser_backup /\" de su tarjeta SD.</string>
     <string name="clear_title_quit">Borrar al salir de la aplicación</string>
     <string name="clear_title_cache">Borrar caché</string>
     <string name="clear_title_cookie">Borrar cookies</string>

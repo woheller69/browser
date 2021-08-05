@@ -123,7 +123,7 @@
 
 
     <!-- browser clear -->
-    <string name="data_summary">All files will be exported to the \"Android/data/de.baumann.browser/files/browser_backup/\" directory of your sd-card. This directory will be DELETED, if you uninstall \"FOSS Browser\". So make a backup regularly on a save place.</string>
+    <string name="data_summary">All files will be exported to the \"Documents/browser_backup/\" directory of your SD-card.</string>
     <string name="clear_title_quit">Clear on application exit</string>
     <string name="clear_title_cache">Clear Cache</string>
     <string name="clear_title_cookie">Clear Cookies</string>

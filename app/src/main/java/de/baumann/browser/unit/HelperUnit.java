@@ -317,7 +317,7 @@ public class HelperUnit {
         }
     }
 
-    public static void saveDataURI(AlertDialog dialogToCancel, Activity activity, DataURIParser dataUriParser) {
+    public static void saveDataURI(AlertDialog dialogToCancel,Context context, Activity activity, DataURIParser dataUriParser) {
 
         byte[] imagedata = dataUriParser.getImagedata();
         String filename=dataUriParser.getFilename();
@@ -356,7 +356,7 @@ public class HelperUnit {
                     }
                     dialogToCancel.cancel();
                 }else {
-                    System.out.println("Error Downloading File: no storage permission ");
+                    BackupUnit.requestPermission(context,activity,null);
                 }
             }
         });

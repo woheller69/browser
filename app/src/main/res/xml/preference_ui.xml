@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    
     <ListPreference
         android:key="sp_theme"
         android:defaultValue="1"
@@ -43,17 +42,17 @@
 
     <PreferenceCategory android:title="@string/setting_overView">
 
-        <org.woheller69.preferences.ListSwitchPreference
-            android:selectable="true"
-            app:useSimpleSummaryProvider="true"
+        <CheckBoxPreference
+            android:key="start_tabStart"
+            android:defaultValue="false"
+            android:title="@string/setting_overView_onStart_title"/>
+
+        <ListPreference
+            android:title="@string/setting_overView"
             android:key="start_tab"
-            app:SwitchKey="start_tabStart"
-            app:SwitchKeyDefaultValue="false"
             android:defaultValue="0"
-            android:title="@string/setting_overView_onStart_title"
             android:entries="@array/setting_entries_tab"
             android:entryValues="@array/setting_values_tab" />
-
 
     </PreferenceCategory>
 

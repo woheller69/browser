@@ -39,7 +39,7 @@ public class Fragment_settings_UI extends PreferenceFragmentCompat implements Sh
     private void updatePrefSummary(Preference p) {
         if (p instanceof ListPreference) {
             ListPreference listPref = (ListPreference) p;
-            if (p.getSummaryProvider()==null)   p.setSummary(listPref.getEntry());
+            p.setSummary(listPref.getEntry());
         }
         if (p instanceof EditTextPreference) {
             EditTextPreference editTextPref = (EditTextPreference) p;

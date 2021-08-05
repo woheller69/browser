@@ -115,6 +115,36 @@
         <item>175</item>
     </string-array>
 
+    <!-- Backup -->
+    <string-array name="setting_entries_backup">
+        <item>@string/album_title_bookmarks</item>
+        <item>@string/setting_title_javascript</item>
+        <item>@string/setting_title_cookie</item>
+        <item>@string/setting_title_dom</item>
+    </string-array>
+
+    <string-array name="setting_values_backup">
+        <item>bookmark</item>
+        <item>java</item>
+        <item>cookie</item>
+        <item>dom</item>
+    </string-array>
+
+    <!-- Restore -->
+    <string-array name="setting_entries_restore">
+        <item>@string/album_title_bookmarks</item>
+        <item>@string/setting_title_javascript</item>
+        <item>@string/setting_title_cookie</item>
+        <item>@string/setting_title_dom</item>
+    </string-array>
+
+    <string-array name="setting_values_restore">
+        <item>bookmark</item>
+        <item>java</item>
+        <item>cookie</item>
+        <item>dom</item>
+    </string-array>
+
     <!-- Start tab -->
     <string-array name="setting_entries_adBlock">
         <item>UH = (adware + malware)</item>

@@ -154,8 +154,7 @@ public class BrowserUnit {
                 String filename = URLUtil.guessFileName(url, contentDisposition, mimeType); // Maybe unexpected filename.
                 if (url.startsWith("data:")) {
                     DataURIParser dataURIParser = new DataURIParser(url);
-                    Activity activity = (Activity) context;
-                    if (HelperUnit.hasPermissionStorage(activity)) {
+                    if (HelperUnit.checkPermission(context)) {
                         File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), filename);
                         FileOutputStream fos = new FileOutputStream(file);
                         fos.write(dataURIParser.getImagedata());

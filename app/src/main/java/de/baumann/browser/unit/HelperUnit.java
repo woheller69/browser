@@ -71,6 +71,7 @@ import java.util.concurrent.Executors;
 
 import de.baumann.browser.R;
 import de.baumann.browser.browser.DataURIParser;
+import de.baumann.browser.fragment.Fragment_settings_Backup;
 import de.baumann.browser.view.GridItem;
 import de.baumann.browser.view.NinjaToast;
 
@@ -453,7 +454,7 @@ public class HelperUnit {
         });
     }
 
-    public static void saveDataURI(AlertDialog dialogToCancel, Activity activity, DataURIParser dataUriParser) {
+    public static void saveDataURI(AlertDialog dialogToCancel,Context context, Activity activity, DataURIParser dataUriParser) {
 
         byte[] imagedata = dataUriParser.getImagedata();
         String filename=dataUriParser.getFilename();
@@ -482,7 +483,7 @@ public class HelperUnit {
             if (title.isEmpty() || extension1.isEmpty() || !extension1.startsWith(".")) {
                 NinjaToast.show(activity, activity.getString(R.string.toast_input_empty));
             } else {
-                if (HelperUnit.hasPermissionStorage(activity)) {
+                if (HelperUnit.checkPermission(context)) {
                     File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), filename1);
                     try {FileOutputStream fos = new FileOutputStream(file);
                         fos.write(imagedata);
@@ -491,7 +492,9 @@ public class HelperUnit {
                         e.printStackTrace();
                     }
                     dialogToCancel.cancel();
-                }else System.out.println("Error Downloading File: no storage permission ");
+                }else {
+                    System.out.println("Error Downloading File: no storage permission ");
+                }
             }
         });
         builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> builder.setCancelable(true));

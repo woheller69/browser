@@ -155,6 +155,8 @@
     <string name="setting_summary_export_appData">Exportovat celou databázi a vaše osobní nastavení.</string>
     <string name="title_appData">Data aplikace</string>
     <string name="hint_database">Tímto odstraníte aktuální data. Chcete pokračovat?</string>
+    <string name="settings_data_restore">Restore</string>
+    <string name="settings_data_backup">Backup</string>
     <!-- Others setting -->
     <string name="setting_title_others">Další</string>
     <!-- Toast -->

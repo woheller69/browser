@@ -62,7 +62,6 @@ import java.util.Objects;
 
 import de.baumann.browser.R;
 import de.baumann.browser.browser.DataURIParser;
-import de.baumann.browser.fragment.Fragment_settings_Backup;
 import de.baumann.browser.view.GridItem;
 import de.baumann.browser.view.NinjaToast;
 
@@ -347,7 +346,7 @@ public class HelperUnit {
             if (title.isEmpty() || extension1.isEmpty() || !extension1.startsWith(".")) {
                 NinjaToast.show(activity, activity.getString(R.string.toast_input_empty));
             } else {
-                if (HelperUnit.checkPermission(context)) {
+                if (BackupUnit.checkPermissionStorage(activity)) {
                     File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), filename1);
                     try {FileOutputStream fos = new FileOutputStream(file);
                         fos.write(imagedata);

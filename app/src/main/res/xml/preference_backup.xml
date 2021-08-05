@@ -7,20 +7,50 @@
     <PreferenceCategory android:title="@string/title_appData">
         <Preference
             android:key="data_exDB"
-            android:title="@string/setting_title_export_appData"
+            android:title="@string/settings_data_backup"
             android:summary="@string/setting_summary_export_appData"/>
         <Preference
             android:key="data_imDB"
-            android:title="@string/setting_title_import_appData"/>
+            android:title="@string/settings_data_restore"/>
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/album_title_bookmarks">
         <Preference
             android:key="data_exBookmark"
-            android:title="@string/setting_title_export_bookmarks" />
+            android:title="@string/settings_data_backup" />
         <Preference
             android:key="data_imBookmark"
-            android:title="@string/setting_title_import_bookmarks" />
+            android:title="@string/settings_data_restore" />
+    </PreferenceCategory>
+
+
+
+
+    <PreferenceCategory android:title="@string/setting_title_javascript">
+        <Preference
+            android:key="data_exJava"
+            android:title="@string/settings_data_backup" />
+        <Preference
+            android:key="data_imJava"
+            android:title="@string/settings_data_restore" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/setting_title_cookie">
+        <Preference
+            android:key="data_exCookie"
+            android:title="@string/settings_data_backup" />
+        <Preference
+            android:key="data_imCookie"
+            android:title="@string/settings_data_restore" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/setting_title_dom">
+        <Preference
+            android:key="data_exDOM"
+            android:title="@string/settings_data_backup" />
+        <Preference
+            android:key="data_imDOM"
+            android:title="@string/settings_data_restore" />
     </PreferenceCategory>
 
 </PreferenceScreen>

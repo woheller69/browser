@@ -38,7 +38,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
 import de.baumann.browser.R;
-import de.baumann.browser.unit.HelperUnit;
+import de.baumann.browser.unit.BackupUnit;
 import de.baumann.browser.view.NinjaToast;
 
 import static android.os.Environment.DIRECTORY_DOCUMENTS;
@@ -77,15 +77,15 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat {
         Preference data_exDB = findPreference("data_exDB");
         assert data_exDB != null;
         data_exDB.setOnPreferenceClickListener(preference -> {
-            if (!HelperUnit.checkPermission(context)) {
-                HelperUnit.requestPermission(context, activity, someActivityResultLauncher);
+            if (!BackupUnit.checkPermissionStorage(context)) {
+                BackupUnit.requestPermission(context, activity, someActivityResultLauncher);
             } else  {
                 MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
                 builder.setMessage(R.string.toast_backup);
                 builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
                     dialog.cancel();
-                    HelperUnit.makeBackupDir();
-                    copyDirectory(previewsFolder_app, previewsFolder_backup, true);
+                    BackupUnit.makeBackupDir();
+                    copyDirectory(previewsFolder_app, previewsFolder_backup);
                     backupUserPrefs(context);
                 });
                 builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());AlertDialog dialog = builder.create();
@@ -98,15 +98,15 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat {
         Preference data_imDB = findPreference("data_imDB");
         assert data_imDB != null;
         data_imDB.setOnPreferenceClickListener(preference -> {
-            if (!HelperUnit.checkPermission(context)) {
-                HelperUnit.requestPermission(context, activity, someActivityResultLauncher);
+            if (!BackupUnit.checkPermissionStorage(context)) {
+                BackupUnit.requestPermission(context, activity, someActivityResultLauncher);
             } else  {
                 MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
                 builder.setMessage(R.string.hint_database);
                 builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
                     dialog.cancel();
-                    if (HelperUnit.checkPermission(context)) {
-                        copyDirectory(previewsFolder_backup, previewsFolder_app, false);
+                    if (BackupUnit.checkPermissionStorage(context)) {
+                        copyDirectory(previewsFolder_backup, previewsFolder_app);
                         restoreUserPrefs(context);
                         dialogRestart();
                     }
@@ -122,15 +122,15 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat {
         Preference data_imBookmark = findPreference("data_imBookmark");
         assert data_imBookmark != null;
         data_imBookmark.setOnPreferenceClickListener(preference -> {
-            if (!HelperUnit.checkPermission(context)) {
-                HelperUnit.requestPermission(context, activity, someActivityResultLauncher);
+            if (!BackupUnit.checkPermissionStorage(context)) {
+                BackupUnit.requestPermission(context, activity, someActivityResultLauncher);
             } else  {
                 MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
                 builder.setMessage(R.string.hint_database);
                 builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
                     dialog.cancel();
-                    if (HelperUnit.checkPermission(context)) {
-                        HelperUnit.restoreData(getActivity(), 4);
+                    if (BackupUnit.checkPermissionStorage(context)) {
+                        BackupUnit.restoreData(getActivity(), 4);
                     }
                 });
                 builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
@@ -144,16 +144,151 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat {
         Preference data_exBookmark = findPreference("data_exBookmark");
         assert data_exBookmark != null;
         data_exBookmark.setOnPreferenceClickListener(preference -> {
-            if (!HelperUnit.checkPermission(context)) {
-                HelperUnit.requestPermission(context, activity, someActivityResultLauncher);
+            if (!BackupUnit.checkPermissionStorage(context)) {
+                BackupUnit.requestPermission(context, activity, someActivityResultLauncher);
             } else  {
                 MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
                 builder.setMessage(R.string.toast_backup);
                 builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
                     dialog.cancel();
-                    if (HelperUnit.checkPermission(context)) {
-                        HelperUnit.makeBackupDir();
-                        HelperUnit.backupData(getActivity(), 4);
+                    if (BackupUnit.checkPermissionStorage(context)) {
+                        BackupUnit.makeBackupDir();
+                        BackupUnit.backupData(getActivity(), 4);
+                    }
+                });
+                builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
+                AlertDialog dialog = builder.create();
+                dialog.show();
+                Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
+            }
+            return false;
+        });
+
+        Preference data_imJava = findPreference("data_imJava");
+        assert data_imJava != null;
+        data_imJava.setOnPreferenceClickListener(preference -> {
+            if (!BackupUnit.checkPermissionStorage(context)) {
+                BackupUnit.requestPermission(context, activity, someActivityResultLauncher);
+            } else  {
+                MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
+                builder.setMessage(R.string.hint_database);
+                builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
+                    dialog.cancel();
+                    if (BackupUnit.checkPermissionStorage(context)) {
+                        BackupUnit.restoreData(getActivity(), 1);
+                    }
+                });
+                builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
+                AlertDialog dialog = builder.create();
+                dialog.show();
+                Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
+            }
+            return false;
+        });
+
+        Preference data_exJava = findPreference("data_exJava");
+        assert data_exJava != null;
+        data_exJava.setOnPreferenceClickListener(preference -> {
+            if (!BackupUnit.checkPermissionStorage(context)) {
+                BackupUnit.requestPermission(context, activity, someActivityResultLauncher);
+            } else  {
+                MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
+                builder.setMessage(R.string.toast_backup);
+                builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
+                    dialog.cancel();
+                    if (BackupUnit.checkPermissionStorage(context)) {
+                        BackupUnit.makeBackupDir();
+                        BackupUnit.backupData(getActivity(), 1);
+                    }
+                });
+                builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
+                AlertDialog dialog = builder.create();
+                dialog.show();
+                Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
+            }
+            return false;
+        });
+
+        Preference data_imCookie = findPreference("data_imCookie");
+        assert data_imCookie != null;
+        data_imCookie.setOnPreferenceClickListener(preference -> {
+            if (!BackupUnit.checkPermissionStorage(context)) {
+                BackupUnit.requestPermission(context, activity, someActivityResultLauncher);
+            } else  {
+                MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
+                builder.setMessage(R.string.hint_database);
+                builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
+                    dialog.cancel();
+                    if (BackupUnit.checkPermissionStorage(context)) {
+                        BackupUnit.restoreData(getActivity(), 2);
+                    }
+                });
+                builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
+                AlertDialog dialog = builder.create();
+                dialog.show();
+                Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
+            }
+            return false;
+        });
+
+        Preference data_exCookie = findPreference("data_exCookie");
+        assert data_exCookie != null;
+        data_exCookie.setOnPreferenceClickListener(preference -> {
+            if (!BackupUnit.checkPermissionStorage(context)) {
+                BackupUnit.requestPermission(context, activity, someActivityResultLauncher);
+            } else  {
+                MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
+                builder.setMessage(R.string.toast_backup);
+                builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
+                    dialog.cancel();
+                    if (BackupUnit.checkPermissionStorage(context)) {
+                        BackupUnit.makeBackupDir();
+                        BackupUnit.backupData(getActivity(), 2);
+                    }
+                });
+                builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
+                AlertDialog dialog = builder.create();
+                dialog.show();
+                Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
+            }
+            return false;
+        });
+
+        Preference data_imDOM = findPreference("data_imDOM");
+        assert data_imDOM != null;
+        data_imDOM.setOnPreferenceClickListener(preference -> {
+            if (!BackupUnit.checkPermissionStorage(context)) {
+                BackupUnit.requestPermission(context, activity, someActivityResultLauncher);
+            } else  {
+                MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
+                builder.setMessage(R.string.hint_database);
+                builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
+                    dialog.cancel();
+                    if (BackupUnit.checkPermissionStorage(context)) {
+                        BackupUnit.restoreData(getActivity(), 3);
+                    }
+                });
+                builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
+                AlertDialog dialog = builder.create();
+                dialog.show();
+                Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
+            }
+            return false;
+        });
+
+        Preference data_exDOM = findPreference("data_exDOM");
+        assert data_exDOM != null;
+        data_exDOM.setOnPreferenceClickListener(preference -> {
+            if (!BackupUnit.checkPermissionStorage(context)) {
+                BackupUnit.requestPermission(context, activity, someActivityResultLauncher);
+            } else  {
+                MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
+                builder.setMessage(R.string.toast_backup);
+                builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
+                    dialog.cancel();
+                    if (BackupUnit.checkPermissionStorage(context)) {
+                        BackupUnit.makeBackupDir();
+                        BackupUnit.backupData(getActivity(), 3);
                     }
                 });
                 builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
@@ -171,7 +306,7 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat {
     }
 
     // If targetLocation does not exist, it will be created.
-    private void copyDirectory(File sourceLocation, File targetLocation, boolean toast) {
+    private void copyDirectory(File sourceLocation, File targetLocation) {
 
         try {
             if (sourceLocation.isDirectory()) {
@@ -180,7 +315,7 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat {
                 }
                 String[] children = sourceLocation.list();
                 for (String aChildren : Objects.requireNonNull(children)) {
-                    copyDirectory(new File(sourceLocation, aChildren), new File(targetLocation, aChildren), false);
+                    copyDirectory(new File(sourceLocation, aChildren), new File(targetLocation, aChildren));
                 }
             } else {
                 // make sure the directory we plan to store the recording in exists
@@ -199,11 +334,7 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat {
                 }
                 in.close();
                 out.close();
-                if (toast) {
-                    NinjaToast.show(getActivity(), getString(R.string.app_done) + ": Documents/browser_backup/...");
-                } else  {
-                    NinjaToast.show(getActivity(), getString(R.string.app_done));
-                }
+                NinjaToast.show(getActivity(), getString(R.string.app_done));
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -219,7 +350,7 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat {
             dst.transferFrom(src, 0, src.size());
             src.close();
             dst.close();
-            NinjaToast.show(getActivity(), getString(R.string.app_done) + ": Documents/browser_backup/...");
+            NinjaToast.show(getActivity(), getString(R.string.app_done));
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -103,11 +103,7 @@
     <string name="setting_title_autofill">داده‌‌ی فرم</string>
     <string name="setting_summary_autofill">ذخیره داده های فرم (Android Nougat و پایین تر) یا سرویس تکمیل خودکار (Android Oreo و بالاتر) را فعال کنید.</string>
     <!-- browser clear -->
-    <string name="data_summary">        کارت حافظه دستگاه استخراج خواهند شد.
-        در صورت حذف مرورگر از سیستم، تمامی فایل ها در مسیر
-        .Android/data/de.baumann.browser/files/browser_backup
-          نیز حذف خواهد شد،لذا نسبت به پشتیبان گیری منظم از این پوشه در جای مطمئن اقدام نمایید.
-    </string>
+    <string name="data_summary">All files will be exported to the \"Documents/browser_backup/\" directory of your SD-card.</string>
     <string name="clear_title_quit">پاک سازی هنگام خروج از برنامه</string>
     <string name="clear_title_cache">پاکسازی کش</string>
     <string name="clear_title_cookie">پاک سازی کوکی ها</string>

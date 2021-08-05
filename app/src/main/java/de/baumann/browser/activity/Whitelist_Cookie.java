@@ -128,33 +128,6 @@ public class Whitelist_Cookie extends AppCompatActivity {
             AlertDialog dialog = builder.create();
             dialog.show();
             Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
-        } else if (menuItem.getItemId() == R.id.menu_backup) {
-            MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(this);
-            builder.setMessage(R.string.toast_backup);
-            builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
-                if (HelperUnit.hasPermissionStorage(this)) {
-                    dialog.cancel();
-                    HelperUnit.makeBackupDir(Whitelist_Cookie.this);
-                    HelperUnit.backupData(Whitelist_Cookie.this, 2);
-                }
-            });
-            builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
-            AlertDialog dialog = builder.create();
-            dialog.show();
-            Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
-        } else if (menuItem.getItemId() == R.id.menu_restore) {
-            MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(this);
-            builder.setMessage(R.string.hint_database);
-            builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
-                if (HelperUnit.hasPermissionStorage(this)) {
-                    dialog.cancel();
-                    HelperUnit.restoreData(Whitelist_Cookie.this, 2);
-                }
-            });
-            builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
-            AlertDialog dialog = builder.create();
-            dialog.show();
-            Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
         }
         return true;
     }

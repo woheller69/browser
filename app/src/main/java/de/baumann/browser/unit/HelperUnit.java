@@ -35,10 +35,7 @@ import android.graphics.drawable.Icon;
 import android.net.Uri;
 import android.os.Build;
 
-import androidx.activity.result.ActivityResultLauncher;
 import androidx.appcompat.app.AlertDialog;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 import androidx.preference.PreferenceManager;
 import androidx.webkit.WebSettingsCompat;
 import androidx.webkit.WebViewFeature;
@@ -46,9 +43,6 @@ import androidx.webkit.WebViewFeature;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import android.os.Environment;
-import android.os.Handler;
-import android.os.Looper;
-import android.provider.Settings;
 import android.view.Gravity;
 import android.view.View;
 import android.webkit.CookieManager;
@@ -56,7 +50,6 @@ import android.webkit.URLUtil;
 import android.webkit.WebView;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import java.io.File;
 
@@ -66,76 +59,19 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 import de.baumann.browser.R;
 import de.baumann.browser.browser.DataURIParser;
 import de.baumann.browser.view.GridItem;
 import de.baumann.browser.view.NinjaToast;
 
-import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
-import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 import static android.content.Context.DOWNLOAD_SERVICE;
-import static android.os.Build.VERSION.SDK_INT;
-import static android.os.Environment.DIRECTORY_DOCUMENTS;
 
 public class HelperUnit {
 
     private static final int REQUEST_CODE_ASK_PERMISSIONS = 123;
     private static final int REQUEST_CODE_ASK_PERMISSIONS_1 = 1234;
     private static SharedPreferences sp;
-
-
-    public static final int PERMISSION_REQUEST_CODE = 123;
-
-    public static boolean checkPermission(Context context) {
-        if (SDK_INT >= Build.VERSION_CODES.R) {
-            return Environment.isExternalStorageManager();
-        } else {
-            int result = ContextCompat.checkSelfPermission(context, READ_EXTERNAL_STORAGE);
-            int result1 = ContextCompat.checkSelfPermission(context, WRITE_EXTERNAL_STORAGE);
-            return result == PackageManager.PERMISSION_GRANTED && result1 == PackageManager.PERMISSION_GRANTED;
-        }
-    }
-
-    public static void requestPermission(Context context, Activity activity,ActivityResultLauncher<Intent> someActivityResultLauncher) {
-        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
-        builder.setMessage(R.string.toast_permission_sdCard);
-        builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
-            dialog.cancel();
-            if (SDK_INT >= Build.VERSION_CODES.R) {
-                try {
-                    Intent intent = new Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION);
-                    intent.addCategory("android.intent.category.DEFAULT");
-                    intent.setData(Uri.parse(String.format("package:%s",context.getPackageName())));
-                    openSomeActivityForResult(intent, someActivityResultLauncher);
-                } catch (Exception e) {
-                    Intent intent = new Intent();
-                    intent.setAction(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
-                    openSomeActivityForResult(intent, someActivityResultLauncher);
-                }
-            } else {
-                //below android 11
-                ActivityCompat.requestPermissions(activity, new String[]{WRITE_EXTERNAL_STORAGE}, PERMISSION_REQUEST_CODE);
-            }
-        });
-        builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());AlertDialog dialog = builder.create();
-        dialog.show();
-        Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
-    }
-
-    public static void openSomeActivityForResult(Intent intent, ActivityResultLauncher<Intent> someActivityResultLauncher) {
-        someActivityResultLauncher.launch(intent);
-    }
-
-    public static void makeBackupDir () {
-        File backupDir = new File(Environment.getExternalStoragePublicDirectory(DIRECTORY_DOCUMENTS), "browser_backup//");
-        boolean wasSuccessful = backupDir.mkdirs();
-        if (!wasSuccessful) {
-            System.out.println("was not successful.");
-        }
-    }
 
     public static boolean hasPermissionStorage (final Activity activity){
         if (android.os.Build.VERSION.SDK_INT >= 23 ) {
@@ -157,18 +93,6 @@ public class HelperUnit {
             }
         } else {
             return true;
-        }
-    }
-
-    public static void makeBackupDir (final Activity activity) {
-        File backupDir = new File(Objects.requireNonNull(activity).getExternalFilesDir(null), "browser_backup//");
-        if (HelperUnit.hasPermissionStorage(activity)) {
-            if(!backupDir.exists()) {
-                boolean wasSuccessful = backupDir.mkdirs();
-                if (!wasSuccessful) {
-                    System.out.println("was not successful.");
-                }
-            }
         }
     }
 
@@ -391,66 +315,6 @@ public class HelperUnit {
         } else if (newIcon == 1) {
             ib_icon.setImageResource(R.drawable.circle_grey_big);
         }
-    }
-
-    public static void backupData(Activity context, int i) {
-        ExecutorService executor = Executors.newSingleThreadExecutor();
-        Handler handler = new Handler(Looper.getMainLooper());
-        executor.execute(() -> {
-            //Background work here
-            switch (i) {
-                case 0:
-                    BrowserUnit.exportWhitelist(context, 0);
-                    break;
-                case 1:
-                    BrowserUnit.exportWhitelist(context, 1);
-                    break;
-                case 3:
-                    BrowserUnit.exportWhitelist(context, 3);
-                    break;
-                case 4:
-                    BrowserUnit.exportBookmarks(context);
-                    break;
-                default:
-                    BrowserUnit.exportWhitelist(context, 2);
-                    break;
-            }
-
-            handler.post(() -> {
-                //UI Thread work here
-                NinjaToast.show(context, context.getString(R.string.app_done) + ": Documents/browser_backup/...");
-            });
-        });
-    }
-
-    public static void restoreData(Activity context, int i) {
-        ExecutorService executor = Executors.newSingleThreadExecutor();
-        Handler handler = new Handler(Looper.getMainLooper());
-        executor.execute(() -> {
-            //Background work here
-            switch (i) {
-                case 0:
-                    BrowserUnit.importWhitelist(context, 0);
-                    break;
-                case 1:
-                    BrowserUnit.importWhitelist(context, 1);
-                    break;
-                case 3:
-                    BrowserUnit.importWhitelist(context, 3);
-                    break;
-                case 4:
-                    BrowserUnit.importBookmarks(context);
-                    break;
-                default:
-                    BrowserUnit.importWhitelist(context, 2);
-                    break;
-            }
-
-            handler.post(() -> {
-                //UI Thread work here
-                NinjaToast.show(context, context.getString(R.string.app_done));
-            });
-        });
     }
 
     public static void saveDataURI(AlertDialog dialogToCancel, Activity activity, DataURIParser dataUriParser) {

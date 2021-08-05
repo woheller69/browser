@@ -98,7 +98,7 @@
     <string name="setting_title_autofill">Δεδομένα Φόρμας</string>
     <string name="setting_summary_autofill">Ενεργοποιήστε την αποθήκευση δεδομένων φόρμας (Android Nougat και κάτω) ή την υπηρεσία αυτόματης συμπλήρωσης (Android Oreo και παραπάνω).</string>
     <!-- browser clear -->
-    <string name="data_summary">All files will be exported to the \"Documents/browser_backup/\" directory of your SD-card.</string>
+    <string name="data_summary">Όλα τα αρχεία θα εξαχθούν στον κατάλογο \"Documents/browser_backup/\" της κάρτας SD σας.</string>
     <string name="clear_title_quit">Διαγραφή κατά την έξοδο της εφαρμογής</string>
     <string name="clear_title_cache">Εκκαθάριση προσωρινής μνήμης</string>
     <string name="clear_title_cookie">Εκκαθάριση Cookies</string>

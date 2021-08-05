@@ -98,7 +98,7 @@
     <string name="setting_title_autofill">Data formulářů</string>
     <string name="setting_summary_autofill">Povolit ukládání formulářových dat (Android Nougat a níže) nebo službu automatického vyplňování (Android Oreo a vyšší).</string>
     <!-- browser clear -->
-    <string name="data_summary">All files will be exported to the \"Documents/browser_backup/\" directory of your SD-card.</string>
+    <string name="data_summary">Všechny soubory budou exportovány do adresáře „Documents/browser_backup/“ na vaší SD kartě.</string>
     <string name="clear_title_quit">Vymazat při ukončení aplikace</string>
     <string name="clear_title_cache">Vymazat mezipaměť</string>
     <string name="clear_title_cookie">Vymazat soubory cookie</string>

@@ -98,7 +98,7 @@
     <string name="setting_title_autofill">Dữ liệu mẫu</string>
     <string name="setting_summary_autofill">Bật tính năng lưu dữ liệu biểu mẫu (Android Nougat trở xuống) hoặc dịch vụ tự động điền (Android Oreo trở lên).</string>
     <!-- browser clear -->
-    <string name="data_summary">Tất cả tệp sẽ được xuất ra thư mục \"Android/data/de.baumann.browser/files/browser_backup/\" của thẻ SD. Thư mục này sẽ bị XOÁ, nếu bạn gỡ cài đặt \"Trình duyệt FOSS\". Vậy nên hãy thường xuyên tạo một bản sao lưu ở một nơi an toàn.</string>
+    <string name="data_summary">Tất cả các tệp sẽ được xuất sang thư mục \"Documents / browser_backup /\" của thẻ SD của bạn.</string>
     <string name="clear_title_quit">Xoá khi thoát ứng dụng</string>
     <string name="clear_title_cache">Xóa bộ nhớ đệm</string>
     <string name="clear_title_cookie">Xóa cookie</string>

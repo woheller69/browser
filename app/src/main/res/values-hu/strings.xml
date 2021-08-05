@@ -98,7 +98,7 @@
     <string name="setting_title_autofill">Űrlapadatok</string>
     <string name="setting_summary_autofill">Engedélyezze az űrlapadatok (Android Nougat és újabb) vagy az automatikus kitöltési szolgáltatás (Android Oreo és újabb) mentését.</string>
     <!-- browser clear -->
-    <string name="data_summary">Az összes fájl az SD kártya \"Android/data/de.baumann.browser/files/browser_backup/\" könyvtárába lesz exportálva. Ez a könyvtár TÖRÖLVE lesz, ha eltávolítja a \"FOSS Browser\"-t. Ezért rendszeresen készítsen biztonsági másolatot egy biztos helyre.</string>
+    <string name="data_summary">Minden fájl exportálódik az SD-kártya \"Documents/browser_backup/\" könyvtárába.</string>
     <string name="clear_title_quit">Törlés az alkalmazás bezárásakor</string>
     <string name="clear_title_cache">Gyorsítótár törlése</string>
     <string name="clear_title_cookie">Sütik törlése</string>

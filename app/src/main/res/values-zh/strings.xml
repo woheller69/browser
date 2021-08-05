@@ -98,7 +98,7 @@
     <string name="setting_title_autofill">表单数据</string>
     <string name="setting_summary_autofill">启用表单数据保存（Android 7及以下版本）或自动填充服务（Android 8及以上版本）。</string>
     <!-- browser clear -->
-    <string name="data_summary">所有文件将导出至内部存储的“/Android/data/de.baumann.browser/files/browser_backup/”目录。 如果卸载\"FOSS浏览器\"，此目录将会被删除。所以请定期进行备份。</string>
+    <string name="data_summary">所有文件将导出到您SD卡的“Documents/browser_backup/”目录。</string>
     <string name="clear_title_quit">在应用退出时清除</string>
     <string name="clear_title_cache">清除缓存</string>
     <string name="clear_title_cookie">清除Cookies</string>

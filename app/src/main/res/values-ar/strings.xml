@@ -98,7 +98,7 @@
     <string name="setting_title_autofill">إستمارة المعلومات</string>
     <string name="setting_summary_autofill">تمكين حفظ بيانات النموذج (أندرويد نوجات وما دونها) أو خدمة التعبئة التلقائية (أندرويد أوريو وما فوق).</string>
     <!-- browser clear -->
-    <string name="data_summary">ستستورد كل الملفات الى دليل في الذاكرة الخارجية \"Android/data/de.baumann.browser/files/browser_backup/\". سيُحذف هذا الدليل اذا أزلت \"FOSS Browser\". انسخه احتياطيا بانتظام في مكان آمن.</string>
+    <string name="data_summary">سيتم تصدير جميع الملفات إلى دليل \"Documents / browser_backup /\" لبطاقة SD الخاصة بك.</string>
     <string name="clear_title_quit">امسح عند خروج التطبيق</string>
     <string name="clear_title_cache">امسح التخزين المؤقت</string>
     <string name="clear_title_cookie">امسح الكعكات</string>

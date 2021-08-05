@@ -98,7 +98,7 @@
     <string name="setting_title_autofill">Dados dos formulários</string>
     <string name="setting_summary_autofill">Ativar o salvamento de dados do formulário (Android Nougat e abaixo) ou o serviço de autopreenchimento (Android Oreo e superior).</string>
     <!-- browser clear -->
-    <string name="data_summary">Todos os arquivos serão exportados para o diretório \"Android/data/de.baumann.browser/files/browser_backup/\" do seu cartão-sd. Este diretório será EXCLUÍDO se você desinstalar o \"FOSS Browser\". Então faça um backup regularmente em um local salvo.</string>
+    <string name="data_summary">Todos os arquivos serão exportados para o diretório \"Documents / browser_backup /\" do seu cartão SD.</string>
     <string name="clear_title_quit">Limpar ao sair do aplicativo</string>
     <string name="clear_title_cache">Limpar cache</string>
     <string name="clear_title_cookie">Limpar cookies</string>

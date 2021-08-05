@@ -98,7 +98,7 @@
     <string name="setting_title_autofill">Form verisi</string>
     <string name="setting_summary_autofill">Form verilerinin kaydedilmesini (Android Nougat ve altı) veya otomatik doldurma hizmetini (Android Oreo ve üstü) etkinleştirin.</string>
     <!-- browser clear -->
-    <string name="data_summary">Tüm dosyalar SD kartınızın \"Android/data/de.baumann.browser/files/browser_backup/\" dizinine aktarılacaktır. Eğer \"FOSS Browser\"ı kaldırırsanız bu dizin SİLİNECEKTİR. Bu nedenle, kaydettiğiniz bir yerde düzenli olarak yedekleme yapın.</string>
+    <string name="data_summary">Tüm dosyalar SD kartınızın \"Documents/browser_backup/\" dizinine aktarılacaktır.</string>
     <string name="clear_title_quit">Uygulama çıkışında temizle</string>
     <string name="clear_title_cache">Önbelleği Temizle</string>
     <string name="clear_title_cookie">Çerezleri Temizle</string>

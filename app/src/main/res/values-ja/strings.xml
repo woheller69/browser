@@ -98,7 +98,7 @@
     <string name="setting_title_autofill">フォームの入力履歴</string>
     <string name="setting_summary_autofill">フォームのデータの保存 (Android 7 以下) または自動入力サービス (Android 8 以上) を有効にします。</string>
     <!-- browser clear -->
-    <string name="data_summary">全てのファイルは SD カードの \"Android/data/de.baumann.browser/files/browser_backup/\" に出力されます。\"FOSS Browser\" をアンインストールするとそのディレクトリは削除されます。ですので定期的に安全な場所にバックアップを作成して下さい。</string>
+    <string name="data_summary">すべてのファイルは、SDカードの「Documents / browser_backup /」ディレクトリにエクスポートされます。</string>
     <string name="clear_title_quit">アプリ終了時に消去</string>
     <string name="clear_title_cache">キャッシュを削除</string>
     <string name="clear_title_cookie">クッキーを消去</string>

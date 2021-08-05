@@ -98,7 +98,7 @@
     <string name="setting_title_autofill">Dane fomrularza</string>
     <string name="setting_summary_autofill">Włącz zapisywanie danych formularzy (Android Nougat i poniżej) lub usługi autouzupełniania (Android Oreo i powyżej).</string>
     <!-- browser clear -->
-    <string name="data_summary">Wszystkie pliki zostaną wyeksportowane do katalogu \"Android/data/de.baumann.browser/files/browser_backup/\" karty SD. Ten katalog zostanie wyłączony, jeśli odinstalujesz \"FOSS Browser\". Wykonaj regularnie kopię zapasową w miejscu zapisu.</string>
+    <string name="data_summary">Wszystkie pliki zostaną wyeksportowane do katalogu „Documents/browser_backup/” na karcie SD.</string>
     <string name="clear_title_quit">Wymaż na zamknięciu</string>
     <string name="clear_title_cache">Wymaż dane podręczne</string>
     <string name="clear_title_cookie">Wymaż ciasteczka</string>

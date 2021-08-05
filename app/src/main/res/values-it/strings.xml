@@ -98,7 +98,7 @@
     <string name="setting_title_autofill">Dati del Modulo</string>
     <string name="setting_summary_autofill">Abilita il salvataggio dei dati del modulo (Android Nougat e sotto) o servizio di riempimento automatico (Android Oreo e oltre).</string>
     <!-- browser clear -->
-    <string name="data_summary">All files will be exported to the \"Documents/browser_backup/\" directory of your SD-card.</string>
+    <string name="data_summary">Tutti i file verranno esportati nella directory \"Documents/browser_backup/\" della scheda SD.</string>
     <string name="clear_title_quit">Cancella all\'uscita dell\'applicazione</string>
     <string name="clear_title_cache">Elimina Cache</string>
     <string name="clear_title_cookie">Elimina Cookies</string>

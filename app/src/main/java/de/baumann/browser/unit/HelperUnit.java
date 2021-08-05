@@ -35,7 +35,10 @@ import android.graphics.drawable.Icon;
 import android.net.Uri;
 import android.os.Build;
 
+import androidx.activity.result.ActivityResultLauncher;
 import androidx.appcompat.app.AlertDialog;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.preference.PreferenceManager;
 import androidx.webkit.WebSettingsCompat;
 import androidx.webkit.WebViewFeature;
@@ -45,6 +48,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Looper;
+import android.provider.Settings;
 import android.view.Gravity;
 import android.view.View;
 import android.webkit.CookieManager;
@@ -70,13 +74,68 @@ import de.baumann.browser.browser.DataURIParser;
 import de.baumann.browser.view.GridItem;
 import de.baumann.browser.view.NinjaToast;
 
+import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
+import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 import static android.content.Context.DOWNLOAD_SERVICE;
+import static android.os.Build.VERSION.SDK_INT;
+import static android.os.Environment.DIRECTORY_DOCUMENTS;
 
 public class HelperUnit {
 
     private static final int REQUEST_CODE_ASK_PERMISSIONS = 123;
     private static final int REQUEST_CODE_ASK_PERMISSIONS_1 = 1234;
     private static SharedPreferences sp;
+
+
+    public static final int PERMISSION_REQUEST_CODE = 123;
+
+    public static boolean checkPermission(Context context) {
+        if (SDK_INT >= Build.VERSION_CODES.R) {
+            return Environment.isExternalStorageManager();
+        } else {
+            int result = ContextCompat.checkSelfPermission(context, READ_EXTERNAL_STORAGE);
+            int result1 = ContextCompat.checkSelfPermission(context, WRITE_EXTERNAL_STORAGE);
+            return result == PackageManager.PERMISSION_GRANTED && result1 == PackageManager.PERMISSION_GRANTED;
+        }
+    }
+
+    public static void requestPermission(Context context, Activity activity,ActivityResultLauncher<Intent> someActivityResultLauncher) {
+        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
+        builder.setMessage(R.string.toast_permission_sdCard);
+        builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
+            dialog.cancel();
+            if (SDK_INT >= Build.VERSION_CODES.R) {
+                try {
+                    Intent intent = new Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION);
+                    intent.addCategory("android.intent.category.DEFAULT");
+                    intent.setData(Uri.parse(String.format("package:%s",context.getPackageName())));
+                    openSomeActivityForResult(intent, someActivityResultLauncher);
+                } catch (Exception e) {
+                    Intent intent = new Intent();
+                    intent.setAction(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
+                    openSomeActivityForResult(intent, someActivityResultLauncher);
+                }
+            } else {
+                //below android 11
+                ActivityCompat.requestPermissions(activity, new String[]{WRITE_EXTERNAL_STORAGE}, PERMISSION_REQUEST_CODE);
+            }
+        });
+        builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());AlertDialog dialog = builder.create();
+        dialog.show();
+        Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
+    }
+
+    public static void openSomeActivityForResult(Intent intent, ActivityResultLauncher<Intent> someActivityResultLauncher) {
+        someActivityResultLauncher.launch(intent);
+    }
+
+    public static void makeBackupDir () {
+        File backupDir = new File(Environment.getExternalStoragePublicDirectory(DIRECTORY_DOCUMENTS), "browser_backup//");
+        boolean wasSuccessful = backupDir.mkdirs();
+        if (!wasSuccessful) {
+            System.out.println("was not successful.");
+        }
+    }
 
     public static boolean hasPermissionStorage (final Activity activity){
         if (android.os.Build.VERSION.SDK_INT >= 23 ) {
@@ -359,7 +418,7 @@ public class HelperUnit {
 
             handler.post(() -> {
                 //UI Thread work here
-                Toast.makeText(context, context.getString(R.string.app_done), Toast.LENGTH_SHORT).show();
+                NinjaToast.show(context, context.getString(R.string.app_done) + ": Documents/browser_backup/...");
             });
         });
     }
@@ -389,7 +448,7 @@ public class HelperUnit {
 
             handler.post(() -> {
                 //UI Thread work here
-                Toast.makeText(context, context.getString(R.string.app_done), Toast.LENGTH_SHORT).show();
+                NinjaToast.show(context, context.getString(R.string.app_done));
             });
         });
     }

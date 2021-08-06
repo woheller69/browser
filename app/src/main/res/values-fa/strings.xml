@@ -164,7 +164,6 @@
     <string name="title_appData">داده برنامه</string>
     <string name="hint_database">داده جاری حذف خواهد شد،انجام شود؟</string>
     <string name="settings_data_restore">Restore</string>
-    <string name="settings_data_backup">Backup</string>
     <!-- Others setting -->
     <string name="setting_title_others">موارد دیگر</string>
     <!-- Toast -->

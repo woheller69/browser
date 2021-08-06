@@ -151,6 +151,7 @@ public class BrowserUnit {
         builder.setMessage(text);
         builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
             try {
+                Activity activity = (Activity) context;
                 String filename = URLUtil.guessFileName(url, contentDisposition, mimeType); // Maybe unexpected filename.
                 if (url.startsWith("data:")) {
                     DataURIParser dataURIParser = new DataURIParser(url);
@@ -158,7 +159,7 @@ public class BrowserUnit {
                         File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), filename);
                         FileOutputStream fos = new FileOutputStream(file);
                         fos.write(dataURIParser.getImagedata());
-                    } else System.out.println("Error Downloading File: no storage permission ");
+                    } else BackupUnit.requestPermission(context,activity);;
                 }else {
                     DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
                     CookieManager cookieManager = CookieManager.getInstance();
@@ -170,8 +171,7 @@ public class BrowserUnit {
                     request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, filename);
                     DownloadManager manager = (DownloadManager) context.getSystemService(Context.DOWNLOAD_SERVICE);
                     assert manager != null;
-                    Activity activity = (Activity) context;
-                    if (BackupUnit.checkPermissionStorage(activity)) {
+                    if (BackupUnit.checkPermissionStorage(context)) {
                         manager.enqueue(request);
                     }else {
                         BackupUnit.requestPermission(context,activity);

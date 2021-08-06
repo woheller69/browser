@@ -156,7 +156,6 @@
     <string name="title_appData">Datos de la aplicación</string>
     <string name="hint_database">Esto eliminará los datos actuales. ¿Proceder?</string>
     <string name="settings_data_restore">Restaurar</string>
-    <string name="settings_data_backup">Respaldo</string>
     <!-- Others setting -->
     <string name="setting_title_others">Otros</string>
     <!-- Toast -->

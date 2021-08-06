@@ -156,7 +156,6 @@
     <string name="title_appData">Данные приложения</string>
     <string name="hint_database">Это удалит текущие данные. Продолжить?</string>
     <string name="settings_data_restore">Restore</string>
-    <string name="settings_data_backup">Backup</string>
     <!-- Others setting -->
     <string name="setting_title_others">Другие</string>
     <!-- Toast -->

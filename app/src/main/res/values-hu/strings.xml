@@ -156,7 +156,6 @@
     <string name="title_appData">Alkalmazásadatok</string>
     <string name="hint_database">Ezzel törli az aktuális adatokat. Folytatja?</string>
     <string name="settings_data_restore">Restore</string>
-    <string name="settings_data_backup">Backup</string>
     <!-- Others setting -->
     <string name="setting_title_others">Egyebek</string>
     <!-- Toast -->

@@ -1,9 +1,11 @@
 package de.baumann.browser.activity;
 
 import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
+
 import android.view.MenuItem;
 
 import java.util.Objects;
@@ -20,7 +22,7 @@ public class Settings_Backup extends AppCompatActivity {
 
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
         HelperUnit.initTheme(this);
-        setContentView(R.layout.activity_settings);
+        setContentView(R.layout.activity_settings_backup);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);

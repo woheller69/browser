@@ -159,7 +159,7 @@ public class BrowserUnit {
                         File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), filename);
                         FileOutputStream fos = new FileOutputStream(file);
                         fos.write(dataURIParser.getImagedata());
-                    } else BackupUnit.requestPermission(context,activity);;
+                    } else BackupUnit.requestPermission(context,activity);
                 }else {
                     DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
                     CookieManager cookieManager = CookieManager.getInstance();

@@ -10,12 +10,12 @@ import android.os.Environment;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AlertDialog;
-import androidx.preference.Preference;
 import androidx.preference.PreferenceManager;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import android.view.Gravity;
+import android.widget.Button;
 
 import androidx.preference.PreferenceFragmentCompat;
 
@@ -32,7 +32,6 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.nio.channels.FileChannel;
 import java.util.Objects;
-import java.util.Set;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -77,122 +76,74 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat {
 
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
 
-        Preference backup_entries = findPreference("backup_entries");
-        assert backup_entries != null;
-        backup_entries.setOnPreferenceClickListener(preference -> {
-            if (!BackupUnit.checkPermissionStorage(context)) {
-                BackupUnit.requestPermission(context, activity);
-            } else  {
-                MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
-                builder.setMessage(R.string.toast_backup);
-                builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
-                    dialog.cancel();
-
-                    Set<String> selections = sp.getStringSet("backup_entries", null);
-                    assert selections != null;
-                    BackupUnit.makeBackupDir();
-
-                    if (selections.toString().contains("bookmark")) {
-                        BackupUnit.backupData(getActivity(), 4);
-                    }
-                    if (selections.toString().contains("java")) {
-                        BackupUnit.backupData(getActivity(), 1);
-                    }
-                    if (selections.toString().contains("cookie")) {
-                        BackupUnit.backupData(getActivity(), 2);
-                    }
-                    if (selections.toString().contains("dom")) {
-                        BackupUnit.backupData(getActivity(), 3);
-                    }
+        Button ib_backup = activity.findViewById(R.id.ib_backup);
+        ib_backup.setOnClickListener(v -> {
+                    MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
+                    builder.setMessage(R.string.hint_database);
+                    builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
+                        if (!BackupUnit.checkPermissionStorage(context)) {
+                            BackupUnit.requestPermission(context, activity);
+                        } else {
+                            BackupUnit.makeBackupDir();
+                            if (sp.getBoolean("database", false)) {
+                                copyDirectory(previewsFolder_app, previewsFolder_backup);
+                            }
+                            if (sp.getBoolean("settings", false)) {
+                                backupUserPrefs(context);
+                            }
+                            if (sp.getBoolean("bookmark", false)) {
+                                BackupUnit.backupData(getActivity(), 4);
+                            }
+                            if (sp.getBoolean("java", false)) {
+                                BackupUnit.backupData(getActivity(), 1);
+                            }
+                            if (sp.getBoolean("cookie", false)) {
+                                BackupUnit.backupData(getActivity(), 2);
+                            }
+                            if (sp.getBoolean("dom", false)) {
+                                BackupUnit.backupData(getActivity(), 3);
+                            }
+                        }
+                    });
+                    builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
+                    AlertDialog dialog = builder.create();
+                    dialog.show();
+                    Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
                 });
-                builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
-                AlertDialog dialog = builder.create();
-                dialog.show();
-                Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
-            }
-            return false;
-        });
 
-        Preference restore_entries = findPreference("restore_entries");
-        assert restore_entries != null;
-        restore_entries.setOnPreferenceClickListener(preference -> {
-            if (!BackupUnit.checkPermissionStorage(context)) {
-                BackupUnit.requestPermission(context, activity);
-            } else  {
-                MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
-                builder.setMessage(R.string.hint_database);
-                builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
-                    dialog.cancel();
-
-                    Set<String> selections = sp.getStringSet("restore_entries", null);
-                    assert selections != null;
-                    BackupUnit.makeBackupDir();
-
-                    if (selections.toString().contains("bookmark")) {
-                        BackupUnit.restoreData(getActivity(), 4);
-                    }
-                    if (selections.toString().contains("java")) {
-                        BackupUnit.restoreData(getActivity(), 1);
-                    }
-                    if (selections.toString().contains("cookie")) {
-                        BackupUnit.restoreData(getActivity(), 2);
-                    }
-                    if (selections.toString().contains("dom")) {
-                        BackupUnit.restoreData(getActivity(), 3);
-                    }
-                    dialogRestart();
-                });
-                builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
-                AlertDialog dialog = builder.create();
-                dialog.show();
-                Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
-            }
-            return false;
-        });
-
-        Preference data_exDB = findPreference("data_exDB");
-        assert data_exDB != null;
-        data_exDB.setOnPreferenceClickListener(preference -> {
-            if (!BackupUnit.checkPermissionStorage(context)) {
-                BackupUnit.requestPermission(context, activity);
-            } else  {
-                MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
-                builder.setMessage(R.string.toast_backup);
-                builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
-                    dialog.cancel();
-                    BackupUnit.makeBackupDir();
-                    copyDirectory(previewsFolder_app, previewsFolder_backup);
-                    backupUserPrefs(context);
-                });
-                builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());AlertDialog dialog = builder.create();
-                dialog.show();
-                Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
-            }
-            return false;
-        });
-
-        Preference data_imDB = findPreference("data_imDB");
-        assert data_imDB != null;
-        data_imDB.setOnPreferenceClickListener(preference -> {
-            if (!BackupUnit.checkPermissionStorage(context)) {
-                BackupUnit.requestPermission(context, activity);
-            } else  {
-                MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
-                builder.setMessage(R.string.hint_database);
-                builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
-                    dialog.cancel();
-                    if (BackupUnit.checkPermissionStorage(context)) {
+        Button ib_restore = activity.findViewById(R.id.ib_restore);
+        ib_restore.setOnClickListener(v -> {
+            MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
+            builder.setMessage(R.string.toast_backup);
+            builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
+                if (!BackupUnit.checkPermissionStorage(context)) {
+                    BackupUnit.requestPermission(context, activity);
+                } else {
+                    if (sp.getBoolean("database", false)) {
                         copyDirectory(previewsFolder_backup, previewsFolder_app);
+                    }
+                    if (sp.getBoolean("settings", false)) {
                         restoreUserPrefs(context);
                         dialogRestart();
                     }
-                });
-                builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
-                AlertDialog dialog = builder.create();
-                dialog.show();
-                Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
-            }
-            return false;
+                    if (sp.getBoolean("bookmark", false)) {
+                        BackupUnit.restoreData(getActivity(), 4);
+                    }
+                    if (sp.getBoolean("java", false)) {
+                        BackupUnit.restoreData(getActivity(), 1);
+                    }
+                    if (sp.getBoolean("cookie", false)) {
+                        BackupUnit.restoreData(getActivity(), 2);
+                    }
+                    if (sp.getBoolean("dom", false)) {
+                        BackupUnit.restoreData(getActivity(), 3);
+                    }
+                }
+            });
+            builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
+            AlertDialog dialog = builder.create();
+            dialog.show();
+            Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
         });
     }
 

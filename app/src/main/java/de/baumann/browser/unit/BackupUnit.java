@@ -94,11 +94,13 @@ public class BackupUnit {
                     Intent intent = new Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION);
                     intent.addCategory("android.intent.category.DEFAULT");
                     intent.setData(Uri.parse(String.format("package:%s",context.getPackageName())));
-                    openSomeActivityForResult(intent, someActivityResultLauncher);
+                    if (someActivityResultLauncher==null) context.startActivity(intent);
+                    else openSomeActivityForResult(intent, someActivityResultLauncher);
                 } catch (Exception e) {
                     Intent intent = new Intent();
                     intent.setAction(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
-                    openSomeActivityForResult(intent, someActivityResultLauncher);
+                    if (someActivityResultLauncher==null) context.startActivity(intent);
+                    else openSomeActivityForResult(intent, someActivityResultLauncher);
                 }
             } else {
                 //below android 11

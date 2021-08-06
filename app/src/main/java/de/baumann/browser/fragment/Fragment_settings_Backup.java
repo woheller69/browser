@@ -79,7 +79,7 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat {
         Button ib_backup = activity.findViewById(R.id.ib_backup);
         ib_backup.setOnClickListener(v -> {
                     MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
-                    builder.setMessage(R.string.hint_database);
+                    builder.setMessage(R.string.toast_backup);
                     builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
                         if (!BackupUnit.checkPermissionStorage(context)) {
                             BackupUnit.requestPermission(context, activity);
@@ -114,7 +114,7 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat {
         Button ib_restore = activity.findViewById(R.id.ib_restore);
         ib_restore.setOnClickListener(v -> {
             MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
-            builder.setMessage(R.string.toast_backup);
+            builder.setMessage(R.string.hint_database);
             builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
                 if (!BackupUnit.checkPermissionStorage(context)) {
                     BackupUnit.requestPermission(context, activity);
@@ -124,7 +124,6 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat {
                     }
                     if (sp.getBoolean("settings", false)) {
                         restoreUserPrefs(context);
-                        dialogRestart();
                     }
                     if (sp.getBoolean("bookmark", false)) {
                         BackupUnit.restoreData(getActivity(), 4);
@@ -138,6 +137,7 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat {
                     if (sp.getBoolean("dom", false)) {
                         BackupUnit.restoreData(getActivity(), 3);
                     }
+                    dialogRestart();
                 }
             });
             builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());

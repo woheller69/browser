@@ -427,9 +427,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     @Override
     public void updateAutoComplete() {
         RecordAction action = new RecordAction(this);
-
         List<Record> list = action.listEntries(activity);
-
         CompleteAdapter adapter = new CompleteAdapter(this, R.layout.item_icon_left, list);
         omniBox_text.setAdapter(adapter);
         adapter.notifyDataSetChanged();
@@ -598,11 +596,11 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         });
         omniBox_text.setOnFocusChangeListener((v, hasFocus) -> {
             if (omniBox_text.hasFocus()) {
+                updateAutoComplete();
                 String url = ninjaWebView.getUrl();
                 ninjaWebView.stopLoading();
                 omniBox_text.setKeyListener(listener);
-                assert url != null;
-                if (url.contains("about:blank")) {
+                if (url==null || url.contains("about:blank")) {
                     omniBox_text.setText("");
                 } else {
                     omniBox_text.setText(url);
@@ -622,7 +620,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             show_dialogFilter();
             return false;
         });
-        updateAutoComplete();
     }
 
     private void performGesture (String gesture) {
@@ -1884,7 +1881,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                         }
                         action.close();
                         recordList.remove(location);
-                        updateAutoComplete();
                         adapterRecord.notifyDataSetChanged();
                     });
                     builderSubMenu.setNegativeButton(R.string.app_cancel, (dialog2, whichButton) -> builderSubMenu.setCancelable(true));
@@ -1961,7 +1957,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                             newIcon = newIcon + (long) (chip_desktopMode.isChecked() ? 16 : 0) + (long) (chip_javascript.isChecked() ? 0 : 32) + (long) (chip_remoteContent.isChecked() ? 0 : 64);
                             action.addBookmark(new Record(edit_title.getText().toString(), edit_URL.getText().toString(), newIcon, 0, 2));
                             action.close();
-                            updateAutoComplete();
                             bottom_navigation.setSelectedItemId(R.id.page_2);
                         } else {
                             RecordAction action = new RecordAction(context);
@@ -1973,7 +1968,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                             long value = (long) (chip_desktopMode.isChecked() ? 16 : 0) + (long) (chip_javascript.isChecked() ? 0 : 32) + (long) (chip_remoteContent.isChecked() ? 0 : 64);
                             action.addStartSite(new Record(edit_title.getText().toString(), edit_URL.getText().toString(), value, counter, 1));
                             action.close();
-                            updateAutoComplete();
                             bottom_navigation.setSelectedItemId(R.id.page_1);
                         }
                     });

@@ -156,7 +156,6 @@
     <string name="title_appData">App data</string>
     <string name="hint_database">This will delete current data. Proceed?</string>
     <string name="settings_data_restore">Restore</string>
-    <string name="settings_data_backup">Backup</string>
     <!-- Others setting -->
     <string name="setting_title_others">Others</string>
     <!-- Toast -->

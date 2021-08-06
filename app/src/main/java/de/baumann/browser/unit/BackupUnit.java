@@ -84,7 +84,7 @@ public class BackupUnit {
         }
     }
 
-    public static void requestPermission(Context context, Activity activity,ActivityResultLauncher<Intent> someActivityResultLauncher) {
+    public static void requestPermission(Context context, Activity activity) {
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
         builder.setMessage(R.string.toast_permission_sdCard);
         builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
@@ -94,13 +94,11 @@ public class BackupUnit {
                     Intent intent = new Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION);
                     intent.addCategory("android.intent.category.DEFAULT");
                     intent.setData(Uri.parse(String.format("package:%s",context.getPackageName())));
-                    if (someActivityResultLauncher==null) context.startActivity(intent);
-                    else openSomeActivityForResult(intent, someActivityResultLauncher);
+                    context.startActivity(intent);
                 } catch (Exception e) {
                     Intent intent = new Intent();
                     intent.setAction(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
-                    if (someActivityResultLauncher==null) context.startActivity(intent);
-                    else openSomeActivityForResult(intent, someActivityResultLauncher);
+                    context.startActivity(intent);
                 }
             } else {
                 //below android 11
@@ -110,10 +108,6 @@ public class BackupUnit {
         builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());AlertDialog dialog = builder.create();
         dialog.show();
         Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
-    }
-
-    public static void openSomeActivityForResult(Intent intent, ActivityResultLauncher<Intent> someActivityResultLauncher) {
-        someActivityResultLauncher.launch(intent);
     }
 
     public static void makeBackupDir () {

@@ -171,8 +171,10 @@ public class BrowserUnit {
                     DownloadManager manager = (DownloadManager) context.getSystemService(Context.DOWNLOAD_SERVICE);
                     assert manager != null;
                     Activity activity = (Activity) context;
-                    if (HelperUnit.hasPermissionStorage(activity)) {
+                    if (BackupUnit.checkPermissionStorage(activity)) {
                         manager.enqueue(request);
+                    }else {
+                        BackupUnit.requestPermission(context,activity);
                     }
                 }
             } catch (Exception e) {

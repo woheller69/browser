@@ -81,7 +81,7 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat {
         assert backup_entries != null;
         backup_entries.setOnPreferenceClickListener(preference -> {
             if (!BackupUnit.checkPermissionStorage(context)) {
-                BackupUnit.requestPermission(context, activity, someActivityResultLauncher);
+                BackupUnit.requestPermission(context, activity);
             } else  {
                 MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
                 builder.setMessage(R.string.toast_backup);
@@ -117,7 +117,7 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat {
         assert restore_entries != null;
         restore_entries.setOnPreferenceClickListener(preference -> {
             if (!BackupUnit.checkPermissionStorage(context)) {
-                BackupUnit.requestPermission(context, activity, someActivityResultLauncher);
+                BackupUnit.requestPermission(context, activity);
             } else  {
                 MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
                 builder.setMessage(R.string.hint_database);
@@ -154,7 +154,7 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat {
         assert data_exDB != null;
         data_exDB.setOnPreferenceClickListener(preference -> {
             if (!BackupUnit.checkPermissionStorage(context)) {
-                BackupUnit.requestPermission(context, activity, someActivityResultLauncher);
+                BackupUnit.requestPermission(context, activity);
             } else  {
                 MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
                 builder.setMessage(R.string.toast_backup);
@@ -175,7 +175,7 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat {
         assert data_imDB != null;
         data_imDB.setOnPreferenceClickListener(preference -> {
             if (!BackupUnit.checkPermissionStorage(context)) {
-                BackupUnit.requestPermission(context, activity, someActivityResultLauncher);
+                BackupUnit.requestPermission(context, activity);
             } else  {
                 MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
                 builder.setMessage(R.string.hint_database);

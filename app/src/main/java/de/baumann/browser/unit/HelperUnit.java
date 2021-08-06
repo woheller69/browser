@@ -69,32 +69,8 @@ import static android.content.Context.DOWNLOAD_SERVICE;
 
 public class HelperUnit {
 
-    private static final int REQUEST_CODE_ASK_PERMISSIONS = 123;
     private static final int REQUEST_CODE_ASK_PERMISSIONS_1 = 1234;
     private static SharedPreferences sp;
-
-    public static boolean hasPermissionStorage (final Activity activity){
-        if (android.os.Build.VERSION.SDK_INT >= 23 ) {
-            int hasWRITE_EXTERNAL_STORAGE = activity.checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
-            if (hasWRITE_EXTERNAL_STORAGE != PackageManager.PERMISSION_GRANTED) {
-               /* if (!activity.shouldShowRequestPermissionRationale(Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
-                    MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(activity);
-                    builder.setMessage(R.string.toast_permission_sdCard);
-                    builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> activity.requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, REQUEST_CODE_ASK_PERMISSIONS));
-                    builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
-                    AlertDialog dialog = builder.create();
-                    dialog.show();
-                    Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
-                }*/
-                activity.requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, REQUEST_CODE_ASK_PERMISSIONS);
-                return false;
-            }else{
-                return true;
-            }
-        } else {
-            return true;
-        }
-    }
 
     public static void grantPermissionsLoc(final Activity activity) {
         if (android.os.Build.VERSION.SDK_INT >= 23) {
@@ -139,7 +115,7 @@ public class HelperUnit {
                 if (title.isEmpty() || extension1.isEmpty() || !extension1.startsWith(".")) {
                     NinjaToast.show(activity, activity.getString(R.string.toast_input_empty));
                 } else {
-                    if (HelperUnit.hasPermissionStorage(activity)) {
+                    if (BackupUnit.checkPermissionStorage(activity)) {
                         Uri source = Uri.parse(url);
                         DownloadManager.Request request = new DownloadManager.Request(source);
                         request.addRequestHeader("Cookie", CookieManager.getInstance().getCookie(url));
@@ -149,6 +125,8 @@ public class HelperUnit {
                         assert dm != null;
                         dm.enqueue(request);
                         dialogToCancel.cancel();
+                    }else {
+                        BackupUnit.requestPermission(activity,activity);
                     }
                 }
             });
@@ -356,7 +334,7 @@ public class HelperUnit {
                     }
                     dialogToCancel.cancel();
                 }else {
-                    BackupUnit.requestPermission(context,activity,null);
+                    BackupUnit.requestPermission(context,activity);
                 }
             }
         });
@@ -365,6 +343,5 @@ public class HelperUnit {
         AlertDialog dialog = builder.create();
         dialog.show();
         Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
-
     }
 }

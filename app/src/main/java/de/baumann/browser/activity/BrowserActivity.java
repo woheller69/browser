@@ -596,7 +596,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         });
         omniBox_text.setOnFocusChangeListener((v, hasFocus) -> {
             if (omniBox_text.hasFocus()) {
-                updateAutoComplete();
                 String url = ninjaWebView.getUrl();
                 ninjaWebView.stopLoading();
                 omniBox_text.setKeyListener(listener);
@@ -605,6 +604,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 } else {
                     omniBox_text.setText(url);
                 }
+                updateAutoComplete();
                 omniBox_text.selectAll();
             } else {
                 omniBox_text.setKeyListener(null);

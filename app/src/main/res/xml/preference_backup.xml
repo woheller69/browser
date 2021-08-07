@@ -2,8 +2,6 @@
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <Preference android:summary="@string/data_summary" />
-
     <CheckBoxPreference
         android:key="database"
         android:defaultValue="false"
@@ -33,5 +31,7 @@
         android:key="dom"
         android:defaultValue="false"
         android:title="@string/setting_title_dom"/>
+
+    <Preference android:summary="@string/data_summary" />
 
 </PreferenceScreen>

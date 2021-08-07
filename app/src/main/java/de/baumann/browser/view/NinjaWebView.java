@@ -147,32 +147,6 @@ public class NinjaWebView extends WebView implements AlbumController {
         webSettings.setGeolocationEnabled(sp.getBoolean("sp_location", false));
         webSettings.setMediaPlaybackRequiresUserGesture(sp.getBoolean("sp_savedata",true));
 
-        CookieManager manager = CookieManager.getInstance();
-        if (cookieHosts.isWhite(url) || sp.getBoolean("sp_cookies", true)) {
-            manager.setAcceptCookie(true);
-            manager.getCookie(url);
-        } else {
-            manager.setAcceptCookie(false);
-        }
-
-        String  domain="";
-        try {
-            domain = new URI(url).getHost();
-        } catch (URISyntaxException e) {
-            //do not change setting if staying within same domain
-            setJavaScript(javaHosts.isWhite(url) || sp.getBoolean("sp_javascript", true));
-            setDomStorage(DOMHosts.isWhite(url) || sp.getBoolean("sp_remote", true));
-            e.printStackTrace();
-        }
-
-        if (oldDomain != null) {
-            //do not change setting if staying within same domain
-            if (!oldDomain.equals(domain)){
-                setJavaScript(javaHosts.isWhite(url) || sp.getBoolean("sp_javascript", true));
-                setDomStorage(DOMHosts.isWhite(url) || sp.getBoolean("sp_remote", true));
-            }
-        }
-
         if (sp.getBoolean("sp_autofill", true)) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 this.setImportantForAutofill(View.IMPORTANT_FOR_AUTOFILL_YES);
@@ -186,7 +160,33 @@ public class NinjaWebView extends WebView implements AlbumController {
                 webSettings.setSaveFormData(false);
             }
         }
-        oldDomain=domain;
+
+        if (url != null) {
+            CookieManager manager = CookieManager.getInstance();
+            if (cookieHosts.isWhite(url) || sp.getBoolean("sp_cookies", true)) {
+                manager.setAcceptCookie(true);
+                manager.getCookie(url);
+            } else {
+                manager.setAcceptCookie(false);
+            }
+            String  domain="";
+            try {
+                domain = new URI(url).getHost();
+            } catch (URISyntaxException e) {
+                //do not change setting if staying within same domain
+                setJavaScript(javaHosts.isWhite(url) || sp.getBoolean("sp_javascript", true));
+                setDomStorage(DOMHosts.isWhite(url) || sp.getBoolean("sp_remote", true));
+                e.printStackTrace();
+            }
+            if (oldDomain != null) {
+                //do not change setting if staying within same domain
+                if (!oldDomain.equals(domain)){
+                    setJavaScript(javaHosts.isWhite(url) || sp.getBoolean("sp_javascript", true));
+                    setDomStorage(DOMHosts.isWhite(url) || sp.getBoolean("sp_remote", true));
+                }
+            }
+            oldDomain=domain;
+        }
     }
 
     public void setOldDomain(String url){

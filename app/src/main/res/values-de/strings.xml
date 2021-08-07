@@ -156,7 +156,6 @@
     <string name="title_appData">App-Daten</string>
     <string name="hint_database">Aktuelle Daten werden gelöscht. Fortfahren?</string>
     <string name="settings_data_restore">Restore</string>
-    <string name="settings_data_backup">Backup</string>
     <!-- Others setting -->
     <string name="setting_title_others">Sonstiges</string>
     <!-- Toast -->

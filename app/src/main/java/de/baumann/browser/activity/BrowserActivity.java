@@ -584,10 +584,26 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             public void onSwipeLeft() { performGesture("setting_gesture_nav_left"); }
         });
         omniBox_text.setOnTouchListener(new SwipeTouchListener(context) {
-            public void onSwipeTop() { performGesture("setting_gesture_tb_up"); }
-            public void onSwipeBottom() { performGesture("setting_gesture_tb_down"); }
-            public void onSwipeRight() { performGesture("setting_gesture_tb_right"); }
-            public void onSwipeLeft() { performGesture("setting_gesture_tb_left"); }
+            public void onSwipeTop() {
+                if (!omniBox_text.hasFocus()) {
+                    performGesture("setting_gesture_tb_up");
+                }
+            }
+            public void onSwipeBottom() {
+                if (!omniBox_text.hasFocus()) {
+                    performGesture("setting_gesture_tb_down");
+                }
+            }
+            public void onSwipeRight() {
+                if (!omniBox_text.hasFocus()) {
+                    performGesture("setting_gesture_tb_right");
+                }
+            }
+            public void onSwipeLeft() {
+                if (!omniBox_text.hasFocus()) {
+                    performGesture("setting_gesture_tb_left");
+                }
+            }
         });
         omniBox_text.setOnEditorActionListener((v, actionId, event) -> {
             String query = omniBox_text.getText().toString().trim();

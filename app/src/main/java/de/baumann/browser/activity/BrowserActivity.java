@@ -1482,7 +1482,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 case 4:
                     if (url.startsWith("data:")) {
                         DataURIParser dataURIParser= new DataURIParser(url);
-                        HelperUnit.saveDataURI(dialog, context, activity, dataURIParser);
+                        HelperUnit.saveDataURI(dialog, activity, dataURIParser);
                     } else HelperUnit.saveAs(dialog, activity, url);
                     break;
                 case 5:

@@ -126,7 +126,7 @@ public class HelperUnit {
                         dm.enqueue(request);
                         dialogToCancel.cancel();
                     }else {
-                        BackupUnit.requestPermission(activity,activity);
+                        BackupUnit.requestPermission(activity);
                     }
                 }
             });
@@ -295,7 +295,7 @@ public class HelperUnit {
         }
     }
 
-    public static void saveDataURI(AlertDialog dialogToCancel,Context context, Activity activity, DataURIParser dataUriParser) {
+    public static void saveDataURI(AlertDialog dialogToCancel, Activity activity, DataURIParser dataUriParser) {
 
         byte[] imagedata = dataUriParser.getImagedata();
         String filename=dataUriParser.getFilename();
@@ -334,7 +334,7 @@ public class HelperUnit {
                     }
                     dialogToCancel.cancel();
                 }else {
-                    BackupUnit.requestPermission(context,activity);
+                    BackupUnit.requestPermission(activity);
                 }
             }
         });

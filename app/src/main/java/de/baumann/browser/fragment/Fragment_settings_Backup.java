@@ -82,7 +82,7 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat {
                     builder.setMessage(R.string.toast_backup);
                     builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
                         if (!BackupUnit.checkPermissionStorage(context)) {
-                            BackupUnit.requestPermission(context, activity);
+                            BackupUnit.requestPermission(activity);
                         } else {
                             BackupUnit.makeBackupDir();
                             if (sp.getBoolean("database", false)) {
@@ -117,7 +117,7 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat {
             builder.setMessage(R.string.hint_database);
             builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
                 if (!BackupUnit.checkPermissionStorage(context)) {
-                    BackupUnit.requestPermission(context, activity);
+                    BackupUnit.requestPermission(activity);
                 } else {
                     if (sp.getBoolean("database", false)) {
                         copyDirectory(previewsFolder_backup, previewsFolder_app);

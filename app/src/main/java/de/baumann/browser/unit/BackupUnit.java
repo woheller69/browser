@@ -84,8 +84,8 @@ public class BackupUnit {
         }
     }
 
-    public static void requestPermission(Context context, Activity activity) {
-        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
+    public static void requestPermission(Activity activity) {
+        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(activity);
         builder.setMessage(R.string.toast_permission_sdCard);
         builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
             dialog.cancel();
@@ -93,12 +93,12 @@ public class BackupUnit {
                 try {
                     Intent intent = new Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION);
                     intent.addCategory("android.intent.category.DEFAULT");
-                    intent.setData(Uri.parse(String.format("package:%s",context.getPackageName())));
-                    context.startActivity(intent);
+                    intent.setData(Uri.parse(String.format("package:%s",activity.getPackageName())));
+                    activity.startActivity(intent);
                 } catch (Exception e) {
                     Intent intent = new Intent();
                     intent.setAction(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
-                    context.startActivity(intent);
+                    activity.startActivity(intent);
                 }
             } else {
                 //below android 11

@@ -142,6 +142,7 @@
     <string name="setting_filter">Bookmark filter</string>
 
     <string name="setting_title_fav">Favorite</string>
+    <string name="setting_title_reload">Swipe down to reload</string>
 
     <string name="setting_title_searchEngine">Custom search engine</string>
 

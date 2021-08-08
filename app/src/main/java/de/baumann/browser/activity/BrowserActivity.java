@@ -1004,10 +1004,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             dialog.cancel();
         });
 
-
-
         Chip chip_fingerpint_tab = dialogView.findViewById(R.id.chip_fingerpint_tab);
-
         chip_fingerpint_tab.setChecked(ninjaWebView.isFingerPrintProtection());
         chip_fingerpint_tab.setOnClickListener(v -> {
             ninjaWebView.toggleAllowFingerprint(true);
@@ -1178,6 +1175,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         });
     }
 
+
     @SuppressLint("ClickableViewAccessibility")
     private synchronized void addAlbum(String title, final String url, final boolean foreground) {
         ninjaWebView = new NinjaWebView(context);
@@ -1185,21 +1183,29 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         ninjaWebView.setAlbumTitle(title);
         activity.registerForContextMenu(ninjaWebView);
 
-        ninjaWebView.setOnTouchListener((new SwipeTouchListener(context) {
+        SwipeTouchListener swipeTouchListener;
+        swipeTouchListener = new SwipeTouchListener(context) {
             public void onSwipeBottom() {
-                if (ninjaWebView.getScrollY() == 0) {
-                    ninjaWebView.reload();
+                if (!ninjaWebView.canScrollHorizontally(0)) {
+                    if (sp.getBoolean("sp_swipeToReload", true)) {
+                        ninjaWebView.reload();
+                    }
                     ObjectAnimator animation = ObjectAnimator.ofFloat(bottomAppBar, "translationY", 0);
                     animation.setDuration(getResources().getInteger(android.R.integer.config_shortAnimTime));
                     animation.start();
                 }
+
             }
             public void onSwipeTop(){
-                ObjectAnimator animation = ObjectAnimator.ofFloat(bottomAppBar, "translationY", bottomAppBar.getHeight());
-                animation.setDuration(getResources().getInteger(android.R.integer.config_shortAnimTime));
-                animation.start();
+                if (!ninjaWebView.canScrollHorizontally(0)) {
+                    ObjectAnimator animation = ObjectAnimator.ofFloat(bottomAppBar, "translationY", bottomAppBar.getHeight());
+                    animation.setDuration(getResources().getInteger(android.R.integer.config_shortAnimTime));
+                    animation.start();
+                }
             }
-        }));
+        };
+
+        ninjaWebView.setOnTouchListener(swipeTouchListener);
 
         ninjaWebView.setOnScrollChangeListener((scrollY, oldScrollY) -> {
             if (!searchOnSite) {
@@ -1215,21 +1221,9 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     }
                 }
             }
-            if (!ninjaWebView.canScrollVertically(0)) {ninjaWebView.setOnTouchListener((new SwipeTouchListener(context) {
-                    public void onSwipeBottom() {
-                        if (ninjaWebView.getScrollY() == 0) {
-                            ninjaWebView.reload();
-                            ObjectAnimator animation = ObjectAnimator.ofFloat(bottomAppBar, "translationY", 0);
-                            animation.setDuration(getResources().getInteger(android.R.integer.config_shortAnimTime));
-                            animation.start();
-                        }
-                    }
-                    public void onSwipeTop(){
-                        ObjectAnimator animation = ObjectAnimator.ofFloat(bottomAppBar, "translationY", bottomAppBar.getHeight());
-                        animation.setDuration(getResources().getInteger(android.R.integer.config_shortAnimTime));
-                        animation.start();
-                    }
-                }));} else {
+            if (scrollY==0) {
+                ninjaWebView.setOnTouchListener(swipeTouchListener);
+            } else {
                 ninjaWebView.setOnTouchListener(null);
             }
         });

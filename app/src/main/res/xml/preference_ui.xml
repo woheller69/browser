@@ -26,6 +26,11 @@
             android:title="@string/setting_title_confirm_exit"/>
 
         <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="sp_swipeToReload"
+            android:title="@string/setting_title_reload"/>
+
+        <CheckBoxPreference
             android:defaultValue="false"
             android:key="sp_close_tab_confirm"
             android:title="@string/setting_title_confirm_tab_close"/>

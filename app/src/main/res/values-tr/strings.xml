@@ -112,6 +112,7 @@
     <string name="setting_title_data">Yedekleme</string>
     <string name="setting_filter">Yer imi süzgeci</string>
     <string name="setting_title_fav">Başlangıç sitesi</string>
+    <string name="setting_title_reload">Swipe down to reload</string>
     <string name="setting_title_searchEngine">Özel arama motoru</string>
     <string name="setting_title_userAgent">Özel kullanıcı aracısı</string>
     <string name="setting_enter_userAgent">User-Agent giriniz</string>

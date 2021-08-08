@@ -112,6 +112,7 @@
     <string name="setting_title_data">Záloha</string>
     <string name="setting_filter">Filtr záložek</string>
     <string name="setting_title_fav">Oblíbené</string>
+    <string name="setting_title_reload">Swipe down to reload</string>
     <string name="setting_title_searchEngine">Vlastní vyhledávač</string>
     <string name="setting_title_userAgent">Vlastní uživatelský agent</string>
     <string name="setting_enter_userAgent">Vlastní uživatelský agent</string>

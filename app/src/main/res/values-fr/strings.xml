@@ -112,6 +112,7 @@
     <string name="setting_title_data">Sauvegarde</string>
     <string name="setting_filter">Filtre de signet</string>
     <string name="setting_title_fav">Favoris</string>
+    <string name="setting_title_reload">Swipe down to reload</string>
     <string name="setting_title_searchEngine">Moteur de recherche personnalisé</string>
     <string name="setting_title_userAgent">Agent utilisateur personnalisé</string>
     <string name="setting_enter_userAgent">Saisir l\'User-Agent</string>

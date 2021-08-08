@@ -112,6 +112,7 @@
     <string name="setting_title_data">Αντίγραφα ασφαλείας</string>
     <string name="setting_filter">Φίλτρο σελιδοδεικτών</string>
     <string name="setting_title_fav">Αγαπημένο</string>
+    <string name="setting_title_reload">Swipe down to reload</string>
     <string name="setting_title_searchEngine">Προσαρμοσμένη μηχανή αναζήτησης</string>
     <string name="setting_title_userAgent">Προσαρμοσμένος user agent</string>
     <string name="setting_enter_userAgent">Προσαρμοσμένος user agent</string>

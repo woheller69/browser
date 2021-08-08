@@ -112,6 +112,7 @@
     <string name="setting_title_data">Резервное копирование</string>
     <string name="setting_filter">Фильтр закладок</string>
     <string name="setting_title_fav">Главная</string>
+    <string name="setting_title_reload">Swipe down to reload</string>
     <string name="setting_title_searchEngine">Пользовательская поисковая система</string>
     <string name="setting_title_userAgent">Произвольный юзер-агент</string>
     <string name="setting_enter_userAgent">Введите агент пользователя</string>

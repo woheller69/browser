@@ -112,6 +112,7 @@
     <string name="setting_title_data">Back-up</string>
     <string name="setting_filter">Bladwijzer filter</string>
     <string name="setting_title_fav">Favoriete</string>
+    <string name="setting_title_reload">Swipe down to reload</string>
     <string name="setting_title_searchEngine">Aangepaste zoekmachine</string>
     <string name="setting_title_userAgent">Aangepaste user agent</string>
     <string name="setting_enter_userAgent">Enter user agent</string>

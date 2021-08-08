@@ -112,6 +112,7 @@
     <string name="setting_title_data">Sicherung</string>
     <string name="setting_filter">Lesezeichen-Filter</string>
     <string name="setting_title_fav">Startseite</string>
+    <string name="setting_title_reload">Swipe down to reload</string>
     <string name="setting_title_searchEngine">Nutzerdefinierte Suchmaschine</string>
     <string name="setting_title_userAgent">Eigener Useragent</string>
     <string name="setting_enter_userAgent">Setze User-Agent</string>

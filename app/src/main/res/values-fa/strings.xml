@@ -118,6 +118,7 @@
     <string name="setting_title_data">پشتیبان گیری</string>
     <string name="setting_filter">فیلتر نشانک ها</string>
     <string name="setting_title_fav">صفحه موردعلاقه</string>
+    <string name="setting_title_reload">Swipe down to reload</string>
     <string name="setting_title_searchEngine">موتور جستجوی سفارشی</string>
     <string name="setting_title_userAgent">سفارشی سازی user-agent مرورگر </string>
     <string name="setting_enter_userAgent">نماینده کاربری را وارد کنید</string>

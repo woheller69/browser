@@ -112,6 +112,7 @@
     <string name="setting_title_data">Backup</string>
     <string name="setting_filter">Filtro dei segnalibri</string>
     <string name="setting_title_fav">Preferito</string>
+    <string name="setting_title_reload">Swipe down to reload</string>
     <string name="setting_title_searchEngine">Motore di ricerca personalizzato</string>
     <string name="setting_title_userAgent">Agente utente personalizzato</string>
     <string name="setting_enter_userAgent">Inserisci User-Agent</string>

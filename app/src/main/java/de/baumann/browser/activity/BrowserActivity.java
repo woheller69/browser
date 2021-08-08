@@ -1185,6 +1185,22 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         ninjaWebView.setAlbumTitle(title);
         activity.registerForContextMenu(ninjaWebView);
 
+        ninjaWebView.setOnTouchListener((new SwipeTouchListener(context) {
+            public void onSwipeBottom() {
+                if (ninjaWebView.getScrollY() == 0) {
+                    ninjaWebView.reload();
+                    ObjectAnimator animation = ObjectAnimator.ofFloat(bottomAppBar, "translationY", 0);
+                    animation.setDuration(getResources().getInteger(android.R.integer.config_shortAnimTime));
+                    animation.start();
+                }
+            }
+            public void onSwipeTop(){
+                ObjectAnimator animation = ObjectAnimator.ofFloat(bottomAppBar, "translationY", bottomAppBar.getHeight());
+                animation.setDuration(getResources().getInteger(android.R.integer.config_shortAnimTime));
+                animation.start();
+            }
+        }));
+
         ninjaWebView.setOnScrollChangeListener((scrollY, oldScrollY) -> {
             if (!searchOnSite) {
                 if (sp.getBoolean("hideToolbar", true)) {
@@ -1199,7 +1215,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     }
                 }
             }
-            if (scrollY==0) {ninjaWebView.setOnTouchListener((new SwipeTouchListener(context) {
+            if (!ninjaWebView.canScrollVertically(0)) {ninjaWebView.setOnTouchListener((new SwipeTouchListener(context) {
                     public void onSwipeBottom() {
                         if (ninjaWebView.getScrollY() == 0) {
                             ninjaWebView.reload();
@@ -1297,28 +1313,17 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         String url = ninjaWebView.getUrl();
         if (url != null) {
-
             if (cookieHosts.isWhite(url) || sp.getBoolean("sp_cookies", true)) {
                 manager.setAcceptCookie(true);
                 manager.getCookie(url);
             } else {
                 manager.setAcceptCookie(false);
             }
-
             if (Objects.requireNonNull(ninjaWebView.getTitle()).isEmpty()) {
                 omniBox_text.setText(url);
             } else {
                 omniBox_text.setText(ninjaWebView.getTitle());
             }
-
-            if (sp.getBoolean("hideToolbar", true)) {
-                if (ninjaWebView.canScrollVertically(1) || ninjaWebView.canScrollVertically(-1)) {
-                    contentFrame.setPadding(0,0,0,0);
-                } else {
-                    contentFrame.setPadding(0,0,0,bottomAppBar.getHeight());
-                }
-            }
-
             if (url.startsWith("https://")) {
                 omniBox_tab.setImageResource(R.drawable.icon_menu_light);
                 omniBox_tab.setOnClickListener(v -> showTabView());

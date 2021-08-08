@@ -112,6 +112,7 @@
     <string name="setting_title_data">バックアップ</string>
     <string name="setting_filter">ブックマークフィルター</string>
     <string name="setting_title_fav">スタートページ</string>
+    <string name="setting_title_reload">Swipe down to reload</string>
     <string name="setting_title_searchEngine">カスタム検索エンジン</string>
     <string name="setting_title_userAgent">カスタムユーザーエージェント</string>
     <string name="setting_enter_userAgent">ユーザーエージェントを入力</string>

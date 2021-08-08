@@ -112,6 +112,7 @@
     <string name="setting_title_data">Kopia zapasowa</string>
     <string name="setting_filter">Filtr zakładek</string>
     <string name="setting_title_fav">Ulubione</string>
+    <string name="setting_title_reload">Swipe down to reload</string>
     <string name="setting_title_searchEngine">Własna wyszukiwarka</string>
     <string name="setting_title_userAgent">Niestandardowy agent użytkownika</string>
     <string name="setting_enter_userAgent">Wprowadź agenta użytkownika</string>

@@ -2,9 +2,13 @@
 
 - fix: chip desktop, javascript, DOM should not be visible in settings when editing filter names (thanks to @woheller69)
 - fix: Sometimes Favicon is stored several times in database (thanks to @woheller69)
+- fix: permission problems
+- fix: download problems
+- new: edit startSite and history items
 - new: Privacy Enhancement #602 (thanks to @woheller69)
 - new: choose preferred theme
 - updated: Edit filter names (thanks to @woheller69)
+- updated: backup preference
 
 
 ### v 8.1

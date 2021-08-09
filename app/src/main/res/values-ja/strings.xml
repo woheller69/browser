@@ -98,7 +98,7 @@
     <string name="setting_title_autofill">フォームの入力履歴</string>
     <string name="setting_summary_autofill">フォームのデータの保存 (Android 7 以下) または自動入力サービス (Android 8 以上) を有効にします。</string>
     <!-- browser clear -->
-    <string name="data_summary">すべてのファイルは、SDカードの「Documents / browser_backup /」ディレクトリにエクスポートされます。</string>
+    <string name="data_summary">全てのファイルは SD カードの「Documents/browser_backup/」ディレクトリにエクスポートされます。</string>
     <string name="clear_title_quit">アプリ終了時に消去</string>
     <string name="clear_title_cache">キャッシュを削除</string>
     <string name="clear_title_cookie">クッキーを消去</string>
@@ -112,7 +112,7 @@
     <string name="setting_title_data">バックアップ</string>
     <string name="setting_filter">ブックマークフィルター</string>
     <string name="setting_title_fav">スタートページ</string>
-    <string name="setting_title_reload">Swipe down to reload</string>
+    <string name="setting_title_reload">下にスワイプして再読み込み</string>
     <string name="setting_title_searchEngine">カスタム検索エンジン</string>
     <string name="setting_title_userAgent">カスタムユーザーエージェント</string>
     <string name="setting_enter_userAgent">ユーザーエージェントを入力</string>

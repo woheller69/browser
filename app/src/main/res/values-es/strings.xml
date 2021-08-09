@@ -112,7 +112,7 @@
     <string name="setting_title_data">Respaldos</string>
     <string name="setting_filter">Filtro de marcadores</string>
     <string name="setting_title_fav">Favorito</string>
-    <string name="setting_title_reload">Swipe down to reload</string>
+    <string name="setting_title_reload">Deslice hacia abajo para refrescar</string>
     <string name="setting_title_searchEngine">Motor de búsqueda personalizado</string>
     <string name="setting_title_userAgent">Agente de usuario personalizado</string>
     <string name="setting_enter_userAgent">Introducir usuario-agente</string>

@@ -112,7 +112,7 @@
     <string name="setting_title_data">Αντίγραφα ασφαλείας</string>
     <string name="setting_filter">Φίλτρο σελιδοδεικτών</string>
     <string name="setting_title_fav">Αγαπημένο</string>
-    <string name="setting_title_reload">Swipe down to reload</string>
+    <string name="setting_title_reload">Σύρετε προς τα κάτω για επαναφόρτωση</string>
     <string name="setting_title_searchEngine">Προσαρμοσμένη μηχανή αναζήτησης</string>
     <string name="setting_title_userAgent">Προσαρμοσμένος user agent</string>
     <string name="setting_enter_userAgent">Προσαρμοσμένος user agent</string>
@@ -156,7 +156,7 @@
     <string name="setting_summary_export_appData">Εξαγωγή ολόκληρης της βάσης δεδομένων και των προσωπικών σας ρυθμίσεων.</string>
     <string name="title_appData">Δεδομένα εφαρμογής</string>
     <string name="hint_database">Αυτό θα διαγράψει τα τρέχοντα δεδομένα. Συνέχεια;</string>
-    <string name="settings_data_restore">Restore</string>
+    <string name="settings_data_restore">Επαναφορά</string>
     <!-- Others setting -->
     <string name="setting_title_others">Άλλα</string>
     <!-- Toast -->

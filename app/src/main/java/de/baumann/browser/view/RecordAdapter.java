@@ -55,7 +55,7 @@ public class RecordAdapter extends ArrayAdapter<Record> {
         }
 
         Record record = list.get(position);
-        long filter = record.getTime()&15;
+        long filter = record.getIconColor();
         SimpleDateFormat sdf = new SimpleDateFormat("MMM dd", Locale.getDefault());
         holder.title.setText(record.getTitle());
         holder.time.setText(sdf.format(record.getTime()));

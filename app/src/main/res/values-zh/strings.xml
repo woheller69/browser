@@ -112,7 +112,7 @@
     <string name="setting_title_data">备份</string>
     <string name="setting_filter">书签过滤器</string>
     <string name="setting_title_fav">起始页设置</string>
-    <string name="setting_title_reload">Swipe down to reload</string>
+    <string name="setting_title_reload">向下滑动重新加载</string>
     <string name="setting_title_searchEngine">自定义搜索引擎</string>
     <string name="setting_title_userAgent">自定义User Agent</string>
     <string name="setting_enter_userAgent">输入用户-代理</string>
@@ -156,7 +156,7 @@
     <string name="setting_summary_export_appData">导出整个数据库和您的个人设置。</string>
     <string name="title_appData">应用数据</string>
     <string name="hint_database">这将删除当前数据。是否继续？</string>
-    <string name="settings_data_restore">Restore</string>
+    <string name="settings_data_restore">还原</string>
     <!-- Others setting -->
     <string name="setting_title_others">其它</string>
     <!-- Toast -->

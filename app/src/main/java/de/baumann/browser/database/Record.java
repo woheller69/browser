@@ -2,7 +2,24 @@ package de.baumann.browser.database;
 
 public class Record {
 
+    private  Boolean isJavascript;
+    private Boolean isDesktopMode;
+    private Boolean isDomStorage;
+    private long iconColor;
     private String title;
+
+    public long getIconColor() { return iconColor; }
+    public void setIconColor(long iconColor) {this.iconColor = iconColor; }
+
+    public Boolean getDesktopMode() {return isDesktopMode; }
+    public void setDesktopMode(Boolean desktopMode) {isDesktopMode = desktopMode; }
+
+    public Boolean getDomStorage() {return isDomStorage; }
+    public void setDomStorage(Boolean domStorage) {isDomStorage = domStorage; }
+
+    public Boolean getJavascript() {return isJavascript; }
+    public void setJavascript(Boolean javascript) {isJavascript = javascript; }
+
     public String getTitle() {
         return title;
     }
@@ -42,14 +59,22 @@ public class Record {
         this.url = null;
         this.time = 0L;
         this.ordinal = -1;
-        this.type=-1;
+        this.type = -1;
+        this.isDesktopMode = null;
+        this.isJavascript = null;
+        this.isDomStorage = null;
+        this.iconColor = 0L;
     }
 
-    public Record(String title, String url, long time, int ordinal, int type) {
+    public Record(String title, String url, long time, int ordinal, int type, Boolean DesktopMode, Boolean Javascript, Boolean DomStorage, long iconColor) {
         this.title = title;
         this.url = url;
         this.time = time;
         this.ordinal = ordinal;
-        this.type=type;
+        this.type = type;
+        this.isDesktopMode = DesktopMode;
+        this.isJavascript = Javascript;
+        this.isDomStorage = DomStorage;
+        this.iconColor = iconColor;
     }
 }

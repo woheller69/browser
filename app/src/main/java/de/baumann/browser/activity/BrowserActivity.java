@@ -436,11 +436,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             String url = ((TextView) view.findViewById(R.id.record_item_time)).getText().toString();
             for (Record record:list){
                 if (record.getURL().equals(url)){
-                    long time = record.getTime();
-                    if ((record.getType()==2)||(record.getType()==1) ) {
-                        if (((time&16) ==16) != ninjaWebView.isDesktopMode()) ninjaWebView.toggleDesktopMode(false);
-                        ninjaWebView.setJavaScript(!((time&32) ==32));
-                        ninjaWebView.setDomStorage(!((time&64) ==64));
+                    if ((record.getType()==RecordAction.BOOKMARK_ITEM)||(record.getType()==RecordAction.STARTSITE_ITEM) ) {
+                        if (record.getDesktopMode() != ninjaWebView.isDesktopMode()) ninjaWebView.toggleDesktopMode(false);
+                        ninjaWebView.setJavaScript(record.getJavascript());
+                        ninjaWebView.setDomStorage(record.getDomStorage());
                         ninjaWebView.setOldDomain(url);
                         break;
                     }
@@ -743,16 +742,16 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 adapter.notifyDataSetChanged();
 
                 listView.setOnItemClickListener((parent, view, position, id) -> {
-                    if (((list.get(position).getTime()&16) ==16) != ninjaWebView.isDesktopMode()) ninjaWebView.toggleDesktopMode(false);
-                    ninjaWebView.setJavaScript(!((list.get(position).getTime()&32) ==32));
-                    ninjaWebView.setDomStorage(!((list.get(position).getTime()&64) ==64));
+                    if ((list.get(position).getDesktopMode()) != ninjaWebView.isDesktopMode()) ninjaWebView.toggleDesktopMode(false);
+                    ninjaWebView.setJavaScript(list.get(position).getJavascript());
+                    ninjaWebView.setDomStorage(list.get(position).getDomStorage());
                     ninjaWebView.setOldDomain(list.get(position).getURL());
                     ninjaWebView.loadUrl(list.get(position).getURL());
                     hideOverview();
                 });
 
                 listView.setOnItemLongClickListener((parent, view, position, id) -> {
-                    showContextMenuList(list.get(position).getTitle(), list.get(position).getURL(), adapter, list, position, list.get(position).getTime());
+                    showContextMenuList(list.get(position).getTitle(), list.get(position).getURL(), adapter, list, position);
                     return true;
                 });
             } else if (menuItem.getItemId() == R.id.page_2) {
@@ -780,15 +779,15 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 adapter.notifyDataSetChanged();
                 filter = false;
                 listView.setOnItemClickListener((parent, view, position, id) -> {
-                    if (((list.get(position).getTime()&16) ==16) != ninjaWebView.isDesktopMode()) ninjaWebView.toggleDesktopMode(false);
-                    ninjaWebView.setJavaScript(!((list.get(position).getTime()&32) ==32));
-                    ninjaWebView.setDomStorage(!((list.get(position).getTime()&64) ==64));
+                    if ((list.get(position).getDesktopMode()) != ninjaWebView.isDesktopMode()) ninjaWebView.toggleDesktopMode(false);
+                    ninjaWebView.setJavaScript(list.get(position).getJavascript());
+                    ninjaWebView.setDomStorage(list.get(position).getDomStorage());
                     ninjaWebView.setOldDomain(list.get(position).getURL());
                     ninjaWebView.loadUrl(list.get(position).getURL());
                     hideOverview();
                 });
                 listView.setOnItemLongClickListener((parent, view, position, id) -> {
-                    showContextMenuList(list.get(position).getTitle(), list.get(position).getURL(), adapter, list, position, list.get(position).getTime());
+                    showContextMenuList(list.get(position).getTitle(), list.get(position).getURL(), adapter, list, position);
                     return true;
                 });
             } else if (menuItem.getItemId() == R.id.page_3) {
@@ -820,7 +819,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 });
 
                 listView.setOnItemLongClickListener((parent, view, position, id) -> {
-                    showContextMenuList(list.get(position).getTitle(), list.get(position).getURL(), adapter, list, position,0);
+                    showContextMenuList(list.get(position).getTitle(), list.get(position).getURL(), adapter, list, position);
                     return true;
                 });
             } else if (menuItem.getItemId() == R.id.page_4) {
@@ -1531,14 +1530,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             NinjaToast.show(this, R.string.app_error);
         } else {
 
-            // Bookmark time is used for color, desktop mode, javascript, and DOM content
-            // bit 0..3  color
-            // bit 4: 1 = Desktop Mode
-            // bit 5: 0 = JavaScript (0 due backward compatibility)
-            // bit 6: 0 = DOM Content allowed (0 due to backward compatibility)
-
-            long value= 11 + (long) (ninjaWebView.isDesktopMode()?16:0) + (long) (ninjaWebView.getSettings().getJavaScriptEnabled()?0:32)  + (long) (ninjaWebView.getSettings().getDomStorageEnabled()?0:64);
-            action.addBookmark(new Record(ninjaWebView.getTitle(), ninjaWebView.getUrl(), value, 0,2));
+            long value= 11;  //default red icon
+            action.addBookmark(new Record(ninjaWebView.getTitle(), ninjaWebView.getUrl(), 0,  0,2,ninjaWebView.isDesktopMode(), ninjaWebView.getSettings().getJavaScriptEnabled(),ninjaWebView.getSettings().getDomStorageEnabled(),value));
 
             NinjaToast.show(this, R.string.app_done);
         }
@@ -1831,8 +1824,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     }
 
     private void showContextMenuList (final String title, final String url,
-                                      final RecordAdapter adapterRecord, final List<Record> recordList, final int location,
-                                      final long icon) {
+                                      final RecordAdapter adapterRecord, final List<Record> recordList, final int location) {
 
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
         View dialogView = View.inflate(context, R.layout.dialog_menu, null);
@@ -1954,11 +1946,11 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                         });
                     });
 
-                    chip_desktopMode.setChecked((icon&16)==16);
-                    chip_javascript.setChecked(!((icon&32)==32));
-                    chip_remoteContent.setChecked(!((icon&64)==64));
+                    chip_desktopMode.setChecked(recordList.get(location).getDesktopMode());
+                    chip_javascript.setChecked(recordList.get(location).getJavascript());
+                    chip_remoteContent.setChecked(recordList.get(location).getDomStorage());
 
-                    newIcon = icon&15;
+                    newIcon=recordList.get(location).getIconColor();
 
                     HelperUnit.setFilterIcons(ib_icon, newIcon);
 
@@ -1969,8 +1961,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                             RecordAction action = new RecordAction(context);
                             action.open(true);
                             action.deleteURL(url, RecordUnit.TABLE_BOOKMARK);
-                            newIcon = newIcon + (long) (chip_desktopMode.isChecked() ? 16 : 0) + (long) (chip_javascript.isChecked() ? 0 : 32) + (long) (chip_remoteContent.isChecked() ? 0 : 64);
-                            action.addBookmark(new Record(edit_title.getText().toString(), edit_URL.getText().toString(), newIcon, 0, 2));
+                            action.addBookmark(new Record(edit_title.getText().toString(), edit_URL.getText().toString(), 0, 0, 2, chip_desktopMode.isChecked(),chip_javascript.isChecked(),chip_remoteContent.isChecked(),newIcon));
                             action.close();
                             bottom_navigation.setSelectedItemId(R.id.page_2);
                         } else {
@@ -1980,8 +1971,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                             int counter = sp.getInt("counter", 0);
                             counter = counter + 1;
                             sp.edit().putInt("counter", counter).apply();
-                            long value = (long) (chip_desktopMode.isChecked() ? 16 : 0) + (long) (chip_javascript.isChecked() ? 0 : 32) + (long) (chip_remoteContent.isChecked() ? 0 : 64);
-                            action.addStartSite(new Record(edit_title.getText().toString(), edit_URL.getText().toString(), value, counter, 1));
+                            action.addStartSite(new Record(edit_title.getText().toString(), edit_URL.getText().toString(), 0, counter, 1,chip_desktopMode.isChecked(),chip_javascript.isChecked(),chip_remoteContent.isChecked(),0));
                             action.close();
                             bottom_navigation.setSelectedItemId(R.id.page_1);
                         }
@@ -2008,8 +1998,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             int counter = sp.getInt("counter", 0);
             counter = counter + 1;
             sp.edit().putInt("counter", counter).apply();
-            long value= (long) (ninjaWebView.isDesktopMode()?16:0) + (long) (ninjaWebView.getSettings().getJavaScriptEnabled()?0:32)  + (long) (ninjaWebView.getSettings().getDomStorageEnabled()?0:64);
-            if (action.addStartSite(new Record(title, url, value, counter,1))) {
+            if (action.addStartSite(new Record(title, url, 0, counter,1,ninjaWebView.isDesktopMode(),ninjaWebView.getSettings().getJavaScriptEnabled(),ninjaWebView.getSettings().getDomStorageEnabled(),0))) {
                 NinjaToast.show(this, R.string.app_done);
             } else {
                 NinjaToast.show(this, R.string.app_error);

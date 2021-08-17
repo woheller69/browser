@@ -32,7 +32,6 @@ import android.provider.Settings;
 import android.util.Log;
 import android.view.Gravity;
 
-import androidx.activity.result.ActivityResultLauncher;
 import androidx.appcompat.app.AlertDialog;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -266,7 +265,7 @@ public class BackupUnit {
                 String type = BOOKMARK_TYPE;
                 type = type.replace(BOOKMARK_TITLE, record.getTitle());
                 type = type.replace(BOOKMARK_URL, record.getURL());
-                type = type.replace(BOOKMARK_TIME, String.valueOf(record.getTime()));
+                type = type.replace(BOOKMARK_TIME, String.valueOf(record.getIconColor() + (long) (record.getDesktopMode() ? 16 : 0) + (long) (record.getJavascript() ? 0 : 32) + (long) (record.getDomStorage() ? 0 : 64)));
                 writer.write(type);
                 writer.newLine();
             }
@@ -300,7 +299,11 @@ public class BackupUnit {
                 Record record = new Record();
                 record.setTitle(title);
                 record.setURL(url);
-                record.setTime(date);
+                record.setIconColor(date&15);
+                record.setDesktopMode((date&16)==16);
+                record.setJavascript(!((date&32)==32));
+                record.setDomStorage(!((date&64)==64));
+
                 if (!action.checkUrl(url, RecordUnit.TABLE_BOOKMARK)) {
                     list.add(record);
                 }

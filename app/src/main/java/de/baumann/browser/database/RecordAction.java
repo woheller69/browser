@@ -18,6 +18,10 @@ import java.util.Objects;
 import de.baumann.browser.unit.RecordUnit;
 
 public class RecordAction {
+    public static final int  HISTORY_ITEM = 0;
+    public static final int  STARTSITE_ITEM = 1;
+    public static final int  BOOKMARK_ITEM = 2;
+
     private SQLiteDatabase database;
     private final RecordHelper helper;
 
@@ -38,13 +42,23 @@ public class RecordAction {
                 || record.getTitle().trim().isEmpty()
                 || record.getURL() == null
                 || record.getURL().trim().isEmpty()
+                || record.getDesktopMode() == null
+                || record.getJavascript() == null
+                || record.getDomStorage() == null
+                || record.getTime() < 0L
                 || record.getOrdinal() < 0) {
             return false;
         }
         ContentValues values = new ContentValues();
         values.put(RecordUnit.COLUMN_TITLE, record.getTitle().trim());
         values.put(RecordUnit.COLUMN_URL, record.getURL().trim());
-        values.put(RecordUnit.COLUMN_FILENAME, record.getTime());
+
+        // filename is used for desktop mode, javascript, and DOM content
+        // bit 4: 1 = Desktop Mode
+        // bit 5: 0 = JavaScript (0 due backward compatibility)
+        // bit 6: 0 = DOM Content allowed (0 due to backward compatibility)
+
+        values.put(RecordUnit.COLUMN_FILENAME,  (long) (record.getDesktopMode() ? 16 : 0) + (long) (record.getJavascript() ? 0 : 32) + (long) (record.getDomStorage() ? 0 : 64));
         values.put(RecordUnit.COLUMN_ORDINAL, record.getOrdinal());
         database.insert(RecordUnit.TABLE_GRID, null, values);
         return true;
@@ -76,7 +90,7 @@ public class RecordAction {
         }
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
-            list.add(getRecord(cursor,1));
+            list.add(getRecord(cursor,STARTSITE_ITEM));
             cursor.moveToNext();
         }
         cursor.close();
@@ -94,6 +108,9 @@ public class RecordAction {
                 || record.getTitle().trim().isEmpty()
                 || record.getURL() == null
                 || record.getURL().trim().isEmpty()
+                || record.getDesktopMode() == null
+                || record.getJavascript() == null
+                || record.getDomStorage() == null
                 || record.getTime() < 0L) {
             return;
         }
@@ -101,7 +118,14 @@ public class RecordAction {
         ContentValues values = new ContentValues();
         values.put(RecordUnit.COLUMN_TITLE, record.getTitle().trim());
         values.put(RecordUnit.COLUMN_URL, record.getURL().trim());
-        values.put(RecordUnit.COLUMN_TIME, record.getTime());
+
+        // Bookmark time is used for color, desktop mode, javascript, and DOM content
+        // bit 0..3  icon color
+        // bit 4: 1 = Desktop Mode
+        // bit 5: 0 = JavaScript (0 due backward compatibility)
+        // bit 6: 0 = DOM Content allowed (0 due to backward compatibility)
+
+        values.put(RecordUnit.COLUMN_TIME, record.getIconColor() + (long) (record.getDesktopMode() ? 16 : 0) + (long) (record.getJavascript() ? 0 : 32) + (long) (record.getDomStorage() ? 0 : 64));
         database.insert(RecordUnit.TABLE_BOOKMARK, null, values);
     }
 
@@ -130,11 +154,11 @@ public class RecordAction {
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
             if (filter) {
-                if ((getRecord(cursor,2).getTime()&15) == filterBy) {
-                    list.add(getRecord(cursor,2));
+                if ((getRecord(cursor,BOOKMARK_ITEM).getIconColor()) == filterBy) {
+                    list.add(getRecord(cursor,BOOKMARK_ITEM));
                 }
             } else {
-                list.add(getRecord(cursor,2));
+                list.add(getRecord(cursor,BOOKMARK_ITEM));
             }
             cursor.moveToNext();
         }
@@ -142,7 +166,7 @@ public class RecordAction {
 
         if (sortBy.equals("time")){  //ignore desktop mode, JavaScript, and remote content when sorting colors
             Collections.sort(list, (first, second) -> first.getTitle().compareTo(second.getTitle()));
-            Collections.sort(list,(first, second) -> Long.compare(first.getTime()&15, second.getTime()&15));
+            Collections.sort(list,(first, second) -> Long.compare(first.getIconColor(), second.getIconColor()));
         }
         Collections.reverse(list);
         return list;
@@ -186,7 +210,7 @@ public class RecordAction {
 
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
-            list.add(getRecord(cursor,0));
+            list.add(getRecord(cursor,HISTORY_ITEM));
             cursor.moveToNext();
         }
         cursor.close();
@@ -289,6 +313,19 @@ public class RecordAction {
         record.setURL(cursor.getString(1));
         record.setTime(cursor.getLong(2));
         record.setType(type);
+
+        if ((type==STARTSITE_ITEM)||(type==BOOKMARK_ITEM)){
+            record.setDesktopMode((record.getTime()&16)==16);
+            record.setJavascript(!((record.getTime()&32)==32));
+            record.setDomStorage(!((record.getTime()&64)==64));
+            if (type==BOOKMARK_ITEM){
+                record.setIconColor(record.getTime()&15);
+            }
+            record.setTime(0);  //time is no longer needed after extracting data
+        }
+
+
+
         return record;
     }
 

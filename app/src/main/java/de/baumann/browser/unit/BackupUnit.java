@@ -225,6 +225,19 @@ public class BackupUnit {
             File file = new File(Environment.getExternalStoragePublicDirectory(DIRECTORY_DOCUMENTS), "browser_backup//" + filename);
             RecordAction action = new RecordAction(context);
             action.open(true);
+
+            switch (i) {
+                case 1:
+                    js.clearDomains();
+                    break;
+                case 3:
+                    DOM.clearDomains();
+                    break;
+                default:
+                    cookie.clearDomains();
+                    break;
+            }
+
             BufferedReader reader = new BufferedReader(new FileReader(file));
             String line;
             while ((line = reader.readLine()) != null) {
@@ -279,9 +292,9 @@ public class BackupUnit {
         File file = new File(Environment.getExternalStoragePublicDirectory(DIRECTORY_DOCUMENTS), "browser_backup//export_bookmark_list.html");
         List<Record> list = new ArrayList<>();
         try {
+            BrowserUnit.clearBookmark(context);
             RecordAction action = new RecordAction(context);
             action.open(true);
-
             BufferedReader reader = new BufferedReader(new FileReader(file));
             String line;
             while ((line = reader.readLine()) != null) {

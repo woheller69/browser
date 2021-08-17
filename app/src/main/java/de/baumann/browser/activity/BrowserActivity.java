@@ -1185,10 +1185,12 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         SwipeTouchListener swipeTouchListener;
         swipeTouchListener = new SwipeTouchListener(context) {
             public void onSwipeBottom() {
-                if (!ninjaWebView.canScrollHorizontally(0)) {
-                    if (sp.getBoolean("sp_swipeToReload", true)) {
-                        ninjaWebView.reload();
-                    }
+
+                if (ninjaWebView.getScrollX() == 0 && sp.getBoolean("sp_swipeToReload", true)) {
+                    ninjaWebView.reload();
+                }
+
+                if (!ninjaWebView.canScrollVertically(0)) {
                     ObjectAnimator animation = ObjectAnimator.ofFloat(bottomAppBar, "translationY", 0);
                     animation.setDuration(getResources().getInteger(android.R.integer.config_shortAnimTime));
                     animation.start();

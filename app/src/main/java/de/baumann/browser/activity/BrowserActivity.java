@@ -436,7 +436,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             String url = ((TextView) view.findViewById(R.id.record_item_time)).getText().toString();
             for (Record record:list){
                 if (record.getURL().equals(url)){
-                    if ((record.getType()==RecordAction.BOOKMARK_ITEM)||(record.getType()==RecordAction.STARTSITE_ITEM) ) {
+                    if ((record.getType()==RecordAction.BOOKMARK_ITEM)||(record.getType()==RecordAction.STARTSITE_ITEM)||(record.getType()==RecordAction.HISTORY_ITEM) ) {
                         if (record.getDesktopMode() != ninjaWebView.isDesktopMode()) ninjaWebView.toggleDesktopMode(false);
                         ninjaWebView.setJavaScript(record.getJavascript());
                         ninjaWebView.setDomStorage(record.getDomStorage());
@@ -814,6 +814,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 listView.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
                 listView.setOnItemClickListener((parent, view, position, id) -> {
+                    if ((list.get(position).getDesktopMode()) != ninjaWebView.isDesktopMode()) ninjaWebView.toggleDesktopMode(false);
+                    ninjaWebView.setJavaScript(list.get(position).getJavascript());
+                    ninjaWebView.setDomStorage(list.get(position).getDomStorage());
+                    ninjaWebView.setOldDomain(list.get(position).getURL());
                     ninjaWebView.loadUrl(list.get(position).getURL());
                     hideOverview();
                 });

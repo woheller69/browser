@@ -114,6 +114,9 @@ import static android.content.ContentValues.TAG;
 import static android.webkit.WebView.HitTestResult.IMAGE_TYPE;
 import static android.webkit.WebView.HitTestResult.SRC_ANCHOR_TYPE;
 import static android.webkit.WebView.HitTestResult.SRC_IMAGE_ANCHOR_TYPE;
+import static de.baumann.browser.database.RecordAction.BOOKMARK_ITEM;
+import static de.baumann.browser.database.RecordAction.HISTORY_ITEM;
+import static de.baumann.browser.database.RecordAction.STARTSITE_ITEM;
 
 public class BrowserActivity extends AppCompatActivity implements BrowserController {
 
@@ -437,7 +440,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             String url = ((TextView) view.findViewById(R.id.record_item_time)).getText().toString();
             for (Record record:list){
                 if (record.getURL().equals(url)){
-                    if ((record.getType()==RecordAction.BOOKMARK_ITEM)||(record.getType()==RecordAction.STARTSITE_ITEM)||(record.getType()==RecordAction.HISTORY_ITEM) ) {
+                    if ((record.getType()==RecordAction.BOOKMARK_ITEM)||(record.getType()==RecordAction.STARTSITE_ITEM)||(record.getType()== HISTORY_ITEM) ) {
                         if (record.getDesktopMode() != ninjaWebView.isDesktopMode()) ninjaWebView.toggleDesktopMode(false);
                         ninjaWebView.setJavaScript(record.getJavascript());
                         ninjaWebView.setDomStorage(record.getDomStorage());
@@ -1857,7 +1860,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         final List<GridItem> gridList = new LinkedList<>();
 
-        if (overViewTab.equals(getString(R.string.album_title_bookmarks))) {
+        if (overViewTab.equals(getString(R.string.album_title_bookmarks)) || overViewTab.equals(getString(R.string.album_title_home))) {
             gridList.add(gridList.size(), item_01);
             gridList.add(gridList.size(), item_02);
             gridList.add(gridList.size(), item_03);
@@ -1866,7 +1869,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             gridList.add(gridList.size(), item_01);
             gridList.add(gridList.size(), item_02);
             gridList.add(gridList.size(), item_03);
-            gridList.add(gridList.size(), item_04);
         }
 
         GridView menu_grid = dialogView.findViewById(R.id.menu_grid);
@@ -1974,7 +1976,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                             RecordAction action = new RecordAction(context);
                             action.open(true);
                             action.deleteURL(url, RecordUnit.TABLE_BOOKMARK);
-                            action.addBookmark(new Record(edit_title.getText().toString(), edit_URL.getText().toString(), 0, 0, 2, chip_desktopMode.isChecked(),chip_javascript.isChecked(),chip_remoteContent.isChecked(),newIcon));
+                            action.addBookmark(new Record(edit_title.getText().toString(), edit_URL.getText().toString(), 0, 0, BOOKMARK_ITEM, chip_desktopMode.isChecked(),chip_javascript.isChecked(),chip_remoteContent.isChecked(),newIcon));
                             action.close();
                             bottom_navigation.setSelectedItemId(R.id.page_2);
                         } else {
@@ -1984,7 +1986,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                             int counter = sp.getInt("counter", 0);
                             counter = counter + 1;
                             sp.edit().putInt("counter", counter).apply();
-                            action.addStartSite(new Record(edit_title.getText().toString(), edit_URL.getText().toString(), 0, counter, 1,chip_desktopMode.isChecked(),chip_javascript.isChecked(),chip_remoteContent.isChecked(),0));
+                            action.addStartSite(new Record(edit_title.getText().toString(), edit_URL.getText().toString(), 0, counter, STARTSITE_ITEM,chip_desktopMode.isChecked(),chip_javascript.isChecked(),chip_remoteContent.isChecked(),0));
                             action.close();
                             bottom_navigation.setSelectedItemId(R.id.page_1);
                         }

@@ -189,8 +189,6 @@ public class RecordAction {
         values.put(RecordUnit.COLUMN_TITLE, record.getTitle().trim());
         values.put(RecordUnit.COLUMN_URL, record.getURL().trim());
         values.put(RecordUnit.COLUMN_TIME, record.getTime()+ (long) (record.getDesktopMode() ? 16 : 0) + (long) (record.getJavascript() ? 0 : 32) + (long) (record.getDomStorage() ? 0 : 64));
-        //first delete existing entry for URL to make sure entries get updated if e.g. DesktopMode changes
-        database.delete(RecordUnit.TABLE_HISTORY,RecordUnit.COLUMN_URL + " = ?", new String[]{record.getURL().trim()});
         database.insert(RecordUnit.TABLE_HISTORY, null, values);
     }
 

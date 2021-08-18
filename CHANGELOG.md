@@ -1,3 +1,11 @@
+### v 8.3 (WIP)
+
+- removed: PlayStore support
+- fix: Swipe to reload not working sometimes #654
+- fix: Restoring bookmarks does not work properly #653
+- fix: some force closes #642 #643
+- fix: gestures and text-edit-scrolling collide #633
+
 ### v 8.2
 
 - fix: chip desktop, javascript, DOM should not be visible in settings when editing filter names (thanks to @woheller69)

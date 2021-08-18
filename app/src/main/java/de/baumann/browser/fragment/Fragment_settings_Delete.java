@@ -33,7 +33,7 @@ public class Fragment_settings_Delete extends PreferenceFragmentCompat {
             builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
                 dialog.cancel();
                 activity.deleteDatabase("Ninja4.db");
-                activity.deleteDatabase("favicon.db");
+                activity.deleteDatabase("faviconView.db");
                 sp.edit().putInt("restart_changed", 1).apply();
                 activity.finish();
             });

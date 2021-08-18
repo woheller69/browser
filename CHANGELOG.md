@@ -5,6 +5,7 @@
 - fix: Restoring bookmarks does not work properly #653
 - fix: some force closes #642 #643
 - fix: gestures and text-edit-scrolling collide #633
+- new: save dektopMode, Javascript, domStorage also for history items
 
 ### v 8.2
 

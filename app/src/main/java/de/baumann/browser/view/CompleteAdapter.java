@@ -1,6 +1,7 @@
 package de.baumann.browser.view;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +19,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import de.baumann.browser.database.FaviconHelper;
 import de.baumann.browser.database.Record;
 import de.baumann.browser.R;
 
@@ -115,6 +117,7 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
 
     private static class Holder {
         private ImageView iconView;
+        private ImageView favicon;
         private TextView titleView;
         private TextView urlView;
     }
@@ -181,6 +184,7 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
             holder.titleView.setTextColor(ContextCompat.getColor(context, R.color.color_light));
             holder.urlView = view.findViewById(R.id.record_item_time);
             holder.iconView = view.findViewById(R.id.record_item_icon);
+            holder.favicon=view.findViewById(R.id.record_item_favicon);
             view.setTag(holder);
         } else {
             holder = (Holder) view.getTag();
@@ -197,7 +201,17 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
             holder.iconView.setImageResource(R.drawable.icon_history_light);
         }else if (item.getType()==2) holder.iconView.setImageResource(R.drawable.icon_bookmark_light);  //Item from bookmarks
 
+        FaviconHelper faviconHelper = new FaviconHelper(context);
+        Bitmap bitmap=faviconHelper.getFavicon(item.url);
+
+        if (bitmap != null){
+            holder.favicon.setImageBitmap(bitmap);
+        }else {
+            holder.favicon.setImageResource(R.drawable.icon_missing_image_light);
+        }
+
         holder.iconView.setVisibility(View.VISIBLE);
+        holder.favicon.setVisibility(View.VISIBLE);
 
         return view;
     }

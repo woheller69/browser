@@ -14,6 +14,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Build;
@@ -1183,7 +1184,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     private synchronized void addAlbum(String title, final String url, final boolean foreground) {
         ninjaWebView = new NinjaWebView(context);
         ninjaWebView.setBrowserController(this);
-        ninjaWebView.setAlbumTitle(title);
+        ninjaWebView.setAlbumTitle(title, url);
         activity.registerForContextMenu(ninjaWebView);
 
         SwipeTouchListener swipeTouchListener;
@@ -1445,11 +1446,17 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         TextView menuTitle = dialogView.findViewById(R.id.menuTitle);
         menuTitle.setText(url);
-        ImageButton menu_icon = dialogView.findViewById(R.id.menu_icon);
+        ImageView menu_icon = dialogView.findViewById(R.id.menu_icon);
         menu_icon.setVisibility(View.VISIBLE);
 
         if (type == SRC_ANCHOR_TYPE) {
-            menu_icon.setImageResource(R.drawable.icon_link);
+            FaviconHelper faviconHelper = new FaviconHelper(context);
+            Bitmap bitmap=faviconHelper.getFavicon(url);
+            if (bitmap != null){
+                menu_icon.setImageBitmap(bitmap);
+            }else {
+                menu_icon.setImageResource(R.drawable.icon_link);
+            }
         } else if (type == IMAGE_TYPE) {
             menu_icon.setImageResource(R.drawable.icon_image);
         } else {

@@ -17,6 +17,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.webkit.CookieManager;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.widget.ImageView;
 
 import de.baumann.browser.browser.*;
 import de.baumann.browser.R;
@@ -254,8 +255,17 @@ public class NinjaWebView extends WebView implements AlbumController {
         return album.getAlbumView();
     }
 
-    public void setAlbumTitle(String title) {
+    public void setAlbumTitle(String title, String url) {
         album.setAlbumTitle(title);
+        FaviconHelper faviconHelper = new FaviconHelper(context);
+        Bitmap bitmap=faviconHelper.getFavicon(url);
+        ImageView faviconView = getAlbumView().findViewById(R.id.faviconView);
+        faviconView.setVisibility(VISIBLE);
+        if (bitmap != null){
+            faviconView.setImageBitmap(bitmap);
+        }else {
+            faviconView.setImageResource(R.drawable.icon_missing_image_light);
+        }
     }
 
     @Override
@@ -283,8 +293,17 @@ public class NinjaWebView extends WebView implements AlbumController {
         }
     }
 
-    public synchronized void update(String title) {
+    public synchronized void update(String title, String url) {
         album.setAlbumTitle(title);
+        FaviconHelper faviconHelper = new FaviconHelper(context);
+        Bitmap bitmap=faviconHelper.getFavicon(url);
+        ImageView faviconView = getAlbumView().findViewById(R.id.faviconView);
+        faviconView.setVisibility(VISIBLE);
+        if (bitmap != null){
+            faviconView.setImageBitmap(bitmap);
+        }else {
+            faviconView.setImageResource(R.drawable.icon_missing_image_light);
+        }
     }
 
     @Override
@@ -378,7 +397,7 @@ public class NinjaWebView extends WebView implements AlbumController {
     public void setFavicon(Bitmap favicon) {
         this.favicon = favicon;
 
-        //Save favicon for existing bookmarks or start site entries
+        //Save faviconView for existing bookmarks or start site entries
         FaviconHelper faviconHelper = new FaviconHelper(context);
         RecordAction action = new RecordAction(context);
         action.open(false);

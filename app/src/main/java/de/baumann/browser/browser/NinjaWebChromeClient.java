@@ -32,9 +32,9 @@ public class NinjaWebChromeClient extends WebChromeClient {
         super.onProgressChanged(view, progress);
         ninjaWebView.update(progress);
         if (Objects.requireNonNull(view.getTitle()).isEmpty()) {
-            ninjaWebView.update(view.getUrl());
+            ninjaWebView.update(view.getUrl(), view.getUrl());
         } else {
-            ninjaWebView.update(view.getTitle());
+            ninjaWebView.update(view.getTitle(), view.getUrl());
         }
     }
 

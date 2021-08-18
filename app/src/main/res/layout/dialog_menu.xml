@@ -16,7 +16,7 @@
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/menuTitle"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="?attr/actionBarSize"
             android:layout_toStartOf="@+id/menu_icon"
             android:layout_alignParentStart="true"
             android:layout_marginStart="16dp"
@@ -29,17 +29,16 @@
             android:textAppearance="?attr/textAppearanceBody1"
             android:textStyle="bold" />
 
-        <ImageButton
+        <ImageView
             android:id="@+id/menu_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
             android:layout_alignParentEnd="true"
             android:layout_centerInParent="true"
             android:layout_marginStart="0dp"
             android:layout_marginEnd="16dp"
-            android:background="?attr/actionBarItemBackground"
-            android:clickable="false"
-            android:src="@drawable/icon_refresh"
+            android:contentDescription="@null"
+            android:scaleType="fitCenter"
             android:visibility="gone" />
 
     </RelativeLayout>

@@ -93,7 +93,7 @@ public class RecordAdapter extends ArrayAdapter<Record> {
             holder.favicon.setImageBitmap(bitmap);
             holder.favicon.setVisibility(View.VISIBLE);
         }else {
-            holder.favicon.setImageResource(R.drawable.ic_background_transparent);
+            holder.favicon.setImageResource(R.drawable.icon_missing_image);
             holder.favicon.setVisibility(View.VISIBLE);
         }
 

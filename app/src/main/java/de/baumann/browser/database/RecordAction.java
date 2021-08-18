@@ -183,11 +183,12 @@ public class RecordAction {
                 || record.getTime() < 0L) {
             return;
         }
+        record.setTime(record.getTime()&(~255));    //blank out lower 8bits of time
 
         ContentValues values = new ContentValues();
         values.put(RecordUnit.COLUMN_TITLE, record.getTitle().trim());
         values.put(RecordUnit.COLUMN_URL, record.getURL().trim());
-        values.put(RecordUnit.COLUMN_TIME, record.getTime());
+        values.put(RecordUnit.COLUMN_TIME, record.getTime()+ (long) (record.getDesktopMode() ? 16 : 0) + (long) (record.getJavascript() ? 0 : 32) + (long) (record.getDomStorage() ? 0 : 64));
         database.insert(RecordUnit.TABLE_HISTORY, null, values);
     }
 
@@ -322,9 +323,12 @@ public class RecordAction {
                 record.setIconColor(record.getTime()&15);
             }
             record.setTime(0);  //time is no longer needed after extracting data
+        } else if (type==HISTORY_ITEM){
+            record.setDesktopMode((record.getTime()&16)==16);
+            record.setJavascript(!((record.getTime()&32)==32));
+            record.setDomStorage(!((record.getTime()&64)==64));
+            record.setTime(record.getTime()&(~255));  //blank out lower 8bits of time
         }
-
-
 
         return record;
     }

@@ -94,16 +94,6 @@ public class NinjaWebChromeClient extends WebChromeClient {
 
     @Override
     public void onReceivedTitle(WebView view, String sTitle) {
-        SharedPreferences sp= PreferenceManager.getDefaultSharedPreferences(ninjaWebView.getContext());
         super.onReceivedTitle(view, sTitle);
-        if (sp.getBoolean("saveHistory", true)) {
-            RecordAction action = new RecordAction(ninjaWebView.getContext());
-            action.open(true);
-            if (action.checkUrl(ninjaWebView.getUrl(), RecordUnit.TABLE_HISTORY)) {
-                action.deleteURL(ninjaWebView.getUrl(), RecordUnit.TABLE_HISTORY);
-            }
-            action.addHistory(new Record(sTitle, ninjaWebView.getUrl(), System.currentTimeMillis(), 0,0,null,null,null,0));
-            action.close();
-        }
     }
 }

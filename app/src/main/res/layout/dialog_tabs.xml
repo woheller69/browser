@@ -19,7 +19,7 @@
             android:layout_height="match_parent"
             android:layout_toStartOf="@+id/tab_openOverView"
             android:layout_alignParentStart="true"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="20dp"
             android:layout_marginEnd="8dp"
             android:ellipsize="end"
             android:includeFontPadding="false"
@@ -36,7 +36,7 @@
             android:layout_height="match_parent"
             android:layout_alignParentEnd="true"
             android:layout_marginStart="8dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginEnd="20dp"
             android:src="@drawable/icon_history_light"
             android:background="?attr/actionBarItemBackground"
             tools:ignore="ContentDescription" />

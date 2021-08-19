@@ -27,7 +27,7 @@
                 android:layout_toStartOf="@+id/ib_settings"
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="20dp"
-                android:layout_marginEnd="8dp"
+                android:layout_marginEnd="16dp"
                 android:ellipsize="end"
                 android:includeFontPadding="false"
                 android:maxLines="1"
@@ -42,8 +42,7 @@
                 android:layout_toStartOf="@+id/ib_reload"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
+                android:layout_marginEnd="16dp"
                 android:src="@drawable/icon_settings"
                 android:background="?attr/actionBarItemBackground" />
 
@@ -52,8 +51,7 @@
                 android:layout_centerInParent="true"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="20dp"
                 android:layout_alignParentEnd="true"
                 android:src="@drawable/icon_refresh"
                 android:background="?attr/actionBarItemBackground" />
@@ -201,20 +199,49 @@
             android:layout_height="1dp"
             android:background="@color/color_hint" />
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/dialog_title"
-            android:layout_marginTop="4dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:ellipsize="end"
-            android:includeFontPadding="false"
-            android:maxLines="1"
-            android:text="@string/app_name"
-            android:gravity="center_vertical"
-            android:textAppearance="?attr/textAppearanceBody1"
-            android:textStyle="bold" />
+            android:layout_marginTop="4dp">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/dialog_title"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toEndOf="@+id/cardView"
+                android:layout_marginEnd="8dp"
+                android:ellipsize="end"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:text="@string/app_name"
+                android:gravity="center_vertical"
+                android:textAppearance="?attr/textAppearanceBody1"
+                android:textStyle="bold" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerInParent="true"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="20dp"
+                android:backgroundTint="@color/color_light"
+                app:cardCornerRadius="1dp"
+                app:cardElevation="2dp">
+
+                <ImageView
+                    android:id="@+id/menu_icon"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginEnd="16dp"
+                    android:contentDescription="@null"
+                    android:scaleType="fitCenter" />
+
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"

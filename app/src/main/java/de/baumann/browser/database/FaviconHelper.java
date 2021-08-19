@@ -86,6 +86,7 @@ public class FaviconHelper extends SQLiteOpenHelper {
     }
 
     public synchronized Bitmap getFavicon(String url){
+        if (url==null) return null;
         String domain=getDomain(url);
         if (domain==null) return null;
 
@@ -189,16 +190,11 @@ public class FaviconHelper extends SQLiteOpenHelper {
 
     public static void setFavicon(Context context, View view, String url, int id) {
         ImageView faviconView = view.findViewById(id);
-        try {
-            FaviconHelper faviconHelper = new FaviconHelper(context);
-            Bitmap bitmap=faviconHelper.getFavicon(url);
-            if (bitmap != null){
-                faviconView.setImageBitmap(bitmap);
-            }else {
-                faviconView.setImageResource(R.drawable.icon_missing_image);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
+        FaviconHelper faviconHelper = new FaviconHelper(context);
+        Bitmap bitmap=faviconHelper.getFavicon(url);
+        if (bitmap != null){
+            faviconView.setImageBitmap(bitmap);
+        }else {
             faviconView.setImageResource(R.drawable.icon_missing_image);
         }
     }

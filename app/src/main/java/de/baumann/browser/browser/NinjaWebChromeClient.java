@@ -3,19 +3,14 @@ package de.baumann.browser.browser;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.view.View;
 import android.webkit.*;
 
-import androidx.preference.PreferenceManager;
 import java.util.Objects;
 
-import de.baumann.browser.database.Record;
-import de.baumann.browser.database.RecordAction;
 import de.baumann.browser.unit.HelperUnit;
-import de.baumann.browser.unit.RecordUnit;
 import de.baumann.browser.view.NinjaWebView;
 
 public class NinjaWebChromeClient extends WebChromeClient {
@@ -30,12 +25,13 @@ public class NinjaWebChromeClient extends WebChromeClient {
     @Override
     public void onProgressChanged(WebView view, int progress) {
         super.onProgressChanged(view, progress);
-        ninjaWebView.update(progress);
+        ninjaWebView.updateTitle(progress);
         if (Objects.requireNonNull(view.getTitle()).isEmpty()) {
-            ninjaWebView.update(view.getUrl(), view.getUrl());
+            ninjaWebView.updateTitle(view.getUrl());
         } else {
-            ninjaWebView.update(view.getTitle(), view.getUrl());
+            ninjaWebView.updateTitle(view.getTitle());
         }
+        ninjaWebView.updateFavicon(view.getUrl());
     }
 
     @Override

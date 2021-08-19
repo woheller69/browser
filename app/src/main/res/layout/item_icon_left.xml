@@ -5,6 +5,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:minHeight="?android:attr/listPreferredItemHeightSmall"
     android:orientation="horizontal"
+    android:paddingStart="20dp"
+    android:paddingEnd="20dp"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <ImageView
@@ -12,7 +14,7 @@
         android:id="@+id/record_item_icon"
         android:layout_width="wrap_content"
         android:layout_height="?android:attr/listPreferredItemHeightSmall"
-        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:gravity="center_vertical"
         android:contentDescription="@null"
         android:scaleType="fitCenter"
@@ -23,7 +25,7 @@
         android:id="@+id/record_item_time"
         android:layout_width="wrap_content"
         android:layout_height="?android:attr/listPreferredItemHeightSmall"
-        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:gravity="center_vertical"
         android:includeFontPadding="false"
         android:textAppearance="?android:attr/textAppearanceSmall"
@@ -32,32 +34,29 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_marginStart="16dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         android:backgroundTint="@color/color_light"
         android:layout_gravity="center"
-        app:cardCornerRadius="12dp"
+        android:layout_marginEnd="8dp"
+        app:cardCornerRadius="2dp"
         app:cardElevation="2dp"
         android:visibility="gone">
 
         <ImageView
             android:id="@+id/record_item_favicon"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:layout_centerInParent="true"
             android:contentDescription="@null"
             android:scaleType="fitCenter" />
 
     </androidx.cardview.widget.CardView>
 
-
     <TextView
         android:id="@+id/record_item_title"
         android:layout_width="match_parent"
         android:layout_height="?android:attr/listPreferredItemHeightSmall"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
         android:ellipsize="end"
         android:gravity="center_vertical"
         android:includeFontPadding="false"

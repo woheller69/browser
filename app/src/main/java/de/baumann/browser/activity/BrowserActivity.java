@@ -23,6 +23,7 @@ import android.os.Bundle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.PopupMenu;
+import androidx.cardview.widget.CardView;
 import androidx.preference.PreferenceManager;
 
 import android.os.Handler;
@@ -961,8 +962,9 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
         View dialogView = View.inflate(context, R.layout.dialog_toggle, null);
-
         builder.setView(dialogView);
+        FaviconHelper.setFavicon(context, dialogView, ninjaWebView.getUrl(), R.id.menu_icon);
+
         AlertDialog dialog = builder.create();
         dialog.show();
         Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
@@ -2029,6 +2031,9 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         builder.setView(dialogView);
         AlertDialog dialog = builder.create();
         dialog.show();
+
+        CardView cardView = dialogView.findViewById(R.id.cardView);
+        cardView.setVisibility(View.GONE);
 
         Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
         GridView menu_grid = dialogView.findViewById(R.id.menu_grid);

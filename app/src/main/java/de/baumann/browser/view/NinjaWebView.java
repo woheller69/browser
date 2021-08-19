@@ -276,7 +276,7 @@ public class NinjaWebView extends WebView implements AlbumController {
         album.deactivate();
     }
 
-    public synchronized void update(int progress) {
+    public synchronized void updateTitle(int progress) {
         if (foreground && !stopped) {
             browserController.updateProgress(progress);
         } else if (foreground) {
@@ -287,8 +287,11 @@ public class NinjaWebView extends WebView implements AlbumController {
         }
     }
 
-    public synchronized void update(String title, String url) {
+    public synchronized void updateTitle(String title) {
         album.setAlbumTitle(title);
+    }
+
+    public synchronized void updateFavicon (String url) {
         CardView cardView = getAlbumView().findViewById(R.id.cardView);
         cardView.setVisibility(VISIBLE);
         FaviconHelper.setFavicon(context, getAlbumView(), url, R.id.faviconView);

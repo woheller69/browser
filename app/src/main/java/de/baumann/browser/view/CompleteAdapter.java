@@ -24,6 +24,10 @@ import de.baumann.browser.database.FaviconHelper;
 import de.baumann.browser.database.Record;
 import de.baumann.browser.R;
 
+import static de.baumann.browser.database.RecordAction.BOOKMARK_ITEM;
+import static de.baumann.browser.database.RecordAction.HISTORY_ITEM;
+import static de.baumann.browser.database.RecordAction.STARTSITE_ITEM;
+
 
 public class CompleteAdapter extends BaseAdapter implements Filterable {
     private class CompleteFilter extends Filter {
@@ -198,11 +202,11 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
         holder.urlView.setVisibility(View.GONE);
         holder.urlView.setText(item.url);
 
-        if (item.getType()==1){  //Item from start page
+        if (item.getType()==STARTSITE_ITEM){  //Item from start page
             holder.iconView.setImageResource(R.drawable.icon_web_light);
-        }else if (item.getType()==0){  //Item from history
+        }else if (item.getType()==HISTORY_ITEM){  //Item from history
             holder.iconView.setImageResource(R.drawable.icon_history_light);
-        }else if (item.getType()==2) holder.iconView.setImageResource(R.drawable.icon_bookmark_light);  //Item from bookmarks
+        }else if (item.getType()==BOOKMARK_ITEM) holder.iconView.setImageResource(R.drawable.icon_bookmark_light);  //Item from bookmarks
 
         FaviconHelper faviconHelper = new FaviconHelper(context);
         Bitmap bitmap=faviconHelper.getFavicon(item.url);

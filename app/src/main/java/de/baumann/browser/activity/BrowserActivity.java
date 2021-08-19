@@ -441,7 +441,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             String url = ((TextView) view.findViewById(R.id.record_item_time)).getText().toString();
             for (Record record:list){
                 if (record.getURL().equals(url)){
-                    if ((record.getType()==RecordAction.BOOKMARK_ITEM)||(record.getType()==RecordAction.STARTSITE_ITEM)||(record.getType()== HISTORY_ITEM) ) {
+                    if ((record.getType()==BOOKMARK_ITEM)||(record.getType()==STARTSITE_ITEM)||(record.getType()== HISTORY_ITEM) ) {
                         if (record.getDesktopMode() != ninjaWebView.isDesktopMode()) ninjaWebView.toggleDesktopMode(false);
                         ninjaWebView.setJavaScript(record.getJavascript());
                         ninjaWebView.setDomStorage(record.getDomStorage());

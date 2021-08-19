@@ -195,11 +195,11 @@ public class FaviconHelper extends SQLiteOpenHelper {
             if (bitmap != null){
                 faviconView.setImageBitmap(bitmap);
             }else {
-                faviconView.setImageResource(R.drawable.icon_missing_image_light);
+                faviconView.setImageResource(R.drawable.icon_missing_image);
             }
         } catch (Exception e) {
             e.printStackTrace();
-            faviconView.setImageResource(R.drawable.icon_missing_image_light);
+            faviconView.setImageResource(R.drawable.icon_missing_image);
         }
     }
 }

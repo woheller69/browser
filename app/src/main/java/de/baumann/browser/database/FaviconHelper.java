@@ -195,7 +195,7 @@ public class FaviconHelper extends SQLiteOpenHelper {
         if (bitmap != null){
             faviconView.setImageBitmap(bitmap);
         }else {
-            faviconView.setImageResource(R.drawable.icon_image_broken_dark);
+            faviconView.setImageResource(R.drawable.icon_image_broken);
         }
     }
 }

@@ -97,7 +97,7 @@ public class RecordAdapter extends ArrayAdapter<Record> {
         if (bitmap != null){
             holder.favicon.setImageBitmap(bitmap);
         }else {
-            holder.favicon.setImageResource(R.drawable.icon_image_broken_dark);
+            holder.favicon.setImageResource(R.drawable.icon_image_broken);
         }
 
         return view;

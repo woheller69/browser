@@ -24,6 +24,7 @@
         android:layout_height="20dp"
         android:layout_centerVertical="true"
         android:layout_marginEnd="8dp"
+        android:backgroundTint="@android:color/transparent"
         android:gravity="center"
         android:visibility="gone"
         app:cardCornerRadius="2dp"

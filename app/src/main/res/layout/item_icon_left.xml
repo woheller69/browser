@@ -38,6 +38,7 @@
         android:layout_height="20dp"
         android:layout_gravity="center"
         android:layout_marginEnd="8dp"
+        android:backgroundTint="@android:color/transparent"
         app:cardCornerRadius="2dp"
         app:cardElevation="0dp"
         android:visibility="gone">

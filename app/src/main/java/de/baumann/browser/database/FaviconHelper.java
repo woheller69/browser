@@ -23,7 +23,7 @@ public class FaviconHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
 
     // Database Name
-    private static final String DATABASE_NAME = "faviconView.db";
+    private static final String DATABASE_NAME = "favicon.db";
 
     // Table Name
     private static final String TABLE_FAVICON = "Favicon";

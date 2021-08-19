@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout
-    android:layout_width="match_parent"
+<LinearLayout android:layout_width="match_parent"
     android:layout_height="?android:attr/listPreferredItemHeightSmall"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:minHeight="?android:attr/listPreferredItemHeightSmall"
     android:orientation="horizontal"
     xmlns:android="http://schemas.android.com/apk/res/android">
@@ -30,16 +30,27 @@
         android:maxLines="1"
         android:ellipsize="end"/>
 
-    <ImageView
-        android:visibility="gone"
-        android:id="@+id/record_item_favicon"
-        android:layout_width="20dp"
-        android:layout_height="?android:attr/listPreferredItemHeightSmall"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
         android:layout_marginStart="16dp"
-        android:gravity="center_vertical"
-        android:contentDescription="@null"
-        android:scaleType="fitCenter"
-        android:src="@drawable/icon_close" />
+        android:backgroundTint="@color/color_light"
+        android:layout_gravity="center"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="2dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/record_item_favicon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_centerInParent="true"
+            android:contentDescription="@null"
+            android:scaleType="fitCenter" />
+
+    </androidx.cardview.widget.CardView>
+
 
     <TextView
         android:id="@+id/record_item_title"

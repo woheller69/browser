@@ -2,6 +2,8 @@ package de.baumann.browser.view;
 
 import android.content.Context;
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
+
 import android.graphics.Bitmap;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -34,6 +36,7 @@ public class RecordAdapter extends ArrayAdapter<Record> {
         TextView time;
         ImageView icon;
         ImageView favicon;
+        CardView cardView;
     }
 
     @SuppressWarnings("NullableProblems")
@@ -49,6 +52,7 @@ public class RecordAdapter extends ArrayAdapter<Record> {
             holder.time = view.findViewById(R.id.record_item_time);
             holder.icon = view.findViewById(R.id.record_item_icon);
             holder.favicon=view.findViewById(R.id.record_item_favicon);
+            holder.cardView=view.findViewById(R.id.cardView);
             view.setTag(holder);
         } else {
             holder = (Holder) view.getTag();
@@ -86,15 +90,14 @@ public class RecordAdapter extends ArrayAdapter<Record> {
             holder.icon.setImageResource(R.drawable.circle_red_big);
         }
 
+        holder.cardView.setVisibility(View.VISIBLE);
         FaviconHelper faviconHelper = new FaviconHelper(context);
         Bitmap bitmap=faviconHelper.getFavicon(record.getURL());
 
         if (bitmap != null){
             holder.favicon.setImageBitmap(bitmap);
-            holder.favicon.setVisibility(View.VISIBLE);
         }else {
             holder.favicon.setImageResource(R.drawable.icon_missing_image);
-            holder.favicon.setVisibility(View.VISIBLE);
         }
 
         return view;

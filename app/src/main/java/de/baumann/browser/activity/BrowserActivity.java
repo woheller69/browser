@@ -23,6 +23,7 @@ import android.os.Bundle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.PopupMenu;
+import androidx.cardview.widget.CardView;
 import androidx.preference.PreferenceManager;
 
 import android.os.Handler;
@@ -1450,7 +1451,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         TextView menuTitle = dialogView.findViewById(R.id.menuTitle);
         menuTitle.setText(url);
         ImageView menu_icon = dialogView.findViewById(R.id.menu_icon);
-        menu_icon.setVisibility(View.VISIBLE);
+        CardView cardView = dialogView.findViewById(R.id.cardView);
+        cardView.setVisibility(View.VISIBLE);
 
         if (type == SRC_ANCHOR_TYPE) {
             FaviconHelper faviconHelper = new FaviconHelper(context);

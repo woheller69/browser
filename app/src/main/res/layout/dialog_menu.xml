@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layoutDirection="locale"
     android:orientation="vertical"
     tools:ignore="ContentDescription">
@@ -17,7 +18,7 @@
             android:id="@+id/menuTitle"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:layout_toStartOf="@+id/menu_icon"
+            android:layout_toStartOf="@+id/cardView"
             android:layout_alignParentStart="true"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
@@ -29,17 +30,28 @@
             android:textAppearance="?attr/textAppearanceBody1"
             android:textStyle="bold" />
 
-        <ImageView
-            android:id="@+id/menu_icon"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_alignParentEnd="true"
             android:layout_centerInParent="true"
-            android:layout_marginStart="0dp"
             android:layout_marginEnd="16dp"
-            android:contentDescription="@null"
-            android:scaleType="fitCenter"
-            android:visibility="gone" />
+            android:backgroundTint="@color/color_light"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/menu_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_centerInParent="true"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="@null"
+                android:scaleType="fitCenter" />
+
+        </androidx.cardview.widget.CardView>
 
     </RelativeLayout>
 

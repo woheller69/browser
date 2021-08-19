@@ -9,6 +9,7 @@ import android.graphics.Bitmap;
 import android.os.Build;
 
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.preference.PreferenceManager;
 
 import android.util.AttributeSet;
@@ -258,7 +259,8 @@ public class NinjaWebView extends WebView implements AlbumController {
     public void setAlbumTitle(String title, String url) {
         album.setAlbumTitle(title);
         ImageView faviconView = getAlbumView().findViewById(R.id.faviconView);
-        faviconView.setVisibility(VISIBLE);
+        CardView cardView = getAlbumView().findViewById(R.id.cardView);
+        cardView.setVisibility(VISIBLE);
         try {
             FaviconHelper faviconHelper = new FaviconHelper(context);
             Bitmap bitmap=faviconHelper.getFavicon(url);
@@ -301,7 +303,8 @@ public class NinjaWebView extends WebView implements AlbumController {
     public synchronized void update(String title, String url) {
         album.setAlbumTitle(title);
         ImageView faviconView = getAlbumView().findViewById(R.id.faviconView);
-        faviconView.setVisibility(VISIBLE);
+        CardView cardView = getAlbumView().findViewById(R.id.cardView);
+        cardView.setVisibility(VISIBLE);
         try {
             FaviconHelper faviconHelper = new FaviconHelper(context);
             Bitmap bitmap=faviconHelper.getFavicon(url);

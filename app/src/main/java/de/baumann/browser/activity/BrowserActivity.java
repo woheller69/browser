@@ -1462,7 +1462,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 menu_icon.setImageResource(R.drawable.icon_link);
             }
         } else if (type == IMAGE_TYPE) {
-            menu_icon.setImageResource(R.drawable.icon_image_dark);
+            menu_icon.setImageResource(R.drawable.icon_image);
         } else {
             menu_icon.setImageResource(R.drawable.icon_link);
         }

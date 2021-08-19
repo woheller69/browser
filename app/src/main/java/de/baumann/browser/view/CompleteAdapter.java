@@ -62,25 +62,37 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
 
     private static class CompleteItem {
         private final String title;
+        private final Long time;
         private final int type;
 
         private int getType(){return this.type;}
+
         String getTitle() {
             return title;
         }
 
         private final String url;
+
         String getURL() {
             return url;
         }
 
         private int index = Integer.MAX_VALUE;
-        int getIndex() { return index; }
-        void setIndex(int index) { this.index = index; }
 
-        private CompleteItem(String title, String url, int type) {
+        int getIndex() {
+            return index;
+        }
+
+        long getTime() { return time; }
+
+        void setIndex(int index) {
+            this.index = index;
+        }
+
+        private CompleteItem(String title, String url, Long time, int type) {
             this.title = title;
             this.url = url;
+            this.time = time;
             this.type=type;
         }
 
@@ -89,6 +101,7 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
             if (!(object instanceof CompleteItem)) {
                 return false;
             }
+
             CompleteItem item = (CompleteItem) object;
             return item.getTitle().equals(title) && item.getURL().equals(url);
         }
@@ -98,15 +111,16 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
             if (title == null || url == null) {
                 return 0;
             }
+
             return title.hashCode() & url.hashCode();
         }
     }
 
     private static class Holder {
-        private ImageView record_item_icon;
-        private ImageView record_item_favicon;
-        private TextView record_item_title;
-        private TextView record_item_time;
+        private ImageView iconView;
+        private ImageView favicon;
+        private TextView titleView;
+        private TextView urlView;
         private CardView cardView;
     }
 
@@ -130,9 +144,10 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
                     && !record.getTitle().isEmpty()
                     && record.getURL() != null
                     && !record.getURL().isEmpty()) {
-                originalList.add(new CompleteItem(record.getTitle(), record.getURL(), record.getType()));
+                originalList.add(new CompleteItem(record.getTitle(), record.getURL(), record.getTime(),record.getType()));
             }
         }
+
         Set<CompleteItem> set = new HashSet<>(originalList);
         originalList.clear();
         originalList.addAll(set);
@@ -162,43 +177,44 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
     public View getView(int position, View convertView, ViewGroup parent) {
         View view = convertView;
         Holder holder;
-        CompleteItem item = resultList.get(position);
 
         if (view == null) {
             view = LayoutInflater.from(context).inflate(layoutResId, null, false);
             view.setBackgroundColor(ContextCompat.getColor(context, R.color.primaryDarkColor));
             holder = new Holder();
-            holder.record_item_title = view.findViewById(R.id.record_item_title);
-            holder.record_item_title.setTextColor(ContextCompat.getColor(context, R.color.color_light));
-            holder.record_item_title.setText(item.title);
-            holder.record_item_time = view.findViewById(R.id.record_item_time);
-            holder.record_item_time.setVisibility(View.GONE);
-            holder.record_item_time.setText(item.url);
-            holder.record_item_icon = view.findViewById(R.id.record_item_icon);
-            holder.record_item_icon.setVisibility(View.VISIBLE);
-            holder.record_item_favicon=view.findViewById(R.id.record_item_favicon);
+            holder.titleView = view.findViewById(R.id.record_item_title);
+            holder.titleView.setTextColor(ContextCompat.getColor(context, R.color.color_light));
+            holder.urlView = view.findViewById(R.id.record_item_time);
+            holder.iconView = view.findViewById(R.id.record_item_icon);
+            holder.favicon=view.findViewById(R.id.record_item_favicon);
             holder.cardView=view.findViewById(R.id.cardView);
-            holder.cardView.setVisibility(View.VISIBLE);
             view.setTag(holder);
         } else {
             holder = (Holder) view.getTag();
         }
 
-        if (item.getType()==1){ //Item from start page
-            holder.record_item_icon.setImageResource(R.drawable.icon_web_light);
-        }else if (item.getType()==0){ //Item from history
-            holder.record_item_icon.setImageResource(R.drawable.icon_history_light);
-        }else if (item.getType()==2) { //Item from bookmarks
-            holder.record_item_icon.setImageResource(R.drawable.icon_bookmark_light);
-        }
+        CompleteItem item = resultList.get(position);
+        holder.titleView.setText(item.title);
+        holder.urlView.setVisibility(View.GONE);
+        holder.urlView.setText(item.url);
+
+        if (item.getType()==1){  //Item from start page
+            holder.iconView.setImageResource(R.drawable.icon_web_light);
+        }else if (item.getType()==0){  //Item from history
+            holder.iconView.setImageResource(R.drawable.icon_history_light);
+        }else if (item.getType()==2) holder.iconView.setImageResource(R.drawable.icon_bookmark_light);  //Item from bookmarks
 
         FaviconHelper faviconHelper = new FaviconHelper(context);
         Bitmap bitmap=faviconHelper.getFavicon(item.url);
+
         if (bitmap != null){
-            holder.record_item_favicon.setImageBitmap(bitmap);
+            holder.favicon.setImageBitmap(bitmap);
         }else {
-            holder.record_item_favicon.setImageResource(R.drawable.icon_image_broken);
+            holder.favicon.setImageResource(R.drawable.icon_image_broken);
         }
+
+        holder.iconView.setVisibility(View.VISIBLE);
+        holder.cardView.setVisibility(View.VISIBLE);
 
         return view;
     }

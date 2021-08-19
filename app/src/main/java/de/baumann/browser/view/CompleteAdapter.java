@@ -210,7 +210,7 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
         if (bitmap != null){
             holder.favicon.setImageBitmap(bitmap);
         }else {
-            holder.favicon.setImageResource(R.drawable.icon_missing_image);
+            holder.favicon.setImageResource(R.drawable.icon_image_broken_dark);
         }
 
         holder.iconView.setVisibility(View.VISIBLE);

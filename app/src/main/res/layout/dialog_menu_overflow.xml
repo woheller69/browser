@@ -36,9 +36,8 @@
             android:layout_centerInParent="true"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="20dp"
-            android:backgroundTint="@color/color_light"
-            app:cardCornerRadius="1dp"
-            app:cardElevation="2dp">
+            app:cardCornerRadius="2dp"
+            app:cardElevation="0dp">
 
             <ImageView
                 android:id="@+id/menu_icon"

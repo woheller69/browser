@@ -18,7 +18,6 @@ import android.view.inputmethod.InputMethodManager;
 import android.webkit.CookieManager;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
-import android.widget.ImageView;
 
 import de.baumann.browser.browser.*;
 import de.baumann.browser.R;
@@ -258,21 +257,9 @@ public class NinjaWebView extends WebView implements AlbumController {
 
     public void setAlbumTitle(String title, String url) {
         album.setAlbumTitle(title);
-        ImageView faviconView = getAlbumView().findViewById(R.id.faviconView);
         CardView cardView = getAlbumView().findViewById(R.id.cardView);
         cardView.setVisibility(VISIBLE);
-        try {
-            FaviconHelper faviconHelper = new FaviconHelper(context);
-            Bitmap bitmap=faviconHelper.getFavicon(url);
-            if (bitmap != null){
-                faviconView.setImageBitmap(bitmap);
-            }else {
-                faviconView.setImageResource(R.drawable.icon_missing_image_light);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-            faviconView.setImageResource(R.drawable.icon_missing_image_light);
-        }
+        FaviconHelper.setFavicon(context, getAlbumView(), url, R.id.faviconView);
     }
 
     @Override
@@ -302,21 +289,9 @@ public class NinjaWebView extends WebView implements AlbumController {
 
     public synchronized void update(String title, String url) {
         album.setAlbumTitle(title);
-        ImageView faviconView = getAlbumView().findViewById(R.id.faviconView);
         CardView cardView = getAlbumView().findViewById(R.id.cardView);
         cardView.setVisibility(VISIBLE);
-        try {
-            FaviconHelper faviconHelper = new FaviconHelper(context);
-            Bitmap bitmap=faviconHelper.getFavicon(url);
-            if (bitmap != null){
-                faviconView.setImageBitmap(bitmap);
-            }else {
-                faviconView.setImageResource(R.drawable.icon_missing_image_light);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-            faviconView.setImageResource(R.drawable.icon_missing_image_light);
-        }
+        FaviconHelper.setFavicon(context, getAlbumView(), url, R.id.faviconView);
     }
 
     @Override

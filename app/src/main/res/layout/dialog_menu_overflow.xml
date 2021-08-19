@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:ignore="ContentDescription"
     xmlns:android="http://schemas.android.com/apk/res/android">
@@ -17,9 +17,8 @@
             android:id="@+id/overflow_title"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_toEndOf="@+id/cardView"
             android:layout_toStartOf="@+id/overflow_settings"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="16dp"
             android:layout_marginEnd="8dp"
             android:ellipsize="end"
             android:includeFontPadding="false"
@@ -28,6 +27,29 @@
             android:gravity="center_vertical"
             android:textAppearance="?attr/textAppearanceBody1"
             android:textStyle="bold" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:backgroundTint="@color/color_light"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp">
+
+            <ImageView
+                android:id="@+id/menu_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_centerInParent="true"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="@null"
+                android:scaleType="fitCenter" />
+
+        </androidx.cardview.widget.CardView>
 
         <ImageButton
             android:id="@+id/overflow_settings"

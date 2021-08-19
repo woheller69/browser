@@ -10,6 +10,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
 
 import java.io.ByteArrayOutputStream;
 import java.net.URI;
@@ -17,6 +19,8 @@ import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+
+import de.baumann.browser.R;
 
 public class FaviconHelper extends SQLiteOpenHelper {
     // Database Version
@@ -181,5 +185,21 @@ public class FaviconHelper extends SQLiteOpenHelper {
 
     public static Bitmap createEmptyFavicon(){
         return Bitmap.createBitmap(32, 32, Bitmap.Config.ARGB_8888);
+    }
+
+    public static void setFavicon(Context context, View view, String url, int id) {
+        ImageView faviconView = view.findViewById(id);
+        try {
+            FaviconHelper faviconHelper = new FaviconHelper(context);
+            Bitmap bitmap=faviconHelper.getFavicon(url);
+            if (bitmap != null){
+                faviconView.setImageBitmap(bitmap);
+            }else {
+                faviconView.setImageResource(R.drawable.icon_missing_image_light);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            faviconView.setImageResource(R.drawable.icon_missing_image_light);
+        }
     }
 }

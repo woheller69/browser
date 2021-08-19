@@ -7,7 +7,7 @@
 
     <item android:id="@+id/menu_info"
         android:title="Backup"
-        android:icon="@drawable/icon_info_light"
+        android:icon="@drawable/icon_info"
         app:showAsAction="always" />
 
 </menu>

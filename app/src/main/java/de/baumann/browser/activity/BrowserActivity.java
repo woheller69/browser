@@ -23,7 +23,6 @@ import android.os.Bundle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.PopupMenu;
-import androidx.cardview.widget.CardView;
 import androidx.preference.PreferenceManager;
 
 import android.os.Handler;
@@ -1451,8 +1450,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         TextView menuTitle = dialogView.findViewById(R.id.menuTitle);
         menuTitle.setText(url);
         ImageView menu_icon = dialogView.findViewById(R.id.menu_icon);
-        CardView cardView = dialogView.findViewById(R.id.cardView);
-        cardView.setVisibility(View.VISIBLE);
 
         if (type == SRC_ANCHOR_TYPE) {
             FaviconHelper faviconHelper = new FaviconHelper(context);
@@ -1460,10 +1457,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             if (bitmap != null){
                 menu_icon.setImageBitmap(bitmap);
             }else {
-                menu_icon.setImageResource(R.drawable.icon_link);
+                menu_icon.setImageResource(R.drawable.icon_link_dark);
             }
         } else if (type == IMAGE_TYPE) {
-            menu_icon.setImageResource(R.drawable.icon_image);
+            menu_icon.setImageResource(R.drawable.icon_image_dark);
         } else {
             menu_icon.setImageResource(R.drawable.icon_unknown);
         }
@@ -1613,6 +1610,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         AlertDialog dialog_overflow = builder.create();
         dialog_overflow.show();
         Objects.requireNonNull(dialog_overflow.getWindow()).setGravity(Gravity.BOTTOM);
+        FaviconHelper.setFavicon(context, dialogView, url, R.id.menu_icon);
 
         TextView overflow_title = dialogView.findViewById(R.id.overflow_title);
         assert title != null;
@@ -1849,6 +1847,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         TextView menuTitle = dialogView.findViewById(R.id.menuTitle);
         menuTitle.setText(title);
+        FaviconHelper.setFavicon(context, dialogView, url, R.id.menu_icon);
 
         builder.setView(dialogView);
         AlertDialog dialog = builder.create();

@@ -112,7 +112,7 @@
     <string name="setting_title_data">Biztonsági másolat</string>
     <string name="setting_filter">Könyvjelző szűrő</string>
     <string name="setting_title_fav">Kedvenc</string>
-    <string name="setting_title_reload">Swipe down to reload</string>
+    <string name="setting_title_reload">Elutasítás lefelé húzással</string>
     <string name="setting_title_searchEngine">Egyedi keresőmotor</string>
     <string name="setting_title_userAgent">Egyedi user agent</string>
     <string name="setting_enter_userAgent">Adja meg a felhasználói ügynököt</string>
@@ -156,7 +156,7 @@
     <string name="setting_summary_export_appData">A teljes adatbázis és a személyes beállítások exportálása.</string>
     <string name="title_appData">Alkalmazásadatok</string>
     <string name="hint_database">Ezzel törli az aktuális adatokat. Folytatja?</string>
-    <string name="settings_data_restore">Restore</string>
+    <string name="settings_data_restore">Visszaállítás</string>
     <!-- Others setting -->
     <string name="setting_title_others">Egyebek</string>
     <!-- Toast -->

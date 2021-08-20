@@ -112,7 +112,7 @@
     <string name="setting_title_data">النسخ الاحتياطي</string>
     <string name="setting_filter">مرشح العلامات</string>
     <string name="setting_title_fav">المفضلة</string>
-    <string name="setting_title_reload">Swipe down to reload</string>
+    <string name="setting_title_reload">اسحب لأسفل لإعادة التحميل</string>
     <string name="setting_title_searchEngine">محرك بحث مخصص</string>
     <string name="setting_title_userAgent">وكيل مستخدم مخصص</string>
     <string name="setting_enter_userAgent">تعيين وكيل المستخدم</string>

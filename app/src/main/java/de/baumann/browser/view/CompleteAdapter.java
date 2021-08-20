@@ -66,7 +66,6 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
 
     private static class CompleteItem {
         private final String title;
-        private final Long time;
         private final int type;
 
         private int getType(){return this.type;}
@@ -87,16 +86,13 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
             return index;
         }
 
-        long getTime() { return time; }
-
         void setIndex(int index) {
             this.index = index;
         }
 
-        private CompleteItem(String title, String url, Long time, int type) {
+        private CompleteItem(String title, String url, int type) {
             this.title = title;
             this.url = url;
-            this.time = time;
             this.type=type;
         }
 
@@ -148,7 +144,7 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
                     && !record.getTitle().isEmpty()
                     && record.getURL() != null
                     && !record.getURL().isEmpty()) {
-                originalList.add(new CompleteItem(record.getTitle(), record.getURL(), record.getTime(),record.getType()));
+                originalList.add(new CompleteItem(record.getTitle(), record.getURL(), record.getType()));
             }
         }
 
@@ -214,7 +210,7 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
         if (bitmap != null){
             holder.favicon.setImageBitmap(bitmap);
         }else {
-            holder.favicon.setImageResource(R.drawable.icon_image_broken);
+            holder.favicon.setImageResource(R.drawable.icon_image_broken_light);
         }
 
         holder.iconView.setVisibility(View.VISIBLE);

@@ -45,6 +45,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import android.os.Environment;
 import android.view.Gravity;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.webkit.CookieManager;
 import android.webkit.URLUtil;
 import android.webkit.WebView;
@@ -124,13 +125,17 @@ public class HelperUnit {
                         DownloadManager dm = (DownloadManager) activity.getSystemService(DOWNLOAD_SERVICE);
                         assert dm != null;
                         dm.enqueue(request);
+                        hideSoftKeyboard(editExtension, activity);
                         dialogToCancel.cancel();
                     }else {
                         BackupUnit.requestPermission(activity);
                     }
                 }
             });
-            builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> builder.setCancelable(true));
+            builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> {
+                hideSoftKeyboard(editExtension, activity);
+                dialogToCancel.cancel();
+            });
 
             AlertDialog dialog = builder.create();
             dialog.show();
@@ -343,5 +348,19 @@ public class HelperUnit {
         AlertDialog dialog = builder.create();
         dialog.show();
         Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
+    }
+
+    public void showSoftKeyboard(View view, Context context){
+        assert view != null;
+        if(view.requestFocus()){
+            InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.showSoftInput(view, InputMethodManager.SHOW_IMPLICIT);
+        }
+    }
+
+    public static void hideSoftKeyboard(View view, Context context){
+        assert view != null;
+        InputMethodManager imm =(InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 }

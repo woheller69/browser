@@ -64,6 +64,7 @@ import android.view.Window;
 import android.view.WindowInsets;
 import android.view.WindowInsetsController;
 import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.webkit.CookieManager;
 import android.webkit.ValueCallback;
 import android.webkit.WebBackForwardList;
@@ -951,6 +952,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 searchBox.setText("");
             } else {
                 searchOnSite = false;
+                HelperUnit.hideSoftKeyboard(searchBox, context);
                 searchPanel.setVisibility(View.GONE);
                 omniBox.setVisibility(View.VISIBLE);
             }
@@ -1602,6 +1604,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     @SuppressLint("ClickableViewAccessibility")
     private void showOverflow() {
 
+        HelperUnit.hideSoftKeyboard(omniBox_text, context);
+
         final String url = ninjaWebView.getUrl();
         final String title = ninjaWebView.getTitle();
 
@@ -2099,6 +2103,4 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         }
         return list.get(index);
     }
-
-
 }

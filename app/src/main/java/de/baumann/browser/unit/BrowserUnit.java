@@ -118,8 +118,6 @@ public class BrowserUnit {
         } else {
             final int i = Integer.parseInt(Objects.requireNonNull(sp.getString("sp_search_engine", "0")));
             switch (i) {
-                case 0:
-                    return SEARCH_ENGINE_STARTPAGE + query;
                 case 1:
                     return SEARCH_ENGINE_STARTPAGE_DE + query;
                 case 2:

@@ -5,12 +5,10 @@ import android.webkit.MimeTypeMap;
 
 public class DataURIParser {
 
-    private String fileType;
-    private String data;
-    private String mimeType;
-    private String suffix;
-    private String filename;
-    private byte[] imagedata;
+    private final String data;
+    private final String mimeType;
+    private final String filename;
+    private final byte[] imagedata;
 
     public String getData() {
         return data;
@@ -32,11 +30,11 @@ public class DataURIParser {
         //Log.d("DataURIParse", data);
         mimeType=url.substring(url.indexOf(":")+1,url.indexOf(";"));
         //Log.d("DataURIParse", mimeType);
-        fileType=url.substring(url.indexOf(":")+1,url.indexOf("/"));
+        String fileType = url.substring(url.indexOf(":") + 1, url.indexOf("/"));
         //Log.d("DataURIParse", fileType);
-        suffix= MimeTypeMap.getSingleton().getExtensionFromMimeType(mimeType);
+        String suffix = MimeTypeMap.getSingleton().getExtensionFromMimeType(mimeType);
         //Log.d("DataURIParse", suffix);
-        filename=fileType+"."+suffix;
+        filename= fileType +"."+ suffix;
         //Log.d("DataURIParse", filename);
         imagedata = Base64.decode(data,Base64.DEFAULT);
 

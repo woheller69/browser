@@ -2,13 +2,10 @@ package de.baumann.browser.fragment;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Environment;
 
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AlertDialog;
 import androidx.preference.PreferenceManager;
 
@@ -49,7 +46,6 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat {
     public File data;
     public Context context;
     public Activity activity;
-    public ActivityResultLauncher<Intent> someActivityResultLauncher;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -59,13 +55,6 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat {
         activity = getActivity();
         assert context != null;
         assert activity != null;
-
-        // You can do the assignment inside onAttach or onCreate, i.e, before the activity is displayed
-        someActivityResultLauncher = registerForActivityResult(
-                new ActivityResultContracts.StartActivityForResult(),
-                result -> {
-                    // There are no request codes
-                });
 
         sd = Environment.getExternalStoragePublicDirectory(DIRECTORY_DOCUMENTS);
         data = Environment.getDataDirectory();

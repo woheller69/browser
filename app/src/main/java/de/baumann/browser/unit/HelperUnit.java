@@ -350,7 +350,7 @@ public class HelperUnit {
         Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
     }
 
-    public void showSoftKeyboard(View view, Context context){
+    public static void showSoftKeyboard(View view, Context context){
         assert view != null;
         if(view.requestFocus()){
             InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);

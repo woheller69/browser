@@ -118,7 +118,7 @@
     <string name="setting_title_data">پشتیبان گیری</string>
     <string name="setting_filter">فیلتر نشانک ها</string>
     <string name="setting_title_fav">صفحه موردعلاقه</string>
-    <string name="setting_title_reload">Swipe down to reload</string>
+    <string name="setting_title_reload">برای بستن انگشت خود را به پایین بکشید</string>
     <string name="setting_title_searchEngine">موتور جستجوی سفارشی</string>
     <string name="setting_title_userAgent">سفارشی سازی user-agent مرورگر </string>
     <string name="setting_enter_userAgent">نماینده کاربری را وارد کنید</string>
@@ -164,7 +164,7 @@
     <string name="setting_summary_export_appData">استخراج کل دیتابیس و تنظیمات شخصی</string>
     <string name="title_appData">داده برنامه</string>
     <string name="hint_database">داده جاری حذف خواهد شد،انجام شود؟</string>
-    <string name="settings_data_restore">Restore</string>
+    <string name="settings_data_restore">بازیابی</string>
     <!-- Others setting -->
     <string name="setting_title_others">موارد دیگر</string>
     <!-- Toast -->

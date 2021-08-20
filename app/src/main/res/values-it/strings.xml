@@ -112,7 +112,7 @@
     <string name="setting_title_data">Backup</string>
     <string name="setting_filter">Filtro dei segnalibri</string>
     <string name="setting_title_fav">Preferito</string>
-    <string name="setting_title_reload">Swipe down to reload</string>
+    <string name="setting_title_reload">Trascina in basso per rifiutare</string>
     <string name="setting_title_searchEngine">Motore di ricerca personalizzato</string>
     <string name="setting_title_userAgent">Agente utente personalizzato</string>
     <string name="setting_enter_userAgent">Inserisci User-Agent</string>
@@ -156,7 +156,7 @@
     <string name="setting_summary_export_appData">Esporta l\'intero database e le impostazioni personali.</string>
     <string name="title_appData">Dati app</string>
     <string name="hint_database">Questo eliminerà i dati correnti. Procedere?</string>
-    <string name="settings_data_restore">Restore</string>
+    <string name="settings_data_restore">Ripristina</string>
     <!-- Others setting -->
     <string name="setting_title_others">Altro</string>
     <!-- Toast -->

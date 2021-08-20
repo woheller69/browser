@@ -112,7 +112,7 @@
     <string name="setting_title_data">Sauvegarde</string>
     <string name="setting_filter">Filtre de signet</string>
     <string name="setting_title_fav">Favoris</string>
-    <string name="setting_title_reload">Swipe down to reload</string>
+    <string name="setting_title_reload">Balayez vers le bas pour recharger</string>
     <string name="setting_title_searchEngine">Moteur de recherche personnalisé</string>
     <string name="setting_title_userAgent">Agent utilisateur personnalisé</string>
     <string name="setting_enter_userAgent">Saisir l\'User-Agent</string>
@@ -156,7 +156,7 @@
     <string name="setting_summary_export_appData">Exportez toute la base de données et vos paramètres personnels.</string>
     <string name="title_appData">Données de l\'application</string>
     <string name="hint_database">Cela va supprimer les données actuelles. Continuer ?</string>
-    <string name="settings_data_restore">Restore</string>
+    <string name="settings_data_restore">Restaurer</string>
     <!-- Others setting -->
     <string name="setting_title_others">Autres</string>
     <!-- Toast -->

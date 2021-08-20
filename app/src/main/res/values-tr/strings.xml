@@ -112,7 +112,7 @@
     <string name="setting_title_data">Yedekleme</string>
     <string name="setting_filter">Yer imi süzgeci</string>
     <string name="setting_title_fav">Başlangıç sitesi</string>
-    <string name="setting_title_reload">Swipe down to reload</string>
+    <string name="setting_title_reload">Yeniden yüklemek için aşağı kaydırın</string>
     <string name="setting_title_searchEngine">Özel arama motoru</string>
     <string name="setting_title_userAgent">Özel kullanıcı aracısı</string>
     <string name="setting_enter_userAgent">User-Agent giriniz</string>
@@ -156,7 +156,7 @@
     <string name="setting_summary_export_appData">Tüm veritabanını ve kişisel ayarlarınızı dışa aktarın.</string>
     <string name="title_appData">Uygulama verileri</string>
     <string name="hint_database">Bu, mevcut verileri siler. Devam edilsin mi?</string>
-    <string name="settings_data_restore">Restore</string>
+    <string name="settings_data_restore">Onarmak</string>
     <!-- Others setting -->
     <string name="setting_title_others">Diğer</string>
     <!-- Toast -->

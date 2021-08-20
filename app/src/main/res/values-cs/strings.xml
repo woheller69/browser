@@ -112,7 +112,7 @@
     <string name="setting_title_data">Záloha</string>
     <string name="setting_filter">Filtr záložek</string>
     <string name="setting_title_fav">Oblíbené</string>
-    <string name="setting_title_reload">Swipe down to reload</string>
+    <string name="setting_title_reload">Přejetím dolů znovu načtete</string>
     <string name="setting_title_searchEngine">Vlastní vyhledávač</string>
     <string name="setting_title_userAgent">Vlastní uživatelský agent</string>
     <string name="setting_enter_userAgent">Vlastní uživatelský agent</string>
@@ -156,7 +156,7 @@
     <string name="setting_summary_export_appData">Exportovat celou databázi a vaše osobní nastavení.</string>
     <string name="title_appData">Data aplikace</string>
     <string name="hint_database">Tímto odstraníte aktuální data. Chcete pokračovat?</string>
-    <string name="settings_data_restore">Restore</string>
+    <string name="settings_data_restore">Obnovit</string>
     <!-- Others setting -->
     <string name="setting_title_others">Další</string>
     <!-- Toast -->

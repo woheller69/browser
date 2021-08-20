@@ -112,7 +112,7 @@
     <string name="setting_title_data">Kopia zapasowa</string>
     <string name="setting_filter">Filtr zakładek</string>
     <string name="setting_title_fav">Ulubione</string>
-    <string name="setting_title_reload">Swipe down to reload</string>
+    <string name="setting_title_reload">Przesuń w dół aby odblokować</string>
     <string name="setting_title_searchEngine">Własna wyszukiwarka</string>
     <string name="setting_title_userAgent">Niestandardowy agent użytkownika</string>
     <string name="setting_enter_userAgent">Wprowadź agenta użytkownika</string>
@@ -156,7 +156,7 @@
     <string name="setting_summary_export_appData">Eksportuj całą bazę danych i ustawienia osobiste.</string>
     <string name="title_appData">Dane aplikacji</string>
     <string name="hint_database">Spowoduje to usunięcie aktualnych danych. Kontynuować?</string>
-    <string name="settings_data_restore">Restore</string>
+    <string name="settings_data_restore">Przywróć</string>
     <!-- Others setting -->
     <string name="setting_title_others">Pozostałe</string>
     <!-- Toast -->

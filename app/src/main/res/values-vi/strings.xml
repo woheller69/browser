@@ -112,7 +112,7 @@
     <string name="setting_title_data">Sao lưu</string>
     <string name="setting_filter">Bộ lọc dấu trang</string>
     <string name="setting_title_fav">Yêu thích</string>
-    <string name="setting_title_reload">Swipe down to reload</string>
+    <string name="setting_title_reload">Vuốt xuống để tải lại</string>
     <string name="setting_title_searchEngine">Công cụ tìm kiếm tuỳ chỉnh</string>
     <string name="setting_title_userAgent">Tác nhân người dùng tuỳ chỉnh</string>
     <string name="setting_enter_userAgent">Nhập tác nhân người dùng</string>
@@ -156,7 +156,7 @@
     <string name="setting_summary_export_appData">Xuất toàn bộ cơ sở dữ liệu và cài đặt cá nhân của bạn.</string>
     <string name="title_appData">Dữ liệu ứng dụng</string>
     <string name="hint_database">Việc này sẽ xoá dữ liệu hiện tại. Tiếp tục?</string>
-    <string name="settings_data_restore">Restore</string>
+    <string name="settings_data_restore">Khôi phục</string>
     <!-- Others setting -->
     <string name="setting_title_others">Khác</string>
     <!-- Toast -->

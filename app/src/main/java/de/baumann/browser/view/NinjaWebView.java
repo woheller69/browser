@@ -76,6 +76,11 @@ public class NinjaWebView extends WebView implements AlbumController {
     private NinjaWebChromeClient webChromeClient;
     private NinjaDownloadListener downloadListener;
 
+    public Boolean isBackPressed;
+    public void setIsBackPressed(Boolean isBackPressed) {
+        this.isBackPressed = isBackPressed;
+    }
+
     private Javascript javaHosts;
     private DOM DOMHosts;
     private Cookie cookieHosts;
@@ -101,6 +106,7 @@ public class NinjaWebView extends WebView implements AlbumController {
         this.context = context;
         this.foreground = false;
         this.desktopMode=false;
+        this.isBackPressed = false;
 
         sp = PreferenceManager.getDefaultSharedPreferences(context);
         this.fingerPrintProtection=sp.getBoolean("sp_fingerPrintProtection",false);

@@ -394,7 +394,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     WebBackForwardList mWebBackForwardList = ninjaWebView.copyBackForwardList();
                     String historyUrl = mWebBackForwardList.getItemAtIndex(mWebBackForwardList.getCurrentIndex()-1).getUrl();
                     ninjaWebView.initPreferences(historyUrl);
-                    ninjaWebView.goBack();
+                    goBack_skipRedirects();
                 } else {
                     removeAlbum(currentAlbumController);
                 }
@@ -670,7 +670,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     WebBackForwardList mWebBackForwardList = ninjaWebView.copyBackForwardList();
                     String historyUrl = mWebBackForwardList.getItemAtIndex(mWebBackForwardList.getCurrentIndex()-1).getUrl();
                     ninjaWebView.initPreferences(historyUrl);
-                    ninjaWebView.goBack();
+                    goBack_skipRedirects();
                 } else {
                     removeAlbum(currentAlbumController);
                 }
@@ -2110,5 +2110,12 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             }
         }
         return list.get(index);
+    }
+
+    public void goBack_skipRedirects() {
+        if (ninjaWebView.canGoBack()) {
+            ninjaWebView.setIsBackPressed(true);
+            ninjaWebView.goBack();
+        }
     }
 }

@@ -66,6 +66,7 @@ public class NinjaWebViewClient extends WebViewClient {
     @Override
     public void onPageFinished(WebView view, String url) {
         super.onPageFinished(view, url);
+        ninjaWebView.isBackPressed = false;
         if (ninjaWebView.isForeground()) {
             ninjaWebView.invalidate();
         } else {
@@ -450,35 +451,40 @@ public class NinjaWebViewClient extends WebViewClient {
 
     @SuppressLint("QueryPermissionsNeeded")
     private boolean handleUri(final Uri uri) {
-        String url = uri.toString();
-        if (url.startsWith("http")) {
-            ninjaWebView.initPreferences(url);
-            ninjaWebView.loadUrl(url, ninjaWebView.getRequestHeaders());
-            return true;
-        }
-        if (url.startsWith("intent:")) {
-            Intent intent = new Intent(Intent.ACTION_VIEW);
-            intent.setData(Uri.parse(url));
-            Intent chooser = Intent.createChooser(intent, context.getString(R.string.menu_open_with));
-            if (intent.resolveActivity(context.getPackageManager()) != null) {
-                context.startActivity(chooser);
-            } else {
-                try {
-                    Intent fallback = Intent.parseUri(url, Intent.URI_INTENT_SCHEME);
-                    //try to find fallback url
-                    String fallbackUrl = fallback.getStringExtra("browser_fallback_url");
-                    if (fallbackUrl != null) {
-                        this.ninjaWebView.loadUrl(fallbackUrl);
-                        return true;
+        if (ninjaWebView.isBackPressed){
+            return false;
+        } else {
+            // handle the url by implementing your logic
+            String url = uri.toString();
+            if (url.startsWith("http")) {
+                ninjaWebView.initPreferences(url);
+                ninjaWebView.loadUrl(url, ninjaWebView.getRequestHeaders());
+                return true;
+            }
+
+            if (url.startsWith("intent:")) {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse(url));
+                Intent chooser = Intent.createChooser(intent, context.getString(R.string.menu_open_with));
+                if (intent.resolveActivity(context.getPackageManager()) != null) {
+                    context.startActivity(chooser);
+                } else {
+                    try {
+                        Intent fallback = Intent.parseUri(url, Intent.URI_INTENT_SCHEME);
+                        //try to find fallback url
+                        String fallbackUrl = fallback.getStringExtra("browser_fallback_url");
+                        if (fallbackUrl != null) {
+                            this.ninjaWebView.loadUrl(fallbackUrl);
+                            return true;
+                        }
+                    } catch (URISyntaxException e) {
+                        //not an intent uri
+                        return false;
                     }
-                } catch (URISyntaxException e) {
-                    //not an intent uri
-                    return false;
                 }
             }
+            return true;
         }
-        //do nothing in other cases
-        return true;
     }
 
     @Override

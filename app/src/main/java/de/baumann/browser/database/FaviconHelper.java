@@ -188,14 +188,14 @@ public class FaviconHelper extends SQLiteOpenHelper {
         return Bitmap.createBitmap(32, 32, Bitmap.Config.ARGB_8888);
     }
 
-    public static void setFavicon(Context context, View view, String url, int id) {
+    public static void setFavicon(Context context, View view, String url, int id, int idImage) {
         ImageView faviconView = view.findViewById(id);
         FaviconHelper faviconHelper = new FaviconHelper(context);
         Bitmap bitmap=faviconHelper.getFavicon(url);
         if (bitmap != null){
             faviconView.setImageBitmap(bitmap);
         }else {
-            faviconView.setImageResource(R.drawable.icon_image_broken);
+            faviconView.setImageResource(idImage);
         }
     }
 }

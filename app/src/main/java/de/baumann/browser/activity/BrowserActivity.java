@@ -479,6 +479,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     }
 
     public void showTabView () {
+        HelperUnit.hideSoftKeyboard(omniBox_text, context);
         if (overViewTab.equals(getString(R.string.album_title_home))) {
             tab_openOverView.setImageResource(R.drawable.icon_web_light);
         } else if (overViewTab.equals(getString(R.string.album_title_bookmarks))) {
@@ -971,7 +972,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
         View dialogView = View.inflate(context, R.layout.dialog_toggle, null);
         builder.setView(dialogView);
-        FaviconHelper.setFavicon(context, dialogView, ninjaWebView.getUrl(), R.id.menu_icon);
+        FaviconHelper.setFavicon(context, dialogView, ninjaWebView.getUrl(), R.id.menu_icon, R.drawable.icon_image_broken);
 
         AlertDialog dialog = builder.create();
         dialog.show();
@@ -1622,7 +1623,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         AlertDialog dialog_overflow = builder.create();
         dialog_overflow.show();
         Objects.requireNonNull(dialog_overflow.getWindow()).setGravity(Gravity.BOTTOM);
-        FaviconHelper.setFavicon(context, dialogView, url, R.id.menu_icon);
+        FaviconHelper.setFavicon(context, dialogView, url, R.id.menu_icon, R.drawable.icon_image_broken);
 
         TextView overflow_title = dialogView.findViewById(R.id.overflow_title);
         assert title != null;
@@ -1859,7 +1860,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         TextView menuTitle = dialogView.findViewById(R.id.menuTitle);
         menuTitle.setText(title);
-        FaviconHelper.setFavicon(context, dialogView, url, R.id.menu_icon);
+        FaviconHelper.setFavicon(context, dialogView, url, R.id.menu_icon, R.drawable.icon_image_broken);
 
         builder.setView(dialogView);
         AlertDialog dialog = builder.create();

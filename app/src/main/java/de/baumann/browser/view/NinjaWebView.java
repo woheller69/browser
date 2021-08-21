@@ -259,7 +259,7 @@ public class NinjaWebView extends WebView implements AlbumController {
         album.setAlbumTitle(title);
         CardView cardView = getAlbumView().findViewById(R.id.cardView);
         cardView.setVisibility(VISIBLE);
-        FaviconHelper.setFavicon(context, getAlbumView(), url, R.id.faviconView);
+        FaviconHelper.setFavicon(context, getAlbumView(), url, R.id.faviconView, R.drawable.icon_image_broken_light);
     }
 
     @Override
@@ -294,7 +294,7 @@ public class NinjaWebView extends WebView implements AlbumController {
     public synchronized void updateFavicon (String url) {
         CardView cardView = getAlbumView().findViewById(R.id.cardView);
         cardView.setVisibility(VISIBLE);
-        FaviconHelper.setFavicon(context, getAlbumView(), url, R.id.faviconView);
+        FaviconHelper.setFavicon(context, getAlbumView(), url, R.id.faviconView, R.drawable.icon_image_broken_light);
     }
 
     @Override

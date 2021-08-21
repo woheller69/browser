@@ -55,7 +55,10 @@
                         android:layout_gravity="start"
                         android:layout_marginEnd="4dp"
                         android:text="@string/setting_title_data"
-                        android:textAllCaps="true"/>
+                        android:textAllCaps="true"
+                        android:ellipsize="end"
+                        android:includeFontPadding="false"
+                        android:maxLines="1"/>
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/ib_restore"
@@ -65,7 +68,10 @@
                         android:layout_gravity="end"
                         android:layout_marginStart="4dp"
                         android:text="@string/settings_data_restore"
-                        android:textAllCaps="true"/>
+                        android:textAllCaps="true"
+                        android:ellipsize="end"
+                        android:includeFontPadding="false"
+                        android:maxLines="1"/>
 
                 </LinearLayout>
 

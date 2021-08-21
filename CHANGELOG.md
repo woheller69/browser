@@ -5,6 +5,7 @@
 - fix: some force closes #642 #643
 - fix: gestures and text-edit-scrolling collide #633
 - fix: Toolbar hides, but reappears if page is refreshed #660
+- fix: minor fixes and UI
 - new: save dektopMode, Javascript, domStorage also for history items
 - removed: PlayStore support
 - updated: translations

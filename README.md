@@ -1,6 +1,6 @@
 <img src="https://github.com/scoute-dich/browser/blob/master/graphics/Zeichnung_features.png" /></a>
 
-"FOSS Browser" is a fully free/open source (as in freedom) Android app. FOSS Browser is doesn't show ads and doesn't track you. The intention is to provide a simple and light weight but powerful and privacy friendly browser with a modern user interface. Your privacy - your data.
+"FOSS Browser" is a fully free/open source (as in freedom) Android app. FOSS Browser doesn't show ads and doesn't track you. The intention is to provide a simple and light weight but powerful and privacy friendly browser with a modern user interface. Your privacy - your data.
 
 <a href="https://f-droid.org/packages/de.baumann.browser/" target="_blank">
 <img src="https://f-droid.org/badge/get-it-on.png" alt="Get it on F-Droid" height="80"/></a>

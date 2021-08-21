@@ -53,6 +53,7 @@ import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.text.method.KeyListener;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.ContextMenu;
 import android.view.Gravity;
 import android.view.KeyEvent;
@@ -245,9 +246,15 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     .putBoolean("sp_autofill", true)
                     .putBoolean("sp_location", false).apply();
         }
-
         contentFrame = findViewById(R.id.main_content);
         contentFrame.getViewTreeObserver().addOnGlobalLayoutListener(keyboardLayoutListener);
+
+        // Calculate ActionBar height
+        TypedValue tv = new TypedValue();
+        if (getTheme().resolveAttribute(android.R.attr.actionBarSize, tv, true) && !sp.getBoolean("hideToolbar", true)) {
+            int actionBarHeight = TypedValue.complexToDimensionPixelSize(tv.data,getResources().getDisplayMetrics());
+            contentFrame.setPadding(0,0,0,actionBarHeight);
+        }
 
         new AdBlock(context);
         new Javascript(context);
@@ -1201,7 +1208,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     ninjaWebView.reload();
                 }
 
-                if (!ninjaWebView.canScrollVertically(0)) {
+                if (!ninjaWebView.canScrollVertically(0) && sp.getBoolean("hideToolbar", true)) {
                     ObjectAnimator animation = ObjectAnimator.ofFloat(bottomAppBar, "translationY", 0);
                     animation.setDuration(getResources().getInteger(android.R.integer.config_shortAnimTime));
                     animation.start();
@@ -1209,7 +1216,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
             }
             public void onSwipeTop(){
-                if (!ninjaWebView.canScrollVertically(0)) {
+                if (!ninjaWebView.canScrollVertically(0) && sp.getBoolean("hideToolbar", true)) {
                     ObjectAnimator animation = ObjectAnimator.ofFloat(bottomAppBar, "translationY", bottomAppBar.getHeight());
                     animation.setDuration(getResources().getInteger(android.R.integer.config_shortAnimTime));
                     animation.start();

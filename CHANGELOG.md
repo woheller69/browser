@@ -1,11 +1,13 @@
 ### v 8.3 (WIP)
 
-- removed: PlayStore support
 - fix: Swipe to reload not working sometimes #654
 - fix: Restoring bookmarks does not work properly #653
 - fix: some force closes #642 #643
 - fix: gestures and text-edit-scrolling collide #633
+- fix: Toolbar hides, but reappears if page is refreshed #660
 - new: save dektopMode, Javascript, domStorage also for history items
+- removed: PlayStore support
+- updated: translations
 
 ### v 8.2
 

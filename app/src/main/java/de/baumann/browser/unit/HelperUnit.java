@@ -43,6 +43,7 @@ import androidx.webkit.WebViewFeature;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import android.os.Environment;
+import android.os.Handler;
 import android.view.Gravity;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -350,12 +351,15 @@ public class HelperUnit {
         Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
     }
 
-    public static void showSoftKeyboard(View view, Context context){
+    public static void showSoftKeyboard(View view, Activity context){
         assert view != null;
-        if(view.requestFocus()){
-            InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
-            imm.showSoftInput(view, InputMethodManager.SHOW_IMPLICIT);
-        }
+        final Handler handler = new Handler();
+        handler.postDelayed(() -> {
+            if (view.requestFocus()) {
+                InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.showSoftInput(view, InputMethodManager.SHOW_IMPLICIT);
+            }
+        }, 50);
     }
 
     public static void hideSoftKeyboard(View view, Context context){

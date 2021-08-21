@@ -1544,6 +1544,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         searchOnSite = true;
         omniBox.setVisibility(View.GONE);
         searchPanel.setVisibility(View.VISIBLE);
+        HelperUnit.showSoftKeyboard(searchBox, activity);
     }
 
     private void saveBookmark() {

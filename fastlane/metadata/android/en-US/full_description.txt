@@ -1,4 +1,4 @@
-"FOSS Browser" is a fully free/open source (as in freedom) Android app. FOSS Browser is doesn't show ads and doesn't track you. The intention is to provide a simple and light weight but powerful and privacy friendly browser with a modern user interface. Your privacy - your data.
+"FOSS Browser" is a fully free/open source (as in freedom) Android app. FOSS Browser doesn't show ads and doesn't track you. The intention is to provide a simple and light weight but powerful and privacy friendly browser with a modern user interface. Your privacy - your data.
 
 <b>Project Homepage with further infos: https://github.com/scoute-dich/browser/</b>
 

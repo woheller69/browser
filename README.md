@@ -1,8 +1,6 @@
 <img src="https://github.com/scoute-dich/browser/blob/master/graphics/Zeichnung_features.png" /></a>
 
-"FOSS Browser" is fully free/libre (as in freedom) Android app. The source code is public. The app also does not need any unnecessary
-permissions. It's a simple Android browser based on webview. The intention is to provide a simple and light weight but powerful
-browser with a nice looking user interface.
+"FOSS Browser" is a fully free/open source (as in freedom) Android app. FOSS Browser is doesn't show ads and doesn't track you. The intention is to provide a simple and light weight but powerful and privacy friendly browser with a modern user interface. Your privacy - your data.
 
 <a href="https://f-droid.org/packages/de.baumann.browser/" target="_blank">
 <img src="https://f-droid.org/badge/get-it-on.png" alt="Get it on F-Droid" height="80"/></a>
@@ -24,9 +22,8 @@ browser with a nice looking user interface.
 - no trackers
 - no unnecessary permissions
 - third party cookies disabled by default
-- enable/disable cookies, javascript, location access, history
+- enable/disable cookies, javascript, location access, history and more
 - advanced settings for javascript, cookies and DOM-storage (domain/bookmark based)
-- toggle image loading
 - do not track me / GPC (global privacy control)
 - measures agains browser fingerprinting
 - AdBlocker
@@ -52,5 +49,5 @@ browser with a nice looking user interface.
 - small size
 - search on site
 - Websearch (from marked text context menu)
-- share/save as PDF
+- save as PDF
 - open links in other apps (for example YouTube)

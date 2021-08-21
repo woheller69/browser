@@ -1,6 +1,6 @@
-"FOSS Browser" ist eine vollständig freie (wie in Freiheit) Android-Anwendung. Der Quellcode ist öffentlich zugänglich. FOSS Browser benötigt keine unnötigen
-Berechtigungen. Es ist ein einfacher Android browser basierend auf webview. FOSS Browser soll ein einfacher und kleiner Browser sein, der funktional und optisch
-ansprechend ist.
+"FOSS Browser" ist eine komplett freie (wie in Freiheit)/quelloffene Software für Android. FOSS Browser zeigt keine Werbung und sammelt keine Daten. Das Ziel ist ein einfacher und kleiner, aber funktionsreicher und datenschutzfreundlicher Browser mit einer modernen Benutzeroberfläche. Deine Privatsphäre - deine Daten!
+
+<b>Projektseite mit weiteren Informationen: https://github.com/scoute-dich/browser/</b>
 
 -------------------------------------------------
 <b>SICHERHEIT/DATEN</b>
@@ -10,11 +10,10 @@ ansprechend ist.
 • keine Tracker
 • keine unnötigen Berechtigungen
 • Cookies von Drittanbietern deaktiviert
-• Einstellungen für Cookies, Javascript, Standort, Verlauf
-• Ausnahmen für Javascript, Cookies, Adblock und entfernte Inhalte
-• Bilder laden deaktivieren (optional)
-• do not track me
-• Daten sichern
+• aktiviere/deaktiviere Cookies, Javascript, Standort, Verlauf und mehr
+• erweiterte Einstellungen für Javascript, Cookies und DOM-Speicher (Lesezeichen-/Domain basierend)
+• do not track me / GPC (Globale Privatsphärenkontrolle)
+• Schutz vor Browser-Fingerprinting
 • AdBlocker
 • Daten beim Verlassen löschen (optional)
 
@@ -25,10 +24,10 @@ ansprechend ist.
 • für Einhand-Benutzung optimiert (Toolbar unten)
 • Tabkontrolle (wechseln, öffnen, schließen beliebig vieler Tabs)
 • Material Design
-• Toolbar beim Browsen ausblenden (optional)
+• Toolbar beim browsen ausblenden (optional)
 • Navigations-Knopf (bei ausgeblendeter Toolbar, optional)
 • Schnelleinstellungen für die wichtigsten Dinge
-• Gestensteuerung (Toolbar und Navigationsknopf)
+• Gestensteuerung (Toolbar und Toolbarknöpfe)
 • Wechsel zwischen Mobiler- und Desktopansicht
 • Wechsel zwischen Tag- Und Nachtansciht
 
@@ -36,21 +35,9 @@ ansprechend ist.
 <b>NICE TO HAVE</b>
 -------------------------------------------------
 
+• Daten sichern
 • kleine Größe
 • auf der Seite suchen
 • Websuche (über geteilten Text)
 • PDF speichern
 • Links in anderen Anwendungen öffnen (z.B. YouTube)
-
--------------------------------------------------
-<b>LINKS</b>
--------------------------------------------------
-
-• Readme: https://github.com/scoute-dich/browser/README.md
-• Releases: https://github.com/scoute-dich/browser/releases
-• Changelog: https://github.com/scoute-dich/browser/blob/master/CHANGELOG.md
-• Privacy: https://github.com/scoute-dich/browser/blob/master/PRIVACY.md
-• License: https://github.com/scoute-dich/browser/blob/master/LICENSE.md
-• Code of conduct: https://github.com/scoute-dich/browser/blob/master/CODE_OF_CONDUCT.md
-• Contributing: https://github.com/scoute-dich/browser/blob/master/CONTRIBUTING.md
-• XDA • Link: http://forum.xda-developers.com/android/apps-games/app-browser-t3500091

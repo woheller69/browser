@@ -165,7 +165,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     private Javascript javaHosts;
     private Cookie cookieHosts;
     private DOM DOM;
-
+    private ObjectAnimator animation;
     private long newIcon;
     private boolean filter;
     private long filterBy;
@@ -1210,18 +1210,22 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     ninjaWebView.reload();
                 }
 
-                if (!ninjaWebView.canScrollVertically(0) && sp.getBoolean("hideToolbar", true)) {
-                    ObjectAnimator animation = ObjectAnimator.ofFloat(bottomAppBar, "translationY", 0);
-                    animation.setDuration(getResources().getInteger(android.R.integer.config_shortAnimTime));
-                    animation.start();
+                if (sp.getBoolean("hideToolbar", true)) {
+                    if (animation==null || !animation.isRunning()) {
+                        animation = ObjectAnimator.ofFloat(bottomAppBar, "translationY", 0);
+                        animation.setDuration(getResources().getInteger(android.R.integer.config_shortAnimTime));
+                        animation.start();
+                    }
                 }
 
             }
             public void onSwipeTop(){
                 if (!ninjaWebView.canScrollVertically(0) && sp.getBoolean("hideToolbar", true)) {
-                    ObjectAnimator animation = ObjectAnimator.ofFloat(bottomAppBar, "translationY", bottomAppBar.getHeight());
-                    animation.setDuration(getResources().getInteger(android.R.integer.config_shortAnimTime));
-                    animation.start();
+                    if (animation==null || !animation.isRunning()) {
+                        animation = ObjectAnimator.ofFloat(bottomAppBar, "translationY", bottomAppBar.getHeight());
+                        animation.setDuration(getResources().getInteger(android.R.integer.config_shortAnimTime));
+                        animation.start();
+                    }
                 }
             }
         };
@@ -1232,13 +1236,17 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             if (!searchOnSite) {
                 if (sp.getBoolean("hideToolbar", true)) {
                     if (scrollY > oldScrollY) {
-                        ObjectAnimator animation = ObjectAnimator.ofFloat(bottomAppBar, "translationY", bottomAppBar.getHeight());
-                        animation.setDuration(getResources().getInteger(android.R.integer.config_shortAnimTime));
-                        animation.start();
-                    } else if (scrollY < oldScrollY){
-                        ObjectAnimator animation = ObjectAnimator.ofFloat(bottomAppBar, "translationY", 0);
-                        animation.setDuration(getResources().getInteger(android.R.integer.config_shortAnimTime));
-                        animation.start();
+                        if (animation==null || !animation.isRunning()) {
+                            animation = ObjectAnimator.ofFloat(bottomAppBar, "translationY", bottomAppBar.getHeight());
+                            animation.setDuration(getResources().getInteger(android.R.integer.config_shortAnimTime));
+                            animation.start();
+                        }
+                    } else if (scrollY < oldScrollY) {
+                        if (animation==null || !animation.isRunning()) {
+                            animation = ObjectAnimator.ofFloat(bottomAppBar, "translationY", 0);
+                            animation.setDuration(getResources().getInteger(android.R.integer.config_shortAnimTime));
+                            animation.start();
+                        }
                     }
                 }
             }

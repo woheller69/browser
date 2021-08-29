@@ -67,11 +67,17 @@ public class NinjaWebViewClient extends WebViewClient {
     public void onPageFinished(WebView view, String url) {
         super.onPageFinished(view, url);
         ninjaWebView.isBackPressed = false;
+
         if (ninjaWebView.isForeground()) {
             ninjaWebView.invalidate();
         } else {
             ninjaWebView.postInvalidate();
         }
+
+        if(sp.getBoolean("onPageFinished",true)) {
+            view.evaluateJavascript(sp.getString("sp_onPageFinished",""), null);
+        }
+
         if(sp.getBoolean("sp_savedata",true)) {
             view.evaluateJavascript("var links=document.getElementsByTagName('video'); for(let i=0;i<links.length;i++){links[i].pause()};", null);
         }
@@ -93,6 +99,10 @@ public class NinjaWebViewClient extends WebViewClient {
         ninjaWebView.setStopped(false);
         ninjaWebView.resetFavicon();
         super.onPageStarted(view,url,favicon);
+
+        if(sp.getBoolean("onPageStarted",true)) {
+            view.evaluateJavascript(sp.getString("sp_onPageStarted",""), null);
+        }
 
         if(ninjaWebView.isFingerPrintProtection()) {
 
@@ -403,6 +413,10 @@ public class NinjaWebViewClient extends WebViewClient {
 
     @Override
     public void onLoadResource(WebView view, String url) {
+
+        if(sp.getBoolean("onLoadResource",true)) {
+            view.evaluateJavascript(sp.getString("sp_onLoadResource",""), null);
+        }
 
         if(ninjaWebView.isFingerPrintProtection()) {
             view.evaluateJavascript("var test=document.querySelector(\"a[ping]\"); if(test!==null){test.removeAttribute('ping')};", null);

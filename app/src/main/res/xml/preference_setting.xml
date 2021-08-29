@@ -39,6 +39,27 @@
             app:editTextSwitchKey="userAgentSwitch"
             android:title="@string/setting_title_userAgent" />
 
+        <de.baumann.browser.preferences.EditTextSwitchPreference
+            android:selectable="true"
+            app:useSimpleSummaryProvider="true"
+            android:key="sp_onPageStarted"
+            app:editTextSwitchKey="onPageStarted"
+            android:title="User script onPageStarted" />
+
+        <de.baumann.browser.preferences.EditTextSwitchPreference
+            android:selectable="true"
+            app:useSimpleSummaryProvider="true"
+            android:key="sp_onPageFinished"
+            app:editTextSwitchKey="onPageFinished"
+            android:title="User script onPageFinished" />
+
+        <de.baumann.browser.preferences.EditTextSwitchPreference
+            android:selectable="true"
+            app:useSimpleSummaryProvider="true"
+            android:key="sp_onLoadResource"
+            app:editTextSwitchKey="onLoadResource"
+            android:title="User script onLoadResource" />
+
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/setting_title_app">

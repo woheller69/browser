@@ -74,7 +74,7 @@ public class NinjaWebViewClient extends WebViewClient {
             ninjaWebView.postInvalidate();
         }
 
-        if(sp.getBoolean("onPageFinished",true)) {
+        if(sp.getBoolean("onPageFinished",false)) {
             view.evaluateJavascript(sp.getString("sp_onPageFinished",""), null);
         }
 
@@ -100,7 +100,7 @@ public class NinjaWebViewClient extends WebViewClient {
         ninjaWebView.resetFavicon();
         super.onPageStarted(view,url,favicon);
 
-        if(sp.getBoolean("onPageStarted",true)) {
+        if(sp.getBoolean("onPageStarted",false)) {
             view.evaluateJavascript(sp.getString("sp_onPageStarted",""), null);
         }
 
@@ -414,7 +414,7 @@ public class NinjaWebViewClient extends WebViewClient {
     @Override
     public void onLoadResource(WebView view, String url) {
 
-        if(sp.getBoolean("onLoadResource",true)) {
+        if(sp.getBoolean("onLoadResource",false)) {
             view.evaluateJavascript(sp.getString("sp_onLoadResource",""), null);
         }
 

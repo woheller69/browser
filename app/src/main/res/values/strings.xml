@@ -249,6 +249,7 @@
     <string name="menu_desktopView">Desktop view</string>
     <string name="menu_dayView">Day view</string>
     <string name="menu_nightView">Night view</string>
+    <string name="setting_userScript">Custom JavaScript code</string>
 
     <!-- License changelog -->
 

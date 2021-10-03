@@ -3,10 +3,14 @@ package de.baumann.browser.browser;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.net.Uri;
+import android.os.Build;
 import android.view.View;
 import android.webkit.*;
+
+import androidx.preference.PreferenceManager;
 
 import java.util.Objects;
 
@@ -80,6 +84,16 @@ public class NinjaWebChromeClient extends WebChromeClient {
         HelperUnit.grantPermissionsLoc(activity);
         callback.invoke(origin, true, false);
         super.onGeolocationPermissionsShowPrompt(origin, callback);
+    }
+
+    @Override
+    public void onPermissionRequest(final PermissionRequest request){
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(ninjaWebView.getContext());
+        if (sp.getBoolean("sp_camera",false)) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                request.grant(request.getResources());
+            }
+        }
     }
 
     @Override

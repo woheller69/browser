@@ -36,6 +36,11 @@
         android:defaultValue="false"
         android:title="@string/setting_title_location"/>
 
+    <CheckBoxPreference
+        android:key="sp_camera"
+        android:defaultValue="false"
+        android:title="@string/setting_title_camera"/>
+
     <PreferenceCategory android:title="@string/setting_title_adblock">
 
         <ListPreference

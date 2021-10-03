@@ -390,24 +390,26 @@ public class NinjaWebViewClient extends WebViewClient {
                     "  });", null);
 
             //Spoof screen resolution, color depth: set values like in Tor browser, random values for device memory, hardwareConcurrency, remove battery, network connection, keyboard, media devices info, prevent sendBeacon
-            view.evaluateJavascript("" +
-                    "Object.defineProperty(window, 'devicePixelRatio',{value:1});" +
-                    "Object.defineProperty(window.screen, 'width',{value:1000});" +
-                    "Object.defineProperty(window.screen, 'availWidth',{value:1000});" +
-                    "Object.defineProperty(window.screen, 'height',{value:900});" +
-                    "Object.defineProperty(window.screen, 'availHeight',{value:900});" +
-                    "Object.defineProperty(window.screen, 'colorDepth',{value:24});" +
-                    "Object.defineProperty(window, 'outerWidth',{value:1000});" +
-                    "Object.defineProperty(window, 'outerHeight',{value:900});" +
-                    "Object.defineProperty(window, 'innerWidth',{value:1000});" +
-                    "Object.defineProperty(window, 'innerHeight',{value:900});" +
-                    "Object.defineProperty(navigator, 'getBattery',{value:function(){}});" +
-                    "const ram=Math.pow(2,Math.floor(Math.random() * 4));Object.defineProperty(navigator, 'deviceMemory',{value:ram});" +
-                    "const hw=Math.pow(2,Math.floor(Math.random() * 4));Object.defineProperty(navigator, 'hardwareConcurrency',{value:hw});" +
-                    "Object.defineProperty(navigator, 'connection',{value:null});" +
-                    "Object.defineProperty(navigator, 'keyboard',{value:null});" +
-                    "Object.defineProperty(navigator, 'mediaDevices',{value:null});" +
-                    "Object.defineProperty(navigator, 'sendBeacon',{value:null});",null);
+            if (!sp.getBoolean("sp_camera",false)) {
+                view.evaluateJavascript("" +
+                        "Object.defineProperty(window, 'devicePixelRatio',{value:1});" +
+                        "Object.defineProperty(window.screen, 'width',{value:1000});" +
+                        "Object.defineProperty(window.screen, 'availWidth',{value:1000});" +
+                        "Object.defineProperty(window.screen, 'height',{value:900});" +
+                        "Object.defineProperty(window.screen, 'availHeight',{value:900});" +
+                        "Object.defineProperty(window.screen, 'colorDepth',{value:24});" +
+                        "Object.defineProperty(window, 'outerWidth',{value:1000});" +
+                        "Object.defineProperty(window, 'outerHeight',{value:900});" +
+                        "Object.defineProperty(window, 'innerWidth',{value:1000});" +
+                        "Object.defineProperty(window, 'innerHeight',{value:900});" +
+                        "Object.defineProperty(navigator, 'getBattery',{value:function(){}});" +
+                        "const ram=Math.pow(2,Math.floor(Math.random() * 4));Object.defineProperty(navigator, 'deviceMemory',{value:ram});" +
+                        "const hw=Math.pow(2,Math.floor(Math.random() * 4));Object.defineProperty(navigator, 'hardwareConcurrency',{value:hw});" +
+                        "Object.defineProperty(navigator, 'connection',{value:null});" +
+                        "Object.defineProperty(navigator, 'keyboard',{value:null});" +
+                        "Object.defineProperty(navigator, 'mediaDevices',{value:null});" +
+                        "Object.defineProperty(navigator, 'sendBeacon',{value:null});", null);
+            }
         }
     }
 

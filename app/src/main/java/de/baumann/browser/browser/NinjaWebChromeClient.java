@@ -90,6 +90,10 @@ public class NinjaWebChromeClient extends WebChromeClient {
     public void onPermissionRequest(final PermissionRequest request){
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(ninjaWebView.getContext());
         if (sp.getBoolean("sp_camera",false)) {
+            if (ninjaWebView.getSettings().getMediaPlaybackRequiresUserGesture()){
+                ninjaWebView.getSettings().setMediaPlaybackRequiresUserGesture(false);  //fix conflict with save data option. Temporarily switch off setMediaPlaybackRequiresUserGesture
+                ninjaWebView.reload();
+            }
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 request.grant(request.getResources());
             }

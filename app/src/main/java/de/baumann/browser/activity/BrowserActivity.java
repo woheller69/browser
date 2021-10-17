@@ -1893,15 +1893,18 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         GridItem item_02 = new GridItem(0, getString(R.string.main_menu_new_tab),  0);
         GridItem item_03 = new GridItem(0, getString(R.string.menu_delete),  0);
         GridItem item_04 = new GridItem(0, getString(R.string.menu_edit),  0);
+        GridItem item_05 = new GridItem(0,getString(R.string.menu_share_link),0);
 
         final List<GridItem> gridList = new LinkedList<>();
 
         if (overViewTab.equals(getString(R.string.album_title_bookmarks)) || overViewTab.equals(getString(R.string.album_title_home))) {
+            gridList.add(gridList.size(), item_05);
             gridList.add(gridList.size(), item_01);
             gridList.add(gridList.size(), item_02);
             gridList.add(gridList.size(), item_03);
             gridList.add(gridList.size(), item_04);
         } else {
+            gridList.add(gridList.size(), item_05);
             gridList.add(gridList.size(), item_01);
             gridList.add(gridList.size(), item_02);
             gridList.add(gridList.size(), item_03);
@@ -1917,13 +1920,16 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             AlertDialog dialogSubMenu;
             switch (position) {
                 case 0:
+                    shareLink("",url);
+                    break;
+                case 1:
                     addAlbum(getString(R.string.app_name), url, true);
                     hideOverview();
                     break;
-                case 1:
+                case 2:
                     addAlbum(getString(R.string.app_name), url, false);
                     break;
-                case 2:
+                case 3:
                     builderSubMenu = new MaterialAlertDialogBuilder(context);
                     builderSubMenu.setMessage(R.string.hint_database);
                     builderSubMenu.setPositiveButton(R.string.app_ok, (dialog2, whichButton) -> {
@@ -1946,7 +1952,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     dialogSubMenu.show();
                     Objects.requireNonNull(dialogSubMenu.getWindow()).setGravity(Gravity.BOTTOM);
                     break;
-                case 3:
+                case 4:
                     builderSubMenu = new MaterialAlertDialogBuilder(context);
                     View dialogViewSubMenu = View.inflate(context, R.layout.dialog_edit_title, null);
 

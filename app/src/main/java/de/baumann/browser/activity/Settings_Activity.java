@@ -20,6 +20,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import java.util.Objects;
 
+import de.baumann.browser.BuildConfig;
 import de.baumann.browser.fragment.Fragment_settings;
 import de.baumann.browser.R;
 import de.baumann.browser.unit.HelperUnit;
@@ -62,7 +63,7 @@ public class Settings_Activity extends AppCompatActivity {
             }
             Linkify.addLinks(s, Linkify.WEB_URLS);
             MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(this);
-            builder.setTitle(getString(R.string.menu_other_info));
+            builder.setTitle(getString(R.string.menu_other_info)+"\t V"+ BuildConfig.VERSION_NAME);
             builder.setMessage(s);
             AlertDialog dialog = builder.create();
             dialog.show();

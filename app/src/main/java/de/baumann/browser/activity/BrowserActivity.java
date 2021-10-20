@@ -289,11 +289,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         initTabDialog();
         initSearchPanel();
         initOverview();
-        dispatchIntent(getIntent());
-
-        if (sp.getBoolean("start_tabStart", false)){
+        if (sp.getBoolean("start_tabStart", false)){ //put showOverview first. May be closed again later depending on intent
             showOverview();
         }
+        dispatchIntent(getIntent());
     }
 
     @Override
@@ -520,16 +519,19 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         } else if (intent.getAction() != null && intent.getAction().equals(Intent.ACTION_WEB_SEARCH)) {
             addAlbum(null, Objects.requireNonNull(intent.getStringExtra(SearchManager.QUERY)), true);
             getIntent().setAction("");
+            hideOverview();
         } else if (filePathCallback != null) {
             filePathCallback = null;
             getIntent().setAction("");
         } else if (url != null && Intent.ACTION_SEND.equals(action)) {
             addAlbum(getString(R.string.app_name), url, true);
             getIntent().setAction("");
+            hideOverview();
         } else if (Intent.ACTION_VIEW.equals(action)) {
             String data = Objects.requireNonNull(getIntent().getData()).toString();
             addAlbum(getString(R.string.app_name), data, true);
             getIntent().setAction("");
+            hideOverview();
         } else if (BrowserContainer.size() < 1) {
             addAlbum(getString(R.string.app_name), Objects.requireNonNull(sp.getString("favoriteURL", "https://github.com/scoute-dich/browser")), true);
             getIntent().setAction("");

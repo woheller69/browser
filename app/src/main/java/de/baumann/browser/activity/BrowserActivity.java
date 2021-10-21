@@ -1305,7 +1305,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             okAction.run();
         } else {
             MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
-            builder.setMessage(R.string.toast_quit);
+            builder.setMessage(R.string.toast_quit_TAB);
             builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> okAction.run());
             builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
             AlertDialog dialog = builder.create();

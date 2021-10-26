@@ -10,10 +10,14 @@ import android.os.Build;
 import android.view.View;
 import android.webkit.*;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.preference.PreferenceManager;
+
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import java.util.Objects;
 
+import de.baumann.browser.R;
 import de.baumann.browser.unit.HelperUnit;
 import de.baumann.browser.view.NinjaWebView;
 
@@ -89,15 +93,36 @@ public class NinjaWebChromeClient extends WebChromeClient {
     @Override
     public void onPermissionRequest(final PermissionRequest request){
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(ninjaWebView.getContext());
-        if (sp.getBoolean("sp_camera",false)) {
-            if (ninjaWebView.getSettings().getMediaPlaybackRequiresUserGesture()){
-                ninjaWebView.getSettings().setMediaPlaybackRequiresUserGesture(false);  //fix conflict with save data option. Temporarily switch off setMediaPlaybackRequiresUserGesture
-                ninjaWebView.reload();
-            }
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                request.grant(request.getResources());
+        String[] resources = request.getResources();
+        for (String resource : resources) {
+            if (PermissionRequest.RESOURCE_VIDEO_CAPTURE.equals(resource)) {
+                if (sp.getBoolean("sp_camera", false)) {
+                    if (ninjaWebView.getSettings().getMediaPlaybackRequiresUserGesture()) {
+                        ninjaWebView.getSettings().setMediaPlaybackRequiresUserGesture(false);  //fix conflict with save data option. Temporarily switch off setMediaPlaybackRequiresUserGesture
+                        ninjaWebView.reload();
+                    }
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                        request.grant(request.getResources());
+                    }
+                }
+            } else if (PermissionRequest.RESOURCE_PROTECTED_MEDIA_ID.equals(resource)) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+
+                    MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(ninjaWebView.getContext());
+                    builder.setMessage(R.string.hint_DRM_Media);
+                    builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
+                        request.grant(request.getResources());
+                    });
+                    builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> {
+                        request.deny();
+                    });
+                    AlertDialog dialog = builder.create();
+                    dialog.show();
+
+                }
             }
         }
+
     }
 
     @Override

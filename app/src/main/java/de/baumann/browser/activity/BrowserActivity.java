@@ -69,7 +69,6 @@ import android.view.Window;
 import android.view.WindowInsets;
 import android.view.WindowInsetsController;
 import android.view.WindowManager;
-import android.view.inputmethod.InputMethodManager;
 import android.webkit.CookieManager;
 import android.webkit.ValueCallback;
 import android.webkit.WebBackForwardList;
@@ -88,6 +87,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.VideoView;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Locale;
@@ -210,6 +210,17 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     // Overrides
 
     @Override
+    public void onSaveInstanceState(Bundle outState) {
+        ArrayList<String> openTabs = new ArrayList<>();
+        for (int i=0; i<BrowserContainer.size();i++){
+            openTabs.add(((NinjaWebView) (BrowserContainer.get(i))).getUrl());
+            //if (currentAlbumController == BrowserContainer.get(i)) outState.putInt("currentAlbum",i);
+        }
+        outState.putStringArrayList("Tabs",openTabs);
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
@@ -291,6 +302,13 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         initOverview();
         if (sp.getBoolean("start_tabStart", false)){ //put showOverview first. May be closed again later depending on intent
             showOverview();
+        }
+
+        if (savedInstanceState != null) {
+            ArrayList<String> openTabs = savedInstanceState.getStringArrayList("Tabs");
+            for (int counter = 0; counter < openTabs.size(); counter++) {
+                addAlbum(getString(R.string.app_name), openTabs.get(counter), counter<1);
+            }
         }
         dispatchIntent(getIntent());
     }
@@ -1212,6 +1230,22 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     @SuppressLint("ClickableViewAccessibility")
     private synchronized void addAlbum(String title, final String url, final boolean foreground) {
         ninjaWebView = new NinjaWebView(context);
+
+        //set JavaScript etc if url is an existing bookmark, startsite item, or history item
+        RecordAction action = new RecordAction(this);
+        List<Record> list = action.listEntries(activity);
+        for (Record record:list){
+                if (record.getURL().equals(url)){
+                    if ((record.getType()==BOOKMARK_ITEM)||(record.getType()==STARTSITE_ITEM)||(record.getType()== HISTORY_ITEM) ) {
+                        if (record.getDesktopMode() != ninjaWebView.isDesktopMode()) ninjaWebView.toggleDesktopMode(false);
+                        ninjaWebView.setJavaScript(record.getJavascript());
+                        ninjaWebView.setDomStorage(record.getDomStorage());
+                        ninjaWebView.setOldDomain(url);
+                        break;
+                    }
+                }
+            }
+
         ninjaWebView.setBrowserController(this);
         ninjaWebView.setAlbumTitle(title, url);
         activity.registerForContextMenu(ninjaWebView);

@@ -1326,6 +1326,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         }
 
         if (currentAlbumController != null) {
+            ninjaWebView.setPredecessor(currentAlbumController);  //save currentAlbumController and use when TAB is closed via Back button
             int index = BrowserContainer.indexOf(currentAlbumController) + 1;
             BrowserContainer.add(ninjaWebView, index);
         } else {
@@ -1373,13 +1374,21 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             }
         } else {
             closeTabConfirmation(() -> {
+                AlbumController predecessor=null;
+                if (controller==currentAlbumController){
+                    predecessor=((NinjaWebView) controller).getPredecessor();
+                } else predecessor=currentAlbumController;  //if not the current TAB is being closed return to current TAB
                 tab_container.removeView(controller.getAlbumView());
                 int index = BrowserContainer.indexOf(controller);
                 BrowserContainer.remove(controller);
-                if (index >= BrowserContainer.size()) {
-                    index = BrowserContainer.size() - 1;
+                if ((predecessor!=null) && (BrowserContainer.indexOf(predecessor)!=-1)){ //if predecessor is stored and has not been closed in the meantime
+                    showAlbum(predecessor);
+                }else {
+                    if (index >= BrowserContainer.size()) {
+                        index = BrowserContainer.size() - 1;
+                    }
+                    showAlbum(BrowserContainer.get(index));
                 }
-                showAlbum(BrowserContainer.get(index));
             });
         }
     }

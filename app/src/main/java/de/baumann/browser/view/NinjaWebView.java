@@ -72,6 +72,7 @@ public class NinjaWebView extends WebView implements AlbumController {
     private boolean stopped;
     private String oldDomain;
     private AlbumItem album;
+    private AlbumController predecessor=null;
     private NinjaWebViewClient webViewClient;
     private NinjaWebChromeClient webChromeClient;
     private NinjaDownloadListener downloadListener;
@@ -434,4 +435,11 @@ public class NinjaWebView extends WebView implements AlbumController {
     }
 
     public void setStopped(boolean stopped){this.stopped=stopped;}
+
+    public AlbumController getPredecessor(){ return predecessor;}
+
+    public void setPredecessor(AlbumController predecessor) {
+        this.predecessor = predecessor;
+    }
+
 }

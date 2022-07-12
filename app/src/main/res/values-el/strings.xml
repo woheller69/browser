@@ -170,6 +170,7 @@
     <string name="toast_permission_sdCard">Ο \"FOSS Browser\" χρειάζεται την άδεια να \"διαβάζει και γράφει στον αποθηκευτικό σας χώρο\". Αυτό είναι απαραίτητο για τη λήψη αρχείων, τη λήψη στιγμιότυπων οθόνης και την δημιουργία αντιγράφων ασφαλείας των δεδομένων σας.</string>
     <string name="toast_restart">Πρέπει να επανεκκινήσετε το \"FOSS Browser\" για να εφαρμόσετε τις αλλαγές. Κλείσιμο τώρα;</string>
     <string name="toast_quit">Θέλετε να κλείσετε το \"FOSS Browser\";</string>
+    <string name="toast_quit_TAB">Θέλετε να κλείσετε την καρτέλα;</string>
     <string name="toast_downloadComplete">Η λήψη ολοκληρώθηκε. Άνοιγμα διαχειριστή αρχείων;</string>
     <string name="toast_unsecured">Η ιστοσελίδα χρησιμοποιεί μια μη ασφαλή σύνδεση (\"http\"). Δοκιμάστε μια ασφαλή σύνδεση (\"https\");</string>
     <string name="toast_backup">Αντίγραφο ασφαλείας δεδομένων? Αυτό θα αντικαταστήσει το παλιό αντίγραφο ασφαλείας.</string>
@@ -194,5 +195,8 @@
     <string name="menu_desktopView">Προβολή για υπολογιστή</string>
     <string name="menu_dayView">Προβολή ημέρας</string>
     <string name="menu_nightView">Νυχτερινή προβολή</string>
+    <string name="setting_userScript">Προσαρμοσμένος κώδικας JavaScript</string>
+    <string name="setting_title_camera">Να επιτρέπεται η χρήση κάμερας</string>
+    <string name="hint_DRM_Media">Να επιτρέπεται η προστατευμένη αναπαραγωγή πολυμέσων DRM;</string>
     <!-- License changelog -->
 </resources>

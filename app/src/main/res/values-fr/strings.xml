@@ -170,6 +170,7 @@
     <string name="toast_permission_sdCard">\"FOSS Browser\" a besoin de la permission de \"lire et écrire sur votre stockage\". Ceci est nécessaire pour télécharger des fichiers, prendre des captures d\'écran et faire des sauvegardes de vos données.</string>
     <string name="toast_restart">Vous devez redémarrer \"FOSS Browser\" pour appliquer les modifications. Fermer maintenant?</string>
     <string name="toast_quit">Voulez-vous quitter \"FOSS Browser\"?</string>
+    <string name="toast_quit_TAB">Do you want to close the TAB?</string>
     <string name="toast_downloadComplete">Téléchargement fini. Ouvrir le gestionnaire de fichiers?</string>
     <string name="toast_unsecured">Le site Web utilise une connexion non sécurisée (\"http\"). Essayez une connexion sécurisée (\"https\")?</string>
     <string name="toast_backup">Données de sauvegarde? Cela écrasera l\'ancienne sauvegarde.</string>
@@ -194,5 +195,8 @@
     <string name="menu_desktopView">Vue bureau</string>
     <string name="menu_dayView">Vue Jour</string>
     <string name="menu_nightView">Vue nocturne</string>
+    <string name="setting_userScript">Scripts JavaScript personnalisés</string>
+    <string name="setting_title_camera">Allow camera usage</string>
+    <string name="hint_DRM_Media">Allow DRM protected media playback?</string>
     <!-- License changelog -->
 </resources>

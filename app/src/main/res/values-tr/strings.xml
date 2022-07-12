@@ -170,6 +170,7 @@
     <string name="toast_permission_sdCard">\"FOSS Tarayıcı\" nın \"deponuzu okuma ve yazma\" iznine ihtiyacı var. Bu, dosyaları indirmek, ekran görüntüleri almak ve verilerinizin yedeğini almak için gereklidir.</string>
     <string name="toast_restart">Değişiklikleri uygulamak için \"FOSS Tarayıcı\"sını yeniden başlatmanız gerekir. Şimdi kapatılsın mı?</string>
     <string name="toast_quit">\"FOSS Tarayıcı\"sından çıkmak istiyor musunuz?</string>
+    <string name="toast_quit_TAB">Do you want to close the TAB?</string>
     <string name="toast_downloadComplete">İndirme tamamlandı. Dosya yöneticisi açılsın mı?</string>
     <string name="toast_unsecured">Web sitesi güvenli olmayan bir bağlantı (\"http\") kullanıyor. Güvenli bir bağlantı (\"https\") denensin mi?</string>
     <string name="toast_backup">Veri yedeklensin mi? Bu eski yedeklemenin üzerine yazacaktır.</string>
@@ -194,5 +195,8 @@
     <string name="menu_desktopView">Masaüstü görünümü</string>
     <string name="menu_dayView">Gün görünümü</string>
     <string name="menu_nightView">gece görüşü</string>
+    <string name="setting_userScript">Custom JavaScript code</string>
+    <string name="setting_title_camera">Allow camera usage</string>
+    <string name="hint_DRM_Media">Allow DRM protected media playback?</string>
     <!-- License changelog -->
 </resources>

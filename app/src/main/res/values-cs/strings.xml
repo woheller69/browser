@@ -78,7 +78,7 @@
     <string name="setting_title_font">Velikost písma</string>
     <string name="setting_title_dom">Úložiště DOM</string>
     <string name="setting_title_dom_whitelist">Seznam povolených DOM</string>
-    <string name="setting_summary_dom">DOM Úložiště umožňuje aplikaci ukládat prvky stránek, které by mohly obsahovat citlivé informace uživatelů. Zakázání zabraňuje použití místního úložiště.</string>
+    <string name="setting_summary_dom">Úložiště DOM umožňuje aplikaci ukládat prvky stránky, které mohou obsahovat citlivé informace uživatele. Zakázáním této funkce zabráníte používání místního úložiště.</string>
     <string name="setting_title_save_data">Požadavek „Ušetřit data“</string>
     <!-- browser start -->
     <string name="setting_title_images">Obrázky</string>
@@ -96,14 +96,14 @@
     <string name="setting_summary_location">Povolit webům přístup k vaší poloze. Některé weby (jako Mapy Google pro navigaci) jej potřebují mít zapnutý.</string>
     <string name="setting_title_history">Historie</string>
     <string name="setting_title_autofill">Data formulářů</string>
-    <string name="setting_summary_autofill">Povolit ukládání formulářových dat (Android Nougat a níže) nebo službu automatického vyplňování (Android Oreo a vyšší).</string>
+    <string name="setting_summary_autofill">Povolte ukládání dat formuláře (Android Nougat a nižší) nebo službu automatického vyplňování (Android Oreo a vyšší).</string>
     <!-- browser clear -->
     <string name="data_summary">Všechny soubory budou exportovány do adresáře „Documents/browser_backup/“ na vaší SD kartě.</string>
     <string name="clear_title_quit">Vymazat při ukončení aplikace</string>
     <string name="clear_title_cache">Vymazat mezipaměť</string>
     <string name="clear_title_cookie">Vymazat soubory cookie</string>
     <string name="clear_title_history">Vymazat historii</string>
-    <string name="localData">Vymazat uložená data zařízení</string>
+    <string name="localData">Vymazat data uložená v zařízení</string>
     <string name="clear_title_deleteDatabase">Vymazat databázi</string>
     <string name="clear_summary_deleteDatabase">Vymazat celou databázi (úvodní stránku, záložky, historii a všechny seznamy povolených).</string>
     <!-- App setting -->
@@ -115,10 +115,10 @@
     <string name="setting_title_reload">Přejetím dolů znovu načtete</string>
     <string name="setting_title_searchEngine">Vlastní vyhledávač</string>
     <string name="setting_title_userAgent">Vlastní uživatelský agent</string>
-    <string name="setting_enter_userAgent">Vlastní uživatelský agent</string>
-    <string name="setting_title_fingerPrint">Ochrana otiskem prstu</string>
+    <string name="setting_enter_userAgent">Vložte uživatelského agenta</string>
+    <string name="setting_title_fingerPrint">Ochrana pomocí otisku prstu</string>
     <string name="setting_title_whitelist">Výjimky</string>
-    <string name="setting_tab">Tab</string>
+    <string name="setting_tab">Karta</string>
     <string name="setting_theme">Motiv</string>
     <string name="setting_theme_system">Systém</string>
     <!-- App behavior -->
@@ -132,7 +132,7 @@
     <string name="setting_title_reopenLastTab">Znovu otevřít poslední kartu</string>
     <!-- gestures -->
     <string name="setting_title_toolbar">Panel nástrojů</string>
-    <string name="setting_title_toolbar_buttons">Tlačítka panelu nástrojů</string>
+    <string name="setting_title_toolbar_buttons">Tlačítka na panelu nástrojů</string>
     <string name="setting_gesture_up">Přejetí nahoru</string>
     <string name="setting_gesture_down">Přejetí dolů</string>
     <string name="setting_gesture_left">Přejetí vlevo</string>
@@ -147,7 +147,7 @@
     <string name="setting_gesture_08">Zobrazit přehled</string>
     <string name="setting_gesture_09">Otevřít novou kartu</string>
     <string name="setting_gesture_10">Zavřít kartu</string>
-    <string name="setting_gesture_hint">Dlouhým klepnutím na tlačítko menu otevřete dialogové okno rychlého nastavení. Dlouhým stiskem ikony domovské záložky/historie otevřete filtr záložek.</string>
+    <string name="setting_gesture_hint">Dlouhým kliknutím na tlačítko nabídky otevřete dialogové okno rychlého nastavení. Dlouhým stisknutím ikony domů/záložky/historie otevřete filtr záložek.</string>
     <!-- Data -->
     <string name="setting_title_export_bookmarks">Exportovat záložky jako soubor HTML</string>
     <string name="setting_title_import_bookmarks">Importovat záložky</string>
@@ -170,6 +170,7 @@
     <string name="toast_permission_sdCard">„FOSS Browser“ vyžaduje oprávnění „čtení a zápis do vašeho úložiště“. Toto je zapotřebí ke stahování souborů, pořizování snímků obrazovky a vytváření záloh vašich dat.</string>
     <string name="toast_restart">Pro provedení změn musíte restartovat aplikaci „FOSS Browser“. Ukončit nyní?</string>
     <string name="toast_quit">Opravdu chcete ukončit aplikaci „FOSS Browser“?</string>
+    <string name="toast_quit_TAB">Chcete zavřít KARTU?</string>
     <string name="toast_downloadComplete">Stahování dokončeno. Otevřít správce souborů?</string>
     <string name="toast_unsecured">Stránka používá nezabezpečené připojení („http“). Chcete zkusit zabezpečné připojení („https“)?</string>
     <string name="toast_backup">Zálohovat data? Tato akce přepíše starou zálohu.</string>
@@ -193,8 +194,11 @@
 
     </string>
     <string name="menu_mobileView">Mobilní zobrazení</string>
-    <string name="menu_desktopView">PC zobrazení</string>
+    <string name="menu_desktopView">Zobrazení pro PC</string>
     <string name="menu_dayView">Denní přehled</string>
-    <string name="menu_nightView">Noční oči</string>
+    <string name="menu_nightView">Noční zobrazení</string>
+    <string name="setting_userScript">Vlastní kód JavaScript</string>
+    <string name="setting_title_camera">Povolit používání kamery</string>
+    <string name="hint_DRM_Media">Povolit přehrávání médií chráněných DRM?</string>
     <!-- License changelog -->
 </resources>

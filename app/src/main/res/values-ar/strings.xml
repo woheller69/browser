@@ -170,6 +170,7 @@
     <string name="toast_permission_sdCard">يحتاج المتصفح الحر \"FOSS Browse\" إذن \"القراءة والكتابة على التخزين خاصتك\". هذا مطلوب لتحميل الملفات، التقاط لقطات الشاشة وعمل نسخ احتياطية من بياناتك.</string>
     <string name="toast_restart">يجب عليك إعادة تشغيل المتصفح الحر\"FOSS Browser\" لتطبيق التغييرات. أغلق الآن؟</string>
     <string name="toast_quit">أتريد إنهاء المتصفح الحر\"FOSS Browser\"؟</string>
+    <string name="toast_quit_TAB">Do you want to close the TAB?</string>
     <string name="toast_downloadComplete">اكتمل التحميل. أفتح مدير الملفات؟</string>
     <string name="toast_unsecured">يستخدم الموقع اتصالا غير آمن (\"http\"). أجرب اتصالا آمنا (\"https\")؟</string>
     <string name="toast_backup">اعمل نسخا احتياطيا للبيانات؟ هذا سيستبدل النسخ الاحتياطي القديم.</string>
@@ -186,5 +187,8 @@
     <string name="menu_desktopView">عرض سطح المكتب</string>
     <string name="menu_dayView">عرض يومي</string>
     <string name="menu_nightView">عرض ليلي</string>
+    <string name="setting_userScript">شفرة جافاسكريت مخصصة</string>
+    <string name="setting_title_camera">Allow camera usage</string>
+    <string name="hint_DRM_Media">Allow DRM protected media playback?</string>
     <!-- License changelog -->
 </resources>

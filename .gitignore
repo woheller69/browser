@@ -9,10 +9,23 @@ local.properties
 
 # Eclipse project files
 # Android Studio
+.idea/libraries/
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/.name
+.idea/compiler.xml
+.idea/copyright/profiles_settings.xml
+.idea/encodings.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/scopes/scope_settings.xml
+.idea/vcs.xml
 .idea/
+*.iml
 .gradle
 gradle
 *.iml
-/app/debug/
-/app/release/
-/app/build/
+*.apk
+/app/debug/*
+/app/release/*
+/app/build/*

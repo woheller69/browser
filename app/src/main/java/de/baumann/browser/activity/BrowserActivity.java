@@ -1427,19 +1427,32 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 omniBox_text.setText("");
             } else {
                 omniBox_tab.setImageResource(R.drawable.icon_alert);
-                omniBox_tab.setOnClickListener(v -> {
-                    MaterialAlertDialogBuilder builderR = new MaterialAlertDialogBuilder(context);
-                    builderR.setMessage(R.string.toast_unsecured);
-                    builderR.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> ninjaWebView.loadUrl(url.replace("http://", "https://")));
-                    builderR.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> {
-                        dialog.cancel();
-                        omniBox_tab.setImageResource(R.drawable.icon_menu_light);
-                        omniBox_tab.setOnClickListener(v2 -> showTabView());
-                    });
-                    AlertDialog dialog = builderR.create();
-                    dialog.show();
-                    Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
-                });
+
+                RecordAction action = new RecordAction(context);
+                action.open(false);
+                final List<Record> list;
+                list = action.listBookmark(activity, filter, filterBy);
+                action.close();
+                for (Record record : list){
+                    if (record.getURL().equals(url)) {
+                        omniBox_tab.setOnClickListener(v -> showTabView());
+                        break;
+                    } else {
+                        omniBox_tab.setOnClickListener(v -> {
+                            MaterialAlertDialogBuilder builderR = new MaterialAlertDialogBuilder(context);
+                            builderR.setMessage(R.string.toast_unsecured);
+                            builderR.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> ninjaWebView.loadUrl(url.replace("http://", "https://")));
+                            builderR.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> {
+                                dialog.cancel();
+                                omniBox_tab.setImageResource(R.drawable.icon_menu_light);
+                                omniBox_tab.setOnClickListener(v2 -> showTabView());
+                            });
+                            AlertDialog dialog = builderR.create();
+                            dialog.show();
+                            Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
+                        });
+                    }
+                }
             }
         }
     }

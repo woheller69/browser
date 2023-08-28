@@ -53,24 +53,12 @@
 
         <ImageButton
             android:id="@+id/overflow_settings"
-            android:layout_centerInParent="true"
-            android:layout_toStartOf="@+id/overflow_reload"
+            android:layout_alignParentEnd="true"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
             android:src="@drawable/icon_settings"
-            android:background="?attr/actionBarItemBackground" />
-
-        <ImageButton
-            android:id="@+id/overflow_reload"
-            android:layout_centerInParent="true"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="20dp"
-            android:layout_alignParentEnd="true"
-            android:src="@drawable/icon_refresh"
             android:background="?attr/actionBarItemBackground" />
 
     </RelativeLayout>

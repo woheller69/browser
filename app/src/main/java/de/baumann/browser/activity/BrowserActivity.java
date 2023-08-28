@@ -624,6 +624,15 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             show_dialogFastToggle();
             return false;
         });
+
+        ImageButton omnibox_refresh = findViewById(R.id.omnibox_refresh);
+        omnibox_refresh.setOnClickListener(v -> {
+            if (ninjaWebView != null) {
+                ninjaWebView.initPreferences(ninjaWebView.getUrl());
+                ninjaWebView.reload();
+            }
+        });
+
         omnibox_overflow.setOnTouchListener(new SwipeTouchListener(context) {
             public void onSwipeTop() { performGesture("setting_gesture_nav_up"); }
             public void onSwipeBottom() { performGesture("setting_gesture_nav_down"); }
@@ -1221,15 +1230,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             dialog.cancel();
         });
 
-        ImageButton ib_reload = dialogView.findViewById(R.id.ib_reload);
-        ib_reload.setOnClickListener(view -> {
-            if (ninjaWebView != null) {
-                dialog.cancel();
-                ninjaWebView.initPreferences(ninjaWebView.getUrl());
-                ninjaWebView.reload();
-            }
-        });
-
         ImageButton ib_settings = dialogView.findViewById(R.id.ib_settings);
         ib_settings.setOnClickListener(view -> {
             if (ninjaWebView != null) {
@@ -1732,13 +1732,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             dialog_overflow.cancel();
             Intent settings = new Intent(BrowserActivity.this, Settings_Activity.class);
             startActivity(settings);
-        });
-
-        ImageButton overflow_reload = dialogView.findViewById(R.id.overflow_reload);
-        overflow_reload.setOnClickListener(v -> {
-            dialog_overflow.cancel();
-            ninjaWebView.initPreferences(ninjaWebView.getUrl());
-            ninjaWebView.reload();
         });
 
         final GridView menu_grid_tab = dialogView.findViewById(R.id.overflow_tab);

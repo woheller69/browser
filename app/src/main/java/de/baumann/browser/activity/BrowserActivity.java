@@ -16,6 +16,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -209,7 +210,16 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     };
 
     // Overrides
-
+    @Override
+    public void onConfigurationChanged(Configuration newConfig){
+        super.onConfigurationChanged(newConfig);
+        ImageButton omnibox_newtab = findViewById(R.id.omnibox_newtab);
+        if (omnibox_newtab!=null) {
+            if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE){
+                omnibox_newtab.setVisibility(View.VISIBLE);
+            } else omnibox_newtab.setVisibility(View.GONE);
+        }
+    }
     @Override
     public void onPause(){
         //Save open Tabs in shared preferences
@@ -633,6 +643,11 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             }
         });
 
+        ImageButton omnibox_newtab = findViewById(R.id.omnibox_newtab);
+        if (omnibox_newtab!=null) omnibox_newtab.setOnClickListener(v -> {
+            addAlbum(getString(R.string.app_name), Objects.requireNonNull(sp.getString("favoriteURL", "https://github.com/scoute-dich/browser")), true);
+        });
+
         omnibox_overflow.setOnTouchListener(new SwipeTouchListener(context) {
             public void onSwipeTop() { performGesture("setting_gesture_nav_up"); }
             public void onSwipeBottom() { performGesture("setting_gesture_nav_down"); }
@@ -703,6 +718,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             showOverview();
             show_dialogFilter();
             return false;
+        });
+        omniBox_overview.setOnLongClickListener(v -> {
+            saveBookmark();
+            return true;
         });
     }
 

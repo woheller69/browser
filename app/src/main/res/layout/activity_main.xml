@@ -28,16 +28,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <com.google.android.material.progressindicator.CircularProgressIndicator
-                    android:id="@+id/main_progress_bar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:indeterminate="true"
-                    android:layout_alignParentStart="true"
-                    android:layout_centerVertical="true"
-                    app:indicatorSize="24dp"
-                    android:layout_gravity="center_vertical|center_horizontal"/>
-
                 <ImageButton
                     android:id="@+id/omniBox_tab"
                     android:layout_width="wrap_content"
@@ -60,7 +50,7 @@
                     android:layout_toStartOf="@id/omnibox_refresh"
                     android:layout_centerVertical="true"
                     android:layout_marginStart="8dp"
-                    android:layout_marginEnd="16dp"
+                    android:layout_marginEnd="0dp"
                     android:background="?attr/actionBarItemBackground"
                     android:src="@drawable/icon_overflow_light" />
 
@@ -72,10 +62,19 @@
                     android:scaleX="1.2"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginStart="8dp"
                     android:layout_marginEnd="16dp"
                     android:background="?attr/actionBarItemBackground"
                     android:src="@drawable/icon_refresh_light" />
+
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:id="@+id/main_progress_bar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:indeterminate="true"
+                    android:layout_alignEnd="@id/omnibox_refresh"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="-10dp"
+                    app:indicatorSize="36dp" />
 
                 <ImageButton
                     android:id="@+id/omnibox_overview"
@@ -83,10 +82,17 @@
                     android:layout_height="match_parent"
                     android:layout_toStartOf="@id/omnibox_overflow"
                     android:layout_centerVertical="true"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginEnd="8dp"
                     android:background="?attr/actionBarItemBackground"
                     android:src="@drawable/icon_web_light" />
+
+                <ImageButton
+                    android:id="@+id/omnibox_newtab"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_toStartOf="@id/omnibox_overview"
+                    android:layout_centerVertical="true"
+                    android:background="?attr/actionBarItemBackground"
+                    android:src="@drawable/icon_new_tab_light" />
 
                 <com.google.android.material.textfield.MaterialAutoCompleteTextView
                     android:id="@+id/omniBox_input"
@@ -95,7 +101,7 @@
                     android:layout_height="match_parent"
                     android:layout_centerInParent="true"
                     android:layout_toEndOf="@id/omniBox_tab"
-                    android:layout_toStartOf="@id/omnibox_overview"
+                    android:layout_toStartOf="@id/omnibox_newtab"
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"
                     android:hint="@string/main_omnibox_input_hint"

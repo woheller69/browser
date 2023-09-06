@@ -320,8 +320,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             showOverview();
         }
 
-        dispatchIntent(getIntent());
-
         //restore open Tabs from shared preferences if app got killed
         ArrayList<String> openTabs;
         openTabs = new ArrayList<String>(Arrays.asList(TextUtils.split(sp.getString("openTabs", ""), "‚‗‚")));
@@ -329,11 +327,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             for (int counter = 0; counter < openTabs.size(); counter++) {
                 addAlbum(getString(R.string.app_name), openTabs.get(counter), BrowserContainer.size() < 1);
             }
-        }
-
-        if (BrowserContainer.size() < 1) {  //if still no open Tab open default page
-            addAlbum(getString(R.string.app_name), Objects.requireNonNull(sp.getString("favoriteURL", "https://github.com/scoute-dich/browser")), true);
-            getIntent().setAction("");
         }
 
     }
@@ -397,7 +390,13 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             dialog.show();
             Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
         }
-        dispatchIntent(getIntent());
+        new Handler().postDelayed(() -> {
+            dispatchIntent(getIntent());
+            if (BrowserContainer.size() < 1) {  //if still no open Tab open default page
+                addAlbum(getString(R.string.app_name), Objects.requireNonNull(sp.getString("favoriteURL", "https://github.com/scoute-dich/browser")), true);
+            }
+        },100);  //for whatever reason sites via intent Action.View do not load without this delay
+
     }
 
     @Override
@@ -563,21 +562,18 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             Log.i(TAG, "resumed FOSS browser");
         } else if (intent.getAction() != null && intent.getAction().equals(Intent.ACTION_WEB_SEARCH)) {
             addAlbum(null, Objects.requireNonNull(intent.getStringExtra(SearchManager.QUERY)), true);
-            getIntent().setAction("");
             hideOverview();
         } else if (filePathCallback != null) {
             filePathCallback = null;
-            getIntent().setAction("");
         } else if (url != null && Intent.ACTION_SEND.equals(action)) {
             addAlbum(getString(R.string.app_name), url, true);
-            getIntent().setAction("");
             hideOverview();
         } else if (Intent.ACTION_VIEW.equals(action)) {
-            String data = Objects.requireNonNull(getIntent().getData()).toString();
+            String data = Objects.requireNonNull(intent.getData()).toString();
             addAlbum(getString(R.string.app_name), data, true);
-            getIntent().setAction("");
             hideOverview();
         }
+        intent.setAction("");
     }
 
     private void initTabDialog () {
@@ -647,6 +643,12 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         if (omnibox_newtab!=null) omnibox_newtab.setOnClickListener(v -> {
             addAlbum(getString(R.string.app_name), Objects.requireNonNull(sp.getString("favoriteURL", "https://github.com/scoute-dich/browser")), true);
         });
+
+        if (omnibox_newtab!=null) {
+            if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+                omnibox_newtab.setVisibility(View.VISIBLE);
+            } else omnibox_newtab.setVisibility(View.GONE);
+        }
 
         omnibox_overflow.setOnTouchListener(new SwipeTouchListener(context) {
             public void onSwipeTop() { performGesture("setting_gesture_nav_up"); }
@@ -1357,10 +1359,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         } else {
             ninjaWebView.activate();
             showAlbum(ninjaWebView);
-            if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.P) {
-                ninjaWebView.initPreferences(ninjaWebView.getUrl());
-                ninjaWebView.reload();
-            }
         }
 
         View albumView = ninjaWebView.getAlbumView();

@@ -41,59 +41,6 @@
                     android:background="?attr/actionBarItemBackground"
                     android:src="@drawable/icon_menu_light" />
 
-                <ImageButton
-                    android:id="@+id/omnibox_overflow"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:scaleY="1.2"
-                    android:scaleX="1.2"
-                    android:layout_toStartOf="@id/omnibox_refresh"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginEnd="0dp"
-                    android:background="?attr/actionBarItemBackground"
-                    android:src="@drawable/icon_overflow_light" />
-
-                <ImageButton
-                    android:id="@+id/omnibox_refresh"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:scaleY="1.2"
-                    android:scaleX="1.2"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginEnd="16dp"
-                    android:background="?attr/actionBarItemBackground"
-                    android:src="@drawable/icon_refresh_light" />
-
-                <com.google.android.material.progressindicator.CircularProgressIndicator
-                    android:id="@+id/main_progress_bar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:indeterminate="true"
-                    android:layout_alignEnd="@id/omnibox_refresh"
-                    android:layout_centerVertical="true"
-                    android:layout_marginEnd="-10dp"
-                    app:indicatorSize="36dp" />
-
-                <ImageButton
-                    android:id="@+id/omnibox_overview"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_toStartOf="@id/omnibox_overflow"
-                    android:layout_centerVertical="true"
-                    android:background="?attr/actionBarItemBackground"
-                    android:src="@drawable/icon_web_light" />
-
-                <ImageButton
-                    android:id="@+id/omnibox_newtab"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_toStartOf="@id/omnibox_overview"
-                    android:layout_centerVertical="true"
-                    android:background="?attr/actionBarItemBackground"
-                    android:src="@drawable/icon_new_tab_light" />
-
                 <com.google.android.material.textfield.MaterialAutoCompleteTextView
                     android:id="@+id/omniBox_input"
                     android:dropDownAnchor="@id/omniBox_input"
@@ -115,6 +62,64 @@
                     android:singleLine="true"
                     android:selectAllOnFocus="true"
                     android:background="@android:color/transparent" />
+
+                <ImageButton
+                    android:id="@+id/omnibox_newtab"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_toStartOf="@id/omnibox_overview"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="6dp"
+                    android:background="?attr/actionBarItemBackground"
+                    android:src="@drawable/icon_new_tab_light" />
+
+                <ImageButton
+                    android:id="@+id/omnibox_overview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_toStartOf="@id/omnibox_overflow"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginEnd="6dp"
+                    android:background="?attr/actionBarItemBackground"
+                    android:src="@drawable/icon_web_light" />
+
+                <ImageButton
+                    android:id="@+id/omnibox_overflow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:scaleY="1.2"
+                    android:scaleX="1.2"
+                    android:layout_toStartOf="@id/omnibox_refresh"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginEnd="6dp"
+                    android:background="?attr/actionBarItemBackground"
+                    android:src="@drawable/icon_overflow_light" />
+
+                <ImageButton
+                    android:id="@+id/omnibox_refresh"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:scaleY="1.2"
+                    android:scaleX="1.2"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="?attr/actionBarItemBackground"
+                    android:src="@drawable/icon_refresh_light" />
+
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:id="@+id/main_progress_bar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:indeterminate="true"
+                    android:layout_alignEnd="@id/omnibox_refresh"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginEnd="-10dp"
+                    app:indicatorSize="36dp" />
 
             </RelativeLayout>
 

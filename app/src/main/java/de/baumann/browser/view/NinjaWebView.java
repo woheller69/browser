@@ -110,7 +110,7 @@ public class NinjaWebView extends WebView implements AlbumController {
         this.isBackPressed = false;
 
         sp = PreferenceManager.getDefaultSharedPreferences(context);
-        this.fingerPrintProtection=sp.getBoolean("sp_fingerPrintProtection",false);
+        this.fingerPrintProtection=sp.getBoolean("sp_fingerPrintProtection",true);
 
         this.stopped=false;
         this.oldDomain="";
@@ -155,7 +155,7 @@ public class NinjaWebView extends WebView implements AlbumController {
         webSettings.setGeolocationEnabled(sp.getBoolean("sp_location", false));
         webSettings.setMediaPlaybackRequiresUserGesture(sp.getBoolean("sp_savedata",true));
 
-        if (sp.getBoolean("sp_autofill", true)) {
+        if (sp.getBoolean("sp_autofill", false)) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 this.setImportantForAutofill(View.IMPORTANT_FOR_AUTOFILL_YES);
             } else {
@@ -229,7 +229,7 @@ public class NinjaWebView extends WebView implements AlbumController {
         //  Server-side detection for GlobalPrivacyControl
         requestHeaders.put("Sec-GPC","1");
         requestHeaders.put("X-Requested-With","com.duckduckgo.mobile.android");
-        if (sp.getBoolean("sp_savedata", false)) {
+        if (sp.getBoolean("sp_savedata", true)) {
             requestHeaders.put("Save-Data", "on");
         }
         return requestHeaders;
@@ -378,12 +378,7 @@ public class NinjaWebView extends WebView implements AlbumController {
 
     public void toggleAllowFingerprint (boolean reload) {
 
-
-        if (isFingerPrintProtection()) {
-            fingerPrintProtection = false;
-        } else if (!isFingerPrintProtection()) {
-            fingerPrintProtection = true;
-        }
+        fingerPrintProtection = !isFingerPrintProtection();
 
         if (reload) {
             reload();

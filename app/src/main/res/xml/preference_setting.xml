@@ -14,13 +14,13 @@
             android:title="@string/menu_delete" />
 
         <EditTextPreference
-            android:defaultValue="https://github.com/scoute-dich/browser"
+            android:defaultValue=""
             android:key="favoriteURL"
             android:title="@string/setting_title_fav" />
 
         <ListPreference
             android:key="sp_search_engine"
-            android:defaultValue="0"
+            android:defaultValue="4"
             android:title="@string/setting_title_search_engine"
             android:entries="@array/setting_entries_search_engine"
             android:entryValues="@array/setting_values_search_engine"/>

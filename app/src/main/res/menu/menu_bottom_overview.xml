@@ -9,21 +9,11 @@
         android:icon="@drawable/icon_menu" />
 
     <item
-        android:id="@+id/page_1"
-        android:enabled="true"
-        android:title="@string/album_title_home"
-        android:icon="@drawable/icon_web" />
-    <item
         android:id="@+id/page_2"
         android:enabled="true"
         android:title="@string/album_title_bookmarks"
         android:icon="@drawable/icon_bookmark" />
 
-    <item
-        android:id="@+id/page_3"
-        android:enabled="true"
-        android:title="@string/album_title_history"
-        android:icon="@drawable/icon_history" />
     <item
         android:id="@+id/page_4"
         android:enabled="true"

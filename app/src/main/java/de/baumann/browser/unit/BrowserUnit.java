@@ -116,7 +116,7 @@ public class BrowserUnit {
         if (sp.getBoolean("searchEngineSwitch",false)){  //if new switch_text_preference has never been used initialize the switch
             return customSearchEngine + query;
         } else {
-            final int i = Integer.parseInt(Objects.requireNonNull(sp.getString("sp_search_engine", "0")));
+            final int i = Integer.parseInt(Objects.requireNonNull(sp.getString("sp_search_engine", "4")));
             switch (i) {
                 case 1:
                     return SEARCH_ENGINE_STARTPAGE_DE + query;

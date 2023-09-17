@@ -6,6 +6,10 @@
     package="de.baumann.browser">
 
     <!-- Permission -->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -62,9 +66,7 @@
                 <action android:name="android.intent.action.WEB_SEARCH" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.LAUNCHER"/>
-                <action android:name="sc_startPage" />
                 <action android:name="sc_bookmark" />
-                <action android:name="sc_history" />
             </intent-filter>
 
             <meta-data

@@ -174,7 +174,7 @@ public class AdBlock {
         Calendar time = Calendar.getInstance();
 
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
-        if (sp.getBoolean("sp_savedata", false)){
+        if (sp.getBoolean("sp_savedata", true)){
             time.add(Calendar.DAY_OF_YEAR,-7);
         }else{
             time.add(Calendar.DAY_OF_YEAR,-1);

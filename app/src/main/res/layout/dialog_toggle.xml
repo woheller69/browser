@@ -124,7 +124,8 @@
                 android:text="@string/setting_title_fingerPrint" />
 
             <com.google.android.material.chip.Chip
-                android:id="@+id/chip_history"
+                android:id="@+id/chip_reserved"
+                android:visibility="invisible"
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_height="wrap_content"
                 android:layout_width="0dp"
@@ -133,7 +134,7 @@
                 android:layout_marginStart="4dp"
                 android:layout_marginEnd="0dp"
                 android:ellipsize="end"
-                android:text="@string/album_title_history"/>
+                android:text=""/>
 
         </LinearLayout>
 
@@ -206,7 +207,23 @@
                 android:gravity="center_vertical"
                 android:textAppearance="?attr/textAppearanceBody1"
                 android:textStyle="bold" />
-
+            <ImageView
+                android:id="@+id/menu_zoom_in"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/zoom_in_black_24dp"
+                android:contentDescription="@null"
+                />
+            <ImageView
+                android:id="@+id/menu_zoom_out"
+                android:layout_toStartOf="@id/menu_zoom_in"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/zoom_out_black_24dp"
+                android:contentDescription="@null"
+                />
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView"
                 android:layout_width="20dp"

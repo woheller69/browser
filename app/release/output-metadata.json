@@ -4,14 +4,14 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "de.foss.browser",
+  "applicationId": "de.baumann.browser",
   "variantName": "release",
   "elements": [
     {
       "type": "SINGLE",
       "filters": [],
-      "versionCode": 117,
-      "versionName": "8.2",
+      "versionCode": 850,
+      "versionName": "8.5",
       "outputFile": "app-release.apk"
     }
   ]

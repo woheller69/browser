@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 33
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -10,8 +10,8 @@ android {
 
     defaultConfig {
         applicationId "de.baumann.browser"
-        minSdkVersion 21
-        targetSdkVersion 30
+        minSdkVersion 26
+        targetSdkVersion 33
         versionCode 850
         versionName "8.5"
         multiDexEnabled true

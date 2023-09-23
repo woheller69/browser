@@ -37,7 +37,7 @@
             android:layout_alignParentEnd="true"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="20dp"
-            android:src="@drawable/icon_history_light"
+            android:src="@drawable/icon_bookmark_light"
             android:background="?attr/actionBarItemBackground"
             tools:ignore="ContentDescription" />
 

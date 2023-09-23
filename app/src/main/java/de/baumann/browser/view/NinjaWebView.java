@@ -18,6 +18,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.webkit.CookieManager;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.widget.ImageView;
 
 import de.baumann.browser.browser.*;
 import de.baumann.browser.R;
@@ -266,7 +267,10 @@ public class NinjaWebView extends WebView implements AlbumController {
         album.setAlbumTitle(title);
         CardView cardView = getAlbumView().findViewById(R.id.cardView);
         cardView.setVisibility(VISIBLE);
-        FaviconHelper.setFavicon(context, getAlbumView(), url, R.id.faviconView, R.drawable.icon_image_broken_light);
+        ImageView icon = (ImageView) getAlbumView().findViewById(R.id.faviconView);
+        if (getFavicon()!=null) icon.setImageBitmap(getFavicon());
+        else icon.setImageResource(R.drawable.icon_image_broken_light);
+        //FaviconHelper.setFavicon(context, getAlbumView(), url, R.id.faviconView, R.drawable.icon_image_broken_light);
     }
 
     @Override
@@ -301,7 +305,9 @@ public class NinjaWebView extends WebView implements AlbumController {
     public synchronized void updateFavicon (String url) {
         CardView cardView = getAlbumView().findViewById(R.id.cardView);
         cardView.setVisibility(VISIBLE);
-        FaviconHelper.setFavicon(context, getAlbumView(), url, R.id.faviconView, R.drawable.icon_image_broken_light);
+        ImageView icon = (ImageView) getAlbumView().findViewById(R.id.faviconView);
+        if (getFavicon()!=null) icon.setImageBitmap(getFavicon());
+        else icon.setImageResource(R.drawable.icon_image_broken_light);
     }
 
     @Override
@@ -389,7 +395,7 @@ public class NinjaWebView extends WebView implements AlbumController {
 
     public void setFavicon(Bitmap favicon) {
         this.favicon = favicon;
-
+        updateFavicon(getUrl());
         //Save faviconView for existing bookmarks or start site entries
         FaviconHelper faviconHelper = new FaviconHelper(context);
         RecordAction action = new RecordAction(context);

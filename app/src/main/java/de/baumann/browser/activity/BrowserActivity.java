@@ -258,12 +258,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             sp.edit().putString("saved_key_ok", "yes")
                     .putString("setting_gesture_tb_up", "13")
                     .putString("setting_gesture_tb_down", "01")
-                    .putString("setting_gesture_tb_left", "07")
-                    .putString("setting_gesture_tb_right", "06")
-                    .putString("setting_gesture_nav_up", "04")
-                    .putString("setting_gesture_nav_down", "05")
-                    .putString("setting_gesture_nav_left", "03")
-                    .putString("setting_gesture_nav_right", "02")
+                    .putString("setting_gesture_tb_left", "02")
+                    .putString("setting_gesture_tb_right", "03")
                     .putBoolean("sp_autofill", false)
                     .putBoolean("sp_location", false).apply();
         }
@@ -633,24 +629,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             } else omnibox_newtab.setVisibility(View.GONE);
         }
 
-        omnibox_overflow.setOnTouchListener(new SwipeTouchListener(context) {
-            public void onSwipeTop() { performGesture("setting_gesture_nav_up"); }
-            public void onSwipeBottom() { performGesture("setting_gesture_nav_down"); }
-            public void onSwipeRight() { performGesture("setting_gesture_nav_right"); }
-            public void onSwipeLeft() { performGesture("setting_gesture_nav_left"); }
-        });
-        omniBox_overview.setOnTouchListener(new SwipeTouchListener(context) {
-            public void onSwipeTop() { performGesture("setting_gesture_nav_up"); }
-            public void onSwipeBottom() { performGesture("setting_gesture_nav_down"); }
-            public void onSwipeRight() { performGesture("setting_gesture_nav_right"); }
-            public void onSwipeLeft() { performGesture("setting_gesture_nav_left"); }
-        });
-        omniBox_tab.setOnTouchListener(new SwipeTouchListener(context) {
-            public void onSwipeTop() { performGesture("setting_gesture_nav_up"); }
-            public void onSwipeBottom() { performGesture("setting_gesture_nav_down"); }
-            public void onSwipeRight() { performGesture("setting_gesture_nav_right"); }
-            public void onSwipeLeft() { performGesture("setting_gesture_nav_left"); }
-        });
         omniBox_text.setOnTouchListener(new SwipeTouchListener(context) {
             public void onSwipeTop() {
                 if (!omniBox_text.hasFocus()) {
@@ -769,9 +747,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 break;
             case "14":
                 saveBookmark();
-                break;
-            case "15":
-                save_atHome(ninjaWebView.getTitle(), ninjaWebView.getUrl());
                 break;
         }
     }
@@ -937,7 +912,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
         View dialogView = View.inflate(context, R.layout.dialog_toggle, null);
         builder.setView(dialogView);
-        FaviconHelper.setFavicon(context, dialogView, ninjaWebView.getUrl(), R.id.menu_icon, R.drawable.icon_image_broken);
+
+        ImageView icon = (ImageView) dialogView.findViewById(R.id.menu_icon);
+        if (ninjaWebView.getFavicon()!=null) icon.setImageBitmap(ninjaWebView.getFavicon());
+        else icon.setImageResource(R.drawable.icon_image_broken);
 
         AlertDialog dialog = builder.create();
         dialog.show();
@@ -1007,9 +985,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         });
 
         // CheckBox
-
-        TextView dialog_title = dialogView.findViewById(R.id.dialog_title);
-        dialog_title.setText(HelperUnit.domain(ninjaWebView.getUrl()));
 
         javaHosts = new Javascript(context);
         cookieHosts = new Cookie(context);
@@ -1456,7 +1431,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         if (type == SRC_ANCHOR_TYPE) {
             FaviconHelper faviconHelper = new FaviconHelper(context);
-            Bitmap bitmap=faviconHelper.getFavicon(url);
+            Bitmap bitmap=ninjaWebView.getFavicon();
             if (bitmap != null){
                 menu_icon.setImageBitmap(bitmap);
             }else {
@@ -1478,7 +1453,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         GridItem item_03 = new GridItem(0, getString(R.string.menu_share_link),  0);
         GridItem item_04 = new GridItem(0, getString(R.string.menu_open_with),  0);
         GridItem item_05 = new GridItem(0, getString(R.string.menu_save_as),  0);
-        GridItem item_06 = new GridItem(0, getString(R.string.menu_save_home),  0);
 
         final List<GridItem> gridList = new LinkedList<>();
 
@@ -1487,7 +1461,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         gridList.add(gridList.size(), item_03);
         gridList.add(gridList.size(), item_04);
         gridList.add(gridList.size(), item_05);
-        gridList.add(gridList.size(), item_06);
 
         GridView menu_grid = dialogView.findViewById(R.id.menu_grid);
         GridAdapter gridAdapter = new GridAdapter(context, gridList);
@@ -1516,9 +1489,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                         DataURIParser dataURIParser= new DataURIParser(url);
                         HelperUnit.saveDataURI(dialog, activity, dataURIParser);
                     } else HelperUnit.saveAs(dialog, activity, url);
-                    break;
-                case 5:
-                    save_atHome(title, url);
                     break;
             }
         });
@@ -1616,7 +1586,9 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         AlertDialog dialog_overflow = builder.create();
         dialog_overflow.show();
         Objects.requireNonNull(dialog_overflow.getWindow()).setGravity(Gravity.BOTTOM);
-        FaviconHelper.setFavicon(context, dialogView, url, R.id.menu_icon, R.drawable.icon_image_broken);
+        ImageView icon = (ImageView) dialogView.findViewById(R.id.menu_icon);
+        if (ninjaWebView.getFavicon()!=null) icon.setImageBitmap(ninjaWebView.getFavicon());
+        else icon.setImageResource(R.drawable.icon_image_broken);
 
         TextView overflow_title = dialogView.findViewById(R.id.overflow_title);
         assert title != null;
@@ -1680,7 +1652,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         // Save
         GridItem item_21 = new GridItem(0, getString(R.string.menu_fav),  0);
-        GridItem item_22 = new GridItem(0, getString(R.string.menu_save_home),  0);
         GridItem item_23 = new GridItem(0, getString(R.string.menu_save_bookmark),  0);
         GridItem item_24 = new GridItem(0, getString(R.string.menu_save_pdf),  0);
         GridItem item_25 = new GridItem(0, getString(R.string.menu_sc),  0);
@@ -1688,7 +1659,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         final List<GridItem> gridList_save = new LinkedList<>();
         gridList_save.add(gridList_save.size(), item_21);
-        gridList_save.add(gridList_save.size(), item_22);
         gridList_save.add(gridList_save.size(), item_23);
         gridList_save.add(gridList_save.size(), item_24);
         gridList_save.add(gridList_save.size(), item_25);
@@ -1705,15 +1675,13 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 sp.edit().putString("favoriteURL", url).apply();
                 NinjaToast.show(this, R.string.app_done);
             } else if (position == 1) {
-                save_atHome(title, url);
-            } else if (position == 2) {
                 saveBookmark();
                 action.close();
-            } else if (position == 3) {
+            } else if (position == 2) {
                 printPDF();
-            } else if (position == 4) {
+            } else if (position == 3) {
                 HelperUnit.createShortcut(context, ninjaWebView.getTitle(), ninjaWebView.getUrl());
-            } else if (position == 5) {
+            } else if (position == 4) {
                 HelperUnit.saveAs(dialog_overflow, activity, url);
             }
         });
@@ -1846,7 +1814,9 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         TextView menuTitle = dialogView.findViewById(R.id.menuTitle);
         menuTitle.setText(title);
-        FaviconHelper.setFavicon(context, dialogView, url, R.id.menu_icon, R.drawable.icon_image_broken);
+        ImageView icon = (ImageView) dialogView.findViewById(R.id.menu_icon);
+        if (ninjaWebView.getFavicon()!=null) icon.setImageBitmap(ninjaWebView.getFavicon());
+        else icon.setImageResource(R.drawable.icon_image_broken);
 
         builder.setView(dialogView);
         AlertDialog dialog = builder.create();
@@ -1996,27 +1966,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         });
     }
 
-    private void save_atHome (final String title, final String url) {
-
-        FaviconHelper faviconHelper = new FaviconHelper(context);
-        faviconHelper.addFavicon(ninjaWebView.getUrl(),ninjaWebView.getFavicon());
-
-        RecordAction action = new RecordAction(context);
-        action.open(true);
-        if (action.checkUrl(url, RecordUnit.TABLE_GRID)) {
-            NinjaToast.show(this, R.string.app_error);
-        } else {
-            int counter = sp.getInt("counter", 0);
-            counter = counter + 1;
-            sp.edit().putInt("counter", counter).apply();
-            if (action.addStartSite(new Record(title, url, 0, counter,1,ninjaWebView.isDesktopMode(),ninjaWebView.getSettings().getJavaScriptEnabled(),ninjaWebView.getSettings().getDomStorageEnabled(),0))) {
-                NinjaToast.show(this, R.string.app_done);
-            } else {
-                NinjaToast.show(this, R.string.app_error);
-            }
-        }
-        action.close();
-    }
 
     private void show_dialogFilter() {
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);

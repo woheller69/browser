@@ -78,7 +78,7 @@
     <string name="setting_title_font">Schriftgröße</string>
     <string name="setting_title_dom">DOM-Speicher</string>
     <string name="setting_title_dom_whitelist">DOM-Ausnahmen</string>
-    <string name="setting_summary_dom">DOM-Speicher erlaubt es der Anwendung, Seitenelemente zu speichern, die benutzersensible Informationen enthalten könnten. Deaktivieren dieses Deaktivieren verhindert die Verwendung des lokalen Speichers.</string>
+    <string name="setting_summary_dom">DOM-Speicher erlaubt es der Anwendung, Seitenelemente zu speichern, die benutzersensible Informationen enthalten könnten. Deaktivieren verhindert die Verwendung des lokalen Speichers.</string>
     <string name="setting_title_save_data">\"Daten sparen\" verlangen</string>
     <!-- browser start -->
     <string name="setting_title_images">Bilder</string>
@@ -197,7 +197,7 @@ Bitte lies auch den Hilfedialog in der Anwendung.&lt;/b&gt;&lt;br&gt;&lt;br&gt;
     <string name="menu_dayView">Tages-Ansicht</string>
     <string name="menu_nightView">Nacht-Ansicht</string>
     <string name="setting_userScript">Individualisierter JavaScript-Code</string>
-    <string name="setting_title_camera">Allow camera usage</string>
-    <string name="hint_DRM_Media">Allow DRM protected media playback?</string>
+    <string name="setting_title_camera">Kameranutzung erlauben</string>
+    <string name="hint_DRM_Media">Abspielen DRM geschützter Median erlauben?</string>
     <!-- License changelog -->
 </resources>

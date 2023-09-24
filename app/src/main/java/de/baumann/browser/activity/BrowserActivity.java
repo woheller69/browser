@@ -1513,18 +1513,9 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         FaviconHelper faviconHelper = new FaviconHelper(context);
         faviconHelper.addFavicon(ninjaWebView.getUrl(),ninjaWebView.getFavicon());
-        RecordAction action = new RecordAction(context);
-        action.open(true);
-        if (action.checkUrl(ninjaWebView.getUrl(), RecordUnit.TABLE_BOOKMARK)) {
-            NinjaToast.show(this, R.string.app_error);
-        } else {
-
-            long value= 11;  //default red icon
-            action.addBookmark(new Record(ninjaWebView.getTitle(), ninjaWebView.getUrl(), 0,  0,2,ninjaWebView.isDesktopMode(), ninjaWebView.getSettings().getJavaScriptEnabled(),ninjaWebView.getSettings().getDomStorageEnabled(),value));
-
-            NinjaToast.show(this, R.string.app_done);
-        }
-        action.close();
+        long value= 11;  //default red icon
+        Record bookmark = new Record(ninjaWebView.getTitle(), ninjaWebView.getUrl(), 0,  0,2,ninjaWebView.isDesktopMode(), ninjaWebView.getSettings().getJavaScriptEnabled(),ninjaWebView.getSettings().getDomStorageEnabled(),value);
+        editBookmark(bookmark);
     }
 
 
@@ -1870,13 +1861,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                         Record record = recordList.get(location);
                         RecordAction action = new RecordAction(context);
                         action.open(true);
-                        if (overViewTab.equals(getString(R.string.album_title_home))) {
-                            action.deleteURL(record.getURL(), RecordUnit.TABLE_GRID);
-                        } else if (overViewTab.equals(getString(R.string.album_title_bookmarks))) {
-                            action.deleteURL(record.getURL(), RecordUnit.TABLE_BOOKMARK);
-                        } else if (overViewTab.equals(getString(R.string.album_title_history))) {
-                            action.deleteURL(record.getURL(), RecordUnit.TABLE_HISTORY);
-                        }
+                        action.deleteURL(record.getURL(), RecordUnit.TABLE_BOOKMARK);
                         action.close();
                         recordList.remove(location);
                         adapterRecord.notifyDataSetChanged();
@@ -1887,83 +1872,87 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     Objects.requireNonNull(dialogSubMenu.getWindow()).setGravity(Gravity.BOTTOM);
                     break;
                 case 4:
-                    builderSubMenu = new MaterialAlertDialogBuilder(context);
-                    View dialogViewSubMenu = View.inflate(context, R.layout.dialog_edit_title, null);
-
-                    TextInputLayout edit_title_layout = dialogViewSubMenu.findViewById(R.id.edit_title_layout);
-                    TextInputLayout edit_userName_layout = dialogViewSubMenu.findViewById(R.id.edit_userName_layout);
-                    TextInputLayout edit_PW_layout = dialogViewSubMenu.findViewById(R.id.edit_PW_layout);
-                    ImageView ib_icon = dialogViewSubMenu.findViewById(R.id.edit_icon);
-                    if (!overViewTab.equals(getString(R.string.album_title_bookmarks))) {
-                        ib_icon.setVisibility(View.GONE);
-                    }
-                    Chip chip_desktopMode = dialogViewSubMenu.findViewById(R.id.edit_bookmark_desktopMode);
-                    Chip chip_javascript = dialogViewSubMenu.findViewById(R.id.edit_bookmark_Javascript);
-                    Chip chip_remoteContent = dialogViewSubMenu.findViewById(R.id.edit_bookmark_RemoteContent);
-                    chip_desktopMode.setVisibility(View.VISIBLE);
-                    chip_javascript.setVisibility(View.VISIBLE);
-                    chip_remoteContent.setVisibility(View.VISIBLE);
-
-                    edit_title_layout.setVisibility(View.VISIBLE);
-                    edit_userName_layout.setVisibility(View.GONE);
-                    edit_PW_layout.setVisibility(View.GONE);
-
-                    EditText edit_title = dialogViewSubMenu.findViewById(R.id.edit_title);
-                    edit_title.setText(title);
-
-                    TextInputLayout edit_URL_layout=dialogViewSubMenu.findViewById(R.id.edit_URL_layout);
-                    edit_URL_layout.setVisibility(View.VISIBLE);
-                    EditText edit_URL = dialogViewSubMenu.findViewById(R.id.edit_URL);
-                    edit_URL.setVisibility(View.VISIBLE);
-                    edit_URL.setText(url);
-
-                    ib_icon.setOnClickListener(v -> {
-                        MaterialAlertDialogBuilder builderFilter = new MaterialAlertDialogBuilder(context);
-                        View dialogViewFilter = View.inflate(context, R.layout.dialog_menu, null);
-                        builderFilter.setView(dialogViewFilter);
-                        AlertDialog dialogFilter = builderFilter.create();
-                        dialogFilter.show();
-                        Objects.requireNonNull(dialogFilter.getWindow()).setGravity(Gravity.BOTTOM);
-                        GridView menu_grid2 = dialogViewFilter.findViewById(R.id.menu_grid);
-                        final List<GridItem> gridList2 = new LinkedList<>();
-                        HelperUnit.addFilterItems(activity, gridList2);
-                        GridAdapter gridAdapter2 = new GridAdapter(context, gridList2);
-                        menu_grid2.setAdapter(gridAdapter2);
-                        gridAdapter2.notifyDataSetChanged();
-                        menu_grid2.setOnItemClickListener((parent2, view2, position2, id2) -> {
-                            newIcon = gridList2.get(position2).getData();
-                            HelperUnit.setFilterIcons(ib_icon, newIcon);
-                            dialogFilter.cancel();
-                        });
-                    });
-
-                    chip_desktopMode.setChecked(recordList.get(location).getDesktopMode());
-                    chip_javascript.setChecked(recordList.get(location).getJavascript());
-                    chip_remoteContent.setChecked(recordList.get(location).getDomStorage());
-
-                    newIcon=recordList.get(location).getIconColor();
-
-                    HelperUnit.setFilterIcons(ib_icon, newIcon);
-
-                    builderSubMenu.setView(dialogViewSubMenu);
-                    builderSubMenu.setTitle(getString(R.string.menu_edit));
-                    builderSubMenu.setPositiveButton(R.string.app_ok, (dialog3, whichButton) -> {
-                        if (overViewTab.equals(getString(R.string.album_title_bookmarks))) {
-                            RecordAction action = new RecordAction(context);
-                            action.open(true);
-                            action.deleteURL(url, RecordUnit.TABLE_BOOKMARK);
-                            action.addBookmark(new Record(edit_title.getText().toString(), edit_URL.getText().toString(), 0, 0, BOOKMARK_ITEM, chip_desktopMode.isChecked(),chip_javascript.isChecked(),chip_remoteContent.isChecked(),newIcon));
-                            action.close();
-                            bottom_navigation.setSelectedItemId(R.id.page_2);
-                        }
-                    });
-                    builderSubMenu.setNegativeButton(R.string.app_cancel, (dialog3, whichButton) -> builderSubMenu.setCancelable(true));
-                    dialogSubMenu = builderSubMenu.create();
-                    dialogSubMenu.show();
-                    Objects.requireNonNull(dialogSubMenu.getWindow()).setGravity(Gravity.BOTTOM);
-                    break;
+                    Record bookmark = recordList.get(location);
+                    editBookmark(bookmark);
             }
         });
+    }
+
+    private void editBookmark(Record bookmark) {
+        MaterialAlertDialogBuilder builderSubMenu;
+        AlertDialog dialogSubMenu;
+        builderSubMenu = new MaterialAlertDialogBuilder(context);
+        View dialogViewSubMenu = View.inflate(context, R.layout.dialog_edit_title, null);
+
+        TextInputLayout edit_title_layout = dialogViewSubMenu.findViewById(R.id.edit_title_layout);
+        TextInputLayout edit_userName_layout = dialogViewSubMenu.findViewById(R.id.edit_userName_layout);
+        TextInputLayout edit_PW_layout = dialogViewSubMenu.findViewById(R.id.edit_PW_layout);
+        ImageView ib_icon = dialogViewSubMenu.findViewById(R.id.edit_icon);
+
+        Chip chip_desktopMode = dialogViewSubMenu.findViewById(R.id.edit_bookmark_desktopMode);
+        Chip chip_javascript = dialogViewSubMenu.findViewById(R.id.edit_bookmark_Javascript);
+        Chip chip_remoteContent = dialogViewSubMenu.findViewById(R.id.edit_bookmark_RemoteContent);
+        chip_desktopMode.setVisibility(View.VISIBLE);
+        chip_javascript.setVisibility(View.VISIBLE);
+        chip_remoteContent.setVisibility(View.VISIBLE);
+
+        edit_title_layout.setVisibility(View.VISIBLE);
+        edit_userName_layout.setVisibility(View.GONE);
+        edit_PW_layout.setVisibility(View.GONE);
+
+        EditText edit_title = dialogViewSubMenu.findViewById(R.id.edit_title);
+        edit_title.setText(bookmark.getTitle());
+
+        TextInputLayout edit_URL_layout=dialogViewSubMenu.findViewById(R.id.edit_URL_layout);
+        edit_URL_layout.setVisibility(View.VISIBLE);
+        EditText edit_URL = dialogViewSubMenu.findViewById(R.id.edit_URL);
+        edit_URL.setVisibility(View.VISIBLE);
+        edit_URL.setText(bookmark.getURL());
+
+        ib_icon.setOnClickListener(v -> {
+            MaterialAlertDialogBuilder builderFilter = new MaterialAlertDialogBuilder(context);
+            View dialogViewFilter = View.inflate(context, R.layout.dialog_menu, null);
+            builderFilter.setView(dialogViewFilter);
+            AlertDialog dialogFilter = builderFilter.create();
+            dialogFilter.show();
+            Objects.requireNonNull(dialogFilter.getWindow()).setGravity(Gravity.BOTTOM);
+            GridView menu_grid2 = dialogViewFilter.findViewById(R.id.menu_grid);
+            final List<GridItem> gridList2 = new LinkedList<>();
+            HelperUnit.addFilterItems(activity, gridList2);
+            GridAdapter gridAdapter2 = new GridAdapter(context, gridList2);
+            menu_grid2.setAdapter(gridAdapter2);
+            gridAdapter2.notifyDataSetChanged();
+            menu_grid2.setOnItemClickListener((parent2, view2, position2, id2) -> {
+                newIcon = gridList2.get(position2).getData();
+                HelperUnit.setFilterIcons(ib_icon, newIcon);
+                dialogFilter.cancel();
+            });
+        });
+
+        chip_desktopMode.setChecked(bookmark.getDesktopMode());
+        chip_javascript.setChecked(bookmark.getJavascript());
+        chip_remoteContent.setChecked(bookmark.getDomStorage());
+
+        newIcon= bookmark.getIconColor();
+
+        HelperUnit.setFilterIcons(ib_icon, newIcon);
+
+        builderSubMenu.setView(dialogViewSubMenu);
+        builderSubMenu.setTitle(getString(R.string.menu_edit));
+        builderSubMenu.setPositiveButton(R.string.app_ok, (dialog3, whichButton) -> {
+            if (overViewTab.equals(getString(R.string.album_title_bookmarks))) {
+                RecordAction action = new RecordAction(context);
+                action.open(true);
+                action.deleteURL(bookmark.getURL(), RecordUnit.TABLE_BOOKMARK);
+                action.addBookmark(new Record(edit_title.getText().toString(), edit_URL.getText().toString(), 0, 0, BOOKMARK_ITEM, chip_desktopMode.isChecked(),chip_javascript.isChecked(),chip_remoteContent.isChecked(),newIcon));
+                action.close();
+                bottom_navigation.setSelectedItemId(R.id.page_2);
+            }
+        });
+        builderSubMenu.setNegativeButton(R.string.app_cancel, (dialog3, whichButton) -> builderSubMenu.setCancelable(true));
+        dialogSubMenu = builderSubMenu.create();
+        dialogSubMenu.show();
+        Objects.requireNonNull(dialogSubMenu.getWindow()).setGravity(Gravity.BOTTOM);
     }
 
 

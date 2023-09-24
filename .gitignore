@@ -26,6 +26,7 @@ local.properties
 gradle
 *.iml
 *.apk
-/app/debug/*
-/app/release/*
-/app/build/*
+app/debug/*
+app/release/*
+# Built application files
+/build/

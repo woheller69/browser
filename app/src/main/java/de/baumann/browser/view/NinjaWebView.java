@@ -1,8 +1,6 @@
 package de.baumann.browser.view;
 
 import android.annotation.SuppressLint;
-import android.annotation.TargetApi;
-import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -133,7 +131,6 @@ public class NinjaWebView extends WebView implements AlbumController {
     }
 
     @SuppressLint("SetJavaScriptEnabled")
-    @TargetApi(Build.VERSION_CODES.O)
     public synchronized void initPreferences(String url) {
 
         HelperUnit.initRendering(this, this.context);
@@ -141,9 +138,7 @@ public class NinjaWebView extends WebView implements AlbumController {
         WebSettings webSettings = getSettings();
 
         String userAgent = getUserAgent(desktopMode);
-        if (android.os.Build.VERSION.SDK_INT >= 26) {
-            webSettings.setSafeBrowsingEnabled(true);
-        }
+        webSettings.setSafeBrowsingEnabled(true);
 
         webSettings.setUserAgentString(userAgent);
         webSettings.setSupportZoom(true);
@@ -157,17 +152,9 @@ public class NinjaWebView extends WebView implements AlbumController {
         webSettings.setMediaPlaybackRequiresUserGesture(sp.getBoolean("sp_savedata",true));
 
         if (sp.getBoolean("sp_autofill", false)) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                this.setImportantForAutofill(View.IMPORTANT_FOR_AUTOFILL_YES);
-            } else {
-                webSettings.setSaveFormData(true);
-            }
+            this.setImportantForAutofill(View.IMPORTANT_FOR_AUTOFILL_YES);
         } else {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                this.setImportantForAutofill(View.IMPORTANT_FOR_AUTOFILL_NO);
-            } else {
-                webSettings.setSaveFormData(false);
-            }
+            this.setImportantForAutofill(View.IMPORTANT_FOR_AUTOFILL_NO);
         }
 
         if (url != null) {
@@ -377,18 +364,14 @@ public class NinjaWebView extends WebView implements AlbumController {
         getSettings().setSupportZoom(desktopMode);
         getSettings().setLoadWithOverviewMode(desktopMode);
 
-        if (reload) {
-            reload();
-        }
+        if (reload) { reload();}
     }
 
     public void toggleAllowFingerprint (boolean reload) {
 
         fingerPrintProtection = !isFingerPrintProtection();
 
-        if (reload) {
-            reload();
-        }
+        if (reload) { reload();}
     }
 
     public void resetFavicon(){this.favicon=null;}

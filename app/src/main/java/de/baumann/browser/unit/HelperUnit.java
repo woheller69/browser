@@ -223,8 +223,8 @@ public class HelperUnit {
     public static void initRendering(WebView webView, Context context) {
         sp = PreferenceManager.getDefaultSharedPreferences(context);
         if (sp.getBoolean("sp_invert", false)) {
-            if(WebViewFeature.isFeatureSupported(WebViewFeature.FORCE_DARK)) {
-                WebSettingsCompat.setForceDark(webView.getSettings(), WebSettingsCompat.FORCE_DARK_ON);
+            if(WebViewFeature.isFeatureSupported(WebViewFeature.ALGORITHMIC_DARKENING)) {
+                WebSettingsCompat.setAlgorithmicDarkeningAllowed(webView.getSettings(), true);
             } else {
                 Paint paint = new Paint();
                 ColorMatrix matrix = new ColorMatrix();
@@ -239,8 +239,8 @@ public class HelperUnit {
                 webView.setLayerType(View.LAYER_TYPE_HARDWARE, paint);
             }
         } else {
-            if(WebViewFeature.isFeatureSupported(WebViewFeature.FORCE_DARK)) {
-                WebSettingsCompat.setForceDark(webView.getSettings(), WebSettingsCompat.FORCE_DARK_OFF);
+            if(WebViewFeature.isFeatureSupported(WebViewFeature.ALGORITHMIC_DARKENING)) {
+                WebSettingsCompat.setAlgorithmicDarkeningAllowed(webView.getSettings(), false);
             } else {
                 webView.setLayerType(View.LAYER_TYPE_HARDWARE, null);
             }
@@ -275,7 +275,6 @@ public class HelperUnit {
 
 
     public static void setFilterIcons (ImageView ib_icon, long newIcon) {
-        newIcon=newIcon&15;
         if (newIcon == 11) {
             ib_icon.setImageResource(R.drawable.circle_red_big);
         } else if (newIcon == 10) {

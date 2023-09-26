@@ -23,6 +23,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 
+import androidx.annotation.OptIn;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.PopupMenu;
@@ -577,6 +578,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     }
 
     @SuppressLint({"ClickableViewAccessibility", "UnsafeExperimentalUsageError"})
+    @OptIn(markerClass=com.google.android.material.badge.ExperimentalBadgeUtils.class)
     private void initOmniBox() {
 
         omniBox = findViewById(R.id.omniBox);
@@ -591,7 +593,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
 
         bottomAppBar = findViewById(R.id.bottomAppBar);
-        bottomAppBar.setTitle("Foss Browser");
+        bottomAppBar.setTitle(getString(R.string.app_name));
 
         badgeDrawable = BadgeDrawable.create(context);
         badgeDrawable.setBadgeGravity(BadgeDrawable.TOP_END);
@@ -608,10 +610,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         ImageButton omnibox_refresh = findViewById(R.id.omnibox_refresh);
         omnibox_refresh.setOnClickListener(v -> {
-            if (ninjaWebView != null) {
-                ninjaWebView.initPreferences(ninjaWebView.getUrl());
-                ninjaWebView.reload();
-            }
+            reloadPage();
         });
 
         ImageButton omnibox_newtab = findViewById(R.id.omnibox_newtab);
@@ -682,6 +681,13 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             saveBookmark();
             return true;
         });
+    }
+
+    private void reloadPage() {
+        if (ninjaWebView != null) {
+            ninjaWebView.initPreferences(ninjaWebView.getUrl());
+            ninjaWebView.reload();
+        }
     }
 
     private void performGesture (String gesture) {
@@ -1066,15 +1072,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         Chip chip_adBlock = dialogView.findViewById(R.id.chip_adBlock);
         chip_adBlock.setChecked(sp.getBoolean("sp_ad_block", true));
-        chip_adBlock.setOnClickListener(v -> {
-            if (sp.getBoolean("sp_ad_block", true)) {
-                chip_adBlock.setChecked(false);
-                sp.edit().putBoolean("sp_ad_block", false).apply();
-            } else {
-                chip_adBlock.setChecked(true);
-                sp.edit().putBoolean("sp_ad_block", true).apply();
-            }
-        });
+        chip_adBlock.setOnClickListener(v -> {sp.edit().putBoolean("sp_ad_block",chip_adBlock.isChecked()).apply();reloadPage();});
 
         Chip chip_fingerprint = dialogView.findViewById(R.id.chip_Fingerprint);
         chip_fingerprint.setChecked(sp.getBoolean("sp_fingerPrintProtection",true));
@@ -1082,19 +1080,11 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         Chip chip_location = dialogView.findViewById(R.id.chip_Location);
         chip_location.setChecked(sp.getBoolean("sp_location",false));
-        chip_location.setOnClickListener(v -> sp.edit().putBoolean("sp_location",chip_location.isChecked()).apply());
+        chip_location.setOnClickListener(v -> {sp.edit().putBoolean("sp_location",chip_location.isChecked()).apply();reloadPage();});
 
         Chip chip_image = dialogView.findViewById(R.id.chip_image);
         chip_image.setChecked(sp.getBoolean("sp_images", true));
-        chip_image.setOnClickListener(v -> {
-            if (sp.getBoolean("sp_images", true)) {
-                chip_image.setChecked(false);
-                sp.edit().putBoolean("sp_images", false).apply();
-            } else {
-                chip_image.setChecked(true);
-                sp.edit().putBoolean("sp_images", true).apply();
-            }
-        });
+        chip_image.setOnClickListener(v -> {sp.edit().putBoolean("sp_images",chip_image.isChecked()).apply();reloadPage();});
 
         Chip chip_desktopMode = dialogView.findViewById(R.id.chip_desktopMode);
         chip_desktopMode.setChecked(ninjaWebView.isDesktopMode());
@@ -1105,17 +1095,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         Chip chip_night = dialogView.findViewById(R.id.chip_night);
         chip_night.setChecked(sp.getBoolean("sp_invert", false));
-        chip_night.setOnClickListener(v -> {
-            if (sp.getBoolean("sp_invert", false)) {
-                chip_night.setChecked(false);
-                sp.edit().putBoolean("sp_invert", false).apply();
-            } else {
-                chip_night.setChecked(true);
-                sp.edit().putBoolean("sp_invert", true).apply();
-            }
-            HelperUnit.initRendering(ninjaWebView, context);
-            dialog.cancel();
-        });
+        chip_night.setOnClickListener(v -> {sp.edit().putBoolean("sp_invert",chip_night.isChecked()).apply();HelperUnit.initRendering(ninjaWebView, context);dialog.cancel();});
 
         ImageButton ib_settings = dialogView.findViewById(R.id.ib_settings);
         ib_settings.setOnClickListener(view -> {
@@ -1269,6 +1249,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     }
 
     @SuppressLint("UnsafeExperimentalUsageError")
+    @OptIn(markerClass=com.google.android.material.badge.ExperimentalBadgeUtils.class)
     private void updateOmniBox() {
 
         bottom_navigation.getOrCreateBadge(R.id.page_0).setNumber(BrowserContainer.size());

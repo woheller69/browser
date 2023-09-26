@@ -124,8 +124,7 @@
                 android:text="@string/setting_title_fingerPrint" />
 
             <com.google.android.material.chip.Chip
-                android:id="@+id/chip_reserved"
-                android:visibility="invisible"
+                android:id="@+id/chip_Location"
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_height="wrap_content"
                 android:layout_width="0dp"
@@ -134,7 +133,7 @@
                 android:layout_marginStart="4dp"
                 android:layout_marginEnd="0dp"
                 android:ellipsize="end"
-                android:text=""/>
+                android:text="@string/setting_title_location"/>
 
         </LinearLayout>
 

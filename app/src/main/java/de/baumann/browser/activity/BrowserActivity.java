@@ -1080,6 +1080,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         chip_fingerprint.setChecked(sp.getBoolean("sp_fingerPrintProtection",true));
         chip_fingerprint.setOnClickListener(v -> sp.edit().putBoolean("sp_fingerPrintProtection",chip_fingerprint.isChecked()).apply());
 
+        Chip chip_location = dialogView.findViewById(R.id.chip_Location);
+        chip_location.setChecked(sp.getBoolean("sp_location",false));
+        chip_location.setOnClickListener(v -> sp.edit().putBoolean("sp_location",chip_location.isChecked()).apply());
+
         Chip chip_image = dialogView.findViewById(R.id.chip_image);
         chip_image.setChecked(sp.getBoolean("sp_images", true));
         chip_image.setOnClickListener(v -> {

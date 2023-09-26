@@ -11,6 +11,7 @@ import androidx.preference.PreferenceManager;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
@@ -18,8 +19,6 @@ import java.util.Objects;
 import de.baumann.browser.unit.RecordUnit;
 
 public class RecordAction {
-    public static final int  HISTORY_ITEM = 0;
-    public static final int  STARTSITE_ITEM = 1;
     public static final int  BOOKMARK_ITEM = 2;
 
     private SQLiteDatabase database;
@@ -31,73 +30,6 @@ public class RecordAction {
     public void open(boolean rw) { database = rw ? helper.getWritableDatabase() : helper.getReadableDatabase(); }
     public void close() {
         helper.close();
-    }
-
-
-    //StartSite
-
-    public boolean addStartSite(Record record) {
-        if (record == null
-                || record.getTitle() == null
-                || record.getTitle().trim().isEmpty()
-                || record.getURL() == null
-                || record.getURL().trim().isEmpty()
-                || record.getDesktopMode() == null
-                || record.getJavascript() == null
-                || record.getDomStorage() == null
-                || record.getTime() < 0L
-                || record.getOrdinal() < 0) {
-            return false;
-        }
-        ContentValues values = new ContentValues();
-        values.put(RecordUnit.COLUMN_TITLE, record.getTitle().trim());
-        values.put(RecordUnit.COLUMN_URL, record.getURL().trim());
-
-        // filename is used for desktop mode, javascript, and DOM content
-        // bit 4: 1 = Desktop Mode
-        // bit 5: 0 = JavaScript (0 due backward compatibility)
-        // bit 6: 0 = DOM Content allowed (0 due to backward compatibility)
-
-        values.put(RecordUnit.COLUMN_FILENAME,  (long) (record.getDesktopMode() ? 16 : 0) + (long) (record.getJavascript() ? 0 : 32) + (long) (record.getDomStorage() ? 0 : 64));
-        values.put(RecordUnit.COLUMN_ORDINAL, record.getOrdinal());
-        database.insert(RecordUnit.TABLE_GRID, null, values);
-        return true;
-    }
-
-    public List<Record> listStartSite (Activity activity) {
-
-        List<Record> list = new LinkedList<>();
-        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(activity);
-        String sortBy = Objects.requireNonNull(sp.getString("sort_startSite", "ordinal"));
-
-        Cursor cursor;
-        cursor = database.query(
-                RecordUnit.TABLE_GRID,
-                new String[] {
-                        RecordUnit.COLUMN_TITLE,
-                        RecordUnit.COLUMN_URL,
-                        RecordUnit.COLUMN_FILENAME,
-                        RecordUnit.COLUMN_ORDINAL
-                },
-                null,
-                null,
-                null,
-                null,
-                sortBy + " COLLATE NOCASE;"
-        );
-        if (cursor == null) {
-            return list;
-        }
-        cursor.moveToFirst();
-        while (!cursor.isAfterLast()) {
-            list.add(getRecord(cursor,STARTSITE_ITEM));
-            cursor.moveToNext();
-        }
-        cursor.close();
-        if (!sortBy.equals("ordinal")) {
-            Collections.reverse(list);
-        }
-        return list;
     }
 
     //BOOKMARK
@@ -125,15 +57,13 @@ public class RecordAction {
         // bit 5: 0 = JavaScript (0 due backward compatibility)
         // bit 6: 0 = DOM Content allowed (0 due to backward compatibility)
 
-        values.put(RecordUnit.COLUMN_TIME, record.getIconColor() + (long) (record.getDesktopMode() ? 16 : 0) + (long) (record.getJavascript() ? 0 : 32) + (long) (record.getDomStorage() ? 0 : 64));
+        values.put(RecordUnit.COLUMN_TIME,(System.currentTimeMillis()&(~255)) + record.getIconColor() + (long) (record.getDesktopMode() ? 16 : 0) + (long) (record.getJavascript() ? 0 : 32) + (long) (record.getDomStorage() ? 0 : 64));
         database.insert(RecordUnit.TABLE_BOOKMARK, null, values);
     }
 
     public List<Record> listBookmark (Context context, boolean filter, long filterBy) {
 
         List<Record> list = new LinkedList<>();
-        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
-        String sortBy = Objects.requireNonNull(sp.getString("sort_bookmark", "title"));
         Cursor cursor;
         cursor = database.query(
                 RecordUnit.TABLE_BOOKMARK,
@@ -146,7 +76,7 @@ public class RecordAction {
                 null,
                 null,
                 null,
-                sortBy + " COLLATE NOCASE;"
+                "time"
         );
         if (cursor == null) {
             return list;
@@ -154,67 +84,32 @@ public class RecordAction {
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
             if (filter) {
-                if ((getRecord(cursor,BOOKMARK_ITEM).getIconColor()) == filterBy) {
-                    list.add(getRecord(cursor,BOOKMARK_ITEM));
+                if ((getRecord(cursor).getIconColor()) == filterBy) {
+                    list.add(getRecord(cursor));
                 }
             } else {
-                list.add(getRecord(cursor,BOOKMARK_ITEM));
+                list.add(getRecord(cursor));
             }
             cursor.moveToNext();
         }
         cursor.close();
 
-        if (sortBy.equals("time")){  //ignore desktop mode, JavaScript, and remote content when sorting colors
-            Collections.sort(list, (first, second) -> first.getTitle().compareTo(second.getTitle()));
-            Collections.sort(list,(first, second) -> Long.compare(first.getIconColor(), second.getIconColor()));
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
+        String sortBy = Objects.requireNonNull(sp.getString("sort_bookmark", "title"));
+
+        switch (sortBy) {
+            case "icon":   //ignore desktop mode, JavaScript, and remote content when sorting colors
+                Collections.sort(list, Comparator.comparing(Record::getUpperCaseTitle));
+                Collections.sort(list, Comparator.comparingLong(Record::getIconColor));
+                break;
+            case "date":
+                Collections.sort(list, Comparator.comparingLong(Record::getTime));
+                break;
+            case "title":
+                Collections.sort(list, Comparator.comparing(Record::getUpperCaseTitle));
+                break;
         }
         Collections.reverse(list);
-        return list;
-    }
-
-    //History
-
-    public void addHistory(Record record) {
-        if (record == null
-                || record.getTitle() == null
-                || record.getTitle().trim().isEmpty()
-                || record.getURL() == null
-                || record.getURL().trim().isEmpty()
-                || record.getTime() < 0L) {
-            return;
-        }
-        record.setTime(record.getTime()&(~255));    //blank out lower 8bits of time
-
-        ContentValues values = new ContentValues();
-        values.put(RecordUnit.COLUMN_TITLE, record.getTitle().trim());
-        values.put(RecordUnit.COLUMN_URL, record.getURL().trim());
-        values.put(RecordUnit.COLUMN_TIME, record.getTime()+ (long) (record.getDesktopMode() ? 16 : 0) + (long) (record.getJavascript() ? 0 : 32) + (long) (record.getDomStorage() ? 0 : 64));
-        database.insert(RecordUnit.TABLE_HISTORY, null, values);
-    }
-
-    public List<Record> listHistory () {
-        List<Record> list = new ArrayList<>();
-        Cursor cursor;
-        cursor = database.query(
-                RecordUnit.TABLE_HISTORY,
-                new String[] {
-                        RecordUnit.COLUMN_TITLE,
-                        RecordUnit.COLUMN_URL,
-                        RecordUnit.COLUMN_TIME
-                },
-                null,
-                null,
-                null,
-                null,
-                RecordUnit.COLUMN_TIME + " COLLATE NOCASE;"
-        );
-
-        cursor.moveToFirst();
-        while (!cursor.isAfterLast()) {
-            list.add(getRecord(cursor,HISTORY_ITEM));
-            cursor.moveToNext();
-        }
-        cursor.close();
         return list;
     }
 
@@ -308,27 +203,17 @@ public class RecordAction {
         database.execSQL("DELETE FROM " + table);
     }
 
-    private Record getRecord(Cursor cursor, int type) {
+    private Record getRecord(Cursor cursor) {
         Record record = new Record();
         record.setTitle(cursor.getString(0));
         record.setURL(cursor.getString(1));
-        record.setTime(cursor.getLong(2));
-        record.setType(type);
-
-        if ((type==STARTSITE_ITEM)||(type==BOOKMARK_ITEM)){
-            record.setDesktopMode((record.getTime()&16)==16);
-            record.setJavascript(!((record.getTime()&32)==32));
-            record.setDomStorage(!((record.getTime()&64)==64));
-            if (type==BOOKMARK_ITEM){
-                record.setIconColor(record.getTime()&15);
-            }
-            record.setTime(0);  //time is no longer needed after extracting data
-        } else if (type==HISTORY_ITEM){
-            record.setDesktopMode((record.getTime()&16)==16);
-            record.setJavascript(!((record.getTime()&32)==32));
-            record.setDomStorage(!((record.getTime()&64)==64));
-            record.setTime(record.getTime()&(~255));  //blank out lower 8bits of time
-        }
+        long help = cursor.getLong(2);
+        record.setTime(help&(~255));
+        record.setType(BOOKMARK_ITEM);
+        record.setDesktopMode((help&16)==16);
+        record.setJavascript(!((help&32)==32));
+        record.setDomStorage(!((help&64)==64));
+        record.setIconColor(help&15);
 
         return record;
     }
@@ -338,8 +223,6 @@ public class RecordAction {
         RecordAction action = new RecordAction(activity);
         action.open(false);
         list.addAll(action.listBookmark(activity, false, 0)); //move bookmarks to top of list
-        list.addAll(action.listStartSite(activity));
-        list.addAll(action.listHistory());
         action.close();
         return list;
     }

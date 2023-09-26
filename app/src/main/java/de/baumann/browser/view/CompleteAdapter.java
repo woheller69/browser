@@ -24,11 +24,6 @@ import de.baumann.browser.database.FaviconHelper;
 import de.baumann.browser.database.Record;
 import de.baumann.browser.R;
 
-import static de.baumann.browser.database.RecordAction.BOOKMARK_ITEM;
-import static de.baumann.browser.database.RecordAction.HISTORY_ITEM;
-import static de.baumann.browser.database.RecordAction.STARTSITE_ITEM;
-
-
 public class CompleteAdapter extends BaseAdapter implements Filterable {
     private class CompleteFilter extends Filter {
         @Override
@@ -73,9 +68,6 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
 
     private static class CompleteItem {
         private final String title;
-        private final int type;
-
-        private int getType(){return this.type;}
 
         String getTitle() {
             return title;
@@ -97,10 +89,9 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
             this.index = index;
         }
 
-        private CompleteItem(String title, String url, int type) {
+        private CompleteItem(String title, String url) {
             this.title = title;
             this.url = url;
-            this.type=type;
         }
 
         @Override
@@ -151,7 +142,7 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
                     && !record.getTitle().isEmpty()
                     && record.getURL() != null
                     && !record.getURL().isEmpty()) {
-                originalList.add(new CompleteItem(record.getTitle(), record.getURL(), record.getType()));
+                originalList.add(new CompleteItem(record.getTitle(), record.getURL()));
             }
         }
 
@@ -205,11 +196,7 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
         holder.urlView.setVisibility(View.GONE);
         holder.urlView.setText(item.url);
 
-        if (item.getType()==STARTSITE_ITEM) {  //Item from start page
-            holder.iconView.setImageResource(R.drawable.icon_web_light);
-        } else if (item.getType()==HISTORY_ITEM){  //Item from history
-            holder.iconView.setImageResource(R.drawable.icon_history_light);
-        } else if (item.getType()==BOOKMARK_ITEM) holder.iconView.setImageResource(R.drawable.icon_bookmark_light);  //Item from bookmarks
+        holder.iconView.setImageResource(R.drawable.icon_bookmark_light);  //Item from bookmarks
 
         FaviconHelper faviconHelper = new FaviconHelper(context);
         Bitmap bitmap=faviconHelper.getFavicon(item.url);

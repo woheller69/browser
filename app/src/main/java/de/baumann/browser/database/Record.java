@@ -20,6 +20,7 @@ public class Record {
     public Boolean getJavascript() {return isJavascript; }
     public void setJavascript(Boolean javascript) {isJavascript = javascript; }
 
+    public String getUpperCaseTitle() { return  title.toUpperCase();}
     public String getTitle() {
         return title;
     }

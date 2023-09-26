@@ -124,8 +124,6 @@ import static android.webkit.WebView.HitTestResult.IMAGE_TYPE;
 import static android.webkit.WebView.HitTestResult.SRC_ANCHOR_TYPE;
 import static android.webkit.WebView.HitTestResult.SRC_IMAGE_ANCHOR_TYPE;
 import static de.baumann.browser.database.RecordAction.BOOKMARK_ITEM;
-import static de.baumann.browser.database.RecordAction.HISTORY_ITEM;
-import static de.baumann.browser.database.RecordAction.STARTSITE_ITEM;
 
 public class BrowserActivity extends AppCompatActivity implements BrowserController {
 
@@ -489,13 +487,11 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             String url = ((TextView) view.findViewById(R.id.record_item_time)).getText().toString();
             for (Record record:list){
                 if (record.getURL().equals(url)){
-                    if ((record.getType()==BOOKMARK_ITEM)||(record.getType()==STARTSITE_ITEM)||(record.getType()== HISTORY_ITEM) ) {
-                        if (record.getDesktopMode() != ninjaWebView.isDesktopMode()) ninjaWebView.toggleDesktopMode(false);
-                        ninjaWebView.setJavaScript(record.getJavascript());
-                        ninjaWebView.setDomStorage(record.getDomStorage());
-                        ninjaWebView.setOldDomain(url);
-                        break;
-                    }
+                    if (record.getDesktopMode() != ninjaWebView.isDesktopMode()) ninjaWebView.toggleDesktopMode(false);
+                    ninjaWebView.setJavaScript(record.getJavascript());
+                    ninjaWebView.setDomStorage(record.getDomStorage());
+                    ninjaWebView.setOldDomain(url);
+                    break;
                 }
             }
             ninjaWebView.loadUrl(url);
@@ -834,7 +830,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                             bottom_navigation.setSelectedItemId(R.id.page_2);
                         }
                     } else if (item.getItemId() == R.id.menu_sortIcon) {
-                        sp.edit().putString("sort_bookmark", "time").apply();
+                        sp.edit().putString("sort_bookmark", "icon").apply();
+                        bottom_navigation.setSelectedItemId(R.id.page_2);
+                    } else if (item.getItemId() == R.id.menu_sortDate) {
+                        sp.edit().putString("sort_bookmark", "date").apply();
                         bottom_navigation.setSelectedItemId(R.id.page_2);
                     } else if (item.getItemId() == R.id.menu_filter) {
                         show_dialogFilter();
@@ -1134,13 +1133,11 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         List<Record> list = action.listEntries(activity);
         for (Record record:list){
                 if (record.getURL().equals(url)){
-                    if ((record.getType()==BOOKMARK_ITEM)||(record.getType()==STARTSITE_ITEM)||(record.getType()== HISTORY_ITEM) ) {
-                        if (record.getDesktopMode() != ninjaWebView.isDesktopMode()) ninjaWebView.toggleDesktopMode(false);
-                        ninjaWebView.setJavaScript(record.getJavascript());
-                        ninjaWebView.setDomStorage(record.getDomStorage());
-                        ninjaWebView.setOldDomain(url);
-                        break;
-                    }
+                    if (record.getDesktopMode() != ninjaWebView.isDesktopMode()) ninjaWebView.toggleDesktopMode(false);
+                    ninjaWebView.setJavaScript(record.getJavascript());
+                    ninjaWebView.setDomStorage(record.getDomStorage());
+                    ninjaWebView.setOldDomain(url);
+                    break;
                 }
             }
 

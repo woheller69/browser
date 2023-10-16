@@ -109,10 +109,7 @@ public class NinjaWebViewClient extends WebViewClient {
             if (isMatch)  view.evaluateJavascript(sp.getString("sp_onPageFinished",""), null);
         }
 
-        if(sp.getBoolean("sp_savedata",true)) {
-            view.evaluateJavascript("var links=document.getElementsByTagName('video'); for(let i=0;i<links.length;i++){links[i].pause()};", null);
-        }
-        SharedPreferences sp= PreferenceManager.getDefaultSharedPreferences(ninjaWebView.getContext());
+        view.evaluateJavascript("var links=document.getElementsByTagName('video'); for(let i=0;i<links.length;i++){links[i].pause()};", null);
 
     }
 
@@ -489,7 +486,6 @@ public class NinjaWebViewClient extends WebViewClient {
         return handleUri(uri);
     }
 
-    @TargetApi(Build.VERSION_CODES.N)
     @Override
     public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
         final Uri uri = request.getUrl();

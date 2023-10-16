@@ -48,7 +48,7 @@
                     android:layout_height="match_parent"
                     android:layout_centerInParent="true"
                     android:layout_toEndOf="@id/omniBox_tab"
-                    android:layout_toStartOf="@id/omnibox_newtab"
+                    android:layout_toStartOf="@id/omnibox_overview"
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"
                     android:hint="@string/main_omnibox_input_hint"
@@ -62,16 +62,6 @@
                     android:singleLine="true"
                     android:selectAllOnFocus="true"
                     android:background="@android:color/transparent" />
-
-                <ImageButton
-                    android:id="@+id/omnibox_newtab"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_toStartOf="@id/omnibox_overview"
-                    android:layout_centerVertical="true"
-                    android:layout_marginEnd="6dp"
-                    android:background="?attr/actionBarItemBackground"
-                    android:src="@drawable/icon_new_tab_light" />
 
                 <ImageButton
                     android:id="@+id/omnibox_overview"

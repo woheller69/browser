@@ -173,12 +173,7 @@ public class AdBlock {
 
         Calendar time = Calendar.getInstance();
 
-        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
-        if (sp.getBoolean("sp_savedata", true)){
-            time.add(Calendar.DAY_OF_YEAR,-7);
-        }else{
-            time.add(Calendar.DAY_OF_YEAR,-1);
-        }
+        time.add(Calendar.DAY_OF_YEAR,-7);
 
         Date lastModified = new Date(file.lastModified());
         if (lastModified.before(time.getTime())||getHostsDate(context).equals("")) {  //also download again if something is wrong with the file

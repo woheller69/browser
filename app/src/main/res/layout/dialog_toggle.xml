@@ -175,7 +175,7 @@
                 app:chipIconTint="@drawable/bg_chip_state_list"/>
 
             <com.google.android.material.chip.Chip
-                android:id="@+id/chip_desktopMode"
+                android:id="@+id/chip_camera"
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -184,12 +184,12 @@
                 app:textEndPadding="0dp"
                 app:textStartPadding="0dp"
                 android:text=""
-                app:chipIcon="@drawable/icon_desktop"
+                app:chipIcon="@drawable/icon_camera"
                 app:chipIconEnabled="true"
                 app:chipIconTint="@drawable/bg_chip_state_list" />
 
             <com.google.android.material.chip.Chip
-                android:id="@+id/chip_night"
+                android:id="@+id/chip_microphone"
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -198,7 +198,7 @@
                 app:textEndPadding="0dp"
                 app:textStartPadding="0dp"
                 android:text=""
-                app:chipIcon="@drawable/icon_night"
+                app:chipIcon="@drawable/icon_microphone"
                 app:chipIconEnabled="true"
                 app:chipIconTint="@drawable/bg_chip_state_list"/>
 
@@ -344,7 +344,7 @@
                 android:id="@+id/chip_fingerpint_tab"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toStartOf="@+id/chip_allow_popups_WL"
+                android:layout_toStartOf="@+id/chip_desktop_mode_tab"
                 android:text=""
                 app:chipIcon="@drawable/icon_fingerprint"
                 app:chipIconTint="@drawable/bg_chip_state_list"
@@ -356,12 +356,12 @@
 
             <com.google.android.material.chip.Chip
                 style="@style/Widget.MaterialComponents.Chip.Choice"
-                android:id="@+id/chip_allow_popups_WL"
+                android:id="@+id/chip_desktop_mode_tab"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toStartOf="@+id/chip_dom_Tab"
                 android:text=""
-                app:chipIcon="@drawable/icon_popup"
+                app:chipIcon="@drawable/icon_desktop"
                 app:chipIconTint="@drawable/bg_chip_state_list"
                 app:chipIconEnabled="true"
                 app:chipStartPadding="4dp"

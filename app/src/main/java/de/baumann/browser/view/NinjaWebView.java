@@ -133,7 +133,6 @@ public class NinjaWebView extends WebView implements AlbumController {
     @SuppressLint("SetJavaScriptEnabled")
     public synchronized void initPreferences(String url) {
 
-        HelperUnit.initRendering(this, this.context);
         sp = PreferenceManager.getDefaultSharedPreferences(context);
         WebSettings webSettings = getSettings();
 
@@ -149,7 +148,7 @@ public class NinjaWebView extends WebView implements AlbumController {
         webSettings.setTextZoom(Integer.parseInt(Objects.requireNonNull(sp.getString("sp_fontSize", "100"))));
         webSettings.setBlockNetworkImage(!sp.getBoolean("sp_images", true));
         webSettings.setGeolocationEnabled(sp.getBoolean("sp_location", false));
-        webSettings.setMediaPlaybackRequiresUserGesture(sp.getBoolean("sp_savedata",true));
+        webSettings.setMediaPlaybackRequiresUserGesture(true);
 
         if (sp.getBoolean("sp_autofill", false)) {
             this.setImportantForAutofill(View.IMPORTANT_FOR_AUTOFILL_YES);
@@ -217,9 +216,7 @@ public class NinjaWebView extends WebView implements AlbumController {
         //  Server-side detection for GlobalPrivacyControl
         requestHeaders.put("Sec-GPC","1");
         requestHeaders.put("X-Requested-With","com.duckduckgo.mobile.android");
-        if (sp.getBoolean("sp_savedata", true)) {
-            requestHeaders.put("Save-Data", "on");
-        }
+        requestHeaders.put("Save-Data", "on");
         return requestHeaders;
     }
 

@@ -2,39 +2,13 @@
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
     
-    <Preference
-        android:summary="@string/setting_gesture_hint"/>
+    <Preference />
 
     <CheckBoxPreference
         android:key="sp_autofill"
         android:defaultValue="false"
         android:title="@string/setting_title_autofill"
         android:summary="@string/setting_summary_autofill"/>
-
-    <CheckBoxPreference
-        android:key="sp_images"
-        android:defaultValue="true"
-        android:title="@string/setting_title_images"/>
-
-    <CheckBoxPreference
-        android:key="sp_savedata"
-        android:defaultValue="true"
-        android:title="@string/setting_title_save_data"/>
-
-    <CheckBoxPreference
-        android:key="sp_fingerPrintProtection"
-        android:defaultValue="true"
-        android:title="@string/setting_title_fingerPrint"/>
-
-    <CheckBoxPreference
-        android:key="sp_location"
-        android:defaultValue="false"
-        android:title="@string/setting_title_location"/>
-
-    <CheckBoxPreference
-        android:key="sp_camera"
-        android:defaultValue="false"
-        android:title="@string/setting_title_camera"/>
 
     <PreferenceCategory android:title="@string/setting_title_adblock">
 

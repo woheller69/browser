@@ -92,6 +92,7 @@ public class NinjaWebChromeClient extends WebChromeClient {
 
     @Override
     public void onPermissionRequest(final PermissionRequest request){
+        Activity activity =  (Activity) ninjaWebView.getContext();
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(ninjaWebView.getContext());
         String[] resources = request.getResources();
         for (String resource : resources) {
@@ -101,25 +102,27 @@ public class NinjaWebChromeClient extends WebChromeClient {
                         ninjaWebView.getSettings().setMediaPlaybackRequiresUserGesture(false);  //fix conflict with save data option. Temporarily switch off setMediaPlaybackRequiresUserGesture
                         ninjaWebView.reload();
                     }
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                        request.grant(request.getResources());
-                    }
+                    HelperUnit.grantPermissionsCam(activity);
+                    request.grant(request.getResources());
+                }
+            } else if (PermissionRequest.RESOURCE_AUDIO_CAPTURE.equals(resource)) {
+                if (sp.getBoolean("sp_microphone", false)) {
+                    HelperUnit.grantPermissionsMic(activity);
+                    request.grant(request.getResources());
                 }
             } else if (PermissionRequest.RESOURCE_PROTECTED_MEDIA_ID.equals(resource)) {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
 
-                    MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(ninjaWebView.getContext());
-                    builder.setMessage(R.string.hint_DRM_Media);
-                    builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
-                        request.grant(request.getResources());
-                    });
-                    builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> {
-                        request.deny();
-                    });
-                    AlertDialog dialog = builder.create();
-                    dialog.show();
+                MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(ninjaWebView.getContext());
+                builder.setMessage(R.string.hint_DRM_Media);
+                builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
+                    request.grant(request.getResources());
+                });
+                builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> {
+                    request.deny();
+                });
+                AlertDialog dialog = builder.create();
+                dialog.show();
 
-                }
             }
         }
 

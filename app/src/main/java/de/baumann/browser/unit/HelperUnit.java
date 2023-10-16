@@ -28,17 +28,13 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.pm.ShortcutInfo;
 import android.content.pm.ShortcutManager;
-import android.graphics.ColorMatrix;
-import android.graphics.ColorMatrixColorFilter;
-import android.graphics.Paint;
 import android.graphics.drawable.Icon;
 import android.net.Uri;
-import android.os.Build;
 
 import androidx.appcompat.app.AlertDialog;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.preference.PreferenceManager;
-import androidx.webkit.WebSettingsCompat;
-import androidx.webkit.WebViewFeature;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
@@ -49,7 +45,6 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.webkit.CookieManager;
 import android.webkit.URLUtil;
-import android.webkit.WebView;
 import android.widget.EditText;
 import android.widget.ImageView;
 
@@ -71,21 +66,29 @@ import static android.content.Context.DOWNLOAD_SERVICE;
 
 public class HelperUnit {
 
-    private static final int REQUEST_CODE_ASK_PERMISSIONS_1 = 1234;
+    private static final int REQUEST_CODE_PERMISSION_LOC = 1234;
+    private static final int REQUEST_CODE_PERMISSION_MIC = 2345;
+    private static final int REQUEST_CODE_PERMISSION_CAM = 3456;
     private static SharedPreferences sp;
 
     public static void grantPermissionsLoc(final Activity activity) {
-        if (android.os.Build.VERSION.SDK_INT >= 23) {
-            int hasACCESS_FINE_LOCATION = activity.checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION);
-            if (hasACCESS_FINE_LOCATION != PackageManager.PERMISSION_GRANTED) {
-                MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(activity);
-                builder.setMessage(R.string.setting_summary_location);
-                builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> activity.requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_CODE_ASK_PERMISSIONS_1));
-                builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
-                AlertDialog dialog = builder.create();
-                dialog.show();
-                Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
-            }
+        if (ContextCompat.checkSelfPermission(activity, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(activity,
+                    new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_CODE_PERMISSION_LOC);
+        }
+    }
+
+    public static void grantPermissionsMic(final Activity activity) {
+        if (ContextCompat.checkSelfPermission(activity, Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(activity,
+                    new String[]{Manifest.permission.RECORD_AUDIO}, REQUEST_CODE_PERMISSION_MIC);
+        }
+    }
+
+    public static void grantPermissionsCam(final Activity activity) {
+        if (ContextCompat.checkSelfPermission(activity, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(activity,
+                    new String[]{Manifest.permission.CAMERA}, REQUEST_CODE_PERMISSION_CAM);
         }
     }
 
@@ -151,28 +154,19 @@ public class HelperUnit {
             Intent i = new Intent();
             i.setAction(Intent.ACTION_VIEW);
             i.setData(Uri.parse(url));
-            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) { // code for adding shortcut on pre oreo device
-                Intent installer = new Intent();
-                installer.putExtra("android.intent.extra.shortcut.INTENT", i);
-                installer.putExtra("android.intent.extra.shortcut.NAME", title);
-                installer.putExtra(Intent.EXTRA_SHORTCUT_ICON_RESOURCE, Intent.ShortcutIconResource.fromContext(context.getApplicationContext(), R.mipmap.ic_launcher));
-                installer.setAction("com.android.launcher.action.INSTALL_SHORTCUT");
-                context.sendBroadcast(installer);
+            ShortcutManager shortcutManager = context.getSystemService(ShortcutManager.class);
+            assert shortcutManager != null;
+            if (shortcutManager.isRequestPinShortcutSupported()) {
+                ShortcutInfo pinShortcutInfo =
+                        new ShortcutInfo.Builder(context, url)
+                                .setShortLabel(title)
+                                .setLongLabel(title)
+                                .setIcon(Icon.createWithResource(context, R.mipmap.ic_launcher))
+                                .setIntent(new Intent(Intent.ACTION_VIEW, Uri.parse(url)))
+                                .build();
+                shortcutManager.requestPinShortcut(pinShortcutInfo, null);
             } else {
-                ShortcutManager shortcutManager = context.getSystemService(ShortcutManager.class);
-                assert shortcutManager != null;
-                if (shortcutManager.isRequestPinShortcutSupported()) {
-                    ShortcutInfo pinShortcutInfo =
-                            new ShortcutInfo.Builder(context, url)
-                                    .setShortLabel(title)
-                                    .setLongLabel(title)
-                                    .setIcon(Icon.createWithResource(context, R.mipmap.ic_launcher))
-                                    .setIntent(new Intent(Intent.ACTION_VIEW, Uri.parse(url)))
-                                    .build();
-                    shortcutManager.requestPinShortcut(pinShortcutInfo, null);
-                } else {
-                    System.out.println("failed_to_add");
-                }
+                System.out.println("failed_to_add");
             }
         } catch (Exception e) {
             System.out.println("failed_to_add");
@@ -198,13 +192,6 @@ public class HelperUnit {
         }
     }
 
-    private static final float[] NEGATIVE_COLOR = {
-            -1.0f, 0, 0, 0, 255, // Red
-            0, -1.0f, 0, 0, 255, // Green
-            0, 0, -1.0f, 0, 255, // Blue
-            0, 0, 0, 1.0f, 0     // Alpha
-    };
-
     public static void initTheme(Context context) {
         sp = PreferenceManager.getDefaultSharedPreferences(context);
         switch (Objects.requireNonNull(sp.getString("sp_theme", "1"))) {
@@ -217,33 +204,6 @@ public class HelperUnit {
             default:
                 context.setTheme(R.style.AppTheme);
                 break;
-        }
-    }
-
-    public static void initRendering(WebView webView, Context context) {
-        sp = PreferenceManager.getDefaultSharedPreferences(context);
-        if (sp.getBoolean("sp_invert", false)) {
-            if(WebViewFeature.isFeatureSupported(WebViewFeature.ALGORITHMIC_DARKENING)) {
-                WebSettingsCompat.setAlgorithmicDarkeningAllowed(webView.getSettings(), true);
-            } else {
-                Paint paint = new Paint();
-                ColorMatrix matrix = new ColorMatrix();
-                matrix.set(NEGATIVE_COLOR);
-                ColorMatrix gcm = new ColorMatrix();
-                gcm.setSaturation(0);
-                ColorMatrix concat = new ColorMatrix();
-                concat.setConcat(matrix, gcm);
-                ColorMatrixColorFilter filter = new ColorMatrixColorFilter(concat);
-                paint.setColorFilter(filter);
-                // maybe sometime LAYER_TYPE_NONE would better?
-                webView.setLayerType(View.LAYER_TYPE_HARDWARE, paint);
-            }
-        } else {
-            if(WebViewFeature.isFeatureSupported(WebViewFeature.ALGORITHMIC_DARKENING)) {
-                WebSettingsCompat.setAlgorithmicDarkeningAllowed(webView.getSettings(), false);
-            } else {
-                webView.setLayerType(View.LAYER_TYPE_HARDWARE, null);
-            }
         }
     }
 

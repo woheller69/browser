@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- App -->
-    <string name="app_name">FOSS浏览器</string>
+    <string name="app_name">FREE浏览器</string>
     <string name="app_ok">确定</string>
     <string name="app_cancel">取消</string>
     <string name="app_done">完成</string>
@@ -46,7 +46,7 @@
     <string name="menu_save_pdf">保存为 PDF</string>
     <string name="menu_shareClipboard">复制到剪切板</string>
     <string name="menu_other_searchSite">页面内搜索</string>
-    <string name="menu_other_info">关于 \"FOSS浏览器\"</string>
+    <string name="menu_other_info">关于 \"FREE浏览器\"</string>
     <!-- Dialog -->
     <string name="dialog_title_hint">标题:</string>
     <string name="dialog_URL_hint">URL：</string>
@@ -78,25 +78,19 @@
     <string name="setting_title_font">字体大小</string>
     <string name="setting_title_dom">DOM 存储</string>
     <string name="setting_title_dom_whitelist">DOM 白名单</string>
-    <string name="setting_summary_dom">DOM 存储允许应用存储可能包含用户敏感信息的页面元素。禁用该项会阻止本地存储被使用。</string>
     <string name="setting_title_save_data">请求“保存数据”</string>
     <!-- browser start -->
     <string name="setting_title_images">图像</string>
     <string name="setting_title_cookie">Cookies</string>
     <string name="setting_summary_cookie_delete">如果启用，所有Cookies都将被删除。包括信任的网站。</string>
-    <string name="setting_summary_cookie">启用 Cookies。Cookies 是小型文本文件，存储在您的设备上。 网站使用它们来存储用户设置 (例如搜索设置)。 但它们也可以用来收集用户数据。第三方cookies (它们收集用户数据以用于广告) 总是被禁用。</string>
     <string name="setting_title_whitelistCookie">Cookie 白名单</string>
     <string name="setting_title_javascript">JavaScript</string>
-    <string name="setting_summary_javascript">启用 JavaScript。许多网站的功能需要 JavaScript (菜单，加载和显示图像， …)。 但它们也有被用于发动攻击的危险。</string>
     <string name="setting_title_whitelistJS">JavaScript 白名单</string>
     <string name="setting_title_adblock">AdBlock</string>
-    <string name="setting_summary_adblock">启用AdBlock可阻止烦人的广告。网站的加载速度也会更快。</string>
     <string name="setting_title_adblockHost">屏蔽的内容</string>
     <string name="setting_title_location">地理位置</string>
-    <string name="setting_summary_location">允许网站访问您的位置。有些网站 (如谷歌地图导航) 需要启用此功能。</string>
     <string name="setting_title_history">历史记录</string>
     <string name="setting_title_autofill">表单数据</string>
-    <string name="setting_summary_autofill">启用表单数据保存（Android 7及以下版本）或自动填充服务（Android 8及以上版本）。</string>
     <!-- browser clear -->
     <string name="data_summary">所有文件将导出到您SD卡的“Documents/browser_backup/”目录。</string>
     <string name="clear_title_quit">在应用退出时清除</string>
@@ -126,8 +120,6 @@
     <string name="setting_title_behavior">行为</string>
     <string name="setting_title_confirm_exit">确认退出浏览器</string>
     <string name="setting_title_confirm_tab_close">确认关闭标签页</string>
-    <string name="setting_overView">概览</string>
-    <string name="setting_overView_onStart_title">启动时显示</string>
     <string name="setting_gestures">手势</string>
     <string name="setting_title_reopenLastTab">重新打开最后的页面</string>
     <!-- gestures -->
@@ -147,7 +139,6 @@
     <string name="setting_gesture_08">显示概览</string>
     <string name="setting_gesture_09">打开新标签页</string>
     <string name="setting_gesture_10">关闭标签页</string>
-    <string name="setting_gesture_hint">长按菜单按钮打开快速设置对话框。长按主页/书签/历史图标打开书签过滤器。</string>
     <!-- Data -->
     <string name="setting_title_export_bookmarks">将书签导出为 HTML文件</string>
     <string name="setting_title_import_bookmarks">导入书签</string>
@@ -167,9 +158,9 @@
     <string name="toast_input_empty">您没有输入任何内容</string>
     <string name="toast_invalid_domain">无效域名</string>
     <string name="toast_webview_forward">无法加载下一个网站</string>
-    <string name="toast_permission_sdCard">\"FOSS浏览器\"需要“读写存储空间”权限。 这是下载文件，进行屏幕截图和备份您的数据所必要的。</string>
-    <string name="toast_restart">您必须重启“FOSS浏览器”才能应用更改。现在关闭吗？</string>
-    <string name="toast_quit">您想要退出“FOSS浏览器”吗？</string>
+    <string name="toast_permission_sdCard">\"FREE浏览器\"需要“读写存储空间”权限。 这是下载文件，进行屏幕截图和备份您的数据所必要的。</string>
+    <string name="toast_restart">您必须重启“FREE浏览器”才能应用更改。现在关闭吗？</string>
+    <string name="toast_quit">您想要退出“FREE浏览器”吗？</string>
     <string name="toast_quit_TAB">Do you want to close the TAB?</string>
     <string name="toast_downloadComplete">下载完成。打开文件管理器？</string>
     <string name="toast_unsecured">网站使用不安全的连接 (\"http://\")。尝试安全连接 (\"https://\")？</string>
@@ -180,20 +171,10 @@
     <string name="whitelist_add">添加</string>
     <!-- Dialog help -->
     <!-- Dialog changelog -->
-    <string name="changelog_dialog">您的语言还不被支持？您想要翻译FOSS Browser吗？或者改进现有的翻译？您随时都能在Crowdin上加入我们：https://crowdin.com/project/foss-browser.&lt;br&gt;&lt;br&gt;
-        &lt;b&gt;在下列的网站上您可以了解所有关于FOSS Browser的重要信息。同时也请阅读应用内的帮助对话框。&lt;/b&gt;&lt;br&gt;&lt;br&gt;
-        \u25AA&lt;i&gt;项目网站：&lt;/i&gt;https://github.com/scoute-dich/Browser&lt;br&gt;
-        \u25AA&lt;i&gt;新版变化：&lt;/i&gt;https://github.com/scoute-dich/browser/blob/master/CHANGELOG.md&lt;br&gt;
-        \u25AA&lt;i&gt;常见问题：&lt;/i&gt;https://github.com/scoute-dich/browser/blob/master/FAQs.md&lt;br&gt;
-        \u25AA&lt;i&gt;许可证：&lt;/i&gt;https://github.com/scoute-dich/browser/blob/master/LICENSE.md&lt;br&gt;
-        \u25AA&lt;i&gt;隐私协议：&lt;/i&gt;https://github.com/scoute-dich/browser/blob/master/PRIVACY.md
-
-    </string>
     <string name="menu_mobileView">移动设备视图</string>
     <string name="menu_desktopView">桌面端网页</string>
     <string name="menu_dayView">日间模式</string>
     <string name="menu_nightView">夜间模式</string>
-    <string name="setting_userScript">自定义 JavaScript 代码</string>
     <string name="setting_title_camera">Allow camera usage</string>
     <string name="hint_DRM_Media">Allow DRM protected media playback?</string>
     <!-- License changelog -->

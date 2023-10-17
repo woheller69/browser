@@ -215,10 +215,13 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         //Save open Tabs in shared preferences
         ArrayList<String> openTabs = new ArrayList<>();
         for (int i=0; i<BrowserContainer.size();i++){
-            if (currentAlbumController == BrowserContainer.get(i)) {
-                openTabs.add(0,((NinjaWebView) (BrowserContainer.get(i))).getUrl());
-            }else{
-                openTabs.add(((NinjaWebView) (BrowserContainer.get(i))).getUrl());
+            String url = ((NinjaWebView) (BrowserContainer.get(i))).getUrl();
+            if (!url.startsWith("data:")) {  //do not save empty tabs (data:text/html,about:blank)
+                if (currentAlbumController == BrowserContainer.get(i)) {
+                    openTabs.add(0, url);
+                } else {
+                    openTabs.add(url);
+                }
             }
         }
         sp = PreferenceManager.getDefaultSharedPreferences(context);
@@ -291,9 +294,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         initTabDialog();
         initSearchPanel();
         initOverview();
-        if (sp.getBoolean("start_tabStart", false)){ //put showOverview first. May be closed again later depending on intent
-            showOverview();
-        }
 
         //restore open Tabs from shared preferences if app got killed
         ArrayList<String> openTabs;
@@ -374,7 +374,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
             boolean clearCache = sp.getBoolean("sp_clear_cache", false);
             boolean clearCookie = sp.getBoolean("sp_clear_cookie", false);
-            boolean clearHistory = sp.getBoolean("sp_clear_history", false);
             boolean clearIndexedDB = sp.getBoolean("sp_clearIndexedDB", false);
 
             if (clearCache) {
@@ -382,9 +381,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             }
             if (clearCookie) {
                 BrowserUnit.clearCookie();
-            }
-            if (clearHistory) {
-                BrowserUnit.clearHistory(this);
             }
             if (clearIndexedDB) {
                 BrowserUnit.clearIndexedDB(this);
@@ -408,7 +404,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             case KeyEvent.KEYCODE_BACK:
                 hideOverview();
                 if (fullscreenHolder != null || customView != null || videoView != null) {
-                    Log.v(TAG, "FOSS Browser in fullscreen mode");
+                    Log.v(TAG, "FREE Browser in fullscreen mode");
                 } else if (searchPanel.getVisibility() == View.VISIBLE) {
                     searchOnSite = false;
                     searchBox.setText("");
@@ -517,7 +513,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         String url = intent.getStringExtra(Intent.EXTRA_TEXT);
 
         if ("".equals(action)) {
-            Log.i(TAG, "resumed FOSS browser");
+            Log.i(TAG, "resumed FREE browser");
         } else if (intent.getAction() != null && intent.getAction().equals(Intent.ACTION_WEB_SEARCH)) {
             addAlbum(null, Objects.requireNonNull(intent.getStringExtra(SearchManager.QUERY)), true);
             hideOverview();

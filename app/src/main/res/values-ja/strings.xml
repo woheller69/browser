@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- App -->
-    <string name="app_name">FOSS Browser</string>
+    <string name="app_name">FREE Browser</string>
     <string name="app_ok">OK</string>
     <string name="app_cancel">中止</string>
     <string name="app_done">完了</string>
@@ -46,7 +46,7 @@
     <string name="menu_save_pdf">PDF として保存</string>
     <string name="menu_shareClipboard">クリップボードにコピー</string>
     <string name="menu_other_searchSite">サイト内の検索</string>
-    <string name="menu_other_info">\"FOSS Browser\" について</string>
+    <string name="menu_other_info">\"FREE Browser\" について</string>
     <!-- Dialog -->
     <string name="dialog_title_hint">タイトル:</string>
     <string name="dialog_URL_hint">URL:</string>
@@ -78,25 +78,19 @@
     <string name="setting_title_font">フォントサイズ</string>
     <string name="setting_title_dom">ウェブストレージ</string>
     <string name="setting_title_dom_whitelist">DOM ホワイトリスト</string>
-    <string name="setting_summary_dom">ウェブストレージ (DOM ストレージ) を使用するとアプリがユーザーの機密情報を含むページ要素を端末に保存することが可能になります。この機能の無効化によりローカルストレージは使用されなくなります。</string>
     <string name="setting_title_save_data">「データを保存」のリクエスト</string>
     <!-- browser start -->
     <string name="setting_title_images">画像</string>
     <string name="setting_title_cookie">クッキー</string>
     <string name="setting_summary_cookie_delete">有効にすると、信頼できる Web サイトも含め全てのクッキーが削除されます。</string>
-    <string name="setting_summary_cookie">クッキーを有効にします。クッキーは小さなテキストファイルで、端末に保存されます。Web サイトは、例えばユーザー設定 (検索設定など) を保存するために使用します。ただし、個人データの収集にも使用できます。サードパーティのクッキー (広告用の個人データを収集している) は常に無効になっています。</string>
     <string name="setting_title_whitelistCookie">クッキーホワイトリスト</string>
     <string name="setting_title_javascript">JavaScript</string>
-    <string name="setting_summary_javascript">JavaScript を有効化します。多くのウェブサイトでサイトの動作のために必要です (メニューや画像表示など)。しかし攻撃に使用されるリスクもあります。</string>
     <string name="setting_title_whitelistJS">JavaScript ホワイトリスト</string>
     <string name="setting_title_adblock">AdBlock</string>
-    <string name="setting_summary_adblock">AdBlock を有効にして迷惑な広告をブロックします。有効にするとサイトの読み込みが速くなります。</string>
     <string name="setting_title_adblockHost">ブロックされた内容</string>
     <string name="setting_title_location">位置情報</string>
-    <string name="setting_summary_location">ウェブサイトに位置情報へのアクセスを許可します。いくつかのウェブサイト (Google マップなど) は許可が必要です。</string>
     <string name="setting_title_history">履歴</string>
     <string name="setting_title_autofill">フォームの入力履歴</string>
-    <string name="setting_summary_autofill">フォームのデータの保存 (Android 7 以下) または自動入力サービス (Android 8 以上) を有効にします。</string>
     <!-- browser clear -->
     <string name="data_summary">全てのファイルは SD カードの「Documents/browser_backup/」ディレクトリにエクスポートされます。</string>
     <string name="clear_title_quit">アプリ終了時に消去</string>
@@ -126,8 +120,6 @@
     <string name="setting_title_behavior">動作</string>
     <string name="setting_title_confirm_exit">ブラウザ終了の確認</string>
     <string name="setting_title_confirm_tab_close">タブ削除の確認</string>
-    <string name="setting_overView">一覧画面</string>
-    <string name="setting_overView_onStart_title">開始時に表示</string>
     <string name="setting_gestures">ジェスチャー</string>
     <string name="setting_title_reopenLastTab">タブを再度開く</string>
     <!-- gestures -->
@@ -147,7 +139,6 @@
     <string name="setting_gesture_08">一覧画面を表示</string>
     <string name="setting_gesture_09">新しいタブを開く</string>
     <string name="setting_gesture_10">タブを閉じる</string>
-    <string name="setting_gesture_hint">メニューボタンを長押しすると、高速設定ダイアログが開きます。ホーム/ブックマーク/履歴アイコンを長押しすると、ブックマークフィルタが開きます。</string>
     <!-- Data -->
     <string name="setting_title_export_bookmarks">ブックマークを HTML ファイルとしてエクスポート</string>
     <string name="setting_title_import_bookmarks">ブックマークをインポート</string>
@@ -167,9 +158,9 @@
     <string name="toast_input_empty">何も入力していません</string>
     <string name="toast_invalid_domain">無効なドメイン</string>
     <string name="toast_webview_forward">次のサイトを読み込めません</string>
-    <string name="toast_permission_sdCard">\"FOSS Browser\" は \"ストレージの読み書き\" の権限が必要です。これはファイルダウンロード、スクリーンショット取得、バックアップファイル作成に必要です。</string>
-    <string name="toast_restart">変更を適用するには \"FOSS Browser\" を再起動する必要があります。今すぐ閉じますか?</string>
-    <string name="toast_quit">\"FOSS Browser\" を終了しますか?</string>
+    <string name="toast_permission_sdCard">\"FREE Browser\" は \"ストレージの読み書き\" の権限が必要です。これはファイルダウンロード、スクリーンショット取得、バックアップファイル作成に必要です。</string>
+    <string name="toast_restart">変更を適用するには \"FREE Browser\" を再起動する必要があります。今すぐ閉じますか?</string>
+    <string name="toast_quit">\"FREE Browser\" を終了しますか?</string>
     <string name="toast_quit_TAB">Do you want to close the TAB?</string>
     <string name="toast_downloadComplete">ダウンロードが完了しました。ファイルマネージャーを開きますか?</string>
     <string name="toast_unsecured">ウェブサイトは安全でない接続 (\"http\") を使用しています。安全な接続を試してみますか (\"https\")?</string>
@@ -180,22 +171,10 @@
     <string name="whitelist_add">追加</string>
     <!-- Dialog help -->
     <!-- Dialog changelog -->
-    <string name="changelog_dialog">        あなたの言語にまだ翻訳されていませんか? FOSS Browser を翻訳してみませんか?  または既存の翻訳の改善をご希望でしょうか? お気軽に Crowdin: https://crowdin.com/project/foss-browser に参加して下さい。&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;次のサイトでは \"FOSS Browser\" に関する全ての重要な情報にアクセスできます。アプリ内のヘルプダイアログもお読み下さい。&lt;/b&gt;&lt;br&gt;&lt;br&gt;
-
-        \u25AA &lt;i&gt;プロジェクトサイト:&lt;/i&gt; https://github.com/scoute-dich/Browser&lt;br&gt;
-        \u25AA &lt;i&gt;更新履歴:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/CHANGELOG.md&lt;br&gt;
-        \u25AA &lt;i&gt;FAQ:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/FAQs.md&lt;br&gt;
-        \u25AA &lt;i&gt;ライセンス:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/LICENSE.md&lt;br&gt;
-        \u25AA &lt;i&gt;プライバシー:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/PRIVACY.md
-
-    </string>
     <string name="menu_mobileView">モバイル表示</string>
     <string name="menu_desktopView">デスクトップ表示</string>
     <string name="menu_dayView">明るい時での表示</string>
     <string name="menu_nightView">暗い時での表示</string>
-    <string name="setting_userScript">カスタム JavaScript コード</string>
     <string name="setting_title_camera">Allow camera usage</string>
     <string name="hint_DRM_Media">Allow DRM protected media playback?</string>
     <!-- License changelog -->

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- App -->
-    <string name="app_name">FOSS Browser</string>
+    <string name="app_name">FREE Browser</string>
     <string name="app_ok">Хорошо</string>
     <string name="app_cancel">Отмена</string>
     <string name="app_done">Готово</string>
@@ -46,7 +46,7 @@
     <string name="menu_save_pdf">Сохранить в PDF</string>
     <string name="menu_shareClipboard">Копировать в буфер</string>
     <string name="menu_other_searchSite">Поиск по сайту</string>
-    <string name="menu_other_info">О программе \"FOSS Browser\"</string>
+    <string name="menu_other_info">О программе \"FREE Browser\"</string>
     <!-- Dialog -->
     <string name="dialog_title_hint">Заголовок:</string>
     <string name="dialog_URL_hint">URL:</string>
@@ -78,25 +78,19 @@
     <string name="setting_title_font">Размер шрифта</string>
     <string name="setting_title_dom">Хранилище DOM</string>
     <string name="setting_title_dom_whitelist">Белый список DOM</string>
-    <string name="setting_summary_dom">DOM Storage позволяет приложению хранить элементы страниц, которые могут включать конфиденциальную информацию пользователя. Отключение этой опции предотвращает использование локального хранилища.</string>
     <string name="setting_title_save_data">Запрос \'Сохранить данные\'</string>
     <!-- browser start -->
     <string name="setting_title_images">Изображения</string>
     <string name="setting_title_cookie">Куки</string>
     <string name="setting_summary_cookie_delete">Если включено, все cookies будут удалены. Также файлы cookie надежных веб-сайтов.</string>
-    <string name="setting_summary_cookie">Включить файлы cookie. Файлы cookie представляют собой небольшие текстовые файлы, которые хранятся на Вашем устройстве. Сайты используют их, например, для хранения пользовательских настроек (например, настроек поиска). Но они также могут использоваться для сбора личных данных пользователя. Сторонние файлы cookie (они собирают данные пользователя для рекламы) всегда отключены.</string>
     <string name="setting_title_whitelistCookie">Белый список куки</string>
     <string name="setting_title_javascript">JavaScript</string>
-    <string name="setting_summary_javascript">Включить JavaScript. Многим сайтам нужен JavaScript для их функциональности (меню, загрузка и отображение изображений, …). Но они также представляют собой риск и могут быть использованы для атак.</string>
     <string name="setting_title_whitelistJS">Белый список JavaScript</string>
     <string name="setting_title_adblock">AdBlock</string>
-    <string name="setting_summary_adblock">Включите AdBlock, чтобы заблокировать раздражающую рекламу. Сайты загружаются быстрее при включении.</string>
     <string name="setting_title_adblockHost">Блокированное содержимое</string>
     <string name="setting_title_location">Местоположение</string>
-    <string name="setting_summary_location">Разрешить сайтам доступ к Вашему местоположению. Некоторые сайты (например, карты Google) нуждаются в этом.</string>
     <string name="setting_title_history">История</string>
     <string name="setting_title_autofill">Данные формы:</string>
-    <string name="setting_summary_autofill">Включить сохранение данных форм (Android Nougat и ниже) или службы автозаполнения (Android Oreo и выше).</string>
     <!-- browser clear -->
     <string name="data_summary">Все файлы будут экспортированы в каталог «Documents / browser_backup /» вашей SD-карты.</string>
     <string name="clear_title_quit">Очистить при выходе из приложения</string>
@@ -126,8 +120,6 @@
     <string name="setting_title_behavior">Поведение</string>
     <string name="setting_title_confirm_exit">Подтвердить выход из браузера</string>
     <string name="setting_title_confirm_tab_close">Подтвердить закрытие вкладки</string>
-    <string name="setting_overView">Обзор</string>
-    <string name="setting_overView_onStart_title">Показывать при запуске</string>
     <string name="setting_gestures">Жесты</string>
     <string name="setting_title_reopenLastTab">Открыть последнюю вкладку</string>
     <!-- gestures -->
@@ -147,7 +139,6 @@
     <string name="setting_gesture_08">Показать обзор</string>
     <string name="setting_gesture_09">Открыть новую вкладку</string>
     <string name="setting_gesture_10">Закрыть вкладку</string>
-    <string name="setting_gesture_hint">Долгое нажатие на кнопку меню, чтобы открыть диалог быстрых настроек. Длительное нажатие на значке home/bookmark/history открывает фильтр закладок.</string>
     <!-- Data -->
     <string name="setting_title_export_bookmarks">Экспортировать закладки в HTML-файл</string>
     <string name="setting_title_import_bookmarks">Импортировать закладки</string>
@@ -167,9 +158,9 @@
     <string name="toast_input_empty">Вы ничего не ввели</string>
     <string name="toast_invalid_domain">Неверный домен</string>
     <string name="toast_webview_forward">Не удается загрузить следующий сайт</string>
-    <string name="toast_permission_sdCard">\"FOSS Browser\" нуждается в разрешении на \"чтение и запись\". Это необходимо для загрузки файлов, снимков экрана и резервного копирования файлов.</string>
-    <string name="toast_restart">Чтобы применить изменения, необходимо перезапустить \"FOSS Browser\". Закрыть сейчас?</string>
-    <string name="toast_quit">Хотите выйти из \"FOSS Browser\"?</string>
+    <string name="toast_permission_sdCard">\"FREE Browser\" нуждается в разрешении на \"чтение и запись\". Это необходимо для загрузки файлов, снимков экрана и резервного копирования файлов.</string>
+    <string name="toast_restart">Чтобы применить изменения, необходимо перезапустить \"FREE Browser\". Закрыть сейчас?</string>
+    <string name="toast_quit">Хотите выйти из \"FREE Browser\"?</string>
     <string name="toast_quit_TAB">Do you want to close the TAB?</string>
     <string name="toast_downloadComplete">Загрузка завершена. Открыть файловый менеджер?</string>
     <string name="toast_unsecured">Сайт использует незащищенное соединение (\"http\"). Попробовать безопасное соединение (\"https\")?</string>
@@ -180,22 +171,10 @@
     <string name="whitelist_add">Добавить</string>
     <!-- Dialog help -->
     <!-- Dialog changelog -->
-    <string name="changelog_dialog">Отсутствует Ваш язык? Вы хотите помочь с переводом FOSS Browser? Или улучшить существующий перевод? Присоединяйтесь к нам на Crowdin: https://crowdin.com/project/foss-browser.&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;На следующих сайтах Вы получите всю важную информацию о \"FOSS Browser\". Пожалуйста, пользуйтесь также справкой внутри приложения.&lt;/b&gt;&lt;br&gt;&lt;br&gt;
-
-        \u25AA &lt;i&gt;Сайт проекта:&lt;/i&gt; https://github.com/scoute-dich/Browser&lt;br&gt;
-        \u25AA &lt;i&gt;История изменений:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/CHANGELOG.md&lt;br&gt;
-        \u25AA &lt;i&gt;Вопросы и ответы:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/FAQs.md&lt;br&gt;
-        \u25AA &lt;i&gt;Лицензия:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/LICENSE.md&lt;br&gt;
-        \u25AA &lt;i&gt;Конфиденциальность:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/PRIVACY.md
-
-    </string>
     <string name="menu_mobileView">Мобильный вид</string>
     <string name="menu_desktopView">Десктопный вид</string>
     <string name="menu_dayView">Просмотр дня</string>
     <string name="menu_nightView">Ночные Глаз</string>
-    <string name="setting_userScript">Пользовательский JavaScript</string>
     <string name="setting_title_camera">Allow camera usage</string>
     <string name="hint_DRM_Media">Allow DRM protected media playback?</string>
     <!-- License changelog -->

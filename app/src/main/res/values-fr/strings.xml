@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- App -->
-    <string name="app_name">Navigateur FOSS</string>
+    <string name="app_name">Navigateur FREE</string>
     <string name="app_ok">OK</string>
     <string name="app_cancel">Annuler</string>
     <string name="app_done">Fait</string>
@@ -46,7 +46,7 @@
     <string name="menu_save_pdf">Enregistrer en PDF</string>
     <string name="menu_shareClipboard">Copier dans le presse-papiers</string>
     <string name="menu_other_searchSite">Rechercher sur le site</string>
-    <string name="menu_other_info">À propos de \"FOSS Browser\"</string>
+    <string name="menu_other_info">À propos de \"FREE Browser\"</string>
     <!-- Dialog -->
     <string name="dialog_title_hint">Titre:</string>
     <string name="dialog_URL_hint">URL:</string>
@@ -78,25 +78,19 @@
     <string name="setting_title_font">Taille de la police</string>
     <string name="setting_title_dom">Stockage DOM</string>
     <string name="setting_title_dom_whitelist">Liste blanche DOM</string>
-    <string name="setting_summary_dom">Le stockage DOM permet à l\'application de stocker des éléments de page qui peuvent inclure des informations sensibles de l\'utilisateur. Désactiver ceci empêche l\'utilisation du stockage local.</string>
     <string name="setting_title_save_data">Demande \'Enregistrer les données\'</string>
     <!-- browser start -->
     <string name="setting_title_images">Images</string>
     <string name="setting_title_cookie">Cookies</string>
     <string name="setting_summary_cookie_delete">Si cette option est activée, tous les cookies seront supprimés. Aussi les cookies de sites de confiance.</string>
-    <string name="setting_summary_cookie">Activez les cookies. Les cookies sont de petits fichiers texte, qui sont stockés sur votre appareil. Les sites Web les utilisent par exemple pour stocker les paramètres de l\'utilisateur (par exemple les paramètres de recherche). Les cookies de tiers (ils recueillent des données utilisateur pour la publicité) sont toujours désactivés.</string>
     <string name="setting_title_whitelistCookie">Cookie liste blanche</string>
     <string name="setting_title_javascript">JavaScript</string>
-    <string name="setting_summary_javascript">Activer JavaScript. De nombreux sites Web ont besoin de JavaScript pour leurs fonctionnalités (menus, chargement et affichage des images, …). Mais elles constituent également un risque et peuvent être utilisées pour des attaques.</string>
     <string name="setting_title_whitelistJS">JavaScript liste blanche</string>
     <string name="setting_title_adblock">AdBlock</string>
-    <string name="setting_summary_adblock">Activez AdBlock pour bloquer les pubs ennuyeuses. Les sites se chargent plus rapidement quand activé.</string>
     <string name="setting_title_adblockHost">Contenu bloqué</string>
     <string name="setting_title_location">Localisation</string>
-    <string name="setting_summary_location">Autoriser les sites Web à accéder à votre position. Certains sites Web (comme Google maps pour la navigation) ont besoin de cette option.</string>
     <string name="setting_title_history">Historique</string>
     <string name="setting_title_autofill">Données de formulaire</string>
-    <string name="setting_summary_autofill">Activer l\'enregistrement des données du formulaire (Android Nougat et ci-dessous) ou le service de remplissage automatique (Android Oreo et au-delà).</string>
     <!-- browser clear -->
     <string name="data_summary">Tous les fichiers seront exportés vers le répertoire \"Documents/browser_backup/\" de votre carte SD.</string>
     <string name="clear_title_quit">Effacer à la fermeture</string>
@@ -126,8 +120,6 @@
     <string name="setting_title_behavior">Comportement</string>
     <string name="setting_title_confirm_exit">Confirmer pour quitter</string>
     <string name="setting_title_confirm_tab_close">Confirmer fermeture onglet</string>
-    <string name="setting_overView">Vue d\'ensemble</string>
-    <string name="setting_overView_onStart_title">Montrer au démarrage</string>
     <string name="setting_gestures">Gestes</string>
     <string name="setting_title_reopenLastTab">Rouvrir dernier onglet</string>
     <!-- gestures -->
@@ -147,7 +139,6 @@
     <string name="setting_gesture_08">Voir vue d’ensemble</string>
     <string name="setting_gesture_09">Ouvrir nouvel onglet</string>
     <string name="setting_gesture_10">Fermer l’onglet</string>
-    <string name="setting_gesture_hint">Faites un clic long sur le bouton menu pour ouvrir la boîte de dialogue des paramètres rapides. Appuyez longuement sur l\'icône d\'accueil/signet/historique pour ouvrir le filtre de signets.</string>
     <!-- Data -->
     <string name="setting_title_export_bookmarks">Exporter les signets en tant que fichier HTML</string>
     <string name="setting_title_import_bookmarks">Importer des favoris</string>
@@ -167,9 +158,9 @@
     <string name="toast_input_empty">Vous n\'avez rien entré.</string>
     <string name="toast_invalid_domain">Domaine non valide</string>
     <string name="toast_webview_forward">Impossible de charger le site</string>
-    <string name="toast_permission_sdCard">\"FOSS Browser\" a besoin de la permission de \"lire et écrire sur votre stockage\". Ceci est nécessaire pour télécharger des fichiers, prendre des captures d\'écran et faire des sauvegardes de vos données.</string>
-    <string name="toast_restart">Vous devez redémarrer \"FOSS Browser\" pour appliquer les modifications. Fermer maintenant?</string>
-    <string name="toast_quit">Voulez-vous quitter \"FOSS Browser\"?</string>
+    <string name="toast_permission_sdCard">\"FREE Browser\" a besoin de la permission de \"lire et écrire sur votre stockage\". Ceci est nécessaire pour télécharger des fichiers, prendre des captures d\'écran et faire des sauvegardes de vos données.</string>
+    <string name="toast_restart">Vous devez redémarrer \"FREE Browser\" pour appliquer les modifications. Fermer maintenant?</string>
+    <string name="toast_quit">Voulez-vous quitter \"FREE Browser\"?</string>
     <string name="toast_quit_TAB">Do you want to close the TAB?</string>
     <string name="toast_downloadComplete">Téléchargement fini. Ouvrir le gestionnaire de fichiers?</string>
     <string name="toast_unsecured">Le site Web utilise une connexion non sécurisée (\"http\"). Essayez une connexion sécurisée (\"https\")?</string>
@@ -180,22 +171,10 @@
     <string name="whitelist_add">Ajouté</string>
     <!-- Dialog help -->
     <!-- Dialog changelog -->
-    <string name="changelog_dialog">        Votre langue n\'est pas encore prise en charge ? Vous voulez traduire FOSS Browser? Ou apportez des améliorations aux traductions existantes ? N\'hésitez pas à nous rejoindre sur Crowdin : https://crowdin. om/project/foss-browser.&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;Sur les sites suivants, vous avez accès à toutes les informations importantes sur \"Navigateur FOSS\". Veuillez également lire la boîte de dialogue d\'aide dans l\'application.&lt;/b&gt;&lt;br&gt;&lt;br&gt;
-
-        \u25AA &lt;i&gt;Site du projet :&lt;/i&gt; https://github. om/scoute-dich/Browser&lt;br&gt;
-        \u25AA &lt;i&gt;Changelog:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/CHANGELOG. d&lt;br&gt;
-        \u25AA &lt;i&gt;FAQ:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/FAQs. d&lt;br&gt;
-        \u25AA &lt;i&gt;Licence :&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/LICENSE. d&lt;br&gt;
-        \u25AA &lt;i&gt;Confidentialité :&lt;/i&gt; https://github. om/scoute-dich/browser/blob/master/PRIVACY.md
-
-    </string>
     <string name="menu_mobileView">Vue mobile</string>
     <string name="menu_desktopView">Vue bureau</string>
     <string name="menu_dayView">Vue Jour</string>
     <string name="menu_nightView">Vue nocturne</string>
-    <string name="setting_userScript">Scripts JavaScript personnalisés</string>
     <string name="setting_title_camera">Allow camera usage</string>
     <string name="hint_DRM_Media">Allow DRM protected media playback?</string>
     <!-- License changelog -->

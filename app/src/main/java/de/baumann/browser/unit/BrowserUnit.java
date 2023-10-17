@@ -87,7 +87,7 @@ public class BrowserUnit {
     }
 
     public static String queryWrapper(Context context, String query) {
-
+        if (query.startsWith("view-source:")) return query;
         if (isURL(query)) {
             if (query.startsWith(URL_SCHEME_ABOUT) || query.startsWith(URL_SCHEME_MAIL_TO)) {
                 return query;
@@ -215,17 +215,6 @@ public class BrowserUnit {
         RecordAction action = new RecordAction(context);
         action.open(true);
         action.clearTable(RecordUnit.TABLE_BOOKMARK);
-        action.close();
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N_MR1) {
-            ShortcutManager shortcutManager = context.getSystemService(ShortcutManager.class);
-            Objects.requireNonNull(shortcutManager).removeAllDynamicShortcuts();
-        }
-    }
-
-    public static void clearHistory(Context context) {
-        RecordAction action = new RecordAction(context);
-        action.open(true);
-        action.clearTable(RecordUnit.TABLE_HISTORY);
         action.close();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N_MR1) {
             ShortcutManager shortcutManager = context.getSystemService(ShortcutManager.class);

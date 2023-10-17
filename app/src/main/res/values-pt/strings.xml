@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- App -->
-    <string name="app_name">FOSS Browser</string>
+    <string name="app_name">FREE Browser</string>
     <string name="app_ok">OK</string>
     <string name="app_cancel">Cancelar</string>
     <string name="app_done">Feito</string>
@@ -46,7 +46,7 @@
     <string name="menu_save_pdf">Guardar como PDF</string>
     <string name="menu_shareClipboard">Copiar para a área de transferência</string>
     <string name="menu_other_searchSite">Pesquisar no site</string>
-    <string name="menu_other_info">Acerca de \"FOSS Browser\"</string>
+    <string name="menu_other_info">Acerca de \"FREE Browser\"</string>
     <!-- Dialog -->
     <string name="dialog_title_hint">Título:</string>
     <string name="dialog_URL_hint">URL:</string>
@@ -78,25 +78,19 @@
     <string name="setting_title_font">Tamanho da letra</string>
     <string name="setting_title_dom">Armazenamento DOM</string>
     <string name="setting_title_dom_whitelist">Lista branca DOM</string>
-    <string name="setting_summary_dom">O armazenamento DOM permite que a aplicação guarde elementos da página e que podem incluir informações privadas. Se desativar esta opção, pode impedir a utilização do armazenamento local.</string>
     <string name="setting_title_save_data">Solicitar \'Save Data\'</string>
     <!-- browser start -->
     <string name="setting_title_images">Imagens</string>
     <string name="setting_title_cookie">Cookies</string>
     <string name="setting_summary_cookie_delete">Se ativar a opção, todos os cookies serão apagados. Os cookies de sites fiáveis também serão apagados.</string>
-    <string name="setting_summary_cookie">Ativa a utilização de cookies. Os cookies são pequenos ficheiros de texto guardados no seu dispositivo. Os sites podem utilizar cookies para guardar definições do utilizador (por exemplo, nas pesquisas web). Mas os cookies também podem ser utilizados para obter dados pessoais e privados. Os cookies de terceiros (recolhem dados para mostrar anúncios) estarão sempre desativados.</string>
     <string name="setting_title_whitelistCookie">Cookies permitidos</string>
     <string name="setting_title_javascript">JavaScript</string>
-    <string name="setting_summary_javascript">Ativa a utilização de JavaScript. Alguns sites necessitam de executar JavaScript para as suas funcionalidades (menus, carregamento e exibição de imagens...). Mas são também um risco e podem ser utilizados para ataques.</string>
     <string name="setting_title_whitelistJS">Lista branca JavaScript</string>
     <string name="setting_title_adblock">AdBlock</string>
-    <string name="setting_summary_adblock">Ativar AdBlock para bloquear os anúncios. Se ativa, os sites são carregados mais rapidamente.</string>
     <string name="setting_title_adblockHost">Conteúdo bloqueado</string>
     <string name="setting_title_location">Localização</string>
-    <string name="setting_summary_location">Permitir que os sites acedam a sua localização. Alguns sites (como Google Maps) precisam desta funcionalidade.</string>
     <string name="setting_title_history">Histórico</string>
     <string name="setting_title_autofill">Dados do formulário</string>
-    <string name="setting_summary_autofill">Permite guardar dados dos formulário (Android Nougat e abaixo) ou o serviço de preenchimento automático (Android Oreo e superior).</string>
     <!-- browser clear -->
     <string name="data_summary">Todos os ficheiros serão exportados para o diretório \"Documents/browser_backup /\" do seu cartão SD.</string>
     <string name="clear_title_quit">Limpar ao sair da aplicação</string>
@@ -126,8 +120,6 @@
     <string name="setting_title_behavior">Comportamento</string>
     <string name="setting_title_confirm_exit">Confirmar ao sair</string>
     <string name="setting_title_confirm_tab_close">Confirmar fecho do separador</string>
-    <string name="setting_overView">Vista global</string>
-    <string name="setting_overView_onStart_title">Mostrar ao iniciar</string>
     <string name="setting_gestures">Gestos</string>
     <string name="setting_title_reopenLastTab">Reabrir último separador</string>
     <!-- gestures -->
@@ -147,7 +139,6 @@
     <string name="setting_gesture_08">Mostrar Vista global</string>
     <string name="setting_gesture_09">Abrir novo separador</string>
     <string name="setting_gesture_10">Fechar separador</string>
-    <string name="setting_gesture_hint">Toque longo no botão de menu para abrir o diálogo de definições rápidas. Toque longo no ícone início/marcador/histórico para abrir o filtro de marcadores.</string>
     <!-- Data -->
     <string name="setting_title_export_bookmarks">Exportar marcadores para HTML</string>
     <string name="setting_title_import_bookmarks">Importar marcadores</string>
@@ -167,7 +158,7 @@
     <string name="toast_input_empty">Não introduziu dados</string>
     <string name="toast_invalid_domain">Domínio inválido</string>
     <string name="toast_webview_forward">Não foi possível carregar o site</string>
-    <string name="toast_permission_sdCard">\"FOSS Browser\" precisa da permissão para \"ler e escrever no seu armazenamento\". Esta permissão é necessária para descarregar ficheiros, obter capturas de ecrã e para criar backups.</string>
+    <string name="toast_permission_sdCard">\"FREE Browser\" precisa da permissão para \"ler e escrever no seu armazenamento\". Esta permissão é necessária para descarregar ficheiros, obter capturas de ecrã e para criar backups.</string>
     <string name="toast_restart">Tem que reiniciar a aplicação para aplicar as alterações. Fechar agora?</string>
     <string name="toast_quit">Deseja sair da aplicação?</string>
     <string name="toast_quit_TAB">Do you want to close the TAB?</string>
@@ -180,22 +171,10 @@
     <string name="whitelist_add">Adicionar</string>
     <!-- Dialog help -->
     <!-- Dialog changelog -->
-    <string name="changelog_dialog">        A aplicação não está disponível no seu idioma? Pretende ajudar na tradução de FOSS Browser?Junte-se a nós na plataforma Crowdin: https://crowdin.com/project/foss-browser.&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;Nos sites abaixo indicados, pode aceder a diversas informações acerca de \"FOSS Browser\". Não se esqueça de ler também o diálogo de ajuda existente na aplicação.&lt;/b&gt;&lt;br&gt;&lt;br&gt;
-
-        \u25AA &lt;i&gt;Site do projeto:&lt;/i&gt; https://github.com/scoute-dich/Browser&lt;br&gt;
-        \u25AA &lt;i&gt;Registo de alterações:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/CHANGELOG.md&lt;br&gt;
-        \u25AA &lt;i&gt;FAQ:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/FAQs.md&lt;br&gt;
-        \u25AA &lt;i&gt;Licença:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/LICENSE.md&lt;br&gt;
-        \u25AA &lt;i&gt;Privacidade:&lt;/i&gt;:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/PRIVACY.md
-
-    </string>
     <string name="menu_mobileView">Vista \'mobile\'</string>
     <string name="menu_desktopView">Vista \'desktop\'</string>
     <string name="menu_dayView">Modo diurno</string>
     <string name="menu_nightView">Modo noturno</string>
-    <string name="setting_userScript">JavaScript personalizado</string>
     <string name="setting_title_camera">Allow camera usage</string>
     <string name="hint_DRM_Media">Allow DRM protected media playback?</string>
     <!-- License changelog -->

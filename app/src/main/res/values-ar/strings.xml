@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- App -->
-    <string name="app_name">المتصفح الحر FOSS Browser</string>
+    <string name="app_name">المتصفح الحر FREE Browser</string>
     <string name="app_ok">موافق</string>
     <string name="app_cancel">إلغاء</string>
     <string name="app_done">تـم</string>
@@ -46,7 +46,7 @@
     <string name="menu_save_pdf">حفظ كـ PDF</string>
     <string name="menu_shareClipboard">نسخ للحافظة</string>
     <string name="menu_other_searchSite">البحث في الموقع</string>
-    <string name="menu_other_info">حول \"FOSS Browser\"</string>
+    <string name="menu_other_info">حول \"FREE Browser\"</string>
     <!-- Dialog -->
     <string name="dialog_title_hint">العنوان:</string>
     <string name="dialog_URL_hint">العنوان:</string>
@@ -78,25 +78,19 @@
     <string name="setting_title_font">حجم الخط</string>
     <string name="setting_title_dom">تخزين DOM</string>
     <string name="setting_title_dom_whitelist">القائمة البيضاء DOM</string>
-    <string name="setting_summary_dom">يسمح تخزين DOM للتطبيق بتخزين عناصر الصفحات التي يمكن أن تتضمن معلومات حساسة للمستخدم. تعطيل هذا يمنع التخزين المحلي من استخدامه.</string>
     <string name="setting_title_save_data">اطلب \'حفظ البيانات\'</string>
     <!-- browser start -->
     <string name="setting_title_images">الصور</string>
     <string name="setting_title_cookie">الكعكات</string>
     <string name="setting_summary_cookie_delete">إذا فُعّل، ستحذف جميع الكعكات، حتى الخاصة بالمواقع الموثوقة.</string>
-    <string name="setting_summary_cookie">مكّن الكعكات. الكعكات هي ملفات نصية صغيرة، يتم تخزينها على جهازك. تستخدمها المواقع لتخزين البيانات مثل إعدادات المستخدم (مثل إعدادات البحث). ولكن يمكن استخدامها أيضا لجمع بيانات المستخدم الشخصية. كعكات الطرف الثالث (تقوم بجمع بيانات المستخدم لتوجيه الإعلانات) تكون معطلة دائما.</string>
     <string name="setting_title_whitelistCookie">القائمة البيضاء للكعكات</string>
     <string name="setting_title_javascript">جافا سكريبت</string>
-    <string name="setting_summary_javascript">مكّن جافا سكريبت. العديد من المواقع تحتاج إلى جافا سكريبت لوظائفها (القوائم، تحميل وعرض الصور، …). ولكنها تشكل خطرا ويمكن استخدامها في مهاجمتك.</string>
     <string name="setting_title_whitelistJS">القائمة البيضاء لجافا سكربت</string>
     <string name="setting_title_adblock">مانع الاعلانات</string>
-    <string name="setting_summary_adblock">مكن مانع الاعلانات لمنع الإعلانات المزعجة. تمكينه يسرع تحميل المواقع.</string>
     <string name="setting_title_adblockHost">المحتوى المحظور</string>
     <string name="setting_title_location">الموقع</string>
-    <string name="setting_summary_location">اسمح للمواقع الوصول إلى موقعك. بعض المواقع (مثل خرائط غوغل) تحتاج لهذا.</string>
     <string name="setting_title_history">التأريخ</string>
     <string name="setting_title_autofill">إستمارة المعلومات</string>
-    <string name="setting_summary_autofill">تمكين حفظ بيانات النموذج (أندرويد نوجات وما دونها) أو خدمة التعبئة التلقائية (أندرويد أوريو وما فوق).</string>
     <!-- browser clear -->
     <string name="data_summary">سيتم تصدير جميع الملفات إلى دليل \"Documents / browser_backup /\" لبطاقة SD الخاصة بك.</string>
     <string name="clear_title_quit">امسح عند خروج التطبيق</string>
@@ -126,8 +120,6 @@
     <string name="setting_title_behavior">السلوك</string>
     <string name="setting_title_confirm_exit">تأكيد خروج المتصفح</string>
     <string name="setting_title_confirm_tab_close">أكّد خروج التبويب</string>
-    <string name="setting_overView">نظرة عامة</string>
-    <string name="setting_overView_onStart_title">أَظهر عند البداية</string>
     <string name="setting_gestures">إيماءات</string>
     <string name="setting_title_reopenLastTab">أعد فتح آخر تبويب</string>
     <!-- gestures -->
@@ -147,7 +139,6 @@
     <string name="setting_gesture_08">أظهر نظرة عامة</string>
     <string name="setting_gesture_09">افتح تبويبا جديدا</string>
     <string name="setting_gesture_10">أغلق التبويب</string>
-    <string name="setting_gesture_hint">انقر مطولاً على زر القائمة لفتح مربع حوار الإعدادات السريعة. اضغط مطولاً على أيقونة الصفحة الرئيسية/المرجعية/السجل لفتح مرشح الإشارات المرجعية.</string>
     <!-- Data -->
     <string name="setting_title_export_bookmarks">صدّر العلامات كملف HTML</string>
     <string name="setting_title_import_bookmarks">استورد العلامات</string>
@@ -167,9 +158,9 @@
     <string name="toast_input_empty">لم تُدخل أي شيء</string>
     <string name="toast_invalid_domain">نطاق غير سليم</string>
     <string name="toast_webview_forward">لا يمكن تحميل الموقع التالي</string>
-    <string name="toast_permission_sdCard">يحتاج المتصفح الحر \"FOSS Browse\" إذن \"القراءة والكتابة على التخزين خاصتك\". هذا مطلوب لتحميل الملفات، التقاط لقطات الشاشة وعمل نسخ احتياطية من بياناتك.</string>
-    <string name="toast_restart">يجب عليك إعادة تشغيل المتصفح الحر\"FOSS Browser\" لتطبيق التغييرات. أغلق الآن؟</string>
-    <string name="toast_quit">أتريد إنهاء المتصفح الحر\"FOSS Browser\"؟</string>
+    <string name="toast_permission_sdCard">يحتاج المتصفح الحر \"FREE Browse\" إذن \"القراءة والكتابة على التخزين خاصتك\". هذا مطلوب لتحميل الملفات، التقاط لقطات الشاشة وعمل نسخ احتياطية من بياناتك.</string>
+    <string name="toast_restart">يجب عليك إعادة تشغيل المتصفح الحر\"FREE Browser\" لتطبيق التغييرات. أغلق الآن؟</string>
+    <string name="toast_quit">أتريد إنهاء المتصفح الحر\"FREE Browser\"؟</string>
     <string name="toast_quit_TAB">Do you want to close the TAB?</string>
     <string name="toast_downloadComplete">اكتمل التحميل. أفتح مدير الملفات؟</string>
     <string name="toast_unsecured">يستخدم الموقع اتصالا غير آمن (\"http\"). أجرب اتصالا آمنا (\"https\")؟</string>
@@ -180,14 +171,10 @@
     <string name="whitelist_add">أضف</string>
     <!-- Dialog help -->
     <!-- Dialog changelog -->
-    <string name="changelog_dialog">        لغتك غير مدعومة بعد؟ تريد ترجمة المتصفح الحر FOSS Browser؟ أو إجراء تحسينات على الترجمات الموجودة؟ لا تتردد في الانضمام إلينا في Crowdin: https://crowdin.com/project/foss-browser.&lt;br&gt;&lt;br&gt;         &lt;b&gt;في المواقع التالية يمكنك الوصول إلى جميع المعلومات الهامة حول المتصفح الحر \"FOSS Browser\". رجاءا اقرأ أيضا حوار المساعدة داخل التطبيق.&lt;/b&gt;&lt;br&gt;&lt;br&gt;         \u25AA &lt;i&gt;موقع المشروع:&lt;/i&gt; https://github.com/scoute-dich/Browser&lt;br&gt;         \u25AA &lt;i&gt;سجلّ التغييرات:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/CHANGELOG.md&lt;br&gt;         \u25AA &lt;i&gt;أسئلة متكررة:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/FAQs.md&lt;br&gt;         \u25AA &lt;i&gt;الرخصة:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/LICENSE.md&lt;br&gt;         \u25AA &lt;i&gt;الخصوصية:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/PRIVACY.md
-
-    </string>
     <string name="menu_mobileView">عرض الهاتف</string>
     <string name="menu_desktopView">عرض سطح المكتب</string>
     <string name="menu_dayView">عرض يومي</string>
     <string name="menu_nightView">عرض ليلي</string>
-    <string name="setting_userScript">شفرة جافاسكريت مخصصة</string>
     <string name="setting_title_camera">Allow camera usage</string>
     <string name="hint_DRM_Media">Allow DRM protected media playback?</string>
     <!-- License changelog -->

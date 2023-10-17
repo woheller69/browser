@@ -44,32 +44,4 @@ public class Settings_Activity extends AppCompatActivity {
                 .commit();
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_settings, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem menuItem) {
-        if (menuItem.getItemId() == android.R.id.home) {
-            finish();
-        } else if (menuItem.getItemId() == R.id.menu_info) {
-            SpannableString s;
-            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-                s = new SpannableString(Html.fromHtml(getString(R.string.changelog_dialog),Html.FROM_HTML_MODE_LEGACY));
-            } else {
-                s = new SpannableString(Html.fromHtml(getString(R.string.changelog_dialog)));
-            }
-            Linkify.addLinks(s, Linkify.WEB_URLS);
-            MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(this);
-            builder.setTitle(getString(R.string.menu_other_info)+"\t V"+ BuildConfig.VERSION_NAME);
-            builder.setMessage(s);
-            AlertDialog dialog = builder.create();
-            dialog.show();
-            ((TextView) Objects.requireNonNull(dialog.findViewById(android.R.id.message))).setMovementMethod(LinkMovementMethod.getInstance());
-            Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
-        }
-        return true;
-    }
 }

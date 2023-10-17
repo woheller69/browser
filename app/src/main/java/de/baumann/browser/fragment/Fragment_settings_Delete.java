@@ -24,24 +24,5 @@ public class Fragment_settings_Delete extends PreferenceFragmentCompat {
         Activity activity = getActivity();
         assert activity != null;
 
-        Preference sp_deleteDatabase = findPreference("sp_deleteDatabase");
-        assert sp_deleteDatabase != null;
-        sp_deleteDatabase.setOnPreferenceClickListener(preference -> {
-            final SharedPreferences sp = getPreferenceScreen().getSharedPreferences();
-            MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(activity);
-            builder.setMessage(R.string.hint_database);
-            builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
-                dialog.cancel();
-                activity.deleteDatabase("Ninja4.db");
-                activity.deleteDatabase("faviconView.db");
-                sp.edit().putInt("restart_changed", 1).apply();
-                activity.finish();
-            });
-            builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
-            AlertDialog dialog = builder.create();
-            dialog.show();
-            Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
-            return false;
-        });
     }
 }

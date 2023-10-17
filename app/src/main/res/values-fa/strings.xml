@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- App -->
-    <string name="app_name">مرورگر FOSS</string>
+    <string name="app_name">مرورگر FREE</string>
     <string name="app_ok">تایید</string>
     <string name="app_cancel">لغو</string>
     <string name="app_done">انجام شد</string>
@@ -46,7 +46,7 @@
     <string name="menu_save_pdf">ذخیره به عنوان PDF</string>
     <string name="menu_shareClipboard">کپی در حافظه</string>
     <string name="menu_other_searchSite">جستجو در صفحه </string>
-    <string name="menu_other_info">درباره مرورگر FOSS </string>
+    <string name="menu_other_info">درباره مرورگر FREE </string>
     <!-- Dialog -->
     <string name="dialog_title_hint">عنوان:</string>
     <string name="dialog_URL_hint">URL:</string>
@@ -78,30 +78,19 @@
     <string name="setting_title_font">اندازه قلم</string>
     <string name="setting_title_dom">ذخیره سازی DOM</string>
     <string name="setting_title_dom_whitelist">لیست سفید DOM</string>
-    <string name="setting_summary_dom">DOM Storage به برنامه اجازه می دهد تا عناصر صفحه را که می تواند شامل اطلاعات حساس کاربر باشد ، ذخیره کند. غیرفعال کردن این امر از استفاده از حافظه محلی جلوگیری می کند.</string>
     <string name="setting_title_save_data">درخواست صرفه جویی در مصرف شبکه</string>
     <!-- browser start -->
     <string name="setting_title_images">عکس ها</string>
     <string name="setting_title_cookie">کوکی ها</string>
     <string name="setting_summary_cookie_delete">در صورت فعال سازی، تمامی کوکی ها حذف خواهد شد،حتی کوکی های سایت های مورد اعتماد</string>
-    <string name="setting_summary_cookie">         فعال سازی کوکی ها.کوکی ها فایل های متنی کم حجمی هستند که در سیستم ذخیره می شوند.وبسایت ها از آنها برای ذخیره سازی تنظیمات مورد استفاده کاربران ( به عنوان مثال تنظیمات بخش جستجو،وضعیت ورود کاربر به سایت )استفاده می نمایند.
-       امکان استفاده از آنها جهت جمع آوری اطلاعات کاربران برای تبلیعات نیز وجود دارد،اما این مورد به صورت پیشفرض غیر فعال شده است.
-    </string>
     <string name="setting_title_whitelistCookie">لیست سفید کوکی </string>
     <string name="setting_title_javascript">جاواسکریپت</string>
-    <string name="setting_summary_javascript">        فعال سازی جاوا اسکریپت.اکثر وبسایت ها جهت کارکرد صحیح نیاز به جاوا اسکریپت دارند.اما ریسک سوءاستفاده هکر ها از آن در حملات سایبری وجود دارد.
-    </string>
     <string name="setting_title_whitelistJS">لیست سفید جاوا اسکریپت</string>
     <string name="setting_title_adblock">مسدودسازی تبلیغات</string>
-    <string name="setting_summary_adblock">با فعال سازی این گزینه، مانع نمایش تبلیغات آزار دهنده شوید،همچنین سرعت بارگذاری وبسایت ها را بهبود بخشید.</string>
     <string name="setting_title_adblockHost">محتوای مسدود شده</string>
     <string name="setting_title_location">مکان جاری</string>
-    <string name="setting_summary_location">به وبسایت ها مجوز دسترسی به مکان جاری شما را می دهد.
-        بعضی از وبسایت ها مانند مسیریابی در نقشه نیاز به فعال بودن این گزینه دارند.
-    </string>
     <string name="setting_title_history">تاریخچه</string>
     <string name="setting_title_autofill">داده‌‌ی فرم</string>
-    <string name="setting_summary_autofill">ذخیره داده های فرم (Android Nougat و پایین تر) یا سرویس تکمیل خودکار (Android Oreo و بالاتر) را فعال کنید.</string>
     <!-- browser clear -->
     <string name="data_summary">همه فایلها به فهرست \"Documents/browser_backup/\" کارت SD شما صادر می شوند.</string>
     <string name="clear_title_quit">پاک سازی هنگام خروج از برنامه</string>
@@ -132,8 +121,6 @@
     <string name="setting_title_behavior">رفتارها</string>
     <string name="setting_title_confirm_exit">تاییدیه خروج از مرورگر</string>
     <string name="setting_title_confirm_tab_close">تاییدیه بستن زبانه</string>
-    <string name="setting_overView">صفحه پیشفرض</string>
-    <string name="setting_overView_onStart_title">نمایش صفحه آغازین</string>
     <string name="setting_gestures">اشارات انگشت</string>
     <string name="setting_title_reopenLastTab">بازکردن آخرین زبانه</string>
     <!-- gestures -->
@@ -153,9 +140,6 @@
     <string name="setting_gesture_08">نمایش صفحه پیش فرض</string>
     <string name="setting_gesture_09">باز کردن زبانه جدید</string>
     <string name="setting_gesture_10">بستن زبانه</string>
-    <string name="setting_gesture_hint">         .جهت نمایش پنجره تنظیمات سریع روی دکمه منو لمس طولانی نمایید
-        جهت باز کردن فیلتر نشانک ها بر روی آیکن صفحه اصلی/نشانک ها/تاریخجه لمس طولانی نمایید.
-    </string>
     <!-- Data -->
     <string name="setting_title_export_bookmarks"> HTML استخراج نشانک ها به عنوان فایل </string>
     <string name="setting_title_import_bookmarks">وارد کردن نشانک ها</string>
@@ -178,8 +162,8 @@
     <string name="toast_permission_sdCard">    مرورگر نیاز به مجوز    \"خواندن و نوشتن فایل ها در حافظه\"
         جهت انجام اسکرین شات،بارگذاری فایل،پشتیبان گیری از داده ها دارد.
     </string>
-    <string name="toast_restart">جهت اعمال تغییرات نیاز به راه اندازی مجدد  \"FOSS Browser\" می باشد،انجام شود؟</string>
-    <string name="toast_quit">آیا مایل به خروج از \"FOSS Browser\" هستید؟</string>
+    <string name="toast_restart">جهت اعمال تغییرات نیاز به راه اندازی مجدد  \"FREE Browser\" می باشد،انجام شود؟</string>
+    <string name="toast_quit">آیا مایل به خروج از \"FREE Browser\" هستید؟</string>
     <string name="toast_quit_TAB">Do you want to close the TAB?</string>
     <string name="toast_downloadComplete">بارگذاری به اتمام رسید، صفحه مدیریت فایل ها باز شود؟</string>
     <string name="toast_unsecured">        وبسایت مورد نظر از ارتباط نا امن (http) استفاده می کند.آیامایل به انتقال به نسخه امن (https) وبسایت هستید؟
@@ -191,22 +175,10 @@
     <string name="whitelist_add">افزودن</string>
     <!-- Dialog help -->
     <!-- Dialog changelog -->
-    <string name="changelog_dialog">        Your language isn\'t supported yet? You want to translate FOSS Browser? Or make improvements to existing translations? Feel free to join us on Crowdin: https://crowdin.com/project/foss-browser.&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;On the following sites you have access to all important information about \"FOSS Browser\". Please read also the help dialog within the app.&lt;/b&gt;&lt;br&gt;&lt;br&gt;
-
-        \u25AA &lt;i&gt;Project site:&lt;/i&gt; https://github.com/scoute-dich/Browser&lt;br&gt;
-        \u25AA &lt;i&gt;Changelog:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/CHANGELOG.md&lt;br&gt;
-        \u25AA &lt;i&gt;FAQ:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/FAQs.md&lt;br&gt;
-        \u25AA &lt;i&gt;License:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/LICENSE.md&lt;br&gt;
-        \u25AA &lt;i&gt;Privacy:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/PRIVACY.md
-
-    </string>
     <string name="menu_mobileView">نمای موبايل</string>
     <string name="menu_desktopView">DesktopPC نماي</string>
     <string name="menu_dayView">روز</string>
     <string name="menu_nightView">دید شب</string>
-    <string name="setting_userScript">فایل‌های جاوا اسکریپت سفارشی</string>
     <string name="setting_title_camera">Allow camera usage</string>
     <string name="hint_DRM_Media">Allow DRM protected media playback?</string>
     <!-- License changelog -->

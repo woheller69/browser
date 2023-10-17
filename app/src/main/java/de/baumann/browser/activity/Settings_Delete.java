@@ -50,7 +50,6 @@ public class Settings_Delete extends AppCompatActivity {
                 SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
                 boolean clearCache = sp.getBoolean("sp_clear_cache", false);
                 boolean clearCookie = sp.getBoolean("sp_clear_cookie", false);
-                boolean clearHistory = sp.getBoolean("sp_clear_history", false);
                 boolean clearIndexedDB = sp.getBoolean("sp_clearIndexedDB", false);
 
                 if (clearCache) {
@@ -58,9 +57,6 @@ public class Settings_Delete extends AppCompatActivity {
                 }
                 if (clearCookie) {
                     BrowserUnit.clearCookie();
-                }
-                if (clearHistory) {
-                    BrowserUnit.clearHistory(this);
                 }
                 if (clearIndexedDB) {
                     BrowserUnit.clearIndexedDB(this);

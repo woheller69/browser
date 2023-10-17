@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- App -->
-    <string name="app_name">FOSS Browser</string>
+    <string name="app_name">FREE Browser</string>
     <string name="app_ok">OK</string>
     <string name="app_cancel">Mégse</string>
     <string name="app_done">Kész</string>
@@ -46,7 +46,7 @@
     <string name="menu_save_pdf">Mentés PDF-ként</string>
     <string name="menu_shareClipboard">Másolás a vágólapra</string>
     <string name="menu_other_searchSite">Keresés az oldalon</string>
-    <string name="menu_other_info">A \"FOSS Browser\" névjegye</string>
+    <string name="menu_other_info">A \"FREE Browser\" névjegye</string>
     <!-- Dialog -->
     <string name="dialog_title_hint">Cím:</string>
     <string name="dialog_URL_hint">Url:</string>
@@ -78,25 +78,19 @@
     <string name="setting_title_font">Betűméret</string>
     <string name="setting_title_dom">DOM Storage</string>
     <string name="setting_title_dom_whitelist">DOM engedélyezőlistája</string>
-    <string name="setting_summary_dom">A DOM Storage lehetővé teszi az alkalmazás számára olyan oldalelemek tárolását, amelyek felhasználói érzékeny információkat tartalmazhatnak. Ennek letiltása megakadályozza a helyi tárhely használatát.</string>
     <string name="setting_title_save_data">\'Save Data\' kérése</string>
     <!-- browser start -->
     <string name="setting_title_images">Képek</string>
     <string name="setting_title_cookie">Sütik</string>
     <string name="setting_summary_cookie_delete">Engedélyezve, az összes süti törlésre kerül. A megbízható weboldalakhoz tartozó sütik is.</string>
-    <string name="setting_summary_cookie">Sütik engedélyezése. A sütik kis szövegfájlok, amik az ön eszközén tárolódnak. A weboldalak például felhasználói beállítások tárolására használják (pl. keresési beállítások), de használhatók személyes felhasználói adatok gyűjtésére is. A harmadik féltől származó sütik (felhasználói adatokat gyűjtenek reklámozás céljából) mindig le vannak tiltva.</string>
     <string name="setting_title_whitelistCookie">Süti engedélylista</string>
     <string name="setting_title_javascript">JavaScript</string>
-    <string name="setting_summary_javascript">JavaScript engedélyezése. Számos weboldal működéséhez JavaScript szükséges (menük, képek betöltése és megjelenítése, …), de egyben kockázatot is jelentenek mert támadásokhoz is használhatók.</string>
     <string name="setting_title_whitelistJS">JavaScript engedélylista</string>
     <string name="setting_title_adblock">AdBlock</string>
-    <string name="setting_summary_adblock">AdBlock engedélyezése a bosszantó hirdetések blokkolására. A weboldalak is gyorsabban töltődnek be, ha engedélyezett.</string>
     <string name="setting_title_adblockHost">Blokkolt tartalom</string>
     <string name="setting_title_location">Tartózkodási hely</string>
-    <string name="setting_summary_location">Megengedi a weboldalaknak, hogy hozzáférjenek a tartózkodási helyéhez. Néhány weboldal számára (mint a Google Térkép navigáció) engedélyezni kell.</string>
     <string name="setting_title_history">Előzmények</string>
     <string name="setting_title_autofill">Űrlapadatok</string>
-    <string name="setting_summary_autofill">Engedélyezze az űrlapadatok (Android Nougat és újabb) vagy az automatikus kitöltési szolgáltatás (Android Oreo és újabb) mentését.</string>
     <!-- browser clear -->
     <string name="data_summary">Minden fájl exportálódik az SD-kártya \"Documents/browser_backup/\" könyvtárába.</string>
     <string name="clear_title_quit">Törlés az alkalmazás bezárásakor</string>
@@ -126,8 +120,6 @@
     <string name="setting_title_behavior">Viselkedés</string>
     <string name="setting_title_confirm_exit">Böngésző bezárásának megerősítése</string>
     <string name="setting_title_confirm_tab_close">Lap bezárásának megerősítése</string>
-    <string name="setting_overView">Áttekintés</string>
-    <string name="setting_overView_onStart_title">Mutassa indításkor</string>
     <string name="setting_gestures">Kézmozdulatok</string>
     <string name="setting_title_reopenLastTab">Utolsó lap megnyitása</string>
     <!-- gestures -->
@@ -147,7 +139,6 @@
     <string name="setting_gesture_08">Áttekintés mutatása</string>
     <string name="setting_gesture_09">Új lap megnyitása</string>
     <string name="setting_gesture_10">Lap bezárása</string>
-    <string name="setting_gesture_hint">Hosszan kattintson a menü gombra a gyors beállítások párbeszédpanel megnyitásához. Hosszan nyomja meg a home / bookmark / history ikont a könyvjelzőszűrő megnyitásához.</string>
     <!-- Data -->
     <string name="setting_title_export_bookmarks">Könyvjelzők exportálása HTML-fájlként</string>
     <string name="setting_title_import_bookmarks">Könyvjelzők importálása</string>
@@ -167,9 +158,9 @@
     <string name="toast_input_empty">Nem írt be semmit</string>
     <string name="toast_invalid_domain">Érvénytelen domain</string>
     <string name="toast_webview_forward">Nem tölthető be a következő oldal</string>
-    <string name="toast_permission_sdCard">A \"FOSS Browser\"-nek \"tárhely olvasása és írása\" engedélyre van szüksége. Ez szükséges a fájlok letöltéséhez, képernyőképek készítéséhez és az adatok biztonsági másolatának készítéséhez.</string>
-    <string name="toast_restart">A változások alkalmazásához újra kell indítania a \"FOSS Browser\"-t. Bezárja most?</string>
-    <string name="toast_quit">Ki akar lépni a \"FOSS Browser\"-ből?</string>
+    <string name="toast_permission_sdCard">A \"FREE Browser\"-nek \"tárhely olvasása és írása\" engedélyre van szüksége. Ez szükséges a fájlok letöltéséhez, képernyőképek készítéséhez és az adatok biztonsági másolatának készítéséhez.</string>
+    <string name="toast_restart">A változások alkalmazásához újra kell indítania a \"FREE Browser\"-t. Bezárja most?</string>
+    <string name="toast_quit">Ki akar lépni a \"FREE Browser\"-ből?</string>
     <string name="toast_quit_TAB">Do you want to close the TAB?</string>
     <string name="toast_downloadComplete">Befejezve a letöltés. Megnyitja a fájlkezelőt?</string>
     <string name="toast_unsecured">A weboldal nem biztonságos kapcsolatot használ (\"http\"). Megpróbálja a biztonságos kapcsolatot (\"https\")?</string>
@@ -180,22 +171,10 @@
     <string name="whitelist_add">Hozzáad</string>
     <!-- Dialog help -->
     <!-- Dialog changelog -->
-    <string name="changelog_dialog">        Az ön nyelve még nem támogatott? Le szeretné fordítani a FOSS Browser-t? Vagy javítana a meglévő fordításon? Nyugodtan csatlakozzon hozzánk a Crowdin-on: https://crowdin.com/project/foss-browser.&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;A következő oldalakon minden fontos információhoz hozzáférhet a \"FOSS Browser\"-ről. Kérem, olvassa el a súgó párbeszédpanelt is az alkalmazáson belül.&lt;/b&gt;&lt;br&gt;&lt;br&gt;
-
-        \u25AA &lt;i&gt;A program oldala:&lt;/i&gt; https://github.com/scoute-dich/Browser&lt;br&gt;
-        \u25AA &lt;i&gt;Változások:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/CHANGELOG.md&lt;br&gt;
-        \u25AA &lt;i&gt;GYIK:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/FAQs.md&lt;br&gt;
-        \u25AA &lt;i&gt;Licenc:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/LICENSE.md&lt;br&gt;
-        \u25AA &lt;i&gt;Adatvédelem:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/PRIVACY.md
-
-    </string>
     <string name="menu_mobileView">Mobil nézet</string>
     <string name="menu_desktopView">Asztali nézet</string>
     <string name="menu_dayView">Napi nézet</string>
     <string name="menu_nightView">Éjszakai nézet</string>
-    <string name="setting_userScript">Custom JavaScript code</string>
     <string name="setting_title_camera">Allow camera usage</string>
     <string name="hint_DRM_Media">Allow DRM protected media playback?</string>
     <!-- License changelog -->

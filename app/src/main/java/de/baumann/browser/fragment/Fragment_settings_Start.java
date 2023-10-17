@@ -32,7 +32,7 @@ public class Fragment_settings_Start extends PreferenceFragmentCompat implements
 
         Preference sp_ad_block = findPreference("sp_ad_block");
         assert sp_ad_block != null;
-        sp_ad_block.setSummary(getString(R.string.setting_summary_adblock)+"\n\n"+AdBlock.getHostsDate(getContext()));
+        sp_ad_block.setSummary(AdBlock.getHostsDate(getContext()));
 
         Preference start_java = findPreference("start_java");
         assert start_java != null;
@@ -75,11 +75,10 @@ public class Fragment_settings_Start extends PreferenceFragmentCompat implements
         }
         if (p instanceof EditTextPreference) {
             EditTextPreference editTextPref = (EditTextPreference) p;
-            if (p.getTitle().toString().toLowerCase().contains("password"))
-            {
+            if (p.getTitle().toString().toLowerCase().contains("password")) {
                 p.setSummary("******");
             } else {
-                p.setSummary(editTextPref.getText());
+                if (p.getSummaryProvider()==null)   p.setSummary(editTextPref.getText());
             }
         }
     }
@@ -88,6 +87,13 @@ public class Fragment_settings_Start extends PreferenceFragmentCompat implements
     public void onSharedPreferenceChanged(final SharedPreferences sp, String key) {
         if (key.equals("ab_hosts")) {
             AdBlock.downloadHosts(getActivity());
+        } else if (key.equals("sp_userAgent") ||
+                key.equals("sp_search_engine_custom") ||
+                key.equals("searchEngineSwitch") ||
+                key.equals("userAgentSwitch") ||
+                key.equals("sp_search_engine")) {
+            sp.edit().putInt("restart_changed", 1).apply();
+            updatePrefSummary(findPreference(key));
         }
         updatePrefSummary(findPreference(key));
     }

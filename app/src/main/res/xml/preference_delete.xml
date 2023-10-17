@@ -14,11 +14,6 @@
         android:title="@string/clear_title_cache"/>
 
     <CheckBoxPreference
-        android:key="sp_clear_history"
-        android:defaultValue="false"
-        android:title="@string/clear_title_history"/>
-
-    <CheckBoxPreference
         android:defaultValue="true"
         android:key="sp_clearIndexedDB"
         android:title="@string/localData" />
@@ -27,9 +22,5 @@
         android:defaultValue="false"
         android:title="@string/clear_title_cookie"
         android:summary="@string/setting_summary_cookie_delete"/>
-
-    <Preference android:key="sp_deleteDatabase"
-        android:title="@string/clear_title_deleteDatabase"
-        android:summary="@string/clear_summary_deleteDatabase"/>
 
 </PreferenceScreen>

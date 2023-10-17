@@ -2,7 +2,6 @@ package de.baumann.browser.fragment;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.preference.EditTextPreference;
@@ -20,7 +19,7 @@ import de.baumann.browser.activity.Settings_StartActivity;
 import de.baumann.browser.activity.Settings_UI;
 import de.baumann.browser.R;
 
-public class Fragment_settings extends PreferenceFragmentCompat implements SharedPreferences.OnSharedPreferenceChangeListener {
+public class Fragment_settings extends PreferenceFragmentCompat {
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -106,27 +105,4 @@ public class Fragment_settings extends PreferenceFragmentCompat implements Share
         }
     }
 
-    @Override
-    public void onSharedPreferenceChanged(final SharedPreferences sp, String key) {
-        if (key.equals("sp_userAgent") ||
-                key.equals("sp_search_engine_custom") ||
-                key.equals("searchEngineSwitch") ||
-                key.equals("userAgentSwitch") ||
-                key.equals("sp_search_engine")) {
-            sp.edit().putInt("restart_changed", 1).apply();
-            updatePrefSummary(findPreference(key));
-        }
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        getPreferenceScreen().getSharedPreferences().registerOnSharedPreferenceChangeListener(this);
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        getPreferenceScreen().getSharedPreferences().unregisterOnSharedPreferenceChangeListener(this);
-    }
 }

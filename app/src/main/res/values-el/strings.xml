@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- App -->
-    <string name="app_name">FOSS Browser</string>
+    <string name="app_name">FREE Browser</string>
     <string name="app_ok">ΟΚ</string>
     <string name="app_cancel">Άκυρο</string>
     <string name="app_done">Ολοκληρώθηκε</string>
@@ -46,7 +46,7 @@
     <string name="menu_save_pdf">Αποθήκευση ως PDF</string>
     <string name="menu_shareClipboard">Αντιγραφή στο πρόχειρο</string>
     <string name="menu_other_searchSite">Αναζήτηση στον ιστότοπο</string>
-    <string name="menu_other_info">Σχετικά με \"FOSS Browser\"</string>
+    <string name="menu_other_info">Σχετικά με \"FREE Browser\"</string>
     <!-- Dialog -->
     <string name="dialog_title_hint">Τίτλος:</string>
     <string name="dialog_URL_hint">url:</string>
@@ -78,25 +78,19 @@
     <string name="setting_title_font">Μέγεθος γραμματοσειράς</string>
     <string name="setting_title_dom">Αποθήκευση DOM</string>
     <string name="setting_title_dom_whitelist">Άσπρη Λίστα Dom</string>
-    <string name="setting_summary_dom">Ο χώρος αποθήκευσης DOM επιτρέπει στην εφαρμογή να αποθηκεύει στοιχεία σελίδων που θα μπορούσαν να περιλαμβάνουν ευαίσθητες πληροφορίες χρήστη. Η απενεργοποίηση αυτού αποτρέπει τη χρήση του τοπικού αποθηκευτικού χώρου.</string>
     <string name="setting_title_save_data">Αίτημα \'Αποθήκευση Δεδομένων\'</string>
     <!-- browser start -->
     <string name="setting_title_images">Εικόνες</string>
     <string name="setting_title_cookie">Cookies</string>
     <string name="setting_summary_cookie_delete">Αν ενεργοποιηθεί, όλα τα cookies θα διαγραφούν. Επίσης τα Cookies των αξιόπιστων ιστοσελίδων.</string>
-    <string name="setting_summary_cookie">Ενεργοποίηση Cookies. Τα cookies είναι μικρά αρχεία κειμένου, τα οποία αποθηκεύονται στη συσκευή σας. Οι ιστότοποι τα χρησιμοποιούν για παράδειγμα για την αποθήκευση των ρυθμίσεων χρήστη (για παράδειγμα ρυθμίσεις αναζήτησης). Αλλά θα μπορούσαν επίσης να χρησιμοποιηθούν για τη συλλογή προσωπικών δεδομένων χρηστών. Τα cookies τρίτων μερών (συλλέγουν δεδομένα χρηστών για διαφημίσεις) είναι πάντα απενεργοποιημένα.</string>
     <string name="setting_title_whitelistCookie">Λίστα επιτρεπόμενων cookie</string>
     <string name="setting_title_javascript">JavaScript</string>
-    <string name="setting_summary_javascript">Ενεργοποίηση JavaScript. Πολλοί ιστότοποι χρειάζονται JavaScript για τη λειτουργικότητά τους (μενού, φόρτωση και εμφάνιση εικόνων, …). Αλλά είναι επίσης ένας κίνδυνος και μπορεί να χρησιμοποιηθεί για επιθέσεις.</string>
     <string name="setting_title_whitelistJS">Λίστα επιτρεπόμενων JavaScript</string>
     <string name="setting_title_adblock">AdBlock</string>
-    <string name="setting_summary_adblock">Ενεργοποιήστε το AdBlock για να αποκλείσετε ενοχλητικές διαφημίσεις. Οι ιστότοποι επίσης φορτώνουν γρηγορότερα όταν είναι ενεργοποιημένο.</string>
     <string name="setting_title_adblockHost">Αποκλεισμένο περιεχόμενο</string>
     <string name="setting_title_location">Τοποθεσία</string>
-    <string name="setting_summary_location">Να επιτρέπεται σε ιστότοπους η πρόσβαση στην τοποθεσία σας. Ορισμένες ιστοσελίδες (όπως οι χάρτες Google για πλοήγηση) χρειάζονται αυτήν την επιλογή.</string>
     <string name="setting_title_history">Ιστορικό</string>
     <string name="setting_title_autofill">Δεδομένα Φόρμας</string>
-    <string name="setting_summary_autofill">Ενεργοποιήστε την αποθήκευση δεδομένων φόρμας (Android Nougat και κάτω) ή την υπηρεσία αυτόματης συμπλήρωσης (Android Oreo και παραπάνω).</string>
     <!-- browser clear -->
     <string name="data_summary">Όλα τα αρχεία θα εξαχθούν στον κατάλογο \"Documents/browser_backup/\" της κάρτας SD σας.</string>
     <string name="clear_title_quit">Διαγραφή κατά την έξοδο της εφαρμογής</string>
@@ -126,8 +120,6 @@
     <string name="setting_title_behavior">Συμπεριφορά</string>
     <string name="setting_title_confirm_exit">Επιβεβαίωση εξόδου προγράμματος περιήγησης</string>
     <string name="setting_title_confirm_tab_close">Επιβεβαίωση κλεισίματος καρτέλας</string>
-    <string name="setting_overView">Επισκόπηση</string>
-    <string name="setting_overView_onStart_title">Εμφάνιση κατά την έναρξη</string>
     <string name="setting_gestures">Χειρονομίες</string>
     <string name="setting_title_reopenLastTab">Ανοίξτε ξανά την τελευταία καρτέλα</string>
     <!-- gestures -->
@@ -147,7 +139,6 @@
     <string name="setting_gesture_08">Εμφάνιση επισκόπησης</string>
     <string name="setting_gesture_09">Άνοιγμα νέας καρτέλας</string>
     <string name="setting_gesture_10">Κλείσιμο καρτέλας</string>
-    <string name="setting_gesture_hint">Πατήστε παρατεταμένα το κουμπί μενού για να ανοίξετε το γρήγορο διάλογο ρυθμίσεων. Πατήστε παρατεταμένα το εικονίδιο αρχικής/σελιδοδείκτη/ιστορικού για να ανοίξετε το φίλτρο σελιδοδεικτών.</string>
     <!-- Data -->
     <string name="setting_title_export_bookmarks">Εξαγωγή σελιδοδεικτών ως αρχείο HTML</string>
     <string name="setting_title_import_bookmarks">Εισαγωγή σελιδοδεικτών</string>
@@ -167,9 +158,9 @@
     <string name="toast_input_empty">Δεν έχετε εισάγει τίποτα</string>
     <string name="toast_invalid_domain">Μη έγκυρο domain</string>
     <string name="toast_webview_forward">Αδυναμία φόρτωσης επόμενης ιστοσελίδας</string>
-    <string name="toast_permission_sdCard">Ο \"FOSS Browser\" χρειάζεται την άδεια να \"διαβάζει και γράφει στον αποθηκευτικό σας χώρο\". Αυτό είναι απαραίτητο για τη λήψη αρχείων, τη λήψη στιγμιότυπων οθόνης και την δημιουργία αντιγράφων ασφαλείας των δεδομένων σας.</string>
-    <string name="toast_restart">Πρέπει να επανεκκινήσετε το \"FOSS Browser\" για να εφαρμόσετε τις αλλαγές. Κλείσιμο τώρα;</string>
-    <string name="toast_quit">Θέλετε να κλείσετε το \"FOSS Browser\";</string>
+    <string name="toast_permission_sdCard">Ο \"FREE Browser\" χρειάζεται την άδεια να \"διαβάζει και γράφει στον αποθηκευτικό σας χώρο\". Αυτό είναι απαραίτητο για τη λήψη αρχείων, τη λήψη στιγμιότυπων οθόνης και την δημιουργία αντιγράφων ασφαλείας των δεδομένων σας.</string>
+    <string name="toast_restart">Πρέπει να επανεκκινήσετε το \"FREE Browser\" για να εφαρμόσετε τις αλλαγές. Κλείσιμο τώρα;</string>
+    <string name="toast_quit">Θέλετε να κλείσετε το \"FREE Browser\";</string>
     <string name="toast_quit_TAB">Θέλετε να κλείσετε την καρτέλα;</string>
     <string name="toast_downloadComplete">Η λήψη ολοκληρώθηκε. Άνοιγμα διαχειριστή αρχείων;</string>
     <string name="toast_unsecured">Η ιστοσελίδα χρησιμοποιεί μια μη ασφαλή σύνδεση (\"http\"). Δοκιμάστε μια ασφαλή σύνδεση (\"https\");</string>
@@ -180,22 +171,10 @@
     <string name="whitelist_add">Προσθήκη</string>
     <!-- Dialog help -->
     <!-- Dialog changelog -->
-    <string name="changelog_dialog">        Η γλώσσα σας δεν υποστηρίζεται ακόμη; Θέλετε να μεταφράσετε το \"FOSS Browser\"; Ή να κάνετε βελτιώσεις στις υπάρχουσες μεταφράσεις; Μη διστάσετε να εγγραφείτε στο Crowdin: https://crowdin.com/project/foss-browser.&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;Στην ακόλουθη ιστοσελίδα έχετε πρόσβαση σε όλες τις σημαντικές πληροφορίες σχετικά με τον \"FOSS Browser\". Διαβάστε επίσης το διάλογο βοήθειας εντός της εφαρμογής&lt;/b&gt;&lt;br&gt;&lt;br&gt;
-
-        \u25AA &lt;i&gt;Ιστοσελίδα Project:&lt;/i&gt; https://github.com/scoute-dich/Browser&lt;br&gt;
-        \u25AA &lt;i&gt;Αρχείο καταγραφής αλλαγών:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/CHANGELOG.md&lt;br&gt;
-        \u25AA &lt;i&gt;FAQ:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/FAQs.md&lt;br&gt;
-        \u25AA &lt;i&gt;Άδεια:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/LICENSE.md&lt;br&gt;
-        \u25AA &lt;i&gt;Απόρρητο:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/PRIVACY.md
-
-    </string>
     <string name="menu_mobileView">Προβολή κινητού</string>
     <string name="menu_desktopView">Προβολή για υπολογιστή</string>
     <string name="menu_dayView">Προβολή ημέρας</string>
     <string name="menu_nightView">Νυχτερινή προβολή</string>
-    <string name="setting_userScript">Προσαρμοσμένος κώδικας JavaScript</string>
     <string name="setting_title_camera">Να επιτρέπεται η χρήση κάμερας</string>
     <string name="hint_DRM_Media">Να επιτρέπεται η προστατευμένη αναπαραγωγή πολυμέσων DRM;</string>
     <!-- License changelog -->

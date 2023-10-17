@@ -56,6 +56,7 @@ public class BrowserUnit {
     private static final String URL_SCHEME_HTTP = "http://";
     private static final String URL_SCHEME_FTP = "ftp://";
     private static final String URL_SCHEME_INTENT = "intent://";
+    private static final String URL_SCHEME_VIEW_SOURCE = "view-source:";
 
     public static boolean isURL(String url) {
 
@@ -87,7 +88,7 @@ public class BrowserUnit {
     }
 
     public static String queryWrapper(Context context, String query) {
-        if (query.startsWith("view-source:")) return query;
+        if (query.startsWith(URL_SCHEME_VIEW_SOURCE)) return query;
         if (isURL(query)) {
             if (query.startsWith(URL_SCHEME_ABOUT) || query.startsWith(URL_SCHEME_MAIL_TO)) {
                 return query;

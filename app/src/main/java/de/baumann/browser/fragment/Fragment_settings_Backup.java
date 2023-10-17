@@ -59,9 +59,13 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat {
         sd = Environment.getExternalStoragePublicDirectory(DIRECTORY_DOCUMENTS);
         data = Environment.getDataDirectory();
         String database_app = "//data//" + requireActivity().getPackageName() + "//databases//Ninja4.db";
-        String database_backup = "browser_backup//database.db";
-        final File previewsFolder_app = new File(data, database_app);
-        final File previewsFolder_backup = new File(sd, database_backup);
+        String database_favicon = "//data//" + requireActivity().getPackageName() + "//databases//favicon.db";
+        String database_app_backup = "browser_backup//database.db";
+        String favicon_backup = "browser_backup//favicon.db";
+        final File appDB = new File(data, database_app);
+        final File faviconDB = new File(data, database_favicon);
+        final File appDBbackup = new File(sd, database_app_backup);
+        final File faviconDBbackup = new File(sd, favicon_backup);
 
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
 
@@ -75,7 +79,8 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat {
                         } else {
                             BackupUnit.makeBackupDir();
                             if (sp.getBoolean("database", false)) {
-                                copyDirectory(previewsFolder_app, previewsFolder_backup);
+                                copyDirectory(appDB, appDBbackup);
+                                copyDirectory(faviconDB, faviconDBbackup);
                             }
                             if (sp.getBoolean("settings", false)) {
                                 backupUserPrefs(context);
@@ -109,7 +114,8 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat {
                     BackupUnit.requestPermission(activity);
                 } else {
                     if (sp.getBoolean("database", false)) {
-                        copyDirectory(previewsFolder_backup, previewsFolder_app);
+                        copyDirectory(appDBbackup, appDB);
+                        copyDirectory(faviconDBbackup, faviconDB);
                     }
                     if (sp.getBoolean("settings", false)) {
                         restoreUserPrefs(context);

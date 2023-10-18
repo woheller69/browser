@@ -27,6 +27,7 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.core.app.ActivityCompat;
@@ -204,19 +205,29 @@ public class BackupUnit {
         List<Record> list = action.listBookmark(context, false, 0);
         action.close();
         File file = new File(Environment.getExternalStoragePublicDirectory(DIRECTORY_DOCUMENTS), "browser_backup//export_bookmark_list.html");
-        try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter(file, false));
-            for (Record record : list) {
-                String type = BOOKMARK_TYPE;
-                type = type.replace(BOOKMARK_TITLE, record.getTitle());
-                type = type.replace(BOOKMARK_URL, record.getURL());
-                type = type.replace(BOOKMARK_TIME, String.valueOf(record.getIconColor() + (long) (record.getDesktopMode() ? 16 : 0) + (long) (record.getJavascript() ? 0 : 32) + (long) (record.getDomStorage() ? 0 : 64)));
-                writer.write(type);
-                writer.newLine();
+        if (!BackupUnit.checkPermissionStorage(context)) {
+            BackupUnit.requestPermission((Activity) context);
+        } else {
+            if (file.exists()) {
+                if (!file.delete()) {
+                    Toast.makeText(context, context.getResources().getString(R.string.toast_delete), Toast.LENGTH_LONG).show();
+                }
             }
-            writer.close();
-            file.getAbsolutePath();
-        } catch (Exception ignored) {
+            try {
+                BufferedWriter writer = new BufferedWriter(new FileWriter(file, false));
+                for (Record record : list) {
+                    String type = BOOKMARK_TYPE;
+                    type = type.replace(BOOKMARK_TITLE, record.getTitle());
+                    type = type.replace(BOOKMARK_URL, record.getURL());
+                    type = type.replace(BOOKMARK_TIME, String.valueOf(record.getIconColor() + (long) (record.getDesktopMode() ? 16 : 0) + (long) (record.getJavascript() ? 0 : 32) + (long) (record.getDomStorage() ? 0 : 64)));
+                    writer.write(type);
+                    writer.newLine();
+                }
+                writer.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+                Toast.makeText(context,e.toString(), Toast.LENGTH_LONG).show();
+            }
         }
     }
 

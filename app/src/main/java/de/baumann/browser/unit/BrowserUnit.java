@@ -188,13 +188,6 @@ public class BrowserUnit {
         Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
     }
 
-    public static void clearHome(Context context) {
-        RecordAction action = new RecordAction(context);
-        action.open(true);
-        action.clearTable(RecordUnit.TABLE_GRID);
-        action.close();
-    }
-
     public static void clearCache(Context context) {
         try {
             File dir = context.getCacheDir();

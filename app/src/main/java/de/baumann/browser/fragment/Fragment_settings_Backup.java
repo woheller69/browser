@@ -146,7 +146,7 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat implement
                             BackupUnit.importPrefsFromFile(context, inputStream);
                         } catch (IOException | SAXException | ParserConfigurationException e) {
                             e.printStackTrace();
-                            NinjaToast.show(context, context.getString(R.string.app_error));
+                            Toast.makeText(context,e.toString(), Toast.LENGTH_LONG).show();
                         }
                     }
                 });
@@ -159,7 +159,10 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat implement
                         try {
                             BufferedReader reader = new BufferedReader(new InputStreamReader(context.getContentResolver().openInputStream(result.getData().getData())));
                             BackupUnit.importBookmarksFromFile(context, reader, list);
-                        } catch (Exception ignored) {}
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                            Toast.makeText(context,e.toString(), Toast.LENGTH_LONG).show();
+                        }
                     }
                 });
     }
@@ -202,11 +205,12 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat implement
                     Toast.makeText(context,getResources().getString(R.string.toast_delete), Toast.LENGTH_LONG).show();
                 }
             }
-            NinjaToast.show(context," -> " + dbBackup.toString());
             try {
                 ZipFile zipFile = new ZipFile(dbBackup);
                 zipFile.addFolder(intDatabase);
+                NinjaToast.show(context," -> " + dbBackup.toString());
             } catch (ZipException e) {
+                e.printStackTrace();
                 Toast.makeText(context,e.toString(), Toast.LENGTH_LONG).show();
             }
         }
@@ -215,15 +219,25 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat implement
     private void backupUserPrefs(Context context) {
         final File prefsFile = new File(context.getFilesDir(), "../shared_prefs/" + context.getPackageName() + "_preferences.xml");
         final File backupFile = new File(sd, "browser_backup/preferenceBackup.xml");
-        try {
-            FileChannel src = new FileInputStream(prefsFile).getChannel();
-            FileChannel dst = new FileOutputStream(backupFile).getChannel();
-            dst.transferFrom(src, 0, src.size());
-            src.close();
-            dst.close();
-            NinjaToast.show(getActivity(), getString(R.string.app_done));
-        } catch (IOException e) {
-            e.printStackTrace();
+        if (!BackupUnit.checkPermissionStorage(context)) {
+            BackupUnit.requestPermission((Activity) context);
+        } else {
+            if (backupFile.exists()){
+                if (!backupFile.delete()){
+                    Toast.makeText(context,getResources().getString(R.string.toast_delete), Toast.LENGTH_LONG).show();
+                }
+            }
+            try {
+                FileChannel src = new FileInputStream(prefsFile).getChannel();
+                FileChannel dst = new FileOutputStream(backupFile).getChannel();
+                dst.transferFrom(src, 0, src.size());
+                src.close();
+                dst.close();
+                NinjaToast.show(getActivity(), getString(R.string.app_done));
+            } catch (IOException e) {
+                e.printStackTrace();
+                Toast.makeText(context,e.toString(), Toast.LENGTH_LONG).show();
+            }
         }
     }
 
@@ -243,7 +257,7 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat implement
                     BackupUnit.importPrefsFromFile(context, inputStream);
                 } catch (IOException | SAXException | ParserConfigurationException e) {
                     e.printStackTrace();
-                    NinjaToast.show(context, context.getString(R.string.app_error));
+                    Toast.makeText(context,e.toString(), Toast.LENGTH_LONG).show();
                 }
             }
         }
@@ -263,7 +277,10 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat implement
                 try {
                     BufferedReader reader = new BufferedReader(new FileReader(file));
                     BackupUnit.importBookmarksFromFile(context, reader, list);
-                } catch (Exception ignored) {}
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    Toast.makeText(context,e.toString(), Toast.LENGTH_LONG).show();
+                }
             }
         }
     }

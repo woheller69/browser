@@ -96,6 +96,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
 
+import de.baumann.browser.GithubStar;
 import de.baumann.browser.browser.AdBlock;
 import de.baumann.browser.browser.AlbumController;
 import de.baumann.browser.browser.BrowserContainer;
@@ -303,7 +304,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 addAlbum(getString(R.string.app_name), openTabs.get(counter), BrowserContainer.size() < 1);
             }
         }
-
+        if (GithubStar.shouldShowStarDialog(this)) GithubStar.starDialog(this,"https://github.com/woheller69/browser");
     }
 
     @Override

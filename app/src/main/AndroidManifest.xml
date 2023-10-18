@@ -28,8 +28,6 @@
     <application
         android:label="@string/app_name"
         android:icon="@mipmap/ic_launcher"
-        android:allowBackup="true"
-        android:fullBackupContent="@xml/backup"
         android:largeHeap="true"
         android:hardwareAccelerated="true"
         android:usesCleartextTraffic="true"

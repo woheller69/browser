@@ -210,18 +210,10 @@
     <string name="toast_unsecured">Website uses an unsecured connection (\"http\"). Try a secure connection (\"https\")?</string>
     <string name="toast_backup">Backup data? This will overwrite the old backup.</string>
 
-
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">Clear</string>
     <string name="whitelist_edit_hint">Domain</string>
     <string name="whitelist_add">Add</string>
-
-
-
-    <!-- Dialog help -->
-
-
-    <!-- Dialog changelog -->
 
     <string name="menu_mobileView">Mobile view</string>
     <string name="menu_desktopView">Desktop view</string>
@@ -231,6 +223,6 @@
     <string name="hint_DRM_Media">Allow DRM protected media playback?</string>
     <string name="setting_userScript" translatable="false">Greasemonkey Scripts</string>
 
-    <!-- License changelog -->
-
+    <string name="dialog_Later_button">Maybe later</string>
+    <string name="dialog_StarOnGitHub">Do you like this app? Please give a star on GitHub or buy the developer a coffee via PayPal.</string>
 </resources>

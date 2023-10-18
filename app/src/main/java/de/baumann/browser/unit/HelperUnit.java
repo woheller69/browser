@@ -294,6 +294,7 @@ public class HelperUnit {
                     try {FileOutputStream fos = new FileOutputStream(file);
                         fos.write(imagedata);
                     }catch (Exception e){
+                        NinjaToast.show(activity,e.toString());
                         System.out.println("Error Downloading File: " + e.toString());
                         e.printStackTrace();
                     }

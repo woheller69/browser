@@ -22,6 +22,7 @@ package de.baumann.browser.unit;
 import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
@@ -30,7 +31,9 @@ import android.os.Environment;
 import androidx.appcompat.app.AlertDialog;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.preference.PreferenceManager;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -39,6 +42,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.nio.file.Files;
+import java.util.Collections;
 import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
@@ -46,8 +50,18 @@ import java.util.zip.ZipInputStream;
 import de.baumann.browser.R;
 import de.baumann.browser.database.Record;
 import de.baumann.browser.database.RecordAction;
+import de.baumann.browser.view.NinjaToast;
 
 import static android.os.Environment.DIRECTORY_DOCUMENTS;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.xml.sax.SAXException;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 
 public class BackupUnit {
 
@@ -114,6 +128,74 @@ public class BackupUnit {
         if (!wasSuccessful) {
             System.out.println("was not successful.");
         }
+    }
+
+    public static void importPrefsFromFile(Context context, InputStream inputStream) throws ParserConfigurationException, IOException, SAXException {
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.clear().commit();
+        DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
+        Document doc = docBuilder.parse(inputStream);
+        Element root = doc.getDocumentElement();
+        Node child = root.getFirstChild();
+        while (child != null) {
+            if (child.getNodeType() == Node.ELEMENT_NODE) {
+                Element element = (Element) child;
+                String type = element.getNodeName();
+                String name = element.getAttribute("name");
+                // In my app, all prefs seem to get serialized as either "string" or
+                // "boolean" - this will need expanding if yours uses any other types!
+                if (type.equals("string")) {
+                    String value = element.getTextContent();
+                    editor.putString(name, value);
+                } else if (type.equals("boolean")) {
+                    String value = element.getAttribute("value");
+                    editor.putBoolean(name, value.equals("true"));
+                }
+            }
+            child = child.getNextSibling();
+        }
+        editor.apply();
+        NinjaToast.show(context, context.getString(R.string.app_done));
+    }
+
+    public static void importBookmarksFromFile(Context context, BufferedReader reader, List<Record> list) throws IOException {
+        BrowserUnit.clearBookmark(context);
+        RecordAction action = new RecordAction(context);
+        action.open(true);
+        String line;
+        while ((line = reader.readLine()) != null) {
+            line = line.trim();
+            if (!((line.startsWith("<dt><a ") && line.endsWith("</a>")) || (line.startsWith("<DT><A ") && line.endsWith("</A>")))) {
+                continue;
+            }
+            String title = BackupUnit.getBookmarkTitle(line);
+            String url = BackupUnit.getBookmarkURL(line);
+            long date = BackupUnit.getBookmarkDate(line);
+            if (date >123) date=11;  //if no color defined yet set it red (123 is max: 11 for color + 16 for desktop mode + 32 for Javascript + 64 for DOM Content
+            if (title.trim().isEmpty() || url.trim().isEmpty()) {
+                continue;
+            }
+            Record record = new Record();
+            record.setTitle(title);
+            record.setURL(url);
+            record.setIconColor(date&15);
+            record.setDesktopMode((date&16)==16);
+            record.setJavascript(!((date&32)==32));
+            record.setDomStorage(!((date&64)==64));
+
+            if (!action.checkUrl(url, RecordUnit.TABLE_BOOKMARK)) {
+                list.add(record);
+            }
+        }
+        reader.close();
+        Collections.sort(list, (first, second) -> first.getTitle().compareTo(second.getTitle()));
+        for (Record record : list) {
+            action.addBookmark(record);
+        }
+        action.close();
+        NinjaToast.show(context, context.getString(R.string.app_done));
     }
 
     public static void exportBookmarks(Context context) {

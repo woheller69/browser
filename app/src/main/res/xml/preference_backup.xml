@@ -4,34 +4,10 @@
 
     <Preference android:summary="@string/data_summary" />
 
-    <CheckBoxPreference
-        android:key="database"
-        android:defaultValue="false"
-        android:title="@string/title_appData"/>
-
-    <CheckBoxPreference
-        android:key="settings"
-        android:defaultValue="false"
-        android:title="@string/setting_label"/>
-
-    <CheckBoxPreference
-        android:key="bookmark"
-        android:defaultValue="false"
-        android:title="@string/album_title_bookmarks"/>
-
-    <CheckBoxPreference
-        android:key="java"
-        android:defaultValue="false"
-        android:title="@string/setting_title_javascript"/>
-
-    <CheckBoxPreference
-        android:key="cookie"
-        android:defaultValue="false"
-        android:title="@string/setting_title_cookie"/>
-
-    <CheckBoxPreference
-        android:key="dom"
-        android:defaultValue="false"
-        android:title="@string/setting_title_dom"/>
+    <ListPreference
+        android:key="backrestore"
+        android:defaultValue="1"
+        android:entries="@array/setting_entries_backup"
+        android:entryValues="@array/setting_values_backup"/>
 
 </PreferenceScreen>

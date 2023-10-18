@@ -2,17 +2,26 @@ package de.baumann.browser.fragment;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AlertDialog;
+import androidx.preference.ListPreference;
+import androidx.preference.Preference;
+import androidx.preference.PreferenceGroup;
 import androidx.preference.PreferenceManager;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import android.view.Gravity;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.preference.PreferenceFragmentCompat;
 
@@ -21,13 +30,18 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.xml.sax.SAXException;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.OutputStream;
+import java.io.InputStreamReader;
 import java.nio.channels.FileChannel;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Objects;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -35,15 +49,24 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
 import de.baumann.browser.R;
+import de.baumann.browser.database.Record;
+import de.baumann.browser.database.RecordAction;
 import de.baumann.browser.unit.BackupUnit;
+import de.baumann.browser.unit.BrowserUnit;
+import de.baumann.browser.unit.RecordUnit;
 import de.baumann.browser.view.NinjaToast;
 
 import static android.os.Environment.DIRECTORY_DOCUMENTS;
 
-public class Fragment_settings_Backup extends PreferenceFragmentCompat {
+import net.lingala.zip4j.ZipFile;
+import net.lingala.zip4j.exception.ZipException;
+
+public class Fragment_settings_Backup extends PreferenceFragmentCompat implements SharedPreferences.OnSharedPreferenceChangeListener {
+    ActivityResultLauncher<Intent> mRestoreDatabase;
+    ActivityResultLauncher<Intent> mRestorePrefs;
+    ActivityResultLauncher<Intent> mImportBookmarks;
 
     public File sd;
-    public File data;
     public Context context;
     public Activity activity;
 
@@ -51,21 +74,17 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat {
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
 
         setPreferencesFromResource(R.xml.preference_backup, rootKey);
+        PreferenceManager.setDefaultValues(getContext(), R.xml.preference_backup, false);
+        initSummary(getPreferenceScreen());
         context = getContext();
         activity = getActivity();
         assert context != null;
         assert activity != null;
 
+        Preference backupRestore = findPreference("backrestore");
+        backupRestore.setTitle(getString(R.string.setting_title_data)+" / "+getString(R.string.settings_data_restore));
+
         sd = Environment.getExternalStoragePublicDirectory(DIRECTORY_DOCUMENTS);
-        data = Environment.getDataDirectory();
-        String database_app = "//data//" + requireActivity().getPackageName() + "//databases//Ninja4.db";
-        String database_favicon = "//data//" + requireActivity().getPackageName() + "//databases//favicon.db";
-        String database_app_backup = "browser_backup//database.db";
-        String favicon_backup = "browser_backup//favicon.db";
-        final File appDB = new File(data, database_app);
-        final File faviconDB = new File(data, database_favicon);
-        final File appDBbackup = new File(sd, database_app_backup);
-        final File faviconDBbackup = new File(sd, favicon_backup);
 
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
 
@@ -78,24 +97,12 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat {
                             BackupUnit.requestPermission(activity);
                         } else {
                             BackupUnit.makeBackupDir();
-                            if (sp.getBoolean("database", false)) {
-                                copyDirectory(appDB, appDBbackup);
-                                copyDirectory(faviconDB, faviconDBbackup);
-                            }
-                            if (sp.getBoolean("settings", false)) {
+                            if (sp.getString("backrestore", "1").equals("1")) {
+                                backupDatabase();
+                            } else if (sp.getString("backrestore", "1").equals("2")){
                                 backupUserPrefs(context);
-                            }
-                            if (sp.getBoolean("bookmark", false)) {
-                                BackupUnit.backupData(getActivity(), 4);
-                            }
-                            if (sp.getBoolean("java", false)) {
-                                BackupUnit.backupData(getActivity(), 1);
-                            }
-                            if (sp.getBoolean("cookie", false)) {
-                                BackupUnit.backupData(getActivity(), 2);
-                            }
-                            if (sp.getBoolean("dom", false)) {
-                                BackupUnit.backupData(getActivity(), 3);
+                            } else if (sp.getString("backrestore", "1").equals("3")) {
+                                BackupUnit.exportBookmarks(context);
                             }
                         }
                     });
@@ -113,24 +120,12 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat {
                 if (!BackupUnit.checkPermissionStorage(context)) {
                     BackupUnit.requestPermission(activity);
                 } else {
-                    if (sp.getBoolean("database", false)) {
-                        copyDirectory(appDBbackup, appDB);
-                        copyDirectory(faviconDBbackup, faviconDB);
-                    }
-                    if (sp.getBoolean("settings", false)) {
+                    if (sp.getString("backrestore", "1").equals("1")) {
+                        restoreDatabase();
+                    } else if (sp.getString("backrestore", "1").equals("2")) {
                         restoreUserPrefs(context);
-                    }
-                    if (sp.getBoolean("bookmark", false)) {
-                        BackupUnit.restoreData(getActivity(), 4);
-                    }
-                    if (sp.getBoolean("java", false)) {
-                        BackupUnit.restoreData(getActivity(), 1);
-                    }
-                    if (sp.getBoolean("cookie", false)) {
-                        BackupUnit.restoreData(getActivity(), 2);
-                    }
-                    if (sp.getBoolean("dom", false)) {
-                        BackupUnit.restoreData(getActivity(), 3);
+                    } else if (sp.getString("backrestore", "1").equals("3")) {
+                        importBookmarks(context);
                     }
                     dialogRestart();
                 }
@@ -140,6 +135,102 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat {
             dialog.show();
             Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
         });
+
+        mRestoreDatabase = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                result -> {
+                    File intData = new File(Environment.getDataDirectory() + "//data//" + context.getPackageName());
+                    if (result.getData()!=null && result.getData().getData()!=null){
+                        BackupUnit.zipExtract(context, intData, result.getData().getData());
+                        NinjaToast.show(context, context.getString(R.string.app_done));
+                    }
+                });
+
+        mRestorePrefs = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                result -> {
+                    if (result.getData()!=null && result.getData().getData()!=null) {
+                        try {
+                            InputStream inputStream = context.getContentResolver().openInputStream(result.getData().getData());
+                            SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+                            SharedPreferences.Editor editor = sharedPreferences.edit();
+                            //editor.clear().commit();
+                            DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
+                            DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
+                            Document doc = docBuilder.parse(inputStream);
+                            Element root = doc.getDocumentElement();
+                            Node child = root.getFirstChild();
+                            while (child != null) {
+                                if (child.getNodeType() == Node.ELEMENT_NODE) {
+                                    Element element = (Element) child;
+                                    String type = element.getNodeName();
+                                    String name = element.getAttribute("name");
+                                    // In my app, all prefs seem to get serialized as either "string" or
+                                    // "boolean" - this will need expanding if yours uses any other types!
+                                    if (type.equals("string")) {
+                                        String value = element.getTextContent();
+                                        editor.putString(name, value);
+                                    } else if (type.equals("boolean")) {
+                                        String value = element.getAttribute("value");
+                                        editor.putBoolean(name, value.equals("true"));
+                                    }
+                                }
+                                child = child.getNextSibling();
+                            }
+                            editor.apply();
+                            NinjaToast.show(context, context.getString(R.string.app_done));
+                        } catch (IOException | SAXException | ParserConfigurationException e) {
+                            e.printStackTrace();
+                            NinjaToast.show(context, context.getString(R.string.app_error));
+                        }
+                    }
+                });
+
+        mImportBookmarks = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                result -> {
+                    if (result.getData()!=null && result.getData().getData()!=null) {
+                        List<Record> list = new ArrayList<>();
+                        try {
+                            BufferedReader reader = new BufferedReader(new InputStreamReader(context.getContentResolver().openInputStream(result.getData().getData())));
+                            BrowserUnit.clearBookmark(context);
+                            RecordAction action = new RecordAction(context);
+                            action.open(true);
+                            String line;
+                            while ((line = reader.readLine()) != null) {
+                                line = line.trim();
+                                if (!((line.startsWith("<dt><a ") && line.endsWith("</a>")) || (line.startsWith("<DT><A ") && line.endsWith("</A>")))) {
+                                    continue;
+                                }
+                                String title = BackupUnit.getBookmarkTitle(line);
+                                String url = BackupUnit.getBookmarkURL(line);
+                                long date = BackupUnit.getBookmarkDate(line);
+                                if (date >123) date=11;  //if no color defined yet set it red (123 is max: 11 for color + 16 for desktop mode + 32 for Javascript + 64 for DOM Content
+                                if (title.trim().isEmpty() || url.trim().isEmpty()) {
+                                    continue;
+                                }
+                                Record record = new Record();
+                                record.setTitle(title);
+                                record.setURL(url);
+                                record.setIconColor(date&15);
+                                record.setDesktopMode((date&16)==16);
+                                record.setJavascript(!((date&32)==32));
+                                record.setDomStorage(!((date&64)==64));
+
+                                if (!action.checkUrl(url, RecordUnit.TABLE_BOOKMARK)) {
+                                    list.add(record);
+                                }
+                            }
+                            reader.close();
+                            Collections.sort(list, (first, second) -> first.getTitle().compareTo(second.getTitle()));
+                            for (Record record : list) {
+                                action.addBookmark(record);
+                            }
+                            action.close();
+                            NinjaToast.show(context, context.getString(R.string.app_done));
+                        } catch (Exception ignored) {}
+                    }
+                });
     }
 
     private void dialogRestart () {
@@ -147,39 +238,46 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat {
         sp.edit().putInt("restart_changed", 1).apply();
     }
 
-    // If targetLocation does not exist, it will be created.
-    private void copyDirectory(File sourceLocation, File targetLocation) {
 
-        try {
-            if (sourceLocation.isDirectory()) {
-                if (!targetLocation.exists() && !targetLocation.mkdirs()) {
-                    throw new IOException("Cannot create dir " + targetLocation.getAbsolutePath());
-                }
-                String[] children = sourceLocation.list();
-                for (String aChildren : Objects.requireNonNull(children)) {
-                    copyDirectory(new File(sourceLocation, aChildren), new File(targetLocation, aChildren));
-                }
+    public void restoreDatabase() {
+        File intData;
+        intData = new File(Environment.getDataDirectory() + "//data//" + context.getPackageName());
+        String filesBackup = "//browser_backup//"+getResources().getString(R.string.app_name)+".zip";
+        final File zipFileBackup = new File(sd, filesBackup);
+        if (!BackupUnit.checkPermissionStorage(context)) {
+            BackupUnit.requestPermission((Activity) context);
+        } else {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+                intent.setType("application/zip");
+                mRestoreDatabase.launch(intent);
             } else {
-                // make sure the directory we plan to store the recording in exists
-                File directory = targetLocation.getParentFile();
-                if (directory != null && !directory.exists() && !directory.mkdirs()) {
-                    throw new IOException("Cannot create dir " + directory.getAbsolutePath());
-                }
-
-                InputStream in = new FileInputStream(sourceLocation);
-                OutputStream out = new FileOutputStream(targetLocation);
-                // Copy the bits from InputStream to OutputStream
-                byte[] buf = new byte[1024];
-                int len;
-                while ((len = in.read(buf)) > 0) {
-                    out.write(buf, 0, len);
-                }
-                in.close();
-                out.close();
-                NinjaToast.show(getActivity(), getString(R.string.app_done));
+                BackupUnit.zipExtract(context, intData, Uri.fromFile(zipFileBackup));
+                NinjaToast.show(context, context.getString(R.string.app_done));
             }
-        } catch (IOException e) {
-            e.printStackTrace();
+        }
+    }
+
+    public void backupDatabase() {
+        File intDatabase;
+        intDatabase = new File(Environment.getDataDirectory()+"//data//" + context.getPackageName() + "//databases//");
+        String filesBackup = getResources().getString(R.string.app_name)+".zip";
+        final File dbBackup = new File(sd + "//browser_backup//", filesBackup);
+        if (!BackupUnit.checkPermissionStorage(context)) {
+            BackupUnit.requestPermission((Activity) context);
+        } else {
+            if (dbBackup.exists()){
+                if (!dbBackup.delete()){
+                    Toast.makeText(context,getResources().getString(R.string.toast_delete), Toast.LENGTH_LONG).show();
+                }
+            }
+            NinjaToast.show(context," -> " + dbBackup.toString());
+            try {
+                ZipFile zipFile = new ZipFile(dbBackup);
+                zipFile.addFolder(intDatabase);
+            } catch (ZipException e) {
+                Toast.makeText(context,e.toString(), Toast.LENGTH_LONG).show();
+            }
         }
     }
 
@@ -199,38 +297,137 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat {
     }
 
     private void restoreUserPrefs(Context context) {
+
         final File backupFile = new File(sd, "browser_backup/preferenceBackup.xml");
-        try {
-            SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
-            SharedPreferences.Editor editor = sharedPreferences.edit();
-            InputStream inputStream = new FileInputStream(backupFile);
-            DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
-            DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
-            Document doc = docBuilder.parse(inputStream);
-            Element root = doc.getDocumentElement();
-            Node child = root.getFirstChild();
-            while (child != null) {
-                if (child.getNodeType() == Node.ELEMENT_NODE) {
-                    Element element = (Element) child;
-                    String type = element.getNodeName();
-                    String name = element.getAttribute("name");
-                    // In my app, all prefs seem to get serialized as either "string" or
-                    // "boolean" - this will need expanding if yours uses any other types!
-                    if (type.equals("string")) {
-                        String value = element.getTextContent();
-                        editor.putString(name, value);
-                    } else if (type.equals("boolean")) {
-                        String value = element.getAttribute("value");
-                        editor.putBoolean(name, value.equals("true"));
+        if (!BackupUnit.checkPermissionStorage(context)) {
+            BackupUnit.requestPermission((Activity) context);
+        } else {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+                intent.setType("text/xml");
+                mRestorePrefs.launch(intent);
+            } else {
+                try {
+                    InputStream inputStream = new FileInputStream(backupFile);
+                    SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    //editor.clear().commit();
+                    DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
+                    DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
+                    Document doc = docBuilder.parse(inputStream);
+                    Element root = doc.getDocumentElement();
+                    Node child = root.getFirstChild();
+                    while (child != null) {
+                        if (child.getNodeType() == Node.ELEMENT_NODE) {
+                            Element element = (Element) child;
+                            String type = element.getNodeName();
+                            String name = element.getAttribute("name");
+                            // In my app, all prefs seem to get serialized as either "string" or
+                            // "boolean" - this will need expanding if yours uses any other types!
+                            if (type.equals("string")) {
+                                String value = element.getTextContent();
+                                editor.putString(name, value);
+                            } else if (type.equals("boolean")) {
+                                String value = element.getAttribute("value");
+                                editor.putBoolean(name, value.equals("true"));
+                            }
+                        }
+                        child = child.getNextSibling();
                     }
+                    editor.apply();
+                    NinjaToast.show(context, context.getString(R.string.app_done));
+                } catch (IOException | SAXException | ParserConfigurationException e) {
+                    e.printStackTrace();
+                    NinjaToast.show(context, context.getString(R.string.app_error));
                 }
-                child = child.getNextSibling();
             }
-            editor.apply();
-            NinjaToast.show(context, context.getString(R.string.app_done));
-        } catch (IOException | SAXException | ParserConfigurationException e) {
-            e.printStackTrace();
-            NinjaToast.show(context, context.getString(R.string.app_error));
         }
+    }
+
+    public void importBookmarks(Context context) {
+        File file = new File(Environment.getExternalStoragePublicDirectory(DIRECTORY_DOCUMENTS), "browser_backup//export_bookmark_list.html");
+        if (!BackupUnit.checkPermissionStorage(context)) {
+            BackupUnit.requestPermission((Activity) context);
+        } else {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+                intent.setType("text/html");
+                mImportBookmarks.launch(intent);
+            } else {
+                List<Record> list = new ArrayList<>();
+                try {
+                    BufferedReader reader = new BufferedReader(new FileReader(file));
+                    BrowserUnit.clearBookmark(context);
+                    RecordAction action = new RecordAction(context);
+                    action.open(true);
+                    String line;
+                    while ((line = reader.readLine()) != null) {
+                        line = line.trim();
+                        if (!((line.startsWith("<dt><a ") && line.endsWith("</a>")) || (line.startsWith("<DT><A ") && line.endsWith("</A>")))) {
+                            continue;
+                        }
+                        String title = BackupUnit.getBookmarkTitle(line);
+                        String url = BackupUnit.getBookmarkURL(line);
+                        long date = BackupUnit.getBookmarkDate(line);
+                        if (date >123) date=11;  //if no color defined yet set it red (123 is max: 11 for color + 16 for desktop mode + 32 for Javascript + 64 for DOM Content
+                        if (title.trim().isEmpty() || url.trim().isEmpty()) {
+                            continue;
+                        }
+                        Record record = new Record();
+                        record.setTitle(title);
+                        record.setURL(url);
+                        record.setIconColor(date&15);
+                        record.setDesktopMode((date&16)==16);
+                        record.setJavascript(!((date&32)==32));
+                        record.setDomStorage(!((date&64)==64));
+
+                        if (!action.checkUrl(url, RecordUnit.TABLE_BOOKMARK)) {
+                            list.add(record);
+                        }
+                    }
+                    reader.close();
+                    Collections.sort(list, (first, second) -> first.getTitle().compareTo(second.getTitle()));
+                    for (Record record : list) {
+                        action.addBookmark(record);
+                    }
+                    action.close();
+                    NinjaToast.show(context, context.getString(R.string.app_done));
+                } catch (Exception ignored) {}
+            }
+        }
+    }
+
+    private void initSummary(Preference p) {
+        if (p instanceof PreferenceGroup) {
+            PreferenceGroup pGrp = (PreferenceGroup) p;
+            for (int i = 0; i < pGrp.getPreferenceCount(); i++) {
+                initSummary(pGrp.getPreference(i));
+            }
+        } else {
+            updatePrefSummary(p);
+        }
+    }
+    private void updatePrefSummary(Preference p) {
+        if (p instanceof ListPreference) {
+            ListPreference listPref = (ListPreference) p;
+            p.setSummary(listPref.getEntry());
+        }
+    }
+
+    @Override
+    public void onSharedPreferenceChanged(final SharedPreferences sp, String key) {
+        updatePrefSummary(findPreference(key));
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        getPreferenceScreen().getSharedPreferences().registerOnSharedPreferenceChangeListener(this);
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        getPreferenceScreen().getSharedPreferences().unregisterOnSharedPreferenceChangeListener(this);
     }
 }

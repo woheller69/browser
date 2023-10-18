@@ -111,17 +111,16 @@
 
     <!-- Backup -->
     <string-array name="setting_entries_backup">
+        <item>@string/title_appData</item>
+        <item>@string/setting_label</item>
         <item>@string/album_title_bookmarks</item>
-        <item>@string/setting_title_javascript</item>
-        <item>@string/setting_title_cookie</item>
-        <item>@string/setting_title_dom</item>
     </string-array>
 
     <string-array name="setting_values_backup">
-        <item>bookmark</item>
-        <item>java</item>
-        <item>cookie</item>
-        <item>dom</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+
     </string-array>
 
     <!-- Restore -->

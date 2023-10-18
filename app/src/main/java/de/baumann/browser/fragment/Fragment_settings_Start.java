@@ -27,7 +27,7 @@ public class Fragment_settings_Start extends PreferenceFragmentCompat implements
         Context context = getContext();
         assert context != null;
 
-        PreferenceManager.setDefaultValues(getContext(), R.xml.preference_ui, false);
+        PreferenceManager.setDefaultValues(getContext(), R.xml.preference_start, false);
         initSummary(getPreferenceScreen());
 
         Preference sp_ad_block = findPreference("sp_ad_block");

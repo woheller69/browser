@@ -1,6 +1,5 @@
 package de.baumann.browser.activity;
 
-import android.Manifest;
 import android.animation.ObjectAnimator;
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -15,8 +14,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
-import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -28,8 +25,6 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.PopupMenu;
 import androidx.cardview.widget.CardView;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 import androidx.preference.PreferenceManager;
 
 import android.os.Handler;
@@ -135,7 +130,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     private RelativeLayout omniBox;
     private ImageButton omniBox_overview;
     private AutoCompleteTextView omniBox_text;
-    private ImageButton tab_openOverView;
 
     // Views
 
@@ -497,7 +491,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
     public void showTabView () {
         HelperUnit.hideSoftKeyboard(omniBox_text, context);
-        tab_openOverView.setImageResource(R.drawable.icon_bookmark_light);
         dialog_tabPreview.show();
     }
 
@@ -536,18 +529,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         View dialogView = View.inflate(context, R.layout.dialog_tabs, null);
 
         tab_container = dialogView.findViewById(R.id.tab_container);
-        tab_openOverView = dialogView.findViewById(R.id.tab_openOverView);
-        tab_openOverView.setOnClickListener(view -> {
-            dialog_tabPreview.cancel();
-            showOverview();
-        });
-        tab_openOverView.setOnLongClickListener(v -> {
-            bottom_navigation.setSelectedItemId(R.id.page_2);
-            hideTabView();
-            showOverview();
-            show_dialogFilter();
-            return false;
-        });
 
         builder.setView(dialogView);
         dialog_tabPreview = builder.create();

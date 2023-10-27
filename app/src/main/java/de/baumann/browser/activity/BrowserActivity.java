@@ -782,7 +782,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     hideOverview();
                 });
                 listView.setOnItemLongClickListener((parent, view, position, id) -> {
-                    showContextMenuList(list.get(position).getTitle(), list.get(position).getURL(), adapter, list, position);
+                    showContextMenuList(adapter, list, position);
                     return true;
                 });
             } else if (menuItem.getItemId() == R.id.page_4) {
@@ -1713,8 +1713,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         });
     }
 
-    private void showContextMenuList (final String title, final String url,
-                                      final RecordAdapter adapterRecord, final List<Record> recordList, final int location) {
+    private void showContextMenuList (final RecordAdapter adapterRecord, final List<Record> recordList, final int pos) {
+
+        final String title = recordList.get(pos).getTitle();
+        final String url = recordList.get(pos).getURL();
 
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
         View dialogView = View.inflate(context, R.layout.dialog_menu, null);
@@ -1774,12 +1776,12 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     builderSubMenu = new MaterialAlertDialogBuilder(context);
                     builderSubMenu.setMessage(R.string.hint_database);
                     builderSubMenu.setPositiveButton(R.string.app_ok, (dialog2, whichButton) -> {
-                        Record record = recordList.get(location);
+                        Record record = recordList.get(pos);
                         RecordAction action = new RecordAction(context);
                         action.open(true);
                         action.deleteURL(record.getURL(), RecordUnit.TABLE_BOOKMARK);
                         action.close();
-                        recordList.remove(location);
+                        recordList.remove(pos);
                         adapterRecord.notifyDataSetChanged();
                     });
                     builderSubMenu.setNegativeButton(R.string.app_cancel, (dialog2, whichButton) -> builderSubMenu.setCancelable(true));
@@ -1788,7 +1790,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     Objects.requireNonNull(dialogSubMenu.getWindow()).setGravity(Gravity.BOTTOM);
                     break;
                 case 4:
-                    Record bookmark = recordList.get(location);
+                    Record bookmark = recordList.get(pos);
                     editBookmark(bookmark);
             }
         });

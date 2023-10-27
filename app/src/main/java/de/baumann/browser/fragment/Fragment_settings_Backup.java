@@ -176,12 +176,12 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat implement
     public void restoreDatabase() {
         File intData;
         intData = new File(Environment.getDataDirectory() + "//data//" + context.getPackageName());
-        String filesBackup = "//browser_backup//"+getResources().getString(R.string.app_name)+".zip";
+        String filesBackup = "//browser_backup//"+"app_data.zip";
         final File zipFileBackup = new File(sd, filesBackup);
         if (!BackupUnit.checkPermissionStorage(context)) {
             BackupUnit.requestPermission((Activity) context);
         } else {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            if ((Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) && !Environment.isExternalStorageManager()) {
                 Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
                 intent.setType("application/zip");
                 mRestoreDatabase.launch(intent);
@@ -195,7 +195,7 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat implement
     public void backupDatabase() {
         File intDatabase;
         intDatabase = new File(Environment.getDataDirectory()+"//data//" + context.getPackageName() + "//databases//");
-        String filesBackup = getResources().getString(R.string.app_name)+".zip";
+        String filesBackup = "app_data.zip";
         final File dbBackup = new File(sd + "//browser_backup//", filesBackup);
         if (!BackupUnit.checkPermissionStorage(context)) {
             BackupUnit.requestPermission((Activity) context);
@@ -247,7 +247,7 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat implement
         if (!BackupUnit.checkPermissionStorage(context)) {
             BackupUnit.requestPermission((Activity) context);
         } else {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            if ((Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) && !Environment.isExternalStorageManager()) {
                 Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
                 intent.setType("text/xml");
                 mRestorePrefs.launch(intent);
@@ -268,7 +268,7 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat implement
         if (!BackupUnit.checkPermissionStorage(context)) {
             BackupUnit.requestPermission((Activity) context);
         } else {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            if ((Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) && !Environment.isExternalStorageManager()) {
                 Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
                 intent.setType("text/html");
                 mImportBookmarks.launch(intent);

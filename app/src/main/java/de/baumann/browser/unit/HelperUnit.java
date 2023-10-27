@@ -47,6 +47,7 @@ import android.webkit.CookieManager;
 import android.webkit.URLUtil;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import java.io.File;
 
@@ -124,6 +125,9 @@ public class HelperUnit {
                         Uri source = Uri.parse(url);
                         DownloadManager.Request request = new DownloadManager.Request(source);
                         request.addRequestHeader("Cookie", CookieManager.getInstance().getCookie(url));
+                        request.addRequestHeader("Accept", "text/html, application/xhtml+xml, *" + "/" + "*");
+                        request.addRequestHeader("Accept-Language", "en-US,en;q=0.7,he;q=0.3");
+                        request.addRequestHeader("Referer", url);
                         request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED); //Notify client once download is completed!
                         request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, filename1);
                         DownloadManager dm = (DownloadManager) activity.getSystemService(DOWNLOAD_SERVICE);
@@ -291,6 +295,11 @@ public class HelperUnit {
             } else {
                 if (BackupUnit.checkPermissionStorage(activity)) {
                     File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), filename1);
+                    if (file.exists()) {
+                        if (!file.delete()) {
+                            Toast.makeText(activity, activity.getResources().getString(R.string.toast_delete), Toast.LENGTH_LONG).show();
+                        }
+                    }
                     try {FileOutputStream fos = new FileOutputStream(file);
                         fos.write(imagedata);
                     }catch (Exception e){

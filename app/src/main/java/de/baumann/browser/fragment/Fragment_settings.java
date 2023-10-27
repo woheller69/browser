@@ -14,7 +14,6 @@ import androidx.preference.PreferenceManager;
 import de.baumann.browser.activity.Settings_Delete;
 import de.baumann.browser.activity.Settings_Backup;
 import de.baumann.browser.activity.Settings_Filter;
-import de.baumann.browser.activity.Settings_Gesture;
 import de.baumann.browser.activity.Settings_StartActivity;
 import de.baumann.browser.activity.Settings_UI;
 import de.baumann.browser.R;
@@ -50,14 +49,6 @@ public class Fragment_settings extends PreferenceFragmentCompat {
         assert settings_ui != null;
         settings_ui.setOnPreferenceClickListener(preference -> {
             Intent intent = new Intent(getActivity(), Settings_UI.class);
-            requireActivity().startActivity(intent);
-            return false;
-        });
-
-        Preference settings_gesture = findPreference("settings_gesture");
-        assert settings_gesture != null;
-        settings_gesture.setOnPreferenceClickListener(preference -> {
-            Intent intent = new Intent(getActivity(), Settings_Gesture.class);
             requireActivity().startActivity(intent);
             return false;
         });

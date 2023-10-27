@@ -16,6 +16,7 @@
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" tools:ignore="ScopedStorage" />
 
     <uses-permission android:name="android.permission.CAMERA"/>
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
@@ -104,10 +105,6 @@
 
         <activity android:name="de.baumann.browser.activity.Settings_UI"
             android:label="@string/setting_title_ui"
-            android:theme="@style/AppTheme"/>
-
-        <activity android:name="de.baumann.browser.activity.Settings_Gesture"
-            android:label="@string/setting_gestures"
             android:theme="@style/AppTheme"/>
 
         <activity android:name="de.baumann.browser.activity.Settings_Filter"

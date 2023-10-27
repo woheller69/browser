@@ -40,10 +40,6 @@
         <item>@string/setting_gesture_05</item>
         <item>@string/setting_gesture_06</item>
         <item>@string/setting_gesture_07</item>
-        <item>@string/setting_gesture_08</item>
-        <item>@string/setting_gesture_09</item>
-        <item>@string/setting_gesture_10</item>
-        <item>@string/album_title_tab</item>
         <item>@string/menu_share_link</item>
         <item>@string/menu_other_searchSite</item>
         <item>@string/menu_save_bookmark</item>
@@ -57,10 +53,6 @@
         <item>05</item>
         <item>06</item>
         <item>07</item>
-        <item>08</item>
-        <item>09</item>
-        <item>10</item>
-        <item>11</item>
         <item>12</item>
         <item>13</item>
         <item>14</item>

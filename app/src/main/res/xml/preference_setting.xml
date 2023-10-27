@@ -18,10 +18,6 @@
             android:title="@string/setting_filter"/>
 
         <Preference
-            android:key="settings_gesture"
-            android:title="@string/setting_gestures"/>
-
-        <Preference
             android:key="settings_data"
             android:title="@string/setting_title_data"/>
 

@@ -15,7 +15,7 @@ import androidx.preference.PreferenceManager;
 import de.baumann.browser.activity.Whitelist_Cookie;
 import de.baumann.browser.activity.Whitelist_Javascript;
 import de.baumann.browser.R;
-import de.baumann.browser.activity.Whitelist_Remote;
+import de.baumann.browser.activity.Whitelist_DOM;
 import de.baumann.browser.browser.AdBlock;
 
 public class Fragment_settings_Start extends PreferenceFragmentCompat implements SharedPreferences.OnSharedPreferenceChangeListener{
@@ -48,10 +48,10 @@ public class Fragment_settings_Start extends PreferenceFragmentCompat implements
             requireActivity().startActivity(intent);
             return false;
         });
-        Preference start_remote = findPreference("start_remote");
-        assert start_remote != null;
-        start_remote.setOnPreferenceClickListener(preference -> {
-            Intent intent = new Intent(getActivity(), Whitelist_Remote.class);
+        Preference start_dom = findPreference("start_dom");
+        assert start_dom != null;
+        start_dom.setOnPreferenceClickListener(preference -> {
+            Intent intent = new Intent(getActivity(), Whitelist_DOM.class);
             requireActivity().startActivity(intent);
             return false;
         });

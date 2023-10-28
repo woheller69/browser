@@ -81,12 +81,12 @@
     <PreferenceCategory >
 
         <SwitchPreference
-            android:key="sp_remote"
+            android:key="sp_dom"
             android:title="@string/setting_title_dom"
             android:defaultValue="true" />
 
         <Preference
-            android:key="start_remote"
+            android:key="start_dom"
             android:title="@string/setting_title_dom_whitelist"/>
 
     </PreferenceCategory>

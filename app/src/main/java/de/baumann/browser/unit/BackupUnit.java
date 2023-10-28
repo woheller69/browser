@@ -181,7 +181,7 @@ public class BackupUnit {
             Record record = new Record();
             record.setTitle(title);
             record.setURL(url);
-            record.setIconColor(date&15);
+            record.setIconColor((int) (date&15));
             record.setDesktopMode((date&16)==16);
             record.setJavascript(!((date&32)==32));
             record.setDomStorage(!((date&64)==64));

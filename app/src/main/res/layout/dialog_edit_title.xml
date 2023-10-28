@@ -131,14 +131,14 @@
 
             <com.google.android.material.chip.Chip
                 style="@style/Widget.MaterialComponents.Chip.Choice"
-                android:id="@+id/edit_bookmark_RemoteContent"
+                android:id="@+id/edit_bookmark_DomContent"
                 android:visibility="gone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:text=""
                 app:chipEndPadding="4dp"
-                app:chipIcon="@drawable/icon_remote"
+                app:chipIcon="@drawable/icon_dom"
                 app:chipIconEnabled="true"
                 app:chipStartPadding="4dp"
                 app:textEndPadding="0dp"

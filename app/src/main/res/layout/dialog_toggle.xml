@@ -79,7 +79,7 @@
                 app:textEndPadding="0dp"
                 app:textStartPadding="0dp"
                 android:text=""
-                app:chipIcon="@drawable/icon_remote"
+                app:chipIcon="@drawable/icon_dom"
                 app:chipIconEnabled="true"
                 app:chipIconTint="@drawable/bg_chip_state_list" />
 
@@ -295,7 +295,7 @@
                 android:layout_height="wrap_content"
                 android:layout_toStartOf="@+id/chip_javaScript_WL"
                 android:text=""
-                app:chipIcon="@drawable/icon_remote"
+                app:chipIcon="@drawable/icon_dom"
                 app:chipIconTint="@drawable/bg_chip_state_list"
                 app:chipIconEnabled="true"
                 app:chipStartPadding="4dp"
@@ -376,7 +376,7 @@
                 android:layout_height="wrap_content"
                 android:layout_toStartOf="@+id/chip_javaScript_Tab"
                 android:text=""
-                app:chipIcon="@drawable/icon_remote"
+                app:chipIcon="@drawable/icon_dom"
                 app:chipIconTint="@drawable/bg_chip_state_list"
                 app:chipIconEnabled="true"
                 app:chipStartPadding="4dp"

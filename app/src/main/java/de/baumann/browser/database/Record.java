@@ -5,11 +5,13 @@ public class Record {
     private  Boolean isJavascript;
     private Boolean isDesktopMode;
     private Boolean isDomStorage;
-    private long iconColor;
+    private int iconColor;
     private String title;
+    private long time;
+    private String url;
 
-    public long getIconColor() { return iconColor; }
-    public void setIconColor(long iconColor) {this.iconColor = iconColor; }
+    public int getIconColor() { return iconColor; }
+    public void setIconColor(int iconColor) {this.iconColor = iconColor; }
 
     public Boolean getDesktopMode() {return isDesktopMode; }
     public void setDesktopMode(Boolean desktopMode) {isDesktopMode = desktopMode; }
@@ -28,7 +30,6 @@ public class Record {
         this.title = title;
     }
 
-    private String url;
     public String getURL() {
         return url;
     }
@@ -36,7 +37,6 @@ public class Record {
         this.url = url;
     }
 
-    private long time;
     public long getTime() {
         return time;
     }
@@ -44,35 +44,20 @@ public class Record {
         this.time = time;
     }
 
-    private final int ordinal;
-    int getOrdinal() {
-        return ordinal;
-    }
-
-    private int type;     //0 History, 1 Start site, 2 Bookmark
-    public int getType() {
-        return type;
-    }
-    public void setType(int type){this.type=type;}
-
     public Record() {
         this.title = null;
         this.url = null;
         this.time = 0L;
-        this.ordinal = -1;
-        this.type = -1;
         this.isDesktopMode = null;
         this.isJavascript = null;
         this.isDomStorage = null;
-        this.iconColor = 0L;
+        this.iconColor = 0;
     }
 
-    public Record(String title, String url, long time, int ordinal, int type, Boolean DesktopMode, Boolean Javascript, Boolean DomStorage, long iconColor) {
+    public Record(String title, String url, long time, Boolean DesktopMode, Boolean Javascript, Boolean DomStorage, int iconColor) {
         this.title = title;
         this.url = url;
         this.time = time;
-        this.ordinal = ordinal;
-        this.type = type;
         this.isDesktopMode = DesktopMode;
         this.isJavascript = Javascript;
         this.isDomStorage = DomStorage;

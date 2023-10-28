@@ -170,14 +170,14 @@ public class NinjaWebView extends WebView implements AlbumController {
             } catch (URISyntaxException e) {
                 //do not change setting if staying within same domain
                 setJavaScript(javaHosts.isWhite(url) || sp.getBoolean("sp_javascript", true));
-                setDomStorage(DOMHosts.isWhite(url) || sp.getBoolean("sp_remote", true));
+                setDomStorage(DOMHosts.isWhite(url) || sp.getBoolean("sp_dom", true));
                 e.printStackTrace();
             }
             if (oldDomain != null) {
                 //do not change setting if staying within same domain
                 if (!oldDomain.equals(domain)){
                     setJavaScript(javaHosts.isWhite(url) || sp.getBoolean("sp_javascript", true));
-                    setDomStorage(DOMHosts.isWhite(url) || sp.getBoolean("sp_remote", true));
+                    setDomStorage(DOMHosts.isWhite(url) || sp.getBoolean("sp_dom", true));
                 }
             }
             oldDomain=domain;

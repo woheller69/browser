@@ -19,7 +19,6 @@ import java.util.Objects;
 import de.baumann.browser.unit.RecordUnit;
 
 public class RecordAction {
-    public static final int  BOOKMARK_ITEM = 2;
 
     private SQLiteDatabase database;
     private final RecordHelper helper;
@@ -50,14 +49,12 @@ public class RecordAction {
         ContentValues values = new ContentValues();
         values.put(RecordUnit.COLUMN_TITLE, record.getTitle().trim());
         values.put(RecordUnit.COLUMN_URL, record.getURL().trim());
+        values.put(RecordUnit.COLUMN_TIME,System.currentTimeMillis());
+        values.put(RecordUnit.COLUMN_ICON_COLOR,record.getIconColor());
+        values.put(RecordUnit.COLUMN_DESKTOP_MODE,record.getDesktopMode());
+        values.put(RecordUnit.COLUMN_JAVASCRIPT,record.getJavascript());
+        values.put(RecordUnit.COLUMN_DOM,record.getDomStorage());
 
-        // Bookmark time is used for color, desktop mode, javascript, and DOM content
-        // bit 0..3  icon color
-        // bit 4: 1 = Desktop Mode
-        // bit 5: 0 = JavaScript (0 due backward compatibility)
-        // bit 6: 0 = DOM Content allowed (0 due to backward compatibility)
-
-        values.put(RecordUnit.COLUMN_TIME,(System.currentTimeMillis()&(~255)) + record.getIconColor() + (long) (record.getDesktopMode() ? 16 : 0) + (long) (record.getJavascript() ? 0 : 32) + (long) (record.getDomStorage() ? 0 : 64));
         database.insert(RecordUnit.TABLE_BOOKMARK, null, values);
     }
 
@@ -70,7 +67,11 @@ public class RecordAction {
                 new String[] {
                         RecordUnit.COLUMN_TITLE,
                         RecordUnit.COLUMN_URL,
-                        RecordUnit.COLUMN_TIME
+                        RecordUnit.COLUMN_TIME,
+                        RecordUnit.COLUMN_ICON_COLOR,
+                        RecordUnit.COLUMN_DESKTOP_MODE,
+                        RecordUnit.COLUMN_JAVASCRIPT,
+                        RecordUnit.COLUMN_DOM
                 },
                 null,
                 null,
@@ -98,7 +99,7 @@ public class RecordAction {
         String sortBy = Objects.requireNonNull(sp.getString("sort_bookmark", "title"));
 
         switch (sortBy) {
-            case "icon":   //ignore desktop mode, JavaScript, and remote content when sorting colors
+            case "icon":
                 Collections.sort(list, Comparator.comparing(Record::getUpperCaseTitle));
                 Collections.sort(list, Comparator.comparingLong(Record::getIconColor));
                 break;
@@ -207,13 +208,11 @@ public class RecordAction {
         Record record = new Record();
         record.setTitle(cursor.getString(0));
         record.setURL(cursor.getString(1));
-        long help = cursor.getLong(2);
-        record.setTime(help&(~255));
-        record.setType(BOOKMARK_ITEM);
-        record.setDesktopMode((help&16)==16);
-        record.setJavascript(!((help&32)==32));
-        record.setDomStorage(!((help&64)==64));
-        record.setIconColor(help&15);
+        record.setTime(cursor.getLong(2));
+        record.setIconColor(cursor.getInt(3));
+        record.setDesktopMode(cursor.getInt(4)>0);
+        record.setJavascript(cursor.getInt(5)>0);
+        record.setDomStorage(cursor.getInt(6)>0);
 
         return record;
     }

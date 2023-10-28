@@ -31,7 +31,7 @@ import de.baumann.browser.unit.RecordUnit;
 import de.baumann.browser.view.WhitelistAdapter;
 import de.baumann.browser.view.NinjaToast;
 
-public class Whitelist_Remote extends AppCompatActivity {
+public class Whitelist_DOM extends AppCompatActivity {
 
     private WhitelistAdapter adapter;
     private List<String> list;
@@ -48,11 +48,11 @@ public class Whitelist_Remote extends AppCompatActivity {
         setSupportActionBar(toolbar);
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
-        DOM = new DOM(Whitelist_Remote.this);
+        DOM = new DOM(Whitelist_DOM.this);
 
         RecordAction action = new RecordAction(this);
         action.open(false);
-        list = action.listDomains(RecordUnit.TABLE_REMOTE);
+        list = action.listDomains(RecordUnit.TABLE_DOM);
         action.close();
 
         ListView listView = findViewById(R.id.whitelist);
@@ -68,7 +68,7 @@ public class Whitelist_Remote extends AppCompatActivity {
                     DOM.removeDomain(list.get(position));
                     list.remove(position);
                     notifyDataSetChanged();
-                    NinjaToast.show(Whitelist_Remote.this, R.string.toast_delete_successful);
+                    NinjaToast.show(Whitelist_DOM.this, R.string.toast_delete_successful);
                 });
                 return v;
             }
@@ -81,19 +81,19 @@ public class Whitelist_Remote extends AppCompatActivity {
             EditText editText = findViewById(R.id.whitelist_edit);
             String domain = editText.getText().toString().trim();
             if (domain.isEmpty()) {
-                NinjaToast.show(Whitelist_Remote.this, R.string.toast_input_empty);
+                NinjaToast.show(Whitelist_DOM.this, R.string.toast_input_empty);
             } else if (!BrowserUnit.isURL(domain)) {
-                NinjaToast.show(Whitelist_Remote.this, R.string.toast_invalid_domain);
+                NinjaToast.show(Whitelist_DOM.this, R.string.toast_invalid_domain);
             } else {
-                RecordAction action1 = new RecordAction(Whitelist_Remote.this);
+                RecordAction action1 = new RecordAction(Whitelist_DOM.this);
                 action1.open(true);
-                if (action1.checkDomain(domain, RecordUnit.TABLE_REMOTE)) {
-                    NinjaToast.show(Whitelist_Remote.this, R.string.toast_domain_already_exists);
+                if (action1.checkDomain(domain, RecordUnit.TABLE_DOM)) {
+                    NinjaToast.show(Whitelist_DOM.this, R.string.toast_domain_already_exists);
                 } else {
                     DOM.addDomain(domain.trim());
                     list.add(0, domain.trim());
                     adapter.notifyDataSetChanged();
-                    NinjaToast.show(Whitelist_Remote.this, R.string.toast_add_whitelist_successful);
+                    NinjaToast.show(Whitelist_DOM.this, R.string.toast_add_whitelist_successful);
                 }
                 action1.close();
             }
@@ -115,7 +115,7 @@ public class Whitelist_Remote extends AppCompatActivity {
             MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(this);
             builder.setMessage(R.string.hint_database);
             builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
-                DOM DOM = new DOM(Whitelist_Remote.this);
+                DOM DOM = new DOM(Whitelist_DOM.this);
                 DOM.clearDomains();
                 list.clear();
                 adapter.notifyDataSetChanged();

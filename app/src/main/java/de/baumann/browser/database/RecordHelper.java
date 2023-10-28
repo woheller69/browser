@@ -7,8 +7,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 import de.baumann.browser.unit.RecordUnit;
 
 class RecordHelper extends SQLiteOpenHelper {
-    private static final String DATABASE_NAME = "Ninja4.db";
-    private static final int DATABASE_VERSION = 4;
+    private static final String DATABASE_NAME = "Browser.db";
+    private static final int DATABASE_VERSION = 1;
 
     RecordHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -18,7 +18,7 @@ class RecordHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase database) {
         database.execSQL(RecordUnit.CREATE_WHITELIST);
         database.execSQL(RecordUnit.CREATE_JAVASCRIPT);
-        database.execSQL(RecordUnit.CREATE_REMOTE);
+        database.execSQL(RecordUnit.CREATE_DOM);
         database.execSQL(RecordUnit.CREATE_COOKIE);
         database.execSQL(RecordUnit.CREATE_BOOKMARK);
     }

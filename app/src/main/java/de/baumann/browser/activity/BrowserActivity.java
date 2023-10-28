@@ -120,7 +120,6 @@ import static android.content.ContentValues.TAG;
 import static android.webkit.WebView.HitTestResult.IMAGE_TYPE;
 import static android.webkit.WebView.HitTestResult.SRC_ANCHOR_TYPE;
 import static android.webkit.WebView.HitTestResult.SRC_IMAGE_ANCHOR_TYPE;
-import static de.baumann.browser.database.RecordAction.BOOKMARK_ITEM;
 
 public class BrowserActivity extends AppCompatActivity implements BrowserController {
 
@@ -166,7 +165,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     private Cookie cookieHosts;
     private DOM DOM;
     private ObjectAnimator animation;
-    private long newIcon;
+    private int newIcon;
     private boolean filter;
     private long filterBy;
 
@@ -998,14 +997,14 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         });
 
         Chip chip_dom = dialogView.findViewById(R.id.chip_dom);
-        chip_dom.setChecked(sp.getBoolean("sp_remote", true));
+        chip_dom.setChecked(sp.getBoolean("sp_dom", true));
         chip_dom.setOnClickListener(v -> {
-            if (sp.getBoolean("sp_remote", true)) {
+            if (sp.getBoolean("sp_dom", true)) {
                 chip_dom.setChecked(false);
-                sp.edit().putBoolean("sp_remote", false).apply();
+                sp.edit().putBoolean("sp_dom", false).apply();
             } else {
                 chip_dom.setChecked(true);
-                sp.edit().putBoolean("sp_remote", true).apply();
+                sp.edit().putBoolean("sp_dom", true).apply();
             }
         });
 
@@ -1441,8 +1440,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         FaviconHelper faviconHelper = new FaviconHelper(context);
         faviconHelper.addFavicon(ninjaWebView.getUrl(),ninjaWebView.getFavicon());
-        long value= 11;  //default red icon
-        Record bookmark = new Record(ninjaWebView.getTitle(), ninjaWebView.getUrl(), 0,  0,2,ninjaWebView.isDesktopMode(), ninjaWebView.getSettings().getJavaScriptEnabled(),ninjaWebView.getSettings().getDomStorageEnabled(),value);
+        int value= 11;  //default red icon
+        Record bookmark = new Record(ninjaWebView.getTitle(), ninjaWebView.getUrl(), 0, ninjaWebView.isDesktopMode(), ninjaWebView.getSettings().getJavaScriptEnabled(),ninjaWebView.getSettings().getDomStorageEnabled(),value);
         editBookmark(bookmark);
     }
 
@@ -1790,10 +1789,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         Chip chip_desktopMode = dialogViewSubMenu.findViewById(R.id.edit_bookmark_desktopMode);
         Chip chip_javascript = dialogViewSubMenu.findViewById(R.id.edit_bookmark_Javascript);
-        Chip chip_remoteContent = dialogViewSubMenu.findViewById(R.id.edit_bookmark_RemoteContent);
+        Chip chip_DomContent = dialogViewSubMenu.findViewById(R.id.edit_bookmark_DomContent);
         chip_desktopMode.setVisibility(View.VISIBLE);
         chip_javascript.setVisibility(View.VISIBLE);
-        chip_remoteContent.setVisibility(View.VISIBLE);
+        chip_DomContent.setVisibility(View.VISIBLE);
 
         edit_title_layout.setVisibility(View.VISIBLE);
         edit_userName_layout.setVisibility(View.GONE);
@@ -1830,7 +1829,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         chip_desktopMode.setChecked(bookmark.getDesktopMode());
         chip_javascript.setChecked(bookmark.getJavascript());
-        chip_remoteContent.setChecked(bookmark.getDomStorage());
+        chip_DomContent.setChecked(bookmark.getDomStorage());
 
         newIcon= bookmark.getIconColor();
 
@@ -1843,7 +1842,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 RecordAction action = new RecordAction(context);
                 action.open(true);
                 action.deleteURL(bookmark.getURL(), RecordUnit.TABLE_BOOKMARK);
-                action.addBookmark(new Record(edit_title.getText().toString(), edit_URL.getText().toString(), 0, 0, BOOKMARK_ITEM, chip_desktopMode.isChecked(),chip_javascript.isChecked(),chip_remoteContent.isChecked(),newIcon));
+                action.addBookmark(new Record(edit_title.getText().toString(), edit_URL.getText().toString(), 0, chip_desktopMode.isChecked(),chip_javascript.isChecked(),chip_DomContent.isChecked(),newIcon));
                 action.close();
                 bottom_navigation.setSelectedItemId(R.id.page_2);
             }

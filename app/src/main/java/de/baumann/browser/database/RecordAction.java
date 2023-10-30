@@ -49,7 +49,7 @@ public class RecordAction {
         ContentValues values = new ContentValues();
         values.put(RecordUnit.COLUMN_TITLE, record.getTitle().trim());
         values.put(RecordUnit.COLUMN_URL, record.getURL().trim());
-        values.put(RecordUnit.COLUMN_TIME,System.currentTimeMillis());
+        values.put(RecordUnit.COLUMN_TIME,record.getTime() > 0 ? record.getTime() : System.currentTimeMillis());
         values.put(RecordUnit.COLUMN_ICON_COLOR,record.getIconColor());
         values.put(RecordUnit.COLUMN_DESKTOP_MODE,record.getDesktopMode());
         values.put(RecordUnit.COLUMN_JAVASCRIPT,record.getJavascript());

@@ -264,7 +264,7 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat implement
     }
 
     public void importBookmarks(Context context) {
-        File file = new File(Environment.getExternalStoragePublicDirectory(DIRECTORY_DOCUMENTS), "browser_backup//export_bookmark_list.html");
+        File file = new File(Environment.getExternalStoragePublicDirectory(DIRECTORY_DOCUMENTS), "browser_backup//export_bookmark_free.html");
         if (!BackupUnit.checkPermissionStorage(context)) {
             BackupUnit.requestPermission((Activity) context);
         } else {

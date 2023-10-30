@@ -66,10 +66,12 @@ import javax.xml.parsers.ParserConfigurationException;
 
 public class BackupUnit {
 
-    private static final String BOOKMARK_TYPE = "<DT><A HREF=\"{url}\" ADD_DATE=\"{time}\">{title}</A>";
+    private static final String BOOKMARK_TYPE = "<DT><A HREF=\"{url}\" ADD_DATE=\"{time}\" COLOR=\"{color}\" FLAGS=\"{flags}\">{title}</A>";
     private static final String BOOKMARK_TITLE = "{title}";
     private static final String BOOKMARK_URL = "{url}";
     private static final String BOOKMARK_TIME = "{time}";
+    private static final String BOOKMARK_COLOR = "{color}";
+    private static final String BOOKMARK_FLAGS = "{flags}";
 
 
     public static final int PERMISSION_REQUEST_CODE = 123;
@@ -171,23 +173,42 @@ public class BackupUnit {
             if (!((line.startsWith("<dt><a ") && line.endsWith("</a>")) || (line.startsWith("<DT><A ") && line.endsWith("</A>")))) {
                 continue;
             }
-            String title = BackupUnit.getBookmarkTitle(line);
-            String url = BackupUnit.getBookmarkURL(line);
-            long date = BackupUnit.getBookmarkDate(line);
-            if (date >123) date=11;  //if no color defined yet set it red (123 is max: 11 for color + 16 for desktop mode + 32 for Javascript + 64 for DOM Content
-            if (title.trim().isEmpty() || url.trim().isEmpty()) {
-                continue;
-            }
-            Record record = new Record();
-            record.setTitle(title);
-            record.setURL(url);
-            record.setIconColor((int) (date&15));
-            record.setDesktopMode((date&16)==16);
-            record.setJavascript(!((date&32)==32));
-            record.setDomStorage(!((date&64)==64));
-
-            if (!action.checkUrl(url, RecordUnit.TABLE_BOOKMARK)) {
-                list.add(record);
+            if (checkLegacyBookmark(line)){  //Legacy Bookmark without COLORS and FLAGS
+                String title = BackupUnit.getBookmarkTitle(line);
+                String url = BackupUnit.getBookmarkURL(line);
+                long date = BackupUnit.getBookmarkDate(line);
+                if (date >123) date=11;  //if no color defined yet set it red (123 is max: 11 for color + 16 for desktop mode + 32 for Javascript + 64 for DOM Content
+                if (title.trim().isEmpty() || url.trim().isEmpty()) {
+                    continue;
+                }
+                Record record = new Record();
+                record.setTitle(title);
+                record.setURL(url);
+                record.setIconColor((int) (date&15));
+                record.setDesktopMode((date&16)==16);
+                record.setJavascript(!((date&32)==32));
+                record.setDomStorage(!((date&64)==64));
+                if (!action.checkUrl(url, RecordUnit.TABLE_BOOKMARK)) {
+                    list.add(record);
+                }
+            } else {
+                String title = BackupUnit.getBookmarkTitle(line);
+                String url = BackupUnit.getBookmarkURL(line);
+                if (title.trim().isEmpty() || url.trim().isEmpty()) {
+                    continue;
+                }
+                Record record = new Record();
+                record.setTitle(title);
+                record.setURL(url);
+                record.setTime(BackupUnit.getBookmarkDate(line));
+                record.setIconColor(BackupUnit.getBookmarkColor(line));
+                int flags = BackupUnit.getBookmarkFlags(line);
+                record.setDesktopMode((flags&16)==16);
+                record.setJavascript(!((flags&32)==32));
+                record.setDomStorage(!((flags&64)==64));
+                if (!action.checkUrl(url, RecordUnit.TABLE_BOOKMARK)) {
+                    list.add(record);
+                }
             }
         }
         reader.close();
@@ -204,7 +225,7 @@ public class BackupUnit {
         action.open(false);
         List<Record> list = action.listBookmark(context, false, 0);
         action.close();
-        File file = new File(Environment.getExternalStoragePublicDirectory(DIRECTORY_DOCUMENTS), "browser_backup//export_bookmark_list.html");
+        File file = new File(Environment.getExternalStoragePublicDirectory(DIRECTORY_DOCUMENTS), "browser_backup//export_bookmark_free.html");
         if (!BackupUnit.checkPermissionStorage(context)) {
             BackupUnit.requestPermission((Activity) context);
         } else {
@@ -219,7 +240,9 @@ public class BackupUnit {
                     String type = BOOKMARK_TYPE;
                     type = type.replace(BOOKMARK_TITLE, record.getTitle());
                     type = type.replace(BOOKMARK_URL, record.getURL());
-                    type = type.replace(BOOKMARK_TIME, String.valueOf(record.getIconColor() + (long) (record.getDesktopMode() ? 16 : 0) + (long) (record.getJavascript() ? 0 : 32) + (long) (record.getDomStorage() ? 0 : 64)));
+                    type = type.replace(BOOKMARK_TIME, String.valueOf(record.getTime()));
+                    type = type.replace(BOOKMARK_COLOR, String.valueOf(record.getIconColor()));
+                    type = type.replace(BOOKMARK_FLAGS,String.valueOf((long) (record.getDesktopMode() ? 16 : 0) + (long) (record.getJavascript() ? 0 : 32) + (long) (record.getDomStorage() ? 0 : 64)));
                     writer.write(type);
                     writer.newLine();
                 }
@@ -231,15 +254,39 @@ public class BackupUnit {
         }
     }
 
+    public static boolean checkLegacyBookmark(String line){
+        return !line.contains("COLOR=\"");
+    }
+
 
     public static long getBookmarkDate(String line) {
         for (String string : line.split(" +")) {
             if (string.startsWith("ADD_DATE=\"")) {
-                int index= string.indexOf("\">");
+                int index= string.lastIndexOf("\"");
                 return Long.parseLong(string.substring(10,index));
             }
         }
         return 0;
+    }
+
+    public static int getBookmarkColor(String line) {
+        for (String string : line.split(" +")) {
+            if (string.startsWith("COLOR=\"")) {
+                int index= string.lastIndexOf("\"");
+                return Integer.parseInt(string.substring(7,index));
+            }
+        }
+        return 11;  //if not defined use default color red
+    }
+
+    public static int getBookmarkFlags(String line) {
+        for (String string : line.split(" +")) {
+            if (string.startsWith("FLAGS=\"")) {
+                int index= string.lastIndexOf("\"");
+                return Integer.parseInt(string.substring(7,index));
+            }
+        }
+        return 96;  //if not defined set Javascript and DOM true
     }
 
     public static String getBookmarkTitle(String line) {

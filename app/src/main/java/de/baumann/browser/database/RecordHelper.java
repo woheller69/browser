@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import de.baumann.browser.unit.RecordUnit;
 
 class RecordHelper extends SQLiteOpenHelper {
-    private static final String DATABASE_NAME = "Browser.db";
+    private static final String DATABASE_NAME = "browser.db";
     private static final int DATABASE_VERSION = 1;
 
     RecordHelper(Context context) {

@@ -9,7 +9,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "de.baumann.browser"
+        applicationId "org.woheller69.browser"
         minSdkVersion 29
         targetSdkVersion 33
         versionCode 900

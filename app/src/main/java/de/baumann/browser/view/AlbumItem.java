@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import androidx.core.content.ContextCompat;
 
+import de.baumann.browser.Utils;
 import de.baumann.browser.browser.AlbumController;
 import de.baumann.browser.browser.BrowserController;
 import de.baumann.browser.R;
@@ -61,8 +62,8 @@ class AlbumItem {
     }
 
     void deactivate() {
-        albumTitle.setTextColor(ContextCompat.getColor(context, R.color.color_light));
-        albumClose.setImageResource(R.drawable.icon_close_light);
+        albumTitle.setTextColor(Utils.getThemeColor(context,android.R.attr.textColorSecondary));
+        albumClose.setImageResource(R.drawable.icon_close);
         albumView.setOnClickListener(v -> browserController.showAlbum(albumController));
     }
 }

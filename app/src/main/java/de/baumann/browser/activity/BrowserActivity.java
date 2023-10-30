@@ -14,6 +14,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -221,6 +222,12 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         sp = PreferenceManager.getDefaultSharedPreferences(context);
         sp.edit().putString("openTabs", TextUtils.join("‚‗‚", openTabs)).apply();
         super.onPause();
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration configuration) {
+        super.onConfigurationChanged(configuration);
+        initTabDialog();
     }
 
     @Override
@@ -524,6 +531,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     }
 
     private void initTabDialog () {
+        if (dialog_tabPreview != null) dialog_tabPreview.hide();
+        if (tab_container != null) tab_container.removeAllViews();
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
         View dialogView = View.inflate(context, R.layout.dialog_tabs, null);
 
@@ -534,6 +543,14 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         Objects.requireNonNull(dialog_tabPreview.getWindow()).setGravity(Gravity.BOTTOM);
         dialog_tabPreview.setOnCancelListener(dialog ->
                 dialog_tabPreview.hide());
+
+        for (int i=0; i<BrowserContainer.size();i++){
+            View albumView = BrowserContainer.get(i).getAlbumView();
+            tab_container.addView(albumView, LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+            if (BrowserContainer.get(i) == currentAlbumController) BrowserContainer.get(i).activate();
+            else BrowserContainer.get(i).deactivate();
+        }
+
     }
 
     @SuppressLint({"ClickableViewAccessibility", "UnsafeExperimentalUsageError"})

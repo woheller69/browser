@@ -5,7 +5,6 @@
     android:layout_height="?android:attr/listPreferredItemHeightSmall"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:minHeight="?android:attr/listPreferredItemHeightSmall"
-    android:background="?attr/selectableItemBackground"
     android:paddingStart="20dp"
     android:paddingEnd="20dp">
 
@@ -49,7 +48,6 @@
         android:includeFontPadding="false"
         android:gravity="center_vertical"
         android:textAppearance="?attr/textAppearanceBody1"
-        android:textColor="?android:attr/textColorPrimary"
         android:maxLines="1"
         android:ellipsize="end"/>
 

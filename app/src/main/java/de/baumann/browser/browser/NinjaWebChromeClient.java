@@ -39,7 +39,7 @@ public class NinjaWebChromeClient extends WebChromeClient {
         } else {
             ninjaWebView.updateTitle(view.getTitle());
         }
-        ninjaWebView.updateFavicon(view.getUrl());
+        ninjaWebView.updateFavicon();
     }
 
     @Override

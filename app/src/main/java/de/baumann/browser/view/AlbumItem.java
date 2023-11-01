@@ -19,6 +19,7 @@ class AlbumItem {
     private final Context context;
     private final AlbumController albumController;
     private ImageView albumClose;
+    private ImageView albumFavicon;
 
     private View albumView;
     View getAlbumView() {
@@ -53,17 +54,22 @@ class AlbumItem {
         albumClose.setVisibility(View.VISIBLE);
         albumClose.setOnClickListener(v -> browserController.removeAlbum(albumController));
         albumTitle = albumView.findViewById(R.id.whitelist_item_domain);
+        albumFavicon = albumView.findViewById(R.id.faviconView);
     }
 
-    public void activate() {
+    public void activate(NinjaWebView ninjaWebView) {
         albumTitle.setTextColor(ContextCompat.getColor(context, R.color.primaryColor));
         albumClose.setImageResource(R.drawable.icon_close_enabled);
         albumView.setOnClickListener(v -> browserController.hideTabView());
+        if (ninjaWebView.getFavicon()!=null) albumFavicon.setImageBitmap(ninjaWebView.getFavicon());
+        else albumFavicon.setImageResource(R.drawable.icon_image_broken);
     }
 
-    void deactivate() {
-        albumTitle.setTextColor(Utils.getThemeColor(context,android.R.attr.textColorSecondary));
+    void deactivate(NinjaWebView ninjaWebView) {
+        albumTitle.setTextColor(Utils.getThemeColor(context,android.R.attr.textColorPrimary));
         albumClose.setImageResource(R.drawable.icon_close);
         albumView.setOnClickListener(v -> browserController.showAlbum(albumController));
+        if (ninjaWebView.getFavicon()!=null) albumFavicon.setImageBitmap(ninjaWebView.getFavicon());
+        else albumFavicon.setImageResource(R.drawable.icon_image_broken);
     }
 }

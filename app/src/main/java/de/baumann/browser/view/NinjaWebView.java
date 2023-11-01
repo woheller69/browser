@@ -1,6 +1,7 @@
 package de.baumann.browser.view;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -9,6 +10,8 @@ import android.os.Build;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.preference.PreferenceManager;
+import androidx.webkit.WebSettingsCompat;
+import androidx.webkit.WebViewFeature;
 
 import android.util.AttributeSet;
 import android.view.*;
@@ -55,6 +58,14 @@ public class NinjaWebView extends WebView implements AlbumController {
         this.onScrollChangeListener = onScrollChangeListener;
     }
 
+    public boolean isBookmark() {
+        return isBookmark;
+    }
+
+    public void setIsBookmark(boolean b) {
+        isBookmark = b;
+    }
+
     public interface OnScrollChangeListener {
         /**
          * Called when the scroll position of a view changes.
@@ -70,6 +81,7 @@ public class NinjaWebView extends WebView implements AlbumController {
     private boolean fingerPrintProtection;
     private boolean stopped;
     private String oldDomain;
+    private boolean isBookmark;
     private AlbumItem album;
     private AlbumController predecessor=null;
     private NinjaWebViewClient webViewClient;
@@ -113,6 +125,7 @@ public class NinjaWebView extends WebView implements AlbumController {
 
         this.stopped=false;
         this.oldDomain="";
+        this.isBookmark=false;
         this.javaHosts = new Javascript(this.context);
         this.DOMHosts = new DOM(this.context);
         this.cookieHosts = new Cookie(this.context);
@@ -133,8 +146,29 @@ public class NinjaWebView extends WebView implements AlbumController {
     @SuppressLint("SetJavaScriptEnabled")
     public synchronized void initPreferences(String url) {
 
+        //check if url is a bookmark and apply settings accordingly
+        //if one of the previous sites was a bookmark keep settings
+        RecordAction action = new RecordAction(context);
+        action.open(false);
+        List<Record> list = action.listEntries((Activity) context);
+        action.close();
+        for (Record record:list){
+            if (record.getURL().equals(url)){
+                if (record.getDesktopMode() != isDesktopMode()) toggleDesktopMode(false);
+                setJavaScript(record.getJavascript());
+                setDomStorage(record.getDomStorage());
+                setIsBookmark(true);
+                setOldDomain(url);
+                break;
+            }
+        }
+
         sp = PreferenceManager.getDefaultSharedPreferences(context);
         WebSettings webSettings = getSettings();
+
+        if(WebViewFeature.isFeatureSupported(WebViewFeature.ALGORITHMIC_DARKENING)) {
+            WebSettingsCompat.setAlgorithmicDarkeningAllowed(webSettings, true);
+        }
 
         String userAgent = getUserAgent(desktopMode);
         webSettings.setSafeBrowsingEnabled(true);
@@ -178,6 +212,7 @@ public class NinjaWebView extends WebView implements AlbumController {
                 if (!oldDomain.equals(domain)){
                     setJavaScript(javaHosts.isWhite(url) || sp.getBoolean("sp_javascript", true));
                     setDomStorage(DOMHosts.isWhite(url) || sp.getBoolean("sp_dom", true));
+                    setIsBookmark(false);
                 }
             }
             oldDomain=domain;
@@ -261,14 +296,14 @@ public class NinjaWebView extends WebView implements AlbumController {
     public synchronized void activate() {
         requestFocus();
         foreground = true;
-        album.activate();
+        album.activate(this);
     }
 
     @Override
     public synchronized void deactivate() {
         clearFocus();
         foreground = false;
-        album.deactivate();
+        album.deactivate(this);
     }
 
     public synchronized void updateTitle(int progress) {
@@ -286,7 +321,7 @@ public class NinjaWebView extends WebView implements AlbumController {
         album.setAlbumTitle(title);
     }
 
-    public synchronized void updateFavicon (String url) {
+    public synchronized void updateFavicon () {
         CardView cardView = getAlbumView().findViewById(R.id.cardView);
         cardView.setVisibility(VISIBLE);
         ImageView icon = (ImageView) getAlbumView().findViewById(R.id.faviconView);
@@ -375,7 +410,7 @@ public class NinjaWebView extends WebView implements AlbumController {
 
     public void setFavicon(Bitmap favicon) {
         this.favicon = favicon;
-        updateFavicon(getUrl());
+        updateFavicon();
         //Save faviconView for existing bookmarks or start site entries
         FaviconHelper faviconHelper = new FaviconHelper(context);
         RecordAction action = new RecordAction(context);

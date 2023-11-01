@@ -458,22 +458,15 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     @Override
     public void updateAutoComplete() {
         RecordAction action = new RecordAction(this);
+        action.open(false);
         List<Record> list = action.listEntries(activity);
+        action.close();
         CompleteAdapter adapter = new CompleteAdapter(this, R.layout.item_icon_left, list);
         omniBox_text.setAdapter(adapter);
         adapter.notifyDataSetChanged();
         omniBox_text.setDropDownWidth(context.getResources().getDisplayMetrics().widthPixels);
         omniBox_text.setOnItemClickListener((parent, view, position, id) -> {
             String url = ((TextView) view.findViewById(R.id.record_item_time)).getText().toString();
-            for (Record record:list){
-                if (record.getURL().equals(url)){
-                    if (record.getDesktopMode() != ninjaWebView.isDesktopMode()) ninjaWebView.toggleDesktopMode(false);
-                    ninjaWebView.setJavaScript(record.getJavascript());
-                    ninjaWebView.setDomStorage(record.getDomStorage());
-                    ninjaWebView.setOldDomain(url);
-                    break;
-                }
-            }
             ninjaWebView.loadUrl(url);
         });
     }
@@ -771,10 +764,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 adapter.notifyDataSetChanged();
                 filter = false;
                 listView.setOnItemClickListener((parent, view, position, id) -> {
-                    if ((list.get(position).getDesktopMode()) != ninjaWebView.isDesktopMode()) ninjaWebView.toggleDesktopMode(false);
-                    ninjaWebView.setJavaScript(list.get(position).getJavascript());
-                    ninjaWebView.setDomStorage(list.get(position).getDomStorage());
-                    ninjaWebView.setOldDomain(list.get(position).getURL());
                     ninjaWebView.loadUrl(list.get(position).getURL());
                     hideOverview();
                 });
@@ -907,6 +896,9 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         });
 
         //TabControl
+
+        Chip chip_isBookmark_Tab = dialogView.findViewById(R.id.chip_isBookmark_WL);
+        chip_isBookmark_Tab.setChecked(ninjaWebView.isBookmark());
 
         Chip chip_javaScript_Tab = dialogView.findViewById(R.id.chip_javaScript_Tab);
         if (ninjaWebView.getSettings().getJavaScriptEnabled()) {
@@ -1075,20 +1067,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     @SuppressLint("ClickableViewAccessibility")
     private synchronized void addAlbum(String title, final String url, final boolean foreground) {
         ninjaWebView = new NinjaWebView(context);
-
-        //set JavaScript etc if url is an existing bookmark, startsite item, or history item
-        RecordAction action = new RecordAction(this);
-        List<Record> list = action.listEntries(activity);
-        for (Record record:list){
-                if (record.getURL().equals(url)){
-                    if (record.getDesktopMode() != ninjaWebView.isDesktopMode()) ninjaWebView.toggleDesktopMode(false);
-                    ninjaWebView.setJavaScript(record.getJavascript());
-                    ninjaWebView.setDomStorage(record.getDomStorage());
-                    ninjaWebView.setOldDomain(url);
-                    break;
-                }
-            }
-
         ninjaWebView.setBrowserController(this);
         ninjaWebView.setAlbumTitle(title, url);
         activity.registerForContextMenu(ninjaWebView);
@@ -1185,12 +1163,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     @Override
     public synchronized void removeAlbum (final AlbumController controller) {
         if (BrowserContainer.size() <= 1) {
-            if(!sp.getBoolean("sp_reopenLastTab", false)) {
-                doubleTapsQuit();
-            }else{
-                ninjaWebView.loadUrl(Objects.requireNonNull(sp.getString("favoriteURL", "")));
-                hideOverview();
-            }
+            doubleTapsQuit();
         } else {
             closeTabConfirmation(() -> {
                 AlbumController predecessor=null;
@@ -1597,11 +1570,12 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         menu_grid_save.setOnItemClickListener((parent, view13, position, id) -> {
             dialog_overflow.cancel();
-            RecordAction action = new RecordAction(context);
             if (position == 0) {
                 sp.edit().putString("favoriteURL", url).apply();
                 NinjaToast.show(this, R.string.app_done);
             } else if (position == 1) {
+                RecordAction action = new RecordAction(context);
+                action.open(true);
                 saveBookmark();
                 action.close();
             } else if (position == 2) {

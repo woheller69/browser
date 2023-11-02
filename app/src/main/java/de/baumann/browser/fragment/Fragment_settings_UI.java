@@ -43,12 +43,7 @@ public class Fragment_settings_UI extends PreferenceFragmentCompat implements Sh
         }
         if (p instanceof EditTextPreference) {
             EditTextPreference editTextPref = (EditTextPreference) p;
-            if (p.getTitle().toString().toLowerCase().contains("password"))
-            {
-                p.setSummary("******");
-            } else {
                 p.setSummary(editTextPref.getText());
-            }
         }
     }
 

@@ -27,7 +27,6 @@ import de.baumann.browser.database.FaviconHelper;
 import de.baumann.browser.database.Record;
 import de.baumann.browser.database.RecordAction;
 import de.baumann.browser.unit.BrowserUnit;
-import de.baumann.browser.unit.HelperUnit;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -79,6 +78,9 @@ public class NinjaWebView extends WebView implements AlbumController {
     private Context context;
     private boolean desktopMode;
     private boolean fingerPrintProtection;
+    private boolean javaScriptInherited;
+    private boolean domStorageInherited;
+    private boolean adBlockEnabled;
     private boolean stopped;
     private String oldDomain;
     private boolean isBookmark;
@@ -122,6 +124,9 @@ public class NinjaWebView extends WebView implements AlbumController {
 
         sp = PreferenceManager.getDefaultSharedPreferences(context);
         this.fingerPrintProtection=sp.getBoolean("sp_fingerPrintProtection",true);
+        this.javaScriptInherited =sp.getBoolean("sp_javascript", true);
+        this.domStorageInherited =sp.getBoolean("sp_dom", true);
+        this.adBlockEnabled=sp.getBoolean("sp_ad_block", true);
 
         this.stopped=false;
         this.oldDomain="";
@@ -146,23 +151,6 @@ public class NinjaWebView extends WebView implements AlbumController {
     @SuppressLint("SetJavaScriptEnabled")
     public synchronized void initPreferences(String url) {
 
-        //check if url is a bookmark and apply settings accordingly
-        //if one of the previous sites was a bookmark keep settings
-        RecordAction action = new RecordAction(context);
-        action.open(false);
-        List<Record> list = action.listEntries((Activity) context);
-        action.close();
-        for (Record record:list){
-            if (record.getURL().equals(url)){
-                if (record.getDesktopMode() != isDesktopMode()) toggleDesktopMode(false);
-                setJavaScript(record.getJavascript());
-                setDomStorage(record.getDomStorage());
-                setIsBookmark(true);
-                setOldDomain(url);
-                break;
-            }
-        }
-
         sp = PreferenceManager.getDefaultSharedPreferences(context);
         WebSettings webSettings = getSettings();
 
@@ -178,7 +166,7 @@ public class NinjaWebView extends WebView implements AlbumController {
         webSettings.setBuiltInZoomControls(true);
         webSettings.setDisplayZoomControls(false);
         webSettings.setSupportMultipleWindows(true);
-        webViewClient.enableAdBlock(sp.getBoolean("sp_ad_block", true));
+        webViewClient.enableAdBlock(adBlockEnabled);
         webSettings.setTextZoom(Integer.parseInt(Objects.requireNonNull(sp.getString("sp_fontSize", "100"))));
         webSettings.setBlockNetworkImage(!sp.getBoolean("sp_images", true));
         webSettings.setGeolocationEnabled(sp.getBoolean("sp_location", false));
@@ -191,6 +179,24 @@ public class NinjaWebView extends WebView implements AlbumController {
         }
 
         if (url != null) {
+
+            //check if url is a bookmark and apply settings accordingly
+            //if one of the previous sites was a bookmark keep settings
+            RecordAction action = new RecordAction(context);
+            action.open(false);
+            List<Record> list = action.listEntries((Activity) context);
+            action.close();
+            for (Record record:list){
+                if (record.getURL().equals(url)){
+                    if (record.getDesktopMode() != isDesktopMode()) toggleDesktopMode(false);
+                    setJavaScript(record.getJavascript());
+                    setDomStorage(record.getDomStorage());
+                    setIsBookmark(true);
+                    setOldDomain(url);
+                    break;
+                }
+            }
+
             CookieManager manager = CookieManager.getInstance();
             if (cookieHosts.isWhite(url) || sp.getBoolean("sp_cookies", true)) {
                 manager.setAcceptCookie(true);
@@ -203,30 +209,31 @@ public class NinjaWebView extends WebView implements AlbumController {
                 domain = new URI(url).getHost();
             } catch (URISyntaxException e) {
                 //do not change setting if staying within same domain
-                setJavaScript(javaHosts.isWhite(url) || sp.getBoolean("sp_javascript", true));
-                setDomStorage(DOMHosts.isWhite(url) || sp.getBoolean("sp_dom", true));
+                setJavaScript(javaHosts.isWhite(url) || javaScriptInherited);
+                setDomStorage(DOMHosts.isWhite(url) || domStorageInherited);
                 e.printStackTrace();
             }
-            if (oldDomain != null) {
-                //do not change setting if staying within same domain
-                if (!oldDomain.equals(domain)){
-                    setJavaScript(javaHosts.isWhite(url) || sp.getBoolean("sp_javascript", true));
-                    setDomStorage(DOMHosts.isWhite(url) || sp.getBoolean("sp_dom", true));
-                    setIsBookmark(false);
-                }
+
+            //do not change setting if staying within same domain
+            if (!oldDomain.equals(domain)){
+                setJavaScript(javaHosts.isWhite(url) || javaScriptInherited);
+                setDomStorage(DOMHosts.isWhite(url) || domStorageInherited);
+                setIsBookmark(false);
             }
-            oldDomain=domain;
+
+            setOldDomain(url);
         }
     }
 
     public void setOldDomain(String url){
-        String  domain="";
-        try {
+        String domain = null;
+         try {
             domain = new URI(url).getHost();
         } catch (URISyntaxException e) {
             e.printStackTrace();
         }
-        oldDomain=domain;
+         if (domain == null) oldDomain = "";
+         else oldDomain=domain;
     }
 
     public void setJavaScript(boolean value){
@@ -235,9 +242,17 @@ public class NinjaWebView extends WebView implements AlbumController {
         webSettings.setJavaScriptEnabled(value);
     }
 
+    public void setJavaScriptInherited(boolean value){  //this method only sets the default value of the tab!
+        if (!javaHosts.isWhite(getUrl()) && !isBookmark) javaScriptInherited = value;
+    }
+
     public void setDomStorage(boolean value){
         WebSettings webSettings = this.getSettings();
         webSettings.setDomStorageEnabled(value);
+    }
+
+    public void setDomStorageInherited(boolean value){
+        if (!DOMHosts.isWhite(getUrl()) && !isBookmark) domStorageInherited = value;
     }
 
     private synchronized void initAlbum() {
@@ -272,7 +287,7 @@ public class NinjaWebView extends WebView implements AlbumController {
         initPreferences(BrowserUnit.queryWrapper(context, url.trim()));
         InputMethodManager imm = (InputMethodManager) this.context.getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(this.getWindowToken(), 0);
-        favicon=null;
+        resetFavicon();
         stopped=false;
         super.loadUrl(BrowserUnit.queryWrapper(context, url.trim()), getRequestHeaders());
     }
@@ -351,6 +366,10 @@ public class NinjaWebView extends WebView implements AlbumController {
         return fingerPrintProtection;
     }
 
+    public boolean isAdBlockEnabled() {
+        return adBlockEnabled;
+    }
+
     public String getUserAgent(boolean desktopMode){
         String mobilePrefix = "Mozilla/5.0 (Linux; Android "+ Build.VERSION.RELEASE + ")";
         String desktopPrefix = "Mozilla/5.0 (X11; Linux "+ System.getProperty("os.arch") +")";
@@ -400,9 +419,13 @@ public class NinjaWebView extends WebView implements AlbumController {
     }
 
     public void toggleAllowFingerprint (boolean reload) {
-
         fingerPrintProtection = !isFingerPrintProtection();
+        if (reload) { reload();}
+    }
 
+    public void toggleAdblockEnabled(boolean reload) {
+        adBlockEnabled = !isAdBlockEnabled();
+        webViewClient.enableAdBlock(adBlockEnabled);
         if (reload) { reload();}
     }
 
@@ -411,7 +434,7 @@ public class NinjaWebView extends WebView implements AlbumController {
     public void setFavicon(Bitmap favicon) {
         this.favicon = favicon;
         updateFavicon();
-        //Save faviconView for existing bookmarks or start site entries
+        //Save faviconView for existing bookmarks
         FaviconHelper faviconHelper = new FaviconHelper(context);
         RecordAction action = new RecordAction(context);
         action.open(false);

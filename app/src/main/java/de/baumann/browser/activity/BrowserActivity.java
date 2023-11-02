@@ -899,12 +899,16 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         Chip chip_isBookmark_Tab = dialogView.findViewById(R.id.chip_isBookmark_WL);
         chip_isBookmark_Tab.setChecked(ninjaWebView.isBookmark());
+        chip_isBookmark_Tab.setOnClickListener(view -> {
+            chip_isBookmark_Tab.setChecked(ninjaWebView.isBookmark());
+        });
 
         Chip chip_javaScript_Tab = dialogView.findViewById(R.id.chip_javaScript_Tab);
         if (ninjaWebView.getSettings().getJavaScriptEnabled()) {
             chip_javaScript_Tab.setChecked(true);
             chip_javaScript_Tab.setOnClickListener(view -> {
                 ninjaWebView.setJavaScript(false);
+                ninjaWebView.setJavaScriptInherited(false);
                 ninjaWebView.reload();
                 dialog.cancel();
             });
@@ -912,6 +916,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             chip_javaScript_Tab.setChecked(false);
             chip_javaScript_Tab.setOnClickListener(view -> {
                 ninjaWebView.setJavaScript(true);
+                ninjaWebView.setJavaScriptInherited(true);
                 ninjaWebView.reload();
                 dialog.cancel();
             });
@@ -922,6 +927,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             chip_dom_Tab.setChecked(true);
             chip_dom_Tab.setOnClickListener(view -> {
                 ninjaWebView.setDomStorage(false);
+                ninjaWebView.setDomStorageInherited(false);
                 ninjaWebView.reload();
                 dialog.cancel();
             });
@@ -929,6 +935,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             chip_dom_Tab.setChecked(false);
             chip_dom_Tab.setOnClickListener(view -> {
                 ninjaWebView.setDomStorage(true);
+                ninjaWebView.setDomStorageInherited(true);
                 ninjaWebView.reload();
                 dialog.cancel();
             });
@@ -941,10 +948,17 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             dialog.cancel();
         });
 
-        Chip chip_fingerpint_tab = dialogView.findViewById(R.id.chip_fingerpint_tab);
+        Chip chip_fingerpint_tab = dialogView.findViewById(R.id.chip_fingerprint_tab);
         chip_fingerpint_tab.setChecked(ninjaWebView.isFingerPrintProtection());
         chip_fingerpint_tab.setOnClickListener(v -> {
             ninjaWebView.toggleAllowFingerprint(true);
+            dialog.cancel();
+        });
+
+        Chip chip_adblock_tab = dialogView.findViewById(R.id.chip_adblock_tab);
+        chip_adblock_tab.setChecked(ninjaWebView.isAdBlockEnabled());
+        chip_adblock_tab.setOnClickListener(v -> {
+            ninjaWebView.toggleAdblockEnabled(true);
             dialog.cancel();
         });
 
@@ -967,6 +981,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 chip_javaScript_WL.setChecked(true);
                 javaHosts.addDomain(HelperUnit.domain(url));
             }
+            ninjaWebView.setOldDomain("");
+            ninjaWebView.loadUrl(ninjaWebView.getUrl());
         });
 
         Chip chip_dom_WL = dialogView.findViewById(R.id.chip_dom_WL);
@@ -979,6 +995,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 chip_dom_WL.setChecked(true);
                 DOM.addDomain(HelperUnit.domain(url));
             }
+            ninjaWebView.setOldDomain("");
+            ninjaWebView.loadUrl(ninjaWebView.getUrl());
         });
 
         Chip chip_cookie_WL = dialogView.findViewById(R.id.chip_cookie_WL);
@@ -991,6 +1009,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 chip_cookie_WL.setChecked(true);
                 cookieHosts.addDomain(HelperUnit.domain(url));
             }
+            ninjaWebView.setOldDomain("");
+            ninjaWebView.loadUrl(ninjaWebView.getUrl());
         });
 
         Chip chip_javaScript = dialogView.findViewById(R.id.chip_javaScript);
@@ -1027,11 +1047,12 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 chip_cookie.setChecked(true);
                 sp.edit().putBoolean("sp_cookies", true).apply();
             }
+            reloadPage();
         });
 
         Chip chip_adBlock = dialogView.findViewById(R.id.chip_adBlock);
         chip_adBlock.setChecked(sp.getBoolean("sp_ad_block", true));
-        chip_adBlock.setOnClickListener(v -> {sp.edit().putBoolean("sp_ad_block",chip_adBlock.isChecked()).apply();reloadPage();});
+        chip_adBlock.setOnClickListener(v -> {sp.edit().putBoolean("sp_ad_block",chip_adBlock.isChecked()).apply();});
 
         Chip chip_fingerprint = dialogView.findViewById(R.id.chip_Fingerprint);
         chip_fingerprint.setChecked(sp.getBoolean("sp_fingerPrintProtection",true));
@@ -1122,6 +1143,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         if (url.isEmpty() || url.equals("about:blank")) {
             ninjaWebView.loadData("about:blank","","");
+            reloadPage();  //to apply algorithmic darkening if needed
         } else {
             ninjaWebView.loadUrl(url);
         }

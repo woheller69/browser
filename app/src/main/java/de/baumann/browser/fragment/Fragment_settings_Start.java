@@ -75,11 +75,7 @@ public class Fragment_settings_Start extends PreferenceFragmentCompat implements
         }
         if (p instanceof EditTextPreference) {
             EditTextPreference editTextPref = (EditTextPreference) p;
-            if (p.getTitle().toString().toLowerCase().contains("password")) {
-                p.setSummary("******");
-            } else {
                 if (p.getSummaryProvider()==null)   p.setSummary(editTextPref.getText());
-            }
         }
     }
 

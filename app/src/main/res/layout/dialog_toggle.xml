@@ -136,7 +136,7 @@
                 app:chipIconTint="@drawable/bg_chip_state_list" />
 
             <com.google.android.material.chip.Chip
-                android:id="@+id/chip_Location"
+                android:id="@+id/chip_image"
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -145,7 +145,7 @@
                 app:textEndPadding="0dp"
                 app:textStartPadding="0dp"
                 android:text=""
-                app:chipIcon="@drawable/icon_location"
+                app:chipIcon="@drawable/icon_image"
                 app:chipIconEnabled="true"
                 app:chipIconTint="@drawable/bg_chip_state_list"/>
 
@@ -161,7 +161,7 @@
             android:layout_marginBottom="16dp" >
 
             <com.google.android.material.chip.Chip
-                android:id="@+id/chip_image"
+                android:id="@+id/chip_Location"
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -170,7 +170,7 @@
                 app:textEndPadding="0dp"
                 app:textStartPadding="0dp"
                 android:text=""
-                app:chipIcon="@drawable/icon_image"
+                app:chipIcon="@drawable/icon_location"
                 app:chipIconEnabled="true"
                 app:chipIconTint="@drawable/bg_chip_state_list"/>
 
@@ -349,7 +349,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_alignParentStart="true"
-                android:layout_toStartOf="@+id/chip_fingerpint_tab"
+                android:layout_toStartOf="@+id/chip_fingerprint_tab"
                 android:gravity="center_vertical"
                 android:text="@string/setting_tab"
                 android:textAppearance="?attr/textAppearanceBody1"
@@ -359,9 +359,25 @@
 
             <com.google.android.material.chip.Chip
                 style="@style/Widget.MaterialComponents.Chip.Choice"
-                android:id="@+id/chip_fingerpint_tab"
+                android:id="@+id/chip_adblock_tab"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_toStartOf="@+id/chip_fingerprint_tab"
+                android:text=""
+                app:chipIcon="@drawable/icon_adblock"
+                app:chipIconTint="@drawable/bg_chip_state_list"
+                app:chipIconEnabled="true"
+                app:chipStartPadding="4dp"
+                app:chipEndPadding="4dp"
+                app:textEndPadding="0dp"
+                app:textStartPadding="0dp" />
+
+            <com.google.android.material.chip.Chip
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:id="@+id/chip_fingerprint_tab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-8dp"
                 android:layout_toStartOf="@+id/chip_desktop_mode_tab"
                 android:text=""
                 app:chipIcon="@drawable/icon_fingerprint"

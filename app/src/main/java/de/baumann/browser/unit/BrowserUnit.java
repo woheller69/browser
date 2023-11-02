@@ -210,10 +210,8 @@ public class BrowserUnit {
         action.open(true);
         action.clearTable(RecordUnit.TABLE_BOOKMARK);
         action.close();
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N_MR1) {
-            ShortcutManager shortcutManager = context.getSystemService(ShortcutManager.class);
-            Objects.requireNonNull(shortcutManager).removeAllDynamicShortcuts();
-        }
+        ShortcutManager shortcutManager = context.getSystemService(ShortcutManager.class);
+        Objects.requireNonNull(shortcutManager).removeAllDynamicShortcuts();
     }
 
     public static void clearIndexedDB (Context context) {

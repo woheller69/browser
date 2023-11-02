@@ -18,6 +18,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import java.util.Objects;
 
 import de.baumann.browser.R;
+import de.baumann.browser.activity.BrowserActivity;
 import de.baumann.browser.unit.HelperUnit;
 import de.baumann.browser.view.NinjaWebView;
 
@@ -54,9 +55,10 @@ public class NinjaWebChromeClient extends WebChromeClient {
 
         newWebView.setWebViewClient(new WebViewClient() {
             @Override
-            public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW);
-                browserIntent.setData(Uri.parse(url));
+            public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+                Intent browserIntent = new Intent(context, BrowserActivity.class);
+                browserIntent.setAction(Intent.ACTION_VIEW);
+                browserIntent.setData(request.getUrl());
                 context.startActivity(browserIntent);
                 return true;
             }
@@ -130,8 +132,8 @@ public class NinjaWebChromeClient extends WebChromeClient {
 
     @Override
     public void onReceivedIcon(WebView view, Bitmap icon) {
-        ninjaWebView.setFavicon(icon);
         super.onReceivedIcon(view, icon);
+        ninjaWebView.setFavicon(icon);
     }
 
     @Override

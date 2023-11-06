@@ -105,6 +105,7 @@ public class RecordAction {
                 break;
             case "date":
                 Collections.sort(list, Comparator.comparingLong(Record::getTime));
+                Collections.reverse(list);
                 break;
             case "title":
                 Collections.sort(list, Comparator.comparing(Record::getUpperCaseTitle));

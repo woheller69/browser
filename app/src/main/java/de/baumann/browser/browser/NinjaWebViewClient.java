@@ -485,6 +485,12 @@ public class NinjaWebViewClient extends WebViewClient {
 }
 
     @Override
+    public boolean shouldOverrideUrlLoading(WebView view, String url) {  //do not delete, needed for camera, for whatever reason
+        final Uri uri = Uri.parse(url);
+        return handleUri(uri);
+    }
+
+    @Override
     public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
         final Uri uri = request.getUrl();
         return handleUri(uri);

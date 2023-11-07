@@ -32,15 +32,16 @@
 
             <EditText android:id="@+id/whitelist_edit"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="150dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
-                android:hint="@string/whitelist_edit_hint"
+                android:gravity="top"
+                android:hint="@string/summary_userscript"
                 android:textCursorDrawable="@null"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:imeOptions="actionDone"
-                android:inputType="text|textNoSuggestions"
+                android:inputType="textMultiLine|textNoSuggestions"
                 android:selectAllOnFocus="true"
                 android:importantForAutofill="no" />
 
@@ -59,21 +60,11 @@
 
         </LinearLayout>
 
-        <ListView android:id="@+id/whitelist"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:drawSelectorOnTop="true"/>
-
-        <TextView android:id="@+id/whitelist_empty"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:layout_gravity="center|top"
-            android:gravity="center"
-            android:text="@string/list_empty"
-            android:textAllCaps="false"
-            android:textColor="@color/color_hint"
-            android:visibility="gone"/>
 
     </LinearLayout>
 

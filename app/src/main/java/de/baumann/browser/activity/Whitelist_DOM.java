@@ -41,7 +41,6 @@ public class Whitelist_DOM extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
         HelperUnit.initTheme(this);
         setContentView(R.layout.activity_settings_whitelist);
         Toolbar toolbar = findViewById(R.id.toolbar);

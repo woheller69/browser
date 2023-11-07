@@ -91,6 +91,10 @@
             android:label="@string/setting_title_dom_whitelist"
             android:theme="@style/AppTheme"/>
 
+        <activity android:name="de.baumann.browser.activity.Manage_UserScripts"
+            android:label="@string/setting_userScript"
+            android:theme="@style/AppTheme"/>
+
         <activity android:name="de.baumann.browser.activity.Settings_Delete"
             android:label="@string/menu_delete"
             android:theme="@style/AppTheme"/>

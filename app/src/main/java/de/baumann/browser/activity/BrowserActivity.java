@@ -108,6 +108,7 @@ import de.baumann.browser.R;
 import de.baumann.browser.unit.BrowserUnit;
 import de.baumann.browser.unit.HelperUnit;
 import de.baumann.browser.unit.RecordUnit;
+import de.baumann.browser.unit.ScriptUnit;
 import de.baumann.browser.view.CompleteAdapter;
 import de.baumann.browser.view.GridAdapter;
 
@@ -338,6 +339,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     @Override
     public void onResume() {
         super.onResume();
+
+        ScriptUnit.initScripts(this);
 
         if (sp.getInt("restart_changed", 1) == 1) {
             sp.edit().putInt("restart_changed", 0).apply();

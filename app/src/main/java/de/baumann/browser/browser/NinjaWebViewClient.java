@@ -1,5 +1,8 @@
 package de.baumann.browser.browser;
 
+import static de.baumann.browser.database.UserScript.DOC_END;
+import static de.baumann.browser.database.UserScript.DOC_START;
+
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
@@ -29,14 +32,14 @@ import android.widget.ImageView;
 
 import java.io.ByteArrayInputStream;
 import java.net.URISyntaxException;
-import java.util.ArrayList;
+
+import java.util.List;
 import java.util.Objects;
-import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import de.baumann.browser.R;
+import de.baumann.browser.database.UserScript;
 import de.baumann.browser.unit.BrowserUnit;
+import de.baumann.browser.unit.ScriptUnit;
 import de.baumann.browser.view.NinjaToast;
 import de.baumann.browser.view.NinjaWebView;
 
@@ -51,38 +54,6 @@ public class NinjaWebViewClient extends WebViewClient {
     private boolean enable;
     public void enableAdBlock(boolean enable) {
         this.enable = enable;
-    }
-
-    public static boolean matchesPattern(Context context, String url, String pattern) {
-        // Use regular expressions to match the URL against the pattern
-        try {
-            Pattern compiledPattern = Pattern.compile(pattern,Pattern.LITERAL);
-            Matcher matcher = compiledPattern.matcher(url);
-            return matcher.matches();
-        } catch (Exception e){
-            NinjaToast.show(context,e.toString());
-        return false;}
-
-    }
-
-    private static boolean findMatch(Context context, String url, String script) {
-        Scanner scanner = new Scanner(script);
-        // Read @match patterns from script
-        ArrayList<String> matchPatterns = new ArrayList<>();
-        while (scanner.hasNextLine()) {
-            String line = scanner.nextLine();
-            if (line.contains("@match")) matchPatterns.add(line.split("@match")[1].trim());
-        }
-        scanner.close();
-        // Check if the URL matches any of the @match patterns
-        boolean isMatch = false;
-        for (String pattern : matchPatterns) {
-            if (matchesPattern(context, url, pattern)) {
-                isMatch = true;
-                break; // Exit the loop if a match is found
-            }
-        }
-        return isMatch;
     }
 
     public NinjaWebViewClient(NinjaWebView ninjaWebView) {
@@ -106,11 +77,10 @@ public class NinjaWebViewClient extends WebViewClient {
             ninjaWebView.postInvalidate();
         }
 
-        if(sp.getBoolean("onPageFinished",false)) {
-            String script = sp.getString("sp_onPageFinished","");
-            boolean isMatch = findMatch(context,url, script);
-            // In case of match execute script
-            if (isMatch)  view.evaluateJavascript(sp.getString("sp_onPageFinished",""), null);
+        List<UserScript> list = ScriptUnit.findScriptsToExecute(context, url, DOC_END);
+        for (UserScript script : list){
+            if (sp.getBoolean("sp_debug",false)) NinjaToast.show(context, script.getName());
+            view.evaluateJavascript(script.getScript(),null);
         }
 
         view.evaluateJavascript("var links=document.getElementsByTagName('video'); for(let i=0;i<links.length;i++){links[i].pause()};", null);
@@ -123,11 +93,10 @@ public class NinjaWebViewClient extends WebViewClient {
         ninjaWebView.resetFavicon();
         super.onPageStarted(view,url,favicon);
 
-        if(sp.getBoolean("onPageStarted",false)) {
-            String script = sp.getString("sp_onPageStarted","");
-            boolean isMatch = findMatch(context, url, script);
-            // In case of match execute script
-            if (isMatch) view.evaluateJavascript(sp.getString("sp_onPageStarted",""), null);
+        List<UserScript> list = ScriptUnit.findScriptsToExecute(context, url, DOC_START);
+        for (UserScript script : list){
+            if (sp.getBoolean("sp_debug",false)) NinjaToast.show(context, script.getName());
+            view.evaluateJavascript(script.getScript(),null);
         }
 
         if(ninjaWebView.isFingerPrintProtection()) {
@@ -444,13 +413,6 @@ public class NinjaWebViewClient extends WebViewClient {
 
     @Override
     public void onLoadResource(WebView view, String url) {
-
-        if(sp.getBoolean("onLoadResource",false)) {
-            String script = sp.getString("onLoadResource","");
-            boolean isMatch = findMatch(context, url, script);
-            // In case of match execute script
-            if (isMatch) view.evaluateJavascript(sp.getString("sp_onLoadResource",""), null);
-        }
 
         if(ninjaWebView.isFingerPrintProtection()) {
             view.evaluateJavascript("var test=document.querySelector(\"a[ping]\"); if(test!==null){test.removeAttribute('ping')};", null);

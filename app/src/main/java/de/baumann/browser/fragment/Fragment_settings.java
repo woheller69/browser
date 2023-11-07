@@ -11,6 +11,7 @@ import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceGroup;
 import androidx.preference.PreferenceManager;
 
+import de.baumann.browser.activity.Manage_UserScripts;
 import de.baumann.browser.activity.Settings_Delete;
 import de.baumann.browser.activity.Settings_Backup;
 import de.baumann.browser.activity.Settings_Filter;
@@ -65,6 +66,14 @@ public class Fragment_settings extends PreferenceFragmentCompat {
         assert settings_clear != null;
         settings_clear.setOnPreferenceClickListener(preference -> {
             Intent intent = new Intent(getActivity(), Settings_Delete.class);
+            requireActivity().startActivity(intent);
+            return false;
+        });
+
+        Preference scripts = findPreference("scripts");
+        assert scripts != null;
+        scripts.setOnPreferenceClickListener(preference -> {
+            Intent intent = new Intent(getActivity(), Manage_UserScripts.class);
             requireActivity().startActivity(intent);
             return false;
         });

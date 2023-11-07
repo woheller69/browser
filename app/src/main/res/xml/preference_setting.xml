@@ -27,28 +27,14 @@
 
     </PreferenceCategory>
 
-    <PreferenceCategory android:title="@string/setting_userScript">
+        <Preference
+            android:title="@string/setting_userScript"
+            android:key="scripts"/>
 
-        <de.baumann.browser.preferences.EditTextSwitchPreference
-            android:selectable="true"
-            app:useSimpleSummaryProvider="true"
-            android:key="sp_onPageStarted"
-            app:editTextSwitchKey="onPageStarted"
-            android:title="onPageStarted" />
+        <SwitchPreference
+            android:id="@+id/debug"
+            android:title="Debug"
+            android:defaultValue="false"
+            android:key="sp_debug"/>
 
-        <de.baumann.browser.preferences.EditTextSwitchPreference
-            android:selectable="true"
-            app:useSimpleSummaryProvider="true"
-            android:key="sp_onPageFinished"
-            app:editTextSwitchKey="onPageFinished"
-            android:title="onPageFinished" />
-
-        <de.baumann.browser.preferences.EditTextSwitchPreference
-            android:selectable="true"
-            app:useSimpleSummaryProvider="true"
-            android:key="sp_onLoadResource"
-            app:editTextSwitchKey="onLoadResource"
-            android:title="onLoadResource" />
-
-    </PreferenceCategory>
 </PreferenceScreen>

@@ -55,6 +55,7 @@
         android:layout_height="?android:attr/listPreferredItemHeightSmall"
         android:layout_marginEnd="16dp"
         android:layout_toStartOf="@id/active"
+        android:layout_toEndOf="@id/cardView"
         android:ellipsize="end"
         android:gravity="center_vertical"
         android:includeFontPadding="false"

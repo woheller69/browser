@@ -23,6 +23,7 @@ import java.util.Set;
 import de.baumann.browser.database.FaviconHelper;
 import de.baumann.browser.database.Record;
 import de.baumann.browser.R;
+import de.baumann.browser.unit.HelperUnit;
 
 public class CompleteAdapter extends BaseAdapter implements Filterable {
     private class CompleteFilter extends Filter {
@@ -89,9 +90,14 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
             this.index = index;
         }
 
-        private CompleteItem(String title, String url) {
+        private int iconColor;
+
+        public int getIconColor() { return iconColor; }
+
+        private CompleteItem(String title, String url, int iconColor) {
             this.title = title;
             this.url = url;
+            this.iconColor = iconColor;
         }
 
         @Override
@@ -142,7 +148,7 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
                     && !record.getTitle().isEmpty()
                     && record.getURL() != null
                     && !record.getURL().isEmpty()) {
-                originalList.add(new CompleteItem(record.getTitle(), record.getURL()));
+                originalList.add(new CompleteItem(record.getTitle(), record.getURL(), record.getIconColor()));
             }
         }
 
@@ -196,7 +202,7 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
         holder.urlView.setVisibility(View.GONE);
         holder.urlView.setText(item.url);
 
-        holder.iconView.setImageResource(R.drawable.icon_bookmark_light);  //Item from bookmarks
+        HelperUnit.setFilterIcons(holder.iconView,item.getIconColor());
 
         FaviconHelper faviconHelper = new FaviconHelper(context);
         Bitmap bitmap=faviconHelper.getFavicon(item.url);

@@ -12,7 +12,7 @@
         android:id="@+id/page_2"
         android:enabled="true"
         android:title="@string/album_title_bookmarks"
-        android:icon="@drawable/icon_bookmark" />
+        android:icon="@drawable/icon_bookmark_light" />
 
     <item
         android:id="@+id/page_4"

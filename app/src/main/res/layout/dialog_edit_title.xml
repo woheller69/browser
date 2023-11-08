@@ -96,7 +96,7 @@
                 android:gravity="center_vertical"
                 android:contentDescription="@null"
                 android:scaleType="fitCenter"
-                android:src="@drawable/circle_red_big"
+                android:src="@drawable/bookmark_red_big"
                 android:background="?attr/actionBarItemBackground" />
 
             <com.google.android.material.chip.Chip

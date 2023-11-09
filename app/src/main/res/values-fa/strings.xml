@@ -8,8 +8,6 @@
     <string name="app_error">خطا</string>
     <string name="list_empty">لیست خالی می باشد</string>
     <string name="album_title_bookmarks">نشانک ها</string>
-    <string name="album_title_history">تاریخچه</string>
-    <string name="album_title_home">صفحه خانگی</string>
     <string name="album_title_tab">زبانه های باز</string>
     <string name="search_hint">جستجو</string>
     <string name="color_red">قرمز</string>

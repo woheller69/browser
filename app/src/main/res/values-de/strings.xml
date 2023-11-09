@@ -8,8 +8,6 @@
     <string name="app_error">Fehler</string>
     <string name="list_empty">Liste ist leer</string>
     <string name="album_title_bookmarks">Lesezeichen</string>
-    <string name="album_title_history">Verlauf</string>
-    <string name="album_title_home">Start</string>
     <string name="album_title_tab">Tabs</string>
     <string name="search_hint">Suche</string>
     <string name="color_red">Rot</string>

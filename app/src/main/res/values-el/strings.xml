@@ -8,8 +8,6 @@
     <string name="app_error">Σφάλμα</string>
     <string name="list_empty">Η λίστα είναι κενή</string>
     <string name="album_title_bookmarks">Σελιδοδείκτες</string>
-    <string name="album_title_history">Ιστορικό</string>
-    <string name="album_title_home">Αρχική</string>
     <string name="album_title_tab">Ανοιγμένες Καρτέλες</string>
     <string name="search_hint">Αναζήτηση</string>
     <string name="color_red">Κόκκινο</string>

@@ -8,8 +8,6 @@
     <string name="app_error">Error</string>
     <string name="list_empty">La lista está vacía</string>
     <string name="album_title_bookmarks">Marcadores</string>
-    <string name="album_title_history">Historial</string>
-    <string name="album_title_home">Inicio</string>
     <string name="album_title_tab">Pestañas abiertas</string>
     <string name="search_hint">Búsqueda</string>
     <string name="color_red">Rojo</string>

@@ -8,8 +8,6 @@
     <string name="app_error">エラー</string>
     <string name="list_empty">リストが空です</string>
     <string name="album_title_bookmarks">ブックマーク</string>
-    <string name="album_title_history">履歴</string>
-    <string name="album_title_home">ホーム</string>
     <string name="album_title_tab">開かれたタブ</string>
     <string name="search_hint">検索</string>
     <string name="color_red">赤</string>

@@ -8,8 +8,6 @@
     <string name="app_error">Error</string>
     <string name="list_empty">List is empty</string>
     <string name="album_title_bookmarks">Bladwijzers</string>
-    <string name="album_title_history">Geschiedenis</string>
-    <string name="album_title_home">Startpagina</string>
     <string name="album_title_tab">Opened Tabs</string>
     <string name="search_hint">Zoeken</string>
     <string name="color_red">Rood</string>

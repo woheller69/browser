@@ -8,8 +8,6 @@
     <string name="app_error">Kesalahan</string>
     <string name="list_empty">Daftar kosong</string>
     <string name="album_title_bookmarks">Bookmarks</string>
-    <string name="album_title_history">Riwayat</string>
-    <string name="album_title_home">Beranda</string>
     <string name="album_title_tab">Tab Teebuka</string>
     <string name="search_hint">Cari</string>
     <string name="color_red">Merah</string>

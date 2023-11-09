@@ -157,7 +157,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     private BottomNavigationView bottom_navigation;
     private BottomAppBar bottomAppBar;
 
-    private String overViewTab;
     private BroadcastReceiver downloadReceiver;
 
     private Activity activity;
@@ -243,7 +242,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         sp = PreferenceManager.getDefaultSharedPreferences(context);
         sp.edit().putInt("restart_changed", 0).apply();
         sp.edit().putBoolean("pdf_create", false).apply();
-        overViewTab = getString(R.string.album_title_bookmarks);
+
         setContentView(R.layout.activity_main);
 
         if (Objects.requireNonNull(sp.getString("saved_key_ok", "no")).equals("no")) {
@@ -744,7 +743,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 showTabView();
             } else if (menuItem.getItemId() == R.id.page_2) {
                 omniBox_overview.setImageResource(R.drawable.icon_bookmark_light);
-                overViewTab = getString(R.string.album_title_bookmarks);
 
                 RecordAction action = new RecordAction(context);
                 action.open(false);
@@ -791,10 +789,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                         dialog.show();
                         Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
                     } else if (item.getItemId() == R.id.menu_sortName) {
-                        if (overViewTab.equals(getString(R.string.album_title_bookmarks))) {
-                            sp.edit().putString("sort_bookmark", "title").apply();
-                            bottom_navigation.setSelectedItemId(R.id.page_2);
-                        }
+                        sp.edit().putString("sort_bookmark", "title").apply();
+                        bottom_navigation.setSelectedItemId(R.id.page_2);
                     } else if (item.getItemId() == R.id.menu_sortIcon) {
                         sp.edit().putString("sort_bookmark", "icon").apply();
                         bottom_navigation.setSelectedItemId(R.id.page_2);
@@ -1719,9 +1715,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         TextView menuTitle = dialogView.findViewById(R.id.menuTitle);
         menuTitle.setText(title);
-        ImageView icon = (ImageView) dialogView.findViewById(R.id.menu_icon);
-        if (ninjaWebView.getFavicon()!=null) icon.setImageBitmap(ninjaWebView.getFavicon());
-        else icon.setImageResource(R.drawable.icon_image_broken);
+
+        FaviconHelper.setFavicon(this,dialogView,url,R.id.menu_icon,R.drawable.icon_image_broken);
 
         builder.setView(dialogView);
         AlertDialog dialog = builder.create();
@@ -1736,18 +1731,11 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         final List<GridItem> gridList = new LinkedList<>();
 
-        if (overViewTab.equals(getString(R.string.album_title_bookmarks)) || overViewTab.equals(getString(R.string.album_title_home))) {
-            gridList.add(gridList.size(), item_05);
-            gridList.add(gridList.size(), item_01);
-            gridList.add(gridList.size(), item_02);
-            gridList.add(gridList.size(), item_03);
-            gridList.add(gridList.size(), item_04);
-        } else {
-            gridList.add(gridList.size(), item_05);
-            gridList.add(gridList.size(), item_01);
-            gridList.add(gridList.size(), item_02);
-            gridList.add(gridList.size(), item_03);
-        }
+        gridList.add(gridList.size(), item_05);
+        gridList.add(gridList.size(), item_01);
+        gridList.add(gridList.size(), item_02);
+        gridList.add(gridList.size(), item_03);
+        gridList.add(gridList.size(), item_04);
 
         GridView menu_grid = dialogView.findViewById(R.id.menu_grid);
         GridAdapter gridAdapter = new GridAdapter(context, gridList);
@@ -1854,14 +1842,12 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         builderSubMenu.setView(dialogViewSubMenu);
         builderSubMenu.setTitle(getString(R.string.menu_edit));
         builderSubMenu.setPositiveButton(R.string.app_ok, (dialog3, whichButton) -> {
-            if (overViewTab.equals(getString(R.string.album_title_bookmarks))) {
-                RecordAction action = new RecordAction(context);
-                action.open(true);
-                action.deleteURL(bookmark.getURL(), RecordUnit.TABLE_BOOKMARK);
-                action.addBookmark(new Record(edit_title.getText().toString(), edit_URL.getText().toString(), 0, chip_desktopMode.isChecked(),chip_javascript.isChecked(),chip_DomContent.isChecked(),newIcon));
-                action.close();
-                bottom_navigation.setSelectedItemId(R.id.page_2);
-            }
+            RecordAction action = new RecordAction(context);
+            action.open(true);
+            action.deleteURL(bookmark.getURL(), RecordUnit.TABLE_BOOKMARK);
+            action.addBookmark(new Record(edit_title.getText().toString(), edit_URL.getText().toString(), 0, chip_desktopMode.isChecked(),chip_javascript.isChecked(),chip_DomContent.isChecked(),newIcon));
+            action.close();
+            bottom_navigation.setSelectedItemId(R.id.page_2);
         });
         builderSubMenu.setNegativeButton(R.string.app_cancel, (dialog3, whichButton) -> builderSubMenu.setCancelable(true));
         dialogSubMenu = builderSubMenu.create();

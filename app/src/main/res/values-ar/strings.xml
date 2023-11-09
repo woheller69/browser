@@ -8,8 +8,6 @@
     <string name="app_error">خطأ</string>
     <string name="list_empty">القائمة فارغة</string>
     <string name="album_title_bookmarks">العلامات</string>
-    <string name="album_title_history">السجل</string>
-    <string name="album_title_home">الصفحة الرئيسية</string>
     <string name="album_title_tab">علامات التبويب المفتوحة</string>
     <string name="search_hint">البحث</string>
     <string name="color_red">أحمر</string>

@@ -8,8 +8,6 @@
     <string name="app_error">Error</string>
     <string name="list_empty">Listan är tom</string>
     <string name="album_title_bookmarks">Bokmärken</string>
-    <string name="album_title_history">Historik</string>
-    <string name="album_title_home">Hem</string>
     <string name="album_title_tab">Öppnade flikar</string>
     <string name="search_hint">Sök</string>
     <string name="color_red">Röd</string>

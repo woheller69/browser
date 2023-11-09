@@ -8,8 +8,6 @@
     <string name="app_error">Грешка</string>
     <string name="list_empty">Списак је празан</string>
     <string name="album_title_bookmarks">Забелешке</string>
-    <string name="album_title_history">Историјат</string>
-    <string name="album_title_home">Почетна страница</string>
     <string name="album_title_tab">Отворени језичци</string>
     <string name="search_hint">Претрага</string>
     <string name="color_red">Црвена</string>

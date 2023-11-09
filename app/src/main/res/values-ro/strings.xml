@@ -8,8 +8,6 @@
     <string name="app_error">Eroare</string>
     <string name="list_empty">Lista este goală</string>
     <string name="album_title_bookmarks">Marcaje</string>
-    <string name="album_title_history">Istoric</string>
-    <string name="album_title_home">Pagină de pornire</string>
     <string name="album_title_tab">Tab-uri deschise</string>
     <string name="search_hint">Căutare</string>
     <string name="color_red">Roșu</string>

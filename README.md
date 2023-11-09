@@ -57,3 +57,33 @@ The app uses code from:
 
 ## INSTRUCTIONS
 
+<img src="Instructions.png" width="300"/>
+
+The main navigation features are depicted in the image above.
+
+For each tab it is possible to enable/disable:
+- AdBlock
+- Anti-Browser-Fingerprinting measures
+- Desktop Mode
+- DOM-Storage
+- JavaScript
+
+These settings (except desktop mode) are inherited from global settings when a new tab is created.
+They will always be applied when a new web site is opened.
+
+FREE Browser allows bookmark specific settings for JavaScript, DOM-Storage, and Desktop mode.
+If a bookmark is opened these settings will be applied, no matter which other settings are valid for the tab.
+If this is the case the bookmark symbol in "Exceptions" will be highlighted. When browsing within the domain of the
+bookmark these settings will remain.
+
+In addition you can define domains where Cookies, DOM-Storage, and JavaScript are always allowed (see Settings -> Browser Settings).
+Cookies will override the global cookies setting. DOM-Storage and JavaScript will override the tab specific settings.
+If one of these exceptions is active the respective icon will also be highlighted in "Exceptions". 
+A click on the icon will add/remove an exception.
+
+In additions there are settings which are only available as global settings:
+- Allow location access
+- Allow camera access
+- Allow microphone access
+- Download images. This allows to save data, when not connected to WIFI. If WIFI is available images will always be loaded.
+

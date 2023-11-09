@@ -1,1 +1,1 @@
-Ein kleiner Webbrowser, basierend auf Androids WebView. Entwickelt um deine Privatsphäre zu schützen
+Ein Webbrowser für optimale Privatsphäre

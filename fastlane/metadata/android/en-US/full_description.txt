@@ -1,43 +1,23 @@
-"FOSS Browser" is a fully free/open source (as in freedom) Android app. FOSS Browser doesn't show ads and doesn't track you. The intention is to provide a simple and light weight but powerful and privacy friendly browser with a modern user interface. Your privacy - your data.
-
-<b>Project Homepage with further infos: https://github.com/scoute-dich/browser/</b>
-
--------------------------------------------------
-<b>SECURITY/DATA</b>
--------------------------------------------------
+"FREE Browser" is a web browser for optimal privacy
 
 • fully open source
 • no trackers
 • no unnecessary permissions
-• third party cookies disabled by default
-• enable/disable cookies, javascript, location access, history and more
-• advanced settings for javascript, cookies and DOM-storage (domain/bookmark based)
-• do not track me / GPC (global privacy control)
-• measures agains browser fingerprinting
-• AdBlocker
-• delete data on exit (optional)
 
 -------------------------------------------------
-<b>UI/HANDLING</b>
+<b>FEATURES</b>
 -------------------------------------------------
 
-• optimized for one hand handling (toolbar at bottom)
-• tab control (switch, open, close unlimited tabs)
-• full material design
-• hide toolbar (optional)
-• fast toggle for most important settings
-• advanced gesture control for toolbar and toolbar buttons
-• filtering bookmarks
-• toggle mobile/desktop mode
-• toggle day/night mode
-
--------------------------------------------------
-<b>NICE TO HAVE</b>
--------------------------------------------------
-
-• backup data
-• small size
-• search on site
-• Websearch (from marked text context menu)
-• save as PDF
-• open links in other apps (for example YouTube)
+• AdBlocker using StevenBlack host list
+• Measures against browser fingerprinting
+• Advanced settings for javascript, cookies and DOM-storage (domain/bookmark based)
+• Support for Greasemonkey style scripts
+• Optimized for one hand handling (toolbar at bottom)
+• TAB control (switch, open, close, unlimited tabs)
+• Fast toggle for most important settings
+• Search current website
+• Web search (from marked text via context menu)
+• Save as PDF
+• Open links in other apps (for example YouTube)
+• Backup
+• etc

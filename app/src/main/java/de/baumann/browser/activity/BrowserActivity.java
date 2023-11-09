@@ -635,7 +635,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         });
         omniBox_overview.setOnClickListener(v -> showOverview());
         omniBox_overview.setOnLongClickListener(v -> {
-            bottom_navigation.setSelectedItemId(R.id.page_2);
+            bottom_navigation.setSelectedItemId(R.id.bookmarks);
             showOverview();
             show_dialogFilter();
             return false;
@@ -738,10 +738,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         bottomSheetDialog_OverView.setContentView(dialogView);
 
         BottomNavigationView.OnNavigationItemSelectedListener navListener = menuItem -> {
-            if (menuItem.getItemId() == R.id.page_0) {
+            if (menuItem.getItemId() == R.id.tabs) {
                 hideOverview();
                 showTabView();
-            } else if (menuItem.getItemId() == R.id.page_2) {
+            } else if (menuItem.getItemId() == R.id.bookmarks) {
                 omniBox_overview.setImageResource(R.drawable.icon_bookmark_light);
 
                 RecordAction action = new RecordAction(context);
@@ -772,9 +772,9 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     showContextMenuList(adapter, list, position);
                     return true;
                 });
-            } else if (menuItem.getItemId() == R.id.page_4) {
+            } else if (menuItem.getItemId() == R.id.menu) {
 
-                PopupMenu popup = new PopupMenu(this, bottom_navigation.findViewById(R.id.page_2));
+                PopupMenu popup = new PopupMenu(this, bottom_navigation.findViewById(R.id.bookmarks));
                 popup.inflate(R.menu.menu_list_bookmark);
                 popup.setOnMenuItemClickListener(item -> {
                     if (item.getItemId() == R.id.menu_delete) {
@@ -782,7 +782,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                         builder.setMessage(R.string.hint_database);
                         builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
                             BrowserUnit.clearBookmark(context);
-                            bottom_navigation.setSelectedItemId(R.id.page_2);
+                            bottom_navigation.setSelectedItemId(R.id.bookmarks);
                         });
                         builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
                         AlertDialog dialog = builder.create();
@@ -790,13 +790,13 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                         Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
                     } else if (item.getItemId() == R.id.menu_sortName) {
                         sp.edit().putString("sort_bookmark", "title").apply();
-                        bottom_navigation.setSelectedItemId(R.id.page_2);
+                        bottom_navigation.setSelectedItemId(R.id.bookmarks);
                     } else if (item.getItemId() == R.id.menu_sortIcon) {
                         sp.edit().putString("sort_bookmark", "icon").apply();
-                        bottom_navigation.setSelectedItemId(R.id.page_2);
+                        bottom_navigation.setSelectedItemId(R.id.bookmarks);
                     } else if (item.getItemId() == R.id.menu_sortDate) {
                         sp.edit().putString("sort_bookmark", "date").apply();
-                        bottom_navigation.setSelectedItemId(R.id.page_2);
+                        bottom_navigation.setSelectedItemId(R.id.bookmarks);
                     } else if (item.getItemId() == R.id.menu_filter) {
                         show_dialogFilter();
                     }
@@ -804,7 +804,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 });
                 popup.show();
                 popup.setOnDismissListener(v -> {
-                    bottom_navigation.setSelectedItemId(R.id.page_2);
+                    bottom_navigation.setSelectedItemId(R.id.bookmarks);
                 });
             }
             return true;
@@ -812,14 +812,14 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         bottom_navigation = dialogView.findViewById(R.id.bottom_navigation);
         bottom_navigation.setOnNavigationItemSelectedListener(navListener);
-        bottom_navigation.findViewById(R.id.page_2).setOnLongClickListener(v -> {
+        bottom_navigation.findViewById(R.id.bookmarks).setOnLongClickListener(v -> {
             show_dialogFilter();
             return true;
         });
 
-        bottom_navigation.getOrCreateBadge(R.id.page_0).setNumber(BrowserContainer.size());
-        bottom_navigation.getOrCreateBadge(R.id.page_0).setBackgroundColor(getResources().getColor(R.color.primaryColor));
-        bottom_navigation.setSelectedItemId(R.id.page_2);
+        bottom_navigation.getOrCreateBadge(R.id.tabs).setNumber(BrowserContainer.size());
+        bottom_navigation.getOrCreateBadge(R.id.tabs).setBackgroundColor(getResources().getColor(R.color.primaryColor));
+        bottom_navigation.setSelectedItemId(R.id.bookmarks);
 
         BottomSheetBehavior<View> mBehavior = BottomSheetBehavior.from((View) dialogView.getParent());
         mBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
@@ -1210,7 +1210,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     @OptIn(markerClass=com.google.android.material.badge.ExperimentalBadgeUtils.class)
     private void updateOmniBox() {
 
-        bottom_navigation.getOrCreateBadge(R.id.page_0).setNumber(BrowserContainer.size());
+        bottom_navigation.getOrCreateBadge(R.id.tabs).setNumber(BrowserContainer.size());
         badgeDrawable.setNumber(BrowserContainer.size());
         BadgeUtils.attachBadgeDrawable(badgeDrawable, omniBox_tab, findViewById(R.id.layout));
         omniBox_text.clearFocus();
@@ -1847,7 +1847,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             action.deleteURL(bookmark.getURL(), RecordUnit.TABLE_BOOKMARK);
             action.addBookmark(new Record(edit_title.getText().toString(), edit_URL.getText().toString(), 0, chip_desktopMode.isChecked(),chip_javascript.isChecked(),chip_DomContent.isChecked(),newIcon));
             action.close();
-            bottom_navigation.setSelectedItemId(R.id.page_2);
+            bottom_navigation.setSelectedItemId(R.id.bookmarks);
         });
         builderSubMenu.setNegativeButton(R.string.app_cancel, (dialog3, whichButton) -> builderSubMenu.setCancelable(true));
         dialogSubMenu = builderSubMenu.create();
@@ -1877,7 +1877,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             filter = true;
             filterBy = gridList.get(position).getData();
             dialog.cancel();
-            bottom_navigation.setSelectedItemId(R.id.page_2);
+            bottom_navigation.setSelectedItemId(R.id.bookmarks);
         });
     }
 

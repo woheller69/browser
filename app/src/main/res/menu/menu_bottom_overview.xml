@@ -3,19 +3,19 @@
     tools:ignore="HardcodedText">
 
     <item
-        android:id="@+id/page_0"
+        android:id="@+id/tabs"
         android:enabled="true"
         android:title="@string/album_title_tab"
         android:icon="@drawable/icon_menu" />
 
     <item
-        android:id="@+id/page_2"
+        android:id="@+id/bookmarks"
         android:enabled="true"
         android:title="@string/album_title_bookmarks"
         android:icon="@drawable/icon_bookmark_light" />
 
     <item
-        android:id="@+id/page_4"
+        android:id="@+id/menu"
         android:enabled="true"
         android:title="Menu"
         android:icon="@drawable/icon_overflow" />

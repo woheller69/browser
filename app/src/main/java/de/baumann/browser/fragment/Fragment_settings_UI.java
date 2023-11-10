@@ -1,6 +1,5 @@
 package de.baumann.browser.fragment;
 
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
@@ -9,7 +8,6 @@ import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceGroup;
-import androidx.preference.PreferenceManager;
 
 import de.baumann.browser.R;
 
@@ -19,8 +17,6 @@ public class Fragment_settings_UI extends PreferenceFragmentCompat implements Sh
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
 
         setPreferencesFromResource(R.xml.preference_ui, rootKey);
-        Context context = getContext();
-        assert context != null;
 
         initSummary(getPreferenceScreen());
     }

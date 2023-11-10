@@ -27,7 +27,7 @@ public class Fragment_settings extends PreferenceFragmentCompat {
         setPreferencesFromResource(R.xml.preference_setting, rootKey);
         Context context = getContext();
         assert context != null;
-        PreferenceManager.setDefaultValues(context, R.xml.preference_setting, false);
+
         initSummary(getPreferenceScreen());
 
         Preference settings_filter = findPreference("settings_filter");

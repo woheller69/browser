@@ -239,24 +239,22 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         activity = BrowserActivity.this;
         HelperUnit.initTheme(context);
 
+        setContentView(R.layout.activity_main);
         sp = PreferenceManager.getDefaultSharedPreferences(context);
+
+        if (Objects.requireNonNull(sp.getString("saved_key_ok", "no")).equals("no")) {
+            PreferenceManager.setDefaultValues(context, R.xml.preference_setting, true);
+            PreferenceManager.setDefaultValues(context, R.xml.preference_start, true);
+            PreferenceManager.setDefaultValues(context, R.xml.preference_ui, true);
+            PreferenceManager.setDefaultValues(context, R.xml.preference_backup, true);
+            PreferenceManager.setDefaultValues(context, R.xml.preference_delete, true);
+            PreferenceManager.setDefaultValues(context, R.xml.preference_filter, true);
+            sp.edit().putString("saved_key_ok", "yes").apply();
+        }
+
         sp.edit().putInt("restart_changed", 0).apply();
         sp.edit().putBoolean("pdf_create", false).apply();
 
-        setContentView(R.layout.activity_main);
-
-        if (Objects.requireNonNull(sp.getString("saved_key_ok", "no")).equals("no")) {
-            if (Locale.getDefault().getCountry().equals("CN")) {
-                sp.edit().putString("sp_search_engine", "2").apply();
-            }
-            sp.edit().putString("saved_key_ok", "yes")
-                    .putString("setting_gesture_tb_up", "13")
-                    .putString("setting_gesture_tb_down", "01")
-                    .putString("setting_gesture_tb_left", "02")
-                    .putString("setting_gesture_tb_right", "03")
-                    .putBoolean("sp_autofill", false)
-                    .putBoolean("sp_location", false).apply();
-        }
         contentFrame = findViewById(R.id.main_content);
         contentFrame.getViewTreeObserver().addOnGlobalLayoutListener(keyboardLayoutListener);
 

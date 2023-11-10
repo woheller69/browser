@@ -65,11 +65,11 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat implement
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
 
         setPreferencesFromResource(R.xml.preference_backup, rootKey);
-        PreferenceManager.setDefaultValues(getContext(), R.xml.preference_backup, false);
-        initSummary(getPreferenceScreen());
-        context = getContext();
-        activity = getActivity();
+        Context context = getContext();
         assert context != null;
+
+        initSummary(getPreferenceScreen());
+        activity = getActivity();
         assert activity != null;
 
         Preference backupRestore = findPreference("backrestore");

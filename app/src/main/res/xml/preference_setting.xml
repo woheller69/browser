@@ -34,6 +34,7 @@
         <SwitchPreference
             android:id="@+id/debug"
             android:title="Debug"
+            android:summary="@string/setting_userScript"
             android:defaultValue="false"
             android:key="sp_debug"/>
 

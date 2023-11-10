@@ -6,6 +6,8 @@ import static de.baumann.browser.database.UserScript.META_END;
 
 import android.content.Context;
 
+import androidx.annotation.NonNull;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -29,7 +31,7 @@ public class ScriptUnit {
             Scanner scanner = new Scanner(script.getScript());
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
-                if (line.contains("@match")) script.getPatterns().add(line.split("@match")[1].trim());
+                if (line.contains("@match")) script.getMatchPatterns().add(getRegex(line.split("@match")[1].trim()));
                 if (line.contains(META_END)) break;
             }
             scanner.close();
@@ -39,12 +41,28 @@ public class ScriptUnit {
             Scanner scanner = new Scanner(script.getScript());
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
-                if (line.contains("@match")) script.getPatterns().add(line.split("@match")[1].trim());
+                if (line.contains("@match")) script.getMatchPatterns().add(getRegex(line.split("@match")[1].trim()));
                 if (line.contains(META_END)) break;
             }
             scanner.close();
         }
+    }
 
+    @NonNull
+    private static String getRegex(String pattern) {
+        String regex = pattern
+                .replace(".", "\\.")
+                .replace("*://", "(http|https)://")
+                .replace("*", ".*")
+                .replace("?", "\\?")
+                .replace("/", "\\/");
+
+        // path must contain at least a forward slash. The slash by itself matches any path, as if it were followed by a wildcard (/*).
+        // If the pattern ends with /, add an asterisk after it
+        if (regex.endsWith("/")) {
+            regex += ".*";
+        }
+        return regex;
     }
 
     private static boolean matchesPattern(Context context, String url, String pattern) {
@@ -54,20 +72,7 @@ public class ScriptUnit {
         if (!url.toLowerCase().matches(urlFormatPattern)) return false;  //not a valid URL
 
         try {
-            String regex = pattern
-                    .replace(".", "\\.")
-                    .replace("*://", "(http|https)://")
-                    .replace("*", ".*")
-                    .replace("?", "\\?")
-                    .replace("/", "\\/");
-
-            // path must contain at least a forward slash. The slash by itself matches any path, as if it were followed by a wildcard (/*).
-            // If the pattern ends with /, add an asterisk after it
-            if (regex.endsWith("/")) {
-                regex += ".*";
-            }
-
-            Pattern compiledPattern = Pattern.compile(regex);
+            Pattern compiledPattern = Pattern.compile(pattern);
             Matcher matcher = compiledPattern.matcher(url);
             return matcher.matches();
         } catch (Exception e){
@@ -80,7 +85,7 @@ public class ScriptUnit {
         List<UserScript> matchedScripts = new ArrayList<>();
 
         for (UserScript userScript: type.equals(DOC_START) ? scriptsDocStart : scriptsDocEnd){
-            List<String> matchPatterns = userScript.getPatterns();
+            List<String> matchPatterns = userScript.getMatchPatterns();
             boolean isMatch = false;
             for (String pattern : matchPatterns) {
                 if (matchesPattern(context, url, pattern)) {

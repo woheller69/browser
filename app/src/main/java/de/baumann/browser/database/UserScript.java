@@ -10,7 +10,7 @@ public class UserScript {
     private int id;
     private int rank;
     private boolean active;
-    private final List<String> patterns = new ArrayList<>();
+    private final List<String> matchPatterns = new ArrayList<>();
     public static String META_BEGIN = "// ==UserScript==";
     public static String META_END = "// ==/UserScript==";
     public static String DOC_START = "document-start";
@@ -27,7 +27,7 @@ public class UserScript {
         this.active = active;
     }
 
-    public List<String> getPatterns() {return patterns;}
+    public List<String> getMatchPatterns() {return matchPatterns;}
 
     public String getScript() {
         return script;

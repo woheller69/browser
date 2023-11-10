@@ -168,7 +168,10 @@ public class NinjaWebView extends WebView implements AlbumController {
         webSettings.setSupportMultipleWindows(true);
         webViewClient.enableAdBlock(adBlockEnabled);
         webSettings.setTextZoom(Integer.parseInt(Objects.requireNonNull(sp.getString("sp_fontSize", "100"))));
-        webSettings.setBlockNetworkImage(!sp.getBoolean("sp_images", true));
+
+        if (BrowserUnit.isWifiAvailable(context)) {webSettings.setBlockNetworkImage(false);}  //in WIFI always load images
+        else webSettings.setBlockNetworkImage(!sp.getBoolean("sp_images", true)); //otherwise check setting
+
         webSettings.setGeolocationEnabled(sp.getBoolean("sp_location", false));
         webSettings.setMediaPlaybackRequiresUserGesture(true);
 

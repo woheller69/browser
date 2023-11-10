@@ -5,8 +5,10 @@ import android.app.DownloadManager;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.ShortcutManager;
+import android.net.ConnectivityManager;
+import android.net.Network;
+import android.net.NetworkCapabilities;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Environment;
 
 import androidx.appcompat.app.AlertDialog;
@@ -268,5 +270,13 @@ public class BrowserUnit {
             }
         }
         return dir != null && dir.delete();
+    }
+
+    public static Boolean isWifiAvailable(Context context) {
+        ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+            Network nw = connectivityManager.getActiveNetwork();
+            if (nw == null) return false;
+            NetworkCapabilities actNw = connectivityManager.getNetworkCapabilities(nw);
+            return actNw != null && (actNw.hasTransport(NetworkCapabilities.TRANSPORT_WIFI));
     }
 }

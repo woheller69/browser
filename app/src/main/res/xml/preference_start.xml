@@ -6,8 +6,9 @@
     <Preference />
 
     <EditTextPreference
-        android:defaultValue=""
+        android:defaultValue="https://github.com/woheller69/browser#Instructions"
         android:key="favoriteURL"
+        app:useSimpleSummaryProvider="true"
         android:title="@string/setting_title_fav" />
 
     <ListPreference

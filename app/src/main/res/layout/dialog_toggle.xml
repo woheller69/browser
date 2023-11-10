@@ -24,7 +24,7 @@
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_toStartOf="@+id/ib_settings"
+                android:layout_toStartOf="@+id/ib_info"
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="16dp"
@@ -35,6 +35,15 @@
                 android:gravity="center_vertical"
                 android:textAppearance="?attr/textAppearanceBody1"
                 android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/ib_info"
+                android:layout_toStartOf="@+id/ib_settings"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/icon_info"
+                android:background="?attr/actionBarItemBackground" />
 
             <ImageButton
                 android:id="@+id/ib_settings"

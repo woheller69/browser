@@ -1081,6 +1081,14 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 startActivity(settings);
             }
         });
+
+        ImageButton ib_info = dialogView.findViewById(R.id.ib_info);
+        ib_info.setOnClickListener(view -> {
+            if (ninjaWebView != null) {
+                dialog.cancel();
+                addAlbum("Instructions","https://github.com/woheller69/browser#Instructions",true);
+            }
+        });
     }
 
 
@@ -1519,19 +1527,17 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         if (ninjaWebView.getFavicon()!=null) icon.setImageBitmap(ninjaWebView.getFavicon());
         else icon.setImageResource(R.drawable.icon_image_broken);
 
-        TextView overflow_title = dialogView.findViewById(R.id.overflow_title);
-        assert title != null;
-        if (title.isEmpty()) {
-            overflow_title.setText(url);
-        } else {
-            overflow_title.setText(title);
-        }
-
         ImageButton overflow_settings = dialogView.findViewById(R.id.overflow_settings);
         overflow_settings.setOnClickListener(v -> {
             dialog_overflow.cancel();
             Intent settings = new Intent(BrowserActivity.this, Settings_Activity.class);
             startActivity(settings);
+        });
+
+        ImageButton overflow_info = dialogView.findViewById(R.id.overflow_info);
+        overflow_info.setOnClickListener(v -> {
+            dialog_overflow.cancel();
+            addAlbum("Instructions","https://github.com/woheller69/browser#Instructions",true);
         });
 
         final GridView menu_grid_tab = dialogView.findViewById(R.id.overflow_tab);

@@ -13,21 +13,6 @@
         android:layout_height="?attr/actionBarSize"
         android:layout_marginTop="4dp">
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/overflow_title"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_toEndOf="@+id/cardView"
-            android:layout_toStartOf="@+id/overflow_settings"
-            android:layout_marginEnd="8dp"
-            android:ellipsize="end"
-            android:includeFontPadding="false"
-            android:maxLines="1"
-            android:text="@string/app_name"
-            android:gravity="center_vertical"
-            android:textAppearance="?attr/textAppearanceBody1"
-            android:textStyle="bold" />
-
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"
             android:layout_width="20dp"
@@ -59,6 +44,16 @@
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
             android:src="@drawable/icon_settings"
+            android:background="?attr/actionBarItemBackground" />
+
+        <ImageButton
+            android:id="@+id/overflow_info"
+            android:layout_toStartOf="@id/overflow_settings"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/icon_info"
             android:background="?attr/actionBarItemBackground" />
 
     </RelativeLayout>

@@ -57,6 +57,7 @@ The app uses code from:
 
 ## INSTRUCTIONS
 
+### Main Navigation
 <img src="Instructions.png" width="300"/>
 
 The main navigation features are depicted in the image above.
@@ -87,3 +88,20 @@ In additions there are settings which are only available as global settings:
 - Allow microphone access
 - Download images. This allows to save data, when not connected to WIFI. If WIFI is available images will always be loaded.
 
+### Greasemonkey style scripts
+
+FREE Browser supports simple user scripts in Greasemonkey style.
+The following tags:
+- @match
+- @run-at
+- @name
+
+@run-at:  
+If defined as "document-start" scripts run in onPageStarted() of Android WebView, 
+otherwise scripts run in onPageFinished.
+
+Other tags are **NOT** supported at the moment, e.g.
+- @include
+- @exclude
+- @grant
+- @required

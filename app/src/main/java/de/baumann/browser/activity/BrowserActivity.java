@@ -1051,11 +1051,11 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         chip_adBlock.setChecked(sp.getBoolean("sp_ad_block", true));
         chip_adBlock.setOnClickListener(v -> {sp.edit().putBoolean("sp_ad_block",chip_adBlock.isChecked()).apply();});
 
-        Chip chip_fingerprint = dialogView.findViewById(R.id.chip_Fingerprint);
+        Chip chip_fingerprint = dialogView.findViewById(R.id.chip_fingerprint);
         chip_fingerprint.setChecked(sp.getBoolean("sp_fingerPrintProtection",true));
         chip_fingerprint.setOnClickListener(v -> sp.edit().putBoolean("sp_fingerPrintProtection",chip_fingerprint.isChecked()).apply());
 
-        Chip chip_location = dialogView.findViewById(R.id.chip_Location);
+        Chip chip_location = dialogView.findViewById(R.id.chip_location);
         chip_location.setChecked(sp.getBoolean("sp_location",false));
         chip_location.setOnClickListener(v -> {sp.edit().putBoolean("sp_location",chip_location.isChecked()).apply();reloadPage();});
 

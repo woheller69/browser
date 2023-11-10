@@ -60,61 +60,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp" >
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chip_cookie"
-                style="@style/Widget.MaterialComponents.Chip.Choice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:chipStartPadding="4dp"
-                app:chipEndPadding="4dp"
-                app:textEndPadding="0dp"
-                app:textStartPadding="0dp"
-                android:text=""
-                app:chipIcon="@drawable/icon_cookie"
-                app:chipIconEnabled="true"
-                app:chipIconTint="@drawable/bg_chip_state_list"/>
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chip_dom"
-                style="@style/Widget.MaterialComponents.Chip.Choice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:chipStartPadding="4dp"
-                app:chipEndPadding="4dp"
-                app:textEndPadding="0dp"
-                app:textStartPadding="0dp"
-                android:text=""
-                app:chipIcon="@drawable/icon_dom"
-                app:chipIconEnabled="true"
-                app:chipIconTint="@drawable/bg_chip_state_list" />
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chip_javaScript"
-                style="@style/Widget.MaterialComponents.Chip.Choice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:chipStartPadding="4dp"
-                app:chipEndPadding="4dp"
-                app:textEndPadding="0dp"
-                app:textStartPadding="0dp"
-                android:text=""
-                app:chipIcon="@drawable/icon_java"
-                app:chipIconEnabled="true"
-                app:chipIconTint="@drawable/bg_chip_state_list" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp" >
+            android:gravity="end">
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_adBlock"
@@ -131,10 +77,11 @@
                 app:chipIconTint="@drawable/bg_chip_state_list"/>
 
             <com.google.android.material.chip.Chip
-                android:id="@+id/chip_Fingerprint"
+                android:id="@+id/chip_fingerprint"
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="-8dp"
                 app:chipStartPadding="4dp"
                 app:chipEndPadding="4dp"
                 app:textEndPadding="0dp"
@@ -143,6 +90,60 @@
                 app:chipIcon="@drawable/icon_fingerprint"
                 app:chipIconEnabled="true"
                 app:chipIconTint="@drawable/bg_chip_state_list" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_cookie"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-8dp"
+                app:chipStartPadding="4dp"
+                app:chipEndPadding="4dp"
+                app:textEndPadding="0dp"
+                app:textStartPadding="0dp"
+                android:text=""
+                app:chipIcon="@drawable/icon_cookie"
+                app:chipIconEnabled="true"
+                app:chipIconTint="@drawable/bg_chip_state_list" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_dom"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-8dp"
+                app:chipStartPadding="4dp"
+                app:chipEndPadding="4dp"
+                app:textEndPadding="0dp"
+                app:textStartPadding="0dp"
+                android:text=""
+                app:chipIcon="@drawable/icon_dom"
+                app:chipIconEnabled="true"
+                app:chipIconTint="@drawable/bg_chip_state_list"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_javaScript"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="12dp"
+                android:layout_marginStart="-8dp"
+                app:chipStartPadding="4dp"
+                app:chipEndPadding="4dp"
+                app:textEndPadding="0dp"
+                app:textStartPadding="0dp"
+                android:text=""
+                app:chipIcon="@drawable/icon_java"
+                app:chipIconEnabled="true"
+                app:chipIconTint="@drawable/bg_chip_state_list" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="end">
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_image"
@@ -158,22 +159,12 @@
                 app:chipIconEnabled="true"
                 app:chipIconTint="@drawable/bg_chip_state_list"/>
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="16dp" >
-
             <com.google.android.material.chip.Chip
-                android:id="@+id/chip_Location"
+                android:id="@+id/chip_location"
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="-8dp"
                 app:chipStartPadding="4dp"
                 app:chipEndPadding="4dp"
                 app:textEndPadding="0dp"
@@ -188,6 +179,7 @@
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="-8dp"
                 app:chipStartPadding="4dp"
                 app:chipEndPadding="4dp"
                 app:textEndPadding="0dp"
@@ -202,6 +194,8 @@
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="12dp"
+                android:layout_marginStart="-8dp"
                 app:chipStartPadding="4dp"
                 app:chipEndPadding="4dp"
                 app:textEndPadding="0dp"

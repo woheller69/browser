@@ -41,6 +41,9 @@ The app uses code from:
 
 ## INSTRUCTIONS
 
+<pre>Send a coffee to woheller69@t-online.de 
+<a href= "https://www.paypal.com/signin"><img  align="left" src="https://www.paypalobjects.com/webstatic/de_DE/i/de-pp-logo-150px.png"></a></pre>
+
 ### Main Navigation
 <img src="Instructions.png" width="300"/>
 
@@ -91,10 +94,6 @@ Other tags are **NOT** supported at the moment, e.g.
 - @required
 
 # OTHER APPS
-
-<pre>Send a coffee to woheller69@t-online.de 
-<a href= "https://www.paypal.com/signin"><img  align="left" src="https://www.paypalobjects.com/webstatic/de_DE/i/de-pp-logo-150px.png"></a></pre>
-
 
 | **RadarWeather** | **Gas Prices** | **Smart Eggtimer** | 
 |:---:|:---:|:---:|

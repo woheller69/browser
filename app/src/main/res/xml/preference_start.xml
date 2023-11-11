@@ -3,8 +3,6 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     
-    <Preference />
-
     <EditTextPreference
         android:defaultValue="https://github.com/woheller69/browser#Instructions"
         android:key="favoriteURL"

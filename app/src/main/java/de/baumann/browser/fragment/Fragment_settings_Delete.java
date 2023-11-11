@@ -24,5 +24,8 @@ public class Fragment_settings_Delete extends PreferenceFragmentCompat {
         Activity activity = getActivity();
         assert activity != null;
 
+        findPreference("sp_clear_quit").setSingleLineTitle(false);
+        findPreference("sp_clearIndexedDB").setSingleLineTitle(false);
+
     }
 }

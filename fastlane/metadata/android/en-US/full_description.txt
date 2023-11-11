@@ -1,7 +1,7 @@
 "FREE Browser" is a web browser for optimal privacy
 
 • fully open source
-• no trackers
+• no ads, no trackers
 • no unnecessary permissions
 
 -------------------------------------------------

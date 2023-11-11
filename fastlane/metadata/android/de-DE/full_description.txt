@@ -1,7 +1,7 @@
 „FREE Browser“ ist ein Webbrowser für optimale Privatsphäre
 
 • Vollständig Open Source
-• keine Tracker
+• keine Tracker, keine Werbung
 • Keine unnötigen Berechtigungen
 
 -------------------------------------------------

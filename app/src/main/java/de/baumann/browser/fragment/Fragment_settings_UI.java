@@ -18,6 +18,9 @@ public class Fragment_settings_UI extends PreferenceFragmentCompat implements Sh
 
         setPreferencesFromResource(R.xml.preference_ui, rootKey);
 
+        findPreference("sp_close_browser_confirm").setSingleLineTitle(false);
+        findPreference("sp_close_tab_confirm").setSingleLineTitle(false);
+
         initSummary(getPreferenceScreen());
     }
 

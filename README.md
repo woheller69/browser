@@ -38,6 +38,7 @@ This app is licensed under the GPLv3.
 The app uses code from:
 - FOSS-Browser, https://github.com/woheller69/browser, published under GPLv3 (at time of fork)
 - Ninja, https://github.com/mthli/Ninja, published under Apache-2.0 license
+- StevenBlack hosts, https://github.com/StevenBlack/hosts, published under MIT license
 
 ## INSTRUCTIONS
 
@@ -74,7 +75,7 @@ In additions there are settings which are only available as global settings:
 - Allow location access
 - Allow camera access
 - Allow microphone access
-- Download images. This allows to save data, when not connected to WIFI. If WIFI is available images will always be loaded.
+- Download images. This allows to save data, **when not connected to WIFI**. If WIFI is available images will always be loaded.
 
 ### Greasemonkey style scripts
 
@@ -93,6 +94,18 @@ Other tags are **NOT** supported at the moment, e.g.
 - @exclude
 - @grant
 - @required
+
+### Browser Settings
+
+In this section you can define your favourite start page, search engine, etc.
+You can select your favourite StevenBlack AdBlock list.
+And this is the place to manage exceptions for cookies, javascript, and DOM storage.
+
+
+### Backup / restore
+
+You can save / restore app data (=databases), bookmarks, and preferences.
+Data will be stored in Documents/browser_backup.
 
 # OTHER APPS
 

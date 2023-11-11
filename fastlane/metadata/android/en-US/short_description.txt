@@ -1,1 +1,1 @@
-A web browser for optimal privacy
+A privacy oriented web browser with Greasemonkey style script support

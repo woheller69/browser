@@ -14,17 +14,17 @@
 
     <PreferenceCategory android:title="@string/setting_title_behavior">
 
-        <CheckBoxPreference
+        <SwitchPreference
             android:key="hideToolbar"
             android:defaultValue="true"
             android:title="@string/setting_title_hideToolbar"/>
 
-        <CheckBoxPreference
+        <SwitchPreference
             android:defaultValue="true"
             android:key="sp_close_browser_confirm"
             android:title="@string/setting_title_confirm_exit"/>
 
-        <CheckBoxPreference
+        <SwitchPreference
             android:defaultValue="false"
             android:key="sp_close_tab_confirm"
             android:title="@string/setting_title_confirm_tab_close"/>

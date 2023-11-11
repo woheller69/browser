@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- App -->
-    <string name="app_name">Browserul FREE</string>
     <string name="app_ok">Confirmă</string>
     <string name="app_cancel">Anulează</string>
     <string name="app_done">Gata</string>

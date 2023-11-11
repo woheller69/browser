@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- App -->
-    <string name="app_name">مرورگر FREE</string>
     <string name="app_ok">تایید</string>
     <string name="app_cancel">لغو</string>
     <string name="app_done">انجام شد</string>

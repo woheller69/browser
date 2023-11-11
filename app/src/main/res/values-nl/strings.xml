@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- App -->
-    <string name="app_name">FREE-browser</string>
     <string name="app_ok">Oké</string>
     <string name="app_cancel">Annuleren</string>
     <string name="app_done">Done</string>

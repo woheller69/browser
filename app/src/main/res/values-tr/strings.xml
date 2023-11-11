@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- App -->
-    <string name="app_name">FREE Tarayıcı</string>
     <string name="app_ok">Tamam</string>
     <string name="app_cancel">İptal et</string>
     <string name="app_done">Tamam</string>

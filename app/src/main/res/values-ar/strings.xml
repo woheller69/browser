@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- App -->
-    <string name="app_name">المتصفح الحر FREE Browser</string>
     <string name="app_ok">موافق</string>
     <string name="app_cancel">إلغاء</string>
     <string name="app_done">تـم</string>

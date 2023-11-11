@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- App -->
-    <string name="app_name">FREE Browser</string>
     <string name="app_ok">Хорошо</string>
     <string name="app_cancel">Отмена</string>
     <string name="app_done">Готово</string>

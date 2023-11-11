@@ -155,7 +155,7 @@ public class NinjaWebView extends WebView implements AlbumController {
         WebSettings webSettings = getSettings();
 
         if(WebViewFeature.isFeatureSupported(WebViewFeature.ALGORITHMIC_DARKENING)) {
-            WebSettingsCompat.setAlgorithmicDarkeningAllowed(webSettings, true);
+            WebSettingsCompat.setAlgorithmicDarkeningAllowed(webSettings, sp.getBoolean("sp_algo_dark",true));
         }
 
         String userAgent = getUserAgent(desktopMode);

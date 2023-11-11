@@ -61,10 +61,11 @@ For each tab it is possible to enable/disable:
 These settings (except desktop mode) are inherited from global settings when a new tab is created.
 They will always be applied when a new web site is opened.
 
-FREE Browser allows bookmark specific settings for JavaScript, DOM-Storage, and Desktop mode.
+FREE Browser allows bookmark specific settings for JavaScript, DOM-Storage, and Desktop mode. These are set from the current
+tab when storing the bookmark and can be changed when editing it.
 If a bookmark is opened these settings will be applied, no matter which other settings are valid for the tab.
 If this is the case the bookmark symbol in "Exceptions" will be highlighted. When browsing within the domain of the
-bookmark these settings will remain.
+bookmark these settings will remain. 
 
 In addition you can define domains where Cookies, DOM-Storage, and JavaScript are always allowed (see Settings -> Browser Settings).
 Cookies will override the global cookies setting. DOM-Storage and JavaScript will override the tab specific settings.
@@ -75,7 +76,8 @@ In additions there are settings which are only available as global settings:
 - Allow location access
 - Allow camera access
 - Allow microphone access
-- Download images. This allows to save data, **when not connected to WIFI**. If WIFI is available images will always be loaded.
+- Download images. This allows saving data, **when not connected to WIFI**. If WIFI is available images will always be loaded.
+- Night mode: allow algorithmic darkening of web sites. This darkening is only applied when the app is in dark mode and the web site does not provide a dark version.
 
 ### Greasemonkey style scripts
 

@@ -11,7 +11,7 @@
 • AdBlocker using StevenBlack host list
 • Measures against browser fingerprinting
 • Advanced settings for javascript, cookies and DOM-storage (domain/bookmark based)
-• Support for Greasemonkey style scripts
+• Support for Greasemonkey style scripts (supported: @match, @name, @run-at)
 • Optimized for one hand handling (toolbar at bottom)
 • TAB control (switch, open, close, unlimited tabs)
 • Fast toggle for most important settings

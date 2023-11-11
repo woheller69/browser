@@ -1063,6 +1063,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         chip_image.setChecked(sp.getBoolean("sp_images", true));
         chip_image.setOnClickListener(v -> {sp.edit().putBoolean("sp_images",chip_image.isChecked()).apply();reloadPage();});
 
+        Chip chip_night = dialogView.findViewById(R.id.chip_night);
+        chip_night.setChecked(sp.getBoolean("sp_algo_dark", true));
+        chip_night.setOnClickListener(v -> {sp.edit().putBoolean("sp_algo_dark",chip_night.isChecked()).apply();reloadPage();});
+
         Chip chip_camera = dialogView.findViewById(R.id.chip_camera);
         chip_camera.setChecked(sp.getBoolean("sp_camera",false));
         chip_camera.setOnClickListener(v -> {sp.edit().putBoolean("sp_camera",chip_camera.isChecked()).apply();reloadPage();});

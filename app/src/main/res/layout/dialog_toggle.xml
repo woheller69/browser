@@ -146,10 +146,25 @@
             android:gravity="end">
 
             <com.google.android.material.chip.Chip
+                android:id="@+id/chip_night"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:chipStartPadding="4dp"
+                app:chipEndPadding="4dp"
+                app:textEndPadding="0dp"
+                app:textStartPadding="0dp"
+                android:text=""
+                app:chipIcon="@drawable/icon_night"
+                app:chipIconEnabled="true"
+                app:chipIconTint="@drawable/bg_chip_state_list"/>
+
+            <com.google.android.material.chip.Chip
                 android:id="@+id/chip_image"
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="-8dp"
                 app:chipStartPadding="4dp"
                 app:chipEndPadding="4dp"
                 app:textEndPadding="0dp"

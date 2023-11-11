@@ -11,7 +11,7 @@
 • AdBlocker basierend auf StevenBlack Hosts
 • Maßnahmen gegen Browser-Fingerprinting
 • Erweiterte Einstellungen für Javascript, Cookies und DOM-Speicher (Domain-/Lesezeichenbasiert)
-• Unterstützung für Skripte im Greasemonkey-Stil
+• Unterstützung für Skripte im Greasemonkey-Stil  (unterstützt: @match, @name, @run-at)
 • Optimiert für die Einhandbedienung (Symbolleiste unten)
 • TAB-Steuerung (wechseln, öffnen, schließen, unbegrenzte Tabs)
 • Schnelles Umschalten für die wichtigsten Einstellungen

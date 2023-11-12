@@ -172,7 +172,9 @@
     <string name="menu_desktopView">Asztali nézet</string>
     <string name="menu_dayView">Napi nézet</string>
     <string name="menu_nightView">Éjszakai nézet</string>
-    <string name="setting_title_camera">Allow camera usage</string>
+    <string name="error_allow_camera">Allow camera usage</string>
     <string name="hint_DRM_Media">Allow DRM protected media playback?</string>
+    <string name="error_allow_microphone">Allow microphone usage</string>
+    <string name="error_missing_permission">Permission required:</string>
     <!-- License changelog -->
 </resources>

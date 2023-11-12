@@ -172,7 +172,9 @@
     <string name="menu_desktopView">Zobrazení pro PC</string>
     <string name="menu_dayView">Denní přehled</string>
     <string name="menu_nightView">Noční zobrazení</string>
-    <string name="setting_title_camera">Povolit používání kamery</string>
+    <string name="error_allow_camera">Povolit používání kamery</string>
     <string name="hint_DRM_Media">Povolit přehrávání médií chráněných DRM?</string>
+    <string name="error_allow_microphone">Allow microphone usage</string>
+    <string name="error_missing_permission">Permission required:</string>
     <!-- License changelog -->
 </resources>

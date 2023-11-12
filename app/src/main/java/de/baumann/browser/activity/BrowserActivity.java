@@ -339,6 +339,11 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         ScriptUnit.initScripts(this);
 
+        //disable Microphone, Camera, and Location if permissions have been withdrawn
+        if (sp.getBoolean("sp_microphone", false) && !HelperUnit.checkPermissionsMic(this))  sp.edit().putBoolean("sp_microphone",false).apply();
+        if (sp.getBoolean("sp_camera", false) && !HelperUnit.checkPermissionsCam(this))  sp.edit().putBoolean("sp_camera",false).apply();
+        if (sp.getBoolean("sp_location", false) && !HelperUnit.checkPermissionsLoc(this))  sp.edit().putBoolean("sp_location",false).apply();
+
         if (sp.getInt("restart_changed", 1) == 1) {
             sp.edit().putInt("restart_changed", 0).apply();
             MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
@@ -1059,7 +1064,11 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         chip_location.setChecked(sp.getBoolean("sp_location",false));
         chip_location.setOnClickListener(v -> {
             sp.edit().putBoolean("sp_location",chip_location.isChecked()).apply();
-            if (chip_location.isChecked()) HelperUnit.grantPermissionsLoc(this);
+            if (chip_location.isChecked()) {
+                HelperUnit.grantPermissionsLoc(this);
+                if (!HelperUnit.checkPermissionsLoc(this)) NinjaToast.show(activity,activity.getResources().getString(R.string.error_missing_permission)+"\n"+activity.getResources().getString(R.string.setting_title_location));
+            }
+            dialog.cancel();
             reloadPage();
         });
 
@@ -1075,7 +1084,11 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         chip_camera.setChecked(sp.getBoolean("sp_camera",false));
         chip_camera.setOnClickListener(v -> {
             sp.edit().putBoolean("sp_camera",chip_camera.isChecked()).apply();
-            if (chip_camera.isChecked()) HelperUnit.grantPermissionsCam(this);
+            if (chip_camera.isChecked()) {
+                HelperUnit.grantPermissionsCam(this);
+                if (!HelperUnit.checkPermissionsCam(this)) NinjaToast.show(activity,activity.getResources().getString(R.string.error_missing_permission)+"\n"+activity.getResources().getString(R.string.error_allow_camera));
+            }
+            dialog.cancel();
             reloadPage();
         });
 
@@ -1083,7 +1096,11 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         chip_microphone.setChecked(sp.getBoolean("sp_microphone",false));
         chip_microphone.setOnClickListener(v -> {
             sp.edit().putBoolean("sp_microphone",chip_microphone.isChecked()).apply();
-            if (chip_microphone.isChecked()) HelperUnit.grantPermissionsMic(this);
+            if (chip_microphone.isChecked()){
+                HelperUnit.grantPermissionsMic(this);
+                if (!HelperUnit.checkPermissionsMic(this)) NinjaToast.show(activity,activity.getResources().getString(R.string.error_missing_permission)+"\n"+activity.getResources().getString(R.string.error_allow_microphone));
+            }
+            dialog.cancel();
             reloadPage();
         });
 

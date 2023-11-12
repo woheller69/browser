@@ -217,7 +217,7 @@
     <string name="menu_desktopView">Desktop view</string>
     <string name="menu_dayView">Day view</string>
     <string name="menu_nightView">Night view</string>
-    <string name="setting_title_camera">Allow camera usage</string>
+    <string name="error_allow_camera">Allow camera usage</string>
     <string name="hint_DRM_Media">Allow DRM protected media playback?</string>
     <string name="setting_userScript" translatable="false">Greasemonkey Scripts</string>
 
@@ -225,4 +225,6 @@
     <string name="dialog_StarOnGitHub">Do you like this app? Please give a star on GitHub or buy the developer a coffee via PayPal.</string>
     <string name="toast_delete">Please delete file and try again</string>
     <string name="summary_userscript" translatable="false">\@match \u2714 \@name \u2714 \@run-at \u2714 \n\@required \u2716 \@include \u2716 \@exclude \u2716 \n\@grant \u2716</string>
+    <string name="error_allow_microphone">Allow microphone usage</string>
+    <string name="error_missing_permission">Permission required:</string>
 </resources>

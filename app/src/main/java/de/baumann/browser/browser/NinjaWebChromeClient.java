@@ -19,6 +19,7 @@ import java.util.Objects;
 import de.baumann.browser.R;
 import de.baumann.browser.activity.BrowserActivity;
 import de.baumann.browser.unit.HelperUnit;
+import de.baumann.browser.view.NinjaToast;
 import de.baumann.browser.view.NinjaWebView;
 
 public class NinjaWebChromeClient extends WebChromeClient {
@@ -96,22 +97,23 @@ public class NinjaWebChromeClient extends WebChromeClient {
         Activity activity =  (Activity) ninjaWebView.getContext();
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(ninjaWebView.getContext());
         String[] resources = request.getResources();
-        boolean videoGranted=false;
+        boolean audioGranted=false;
         for (String resource : resources) {
             if (PermissionRequest.RESOURCE_VIDEO_CAPTURE.equals(resource)) {
                 if (sp.getBoolean("sp_camera", false)) {
                     //Reminder: switch off setMediaPlaybackRequiresUserGesture; done in NinjaWebView if sp_camera TRUE
-                    HelperUnit.grantPermissionsCam(activity);
-                    videoGranted = true;
-                    request.grant(new String[]{PermissionRequest.RESOURCE_VIDEO_CAPTURE,PermissionRequest.RESOURCE_AUDIO_CAPTURE});
-                }
+                    if (sp.getBoolean("sp_microphone", false)) {
+                        audioGranted = true;
+                        request.grant(new String[]{PermissionRequest.RESOURCE_VIDEO_CAPTURE,PermissionRequest.RESOURCE_AUDIO_CAPTURE});
+                    } else {
+                        request.grant(new String[]{PermissionRequest.RESOURCE_VIDEO_CAPTURE});
+                    }
+                } else NinjaToast.show(activity,activity.getResources().getString(R.string.error_allow_camera));
             } else if (PermissionRequest.RESOURCE_AUDIO_CAPTURE.equals(resource)) {
                 if (sp.getBoolean("sp_microphone", false)) {
-                    HelperUnit.grantPermissionsMic(activity);
-                    if (!videoGranted) request.grant(new String[]{PermissionRequest.RESOURCE_AUDIO_CAPTURE});  //otherwise crash:  Either grant() or deny() has been already called.
-                }
+                    if (!audioGranted) request.grant(new String[]{PermissionRequest.RESOURCE_AUDIO_CAPTURE});  //otherwise crash:  Either grant() or deny() has been already called.
+                } else NinjaToast.show(activity,activity.getResources().getString(R.string.error_allow_microphone));
             } else if (PermissionRequest.RESOURCE_PROTECTED_MEDIA_ID.equals(resource)) {
-
                 MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(ninjaWebView.getContext());
                 builder.setMessage(R.string.hint_DRM_Media);
                 builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {

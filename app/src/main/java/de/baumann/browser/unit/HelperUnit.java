@@ -79,11 +79,25 @@ public class HelperUnit {
         }
     }
 
+    public static boolean checkPermissionsLoc(final Activity activity) {
+        if (ContextCompat.checkSelfPermission(activity, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            return false;
+        }
+        return true;
+    }
+
     public static void grantPermissionsMic(final Activity activity) {
         if (ContextCompat.checkSelfPermission(activity, Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(activity,
                     new String[]{Manifest.permission.RECORD_AUDIO}, REQUEST_CODE_PERMISSION_MIC);
         }
+    }
+
+    public static boolean checkPermissionsMic(final Activity activity) {
+        if (ContextCompat.checkSelfPermission(activity, Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
+            return false;
+        }
+        return true;
     }
 
     public static void grantPermissionsCam(final Activity activity) {
@@ -92,6 +106,14 @@ public class HelperUnit {
                     new String[]{Manifest.permission.CAMERA}, REQUEST_CODE_PERMISSION_CAM);
         }
     }
+
+    public static boolean checkPermissionsCam(final Activity activity) {
+        if (ContextCompat.checkSelfPermission(activity, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+            return false;
+        }
+        return true;
+    }
+
 
     public static void saveAs(AlertDialog dialogToCancel, final Activity activity, final String url) {
 

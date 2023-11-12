@@ -172,7 +172,9 @@
     <string name="menu_desktopView">Vue bureau</string>
     <string name="menu_dayView">Vue Jour</string>
     <string name="menu_nightView">Vue nocturne</string>
-    <string name="setting_title_camera">Allow camera usage</string>
+    <string name="error_allow_camera">Autoriser l\'utilisation de la caméra</string>
     <string name="hint_DRM_Media">Allow DRM protected media playback?</string>
+    <string name="error_allow_microphone">Autoriser l\'utilisation du microphone</string>
+    <string name="error_missing_permission">Autorisation requise:</string>
     <!-- License changelog -->
 </resources>

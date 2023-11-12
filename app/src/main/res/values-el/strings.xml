@@ -172,7 +172,9 @@
     <string name="menu_desktopView">Προβολή για υπολογιστή</string>
     <string name="menu_dayView">Προβολή ημέρας</string>
     <string name="menu_nightView">Νυχτερινή προβολή</string>
-    <string name="setting_title_camera">Να επιτρέπεται η χρήση κάμερας</string>
+    <string name="error_allow_camera">Να επιτρέπεται η χρήση κάμερας</string>
     <string name="hint_DRM_Media">Να επιτρέπεται η προστατευμένη αναπαραγωγή πολυμέσων DRM;</string>
+    <string name="error_allow_microphone">Allow microphone usage</string>
+    <string name="error_missing_permission">Permission required:</string>
     <!-- License changelog -->
 </resources>

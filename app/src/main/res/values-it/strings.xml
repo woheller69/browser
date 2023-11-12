@@ -173,7 +173,7 @@
     <string name="menu_dayView">Vista giorno</string>
     <string name="menu_nightView">Vista notturna</string>
     <string name="error_allow_camera">Consenti l\'utilizzo della fotocamera</string>
-    <string name="hint_DRM_Media">Allow DRM protected media playback?</string>
+    <string name="hint_DRM_Media">Consentire la riproduzione multimediale protetta da DRM?</string>
     <string name="error_allow_microphone">Consentire l\'utilizzo del microfono</string>
     <string name="error_missing_permission">Permesso richiesto:</string>
     <!-- License changelog -->

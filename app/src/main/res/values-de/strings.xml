@@ -173,7 +173,7 @@
     <string name="menu_dayView">Tages-Ansicht</string>
     <string name="menu_nightView">Nacht-Ansicht</string>
     <string name="error_allow_camera">Kameranutzung zulassen</string>
-    <string name="hint_DRM_Media">Abspielen DRM geschützter Median erlauben?</string>
+    <string name="hint_DRM_Media">Abspielen DRM geschützter Medien erlauben?</string>
     <string name="error_allow_microphone">Mikrofonnutzung zulassen</string>
     <string name="error_missing_permission">Berechtigung erforderlich:</string>
     <!-- License changelog -->

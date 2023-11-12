@@ -114,17 +114,20 @@ public class NinjaWebChromeClient extends WebChromeClient {
                     if (!audioGranted) request.grant(new String[]{PermissionRequest.RESOURCE_AUDIO_CAPTURE});  //otherwise crash:  Either grant() or deny() has been already called.
                 } else NinjaToast.show(activity,activity.getResources().getString(R.string.error_allow_microphone));
             } else if (PermissionRequest.RESOURCE_PROTECTED_MEDIA_ID.equals(resource)) {
-                MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(ninjaWebView.getContext());
-                builder.setMessage(R.string.hint_DRM_Media);
-                builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
+                if (sp.getBoolean("sp_drm",false)){  //granted already in settings, otherwise ask every time
                     request.grant(new String[]{PermissionRequest.RESOURCE_PROTECTED_MEDIA_ID});
-                });
-                builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> {
-                    request.deny();
-                });
-                AlertDialog dialog = builder.create();
-                dialog.show();
-
+                } else {
+                    MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(ninjaWebView.getContext());
+                    builder.setMessage(R.string.hint_DRM_Media);
+                    builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
+                        request.grant(new String[]{PermissionRequest.RESOURCE_PROTECTED_MEDIA_ID});
+                    });
+                    builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> {
+                        request.deny();
+                    });
+                    AlertDialog dialog = builder.create();
+                    dialog.show();
+                }
             }
         }
 

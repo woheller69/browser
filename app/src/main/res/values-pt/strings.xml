@@ -173,7 +173,7 @@
     <string name="menu_dayView">Modo diurno</string>
     <string name="menu_nightView">Modo noturno</string>
     <string name="error_allow_camera">Permitir o uso da câmera</string>
-    <string name="hint_DRM_Media">Allow DRM protected media playback?</string>
+    <string name="hint_DRM_Media">Permitir reprodução de mídia protegida por DRM?</string>
     <string name="error_allow_microphone">Permitir uso do microfone</string>
     <string name="error_missing_permission">Permissão necessária:</string>
     <!-- License changelog -->

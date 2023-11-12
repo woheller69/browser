@@ -1057,7 +1057,11 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         Chip chip_location = dialogView.findViewById(R.id.chip_location);
         chip_location.setChecked(sp.getBoolean("sp_location",false));
-        chip_location.setOnClickListener(v -> {sp.edit().putBoolean("sp_location",chip_location.isChecked()).apply();reloadPage();});
+        chip_location.setOnClickListener(v -> {
+            sp.edit().putBoolean("sp_location",chip_location.isChecked()).apply();
+            if (chip_location.isChecked()) HelperUnit.grantPermissionsLoc(this);
+            reloadPage();
+        });
 
         Chip chip_image = dialogView.findViewById(R.id.chip_image);
         chip_image.setChecked(sp.getBoolean("sp_images", true));
@@ -1069,11 +1073,19 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         Chip chip_camera = dialogView.findViewById(R.id.chip_camera);
         chip_camera.setChecked(sp.getBoolean("sp_camera",false));
-        chip_camera.setOnClickListener(v -> {sp.edit().putBoolean("sp_camera",chip_camera.isChecked()).apply();reloadPage();});
+        chip_camera.setOnClickListener(v -> {
+            sp.edit().putBoolean("sp_camera",chip_camera.isChecked()).apply();
+            if (chip_camera.isChecked()) HelperUnit.grantPermissionsCam(this);
+            reloadPage();
+        });
 
         Chip chip_microphone = dialogView.findViewById(R.id.chip_microphone);
         chip_microphone.setChecked(sp.getBoolean("sp_microphone",false));
-        chip_microphone.setOnClickListener(v -> {sp.edit().putBoolean("sp_microphone",chip_microphone.isChecked()).apply();reloadPage();});
+        chip_microphone.setOnClickListener(v -> {
+            sp.edit().putBoolean("sp_microphone",chip_microphone.isChecked()).apply();
+            if (chip_microphone.isChecked()) HelperUnit.grantPermissionsMic(this);
+            reloadPage();
+        });
 
         ImageButton ib_settings = dialogView.findViewById(R.id.ib_settings);
         ib_settings.setOnClickListener(view -> {

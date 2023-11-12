@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.net.Uri;
-import android.os.Build;
 import android.view.View;
 import android.webkit.*;
 
@@ -97,27 +96,26 @@ public class NinjaWebChromeClient extends WebChromeClient {
         Activity activity =  (Activity) ninjaWebView.getContext();
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(ninjaWebView.getContext());
         String[] resources = request.getResources();
+        boolean videoGranted=false;
         for (String resource : resources) {
             if (PermissionRequest.RESOURCE_VIDEO_CAPTURE.equals(resource)) {
                 if (sp.getBoolean("sp_camera", false)) {
-                    if (ninjaWebView.getSettings().getMediaPlaybackRequiresUserGesture()) {
-                        ninjaWebView.getSettings().setMediaPlaybackRequiresUserGesture(false);  //fix conflict with save data option. Temporarily switch off setMediaPlaybackRequiresUserGesture
-                        ninjaWebView.reload();
-                    }
+                    //Reminder: switch off setMediaPlaybackRequiresUserGesture; done in NinjaWebView if sp_camera TRUE
                     HelperUnit.grantPermissionsCam(activity);
-                    request.grant(request.getResources());
+                    videoGranted = true;
+                    request.grant(new String[]{PermissionRequest.RESOURCE_VIDEO_CAPTURE,PermissionRequest.RESOURCE_AUDIO_CAPTURE});
                 }
             } else if (PermissionRequest.RESOURCE_AUDIO_CAPTURE.equals(resource)) {
                 if (sp.getBoolean("sp_microphone", false)) {
                     HelperUnit.grantPermissionsMic(activity);
-                    request.grant(request.getResources());
+                    if (!videoGranted) request.grant(new String[]{PermissionRequest.RESOURCE_AUDIO_CAPTURE});  //otherwise crash:  Either grant() or deny() has been already called.
                 }
             } else if (PermissionRequest.RESOURCE_PROTECTED_MEDIA_ID.equals(resource)) {
 
                 MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(ninjaWebView.getContext());
                 builder.setMessage(R.string.hint_DRM_Media);
                 builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
-                    request.grant(request.getResources());
+                    request.grant(new String[]{PermissionRequest.RESOURCE_PROTECTED_MEDIA_ID});
                 });
                 builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> {
                     request.deny();

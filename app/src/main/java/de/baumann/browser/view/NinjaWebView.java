@@ -20,6 +20,7 @@ import android.webkit.CookieManager;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import de.baumann.browser.browser.*;
 import de.baumann.browser.R;
@@ -173,7 +174,7 @@ public class NinjaWebView extends WebView implements AlbumController {
         else webSettings.setBlockNetworkImage(!sp.getBoolean("sp_images", true)); //otherwise check setting
 
         webSettings.setGeolocationEnabled(sp.getBoolean("sp_location", false));
-        webSettings.setMediaPlaybackRequiresUserGesture(true);
+        webSettings.setMediaPlaybackRequiresUserGesture(!sp.getBoolean("sp_camera", false)); //if Camera is allows this must be false, see NinjaWebChromeClient
 
         if (sp.getBoolean("sp_autofill", false)) {
             this.setImportantForAutofill(View.IMPORTANT_FOR_AUTOFILL_YES);

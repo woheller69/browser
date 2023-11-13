@@ -89,7 +89,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Locale;
 import java.util.Objects;
 
 import de.baumann.browser.GithubStar;
@@ -471,7 +470,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         adapter.notifyDataSetChanged();
         omniBox_text.setDropDownWidth(context.getResources().getDisplayMetrics().widthPixels);
         omniBox_text.setOnItemClickListener((parent, view, position, id) -> {
-            String url = ((TextView) view.findViewById(R.id.record_item_time)).getText().toString();
+            String url = ((TextView) view.findViewById(R.id.record_item_url)).getText().toString();
             ninjaWebView.loadUrl(url);
         });
     }
@@ -637,12 +636,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             }
         });
         omniBox_overview.setOnClickListener(v -> showOverview());
-        omniBox_overview.setOnLongClickListener(v -> {
-            bottom_navigation.setSelectedItemId(R.id.bookmarks);
-            showOverview();
-            show_dialogFilter();
-            return false;
-        });
+
         omniBox_overview.setOnLongClickListener(v -> {
             saveBookmark();
             return true;
@@ -1899,6 +1893,9 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         builder.setView(dialogView);
         AlertDialog dialog = builder.create();
         dialog.show();
+
+        filter=false;
+        bottom_navigation.setSelectedItemId(R.id.bookmarks);  //reset filter
 
         CardView cardView = dialogView.findViewById(R.id.cardView);
         cardView.setVisibility(View.GONE);

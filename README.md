@@ -82,6 +82,7 @@ In additions there are settings which are only available as global settings:
 ### Greasemonkey style scripts
 
 FREE Browser supports simple user scripts in Greasemonkey style.
+(e.g. [Github Old Feed](https://github.com/wangrongding/github-old-feed/) )
 The following tags:
 - @match
 - @run-at

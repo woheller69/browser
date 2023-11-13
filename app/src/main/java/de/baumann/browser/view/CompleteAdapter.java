@@ -188,7 +188,7 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
             holder = new Holder();
             holder.titleView = view.findViewById(R.id.record_item_title);
             holder.titleView.setTextColor(ContextCompat.getColor(context, R.color.color_light));
-            holder.urlView = view.findViewById(R.id.record_item_time);
+            holder.urlView = view.findViewById(R.id.record_item_url);
             holder.iconView = view.findViewById(R.id.record_item_icon);
             holder.favicon=view.findViewById(R.id.record_item_favicon);
             holder.cardView=view.findViewById(R.id.cardView);

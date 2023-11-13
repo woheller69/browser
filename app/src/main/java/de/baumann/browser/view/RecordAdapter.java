@@ -34,7 +34,6 @@ public class RecordAdapter extends ArrayAdapter<Record> {
 
     private static class Holder {
         TextView title;
-        TextView time;
         ImageView icon;
         ImageView favicon;
         CardView cardView;
@@ -50,7 +49,6 @@ public class RecordAdapter extends ArrayAdapter<Record> {
             view = LayoutInflater.from(context).inflate(layoutResId, parent, false);
             holder = new Holder();
             holder.title = view.findViewById(R.id.record_item_title);
-            holder.time = view.findViewById(R.id.record_item_time);
             holder.icon = view.findViewById(R.id.record_item_icon);
             holder.favicon=view.findViewById(R.id.record_item_favicon);
             holder.cardView=view.findViewById(R.id.cardView);
@@ -61,9 +59,7 @@ public class RecordAdapter extends ArrayAdapter<Record> {
 
         Record record = list.get(position);
         long filter = record.getIconColor();
-        SimpleDateFormat sdf = new SimpleDateFormat("MMM dd", Locale.getDefault());
         holder.title.setText(record.getTitle());
-        holder.time.setText(sdf.format(record.getTime()));
 
         HelperUnit.setFilterIcons(holder.icon,filter);
 

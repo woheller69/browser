@@ -22,7 +22,7 @@
 
     <TextView
         android:visibility="gone"
-        android:id="@+id/record_item_time"
+        android:id="@+id/record_item_url"
         android:layout_width="wrap_content"
         android:layout_height="?android:attr/listPreferredItemHeightSmall"
         android:layout_marginEnd="16dp"

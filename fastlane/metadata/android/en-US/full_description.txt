@@ -4,6 +4,8 @@
 • no ads, no trackers
 • no unnecessary permissions
 
+This app depends on the built-in Android WebView. Make sure to keep it up to date.
+
 -------------------------------------------------
 <b>FEATURES</b>
 -------------------------------------------------

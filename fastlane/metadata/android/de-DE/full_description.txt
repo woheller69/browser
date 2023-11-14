@@ -4,6 +4,8 @@
 • keine Tracker, keine Werbung
 • Keine unnötigen Berechtigungen
 
+Diese App basiert auf dem integrierten Android WebView. Stellen Sie sicher, dass er auf dem neuesten Stand ist.
+
 -------------------------------------------------
 <b>FUNKTIONEN</b>
 -------------------------------------------------

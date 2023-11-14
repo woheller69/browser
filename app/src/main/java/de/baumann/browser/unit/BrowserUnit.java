@@ -50,7 +50,7 @@ public class BrowserUnit {
     private static final String SEARCH_ENGINE_SEARX = "https://searx.be/?q=";
 
     public static final String URL_ENCODING = "UTF-8";
-    private static final String URL_ABOUT_BLANK = "about:blank";
+    public static final String URL_ABOUT_BLANK = "about:blank";
     public static final String URL_SCHEME_ABOUT = "about:";
     public static final String URL_SCHEME_MAIL_TO = "mailto:";
     private static final String URL_SCHEME_FILE = "file://";

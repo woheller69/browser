@@ -15,6 +15,7 @@
 • Optimized for one hand handling (toolbar at bottom)
 • TAB control (switch, open, close, unlimited tabs)
 • Fast toggle for most important settings
+• Zoom in/out
 • Search current website
 • Web search (from marked text via context menu)
 • Save as PDF

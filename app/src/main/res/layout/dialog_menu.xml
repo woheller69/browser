@@ -19,7 +19,7 @@
             android:id="@+id/menuTitle"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:layout_toEndOf="@+id/cardView"
+            android:layout_toEndOf="@+id/menu_icon"
             android:layout_marginEnd="20dp"
             android:ellipsize="end"
             android:includeFontPadding="false"
@@ -29,27 +29,15 @@
             android:textAppearance="?attr/textAppearanceBody1"
             android:textStyle="bold" />
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardView"
+        <ImageView
+            android:id="@+id/menu_icon"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_alignParentStart="true"
             android:layout_centerInParent="true"
-            android:layout_marginEnd="8dp"
-            android:backgroundTint="@android:color/transparent"
-            app:cardCornerRadius="2dp"
-            app:cardElevation="0dp">
-
-            <ImageView
-                android:id="@+id/menu_icon"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_centerInParent="true"
-                android:layout_marginEnd="16dp"
-                android:contentDescription="@null"
-                android:scaleType="fitCenter" />
-
-        </androidx.cardview.widget.CardView>
+            android:layout_marginEnd="16dp"
+            android:contentDescription="@null"
+            android:scaleType="fitCenter" />
 
     </RelativeLayout>
 

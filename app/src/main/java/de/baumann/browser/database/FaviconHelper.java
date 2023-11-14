@@ -59,15 +59,15 @@ public class FaviconHelper extends SQLiteOpenHelper {
     }
 
     public synchronized void addFavicon( String url, Bitmap bitmap) throws SQLiteException {
-        String domain= Objects.requireNonNull(getDomain(url)).trim();
-        if (bitmap == null) return;
+        String domain = getDomain(url);
+        if (bitmap == null || domain == null) return;
         SQLiteDatabase database = this.getWritableDatabase();
         //first delete existing Favicon for domain if available
         database.delete(TABLE_FAVICON, DOMAIN + " = ?", new String[]{domain.trim()});
 
         byte[] byteImage= convertBytes(bitmap);
         ContentValues values = new  ContentValues();
-        values.put(DOMAIN,     domain);
+        values.put(DOMAIN,     domain.trim());
         values.put(IMAGE,     byteImage);
         database.insert(TABLE_FAVICON, null, values );
         database.close();

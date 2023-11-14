@@ -11,7 +11,6 @@ import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
 
 import java.util.ArrayList;
@@ -125,7 +124,6 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
         private ImageView favicon;
         private TextView titleView;
         private TextView urlView;
-        private CardView cardView;
     }
 
     private final Context context;
@@ -191,7 +189,7 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
             holder.urlView = view.findViewById(R.id.record_item_url);
             holder.iconView = view.findViewById(R.id.record_item_icon);
             holder.favicon=view.findViewById(R.id.record_item_favicon);
-            holder.cardView=view.findViewById(R.id.cardView);
+
             view.setTag(holder);
         } else {
             holder = (Holder) view.getTag();
@@ -214,7 +212,7 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
         }
 
         holder.iconView.setVisibility(View.VISIBLE);
-        holder.cardView.setVisibility(View.VISIBLE);
+        holder.favicon.setVisibility(View.VISIBLE);
 
         return view;
     }

@@ -15,6 +15,7 @@
 • Optimiert für die Einhandbedienung (Symbolleiste unten)
 • TAB-Steuerung (wechseln, öffnen, schließen, unbegrenzte Tabs)
 • Schnelles Umschalten für die wichtigsten Einstellungen
+• Vergrößern / Verkleinern
 • Aktuelle Webseite durchsuchen
 • Websuche (aus markiertem Text über Kontextmenü)
 • Als PDF speichern

@@ -25,7 +25,6 @@ import androidx.annotation.OptIn;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.PopupMenu;
-import androidx.cardview.widget.CardView;
 import androidx.preference.PreferenceManager;
 
 import android.os.Handler;
@@ -121,6 +120,7 @@ import static android.content.ContentValues.TAG;
 import static android.webkit.WebView.HitTestResult.IMAGE_TYPE;
 import static android.webkit.WebView.HitTestResult.SRC_ANCHOR_TYPE;
 import static android.webkit.WebView.HitTestResult.SRC_IMAGE_ANCHOR_TYPE;
+import static de.baumann.browser.unit.BrowserUnit.URL_ABOUT_BLANK;
 
 public class BrowserActivity extends AppCompatActivity implements BrowserController {
 
@@ -210,7 +210,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         ArrayList<String> openTabs = new ArrayList<>();
         for (int i=0; i<BrowserContainer.size();i++){
             String url = ((NinjaWebView) (BrowserContainer.get(i))).getUrl();
-            if (!url.startsWith("data:")) {  //do not save empty tabs (data:text/html,about:blank)
+            if (!url.equals(URL_ABOUT_BLANK)) {  //do not save empty tabs (about:blank)
                 if (currentAlbumController == BrowserContainer.get(i)) {
                     openTabs.add(0, url);
                 } else {
@@ -621,7 +621,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 String url = ninjaWebView.getUrl();
                 ninjaWebView.stopLoading();
                 omniBox_text.setKeyListener(listener);
-                if (url==null || url.contains("about:blank")) {
+                if (url==null || url.equals(URL_ABOUT_BLANK)) {
                     omniBox_text.setText("");
                 } else {
                     omniBox_text.setText(url);
@@ -813,6 +813,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             show_dialogFilter();
             return true;
         });
+        bottom_navigation.findViewById(R.id.tabs).setOnLongClickListener(v -> true);
+        bottom_navigation.findViewById(R.id.menu).setOnLongClickListener(v -> true);
 
         bottom_navigation.getOrCreateBadge(R.id.tabs).setNumber(BrowserContainer.size());
         bottom_navigation.getOrCreateBadge(R.id.tabs).setBackgroundColor(getResources().getColor(R.color.primaryColor));
@@ -1173,8 +1175,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             }
         });
 
-        if (url.isEmpty() || url.equals("about:blank")) {
-            ninjaWebView.loadData("about:blank","","");
+        if (url.isEmpty() || url.equals(URL_ABOUT_BLANK)) {
+            ninjaWebView.loadUrl(URL_ABOUT_BLANK);
             reloadPage();  //to apply algorithmic darkening if needed
         } else {
             ninjaWebView.loadUrl(url);
@@ -1268,7 +1270,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             if (url.startsWith("https://")) {
                 omniBox_tab.setImageResource(R.drawable.icon_menu_light);
                 omniBox_tab.setOnClickListener(v -> showTabView());
-            } else if (url.contains("about:blank")){
+            } else if (url.equals(URL_ABOUT_BLANK)){
                 omniBox_tab.setImageResource(R.drawable.icon_menu_light);
                 omniBox_tab.setOnClickListener(v -> showTabView());
                 omniBox_text.setText("");
@@ -1401,7 +1403,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         ImageView menu_icon = dialogView.findViewById(R.id.menu_icon);
 
         if (type == SRC_ANCHOR_TYPE) {
-            FaviconHelper faviconHelper = new FaviconHelper(context);
             Bitmap bitmap=ninjaWebView.getFavicon();
             if (bitmap != null){
                 menu_icon.setImageBitmap(bitmap);
@@ -1896,9 +1897,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         filter=false;
         bottom_navigation.setSelectedItemId(R.id.bookmarks);  //reset filter
-
-        CardView cardView = dialogView.findViewById(R.id.cardView);
-        cardView.setVisibility(View.GONE);
 
         Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
         GridView menu_grid = dialogView.findViewById(R.id.menu_grid);

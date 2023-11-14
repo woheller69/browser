@@ -6,18 +6,21 @@
         <item name="colorPrimary">@color/primaryColor</item>
         <item name="colorPrimaryDark">@color/primaryDarkColor</item>
         <item name="colorSecondary">@color/secondaryColor</item>
+        <item name="colorSurface">@color/colorSurface</item>
     </style>
 
     <style name="AppTheme_day" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="colorPrimary">@color/primaryColor</item>
         <item name="colorPrimaryDark">@color/primaryDarkColor</item>
         <item name="colorSecondary">@color/secondaryColor</item>
+        <item name="colorSurface">@color/colorSurface</item>
     </style>
 
     <style name="AppTheme_night" parent="Theme.MaterialComponents.NoActionBar">
         <item name="colorPrimary">@color/primaryColor</item>
         <item name="colorPrimaryDark">@color/primaryDarkColor</item>
         <item name="colorSecondary">@color/secondaryColor</item>
+        <item name="colorSurface">@color/colorSurface</item>
     </style>
      
 </resources>

@@ -27,27 +27,15 @@
         android:src="@drawable/icon_close"
         android:background="?attr/actionBarItemBackground"/>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_centerVertical="true"
-        android:layout_marginEnd="8dp"
-        android:backgroundTint="@android:color/transparent"
-        android:gravity="center"
+    <ImageView
+        android:id="@+id/faviconView"
         android:visibility="gone"
-        app:cardCornerRadius="2dp"
-        app:cardElevation="0dp">
-
-        <ImageView
-            android:id="@+id/faviconView"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_centerInParent="true"
-            android:contentDescription="@null"
-            android:scaleType="fitCenter" />
-
-    </androidx.cardview.widget.CardView>
+        android:layout_width="20dp"
+        android:layout_height="?android:attr/listPreferredItemHeightSmall"
+        android:layout_marginEnd="8dp"
+        android:gravity="center_vertical"
+        android:contentDescription="@null"
+        android:scaleType="fitCenter" />
 
     <TextView
         android:id="@+id/whitelist_item_domain"
@@ -55,7 +43,7 @@
         android:layout_height="?android:attr/listPreferredItemHeightSmall"
         android:layout_marginEnd="16dp"
         android:layout_toStartOf="@id/active"
-        android:layout_toEndOf="@id/cardView"
+        android:layout_toEndOf="@id/faviconView"
         android:ellipsize="end"
         android:gravity="center_vertical"
         android:includeFontPadding="false"

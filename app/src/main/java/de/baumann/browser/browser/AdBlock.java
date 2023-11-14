@@ -21,6 +21,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.nio.file.Files;
 import java.util.*;
 
 @SuppressWarnings("ResultOfMethodCallIgnored")
@@ -164,7 +165,7 @@ public class AdBlock {
             Log.d("Hosts file","does not exist");
             try {
                 AssetManager manager = context.getAssets();
-                copyFile(manager.open(FILE), new FileOutputStream(file));
+                copyFile(manager.open(FILE), Files.newOutputStream(file.toPath()));
                 downloadHosts(context);  //try to update hosts.txt from internet
             } catch(IOException e) {
                 Log.e("browser", "Failed to copy asset file", e);
@@ -177,7 +178,7 @@ public class AdBlock {
 
         Date lastModified = new Date(file.lastModified());
         if (lastModified.before(time.getTime())||getHostsDate(context).equals("")) {  //also download again if something is wrong with the file
-            //update if file is older than a day
+            //update if file is older than 7 days
             downloadHosts(context);
         }
 

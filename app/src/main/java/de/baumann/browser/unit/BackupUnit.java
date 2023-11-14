@@ -247,6 +247,7 @@ public class BackupUnit {
                     writer.newLine();
                 }
                 writer.close();
+                NinjaToast.show(context, context.getString(R.string.app_done));
             } catch (Exception e) {
                 e.printStackTrace();
                 Toast.makeText(context,e.toString(), Toast.LENGTH_LONG).show();

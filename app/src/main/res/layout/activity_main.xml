@@ -96,7 +96,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:layout_marginStart="6dp"
-                    android:layout_marginEnd="16dp"
+                    android:layout_marginEnd="12dp"
                     android:background="?attr/actionBarItemBackground"
                     android:src="@drawable/icon_refresh_light" />
 
@@ -124,7 +124,7 @@
                     android:layout_height="match_parent"
                     android:layout_alignParentEnd="true"
                     android:layout_marginStart="8dp"
-                    android:layout_marginEnd="16dp"
+                    android:layout_marginEnd="12dp"
                     android:layout_gravity="center"
                     android:src="@drawable/icon_close_light"
                     android:background="?attr/actionBarItemBackground"/>

@@ -307,7 +307,7 @@ public class HelperUnit {
         builder.setView(dialogView);
         builder.setTitle(R.string.menu_save_as);
         builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
-
+            hideSoftKeyboard(dialogView,activity);
             String title = editTitle.getText().toString().trim();
             String extension1 = editExtension.getText().toString().trim();
             String filename1 = title + extension1;
@@ -324,6 +324,9 @@ public class HelperUnit {
                     }
                     try {FileOutputStream fos = new FileOutputStream(file);
                         fos.write(imagedata);
+                        fos.flush();
+                        fos.close();
+                        Toast.makeText(activity, activity.getString(R.string.app_done), Toast.LENGTH_SHORT).show();
                     }catch (Exception e){
                         NinjaToast.show(activity,e.toString());
                         System.out.println("Error Downloading File: " + e.toString());

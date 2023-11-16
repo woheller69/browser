@@ -137,7 +137,7 @@ public class NinjaWebView extends WebView implements AlbumController {
         this.album = new AlbumItem(this.context, this, this.browserController);
         this.webViewClient = new NinjaWebViewClient(this);
         this.webChromeClient = new NinjaWebChromeClient(this);
-        this.downloadListener = new NinjaDownloadListener(this.context);
+        this.downloadListener = new NinjaDownloadListener(this.context, this);
         initWebView();
         initAlbum();
     }
@@ -158,6 +158,7 @@ public class NinjaWebView extends WebView implements AlbumController {
             WebSettingsCompat.setAlgorithmicDarkeningAllowed(webSettings, sp.getBoolean("sp_algo_dark",true));
         }
 
+        addJavascriptInterface(new JavaScriptInterface(getContext()), "NinjaWebViewJS");
         String userAgent = getUserAgent(desktopMode);
         webSettings.setSafeBrowsingEnabled(true);
 

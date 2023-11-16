@@ -17,6 +17,7 @@ import android.util.Log;
 import android.view.Gravity;
 import android.webkit.CookieManager;
 import android.webkit.URLUtil;
+import android.webkit.WebView;
 import android.widget.Toast;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
@@ -30,6 +31,7 @@ import java.util.regex.Pattern;
 import de.baumann.browser.browser.DataURIParser;
 import de.baumann.browser.database.RecordAction;
 import de.baumann.browser.R;
+import de.baumann.browser.view.JavaScriptInterface;
 
 public class BrowserUnit {
 
@@ -145,7 +147,7 @@ public class BrowserUnit {
         }
     }
 
-    public static void download(final Context context, final String url, final String contentDisposition, final String mimeType) {
+    public static void download(final Context context, final WebView webview, final String url, final String contentDisposition, final String mimeType) {
 
         String text = context.getString(R.string.dialog_title_download) + " - " + URLUtil.guessFileName(url, contentDisposition, mimeType);
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
@@ -154,12 +156,19 @@ public class BrowserUnit {
             try {
                 Activity activity = (Activity) context;
                 String filename = URLUtil.guessFileName(url, contentDisposition, mimeType); // Maybe unexpected filename.
-                if (url.startsWith("data:")) {
+                if (url.startsWith("blob:") && mimeType.equals("application/pdf")){
+                    if (BackupUnit.checkPermissionStorage(context)) {
+                        webview.evaluateJavascript(JavaScriptInterface.getBase64StringFromBlobUrl(url, filename, mimeType),null);
+                    } else BackupUnit.requestPermission(activity);
+                }else if (url.startsWith("data:")) {
                     DataURIParser dataURIParser = new DataURIParser(url);
                     if (BackupUnit.checkPermissionStorage(context)) {
                         File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), filename);
                         FileOutputStream fos = new FileOutputStream(file);
                         fos.write(dataURIParser.getImagedata());
+                        fos.flush();
+                        fos.close();
+                        Toast.makeText(context, context.getString(R.string.app_done), Toast.LENGTH_SHORT).show();
                     } else BackupUnit.requestPermission(activity);
                 }else {
                     DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));

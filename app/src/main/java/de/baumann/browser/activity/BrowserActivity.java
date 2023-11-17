@@ -1070,6 +1070,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         Chip chip_image = dialogView.findViewById(R.id.chip_image);
         chip_image.setChecked(sp.getBoolean("sp_images", true));
+        chip_image.setChipIconTint(getColorStateList(BrowserUnit.isWifiAvailable(this) ? R.color.bg_chip_state_list_wifi : R.color.bg_chip_state_list));
         chip_image.setOnClickListener(v -> {sp.edit().putBoolean("sp_images",chip_image.isChecked()).apply();reloadPage();});
 
         Chip chip_night = dialogView.findViewById(R.id.chip_night);

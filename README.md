@@ -70,7 +70,7 @@ bookmark these settings will remain.
 In addition you can define domains where Cookies, DOM-Storage, and JavaScript are always allowed (see Settings -> Browser Settings).
 Cookies will override the global cookies setting. DOM-Storage and JavaScript will override the tab specific settings.
 If one of these exceptions is active the respective icon will also be highlighted in "Exceptions". 
-A click on the icon will add/remove an exception.
+A click on the icon will add/remove an exception. Third party cookies are not supported in general.
 
 In additions there are settings which are only available as global settings:
 - Allow location access

@@ -13,6 +13,7 @@ This app depends on the built-in Android WebView. Make sure to keep it up to dat
 • AdBlocker using StevenBlack host list
 • Measures against browser fingerprinting
 • Advanced settings for javascript, cookies and DOM-storage (domain/bookmark based)
+• Third party cookies are not supported in general.
 • Support for Greasemonkey style scripts (supported: @match, @name, @run-at)
 • Optimized for one hand handling (toolbar at bottom)
 • TAB control (switch, open, close, unlimited tabs)

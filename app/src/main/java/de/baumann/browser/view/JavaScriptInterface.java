@@ -33,9 +33,9 @@ public class JavaScriptInterface {
                     "xhr.responseType = 'blob';" +
                     "xhr.onload = function(e) {" +
                     "    if (this.status == 200) {" +
-                    "        var blobPdf = this.response;" +
+                    "        var blob = this.response;" +
                     "        var reader = new FileReader();" +
-                    "        reader.readAsDataURL(blobPdf);" +
+                    "        reader.readAsDataURL(blob);" +
                     "        reader.onloadend = function() {" +
                     "            base64data = reader.result;" +
                     "            NinjaWebViewJS.getBase64FromBlobData('" + filename + "', '" + mimeType + "', base64data);" +

@@ -570,16 +570,8 @@ public class NinjaWebViewClient extends WebViewClient {
     public void onReceivedHttpAuthRequest(WebView view, @NonNull final HttpAuthHandler handler, String host, String realm) {
 
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
-        View dialogView = View.inflate(context, R.layout.dialog_edit_title, null);
+        View dialogView = View.inflate(context, R.layout.dialog_http_auth, null);
 
-        TextInputLayout edit_title_layout = dialogView.findViewById(R.id.edit_title_layout);
-        TextInputLayout edit_userName_layout = dialogView.findViewById(R.id.edit_userName_layout);
-        TextInputLayout edit_PW_layout = dialogView.findViewById(R.id.edit_PW_layout);
-        ImageView ib_icon = dialogView.findViewById(R.id.edit_icon);
-        ib_icon.setVisibility(View.GONE);
-        edit_title_layout.setVisibility(View.GONE);
-        edit_userName_layout.setVisibility(View.VISIBLE);
-        edit_PW_layout.setVisibility(View.VISIBLE);
         EditText pass_userNameET = dialogView.findViewById(R.id.edit_userName);
         EditText pass_userPWET = dialogView.findViewById(R.id.edit_PW);
 

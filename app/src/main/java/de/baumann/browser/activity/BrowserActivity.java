@@ -1799,31 +1799,16 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         MaterialAlertDialogBuilder builderSubMenu;
         AlertDialog dialogSubMenu;
         builderSubMenu = new MaterialAlertDialogBuilder(context);
-        View dialogViewSubMenu = View.inflate(context, R.layout.dialog_edit_title, null);
+        View dialogViewSubMenu = View.inflate(context, R.layout.dialog_edit_bookmark, null);
 
-        TextInputLayout edit_title_layout = dialogViewSubMenu.findViewById(R.id.edit_title_layout);
-        TextInputLayout edit_userName_layout = dialogViewSubMenu.findViewById(R.id.edit_userName_layout);
-        TextInputLayout edit_PW_layout = dialogViewSubMenu.findViewById(R.id.edit_PW_layout);
         ImageView ib_icon = dialogViewSubMenu.findViewById(R.id.edit_icon);
-
         Chip chip_desktopMode = dialogViewSubMenu.findViewById(R.id.edit_bookmark_desktopMode);
         Chip chip_javascript = dialogViewSubMenu.findViewById(R.id.edit_bookmark_Javascript);
         Chip chip_DomContent = dialogViewSubMenu.findViewById(R.id.edit_bookmark_DomContent);
-        chip_desktopMode.setVisibility(View.VISIBLE);
-        chip_javascript.setVisibility(View.VISIBLE);
-        chip_DomContent.setVisibility(View.VISIBLE);
-
-        edit_title_layout.setVisibility(View.VISIBLE);
-        edit_userName_layout.setVisibility(View.GONE);
-        edit_PW_layout.setVisibility(View.GONE);
-
         EditText edit_title = dialogViewSubMenu.findViewById(R.id.edit_title);
-        edit_title.setText(bookmark.getTitle());
-
-        TextInputLayout edit_URL_layout=dialogViewSubMenu.findViewById(R.id.edit_URL_layout);
-        edit_URL_layout.setVisibility(View.VISIBLE);
         EditText edit_URL = dialogViewSubMenu.findViewById(R.id.edit_URL);
-        edit_URL.setVisibility(View.VISIBLE);
+
+        edit_title.setText(bookmark.getTitle());
         edit_URL.setText(bookmark.getURL());
 
         ib_icon.setOnClickListener(v -> {

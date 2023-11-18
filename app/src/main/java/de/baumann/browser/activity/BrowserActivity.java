@@ -252,7 +252,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         }
 
         sp.edit().putInt("restart_changed", 0).apply();
-        sp.edit().putBoolean("pdf_create", false).apply();
 
         contentFrame = findViewById(R.id.main_content);
         contentFrame.getViewTreeObserver().addOnGlobalLayoutListener(keyboardLayoutListener);
@@ -348,16 +347,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
             builder.setMessage(R.string.toast_restart);
             builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> finish());
-            builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
-            AlertDialog dialog = builder.create();
-            dialog.show();
-            Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
-        }
-        if (sp.getBoolean("pdf_create", false)) {
-            sp.edit().putBoolean("pdf_create", false).apply();
-            MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
-            builder.setMessage(R.string.toast_downloadComplete);
-            builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> startActivity(new Intent(DownloadManager.ACTION_VIEW_DOWNLOADS)));
             builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
             AlertDialog dialog = builder.create();
             dialog.show();
@@ -497,12 +486,11 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         dialog_tabPreview.show();
     }
 
-    private void printPDF () {
+    private void print() {
         String title = HelperUnit.fileName(ninjaWebView.getUrl());
         PrintManager printManager = (PrintManager) getSystemService(Context.PRINT_SERVICE);
         PrintDocumentAdapter printAdapter = ninjaWebView.createPrintDocumentAdapter(title);
         Objects.requireNonNull(printManager).print(title, printAdapter, new PrintAttributes.Builder().build());
-        sp.edit().putBoolean("pdf_create", true).apply();
     }
 
     private void dispatchIntent(Intent intent) {
@@ -1551,6 +1539,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         dialog_overflow.show();
         Objects.requireNonNull(dialog_overflow.getWindow()).setGravity(Gravity.BOTTOM);
         ImageView icon = (ImageView) dialogView.findViewById(R.id.menu_icon);
+        TextView titleView = (TextView) dialogView.findViewById(R.id.title);
+        titleView.setText(title);
         if (ninjaWebView.getFavicon()!=null) icon.setImageBitmap(ninjaWebView.getFavicon());
         else icon.setImageResource(R.drawable.icon_image_broken);
 
@@ -1566,6 +1556,9 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             dialog_overflow.cancel();
             addAlbum("Instructions","https://github.com/woheller69/browser#Instructions",true);
         });
+
+        ImageButton overflow_print = dialogView.findViewById(R.id.overflow_print);
+        overflow_print.setOnClickListener(v -> print());
 
         final GridView menu_grid_tab = dialogView.findViewById(R.id.overflow_tab);
         final GridView menu_grid_share = dialogView.findViewById(R.id.overflow_share);
@@ -1607,14 +1600,12 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         // Save
         GridItem item_21 = new GridItem(0, getString(R.string.menu_fav),  0);
         GridItem item_23 = new GridItem(0, getString(R.string.menu_save_bookmark),  0);
-        GridItem item_24 = new GridItem(0, getString(R.string.menu_save_pdf),  0);
         GridItem item_25 = new GridItem(0, getString(R.string.menu_sc),  0);
         GridItem item_26 = new GridItem(0, getString(R.string.menu_save_as),  0);
 
         final List<GridItem> gridList_save = new LinkedList<>();
         gridList_save.add(gridList_save.size(), item_21);
         gridList_save.add(gridList_save.size(), item_23);
-        gridList_save.add(gridList_save.size(), item_24);
         gridList_save.add(gridList_save.size(), item_25);
         gridList_save.add(gridList_save.size(), item_26);
 
@@ -1633,10 +1624,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 saveBookmark();
                 action.close();
             } else if (position == 2) {
-                printPDF();
-            } else if (position == 3) {
                 HelperUnit.createShortcut(context, ninjaWebView.getTitle(), ninjaWebView.getUrl());
-            } else if (position == 4) {
+            } else if (position == 3) {
                 HelperUnit.saveAs(dialog_overflow, activity, url);
             }
         });
@@ -1644,12 +1633,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         // Share
         GridItem item_11 = new GridItem(0, getString(R.string.menu_share_link),  0);
         GridItem item_12 = new GridItem(0, getString(R.string.menu_shareClipboard),  0);
-        GridItem item_13 = new GridItem(0, getString(R.string.menu_open_with),  0);
 
         final List<GridItem> gridList_share = new LinkedList<>();
         gridList_share.add(gridList_share.size(), item_11);
         gridList_share.add(gridList_share.size(), item_12);
-        gridList_share.add(gridList_share.size(), item_13);
 
         GridAdapter gridAdapter_share = new GridAdapter(context, gridList_share);
         menu_grid_share.setAdapter(gridAdapter_share);
@@ -1664,11 +1651,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 ClipData clip = ClipData.newPlainText("text", url);
                 Objects.requireNonNull(clipboard).setPrimaryClip(clip);
                 NinjaToast.show(this, R.string.toast_copy_successful);
-            } else if (position == 2) {
-                Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.setData(Uri.parse(url));
-                Intent chooser = Intent.createChooser(intent, getString(R.string.menu_open_with));
-                startActivity(chooser);
             }
         });
 

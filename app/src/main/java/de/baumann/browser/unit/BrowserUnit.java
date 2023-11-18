@@ -31,7 +31,7 @@ import java.util.regex.Pattern;
 import de.baumann.browser.browser.DataURIParser;
 import de.baumann.browser.database.RecordAction;
 import de.baumann.browser.R;
-import de.baumann.browser.view.JavaScriptInterface;
+import de.baumann.browser.browser.JavaScriptInterface;
 
 public class BrowserUnit {
 

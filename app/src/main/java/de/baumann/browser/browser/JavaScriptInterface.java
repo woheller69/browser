@@ -1,4 +1,4 @@
-package de.baumann.browser.view;
+package de.baumann.browser.browser;
 
 import android.content.Context;
 import android.os.Environment;
@@ -12,6 +12,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 import de.baumann.browser.R;
+import de.baumann.browser.view.NinjaToast;
 
 public class JavaScriptInterface {
     private final Context context;

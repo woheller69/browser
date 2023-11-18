@@ -16,18 +16,18 @@
         android:entries="@array/setting_entries_search_engine"
         android:entryValues="@array/setting_values_search_engine"/>
 
-    <de.baumann.browser.preferences.EditTextSwitchPreference
+    <org.woheller69.preferences.EditTextSwitchPreference
         android:selectable="true"
         app:useSimpleSummaryProvider="true"
         android:key="sp_search_engine_custom"
-        app:editTextSwitchKey="searchEngineSwitch"
+        app:SwitchKey="searchEngineSwitch"
         android:title="@string/setting_title_searchEngine" />
 
-    <de.baumann.browser.preferences.EditTextSwitchPreference
+    <org.woheller69.preferences.EditTextSwitchPreference
         android:selectable="true"
         app:useSimpleSummaryProvider="true"
         android:key="sp_userAgent"
-        app:editTextSwitchKey="userAgentSwitch"
+        app:SwitchKey="userAgentSwitch"
         android:title="@string/setting_title_userAgent" />
 
     <SwitchPreference

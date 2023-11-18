@@ -45,15 +45,14 @@ class AlbumItem {
 
     @SuppressLint("InflateParams")
     private void initUI() {
-        albumView = LayoutInflater.from(context).inflate(R.layout.item_icon_right, null, false);
+        albumView = LayoutInflater.from(context).inflate(R.layout.item_album_view, null, false);
         albumView.setOnLongClickListener(v -> {
             browserController.removeAlbum(albumController);
             return true;
         });
-        albumClose = albumView.findViewById(R.id.whitelist_item_cancel);
-        albumClose.setVisibility(View.VISIBLE);
+        albumClose = albumView.findViewById(R.id.item_cancel);
         albumClose.setOnClickListener(v -> browserController.removeAlbum(albumController));
-        albumTitle = albumView.findViewById(R.id.whitelist_item_domain);
+        albumTitle = albumView.findViewById(R.id.item_title);
         albumFavicon = albumView.findViewById(R.id.faviconView);
     }
 

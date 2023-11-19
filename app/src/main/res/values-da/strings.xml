@@ -176,5 +176,8 @@
     <string name="hint_DRM_Media">Allow DRM protected media playback?</string>
     <string name="error_allow_microphone">Allow microphone usage</string>
     <string name="error_missing_permission">Permission required:</string>
+    <string name="dialog_StarOnGitHub">Kan du lide denne app? Giv venligst en stjerne på GitHub eller køb udvikleren en kop kaffe via PayPal.</string>
+    <string name="dialog_Later_button">Måske senere</string>
+    <string name="toast_delete">Delete file and try again</string>
     <!-- License changelog -->
 </resources>

@@ -28,7 +28,7 @@ import android.webkit.WebResourceResponse;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.EditText;
-import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.io.ByteArrayInputStream;
 import java.net.URISyntaxException;
@@ -574,9 +574,10 @@ public class NinjaWebViewClient extends WebViewClient {
 
         EditText pass_userNameET = dialogView.findViewById(R.id.edit_userName);
         EditText pass_userPWET = dialogView.findViewById(R.id.edit_PW);
+        TextView title = dialogView.findViewById(R.id.title);
+        title.setText(host);
 
         builder.setView(dialogView);
-        builder.setTitle("HttpAuthRequest");
         builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
             String user = pass_userNameET.getText().toString().trim();
             String pass = pass_userPWET.getText().toString().trim();

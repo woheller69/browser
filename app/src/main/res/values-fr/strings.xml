@@ -176,5 +176,8 @@
     <string name="hint_DRM_Media">Autoriser la lecture multimédia protégée par DRM?</string>
     <string name="error_allow_microphone">Autoriser l\'utilisation du microphone</string>
     <string name="error_missing_permission">Autorisation requise:</string>
+    <string name="dialog_StarOnGitHub">Aimez-vous cette application? Veuillez donner une étoile sur GitHub ou acheter un café au développeur via PayPal.</string>
+    <string name="dialog_Later_button">Peut-être plus tard</string>
+    <string name="toast_delete">Supprimez le fichier et réessayez</string>
     <!-- License changelog -->
 </resources>

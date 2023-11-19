@@ -176,5 +176,8 @@
     <string name="hint_DRM_Media">Να επιτρέπεται η προστατευμένη αναπαραγωγή πολυμέσων DRM;</string>
     <string name="error_allow_microphone">Allow microphone usage</string>
     <string name="error_missing_permission">Permission required:</string>
+    <string name="dialog_StarOnGitHub">Do you like this app? Please give a star on GitHub or buy the developer a coffee via PayPal.</string>
+    <string name="dialog_Later_button">Maybe later</string>
+    <string name="toast_delete">Delete the file and try again</string>
     <!-- License changelog -->
 </resources>

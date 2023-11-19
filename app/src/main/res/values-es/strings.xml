@@ -176,5 +176,8 @@
     <string name="hint_DRM_Media">¿Desea permitir reproducción multimedia protegida por DRM?</string>
     <string name="error_allow_microphone">Permitir el uso del micrófono</string>
     <string name="error_missing_permission">Permiso requerido:</string>
+    <string name="dialog_StarOnGitHub">¿Te gusta esta app? Dale una estrella en GitHub o cómprale un café al desarrollador a través de PayPal.</string>
+    <string name="dialog_Later_button">Quizás mas tarde</string>
+    <string name="toast_delete">Elimina el archivo e inténtalo de nuevo.</string>
     <!-- License changelog -->
 </resources>

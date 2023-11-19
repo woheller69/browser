@@ -11,26 +11,26 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp">
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="14dp">
 
         <ImageView
             android:id="@+id/menu_icon"
-            android:layout_marginTop="10dp"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_marginStart="20dp"
+            android:layout_centerVertical="true"
             android:layout_alignParentStart="true"
             android:layout_marginEnd="8dp"
-            android:layout_marginBottom="10dp"
             android:contentDescription="@null"
+            android:src="@drawable/icon_image_broken"
             android:scaleType="fitCenter" />
 
         <TextView
             android:id="@+id/title"
             android:layout_width="wrap_content"
-            android:layout_height="24dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
             android:layout_marginEnd="16dp"
             android:layout_toEndOf="@id/menu_icon"
             android:ellipsize="end"
@@ -39,9 +39,15 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:text="Title" />
 
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp">
+
         <ImageButton
             android:id="@+id/overflow_settings"
-            android:layout_below="@id/menu_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
@@ -53,8 +59,7 @@
         <ImageButton
             android:id="@+id/overflow_info"
             android:layout_toStartOf="@id/overflow_settings"
-            android:layout_below="@id/menu_icon"
-            android:layout_width="wrap_content"
+             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
@@ -64,7 +69,6 @@
         <ImageButton
             android:id="@+id/overflow_print"
             android:layout_toStartOf="@id/overflow_info"
-            android:layout_below="@id/menu_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"

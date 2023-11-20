@@ -88,6 +88,8 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import de.baumann.browser.GithubStar;
 import de.baumann.browser.browser.AdBlock;
@@ -1391,17 +1393,12 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         ImageView menu_icon = dialogView.findViewById(R.id.menu_icon);
 
         if (type == SRC_ANCHOR_TYPE) {
-            Bitmap bitmap=ninjaWebView.getFavicon();
-            if (bitmap != null){
-                menu_icon.setImageBitmap(bitmap);
-            }else {
-                menu_icon.setImageResource(R.drawable.icon_link);
-            }
-        } else if (type == IMAGE_TYPE) {
-            menu_icon.setImageResource(R.drawable.icon_image);
-        } else {
-            menu_icon.setImageResource(R.drawable.icon_link);
+            Bitmap bitmap = ninjaWebView.getFavicon();
+            if (bitmap != null) menu_icon.setImageBitmap(bitmap);
+            else menu_icon.setImageResource(R.drawable.icon_link);
         }
+        else if (type == IMAGE_TYPE) menu_icon.setImageResource(R.drawable.icon_image);
+        else menu_icon.setImageResource(R.drawable.icon_link);
 
         builder.setView(dialogView);
         AlertDialog dialog = builder.create();
@@ -1411,16 +1408,18 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         GridItem item_01 = new GridItem(0, getString(R.string.main_menu_new_tabOpen),  0);
         GridItem item_02 = new GridItem(0, getString(R.string.main_menu_new_tab),  0);
         GridItem item_03 = new GridItem(0, getString(R.string.menu_share_link),  0);
-        GridItem item_04 = new GridItem(0, getString(R.string.menu_open_with),  0);
-        GridItem item_05 = new GridItem(0, getString(R.string.menu_save_as),  0);
+        GridItem item_04 = new GridItem(0, getString(R.string.menu_save_as),  0);
 
         final List<GridItem> gridList = new LinkedList<>();
 
         gridList.add(gridList.size(), item_01);
         gridList.add(gridList.size(), item_02);
         gridList.add(gridList.size(), item_03);
-        gridList.add(gridList.size(), item_04);
-        gridList.add(gridList.size(), item_05);
+
+        Pattern compiledPattern = Pattern.compile("\\.[^.]{2,8}$");
+        Matcher matcher = compiledPattern.matcher(url);
+        if ((type != SRC_ANCHOR_TYPE) || matcher.find())
+            gridList.add(gridList.size(), item_04);  // in case of SRC_ANCHOR_TYPE show "save as" only if url ends with a suffix that has a dot followed by 2 to 8 more characters
 
         GridView menu_grid = dialogView.findViewById(R.id.menu_grid);
         GridAdapter gridAdapter = new GridAdapter(context, gridList);
@@ -1428,28 +1427,19 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         gridAdapter.notifyDataSetChanged();
         menu_grid.setOnItemClickListener((parent, view, position, id) -> {
             dialog.cancel();
-            switch (position) {
-                case 0:
-                    addAlbum(getString(R.string.app_name), url, true);
-                    break;
-                case 1:
-                    addAlbum(getString(R.string.app_name), url, false);
-                    break;
-                case 2:
-                    shareLink("", url);
-                    break;
-                case 3:
-                    Intent intent = new Intent(Intent.ACTION_VIEW);
-                    intent.setData(Uri.parse(url));
-                    Intent chooser = Intent.createChooser(intent, getString(R.string.menu_open_with));
-                    startActivity(chooser);
-                    break;
-                case 4:
-                    if (url.startsWith("data:")) {
-                        DataURIParser dataURIParser= new DataURIParser(url);
-                        HelperUnit.saveDataURI(dialog, activity, dataURIParser);
-                    } else HelperUnit.saveAs(dialog, activity, url);
-                    break;
+
+            GridItem item = gridList.get(position);
+            if (item.getTitle().equals(getString(R.string.main_menu_new_tabOpen))){
+                addAlbum(getString(R.string.app_name), url, true);
+            } else if (item.getTitle().equals(getString(R.string.main_menu_new_tab))){
+                addAlbum(getString(R.string.app_name), url, false);
+            } else if (item.getTitle().equals(getString(R.string.menu_share_link))) {
+                shareLink("", url);
+            } else if (item.getTitle().equals(getString(R.string.menu_save_as))) {
+                if (url.startsWith("data:")) {
+                    DataURIParser dataURIParser= new DataURIParser(url);
+                    HelperUnit.saveDataURI(dialog, activity, dataURIParser);
+                } else HelperUnit.saveAs(dialog, activity, url, type==IMAGE_TYPE ? "image/jpeg" : null);
             }
         });
     }
@@ -1495,8 +1485,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 Handler backgroundHandler = new Handler(handlerThread.getLooper());
                 Message msg = backgroundHandler.obtainMessage();
                 ninjaWebView.requestFocusNodeHref(msg);
-                String url = (String) msg.getData().get("url");
-                showContextMenuLink(HelperUnit.domain(url), url, SRC_ANCHOR_TYPE);
+                String url = (String) msg.getData().get("src");
+                showContextMenuLink(HelperUnit.domain(url), url, IMAGE_TYPE);
             }  else if (result.getType() == IMAGE_TYPE) {
                 showContextMenuLink(HelperUnit.domain(result.getExtra()), result.getExtra(), IMAGE_TYPE);
             } else {
@@ -1628,7 +1618,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             } else if (position == 2) {
                 HelperUnit.createShortcut(context, ninjaWebView.getTitle(), ninjaWebView.getUrl());
             } else if (position == 3) {
-                HelperUnit.saveAs(dialog_overflow, activity, url);
+                HelperUnit.saveAs(dialog_overflow, activity, url, null);
             }
         });
 

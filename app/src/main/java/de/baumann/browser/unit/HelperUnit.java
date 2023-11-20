@@ -112,7 +112,7 @@ public class HelperUnit {
     }
 
 
-    public static void saveAs(AlertDialog dialogToCancel, final Activity activity, final String url) {
+    public static void saveAs(AlertDialog dialogToCancel, final Activity activity, final String url, final String guessMimeType) {
 
         try {
             MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(activity);
@@ -121,7 +121,8 @@ public class HelperUnit {
             final EditText editTitle = dialogView.findViewById(R.id.dialog_edit_1);
             final EditText editExtension = dialogView.findViewById(R.id.dialog_edit_2);
 
-            String filename = HelperUnit.guessFileName(url, null, null);
+            String filename = HelperUnit.guessFileName(url, null, guessMimeType);
+            if (!filename.contains(".")) filename = filename + ".bin";  //if filename has no extension offer .bin as fall back
             editTitle.setText(filename.substring(0,filename.lastIndexOf(".")));
             String extension = filename.substring(filename.lastIndexOf("."));
             if(extension.length() <= 8) {

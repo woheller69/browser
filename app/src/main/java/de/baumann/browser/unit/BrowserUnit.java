@@ -154,9 +154,9 @@ public class BrowserUnit {
         builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
             try {
                 Activity activity = (Activity) context;
-                if (url.startsWith("blob:") && mimeType.equals("application/pdf")){
+                if (url.startsWith("blob:") && mimeType.equals("application/pdf")) {
                     if (BackupUnit.checkPermissionStorage(context)) {
-                        webview.evaluateJavascript(JavaScriptInterface.getBase64StringFromBlobUrl(url, filename, mimeType),null);
+                        webview.evaluateJavascript(JavaScriptInterface.getBase64StringFromBlobUrl(url, filename, mimeType), null);
                     } else BackupUnit.requestPermission(activity);
                 }else if (url.startsWith("data:")) {
                     DataURIParser dataURIParser = new DataURIParser(url);

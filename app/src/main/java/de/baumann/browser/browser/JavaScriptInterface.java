@@ -12,7 +12,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 import de.baumann.browser.R;
-import de.baumann.browser.view.NinjaToast;
 
 public class JavaScriptInterface {
     private final Context context;
@@ -22,8 +21,13 @@ public class JavaScriptInterface {
 
     @JavascriptInterface
     public void getBase64FromBlobData(String filename, String mimeType, String base64Data) throws IOException {
-        if (mimeType.equals("application/pdf")) convertBase64StringToPdfAndStoreIt(filename, base64Data);
-        else NinjaToast.show(context,mimeType + " not supported");
+        File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), filename);
+        byte[] base64AsBytes = Base64.decode(base64Data.replaceFirst("^data:"+mimeType+";base64,", ""), 0);
+        FileOutputStream fos = new FileOutputStream(file);
+        fos.write(base64AsBytes);
+        fos.flush();
+        fos.close();
+        Toast.makeText(context, context.getString(R.string.app_done), Toast.LENGTH_SHORT).show();
     }
 
     public static String getBase64StringFromBlobUrl(String blobUrl, String filename, String mimeType) {
@@ -44,17 +48,6 @@ public class JavaScriptInterface {
                     "    }" +
                     "};" +
                     "xhr.send();";
-    }
-
-    private void convertBase64StringToPdfAndStoreIt(String filename, String base64PDf) throws IOException {
-
-            File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), filename);
-            byte[] pdfAsBytes = Base64.decode(base64PDf.replaceFirst("^data:application/pdf;base64,", ""), 0);
-            FileOutputStream fos = new FileOutputStream(file);
-            fos.write(pdfAsBytes);
-            fos.flush();
-            fos.close();
-            Toast.makeText(context, context.getString(R.string.app_done), Toast.LENGTH_SHORT).show();
     }
 }
 

@@ -154,11 +154,11 @@ public class BrowserUnit {
         builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
             try {
                 Activity activity = (Activity) context;
-                if (url.startsWith("blob:") && mimeType.equals("application/pdf")) {
+                if (url.startsWith("blob:")) {
                     if (BackupUnit.checkPermissionStorage(context)) {
                         webview.evaluateJavascript(JavaScriptInterface.getBase64StringFromBlobUrl(url, filename, mimeType), null);
                     } else BackupUnit.requestPermission(activity);
-                }else if (url.startsWith("data:")) {
+                } else if (url.startsWith("data:")) {
                     DataURIParser dataURIParser = new DataURIParser(url);
                     if (BackupUnit.checkPermissionStorage(context)) {
                         File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), filename);
@@ -168,7 +168,7 @@ public class BrowserUnit {
                         fos.close();
                         Toast.makeText(context, context.getString(R.string.app_done), Toast.LENGTH_SHORT).show();
                     } else BackupUnit.requestPermission(activity);
-                }else {
+                } else {
                     DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
                     CookieManager cookieManager = CookieManager.getInstance();
                     String cookie = cookieManager.getCookie(url);

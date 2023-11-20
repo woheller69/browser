@@ -45,7 +45,6 @@ import com.google.android.material.chip.Chip;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.progressindicator.CircularProgressIndicator;
 import com.google.android.material.tabs.TabLayout;
-import com.google.android.material.textfield.TextInputLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -487,7 +486,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     }
 
     private void print() {
-        String title = HelperUnit.fileName(ninjaWebView.getUrl());
+        String title = HelperUnit.guessFileName(ninjaWebView.getUrl(), null, null);
         PrintManager printManager = (PrintManager) getSystemService(Context.PRINT_SERVICE);
         PrintDocumentAdapter printAdapter = ninjaWebView.createPrintDocumentAdapter(title);
         Objects.requireNonNull(printManager).print(title, printAdapter, new PrintAttributes.Builder().build());
@@ -1558,7 +1557,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         });
 
         ImageButton overflow_print = dialogView.findViewById(R.id.overflow_print);
-        overflow_print.setOnClickListener(v -> print());
+        overflow_print.setOnClickListener(v -> {
+            print();
+            dialog_overflow.cancel();
+        });
 
         final GridView menu_grid_tab = dialogView.findViewById(R.id.overflow_tab);
         final GridView menu_grid_share = dialogView.findViewById(R.id.overflow_share);

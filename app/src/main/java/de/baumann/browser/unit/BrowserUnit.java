@@ -16,7 +16,6 @@ import androidx.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Gravity;
 import android.webkit.CookieManager;
-import android.webkit.URLUtil;
 import android.webkit.WebView;
 import android.widget.Toast;
 
@@ -148,14 +147,13 @@ public class BrowserUnit {
     }
 
     public static void download(final Context context, final WebView webview, final String url, final String contentDisposition, final String mimeType) {
-
-        String text = context.getString(R.string.dialog_title_download) + " - " + URLUtil.guessFileName(url, contentDisposition, mimeType);
+        String filename = HelperUnit.guessFileName(url, contentDisposition, mimeType); // replaces URLUtil.guessFileName(url, contentDisposition, mimeType)
+        String text = context.getString(R.string.dialog_title_download) + " - " + filename;
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
         builder.setMessage(text);
         builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
             try {
                 Activity activity = (Activity) context;
-                String filename = URLUtil.guessFileName(url, contentDisposition, mimeType); // Maybe unexpected filename.
                 if (url.startsWith("blob:") && mimeType.equals("application/pdf")){
                     if (BackupUnit.checkPermissionStorage(context)) {
                         webview.evaluateJavascript(JavaScriptInterface.getBase64StringFromBlobUrl(url, filename, mimeType),null);

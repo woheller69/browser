@@ -44,7 +44,6 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.webkit.CookieManager;
-import android.webkit.URLUtil;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -52,14 +51,12 @@ import android.widget.Toast;
 import java.io.File;
 
 import java.io.FileOutputStream;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 import java.util.Objects;
 
 import de.baumann.browser.R;
 import de.baumann.browser.browser.DataURIParser;
+import de.baumann.browser.browser.FilenameExtractor;
 import de.baumann.browser.view.GridItem;
 import de.baumann.browser.view.NinjaToast;
 
@@ -124,9 +121,8 @@ public class HelperUnit {
             final EditText editTitle = dialogView.findViewById(R.id.dialog_edit_1);
             final EditText editExtension = dialogView.findViewById(R.id.dialog_edit_2);
 
-            String filename = URLUtil.guessFileName(url, null, null);
-            editTitle.setText(HelperUnit.fileName(url));
-
+            String filename = HelperUnit.guessFileName(url, null, null);
+            editTitle.setText(filename.substring(0,filename.lastIndexOf(".")));
             String extension = filename.substring(filename.lastIndexOf("."));
             if(extension.length() <= 8) {
                 editExtension.setText(extension);
@@ -199,11 +195,27 @@ public class HelperUnit {
         }
     }
 
-    public static String fileName (String url) {
+    public static String guessFileName(String url, String contentDisposition, String mimeType) {
+        //Alternative to URLUtil.guessFileName, using FilnameExtractor from DuckDuckGo
+
+        File directory =  new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS),"/");
+
+        FilenameExtractor filenameExtractor = new FilenameExtractor();
+        FilenameExtractor.FilenameExtractionResult extractionResult = filenameExtractor.extract(url, contentDisposition, mimeType, directory);
+        String name;
+        if (extractionResult instanceof FilenameExtractor.FilenameExtractionResult.Extracted){
+            name = ((FilenameExtractor.FilenameExtractionResult.Extracted) extractionResult).getFilename();
+        } else {
+            name = ((FilenameExtractor.FilenameExtractionResult.Guess) extractionResult).getBestGuess();
+        }
+
+        /* old code
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss", Locale.getDefault());
         String currentTime = sdf.format(new Date());
         String domain = Objects.requireNonNull(Uri.parse(url).getHost()).replace("www.", "").trim();
-        return domain.replace(".", "_").trim() + "_" + currentTime.trim();
+        return domain.replace(".", "_").trim() + "_" + currentTime.trim(); */
+
+        return name;
     }
 
     public static String domain (String url) {
@@ -289,7 +301,11 @@ public class HelperUnit {
     public static void saveDataURI(AlertDialog dialogToCancel, Activity activity, DataURIParser dataUriParser) {
 
         byte[] imagedata = dataUriParser.getImagedata();
-        String filename=dataUriParser.getFilename();
+        String filename = dataUriParser.getFilename();
+
+        FilenameExtractor filenameExtractor = new FilenameExtractor();
+        File directory = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), "/");
+        filename = filenameExtractor.handleDuplicates(filename,directory);
 
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(activity);
         View dialogView = View.inflate(activity, R.layout.dialog_edit_extension, null);
@@ -317,11 +333,6 @@ public class HelperUnit {
             } else {
                 if (BackupUnit.checkPermissionStorage(activity)) {
                     File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), filename1);
-                    if (file.exists()) {
-                        if (!file.delete()) {
-                            Toast.makeText(activity, activity.getResources().getString(R.string.toast_delete), Toast.LENGTH_LONG).show();
-                        }
-                    }
                     try {FileOutputStream fos = new FileOutputStream(file);
                         fos.write(imagedata);
                         fos.flush();

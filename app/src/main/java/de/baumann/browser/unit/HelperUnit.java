@@ -21,6 +21,7 @@ package de.baumann.browser.unit;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.Dialog;
 import android.app.DownloadManager;
 import android.content.Context;
 import android.content.Intent;
@@ -46,7 +47,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.webkit.CookieManager;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.Toast;
+
 
 import java.io.File;
 
@@ -338,7 +339,7 @@ public class HelperUnit {
                         fos.write(imagedata);
                         fos.flush();
                         fos.close();
-                        Toast.makeText(activity, activity.getString(R.string.app_done), Toast.LENGTH_SHORT).show();
+                        openDialogDownloads(activity);
                     }catch (Exception e){
                         NinjaToast.show(activity,e.toString());
                         System.out.println("Error Downloading File: " + e.toString());
@@ -372,5 +373,17 @@ public class HelperUnit {
         assert view != null;
         InputMethodManager imm =(InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+    }
+
+    public static void openDialogDownloads(Context context) {
+        ((Activity) context).runOnUiThread(() -> {
+            MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
+            builder.setMessage(R.string.toast_downloadComplete);
+            builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> context.startActivity(new Intent(DownloadManager.ACTION_VIEW_DOWNLOADS)));
+            builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
+            Dialog dialog = builder.create();
+            dialog.show();
+            Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
+        });
     }
 }

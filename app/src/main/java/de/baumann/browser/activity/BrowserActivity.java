@@ -273,13 +273,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
             @Override
             public void onReceive(Context context, Intent intent) {
-                MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
-                builder.setMessage(R.string.toast_downloadComplete);
-                builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> startActivity(new Intent(DownloadManager.ACTION_VIEW_DOWNLOADS)));
-                builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
-                Dialog dialog = builder.create();
-                dialog.show();
-                Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
+                HelperUnit.openDialogDownloads(context);
             }
         };
 

@@ -11,7 +11,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-import de.baumann.browser.R;
+import de.baumann.browser.unit.HelperUnit;
 
 public class JavaScriptInterface {
     private final Context context;
@@ -27,7 +27,7 @@ public class JavaScriptInterface {
         fos.write(base64AsBytes);
         fos.flush();
         fos.close();
-        Toast.makeText(context, context.getString(R.string.app_done), Toast.LENGTH_SHORT).show();
+        HelperUnit.openDialogDownloads(context);
     }
 
     @JavascriptInterface

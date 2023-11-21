@@ -1,5 +1,7 @@
 package de.baumann.browser.unit;
 
+import static de.baumann.browser.unit.HelperUnit.hideSoftKeyboard;
+
 import android.app.Activity;
 import android.app.DownloadManager;
 import android.content.Context;
@@ -15,8 +17,10 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.View;
 import android.webkit.CookieManager;
 import android.webkit.WebView;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
@@ -31,6 +35,7 @@ import de.baumann.browser.browser.DataURIParser;
 import de.baumann.browser.database.RecordAction;
 import de.baumann.browser.R;
 import de.baumann.browser.browser.JavaScriptInterface;
+import de.baumann.browser.view.NinjaToast;
 
 public class BrowserUnit {
 
@@ -148,47 +153,67 @@ public class BrowserUnit {
 
     public static void download(final Context context, final WebView webview, final String url, final String contentDisposition, final String mimeType) {
         String filename = HelperUnit.guessFileName(url, contentDisposition, mimeType); // replaces URLUtil.guessFileName(url, contentDisposition, mimeType)
-        String text = context.getString(R.string.dialog_title_download) + " - " + filename;
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
-        builder.setMessage(text);
+        View dialogView = View.inflate(context, R.layout.dialog_edit_extension, null);
+        final EditText editTitle = dialogView.findViewById(R.id.dialog_edit_1);
+        final EditText editExtension = dialogView.findViewById(R.id.dialog_edit_2);
+
+        if (!filename.contains(".")) filename = filename + ".bin";  //if filename has no extension offer .bin as fall back
+        editTitle.setText(filename.substring(0,filename.lastIndexOf(".")));
+        String extension = filename.substring(filename.lastIndexOf("."));
+        if(extension.length() <= 8) {
+            editExtension.setText(extension);
+        }
+        builder.setView(dialogView);
+        builder.setTitle(R.string.dialog_title_download);
+
         builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
-            try {
-                Activity activity = (Activity) context;
-                if (url.startsWith("blob:")) {
-                    if (BackupUnit.checkPermissionStorage(context)) {
-                        webview.evaluateJavascript(JavaScriptInterface.getBase64StringFromBlobUrl(url, filename, mimeType), null);
-                    } else BackupUnit.requestPermission(activity);
-                } else if (url.startsWith("data:")) {
-                    DataURIParser dataURIParser = new DataURIParser(url);
-                    if (BackupUnit.checkPermissionStorage(context)) {
-                        File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), filename);
-                        FileOutputStream fos = new FileOutputStream(file);
-                        fos.write(dataURIParser.getImagedata());
-                        fos.flush();
-                        fos.close();
-                        Toast.makeText(context, context.getString(R.string.app_done), Toast.LENGTH_SHORT).show();
-                    } else BackupUnit.requestPermission(activity);
-                } else {
-                    DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
-                    CookieManager cookieManager = CookieManager.getInstance();
-                    String cookie = cookieManager.getCookie(url);
-                    request.addRequestHeader("Cookie", cookie);
-                    request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
-                    request.setTitle(filename);
-                    request.setMimeType(mimeType);
-                    request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, filename);
-                    DownloadManager manager = (DownloadManager) context.getSystemService(Context.DOWNLOAD_SERVICE);
-                    assert manager != null;
-                    if (BackupUnit.checkPermissionStorage(context)) {
-                        manager.enqueue(request);
-                    }else {
-                        BackupUnit.requestPermission(activity);
+
+            String title = editTitle.getText().toString().trim();
+            String extension1 = editExtension.getText().toString().trim();
+            String finalFilename = title + extension1;
+            hideSoftKeyboard(editExtension, context);
+            if (title.isEmpty() || extension1.isEmpty() || !extension1.startsWith(".")) {
+                NinjaToast.show(context, context.getString(R.string.toast_input_empty));
+            } else {
+                try {
+                    Activity activity = (Activity) context;
+                    if (url.startsWith("blob:")) {
+                        if (BackupUnit.checkPermissionStorage(context)) {
+                            webview.evaluateJavascript(JavaScriptInterface.getBase64StringFromBlobUrl(url, finalFilename, mimeType), null);
+                        } else BackupUnit.requestPermission(activity);
+                    } else if (url.startsWith("data:")) {
+                        DataURIParser dataURIParser = new DataURIParser(url);
+                        if (BackupUnit.checkPermissionStorage(context)) {
+                            File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), finalFilename);
+                            FileOutputStream fos = new FileOutputStream(file);
+                            fos.write(dataURIParser.getImagedata());
+                            fos.flush();
+                            fos.close();
+                            HelperUnit.openDialogDownloads(context);
+                        } else BackupUnit.requestPermission(activity);
+                    } else {
+                        DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
+                        CookieManager cookieManager = CookieManager.getInstance();
+                        String cookie = cookieManager.getCookie(url);
+                        request.addRequestHeader("Cookie", cookie);
+                        request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+                        request.setTitle(finalFilename);
+                        request.setMimeType(mimeType);
+                        request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, finalFilename);
+                        DownloadManager manager = (DownloadManager) context.getSystemService(Context.DOWNLOAD_SERVICE);
+                        assert manager != null;
+                        if (BackupUnit.checkPermissionStorage(context)) {
+                            manager.enqueue(request);
+                        } else {
+                            BackupUnit.requestPermission(activity);
+                        }
                     }
+                } catch (Exception e) {
+                    System.out.println("Error Downloading File: " + e.toString());
+                    Toast.makeText(context, context.getString(R.string.app_error) + e.toString().substring(e.toString().indexOf(":")), Toast.LENGTH_LONG).show();
+                    e.printStackTrace();
                 }
-            } catch (Exception e) {
-            System.out.println("Error Downloading File: " + e.toString());
-            Toast.makeText(context, context.getString(R.string.app_error)+e.toString().substring(e.toString().indexOf(":")),Toast.LENGTH_LONG).show();
-            e.printStackTrace();
             }
         });
         builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());

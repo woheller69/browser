@@ -30,24 +30,37 @@ public class JavaScriptInterface {
         Toast.makeText(context, context.getString(R.string.app_done), Toast.LENGTH_SHORT).show();
     }
 
+    @JavascriptInterface
+    public void errorHandler(String error){
+        Toast.makeText(context,error,Toast.LENGTH_SHORT).show();
+    }
+
     public static String getBase64StringFromBlobUrl(String blobUrl, String filename, String mimeType) {
 
-            return "var xhr = new XMLHttpRequest();" +
-                    "xhr.open('GET', '"+ blobUrl +"', true);" +
-                    "xhr.setRequestHeader('Content-type','" + mimeType + "');" +
-                    "xhr.responseType = 'blob';" +
-                    "xhr.onload = function(e) {" +
-                    "    if (this.status == 200) {" +
-                    "        var blob = this.response;" +
-                    "        var reader = new FileReader();" +
-                    "        reader.readAsDataURL(blob);" +
-                    "        reader.onloadend = function() {" +
-                    "            base64data = reader.result;" +
-                    "            NinjaWebViewJS.getBase64FromBlobData('" + filename + "', '" + mimeType + "', base64data);" +
-                    "        }" +
-                    "    }" +
-                    "};" +
-                    "xhr.send();";
+        return "var xhr = new XMLHttpRequest();" +
+                "xhr.open('GET', '" + blobUrl + "', true);" +
+                "xhr.setRequestHeader('Content-type','" + mimeType + "');" +
+                "xhr.responseType = 'blob';" +
+                "xhr.onload = function(e) {" +
+                "   if (this.status == 200) {" +
+                "       var blob = this.response;" +
+                "       var reader = new FileReader();" +
+                "       reader.readAsDataURL(blob);" +
+                "       reader.onloadend = function() {" +
+                "           base64data = reader.result;" +
+                "           NinjaWebViewJS.getBase64FromBlobData('" + filename + "', '" + mimeType + "', base64data);" +
+                "       };" +
+                "       reader.onerror = function(e) {" +
+                "           NinjaWebViewJS.errorHandler('Error: ' + e.message);" +
+                "       };" +
+                "   } else {" +
+                "       NinjaWebViewJS.errorHandler('XHR Error: ' + this.status);" +
+                "   }" +
+                "};" +
+                "xhr.onerror = function() {" +
+                "   NinjaWebViewJS.errorHandler('XHR request failed');" +
+                "};" +
+                "xhr.send();";
     }
 }
 

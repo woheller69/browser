@@ -72,10 +72,8 @@ public class SwipeTouchListener implements OnTouchListener {
                 } catch (Exception exception) {
                     exception.printStackTrace();
                 }
-            }
-            assert e1 != null;
-            assert e2 != null;
-            return super.onFling(e1, e2, velocityX, velocityY);
+                return super.onFling(e1, e2, velocityX, velocityY);
+            } else  return false;
         }
     }
 }

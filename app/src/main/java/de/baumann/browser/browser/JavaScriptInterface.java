@@ -12,11 +12,16 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 import de.baumann.browser.unit.HelperUnit;
+import de.baumann.browser.view.NinjaWebView;
 
 public class JavaScriptInterface {
+
     private final Context context;
-    public JavaScriptInterface(Context context) {
+    private final NinjaWebView ninjaWebView;
+
+    public JavaScriptInterface(Context context, NinjaWebView ninjaWebView) {
         this.context = context;
+        this.ninjaWebView = ninjaWebView;
     }
 
     @JavascriptInterface
@@ -33,6 +38,17 @@ public class JavaScriptInterface {
     @JavascriptInterface
     public void errorHandler(String error){
         Toast.makeText(context,error,Toast.LENGTH_SHORT).show();
+    }
+
+    @JavascriptInterface
+    public void print(){
+        HelperUnit.print(context, ninjaWebView);
+    }
+
+    public static String injectPrintSupport(){
+        return  "window.print = function(){" +
+                "   NinjaWebViewJS.print();" +
+                "};";
     }
 
     public static String getBase64StringFromBlobUrl(String blobUrl, String filename, String mimeType) {

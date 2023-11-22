@@ -41,6 +41,9 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import android.os.Environment;
 import android.os.Handler;
+import android.print.PrintAttributes;
+import android.print.PrintDocumentAdapter;
+import android.print.PrintManager;
 import android.view.Gravity;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -60,6 +63,7 @@ import de.baumann.browser.browser.DataURIParser;
 import de.baumann.browser.browser.FilenameExtractor;
 import de.baumann.browser.view.GridItem;
 import de.baumann.browser.view.NinjaToast;
+import de.baumann.browser.view.NinjaWebView;
 
 import static android.content.Context.DOWNLOAD_SERVICE;
 
@@ -384,6 +388,15 @@ public class HelperUnit {
             Dialog dialog = builder.create();
             dialog.show();
             Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
+        });
+    }
+
+    public static void print(Context context, NinjaWebView ninjaWebView) {
+        ((Activity) context).runOnUiThread(() -> {
+            String title = HelperUnit.guessFileName(ninjaWebView.getUrl(), null, null);
+            PrintManager printManager = (PrintManager) context.getSystemService(Context.PRINT_SERVICE);
+            PrintDocumentAdapter printAdapter = ninjaWebView.createPrintDocumentAdapter(title);
+            Objects.requireNonNull(printManager).print(title, printAdapter, new PrintAttributes.Builder().build());
         });
     }
 }

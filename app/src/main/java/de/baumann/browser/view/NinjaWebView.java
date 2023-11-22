@@ -115,7 +115,7 @@ public class NinjaWebView extends WebView implements AlbumController {
     }
 
     public NinjaWebView(Context context) {
-        super(context); // Cannot create a dialog, the WebView context is not an activity
+        super(context);
         this.context = context;
         this.foreground = false;
         this.desktopMode=false;
@@ -157,7 +157,7 @@ public class NinjaWebView extends WebView implements AlbumController {
             WebSettingsCompat.setAlgorithmicDarkeningAllowed(webSettings, sp.getBoolean("sp_algo_dark",true));
         }
 
-        addJavascriptInterface(new JavaScriptInterface(context), "NinjaWebViewJS");
+        addJavascriptInterface(new JavaScriptInterface(context, this), "NinjaWebViewJS");
         String userAgent = getUserAgent(desktopMode);
         webSettings.setSafeBrowsingEnabled(true);
 

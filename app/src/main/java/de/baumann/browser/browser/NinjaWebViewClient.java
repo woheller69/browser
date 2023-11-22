@@ -17,7 +17,6 @@ import androidx.preference.PreferenceManager;
 import androidx.annotation.NonNull;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
-import com.google.android.material.textfield.TextInputLayout;
 
 import android.view.Gravity;
 import android.view.View;
@@ -85,6 +84,8 @@ public class NinjaWebViewClient extends WebViewClient {
 
         view.evaluateJavascript("var links=document.getElementsByTagName('video'); for(let i=0;i<links.length;i++){links[i].pause()};", null);
 
+        //inject printing support via JavaScriptInterface
+        view.evaluateJavascript(JavaScriptInterface.injectPrintSupport(), null);
     }
 
     @Override

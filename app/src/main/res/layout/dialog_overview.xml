@@ -22,6 +22,7 @@
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:labelVisibilityMode="unlabeled"
         app:menu="@menu/menu_bottom_overview" />
 
 </RelativeLayout>

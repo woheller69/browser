@@ -3,7 +3,6 @@ package de.baumann.browser.activity;
 import android.animation.ObjectAnimator;
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.app.Dialog;
 import android.app.DownloadManager;
 
 import android.app.SearchManager;
@@ -30,9 +29,6 @@ import androidx.preference.PreferenceManager;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Message;
-import android.print.PrintAttributes;
-import android.print.PrintDocumentAdapter;
-import android.print.PrintManager;
 import androidx.annotation.NonNull;
 
 import com.google.android.material.badge.BadgeDrawable;
@@ -481,13 +477,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         dialog_tabPreview.show();
     }
 
-    private void print() {
-        String title = HelperUnit.guessFileName(ninjaWebView.getUrl(), null, null);
-        PrintManager printManager = (PrintManager) getSystemService(Context.PRINT_SERVICE);
-        PrintDocumentAdapter printAdapter = ninjaWebView.createPrintDocumentAdapter(title);
-        Objects.requireNonNull(printManager).print(title, printAdapter, new PrintAttributes.Builder().build());
-    }
-
     private void dispatchIntent(Intent intent) {
         String action = intent.getAction();
         String url = intent.getStringExtra(Intent.EXTRA_TEXT);
@@ -718,10 +707,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         bottomSheetDialog_OverView.setContentView(dialogView);
 
         BottomNavigationView.OnNavigationItemSelectedListener navListener = menuItem -> {
-            if (menuItem.getItemId() == R.id.tabs) {
-                hideOverview();
-                showTabView();
-            } else if (menuItem.getItemId() == R.id.bookmarks) {
+            if (menuItem.getItemId() == R.id.bookmarks) {
                 omniBox_overview.setImageResource(R.drawable.icon_bookmark_light);
 
                 RecordAction action = new RecordAction(context);
@@ -796,11 +782,9 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             show_dialogFilter();
             return true;
         });
-        bottom_navigation.findViewById(R.id.tabs).setOnLongClickListener(v -> true);
+
         bottom_navigation.findViewById(R.id.menu).setOnLongClickListener(v -> true);
 
-        bottom_navigation.getOrCreateBadge(R.id.tabs).setNumber(BrowserContainer.size());
-        bottom_navigation.getOrCreateBadge(R.id.tabs).setBackgroundColor(getResources().getColor(R.color.primaryColor));
         bottom_navigation.setSelectedItemId(R.id.bookmarks);
 
         BottomSheetBehavior<View> mBehavior = BottomSheetBehavior.from((View) dialogView.getParent());
@@ -1229,7 +1213,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     @OptIn(markerClass=com.google.android.material.badge.ExperimentalBadgeUtils.class)
     private void updateOmniBox() {
 
-        bottom_navigation.getOrCreateBadge(R.id.tabs).setNumber(BrowserContainer.size());
         badgeDrawable.setNumber(BrowserContainer.size());
         BadgeUtils.attachBadgeDrawable(badgeDrawable, omniBox_tab, findViewById(R.id.layout));
         omniBox_text.clearFocus();
@@ -1542,7 +1525,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         ImageButton overflow_print = dialogView.findViewById(R.id.overflow_print);
         overflow_print.setOnClickListener(v -> {
-            print();
+            HelperUnit.print(this, ninjaWebView);
             dialog_overflow.cancel();
         });
 

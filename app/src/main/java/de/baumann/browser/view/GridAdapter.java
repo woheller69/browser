@@ -33,7 +33,7 @@ public class GridAdapter extends BaseAdapter {
         View view = convertView;
 
         if (view == null) {
-            view = LayoutInflater.from(context).inflate(R.layout.item_icon_left, parent, false);
+            view = LayoutInflater.from(context).inflate(R.layout.item_menu_overflow, parent, false);
             holder = new Holder();
             holder.title = view.findViewById(R.id.record_item_title);
             holder.icon = view.findViewById(R.id.record_item_icon);

@@ -16,6 +16,7 @@ import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.media.MediaPlayer;
+import android.net.MailTo;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -114,6 +115,7 @@ import de.baumann.browser.view.RecordAdapter;
 import de.baumann.browser.view.SwipeTouchListener;
 
 import static android.content.ContentValues.TAG;
+import static android.webkit.WebView.HitTestResult.EMAIL_TYPE;
 import static android.webkit.WebView.HitTestResult.IMAGE_TYPE;
 import static android.webkit.WebView.HitTestResult.SRC_ANCHOR_TYPE;
 import static android.webkit.WebView.HitTestResult.SRC_IMAGE_ANCHOR_TYPE;
@@ -493,7 +495,11 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             hideOverview();
         } else if (Intent.ACTION_VIEW.equals(action)) {
             String data = Objects.requireNonNull(intent.getData()).toString();
-            addAlbum(getString(R.string.app_name), data, true);
+            if (data.startsWith("mailto:")) {
+                HelperUnit.sendEmail(this, data);
+            } else {
+                addAlbum(getString(R.string.app_name), data, true);
+            }
             hideOverview();
         }
         intent.setAction("");
@@ -1466,6 +1472,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 showContextMenuLink(HelperUnit.domain(url), url, IMAGE_TYPE);
             }  else if (result.getType() == IMAGE_TYPE) {
                 showContextMenuLink(HelperUnit.domain(result.getExtra()), result.getExtra(), IMAGE_TYPE);
+            }  else if (result.getType() == EMAIL_TYPE) {
+                HelperUnit.sendEmail(this,"mailto:"+result.getExtra());
             } else {
                 showContextMenuLink(HelperUnit.domain(result.getExtra()), result.getExtra(), 0);
             }

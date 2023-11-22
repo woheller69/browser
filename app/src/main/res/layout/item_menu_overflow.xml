@@ -20,28 +20,6 @@
         android:src="@drawable/icon_close" />
 
     <TextView
-        android:visibility="gone"
-        android:id="@+id/record_item_url"
-        android:layout_width="wrap_content"
-        android:layout_height="?android:attr/listPreferredItemHeightSmall"
-        android:layout_marginEnd="16dp"
-        android:gravity="center_vertical"
-        android:includeFontPadding="false"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:maxLines="1"
-        android:ellipsize="end"/>
-
-    <ImageView
-        android:id="@+id/record_item_favicon"
-        android:visibility="gone"
-        android:layout_width="20dp"
-        android:layout_height="?android:attr/listPreferredItemHeightSmall"
-        android:layout_marginEnd="8dp"
-        android:gravity="center_vertical"
-        android:contentDescription="@null"
-        android:scaleType="fitCenter" />
-
-    <TextView
         android:id="@+id/record_item_title"
         android:layout_width="wrap_content"
         android:layout_height="?android:attr/listPreferredItemHeightSmall"

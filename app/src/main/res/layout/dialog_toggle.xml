@@ -22,9 +22,8 @@
             android:layout_height="?attr/actionBarSize">
 
             <com.google.android.material.textview.MaterialTextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_toStartOf="@+id/ib_info"
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="16dp"
@@ -71,7 +70,6 @@
                 app:chipEndPadding="4dp"
                 app:textEndPadding="0dp"
                 app:textStartPadding="0dp"
-                android:text=""
                 app:chipIcon="@drawable/icon_adblock"
                 app:chipIconEnabled="true"
                 app:chipIconTint="@color/bg_chip_state_list"/>
@@ -86,7 +84,6 @@
                 app:chipEndPadding="4dp"
                 app:textEndPadding="0dp"
                 app:textStartPadding="0dp"
-                android:text=""
                 app:chipIcon="@drawable/icon_fingerprint"
                 app:chipIconEnabled="true"
                 app:chipIconTint="@color/bg_chip_state_list" />
@@ -101,7 +98,6 @@
                 app:chipEndPadding="4dp"
                 app:textEndPadding="0dp"
                 app:textStartPadding="0dp"
-                android:text=""
                 app:chipIcon="@drawable/icon_cookie"
                 app:chipIconEnabled="true"
                 app:chipIconTint="@color/bg_chip_state_list" />
@@ -116,7 +112,6 @@
                 app:chipEndPadding="4dp"
                 app:textEndPadding="0dp"
                 app:textStartPadding="0dp"
-                android:text=""
                 app:chipIcon="@drawable/icon_dom"
                 app:chipIconEnabled="true"
                 app:chipIconTint="@color/bg_chip_state_list"/>
@@ -132,7 +127,6 @@
                 app:chipEndPadding="4dp"
                 app:textEndPadding="0dp"
                 app:textStartPadding="0dp"
-                android:text=""
                 app:chipIcon="@drawable/icon_java"
                 app:chipIconEnabled="true"
                 app:chipIconTint="@color/bg_chip_state_list" />
@@ -154,7 +148,6 @@
                 app:chipEndPadding="4dp"
                 app:textEndPadding="0dp"
                 app:textStartPadding="0dp"
-                android:text=""
                 app:chipIcon="@drawable/icon_night"
                 app:chipIconEnabled="true"
                 app:chipIconTint="@color/bg_chip_state_list"/>
@@ -169,7 +162,6 @@
                 app:chipEndPadding="4dp"
                 app:textEndPadding="0dp"
                 app:textStartPadding="0dp"
-                android:text=""
                 app:chipIcon="@drawable/icon_image"
                 app:chipIconEnabled="true"
                 app:chipIconTint="@color/bg_chip_state_list"/>
@@ -184,7 +176,6 @@
                 app:chipEndPadding="4dp"
                 app:textEndPadding="0dp"
                 app:textStartPadding="0dp"
-                android:text=""
                 app:chipIcon="@drawable/icon_location"
                 app:chipIconEnabled="true"
                 app:chipIconTint="@color/bg_chip_state_list"/>
@@ -199,7 +190,6 @@
                 app:chipEndPadding="4dp"
                 app:textEndPadding="0dp"
                 app:textStartPadding="0dp"
-                android:text=""
                 app:chipIcon="@drawable/icon_camera"
                 app:chipIconEnabled="true"
                 app:chipIconTint="@color/bg_chip_state_list" />
@@ -215,7 +205,6 @@
                 app:chipEndPadding="4dp"
                 app:textEndPadding="0dp"
                 app:textStartPadding="0dp"
-                android:text=""
                 app:chipIcon="@drawable/icon_microphone"
                 app:chipIconEnabled="true"
                 app:chipIconTint="@color/bg_chip_state_list"/>
@@ -273,7 +262,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_alignParentStart="true"
-                android:layout_toStartOf="@+id/chip_cookie_WL"
                 android:gravity="center_vertical"
                 android:text="@string/setting_title_whitelist"
                 android:textAppearance="?attr/textAppearanceBody1"
@@ -287,7 +275,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toStartOf="@+id/chip_cookie_WL"
-                android:text=""
                 app:chipIcon="@drawable/icon_bookmark"
                 app:chipIconTint="@color/bg_chip_state_list"
                 app:chipIconEnabled="true"
@@ -303,7 +290,6 @@
                 android:layout_height="wrap_content"
                 android:layout_toStartOf="@+id/chip_dom_WL"
                 android:layout_marginStart="-8dp"
-                android:text=""
                 app:chipIcon="@drawable/icon_cookie"
                 app:chipIconTint="@color/bg_chip_state_list"
                 app:chipIconEnabled="true"
@@ -319,7 +305,6 @@
                 android:layout_height="wrap_content"
                 android:layout_toStartOf="@+id/chip_javaScript_WL"
                 android:layout_marginStart="-8dp"
-                android:text=""
                 app:chipIcon="@drawable/icon_dom"
                 app:chipIconTint="@color/bg_chip_state_list"
                 app:chipIconEnabled="true"
@@ -335,7 +320,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="-8dp"
                 android:layout_marginEnd="12dp"
-                android:text=""
                 app:chipIcon="@drawable/icon_java"
                 app:chipIconTint="@color/bg_chip_state_list"
                 app:chipIconEnabled="true"
@@ -357,7 +341,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_alignParentStart="true"
-                android:layout_toStartOf="@+id/chip_fingerprint_tab"
                 android:gravity="center_vertical"
                 android:text="@string/setting_tab"
                 android:textAppearance="?attr/textAppearanceBody1"
@@ -371,7 +354,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toStartOf="@+id/chip_fingerprint_tab"
-                android:text=""
                 app:chipIcon="@drawable/icon_adblock"
                 app:chipIconTint="@color/bg_chip_state_list"
                 app:chipIconEnabled="true"
@@ -387,7 +369,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="-8dp"
                 android:layout_toStartOf="@+id/chip_desktop_mode_tab"
-                android:text=""
                 app:chipIcon="@drawable/icon_fingerprint"
                 app:chipIconTint="@color/bg_chip_state_list"
                 app:chipIconEnabled="true"
@@ -403,7 +384,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="-8dp"
                 android:layout_toStartOf="@+id/chip_dom_Tab"
-                android:text=""
                 app:chipIcon="@drawable/icon_desktop"
                 app:chipIconTint="@color/bg_chip_state_list"
                 app:chipIconEnabled="true"
@@ -419,7 +399,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="-8dp"
                 android:layout_toStartOf="@+id/chip_javaScript_Tab"
-                android:text=""
                 app:chipIcon="@drawable/icon_dom"
                 app:chipIconTint="@color/bg_chip_state_list"
                 app:chipIconEnabled="true"
@@ -435,7 +414,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="-8dp"
                 android:layout_marginEnd="12dp"
-                android:text=""
                 app:chipIcon="@drawable/icon_java"
                 app:chipIconTint="@color/bg_chip_state_list"
                 app:chipIconEnabled="true"

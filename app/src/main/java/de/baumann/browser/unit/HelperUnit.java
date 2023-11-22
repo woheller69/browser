@@ -30,6 +30,7 @@ import android.content.pm.PackageManager;
 import android.content.pm.ShortcutInfo;
 import android.content.pm.ShortcutManager;
 import android.graphics.drawable.Icon;
+import android.net.MailTo;
 import android.net.Uri;
 
 import androidx.appcompat.app.AlertDialog;
@@ -50,6 +51,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.webkit.CookieManager;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 
 import java.io.File;
@@ -398,5 +400,16 @@ public class HelperUnit {
             PrintDocumentAdapter printAdapter = ninjaWebView.createPrintDocumentAdapter(title);
             Objects.requireNonNull(printManager).print(title, printAdapter, new PrintAttributes.Builder().build());
         });
+    }
+
+    public static void sendEmail(Context context, String data) {
+        MailTo mailTo = MailTo.parse(data);
+        Intent mailToIntent = new Intent(Intent.ACTION_SEND);
+        mailToIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{mailTo.getTo()});
+        mailToIntent.putExtra(Intent.EXTRA_TEXT, mailTo.getBody());
+        mailToIntent.putExtra(Intent.EXTRA_SUBJECT, mailTo.getSubject());
+        mailToIntent.putExtra(Intent.EXTRA_CC, new String[]{mailTo.getCc()});  //BCC not supported by android.net.MailTo
+        mailToIntent.setType("message/rfc822");
+        context.startActivity(mailToIntent);
     }
 }

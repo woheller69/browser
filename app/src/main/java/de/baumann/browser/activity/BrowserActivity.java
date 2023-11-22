@@ -496,7 +496,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         } else if (Intent.ACTION_VIEW.equals(action)) {
             String data = Objects.requireNonNull(intent.getData()).toString();
             if (data.startsWith("mailto:")) {
-                HelperUnit.sendEmail(this, data);
+                Intent mailintent = new Intent(Intent.ACTION_VIEW, Uri.parse(data));
+                ninjaWebView.getContext().startActivity(mailintent);
             } else {
                 addAlbum(getString(R.string.app_name), data, true);
             }
@@ -1473,7 +1474,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             }  else if (result.getType() == IMAGE_TYPE) {
                 showContextMenuLink(HelperUnit.domain(result.getExtra()), result.getExtra(), IMAGE_TYPE);
             }  else if (result.getType() == EMAIL_TYPE) {
-                HelperUnit.sendEmail(this,"mailto:"+result.getExtra());
+                Intent mailintent = new Intent(Intent.ACTION_VIEW, Uri.parse("mailto:"+result.getExtra()));
+                ninjaWebView.getContext().startActivity(mailintent);
             } else {
                 showContextMenuLink(HelperUnit.domain(result.getExtra()), result.getExtra(), 0);
             }

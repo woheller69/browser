@@ -402,14 +402,4 @@ public class HelperUnit {
         });
     }
 
-    public static void sendEmail(Context context, String data) {
-        MailTo mailTo = MailTo.parse(data);
-        Intent mailToIntent = new Intent(Intent.ACTION_SEND);
-        mailToIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{mailTo.getTo()});
-        mailToIntent.putExtra(Intent.EXTRA_TEXT, mailTo.getBody());
-        mailToIntent.putExtra(Intent.EXTRA_SUBJECT, mailTo.getSubject());
-        mailToIntent.putExtra(Intent.EXTRA_CC, new String[]{mailTo.getCc()});  //BCC not supported by android.net.MailTo
-        mailToIntent.setType("message/rfc822");
-        context.startActivity(mailToIntent);
-    }
 }

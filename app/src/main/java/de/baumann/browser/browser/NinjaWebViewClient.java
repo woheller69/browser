@@ -18,6 +18,7 @@ import androidx.annotation.NonNull;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.webkit.HttpAuthHandler;
@@ -491,6 +492,9 @@ public class NinjaWebViewClient extends WebViewClient {
                         return false;
                     }
                 }
+            } else {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                ninjaWebView.getContext().startActivity(intent);
             }
             return true;
         }

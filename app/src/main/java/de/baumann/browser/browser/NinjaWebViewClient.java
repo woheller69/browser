@@ -479,8 +479,9 @@ public class NinjaWebViewClient extends WebViewClient {
                     intent.setComponent(null);
                     intent.setSelector(null);
                     context.startActivity(intent);  //if no suitable app is available ActivityNotFoundException is thrown
+                    return true;
                 } catch (URISyntaxException e) {
-                    //not an intent uri
+                    //not an intent uri, let NinjaWebView handle it
                     return false;
                 } catch (ActivityNotFoundException e){
                     //try to find fallback url
@@ -490,14 +491,17 @@ public class NinjaWebViewClient extends WebViewClient {
                         this.ninjaWebView.loadUrl(fallbackUrl);
                         return true;
                     } else {
-                        NinjaToast.show(context,context.getResources().getString(R.string.error_no_app));
+                        return false; //if no app available and no fallbackUrl defined let NinjaWebView try to handle it
                     }
                 }
-                return true;
             } else {
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-                ninjaWebView.getContext().startActivity(intent);
-                return true;
+                try{
+                    context.startActivity(intent);
+                    return true;
+                } catch (ActivityNotFoundException e){
+                    return false;  //if no app available let NinjaWebView handle it
+                }
             }
         }
     }

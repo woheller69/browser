@@ -179,6 +179,5 @@
     <string name="dialog_StarOnGitHub">Ti piace questa app? Assegna una stella su GitHub o offri un caffè allo sviluppatore tramite PayPal.</string>
     <string name="dialog_Later_button">Forse più tardi</string>
     <string name="toast_delete">Elimina il file e riprova</string>
-    <string name="error_no_app">Questo tipo di collegamento non può essere aperto</string>
     <!-- License changelog -->
 </resources>

@@ -179,5 +179,6 @@
     <string name="dialog_StarOnGitHub">Vind je deze app leuk? Geef een ster op GitHub of koop de ontwikkelaar een kopje koffie via PayPal.</string>
     <string name="dialog_Later_button">Misschien later</string>
     <string name="toast_delete">Delete file and try again</string>
+    <string name="error_no_app">Dit type link kan niet worden geopend</string>
     <!-- License changelog -->
 </resources>

@@ -60,10 +60,10 @@ public class BrowserUnit {
     public static final String URL_SCHEME_ABOUT = "about:";
     public static final String URL_SCHEME_MAIL_TO = "mailto:";
     private static final String URL_SCHEME_FILE = "file://";
-    private static final String URL_SCHEME_HTTPS = "https://";
-    private static final String URL_SCHEME_HTTP = "http://";
+    public static final String URL_SCHEME_HTTPS = "https://";
+    public static final String URL_SCHEME_HTTP = "http://";
     private static final String URL_SCHEME_FTP = "ftp://";
-    private static final String URL_SCHEME_INTENT = "intent://";
+    public static final String URL_SCHEME_INTENT = "intent://";
     private static final String URL_SCHEME_VIEW_SOURCE = "view-source:";
 
     public static boolean isURL(String url) {

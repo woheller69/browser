@@ -4,6 +4,7 @@ import static de.baumann.browser.database.UserScript.DOC_END;
 import static de.baumann.browser.database.UserScript.DOC_START;
 
 import android.annotation.SuppressLint;
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -467,36 +468,37 @@ public class NinjaWebViewClient extends WebViewClient {
         } else {
             // handle the url by implementing your logic
             String url = uri.toString();
-            if (url.startsWith("http")) {
+            if (url.startsWith(BrowserUnit.URL_SCHEME_HTTP) || url.startsWith(BrowserUnit.URL_SCHEME_HTTPS)) {
                 ninjaWebView.loadUrl(url);
                 return true;
-            }
-
-            if (url.startsWith("intent:")) {
-                Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.setData(Uri.parse(url));
-                Intent chooser = Intent.createChooser(intent, context.getString(R.string.menu_open_with));
-                if (intent.resolveActivity(context.getPackageManager()) != null) {
-                    context.startActivity(chooser);
-                } else {
-                    try {
-                        Intent fallback = Intent.parseUri(url, Intent.URI_INTENT_SCHEME);
-                        //try to find fallback url
-                        String fallbackUrl = fallback.getStringExtra("browser_fallback_url");
-                        if (fallbackUrl != null) {
-                            this.ninjaWebView.loadUrl(fallbackUrl);
-                            return true;
-                        }
-                    } catch (URISyntaxException e) {
-                        //not an intent uri
-                        return false;
+            } else if (url.startsWith(BrowserUnit.URL_SCHEME_INTENT)) {
+                Intent intent = null;
+                try {
+                    intent = Intent.parseUri(url, Intent.URI_INTENT_SCHEME);
+                    intent.addCategory("android.intent.category.BROWSABLE");
+                    intent.setComponent(null);
+                    intent.setSelector(null);
+                    context.startActivity(intent);  //if no suitable app is available ActivityNotFoundException is thrown
+                } catch (URISyntaxException e) {
+                    //not an intent uri
+                    return false;
+                } catch (ActivityNotFoundException e){
+                    //try to find fallback url
+                    String fallbackUrl = null;
+                    if (intent != null) fallbackUrl = intent.getStringExtra("browser_fallback_url");
+                    if (fallbackUrl != null) {
+                        this.ninjaWebView.loadUrl(fallbackUrl);
+                        return true;
+                    } else {
+                        NinjaToast.show(context,context.getResources().getString(R.string.error_no_app));
                     }
                 }
+                return true;
             } else {
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
                 ninjaWebView.getContext().startActivity(intent);
+                return true;
             }
-            return true;
         }
     }
 

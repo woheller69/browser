@@ -227,4 +227,6 @@
     <string name="dialog_StarOnGitHub">Do you like this app? Please give a star on GitHub or buy the developer a coffee via PayPal.</string>
     <string name="dialog_Later_button">Maybe later</string>
     <string name="toast_delete">Delete the file and try again</string>
+    <string name="metered_connection">Metered Connection</string>
+    <string name="setting_network">Network settings</string>
 </resources>

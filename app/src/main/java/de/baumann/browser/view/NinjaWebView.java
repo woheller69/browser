@@ -169,7 +169,7 @@ public class NinjaWebView extends WebView implements AlbumController {
         webViewClient.enableAdBlock(adBlockEnabled);
         webSettings.setTextZoom(Integer.parseInt(Objects.requireNonNull(sp.getString("sp_fontSize", "100"))));
 
-        if (BrowserUnit.isWifiAvailable(context)) {webSettings.setBlockNetworkImage(false);}  //in WIFI always load images
+        if (BrowserUnit.isUnmeteredConnection(context)) {webSettings.setBlockNetworkImage(false);}  //in unmetered Networks (usually WIFI) always load images
         else webSettings.setBlockNetworkImage(!sp.getBoolean("sp_images", true)); //otherwise check setting
 
         webSettings.setGeolocationEnabled(sp.getBoolean("sp_location", false));

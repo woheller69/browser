@@ -179,5 +179,7 @@
     <string name="dialog_StarOnGitHub">Kan du lide denne app? Giv venligst en stjerne på GitHub eller køb udvikleren en kop kaffe via PayPal.</string>
     <string name="dialog_Later_button">Måske senere</string>
     <string name="toast_delete">Delete file and try again</string>
+    <string name="metered_connection">Metered Connection</string>
+    <string name="setting_network">Network settings</string>
     <!-- License changelog -->
 </resources>

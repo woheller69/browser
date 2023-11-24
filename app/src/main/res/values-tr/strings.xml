@@ -179,5 +179,7 @@
     <string name="dialog_StarOnGitHub">Bu uygulamayı beğendiniz mi? Lütfen GitHub\'da bir yıldız verin veya geliştiriciye PayPal aracılığıyla bir kahve ısmarlayın.</string>
     <string name="dialog_Later_button">Belki daha sonra</string>
     <string name="toast_delete">Delete the file and try again</string>
+    <string name="metered_connection">Metered Connection</string>
+    <string name="setting_network">Network settings</string>
     <!-- License changelog -->
 </resources>

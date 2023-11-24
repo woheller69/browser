@@ -179,5 +179,7 @@
     <string name="dialog_StarOnGitHub">¿Te gusta esta app? Dale una estrella en GitHub o cómprale un café al desarrollador a través de PayPal.</string>
     <string name="dialog_Later_button">Quizás mas tarde</string>
     <string name="toast_delete">Elimina el archivo e inténtalo de nuevo.</string>
+    <string name="metered_connection">Conexión medida</string>
+    <string name="setting_network">Configuración de la red</string>
     <!-- License changelog -->
 </resources>

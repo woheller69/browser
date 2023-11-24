@@ -73,12 +73,12 @@ Cookies will override the global cookies setting. DOM-Storage and JavaScript wil
 If one of these exceptions is active the respective icon will also be highlighted in "Exceptions". 
 A click on the icon will add/remove an exception. Third party cookies are not supported in general.
 
-In additions there are settings which are only available as global settings:
-- Allow location access
-- Allow camera access
-- Allow microphone access
-- Download images. This allows saving data, **when not connected to WIFI**. If WIFI is available images will always be loaded.
-- Night mode: allow algorithmic darkening of web sites. This darkening is only applied when the app is in dark mode and the web site does not provide a dark version.
+In additions there are settings which are only available as global settings and apply to all websites:
+- Allow location access: enables websites to access your device's location
+- Allow camera access: allows websites to use your device's camera
+- Allow microphone access: allows websites to use your device's microphone
+- Download images: saves data by downloading images only when not connected to a metered network, usually a WiFi connection; otherwise, images will always be loaded when connected to a non-metered network
+- Night mode: enables algorithmic darkening of web pages when the app is in dark mode and the website doesn't have a dark version
 
 ### Greasemonkey style scripts
 

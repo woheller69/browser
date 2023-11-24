@@ -16,7 +16,6 @@ import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.media.MediaPlayer;
-import android.net.MailTo;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -1044,7 +1043,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         Chip chip_image = dialogView.findViewById(R.id.chip_image);
         chip_image.setChecked(sp.getBoolean("sp_images", true));
-        chip_image.setChipIconTint(getColorStateList(BrowserUnit.isWifiAvailable(this) ? R.color.bg_chip_state_list_wifi : R.color.bg_chip_state_list));
+        chip_image.setChipIconTint(getColorStateList(BrowserUnit.isUnmeteredConnection(this) ? R.color.bg_chip_state_list_wifi : R.color.bg_chip_state_list));
         chip_image.setOnClickListener(v -> {sp.edit().putBoolean("sp_images",chip_image.isChecked()).apply();reloadPage();});
 
         Chip chip_night = dialogView.findViewById(R.id.chip_night);

@@ -179,5 +179,7 @@
     <string name="dialog_StarOnGitHub">Подобається застосунок? Поставте зірочку на Github або придбайте розробнику каву через PayPal.</string>
     <string name="dialog_Later_button">Можливо потіи</string>
     <string name="toast_delete">Delete the file and try again</string>
+    <string name="metered_connection">Metered Connection</string>
+    <string name="setting_network">Network settings</string>
     <!-- License changelog -->
 </resources>

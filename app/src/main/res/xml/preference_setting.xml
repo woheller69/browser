@@ -26,16 +26,27 @@
             android:title="@string/menu_delete" />
 
     </PreferenceCategory>
+    <PreferenceCategory android:title="@string/setting_userScript">
 
         <Preference
-            android:title="@string/setting_userScript"
+            android:title="@string/menu_edit"
             android:key="scripts"/>
 
         <SwitchPreference
             android:id="@+id/debug"
             android:title="Debug"
-            android:summary="@string/setting_userScript"
             android:defaultValue="false"
             android:key="sp_debug"/>
+
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/setting_network">
+
+        <SwitchPreference
+            android:id="@+id/metered"
+            android:title="@string/metered_connection"
+            android:defaultValue="false"
+            android:key="sp_metered"/>
+
+    </PreferenceCategory>
 
 </PreferenceScreen>

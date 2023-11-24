@@ -179,5 +179,7 @@
     <string name="dialog_StarOnGitHub">Aimez-vous cette application? Veuillez donner une étoile sur GitHub ou acheter un café au développeur via PayPal.</string>
     <string name="dialog_Later_button">Peut-être plus tard</string>
     <string name="toast_delete">Supprimez le fichier et réessayez</string>
+    <string name="metered_connection">Connexion limitée</string>
+    <string name="setting_network">Paramètres réseau</string>
     <!-- License changelog -->
 </resources>

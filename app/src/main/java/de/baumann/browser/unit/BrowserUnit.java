@@ -304,11 +304,16 @@ public class BrowserUnit {
         return dir != null && dir.delete();
     }
 
-    public static Boolean isWifiAvailable(Context context) {
-        ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+    public static Boolean isUnmeteredConnection(Context context) {
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
+        if (sp.getBoolean("sp_metered",false))
+            return false;
+        else {
+            ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
             Network nw = connectivityManager.getActiveNetwork();
             if (nw == null) return false;
             NetworkCapabilities actNw = connectivityManager.getNetworkCapabilities(nw);
             return actNw != null && (actNw.hasTransport(NetworkCapabilities.TRANSPORT_WIFI));
+        }
     }
 }

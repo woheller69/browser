@@ -407,7 +407,7 @@ public class NinjaWebViewClient extends WebViewClient {
                     "Object.defineProperty(navigator, 'keyboard',{value:null});" +
                     "Object.defineProperty(navigator, 'sendBeacon',{value:null});", null);
 
-            if (!sp.getBoolean("sp_camera",false)) {
+            if (!sp.getBoolean("sp_camera",false) && !sp.getBoolean("sp_microphone",false)) {
                 view.evaluateJavascript("" +
                         "Object.defineProperty(navigator, 'mediaDevices',{value:null});", null);
             }
@@ -461,7 +461,6 @@ public class NinjaWebViewClient extends WebViewClient {
         return handleUri(uri);
     }
 
-    @SuppressLint("QueryPermissionsNeeded")
     private boolean handleUri(final Uri uri) {
         if (ninjaWebView.isBackPressed){
             return false;

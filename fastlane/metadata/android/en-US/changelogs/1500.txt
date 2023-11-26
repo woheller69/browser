@@ -1,0 +1,4 @@
+Layout improvements
+Add option for metered networks
+Improved handling of intents
+Bugfixes

@@ -76,6 +76,16 @@
             android:src="@drawable/icon_print"
             android:background="?attr/actionBarItemBackground" />
 
+        <ImageButton
+            android:id="@+id/overflow_share"
+            android:layout_toStartOf="@id/overflow_print"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/icon_menu_share"
+            android:background="?attr/actionBarItemBackground" />
+
     </RelativeLayout>
 
     <com.google.android.material.tabs.TabLayout
@@ -96,12 +106,6 @@
 
         <GridView
             android:id="@+id/overflow_tab"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:numColumns="1" />
-
-        <GridView
-            android:id="@+id/overflow_share"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:numColumns="1" />

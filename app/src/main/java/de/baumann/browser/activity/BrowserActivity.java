@@ -1538,13 +1538,16 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             dialog_overflow.cancel();
         });
 
+        ImageButton overflow_share = dialogView.findViewById(R.id.overflow_share);
+        overflow_share.setOnClickListener(v -> {
+            shareLink(title, url);
+        });
+
         final GridView menu_grid_tab = dialogView.findViewById(R.id.overflow_tab);
-        final GridView menu_grid_share = dialogView.findViewById(R.id.overflow_share);
         final GridView menu_grid_save = dialogView.findViewById(R.id.overflow_save);
         final GridView menu_grid_other = dialogView.findViewById(R.id.overflow_other);
 
         menu_grid_tab.setVisibility(View.VISIBLE);
-        menu_grid_share.setVisibility(View.GONE);
         menu_grid_save.setVisibility(View.GONE);
         menu_grid_other.setVisibility(View.GONE);
 
@@ -1608,30 +1611,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             }
         });
 
-        // Share
-        GridItem item_11 = new GridItem(0, getString(R.string.menu_share_link),  0);
-        GridItem item_12 = new GridItem(0, getString(R.string.menu_shareClipboard),  0);
-
-        final List<GridItem> gridList_share = new LinkedList<>();
-        gridList_share.add(gridList_share.size(), item_11);
-        gridList_share.add(gridList_share.size(), item_12);
-
-        GridAdapter gridAdapter_share = new GridAdapter(context, gridList_share);
-        menu_grid_share.setAdapter(gridAdapter_share);
-        gridAdapter_share.notifyDataSetChanged();
-
-        menu_grid_share.setOnItemClickListener((parent, view12, position, id) -> {
-            dialog_overflow.cancel();
-            if (position == 0) {
-                shareLink(title, url);
-            } else if (position == 1) {
-                ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-                ClipData clip = ClipData.newPlainText("text", url);
-                Objects.requireNonNull(clipboard).setPrimaryClip(clip);
-                NinjaToast.show(this, R.string.toast_copy_successful);
-            }
-        });
-
         // Other
         GridItem item_31 = new GridItem(0, getString(R.string.menu_other_searchSite),  0);
         GridItem item_32 = new GridItem(0, getString(R.string.menu_download),  0);
@@ -1656,12 +1635,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         TabLayout tabLayout= dialogView.findViewById(R.id.tabLayout);
 
         TabLayout.Tab tab_tab = tabLayout.newTab().setIcon(R.drawable.icon_tab);
-        TabLayout.Tab tab_share = tabLayout.newTab().setIcon(R.drawable.icon_menu_share);
         TabLayout.Tab tab_save = tabLayout.newTab().setIcon(R.drawable.icon_menu_save);
         TabLayout.Tab tab_other = tabLayout.newTab().setIcon(R.drawable.icon_dots);
 
         tabLayout.addTab(tab_tab);
-        tabLayout.addTab(tab_share);
         tabLayout.addTab(tab_save);
         tabLayout.addTab(tab_other);
 
@@ -1671,22 +1648,14 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             public void onTabSelected(TabLayout.Tab tab) {
                 if (tab.getPosition() == 0) {
                     menu_grid_tab.setVisibility(View.VISIBLE);
-                    menu_grid_share.setVisibility(View.GONE);
                     menu_grid_save.setVisibility(View.GONE);
                     menu_grid_other.setVisibility(View.GONE);
                 } else if (tab.getPosition() == 1) {
                     menu_grid_tab.setVisibility(View.GONE);
-                    menu_grid_share.setVisibility(View.VISIBLE);
-                    menu_grid_save.setVisibility(View.GONE);
+                    menu_grid_save.setVisibility(View.VISIBLE);
                     menu_grid_other.setVisibility(View.GONE);
                 } else if (tab.getPosition() == 2) {
                     menu_grid_tab.setVisibility(View.GONE);
-                    menu_grid_share.setVisibility(View.GONE);
-                    menu_grid_save.setVisibility(View.VISIBLE);
-                    menu_grid_other.setVisibility(View.GONE);
-                } else if (tab.getPosition() == 3) {
-                    menu_grid_tab.setVisibility(View.GONE);
-                    menu_grid_share.setVisibility(View.GONE);
                     menu_grid_save.setVisibility(View.GONE);
                     menu_grid_other.setVisibility(View.VISIBLE);
                 }

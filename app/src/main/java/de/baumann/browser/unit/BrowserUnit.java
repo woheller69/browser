@@ -64,7 +64,7 @@ public class BrowserUnit {
     public static final String URL_SCHEME_HTTP = "http://";
     private static final String URL_SCHEME_FTP = "ftp://";
     public static final String URL_SCHEME_INTENT = "intent://";
-    private static final String URL_SCHEME_VIEW_SOURCE = "view-source:";
+    public static final String URL_SCHEME_VIEW_SOURCE = "view-source:";
 
     public static boolean isURL(String url) {
 

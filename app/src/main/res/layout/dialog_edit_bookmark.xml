@@ -11,6 +11,30 @@
     android:paddingTop="20dp"
     tools:ignore="Autofill">
 
+    <LinearLayout
+        android:id="@+id/edit_layout_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_marginBottom="10dp">
+        <ImageView
+            android:id="@+id/edit_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="16dp"
+            android:contentDescription="@null"
+            android:scaleType="fitCenter"
+            android:src="@drawable/bookmark_red_big"
+            android:background="?attr/actionBarItemBackground" />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/edit_category"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:singleLine="true"
+            android:textAppearance="?attr/textAppearanceBody1"
+            />
+    </LinearLayout>
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/edit_title_layout"
         android:layout_width="match_parent"
@@ -48,17 +72,6 @@
             android:layout_height="match_parent"
             android:orientation="horizontal"
             android:gravity="center_horizontal">
-
-            <ImageView
-                android:id="@+id/edit_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginEnd="16dp"
-                android:gravity="center_vertical"
-                android:contentDescription="@null"
-                android:scaleType="fitCenter"
-                android:src="@drawable/bookmark_red_big"
-                android:background="?attr/actionBarItemBackground" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/edit_bookmark_desktopMode"

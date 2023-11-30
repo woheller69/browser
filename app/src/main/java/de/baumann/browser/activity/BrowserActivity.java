@@ -7,8 +7,6 @@ import android.app.DownloadManager;
 
 import android.app.SearchManager;
 import android.content.BroadcastReceiver;
-import android.content.ClipData;
-import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -163,7 +161,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     private Cookie cookieHosts;
     private DOM DOM;
     private ObjectAnimator animation;
-    private int newIcon;
+    private int iconColor;
     private boolean filter;
     private long filterBy;
 
@@ -1240,7 +1238,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             } else {
                 omniBox_text.setText(ninjaWebView.getTitle());
             }
-            if (url.startsWith("https://")) {
+            if (url.startsWith(BrowserUnit.URL_SCHEME_HTTPS) || url.startsWith(BrowserUnit.URL_SCHEME_VIEW_SOURCE) ) {
                 omniBox_tab.setImageResource(R.drawable.icon_menu_light);
                 omniBox_tab.setOnClickListener(v -> showTabView());
             } else if (url.equals(URL_ABOUT_BLANK)){
@@ -1469,7 +1467,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 Message msg = backgroundHandler.obtainMessage();
                 ninjaWebView.requestFocusNodeHref(msg);
                 String url = (String) msg.getData().get("src");
-                showContextMenuLink(HelperUnit.domain(url), url, IMAGE_TYPE);
+                if (url != null) showContextMenuLink(HelperUnit.domain(url), url, IMAGE_TYPE);
             }  else if (result.getType() == IMAGE_TYPE) {
                 showContextMenuLink(HelperUnit.domain(result.getExtra()), result.getExtra(), IMAGE_TYPE);
             }  else if (result.getType() == EMAIL_TYPE) {
@@ -1541,6 +1539,15 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         ImageButton overflow_share = dialogView.findViewById(R.id.overflow_share);
         overflow_share.setOnClickListener(v -> {
             shareLink(title, url);
+            dialog_overflow.cancel();
+        });
+
+        ImageButton overflow_view_source = dialogView.findViewById(R.id.overflow_view_source);
+        overflow_view_source.setOnClickListener(v -> {
+            if (!url.startsWith(BrowserUnit.URL_SCHEME_VIEW_SOURCE)) {
+                addAlbum(BrowserUnit.URL_SCHEME_VIEW_SOURCE+title,BrowserUnit.URL_SCHEME_VIEW_SOURCE+url,true);
+            }
+            dialog_overflow.cancel();
         });
 
         final GridView menu_grid_tab = dialogView.findViewById(R.id.overflow_tab);
@@ -1743,6 +1750,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     }
 
     private void editBookmark(Record bookmark) {
+        iconColor = bookmark.getIconColor();
         MaterialAlertDialogBuilder builderSubMenu;
         AlertDialog dialogSubMenu;
         builderSubMenu = new MaterialAlertDialogBuilder(context);
@@ -1754,11 +1762,15 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         Chip chip_DomContent = dialogViewSubMenu.findViewById(R.id.edit_bookmark_DomContent);
         EditText edit_title = dialogViewSubMenu.findViewById(R.id.edit_title);
         EditText edit_URL = dialogViewSubMenu.findViewById(R.id.edit_URL);
+        TextView tv_category = dialogViewSubMenu.findViewById(R.id.edit_category);
+        LinearLayout layout_category = dialogViewSubMenu.findViewById(R.id.edit_layout_category);
 
         edit_title.setText(bookmark.getTitle());
         edit_URL.setText(bookmark.getURL());
+        final List<GridItem> gridList2 = new LinkedList<>();
+        HelperUnit.addFilterItems(activity, gridList2);
 
-        ib_icon.setOnClickListener(v -> {
+        layout_category.setOnClickListener(v -> {
             MaterialAlertDialogBuilder builderFilter = new MaterialAlertDialogBuilder(context);
             View dialogViewFilter = View.inflate(context, R.layout.dialog_menu, null);
             builderFilter.setView(dialogViewFilter);
@@ -1766,14 +1778,13 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             dialogFilter.show();
             Objects.requireNonNull(dialogFilter.getWindow()).setGravity(Gravity.BOTTOM);
             GridView menu_grid2 = dialogViewFilter.findViewById(R.id.menu_grid);
-            final List<GridItem> gridList2 = new LinkedList<>();
-            HelperUnit.addFilterItems(activity, gridList2);
             GridAdapter gridAdapter2 = new GridAdapter(context, gridList2);
             menu_grid2.setAdapter(gridAdapter2);
             gridAdapter2.notifyDataSetChanged();
             menu_grid2.setOnItemClickListener((parent2, view2, position2, id2) -> {
-                newIcon = gridList2.get(position2).getData();
-                HelperUnit.setFilterIcons(ib_icon, newIcon);
+                iconColor = gridList2.get(position2).getData();
+                HelperUnit.setFilterIcons(ib_icon, iconColor);
+                tv_category.setText(gridList2.get(position2).getTitle());
                 dialogFilter.cancel();
             });
         });
@@ -1782,9 +1793,13 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         chip_javascript.setChecked(bookmark.getJavascript());
         chip_DomContent.setChecked(bookmark.getDomStorage());
 
-        newIcon= bookmark.getIconColor();
-
-        HelperUnit.setFilterIcons(ib_icon, newIcon);
+        HelperUnit.setFilterIcons(ib_icon, iconColor);
+        for (GridItem i : gridList2){
+            if (i.getData() == iconColor) {
+                tv_category.setText(i.getTitle());
+                break;
+            }
+        }
 
         builderSubMenu.setView(dialogViewSubMenu);
         builderSubMenu.setTitle(getString(R.string.menu_edit));
@@ -1792,7 +1807,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             RecordAction action = new RecordAction(context);
             action.open(true);
             action.deleteURL(bookmark.getURL(), RecordUnit.TABLE_BOOKMARK);
-            action.addBookmark(new Record(edit_title.getText().toString(), edit_URL.getText().toString(), 0, chip_desktopMode.isChecked(),chip_javascript.isChecked(),chip_DomContent.isChecked(),newIcon));
+            action.addBookmark(new Record(edit_title.getText().toString(), edit_URL.getText().toString(), 0, chip_desktopMode.isChecked(),chip_javascript.isChecked(),chip_DomContent.isChecked(),iconColor));
             action.close();
             bottom_navigation.setSelectedItemId(R.id.bookmarks);
         });

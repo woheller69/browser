@@ -1,10 +1,14 @@
 package de.baumann.browser.browser;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.AssetManager;
+import android.text.SpannableStringBuilder;
+import android.text.style.RelativeSizeSpan;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.preference.PreferenceManager;
 
@@ -23,6 +27,9 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.nio.file.Files;
 import java.util.*;
+
+import de.baumann.browser.R;
+import de.baumann.browser.unit.BrowserUnit;
 
 @SuppressWarnings("ResultOfMethodCallIgnored")
 public class AdBlock {
@@ -86,6 +93,12 @@ public class AdBlock {
             try {
                 URL url = new URL(hostURL);
                 Log.d("browser","Download AdBlock hosts");
+
+                SpannableStringBuilder biggerText = new SpannableStringBuilder("\u27f3 " + context.getResources().getString(R.string.setting_title_adblock));
+                biggerText.setSpan(new RelativeSizeSpan(1.35f), 0, 1, 0);
+                ((Activity) context).runOnUiThread(() -> {
+                    Toast.makeText(context, biggerText, Toast.LENGTH_SHORT).show();
+                });
                 URLConnection ucon = url.openConnection();
                 ucon.setReadTimeout(5000);
                 ucon.setConnectTimeout(10000);
@@ -142,20 +155,25 @@ public class AdBlock {
         thread.start();
     }
 
-    private static String getDomain(String url) throws URISyntaxException {
+    public static String getDomain(String url) throws URISyntaxException {
+        String domain = null;
         url = url.toLowerCase(locale);
 
-        int index = url.indexOf('/', 8); // -> http://(7) and https://(8)
-        if (index != -1) {
-            url = url.substring(0, index);
+        // remove view-source: if available
+        if (url.startsWith(BrowserUnit.URL_SCHEME_VIEW_SOURCE)) url = url.substring(BrowserUnit.URL_SCHEME_VIEW_SOURCE.length());
+
+        if (url.startsWith(BrowserUnit.URL_SCHEME_HTTP) || url.startsWith(BrowserUnit.URL_SCHEME_HTTPS)){
+
+            int index = url.indexOf('/', 8); // -> http://(7) and https://(8)
+            if (index != -1) {
+                url = url.substring(0, index);
+            }
+
+            URI uri = new URI(url);
+            domain = uri.getHost();
         }
 
-        URI uri = new URI(url);
-        String domain = uri.getHost();
-        if (domain == null) {
-            return url;
-        }
-        return domain.startsWith("www.") ? domain.substring(4) : domain;
+        return domain==null ? "" : domain;
     }
 
     public AdBlock(Context context) {
@@ -170,16 +188,19 @@ public class AdBlock {
             } catch(IOException e) {
                 Log.e("browser", "Failed to copy asset file", e);
             }
-        }
+        } else {
+            Calendar time = Calendar.getInstance();
 
-        Calendar time = Calendar.getInstance();
+            if (BrowserUnit.isUnmeteredConnection(context))
+                time.add(Calendar.DAY_OF_YEAR,-3);
+            else
+                time.add(Calendar.DAY_OF_YEAR,-7);
 
-        time.add(Calendar.DAY_OF_YEAR,-7);
-
-        Date lastModified = new Date(file.lastModified());
-        if (lastModified.before(time.getTime())||getHostsDate(context).equals("")) {  //also download again if something is wrong with the file
-            //update if file is older than 7 days
-            downloadHosts(context);
+            Date lastModified = new Date(file.lastModified());
+            if (lastModified.before(time.getTime())||getHostsDate(context).equals("")) {  //also download again if something is wrong with the file
+                //update if file is older than 7 days
+                downloadHosts(context);
+            }
         }
 
         if (hosts.isEmpty()) {
@@ -202,6 +223,39 @@ public class AdBlock {
         } catch (URISyntaxException u) {
             return false;
         }
-        return hosts.contains(domain.toLowerCase(locale));
+        if (domain.equals("")) return false;
+
+        boolean domainInHosts = false;
+
+        String[] testDomains = splitDomain(domain);
+        for (String i : testDomains){
+            if (hosts.contains(i.toLowerCase(locale))) {
+                domainInHosts = true;
+                break;
+            }
+        }
+
+        return domainInHosts;
+    }
+
+    private static String[] splitDomain(String domain) {
+
+        // Split the domain using the dot as a delimiter
+        String[] segments = domain.split("\\.");
+        // Domain should not be a Top Level domain, so it must have at least 2 segments
+        if (segments.length < 2) return new String[0];
+        // Create an array to store subdomains
+        String[] subdomains = new String[segments.length-1];
+        // Build subdomains from right to left
+        StringBuilder currentSubdomain = new StringBuilder();
+        for (int i = segments.length - 1; i >= 0; i--) {
+            currentSubdomain.insert(0, segments[i]);
+            // Store domain if it contains at least 2 segments (not in first iteration)
+            if (i < segments.length -1) subdomains[i] = currentSubdomain.toString();
+            // Add a dot if it's not the last segment
+            if (i > 0) currentSubdomain.insert(0, ".");
+        }
+
+        return subdomains;
     }
 }

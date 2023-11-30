@@ -209,7 +209,7 @@ public class NinjaWebView extends WebView implements AlbumController {
             }
             String  domain="";
             try {
-                domain = new URI(url).getHost();
+                domain = AdBlock.getDomain(url);
             } catch (URISyntaxException e) {
                 //do not change setting if staying within same domain
                 setJavaScript(javaHosts.isWhite(url) || javaScriptInherited);
@@ -230,13 +230,13 @@ public class NinjaWebView extends WebView implements AlbumController {
 
     public void setOldDomain(String url){
         String domain = null;
-         try {
-            domain = new URI(url).getHost();
+        try {
+            domain = AdBlock.getDomain(url);
         } catch (URISyntaxException e) {
             e.printStackTrace();
         }
-         if (domain == null) oldDomain = "";
-         else oldDomain=domain;
+        if (domain == null) oldDomain = "";
+        else oldDomain = domain;
     }
 
     public void setJavaScript(boolean value){

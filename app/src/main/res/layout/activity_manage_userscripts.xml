@@ -30,7 +30,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <EditText android:id="@+id/whitelist_edit"
+            <EditText android:id="@+id/edit_script"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_marginTop="8dp"
@@ -39,7 +39,6 @@
                 android:gravity="top"
                 android:hint="@string/summary_userscript"
                 android:textCursorDrawable="@null"
-                android:textAppearance="?android:attr/textAppearanceMedium"
                 android:imeOptions="actionDone"
                 android:inputType="textMultiLine|textNoSuggestions"
                 android:selectAllOnFocus="true"

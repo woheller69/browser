@@ -50,7 +50,7 @@ public class Manage_UserScripts extends AppCompatActivity {
         UserScriptsHelper userScriptsHelper = new UserScriptsHelper(this);
         userScripts = userScriptsHelper.getAllScripts();
 
-        editText = findViewById(R.id.whitelist_edit);
+        editText = findViewById(R.id.edit_script);
         recyclerView = findViewById(R.id.recycler_view);
 
         adapter = new RecyclerOverviewListAdapter(this, userScripts,editText);

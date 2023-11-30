@@ -26,7 +26,7 @@
             android:src="@drawable/icon_image_broken"
             android:scaleType="fitCenter" />
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -36,7 +36,7 @@
             android:ellipsize="end"
             android:scrollHorizontally="true"
             android:singleLine="true"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textAppearance="?attr/textAppearanceBody1"
             android:text="Title" />
 
     </RelativeLayout>
@@ -84,6 +84,16 @@
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
             android:src="@drawable/icon_menu_share"
+            android:background="?attr/actionBarItemBackground" />
+
+        <ImageButton
+            android:id="@+id/overflow_view_source"
+            android:layout_toStartOf="@id/overflow_share"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/icon_view_source"
             android:background="?attr/actionBarItemBackground" />
 
     </RelativeLayout>

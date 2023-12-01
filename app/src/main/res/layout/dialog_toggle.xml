@@ -19,21 +19,20 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize">
+            android:layout_height="48dp">
 
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_alignParentStart="true"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:ellipsize="end"
                 android:includeFontPadding="false"
                 android:maxLines="1"
                 android:text="@string/setting_label"
                 android:gravity="center_vertical"
-                android:textAppearance="?attr/textAppearanceBody1"
-                android:textStyle="bold" />
+                android:textAppearance="?attr/textAppearanceBody1" />
 
             <ImageButton
                 android:id="@+id/ib_info"
@@ -49,7 +48,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginEnd="24dp"
+                android:layout_marginEnd="20dp"
                 android:src="@drawable/icon_settings"
                 android:background="?attr/actionBarItemBackground" />
 
@@ -121,7 +120,7 @@
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="12dp"
+                android:layout_marginEnd="8dp"
                 android:layout_marginStart="-8dp"
                 app:chipStartPadding="4dp"
                 app:chipEndPadding="4dp"
@@ -199,7 +198,7 @@
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="12dp"
+                android:layout_marginEnd="8dp"
                 android:layout_marginStart="-8dp"
                 app:chipStartPadding="4dp"
                 app:chipEndPadding="4dp"
@@ -218,13 +217,13 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
+            android:layout_height="48dp"
             android:layout_marginTop="4dp">
 
             <ImageView
                 android:id="@+id/menu_zoom_in"
                 android:layout_alignParentEnd="true"
-                android:layout_marginEnd="12dp"
+                android:layout_marginEnd="8dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
@@ -246,7 +245,7 @@
                 android:layout_height="24dp"
                 android:layout_centerInParent="true"
                 android:layout_alignParentStart="true"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:contentDescription="@null"
                 android:scaleType="fitCenter" />
@@ -256,7 +255,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="?android:attr/listPreferredItemHeightSmall"
-            android:layout_marginStart="20dp">
+            android:layout_marginStart="16dp">
 
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="wrap_content"
@@ -319,7 +318,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="-8dp"
-                android:layout_marginEnd="12dp"
+                android:layout_marginEnd="8dp"
                 app:chipIcon="@drawable/icon_java"
                 app:chipIconTint="@color/bg_chip_state_list"
                 app:chipIconEnabled="true"
@@ -334,7 +333,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="?android:attr/listPreferredItemHeightSmall"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="16dp"
             android:layout_marginBottom="8dp">
 
             <com.google.android.material.textview.MaterialTextView
@@ -413,7 +412,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="-8dp"
-                android:layout_marginEnd="12dp"
+                android:layout_marginEnd="8dp"
                 app:chipIcon="@drawable/icon_java"
                 app:chipIconTint="@color/bg_chip_state_list"
                 app:chipIconEnabled="true"

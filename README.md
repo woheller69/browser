@@ -33,13 +33,14 @@ FREE Browser is a web browser for optimal privacy
 
 ## LICENSE
 
-This app is licensed under the GPLv3.
+This app is licensed under the GPLv3, (c) woheller69.
 
 The app uses code from:
 - FOSS-Browser, https://github.com/woheller69/browser, published under GPLv3 (at time of fork)
 - Ninja, https://github.com/mthli/Ninja, published under Apache-2.0 license
+- Zip4j, https://github.com/srikanth-lingala/zip4j, published under Apache-2.0 license
 - StevenBlack hosts, https://github.com/StevenBlack/hosts, published under MIT license
-- DuckDuckGo Android browser: https://github.com/duckduckgo/Android under Apache-2.0 license
+- DuckDuckGo Android browser: https://github.com/duckduckgo/Android, published under Apache-2.0 license
 
 ## INSTRUCTIONS
 

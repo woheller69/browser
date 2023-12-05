@@ -15,6 +15,7 @@ import de.baumann.browser.activity.Whitelist_Javascript;
 import de.baumann.browser.R;
 import de.baumann.browser.activity.Whitelist_DOM;
 import de.baumann.browser.browser.AdBlock;
+import de.baumann.browser.browser.BannerBlock;
 
 public class Fragment_settings_Start extends PreferenceFragmentCompat implements SharedPreferences.OnSharedPreferenceChangeListener{
 
@@ -78,6 +79,8 @@ public class Fragment_settings_Start extends PreferenceFragmentCompat implements
     public void onSharedPreferenceChanged(final SharedPreferences sp, String key) {
         if (key.equals("ab_hosts")) {
             AdBlock.downloadHosts(getActivity());
+        } else if (key.equals("sp_deny_cookie_banners")) {
+            if (sp.getBoolean("sp_deny_cookie_banners",false)) BannerBlock.downloadBanners(getActivity());
         } else if (key.equals("sp_userAgent") ||
                 key.equals("sp_search_engine_custom") ||
                 key.equals("searchEngineSwitch") ||

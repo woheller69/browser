@@ -19,6 +19,7 @@ FREE Browser is a web browser for optimal privacy
 
 - AdBlocker using StevenBlack host list
 - Measures against browser fingerprinting
+- Cookie Banner Blocker, using Cookie Banner Rules from Firefox
 - Advanced settings for javascript, cookies and DOM-storage (domain/bookmark based)
 - Support for Greasemonkey style scripts
 - Optimized for one hand handling (toolbar at bottom)
@@ -41,6 +42,9 @@ The app uses code from:
 - Zip4j, https://github.com/srikanth-lingala/zip4j, published under Apache-2.0 license
 - StevenBlack hosts, https://github.com/StevenBlack/hosts, published under MIT license
 - DuckDuckGo Android browser: https://github.com/duckduckgo/Android, published under Apache-2.0 license
+
+The app supports (not included, will be downloaded if switched on):
+- Mozilla Firefox Cookie Banner Rules, https://github.com/mozilla/cookie-banner-rules-list, published under MPL-2.0 license
 
 ## INSTRUCTIONS
 

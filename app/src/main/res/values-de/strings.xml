@@ -181,5 +181,7 @@
     <string name="toast_delete">Löschen Sie die Datei und versuchen Sie es erneut</string>
     <string name="metered_connection">Getaktete Verbindung</string>
     <string name="setting_network">Netzwerkeinstellungen</string>
+    <string name="summary_deny_cookie_banners">Versuche, Cookie Banner mit Mozilla\'s Cookie Banner Rules automatisch abzulehnen</string>
+    <string name="setting_title_deny_cookie_banners">Cookie Banner Blocker</string>
     <!-- License changelog -->
 </resources>

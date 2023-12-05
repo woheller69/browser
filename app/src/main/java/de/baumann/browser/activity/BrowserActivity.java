@@ -88,6 +88,7 @@ import java.util.regex.Pattern;
 import de.baumann.browser.GithubStar;
 import de.baumann.browser.browser.AdBlock;
 import de.baumann.browser.browser.AlbumController;
+import de.baumann.browser.browser.BannerBlock;
 import de.baumann.browser.browser.BrowserContainer;
 import de.baumann.browser.browser.BrowserController;
 import de.baumann.browser.browser.Cookie;
@@ -260,6 +261,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         }
 
         new AdBlock(context);
+        new BannerBlock(context);
         new Javascript(context);
         new Cookie(context);
         new DOM(context);

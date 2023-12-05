@@ -3,7 +3,7 @@ package de.baumann.browser.browser;
 import static de.baumann.browser.database.UserScript.DOC_END;
 import static de.baumann.browser.database.UserScript.DOC_START;
 
-import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
@@ -19,7 +19,6 @@ import androidx.annotation.NonNull;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
-import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.webkit.HttpAuthHandler;
@@ -86,6 +85,11 @@ public class NinjaWebViewClient extends WebViewClient {
 
         view.evaluateJavascript("var links=document.getElementsByTagName('video'); for(let i=0;i<links.length;i++){links[i].pause()};", null);
 
+        if (sp.getBoolean("sp_deny_cookie_banners",false)){ //click opt-out if possible
+            String bannerBlockScript = BannerBlock.getBannerBlockScriptPageFinished();
+            if (bannerBlockScript != null) view.evaluateJavascript(bannerBlockScript,null);
+        }
+
         //inject printing support via JavaScriptInterface
         view.evaluateJavascript(JavaScriptInterface.injectPrintSupport(), null);
     }
@@ -100,6 +104,11 @@ public class NinjaWebViewClient extends WebViewClient {
         for (UserScript script : list){
             if (sp.getBoolean("sp_debug",false)) NinjaToast.show(context, script.getName());
             view.evaluateJavascript(script.getScript(),null);
+        }
+
+        if (sp.getBoolean("sp_deny_cookie_banners",false)){  //inject cookies if possible
+            String bannerBlockScript = BannerBlock.getBannerBlockScriptPageStarted();
+            if (bannerBlockScript != null) view.evaluateJavascript(bannerBlockScript,null);
         }
 
         if(ninjaWebView.isFingerPrintProtection()) {
@@ -448,12 +457,12 @@ public class NinjaWebViewClient extends WebViewClient {
         view.evaluateJavascript("if (window.doNotTrack === undefined) { Object.defineProperty(window, 'doNotTrack', { value: 1, writable: false,configurable: false});} else {try { window.doNotTrack = 1;} catch (e) { console.error('doNotTrack is not writable: ', e); }};",null);
         view.evaluateJavascript("if (navigator.msDoNotTrack === undefined) { Object.defineProperty(navigator, 'msDoNotTrack', { value: 1, writable: false,configurable: false});} else {try { navigator.msDoNotTrack = 1;} catch (e) { console.error('msDoNotTrack is not writable: ', e); }};",null);
 }
-
+/*
     @Override
     public boolean shouldOverrideUrlLoading(WebView view, String url) {  //do not delete, needed for camera, for whatever reason
         final Uri uri = Uri.parse(url);
         return handleUri(uri);
-    }
+    }*/
 
     @Override
     public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
@@ -505,6 +514,7 @@ public class NinjaWebViewClient extends WebViewClient {
         }
     }
 
+    /*
     @Override
     @SuppressWarnings("deprecation")
     public WebResourceResponse shouldInterceptRequest(WebView view, String url) {
@@ -516,10 +526,17 @@ public class NinjaWebViewClient extends WebViewClient {
             );
         }
         return super.shouldInterceptRequest(view, url);
-    }
+    }*/
 
     @Override
     public WebResourceResponse shouldInterceptRequest(WebView view, WebResourceRequest request) {
+/*
+        ((Activity) context).runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                if (request.getUrl().toString().contains("utm_")) NinjaToast.show(context,"Tracking URL utm_");
+            }
+        });*/
         if (enable && !white && adBlock.isAd(request.getUrl().toString())) {
             return new WebResourceResponse(
                     BrowserUnit.MIME_TYPE_TEXT_PLAIN,

@@ -181,5 +181,7 @@
     <string name="toast_delete">Supprimez le fichier et réessayez</string>
     <string name="metered_connection">Connexion limitée</string>
     <string name="setting_network">Paramètres réseau</string>
+    <string name="summary_deny_cookie_banners">Try to automatically deny cookie banners using Mozilla\'s Cookie Banner Rules</string>
+    <string name="setting_title_deny_cookie_banners">Bloqueur de bannière de cookies</string>
     <!-- License changelog -->
 </resources>

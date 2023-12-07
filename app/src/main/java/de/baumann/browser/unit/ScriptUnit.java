@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -69,7 +70,7 @@ public class ScriptUnit {
         // Use regular expressions to match the URL against the pattern
 
         String urlFormatPattern = "^(http|https)://[a-z0-9.-]+/.*$";
-        if (!url.toLowerCase().matches(urlFormatPattern)) return false;  //not a valid URL
+        if (!url.toLowerCase(Locale.getDefault()).matches(urlFormatPattern)) return false;  //not a valid URL
 
         try {
             Pattern compiledPattern = Pattern.compile(pattern);

@@ -14,6 +14,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Objects;
 
 import de.baumann.browser.unit.RecordUnit;
@@ -38,7 +39,7 @@ public class RecordAction {
                 || record.getTitle() == null
                 || record.getTitle().trim().isEmpty()
                 || record.getURL() == null
-                || record.getURL().trim().isEmpty()
+                || record.getURL().toLowerCase(Locale.getDefault()).trim().isEmpty()
                 || record.getDesktopMode() == null
                 || record.getJavascript() == null
                 || record.getDomStorage() == null
@@ -48,7 +49,7 @@ public class RecordAction {
 
         ContentValues values = new ContentValues();
         values.put(RecordUnit.COLUMN_TITLE, record.getTitle().trim());
-        values.put(RecordUnit.COLUMN_URL, record.getURL().trim());
+        values.put(RecordUnit.COLUMN_URL, record.getURL().toLowerCase(Locale.getDefault()).trim());
         values.put(RecordUnit.COLUMN_TIME,record.getTime() > 0 ? record.getTime() : System.currentTimeMillis());
         values.put(RecordUnit.COLUMN_ICON_COLOR,record.getIconColor());
         values.put(RecordUnit.COLUMN_DESKTOP_MODE,record.getDesktopMode());

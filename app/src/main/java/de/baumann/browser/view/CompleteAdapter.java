@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Locale;
 import java.util.Set;
 
 import de.baumann.browser.database.FaviconHelper;
@@ -45,8 +46,8 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
 
             List<CompleteItem> workList = new ArrayList<>();
             for (CompleteItem item : originalList) {
-                if (item.getTitle().contains(prefix) || item.getTitle().toLowerCase().contains(prefix) || item.getURL().contains(prefix)) {
-                    if (item.getTitle().contains(prefix) || item.getTitle().toLowerCase().contains(prefix) ) {
+                if (item.getTitle().contains(prefix) || item.getTitle().toLowerCase(Locale.getDefault()).contains(prefix) || item.getURL().contains(prefix)) {
+                    if (item.getTitle().contains(prefix) || item.getTitle().toLowerCase(Locale.getDefault()).contains(prefix) ) {
                         item.setIndex(item.getTitle().indexOf(prefix.toString()));
                     } else if (item.getURL().contains(prefix)) {
                         item.setIndex(item.getURL().indexOf(prefix.toString()));

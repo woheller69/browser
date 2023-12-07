@@ -142,7 +142,6 @@ public class BannerBlock {
                     "            // Check if the current domain is in the list of specified domains or a subdomain \n" +
                     "            if (item.domains.some(domain => isSubdomain(currentDomain, domain))) {\n" +
                     "                  if (item.cookies) {\n"+
-                    "                      // Set cookies first\n"+
                     "                      var optOutCookies = item.cookies.optOut;\n"+
                     "                      if (optOutCookies && Array.isArray(optOutCookies) && optOutCookies.length > 0) {\n"+
                     "                          for (var k = 0; k < optOutCookies.length; k++) { \n"+
@@ -164,25 +163,30 @@ public class BannerBlock {
             bannerBlockScript = bannerBlockScript +
                     "        var config = JSON.parse(configString);\n" +
                     "        var currentDomain = window.location.hostname;\n" +
+                    "        // isSubdomain is used to check if 'subdomain' is a subdomain of 'domain'\n" +
                     "        function isSubdomain(subdomain, domain) {\n" +
                     "            return subdomain.endsWith(\".\" + domain) || subdomain === domain;\n" +
                     "        }\n" +
+                    "        // createOptOutHandler is used to create a closure that captures the current value of item for each iteration\n" +
+                    "        function createOptOutHandler(item) { \n" +
+                    "           return function() {\n" +
+                    "               var optOutElements = document.querySelectorAll(item.click.optOut);\n" +
+                    "               for (var j = 0; j < optOutElements.length; j++) {\n" +
+                    "                   optOutElements[j].click();\n" +
+                    "               }\n" +
+                    "           };\n" +
+                    "        }\n" +
+                    "        //MAIN LOOP\n" +
                     "        for (var i = 0; i < config.length; i++) {\n" +
                     "            var item = config[i];\n" +
                     "            // Check if the current domain is in the list of specified domains or a subdomain \n" +
                     "            if (item.domains.length === 0 || item.domains.some(domain => isSubdomain(currentDomain, domain))) {\n" +
-                    "               // Proceed with the presence check\n" +
+                    "               // If there are clickable items, proceed with the presence check\n" +
                     "               if (item.click) { \n" +
                     "                   var presenceElements = document.querySelectorAll(item.click.presence);\n" +
                     "                   if (presenceElements.length > 0) {\n" +
                     "                       // Introduce a short delay before clicking the opt-out button\n" +
-                    "                       setTimeout(function () {\n" +
-                    "                           var optOutElements = document.querySelectorAll(item.click.optOut);\n" +
-                    "                           for (var j = 0; j < optOutElements.length; j++) {\n" +
-                    "                               optOutElements[j].click();\n" +
-                    "                           }\n" +
-                    "                       }, 300);\n" +
-                    "                      break; // Stop iterating if one banner is found\n" +
+                    "                       setTimeout(createOptOutHandler(item), 300);\n" +
                     "                   }\n" +
                     "               }\n" +
                     "            }\n" +

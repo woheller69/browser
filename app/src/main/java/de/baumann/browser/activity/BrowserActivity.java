@@ -446,14 +446,19 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         action.open(false);
         List<Record> list = action.listEntries(activity);
         action.close();
-        CompleteAdapter adapter = new CompleteAdapter(this, R.layout.item_icon_left, list);
-        omniBox_text.setAdapter(adapter);
-        adapter.notifyDataSetChanged();
-        omniBox_text.setDropDownWidth(context.getResources().getDisplayMetrics().widthPixels);
-        omniBox_text.setOnItemClickListener((parent, view, position, id) -> {
-            String url = ((TextView) view.findViewById(R.id.record_item_url)).getText().toString();
+        CompleteAdapter completeAdapter = new CompleteAdapter(this, R.layout.item_icon_left, list);
+        completeAdapter.setClickListener(v -> {
+            String url = ((TextView) v.findViewById(R.id.record_item_url)).getText().toString();
             ninjaWebView.loadUrl(url);
         });
+        completeAdapter.setLongClickListener(v -> {
+            String url = ((TextView) v.findViewById(R.id.record_item_url)).getText().toString();
+            showContextMenuSearch(url);
+            return true;
+        });
+        omniBox_text.setAdapter(completeAdapter);
+        completeAdapter.notifyDataSetChanged();
+        omniBox_text.setDropDownWidth(context.getResources().getDisplayMetrics().widthPixels);
     }
 
     private void showOverview() {
@@ -1366,6 +1371,63 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         contentFrame.requestFocus();
     }
 
+    private void showContextMenuSearch (final String url) {
+
+        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
+        View dialogView = View.inflate(context, R.layout.dialog_menu, null);
+
+        TextView menuTitle = dialogView.findViewById(R.id.menuTitle);
+        menuTitle.setText(url);
+
+        FaviconHelper.setFavicon(this,dialogView,url,R.id.menu_icon,R.drawable.icon_image_broken);
+
+        builder.setView(dialogView);
+        AlertDialog dialog = builder.create();
+        dialog.show();
+        Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
+
+        GridItem item_01 = new GridItem(0, getString(R.string.menu_delete),  0);
+        GridItem item_02 = new GridItem(0, getString(R.string.menu_edit),  0);
+
+        final List<GridItem> gridList = new LinkedList<>();
+
+        gridList.add(gridList.size(), item_01);
+        gridList.add(gridList.size(), item_02);
+
+        GridView menu_grid = dialogView.findViewById(R.id.menu_grid);
+        GridAdapter gridAdapter = new GridAdapter(context, gridList);
+        menu_grid.setAdapter(gridAdapter);
+        gridAdapter.notifyDataSetChanged();
+        menu_grid.setOnItemClickListener((parent, view, position, id) -> {
+            dialog.cancel();
+
+            GridItem item = gridList.get(position);
+            if (item.getTitle().equals(getString(R.string.menu_delete))){
+                AlertDialog dialogSubMenu;
+                MaterialAlertDialogBuilder builderSubMenu;
+                builderSubMenu = new MaterialAlertDialogBuilder(context);
+                builderSubMenu.setMessage(R.string.hint_database);
+                builderSubMenu.setPositiveButton(R.string.app_ok, (dialog2, whichButton) -> {
+                    RecordAction action = new RecordAction(context);
+                    action.open(true);
+                    action.deleteURL(url, RecordUnit.TABLE_BOOKMARK);
+                    action.close();
+                    updateAutoComplete();
+                });
+                builderSubMenu.setNegativeButton(R.string.app_cancel, (dialog2, whichButton) -> builderSubMenu.setCancelable(true));
+                dialogSubMenu = builderSubMenu.create();
+                dialogSubMenu.show();
+                Objects.requireNonNull(dialogSubMenu.getWindow()).setGravity(Gravity.BOTTOM);
+            } else if (item.getTitle().equals(getString(R.string.menu_edit))){
+                RecordAction action = new RecordAction(context);
+                action.open(true);
+                Record bookmark = action.getBookmarkRecordFromUrl(url);
+                action.close();
+                editBookmark(bookmark);
+            }
+        });
+    }
+
     private void showContextMenuLink (final String title, final String url, int type) {
 
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
@@ -1752,6 +1814,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     }
 
     private void editBookmark(Record bookmark) {
+        if (bookmark == null ) return;
         iconColor = bookmark.getIconColor();
         MaterialAlertDialogBuilder builderSubMenu;
         AlertDialog dialogSubMenu;
@@ -1808,7 +1871,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         builderSubMenu.setPositiveButton(R.string.app_ok, (dialog3, whichButton) -> {
             RecordAction action = new RecordAction(context);
             action.open(true);
-            action.deleteURL(bookmark.getURL(), RecordUnit.TABLE_BOOKMARK);
+            action.deleteURL(bookmark.getURL(), RecordUnit.TABLE_BOOKMARK);  //delete bookmarks with old AND new URL and create new bookmark
+            action.deleteURL(edit_URL.getText().toString(), RecordUnit.TABLE_BOOKMARK); //bookmarks with identical URL are not allowed
             action.addBookmark(new Record(edit_title.getText().toString(), edit_URL.getText().toString(), 0, chip_desktopMode.isChecked(),chip_javascript.isChecked(),chip_DomContent.isChecked(),iconColor));
             action.close();
             bottom_navigation.setSelectedItemId(R.id.bookmarks);

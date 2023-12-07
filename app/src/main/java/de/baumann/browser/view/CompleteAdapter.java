@@ -25,6 +25,17 @@ import de.baumann.browser.R;
 import de.baumann.browser.unit.HelperUnit;
 
 public class CompleteAdapter extends BaseAdapter implements Filterable {
+    View.OnClickListener shortClick;
+    View.OnLongClickListener longClick;
+
+    public void setClickListener(View.OnClickListener aShort) {
+        shortClick = aShort;
+    }
+
+    public void setLongClickListener(View.OnLongClickListener aLong) {
+        longClick = aLong;
+    }
+
     private class CompleteFilter extends Filter {
         @Override
         protected FilterResults performFiltering(CharSequence prefix) {
@@ -189,6 +200,8 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
             holder.urlView = view.findViewById(R.id.record_item_url);
             holder.iconView = view.findViewById(R.id.record_item_icon);
             holder.favicon=view.findViewById(R.id.record_item_favicon);
+            view.setOnClickListener(shortClick);
+            view.setOnLongClickListener(longClick);
 
             view.setTag(holder);
         } else {

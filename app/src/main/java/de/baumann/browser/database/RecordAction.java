@@ -115,6 +115,34 @@ public class RecordAction {
         return list;
     }
 
+    public Record getBookmarkRecordFromUrl(String url) {
+        String selection = RecordUnit.COLUMN_URL + " =?";
+        String[] selectionArgs = {url};
+        Cursor cursor;
+        cursor = database.query(
+                RecordUnit.TABLE_BOOKMARK,
+                new String[] {
+                        RecordUnit.COLUMN_TITLE,
+                        RecordUnit.COLUMN_URL,
+                        RecordUnit.COLUMN_TIME,
+                        RecordUnit.COLUMN_ICON_COLOR,
+                        RecordUnit.COLUMN_DESKTOP_MODE,
+                        RecordUnit.COLUMN_JAVASCRIPT,
+                        RecordUnit.COLUMN_DOM
+                },
+                selection,
+                selectionArgs,
+                null,
+                null,
+                null
+        );
+        if (cursor == null) { return null;}
+        cursor.moveToFirst();
+        Record bookmark = getRecord(cursor);
+        cursor.close();
+        return bookmark;
+    }
+
 
     // General
 

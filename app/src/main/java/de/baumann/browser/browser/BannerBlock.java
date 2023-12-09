@@ -63,7 +63,7 @@ public class BannerBlock {
                 SpannableStringBuilder biggerText = new SpannableStringBuilder("\u27f3 " + "cookie-banner-rules-list.json");
                 biggerText.setSpan(new RelativeSizeSpan(1.35f), 0, 1, 0);
                 ((Activity) context).runOnUiThread(() -> {
-                    Toast.makeText(context, biggerText, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, biggerText, Toast.LENGTH_LONG).show();
                 });
                 URLConnection ucon = url.openConnection();
                 ucon.setReadTimeout(5000);

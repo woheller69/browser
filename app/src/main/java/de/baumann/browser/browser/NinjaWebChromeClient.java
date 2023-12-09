@@ -9,10 +9,10 @@ import android.net.Uri;
 import android.view.View;
 import android.webkit.*;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.preference.PreferenceManager;
 
-import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import com.google.android.material.snackbar.BaseTransientBottomBar;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.Objects;
 
@@ -108,25 +108,44 @@ public class NinjaWebChromeClient extends WebChromeClient {
                     } else {
                         request.grant(new String[]{PermissionRequest.RESOURCE_VIDEO_CAPTURE});
                     }
-                } else NinjaToast.show(activity,activity.getResources().getString(R.string.error_allow_camera));
+                } else {
+                    Snackbar.make(ninjaWebView, activity.getString(R.string.error_allow_camera), 3000).setAction(activity.getString(R.string.app_ok), view -> {
+                        sp.edit().putBoolean("sp_camera", true).apply();
+                        HelperUnit.grantPermissionsCam(activity);
+                        if (!HelperUnit.checkPermissionsCam(activity))
+                            NinjaToast.show(activity, activity.getResources().getString(R.string.error_missing_permission) + "\n" + activity.getResources().getString(R.string.error_allow_camera));
+                        ninjaWebView.reload();
+                    }).setBackgroundTint(activity.getColor(R.color.color_hint)).setTextColor(activity.getColor(android.R.color.holo_red_dark)).setActionTextColor(activity.getColor(android.R.color.holo_red_dark)).show();
+                }
             } else if (PermissionRequest.RESOURCE_AUDIO_CAPTURE.equals(resource)) {
                 if (sp.getBoolean("sp_microphone", false)) {
                     if (!audioGranted) request.grant(new String[]{PermissionRequest.RESOURCE_AUDIO_CAPTURE});  //otherwise crash:  Either grant() or deny() has been already called.
-                } else NinjaToast.show(activity,activity.getResources().getString(R.string.error_allow_microphone));
+                } else {
+                    Snackbar.make(ninjaWebView, activity.getString(R.string.error_allow_microphone), 3000).setAction(activity.getString(R.string.app_ok), view -> {
+                        sp.edit().putBoolean("sp_microphone", true).apply();
+                        HelperUnit.grantPermissionsMic(activity);
+                        if (!HelperUnit.checkPermissionsMic(activity))
+                            NinjaToast.show(activity, activity.getResources().getString(R.string.error_missing_permission) + "\n" + activity.getString(R.string.error_allow_microphone));
+                        ninjaWebView.reload();
+                    }).setBackgroundTint(activity.getColor(R.color.color_hint)).setTextColor(activity.getColor(android.R.color.holo_red_dark)).setActionTextColor(activity.getColor(android.R.color.holo_red_dark)).show();
+                }
             } else if (PermissionRequest.RESOURCE_PROTECTED_MEDIA_ID.equals(resource)) {
-                if (sp.getBoolean("sp_drm",false)){  //granted already in settings, otherwise ask every time
+                if (ninjaWebView.getBlockNetworkVideo()) { //if videos are blocked there is no need to allow DRM requests
+                    request.deny();
+                } else if (sp.getBoolean("sp_drm",false)){  //granted already in settings, otherwise ask every time
                     request.grant(new String[]{PermissionRequest.RESOURCE_PROTECTED_MEDIA_ID});
                 } else {
-                    MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(ninjaWebView.getContext());
-                    builder.setMessage(R.string.hint_DRM_Media);
-                    builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
+                    final boolean[] handled = {false}; //flag if request has been handled to avoid crash
+                    Snackbar.make(ninjaWebView, activity.getString(R.string.hint_DRM_Media),3000).setAction(activity.getString(R.string.app_ok), view -> {
+                        handled[0] = true;
                         request.grant(new String[]{PermissionRequest.RESOURCE_PROTECTED_MEDIA_ID});
-                    });
-                    builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> {
-                        request.deny();
-                    });
-                    AlertDialog dialog = builder.create();
-                    dialog.show();
+                    }).addCallback(new BaseTransientBottomBar.BaseCallback<Snackbar>() {
+                        @Override
+                        public void onDismissed(Snackbar transientBottomBar, int event) {
+                            super.onDismissed(transientBottomBar, event);
+                            if (!handled[0]) { request.deny(); }
+                        }
+                    }).setBackgroundTint(activity.getColor(R.color.color_hint)).setTextColor(activity.getColor(android.R.color.holo_red_dark)).setActionTextColor(activity.getColor(android.R.color.holo_red_dark)).show();
                 }
             }
         }

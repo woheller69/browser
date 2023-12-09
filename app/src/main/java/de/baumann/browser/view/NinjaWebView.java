@@ -27,7 +27,6 @@ import de.baumann.browser.database.Record;
 import de.baumann.browser.database.RecordAction;
 import de.baumann.browser.unit.BrowserUnit;
 
-import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.HashMap;
 import java.util.List;
@@ -88,6 +87,7 @@ public class NinjaWebView extends WebView implements AlbumController {
     private NinjaWebViewClient webViewClient;
     private NinjaWebChromeClient webChromeClient;
     private NinjaDownloadListener downloadListener;
+    private boolean blockNetworkVideo;
 
     public Boolean isBackPressed;
     public void setIsBackPressed(Boolean isBackPressed) {
@@ -171,6 +171,7 @@ public class NinjaWebView extends WebView implements AlbumController {
 
         if (BrowserUnit.isUnmeteredConnection(context)) {webSettings.setBlockNetworkImage(false);}  //in unmetered Networks (usually WIFI) always load images
         else webSettings.setBlockNetworkImage(!sp.getBoolean("sp_images", true)); //otherwise check setting
+        blockNetworkVideo = webSettings.getBlockNetworkImage(); //if images are blocked, videos of any kind are not allowed either
 
         webSettings.setGeolocationEnabled(sp.getBoolean("sp_location", false));
         webSettings.setMediaPlaybackRequiresUserGesture(!sp.getBoolean("sp_camera", false)); //if Camera is allows this must be false, see NinjaWebChromeClient
@@ -463,4 +464,5 @@ public class NinjaWebView extends WebView implements AlbumController {
         this.predecessor = predecessor;
     }
 
+    public boolean getBlockNetworkVideo(){ return this.blockNetworkVideo;}
 }

@@ -3,7 +3,6 @@ package de.baumann.browser.browser;
 import static de.baumann.browser.database.UserScript.DOC_END;
 import static de.baumann.browser.database.UserScript.DOC_START;
 
-import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
@@ -22,6 +21,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import android.view.Gravity;
 import android.view.View;
 import android.webkit.HttpAuthHandler;
+import android.webkit.MimeTypeMap;
 import android.webkit.SslErrorHandler;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebResourceResponse;
@@ -537,6 +537,20 @@ public class NinjaWebViewClient extends WebViewClient {
                 if (request.getUrl().toString().contains("utm_")) NinjaToast.show(context,"Tracking URL utm_");
             }
         });*/
+
+        if (ninjaWebView.getBlockNetworkVideo()){
+            String extension = MimeTypeMap.getFileExtensionFromUrl(request.getUrl().toString());
+            String mimeType = MimeTypeMap.getSingleton().getMimeTypeFromExtension(extension);
+            if (mimeType!= null && mimeType.startsWith("video")) {
+                return new WebResourceResponse(
+                        BrowserUnit.MIME_TYPE_TEXT_PLAIN,
+                        BrowserUnit.URL_ENCODING,
+                        new ByteArrayInputStream("".getBytes())
+                );
+            }
+
+        }
+
         if (enable && !white && adBlock.isAd(request.getUrl().toString())) {
             return new WebResourceResponse(
                     BrowserUnit.MIME_TYPE_TEXT_PLAIN,

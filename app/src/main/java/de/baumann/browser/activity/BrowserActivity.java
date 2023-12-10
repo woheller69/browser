@@ -1117,7 +1117,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 }
             }
             public void onSwipeTop(){
-                if (!ninjaWebView.canScrollVertically(0) && sp.getBoolean("hideToolbar", true)) {
+                if (!searchOnSite && sp.getBoolean("hideToolbar", true)) {
                     if (animation==null || !animation.isRunning()) {
                         animation = ObjectAnimator.ofFloat(bottomAppBar, "translationY", bottomAppBar.getHeight());
                         animation.setDuration(getResources().getInteger(android.R.integer.config_shortAnimTime));
@@ -1128,7 +1128,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         };
 
         ninjaWebView.setOnTouchListener(swipeTouchListener);
-
+/*
         ninjaWebView.setOnScrollChangeListener((scrollY, oldScrollY) -> {
             if (!searchOnSite) {
                 if (sp.getBoolean("hideToolbar", true)) {
@@ -1152,7 +1152,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             } else {
                 ninjaWebView.setOnTouchListener(null);
             }
-        });
+        });*/
 
         if (url.isEmpty() || url.equals(URL_ABOUT_BLANK)) {
             ninjaWebView.loadUrl(URL_ABOUT_BLANK);

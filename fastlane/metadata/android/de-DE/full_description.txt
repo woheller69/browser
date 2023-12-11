@@ -12,7 +12,7 @@ Diese App basiert auf dem integrierten Android WebView. Stellen Sie sicher, dass
 
 • AdBlocker basierend auf StevenBlack Hosts
 • Maßnahmen gegen Browser-Fingerprinting
-• Cookie Banner Blocker, basierend auf den Cookie Banner Regeln für Firefox
+• Cookie Banner Blocker: Automatisch "Ablehnen", basierend auf den Cookie Banner Regeln für Firefox
 • Erweiterte Einstellungen für Javascript, Cookies und DOM-Speicher (domain-/lesezeichenbasiert)
 • Cookies von Drittanbietern werden grundsätzlich nicht unterstützt.
 • Unterstützung für Skripte im Greasemonkey-Stil  (unterstützt: @match, @name, @run-at)

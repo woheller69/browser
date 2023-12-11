@@ -19,7 +19,7 @@ FREE Browser is a web browser for optimal privacy
 
 - AdBlocker using StevenBlack host list
 - Measures against browser fingerprinting
-- Cookie Banner Blocker, using Cookie Banner Rules from Firefox
+- Cookie Banner Blocker: Auto "Deny", based on [Cookie Banner Rules for Firefox](https://github.com/mozilla/cookie-banner-rules-list)
 - Advanced settings for javascript, cookies and DOM-storage (domain/bookmark based)
 - Support for Greasemonkey style scripts
 - Optimized for one hand handling (toolbar at bottom)

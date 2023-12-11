@@ -1,1 +1,1 @@
-A privacy oriented web browser with Greasemonkey style script support
+Privacy browser with Greasemonkey style script support and Cookie Banner Blocker

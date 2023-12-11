@@ -1,0 +1,4 @@
+Cookie Banner Blocker (switch on in settings!)
+Block also videos where images are blocked
+Edit/delete bookmarks in search result
+Bugfixes

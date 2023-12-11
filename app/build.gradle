@@ -13,8 +13,8 @@ android {
         applicationId "org.woheller69.browser"
         minSdkVersion 29
         targetSdkVersion 33
-        versionCode 1600
-        versionName "1.6"
+        versionCode 2000
+        versionName "2.0"
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
     }

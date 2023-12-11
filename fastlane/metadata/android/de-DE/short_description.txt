@@ -1,1 +1,1 @@
-Datenschutzorientierter Webbrowser mit Skriptunterstützung im Greasemonkey-Stil
+Datenschutz-Browser mit Skriptunterstützung und Cookie-Banner-Blocker

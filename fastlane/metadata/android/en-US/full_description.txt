@@ -12,6 +12,7 @@ This app depends on the built-in Android WebView. Make sure to keep it up to dat
 
 • AdBlocker using StevenBlack host list
 • Measures against browser fingerprinting
+• Cookie Banner Blocker, using Cookie Banner Rules from Firefox
 • Advanced settings for javascript, cookies and DOM-storage (domain/bookmark based)
 • Third party cookies are not supported in general.
 • Support for Greasemonkey style scripts (supported: @match, @name, @run-at)

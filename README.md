@@ -90,13 +90,15 @@ In additions there are settings which are only available as global settings and 
 FREE Browser supports simple user scripts in Greasemonkey style.
 (e.g. [Github Old Feed](https://github.com/wangrongding/github-old-feed/) )
 The following tags:
-- @match
+- @match (required!)
 - @run-at
 - @name
 
 @run-at:  
 If defined as "document-start" scripts run in onPageStarted() of Android WebView, 
 otherwise scripts run in onPageFinished.
+
+@match: At least one tag required. E.g. ```@match https://*/``` to match all https urls
 
 Other tags are **NOT** supported at the moment, e.g.
 - @include

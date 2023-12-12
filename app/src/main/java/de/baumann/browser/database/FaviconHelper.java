@@ -60,11 +60,12 @@ public class FaviconHelper extends SQLiteOpenHelper {
 
     public synchronized void addFavicon( String url, Bitmap bitmap) throws SQLiteException {
         String domain = getDomain(url);
-        if (bitmap == null || domain == null) return;
+        if (domain == null) return;
         SQLiteDatabase database = this.getWritableDatabase();
         //first delete existing Favicon for domain if available
-        database.delete(TABLE_FAVICON, DOMAIN + " = ?", new String[]{domain.trim()});
+        database.delete(TABLE_FAVICON, DOMAIN + " = ? COLLATE NOCASE", new String[]{domain.trim()});
 
+        if (bitmap == null) return;
         byte[] byteImage= convertBytes(bitmap);
         ContentValues values = new  ContentValues();
         values.put(DOMAIN,     domain.trim());
@@ -75,7 +76,7 @@ public class FaviconHelper extends SQLiteOpenHelper {
 
     public synchronized void deleteFavicon( String domain) throws SQLiteException {
         SQLiteDatabase database = this.getWritableDatabase();
-        database.delete(TABLE_FAVICON, DOMAIN + " = ?", new String[]{domain.trim()});
+        database.delete(TABLE_FAVICON, DOMAIN + " = ? COLLATE NOCASE", new String[]{domain.trim()});
         database.close();
     }
 

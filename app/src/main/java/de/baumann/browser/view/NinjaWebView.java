@@ -431,21 +431,24 @@ public class NinjaWebView extends WebView implements AlbumController {
         if (reload) { reload();}
     }
 
-    public void resetFavicon(){this.favicon=null;}
+    public void resetFavicon(){this.favicon=null; updateFavicon();}
 
     public void setFavicon(Bitmap favicon) {
         this.favicon = favicon;
         updateFavicon();
-        //Save faviconView for existing bookmarks
-        FaviconHelper faviconHelper = new FaviconHelper(context);
-        RecordAction action = new RecordAction(context);
-        action.open(false);
-        List<Record> list;
-        list = action.listBookmark(context, false, 0);
-        action.close();
-        for (Record listItem: list){
-            if(listItem.getURL().equals(getUrl())){
-                if (faviconHelper.getFavicon(listItem.getURL())==null) faviconHelper.addFavicon(getUrl(),getFavicon());
+        if (isLoadFinish()) {
+            //Save faviconView for existing bookmarks, but only if loading is finished to avoid "wrong" favicons
+            FaviconHelper faviconHelper = new FaviconHelper(context);
+            RecordAction action = new RecordAction(context);
+            action.open(false);
+            List<Record> list;
+            list = action.listBookmark(context, false, 0);
+            action.close();
+            for (Record listItem : list) {
+                if (listItem.getURL().equals(getUrl())) {
+                    if (faviconHelper.getFavicon(listItem.getURL()) == null)
+                        faviconHelper.addFavicon(getUrl(), getFavicon());
+                }
             }
         }
     }

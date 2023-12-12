@@ -73,8 +73,9 @@ public class ScriptUnit {
                 .replace("?", "\\?")
                 .replace("/", "\\/");
 
-        // path must contain at least a forward slash. The slash by itself matches any path, as if it were followed by a wildcard (/*).
+        // Path must contain at least a forward slash. The slash by itself matches any path, as if it were followed by a wildcard (/*).
         // If the pattern ends with /, add an asterisk after it
+        // https://developer.chrome.com/docs/extensions/develop/concepts/match-patterns?hl=en
         if (regex.endsWith("/")) {
             regex += ".*";
         }

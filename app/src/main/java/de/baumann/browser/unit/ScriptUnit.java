@@ -93,7 +93,7 @@ public class ScriptUnit {
             Matcher matcher = compiledPattern.matcher(url);
             return matcher.matches();
         } catch (Exception e){
-            NinjaToast.show(context,e.toString());
+            NinjaToast.show(context,"@match: " + e);
             return false;}
 
     }

@@ -87,7 +87,11 @@ In additions there are settings which are only available as global settings and 
 
 ### Cookie Banner Blocker
 
-FREE Browser comes equipped with integrated support for Mozilla's [Cookie Banner Rules](https://github.com/mozilla/cookie-banner-rules-list). This feature allows the browser to automatically inject cookies that opt out of any unnecessary cookies, while also attempting to click opt out if a banner is present. However, please note that this functionality is only available for banners that are not located within child windows (```runContext: 'child'```, used by very few rules only). If you notice any missing rules, please open an issue in Mozilla's repository after trying with Firefox first. 
+FREE Browser comes equipped with integrated support for Mozilla's [Cookie Banner Rules](https://github.com/mozilla/cookie-banner-rules-list). 
+This feature allows the browser to automatically inject cookies that opt out of any unnecessary cookies, while also attempting to click opt out if a banner is present. 
+However, please note that this functionality is only available for banners that are not located within child windows (```runContext: 'child'```, used by very few rules only). 
+If you notice any missing rules, please open an issue in Mozilla's repository after trying with Firefox first.
+Important: Cookie Banner Blocker requires JavaScript! 
 
 ### Greasemonkey style scripts
 

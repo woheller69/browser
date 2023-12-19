@@ -89,20 +89,6 @@
 
             <com.google.android.material.chip.Chip
                 style="@style/Widget.MaterialComponents.Chip.Choice"
-                android:id="@+id/edit_bookmark_Javascript"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:text=""
-                app:chipEndPadding="4dp"
-                app:chipIcon="@drawable/icon_java"
-                app:chipIconEnabled="true"
-                app:chipStartPadding="4dp"
-                app:textEndPadding="0dp"
-                app:textStartPadding="0dp" />
-
-            <com.google.android.material.chip.Chip
-                style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:id="@+id/edit_bookmark_DomContent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -110,6 +96,20 @@
                 android:text=""
                 app:chipEndPadding="4dp"
                 app:chipIcon="@drawable/icon_dom"
+                app:chipIconEnabled="true"
+                app:chipStartPadding="4dp"
+                app:textEndPadding="0dp"
+                app:textStartPadding="0dp" />
+
+            <com.google.android.material.chip.Chip
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:id="@+id/edit_bookmark_Javascript"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text=""
+                app:chipEndPadding="4dp"
+                app:chipIcon="@drawable/icon_java"
                 app:chipIconEnabled="true"
                 app:chipStartPadding="4dp"
                 app:textEndPadding="0dp"

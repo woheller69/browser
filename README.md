@@ -34,7 +34,7 @@ FREE Browser is a web browser for optimal privacy
 
 ## LICENSE
 
-This app is licensed under the GPLv3, (c) woheller69.
+This app is licensed under the GPLv3, © woheller69.
 
 The app uses code from:
 - FOSS-Browser, https://github.com/woheller69/browser, published under GPLv3 (at time of fork)

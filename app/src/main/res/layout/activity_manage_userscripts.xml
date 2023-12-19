@@ -41,6 +41,7 @@
                 android:textCursorDrawable="@null"
                 android:imeOptions="actionDone"
                 android:inputType="textMultiLine|textNoSuggestions"
+                android:textSize="16dp"
                 android:selectAllOnFocus="true"
                 android:importantForAutofill="no" />
 
@@ -50,7 +51,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
                 android:text="@string/whitelist_add"
                 android:textAllCaps="true"
                 android:ellipsize="end"

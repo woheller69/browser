@@ -1388,9 +1388,15 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         GridItem item_01 = new GridItem(0, getString(R.string.menu_delete),  0);
         GridItem item_02 = new GridItem(0, getString(R.string.menu_edit),  0);
+        GridItem item_03 = new GridItem(0,getString(R.string.main_menu_new_tabOpen),0);
+        GridItem item_04 = new GridItem(0,getString(R.string.main_menu_new_tab),0);
+        GridItem item_05 = new GridItem(0,getString(R.string.menu_share_link),0);
 
         final List<GridItem> gridList = new LinkedList<>();
 
+        gridList.add(gridList.size(), item_05);
+        gridList.add(gridList.size(), item_03);
+        gridList.add(gridList.size(), item_04);
         gridList.add(gridList.size(), item_01);
         gridList.add(gridList.size(), item_02);
 
@@ -1424,6 +1430,13 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 Record bookmark = action.getBookmarkRecordFromUrl(url);
                 action.close();
                 editBookmark(bookmark);
+            } else if (item.getTitle().equals(getString(R.string.menu_share_link))){
+                shareLink("",url);
+            } else if (item.getTitle().equals(getString(R.string.main_menu_new_tabOpen))){
+                addAlbum(getString(R.string.app_name), url, true);
+                hideOverview();
+            } else if (item.getTitle().equals(getString(R.string.main_menu_new_tab))){
+                addAlbum(getString(R.string.app_name), url, false);
             }
         });
     }

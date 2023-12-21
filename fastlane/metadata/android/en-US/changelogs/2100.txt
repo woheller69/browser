@@ -1,0 +1,3 @@
+Shrink app size
+Improve context menu for search
+Layout improvements

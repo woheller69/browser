@@ -499,7 +499,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             hideOverview();
         } else if (Intent.ACTION_VIEW.equals(action)) {
             String data = Objects.requireNonNull(intent.getData()).toString();
-            if (data.startsWith("mailto:")) {
+            if (data.startsWith(BrowserUnit.URL_SCHEME_MAIL_TO)) {
                 Intent mailintent = new Intent(Intent.ACTION_VIEW, Uri.parse(data));
                 ninjaWebView.getContext().startActivity(mailintent);
             } else {
@@ -1245,7 +1245,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             } else {
                 omniBox_text.setText(ninjaWebView.getTitle());
             }
-            if (url.startsWith(BrowserUnit.URL_SCHEME_HTTPS) || url.startsWith(BrowserUnit.URL_SCHEME_VIEW_SOURCE) ) {
+            if (url.startsWith(BrowserUnit.URL_SCHEME_HTTPS) || url.startsWith(BrowserUnit.URL_SCHEME_VIEW_SOURCE) || url.startsWith(BrowserUnit.URL_SCHEME_CONTENT)) {
                 omniBox_tab.setImageResource(R.drawable.icon_menu_light);
                 omniBox_tab.setOnClickListener(v -> showTabView());
             } else if (url.equals(URL_ABOUT_BLANK)){
@@ -1548,7 +1548,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             }  else if (result.getType() == IMAGE_TYPE) {
                 showContextMenuLink(HelperUnit.domain(result.getExtra()), result.getExtra(), IMAGE_TYPE);
             }  else if (result.getType() == EMAIL_TYPE) {
-                Intent mailintent = new Intent(Intent.ACTION_VIEW, Uri.parse("mailto:"+result.getExtra()));
+                Intent mailintent = new Intent(Intent.ACTION_VIEW, Uri.parse(BrowserUnit.URL_SCHEME_MAIL_TO + result.getExtra()));
                 ninjaWebView.getContext().startActivity(mailintent);
             } else {
                 showContextMenuLink(HelperUnit.domain(result.getExtra()), result.getExtra(), 0);

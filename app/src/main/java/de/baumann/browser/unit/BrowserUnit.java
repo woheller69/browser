@@ -59,7 +59,8 @@ public class BrowserUnit {
     public static final String URL_ABOUT_BLANK = "about:blank";
     public static final String URL_SCHEME_ABOUT = "about:";
     public static final String URL_SCHEME_MAIL_TO = "mailto:";
-    private static final String URL_SCHEME_FILE = "file://";
+    public static final String URL_SCHEME_FILE = "file://";
+    public static final String URL_SCHEME_CONTENT = "content://";
     public static final String URL_SCHEME_HTTPS = "https://";
     public static final String URL_SCHEME_HTTP = "http://";
     private static final String URL_SCHEME_FTP = "ftp://";
@@ -74,8 +75,10 @@ public class BrowserUnit {
         if (url.startsWith(URL_ABOUT_BLANK)
                 || url.startsWith(URL_SCHEME_MAIL_TO)
                 || url.startsWith(URL_SCHEME_FILE)
+                || url.startsWith(URL_SCHEME_CONTENT)
                 || url.startsWith(URL_SCHEME_HTTP)
                 || url.startsWith(URL_SCHEME_HTTPS)
+                || url.startsWith(URL_SCHEME_VIEW_SOURCE)
                 || url.startsWith(URL_SCHEME_FTP)
                 || url.startsWith(URL_SCHEME_INTENT)) {
             return true;
@@ -96,7 +99,7 @@ public class BrowserUnit {
     }
 
     public static String queryWrapper(Context context, String query) {
-        if (query.startsWith(URL_SCHEME_VIEW_SOURCE)) return query;
+
         if (isURL(query)) {
             if (query.startsWith(URL_SCHEME_ABOUT) || query.startsWith(URL_SCHEME_MAIL_TO)) {
                 return query;
@@ -197,6 +200,9 @@ public class BrowserUnit {
                         CookieManager cookieManager = CookieManager.getInstance();
                         String cookie = cookieManager.getCookie(url);
                         request.addRequestHeader("Cookie", cookie);
+                        request.addRequestHeader("Accept", "text/html, application/xhtml+xml, *" + "/" + "*");
+                        request.addRequestHeader("Accept-Language", "en-US,en;q=0.7,he;q=0.3");
+                        request.addRequestHeader("Referer", url);
                         request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
                         request.setTitle(finalFilename);
                         request.setMimeType(mimeType);

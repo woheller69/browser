@@ -30,7 +30,6 @@ import android.content.pm.PackageManager;
 import android.content.pm.ShortcutInfo;
 import android.content.pm.ShortcutManager;
 import android.graphics.drawable.Icon;
-import android.net.MailTo;
 import android.net.Uri;
 
 import androidx.appcompat.app.AlertDialog;

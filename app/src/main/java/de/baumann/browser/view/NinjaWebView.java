@@ -124,7 +124,9 @@ public class NinjaWebView extends WebView implements AlbumController {
         sp = PreferenceManager.getDefaultSharedPreferences(context);
         this.fingerPrintProtection=sp.getBoolean("sp_fingerPrintProtection",true);
         this.javaScriptInherited =sp.getBoolean("sp_javascript", true);
+        getSettings().setJavaScriptEnabled(javaScriptInherited);
         this.domStorageInherited =sp.getBoolean("sp_dom", true);
+        getSettings().setDomStorageEnabled(domStorageInherited);
         this.adBlockEnabled=sp.getBoolean("sp_ad_block", true);
 
         this.stopped=false;
@@ -467,5 +469,30 @@ public class NinjaWebView extends WebView implements AlbumController {
         this.predecessor = predecessor;
     }
 
-    public boolean getBlockNetworkVideo(){ return this.blockNetworkVideo;}
+    public boolean getBlockNetworkVideo(){ return this.blockNetworkVideo; }
+
+    public String getSettingsBackup(){
+        String settings = String.format("%s%s%s%s%s%s%s%s",
+                isBookmark ? "1" : "0",
+                isAdBlockEnabled() ? "1" : "0",
+                isFingerPrintProtection() ? "1" : "0",
+                isDesktopMode() ? "1" : "0",
+                getSettings().getDomStorageEnabled() ? "1" : "0",
+                domStorageInherited ? "1" : "0",
+                getSettings().getJavaScriptEnabled() ? "1" : "0",
+                javaScriptInherited ? "1" : "0");
+        return settings;
+    }
+
+    public void restoreSettings(String settings, String url){
+        isBookmark = settings.charAt(0) == '1';
+        if (isBookmark) setOldDomain(url);
+        adBlockEnabled = settings.charAt(1) == '1';
+        fingerPrintProtection = settings.charAt(2) == '1';
+        desktopMode = settings.charAt(3) == '1';
+        getSettings().setDomStorageEnabled(settings.charAt(4) == '1');
+        domStorageInherited = settings.charAt(5) == '1';
+        getSettings().setJavaScriptEnabled(settings.charAt(6) == '1');
+        javaScriptInherited = settings.charAt(7) == '1';
+    }
 }

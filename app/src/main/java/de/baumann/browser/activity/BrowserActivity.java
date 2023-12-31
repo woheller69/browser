@@ -205,18 +205,23 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     public void onPause(){
         //Save open Tabs in shared preferences
         ArrayList<String> openTabs = new ArrayList<>();
+        ArrayList<String> openTabSettings = new ArrayList<>();
         for (int i=0; i<BrowserContainer.size();i++){
             String url = ((NinjaWebView) (BrowserContainer.get(i))).getUrl();
+            String settings = ((NinjaWebView) (BrowserContainer.get(i))).getSettingsBackup();
             if (!url.equals(URL_ABOUT_BLANK)) {  //do not save empty tabs (about:blank)
                 if (currentAlbumController == BrowserContainer.get(i)) {
                     openTabs.add(0, url);
+                    openTabSettings.add(0, settings);
                 } else {
                     openTabs.add(url);
+                    openTabSettings.add(settings);
                 }
             }
         }
         sp = PreferenceManager.getDefaultSharedPreferences(context);
         sp.edit().putString("openTabs", TextUtils.join("‚‗‚", openTabs)).apply();
+        sp.edit().putString("openTabSettings", TextUtils.join("‚‗‚", openTabSettings)).apply();
         super.onPause();
     }
 
@@ -286,10 +291,12 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         //restore open Tabs from shared preferences if app got killed
         ArrayList<String> openTabs;
+        ArrayList<String> openTabSettings;
         openTabs = new ArrayList<String>(Arrays.asList(TextUtils.split(sp.getString("openTabs", ""), "‚‗‚")));
-        if (openTabs.size()>0) {
+        openTabSettings = new ArrayList<String>(Arrays.asList(TextUtils.split(sp.getString("openTabSettings", ""), "‚‗‚")));
+        if (openTabs.size()>0 && openTabSettings.size()>0) {
             for (int counter = 0; counter < openTabs.size(); counter++) {
-                addAlbum(getString(R.string.app_name), openTabs.get(counter), BrowserContainer.size() < 1);
+                addAlbum(getString(R.string.app_name), openTabs.get(counter), BrowserContainer.size() < 1, openTabSettings.get(counter));
             }
         }
         if (GithubStar.shouldShowStarDialog(this)) GithubStar.starDialog(this,"https://github.com/woheller69/browser");
@@ -347,7 +354,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         new Handler().postDelayed(() -> {
             dispatchIntent(getIntent());
             if (BrowserContainer.size() < 1) {  //if still no open Tab open default page
-                addAlbum(getString(R.string.app_name), Objects.requireNonNull(sp.getString("favoriteURL", "")), true);
+                addAlbum(getString(R.string.app_name), Objects.requireNonNull(sp.getString("favoriteURL", "")), true, null);
             }
         },100);  //for whatever reason sites via intent Action.View do not load without this delay
 
@@ -490,12 +497,12 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         if ("".equals(action)) {
             Log.i(TAG, "resumed FREE browser");
         } else if (intent.getAction() != null && intent.getAction().equals(Intent.ACTION_WEB_SEARCH)) {
-            addAlbum(null, Objects.requireNonNull(intent.getStringExtra(SearchManager.QUERY)), true);
+            addAlbum(null, Objects.requireNonNull(intent.getStringExtra(SearchManager.QUERY)), true, null);
             hideOverview();
         } else if (filePathCallback != null) {
             filePathCallback = null;
         } else if (url != null && Intent.ACTION_SEND.equals(action)) {
-            addAlbum(getString(R.string.app_name), url, true);
+            addAlbum(getString(R.string.app_name), url, true, null);
             hideOverview();
         } else if (Intent.ACTION_VIEW.equals(action)) {
             String data = Objects.requireNonNull(intent.getData()).toString();
@@ -503,7 +510,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 Intent mailintent = new Intent(Intent.ACTION_VIEW, Uri.parse(data));
                 ninjaWebView.getContext().startActivity(mailintent);
             } else {
-                addAlbum(getString(R.string.app_name), data, true);
+                addAlbum(getString(R.string.app_name), data, true, null);
             }
             hideOverview();
         }
@@ -547,7 +554,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         omniBox_tab = findViewById(R.id.omniBox_tab);
         omniBox_tab.setOnClickListener(v -> showTabView());
         omniBox_tab.setOnLongClickListener(v -> {
-            addAlbum(getString(R.string.app_name), Objects.requireNonNull(sp.getString("favoriteURL", "")), true);
+            addAlbum(getString(R.string.app_name), Objects.requireNonNull(sp.getString("favoriteURL", "")), true, null);
             return true;
         });
 
@@ -676,7 +683,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 showOverview();
                 break;
             case "09":
-                addAlbum(getString(R.string.app_name), Objects.requireNonNull(sp.getString("favoriteURL", "")), true);
+                addAlbum(getString(R.string.app_name), Objects.requireNonNull(sp.getString("favoriteURL", "")), true, null);
                 break;
             case "10":
                 removeAlbum(currentAlbumController);
@@ -1092,14 +1099,14 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         ib_info.setOnClickListener(view -> {
             if (ninjaWebView != null) {
                 dialog.cancel();
-                addAlbum("Instructions","https://github.com/woheller69/browser#Instructions",true);
+                addAlbum("Instructions","https://github.com/woheller69/browser#Instructions",true, null);
             }
         });
     }
 
 
     @SuppressLint("ClickableViewAccessibility")
-    private synchronized void addAlbum(String title, final String url, final boolean foreground) {
+    private synchronized void addAlbum(String title, final String url, final boolean foreground, final String settings) {
         ninjaWebView = new NinjaWebView(context);
         ninjaWebView.setBrowserController(this);
         ninjaWebView.setAlbumTitle(title, url);
@@ -1158,6 +1165,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             ninjaWebView.loadUrl(URL_ABOUT_BLANK);
             reloadPage();  //to apply algorithmic darkening if needed
         } else {
+            if (settings != null) ninjaWebView.restoreSettings(settings, url);
             ninjaWebView.loadUrl(url);
         }
 
@@ -1433,10 +1441,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             } else if (item.getTitle().equals(getString(R.string.menu_share_link))){
                 shareLink("",url);
             } else if (item.getTitle().equals(getString(R.string.main_menu_new_tabOpen))){
-                addAlbum(getString(R.string.app_name), url, true);
+                addAlbum(getString(R.string.app_name), url, true, null);
                 hideOverview();
             } else if (item.getTitle().equals(getString(R.string.main_menu_new_tab))){
-                addAlbum(getString(R.string.app_name), url, false);
+                addAlbum(getString(R.string.app_name), url, false, null);
             }
         });
     }
@@ -1488,9 +1496,9 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
             GridItem item = gridList.get(position);
             if (item.getTitle().equals(getString(R.string.main_menu_new_tabOpen))){
-                addAlbum(getString(R.string.app_name), url, true);
+                addAlbum(getString(R.string.app_name), url, true, null);
             } else if (item.getTitle().equals(getString(R.string.main_menu_new_tab))){
-                addAlbum(getString(R.string.app_name), url, false);
+                addAlbum(getString(R.string.app_name), url, false, null);
             } else if (item.getTitle().equals(getString(R.string.menu_share_link))) {
                 shareLink("", url);
             } else if (item.getTitle().equals(getString(R.string.menu_save_as))) {
@@ -1604,7 +1612,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         ImageButton overflow_info = dialogView.findViewById(R.id.overflow_info);
         overflow_info.setOnClickListener(v -> {
             dialog_overflow.cancel();
-            addAlbum("Instructions","https://github.com/woheller69/browser#Instructions",true);
+            addAlbum("Instructions","https://github.com/woheller69/browser#Instructions",true, null);
         });
 
         ImageButton overflow_print = dialogView.findViewById(R.id.overflow_print);
@@ -1622,7 +1630,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         ImageButton overflow_view_source = dialogView.findViewById(R.id.overflow_view_source);
         overflow_view_source.setOnClickListener(v -> {
             if (!url.startsWith(BrowserUnit.URL_SCHEME_VIEW_SOURCE)) {
-                addAlbum(BrowserUnit.URL_SCHEME_VIEW_SOURCE+title,BrowserUnit.URL_SCHEME_VIEW_SOURCE+url,true);
+                addAlbum(BrowserUnit.URL_SCHEME_VIEW_SOURCE+title,BrowserUnit.URL_SCHEME_VIEW_SOURCE+url,true, null);
             }
             dialog_overflow.cancel();
         });
@@ -1654,7 +1662,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         menu_grid_tab.setOnItemClickListener((parent, view14, position, id) -> {
             dialog_overflow.cancel();
             if (position == 0) {
-                addAlbum(getString(R.string.app_name), Objects.requireNonNull(sp.getString("favoriteURL", "")), true);
+                addAlbum(getString(R.string.app_name), Objects.requireNonNull(sp.getString("favoriteURL", "")), true, null);
             } else if (position == 1) {
                 removeAlbum(currentAlbumController);
             } else if (position == 2) {
@@ -1796,11 +1804,11 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     shareLink("",url);
                     break;
                 case 1:
-                    addAlbum(getString(R.string.app_name), url, true);
+                    addAlbum(getString(R.string.app_name), url, true, null);
                     hideOverview();
                     break;
                 case 2:
-                    addAlbum(getString(R.string.app_name), url, false);
+                    addAlbum(getString(R.string.app_name), url, false, null);
                     break;
                 case 3:
                     builderSubMenu = new MaterialAlertDialogBuilder(context);

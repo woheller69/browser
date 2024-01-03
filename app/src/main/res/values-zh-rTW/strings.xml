@@ -219,7 +219,7 @@
     <string name="menu_nightView">夜間模式檢視</string>
     <string name="error_allow_camera">允許使用攝影機</string>
     <string name="hint_DRM_Media">允許播放 DRM 保護的媒體？</string>
-    <string name="setting_userScript" translatable="false">Greasemonkey 腳本</string>
+    <string name="setting_userScript" translatable="false">Greasemonkey Scripts</string>
 
     <string name="summary_userscript" translatable="false">\@match \u2714 \@name \u2714 \@run-at \u2714 \n\@required \u2716 \@include \u2716 \@exclude \u2716 \n\@grant \u2716</string>
     <string name="error_allow_microphone">允許使用麥克風</string>

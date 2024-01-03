@@ -92,7 +92,7 @@
     <string name="setting_title_dom">DOM 儲存空間</string>
     <string name="setting_title_dom_whitelist">DOM 白名單</string>
 
-    <string name="setting_title_save_data">要求 \'儲存資料\'</string>
+    <string name="setting_title_save_data">要求「儲存資料」</string>
 
 
     <!-- browser start -->

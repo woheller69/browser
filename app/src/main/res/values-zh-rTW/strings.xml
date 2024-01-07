@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <!-- App -->
+    <string name="app_name" translatable="false">FREE Browser</string>
+    <string name="app_ok">確認</string>
+    <string name="app_cancel">取消</string>
+    <string name="app_done">完成</string>
+    <string name="app_error">錯誤</string>
+    <string name="list_empty">清單為空</string>
+    <string name="album_title_bookmarks">書籤</string>
+    <string name="album_title_tab">開啟的分頁</string>
+    <string name="search_hint">搜尋</string>
+
+    <string name="color_red">紅色</string>
+    <string name="color_pink">粉色</string>
+    <string name="color_purple">紫色</string>
+    <string name="color_blue">藍色</string>
+    <string name="color_teal">鴨綠色</string>
+    <string name="color_green">綠色</string>
+    <string name="color_lime">鮮綠色</string>
+    <string name="color_yellow">黃色</string>
+    <string name="color_orange">橘色</string>
+    <string name="color_brown">棕色</string>
+    <string name="color_grey">灰色</string>
+
+    <!-- Menu -->
+    <string name="main_menu_tabPreview">開啟分頁預覽</string>
+    <string name="main_menu_new_tab">新分頁（背景）</string>
+    <string name="main_menu_new_tabOpen">新分頁（前景）</string>
+    <string name="main_omnibox_input_hint">搜尋或輸入 URL</string>
+    <string name="menu_open_with">使用…開啟連結</string>
+
+    <string name="menu_quit">退出</string>
+    <string name="menu_openFav">開啟最愛</string>
+    <string name="menu_delete">刪除</string>
+    <string name="menu_edit">編輯</string>
+    <string name="menu_closeTab">關閉分頁</string>
+    <string name="menu_download">開啟下載</string>
+    <string name="menu_fav">儲存為最愛</string>
+    <string name="menu_sc">新增捷徑到主畫面</string>
+    <string name="menu_sort">依…排序</string>
+    <string name="menu_filter">依…過濾</string>
+
+    <string name="menu_share_link">分享連結</string>
+
+    <string name="menu_save_home">儲存到桌面</string>
+    <string name="menu_save_bookmark">儲存為書籤</string>
+    <string name="menu_save_as">另存為…</string>
+    <string name="menu_save_pdf">另存為 PDF</string>
+    <string name="menu_shareClipboard">複製到剪貼簿</string>
+
+    <string name="menu_other_searchSite">在網頁中搜尋</string>
+    <string name="menu_other_info">關於 \"FREE Browser\"</string>
+
+    <!-- Dialog -->
+    <string name="dialog_title_hint">標題：</string>
+    <string name="dialog_URL_hint">URL：</string>
+    <string name="dialog_extension_hint">副檔名（例如：\".jpg\"）：</string>
+    <string name="dialog_sign_in_username">使用者名稱</string>
+    <string name="dialog_sign_in_password">密碼</string>
+    <string name="dialog_title_download">下載此檔案？</string>
+    <string name="dialog_content_resubmission">重新提交您的資料？</string>
+    <string name="dialog_content_ssl_error">此網站的憑證不受信任。仍然繼續？</string>
+
+    <string name="dialog_sortName">依名稱排序</string>
+    <string name="dialog_sortIcon">依圖示排序</string>
+    <string name="dialog_sortDate">依時間排序</string>
+
+    <!-- Settings -->
+    <string name="setting_label">設定</string>
+
+    <!-- browser setting -->
+    <string name="setting_title_browser">瀏覽器設定</string>
+    <string name="setting_title_start_control">Start Control</string>
+
+    <string name="setting_title_search_engine">搜尋引擎</string>
+    <string name="setting_summary_search_engine_google">Google</string>
+    <string name="setting_summary_search_engine_duckduckgo">DuckDuckGo</string>
+    <string name="setting_summary_search_engine_startpage">StartPage</string>
+    <string name="setting_summary_search_engine_bing">Bing</string>
+    <string name="setting_summary_search_engine_baidu">Baidu</string>
+    <string name="setting_summary_search_engine_startpage_de">StartPage (de)</string>
+    <string name="setting_summary_search_engine_searx">Searx</string>
+    <string name="setting_summary_search_engine_qwant">Qwant</string>
+    <string name="setting_summary_search_engine_ecosia">Ecosia</string>
+    <string name="setting_summary_search_engine_metager">Metager</string>
+
+    <string name="setting_title_font">字型大小</string>
+
+    <string name="setting_title_dom">DOM 儲存空間</string>
+    <string name="setting_title_dom_whitelist">DOM 白名單</string>
+
+    <string name="setting_title_save_data">要求「儲存資料」</string>
+
+
+    <!-- browser start -->
+    <string name="setting_title_images">圖片</string>
+    <string name="setting_title_cookie">Cookies</string>
+    <string name="setting_summary_cookie_delete">如果啟用，所有的 Cookies 將會被刪除。信任網站的 Cookies 也是。</string>
+    <string name="setting_title_whitelistCookie">Cookie 白名單</string>
+
+    <string name="setting_title_javascript">JavaScript</string>
+    <string name="setting_title_whitelistJS">JavaScript 白名單</string>
+
+    <string name="setting_title_adblock">AdBlock</string>
+    <string name="setting_title_adblockHost">封鎖內容</string>
+
+    <string name="setting_title_location">地理位置</string>
+
+    <string name="setting_title_history">歷史紀錄</string>
+
+    <string name="setting_title_autofill">表單資料</string>
+
+
+    <!-- browser clear -->
+    <string name="data_summary">所有的檔案將會被匯出到您的 SD 卡的 \"Documents/browser_backup/\" 目錄中。</string>
+    <string name="clear_title_quit">在應用程式退出時清除</string>
+    <string name="clear_title_cache">清除快取</string>
+    <string name="clear_title_cookie">清除 Cookies</string>
+    <string name="clear_title_history">清除歷史紀錄</string>
+    <string name="localData">清除在裝置上儲存的資料</string>
+
+    <string name="clear_title_deleteDatabase">刪除資料庫</string>
+    <string name="clear_summary_deleteDatabase">刪除整個資料庫（開始頁面、書籤、歷史紀錄以及所有白名單）。</string>
+
+
+    <!-- App setting -->
+    <string name="setting_title_app">應用程式設定</string>
+    <string name="setting_title_ui">行為/使用者介面</string>
+    <string name="setting_title_data">備份</string>
+
+    <string name="setting_filter">書籤過濾器</string>
+
+    <string name="setting_title_fav">開始頁面</string>
+    <string name="setting_title_reload">向下滑動以重新載入</string>
+
+    <string name="setting_title_searchEngine">自訂搜尋引擎</string>
+
+    <string name="setting_title_userAgent">自訂使用者代理</string>
+    <string name="setting_enter_userAgent">輸入使用者代理</string>
+
+    <string name="setting_title_fingerPrint">指紋保護</string>
+    <string name="setting_title_whitelist">例外</string>
+    <string name="setting_tab">Tab</string>
+    <string name="setting_theme">主題</string>
+    <string name="setting_theme_system">系統</string>
+
+    <!-- App behavior -->
+    <string name="setting_title_hideToolbar">隱藏工具列</string>
+
+    <string name="setting_title_behavior">行為</string>
+
+    <string name="setting_title_confirm_exit">確認退出瀏覽器</string>
+
+    <string name="setting_title_confirm_tab_close">確認關閉分頁</string>
+
+    <string name="setting_gestures">手勢</string>
+
+    <string name="setting_title_reopenLastTab">重新開啟最後的分頁</string>
+
+    <!-- gestures -->
+    <string name="setting_title_toolbar">工具列</string>
+    <string name="setting_title_toolbar_buttons">工具列按鈕</string>
+    <string name="setting_gesture_up">向上滑動</string>
+    <string name="setting_gesture_down">向下滑動</string>
+    <string name="setting_gesture_left">向左滑動</string>
+    <string name="setting_gesture_right">向右滑動</string>
+    <string name="setting_gesture_01">無</string>
+    <string name="setting_gesture_02">下一頁</string>
+    <string name="setting_gesture_03">上一頁</string>
+    <string name="setting_gesture_04">捲動到頂部</string>
+    <string name="setting_gesture_05">捲動到底部</string>
+    <string name="setting_gesture_06">切換到左側分頁</string>
+    <string name="setting_gesture_07">切換到右側分頁</string>
+    <string name="setting_gesture_08">顯示總覽</string>
+    <string name="setting_gesture_09">開啟新分頁</string>
+    <string name="setting_gesture_10">關閉分頁</string>
+
+    <!-- Data -->
+    <string name="setting_title_export_bookmarks">匯出書籤為 HTML 檔案</string>
+    <string name="setting_title_import_bookmarks">匯入書籤</string>
+    <string name="setting_title_export_appData">匯出應用程式資料</string>
+    <string name="setting_title_import_appData">匯入應用程式資料</string>
+    <string name="setting_summary_export_appData">匯出整個資料庫與您的個人設定。</string>
+    <string name="title_appData">應用程式資料</string>
+    <string name="hint_database">這將刪除目前的資料。是否繼續？</string>
+    <string name="settings_data_restore">還原</string>
+
+
+    <!-- Others setting -->
+    <string name="setting_title_others">其他</string>
+
+    <!-- Toast -->
+    <string name="toast_add_whitelist_successful">成功地新增了域名</string>
+    <string name="toast_copy_successful">複製成功</string>
+    <string name="toast_delete_successful">刪除成功</string>
+    <string name="toast_domain_already_exists">域名已經存在</string>
+    <string name="toast_input_empty">您沒有輸入任何內容</string>
+    <string name="toast_invalid_domain">無效的域名</string>
+    <string name="toast_webview_forward">無法載入下一個網站</string>
+    <string name="toast_permission_sdCard">\"FREE Browser\" 需要授權以「讀寫您的儲存空間」。此為下載檔案、螢幕截圖與製作您的資料備份所需的。</string>
+    <string name="toast_restart">您必須重新啟動 \"FREE Browser\" 以應用變更。現在關閉？</string>
+    <string name="toast_quit">您是否想要退出 \"FREE Browser\"？</string>
+    <string name="toast_quit_TAB">您是否想要關閉此分頁？</string>
+    <string name="toast_downloadComplete">下載完成。開啟檔案管理器？</string>
+    <string name="toast_unsecured">網站使用不安全的連接（\"http\"）。嘗試安全的連接（\"https\"）？</string>
+    <string name="toast_backup">備份資料？這將會覆寫舊的備份。</string>
+
+    <!-- Whitelist -->
+    <string name="whitelist_menu_clear">清除</string>
+    <string name="whitelist_edit_hint">域名</string>
+    <string name="whitelist_add">新增</string>
+
+    <string name="menu_mobileView">行動版模式檢視</string>
+    <string name="menu_desktopView">桌面版模式檢視</string>
+    <string name="menu_dayView">日間模式檢視</string>
+    <string name="menu_nightView">夜間模式檢視</string>
+    <string name="error_allow_camera">允許使用攝影機</string>
+    <string name="hint_DRM_Media">允許播放 DRM 保護的媒體？</string>
+    <string name="setting_userScript" translatable="false">Greasemonkey Scripts</string>
+
+    <string name="summary_userscript" translatable="false">\@match \u2714 \@name \u2714 \@run-at \u2714 \n\@required \u2716 \@include \u2716 \@exclude \u2716 \n\@grant \u2716</string>
+    <string name="error_allow_microphone">允許使用麥克風</string>
+    <string name="error_missing_permission">所需的授權：</string>
+    <string name="dialog_StarOnGitHub">您是否喜歡此應用程式？請在 GitHub 給星，或通過 PayPal 給開發者買杯咖啡。</string>
+    <string name="dialog_Later_button">也許稍後</string>
+    <string name="toast_delete">刪除檔案並再次嘗試</string>
+    <string name="metered_connection">計量付費連線</string>
+    <string name="setting_network">網路設定</string>
+    <string name="summary_deny_cookie_banners">嘗試使用 Mozilla 的 Cookie 橫幅規則自動地拒絕 Cookie 橫幅</string>
+    <string name="setting_title_deny_cookie_banners">Cookie 橫幅攔截器</string>
+</resources>

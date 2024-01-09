@@ -266,13 +266,20 @@ public class NinjaWebView extends WebView implements AlbumController {
         album.setBrowserController(browserController);
     }
 
-    public synchronized HashMap<String, String> getRequestHeaders() {
+    public synchronized HashMap<String, String> getRequestHeaders(String url) {
         HashMap<String, String> requestHeaders = new HashMap<>();
         requestHeaders.put("DNT", "1");
         //  Server-side detection for GlobalPrivacyControl
         requestHeaders.put("Sec-GPC","1");
         requestHeaders.put("X-Requested-With","com.duckduckgo.mobile.android");
         requestHeaders.put("Save-Data", "on");
+        if (getUrl()!= null && url.startsWith(BrowserUnit.URL_SCHEME_HTTPS)){
+            try {
+                if (AdBlock.getDomain(getUrl()).endsWith(AdBlock.getDomain(url)) || AdBlock.getDomain(url).endsWith(AdBlock.getDomain(getUrl()))){
+                    requestHeaders.put("Referer", getUrl());  //add Referer when within same domain, parent domain, or subdomain and protocol is https://
+                }
+            } catch (URISyntaxException ignored) { }
+        }
         return requestHeaders;
     }
 
@@ -295,7 +302,7 @@ public class NinjaWebView extends WebView implements AlbumController {
         imm.hideSoftInputFromWindow(this.getWindowToken(), 0);
         resetFavicon();
         stopped=false;
-        super.loadUrl(BrowserUnit.queryWrapper(context, url.trim()), getRequestHeaders());
+        super.loadUrl(BrowserUnit.queryWrapper(context, url.trim()), getRequestHeaders(url));
     }
 
     @Override

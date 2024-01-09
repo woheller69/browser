@@ -66,6 +66,7 @@ public class BrowserUnit {
     private static final String URL_SCHEME_FTP = "ftp://";
     public static final String URL_SCHEME_INTENT = "intent://";
     public static final String URL_SCHEME_VIEW_SOURCE = "view-source:";
+    public static final String URL_SCHEME_BLOB = "blob:";
 
     public static boolean isURL(String url) {
 
@@ -181,7 +182,7 @@ public class BrowserUnit {
             } else {
                 try {
                     Activity activity = (Activity) context;
-                    if (url.startsWith("blob:")) {
+                    if (url.startsWith(URL_SCHEME_BLOB)) {
                         if (BackupUnit.checkPermissionStorage(context)) {
                             webview.evaluateJavascript(JavaScriptInterface.getBase64StringFromBlobUrl(url, finalFilename, mimeType), null);
                         } else BackupUnit.requestPermission(activity);

@@ -509,6 +509,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             if (data.startsWith(BrowserUnit.URL_SCHEME_MAIL_TO)) {
                 Intent mailintent = new Intent(Intent.ACTION_VIEW, Uri.parse(data));
                 ninjaWebView.getContext().startActivity(mailintent);
+            } else if (data.startsWith(BrowserUnit.URL_SCHEME_BLOB)){
+                BrowserUnit.download(context, ninjaWebView, data,null,null);
             } else {
                 addAlbum(getString(R.string.app_name), data, true, null);
             }
@@ -1481,11 +1483,13 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         gridList.add(gridList.size(), item_01);
         gridList.add(gridList.size(), item_02);
         gridList.add(gridList.size(), item_03);
+        gridList.add(gridList.size(), item_04);
 
-        Pattern compiledPattern = Pattern.compile("\\.[^.]{2,8}$");
-        Matcher matcher = compiledPattern.matcher(url);
-        if ((type != SRC_ANCHOR_TYPE) || matcher.find())
-            gridList.add(gridList.size(), item_04);  // in case of SRC_ANCHOR_TYPE show "save as" only if url ends with a suffix that has a dot followed by 2 to 8 more characters
+        //Removed because downloads do not work without referer in some cases:
+        //Pattern compiledPattern = Pattern.compile("\\.[^.]{2,8}$");
+        //Matcher matcher = compiledPattern.matcher(url);
+        //if ((type != SRC_ANCHOR_TYPE) || matcher.find())
+        //    gridList.add(gridList.size(), item_04);  // in case of SRC_ANCHOR_TYPE show "save as" only if url ends with a suffix that has a dot followed by 2 to 8 more characters
 
         GridView menu_grid = dialogView.findViewById(R.id.menu_grid);
         GridAdapter gridAdapter = new GridAdapter(context, gridList);

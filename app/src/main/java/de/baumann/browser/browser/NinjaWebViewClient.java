@@ -10,6 +10,7 @@ import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.net.http.SslError;
+import android.os.Handler;
 import android.os.Message;
 
 import androidx.appcompat.app.AlertDialog;
@@ -87,7 +88,7 @@ public class NinjaWebViewClient extends WebViewClient {
 
         if (sp.getBoolean("sp_deny_cookie_banners",false)){ //click opt-out if possible
             String bannerBlockScript = BannerBlock.getBannerBlockScriptPageFinished();
-            if (bannerBlockScript != null) view.evaluateJavascript(bannerBlockScript,null);
+            if (bannerBlockScript != null) {new Handler().postDelayed(() -> view.evaluateJavascript(bannerBlockScript,null), 50);}
         }
 
         //inject printing support via JavaScriptInterface

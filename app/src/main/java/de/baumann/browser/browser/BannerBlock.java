@@ -145,8 +145,8 @@ public class BannerBlock {
     public static String getBannerBlockScriptPageStarted() {
         if (configString.equals("")) return null;
         else {
-            String bannerBlockScript = "var configString = '" + configString + "';\n";
-            bannerBlockScript = bannerBlockScript +
+            String bannerBlockScript =
+                    "        var configString = '" + configString + "';\n" +
                     "        var config = JSON.parse(configString);\n" +
                     "        var currentDomain = window.location.hostname;\n" +
                     "        function isSubdomain(subdomain, domain) {\n" +
@@ -159,7 +159,7 @@ public class BannerBlock {
                     "                  if (item.cookies) {\n"+
                     "                      var optOutCookies = item.cookies.optOut;\n"+
                     "                      if (optOutCookies && Array.isArray(optOutCookies) && optOutCookies.length > 0) {\n"+
-                    "                          for (var k = 0; k < optOutCookies.length; k++) { \n"+
+                    "                          for (var k = 0; k < optOutCookies.length; k++) {\n"+
                     "                              var cookie = optOutCookies[k];\n"+
                     "                              document.cookie = cookie.name + \"=\" + cookie.value + \"; path=/; domain=\" + currentDomain;\n"+
                     "                          }\n"+
@@ -172,22 +172,36 @@ public class BannerBlock {
     }
 
     public static String getBannerBlockScriptPageFinished() {
+        String exceptionIDs = "[\"borlabs\"]";  //Exceptions where we need to check if the button has an area before clicking to avoid endless loop
         if (configString.equals("")) return null;
         else {
-            String bannerBlockScript = "var configString = '" + configString + "';\n";
-            bannerBlockScript = bannerBlockScript +
+            String bannerBlockScript =
+                    "        var configString = '" + configString + "';\n" +
                     "        var config = JSON.parse(configString);\n" +
+                    "        var exceptionIds = '" + exceptionIDs + "';\n" +
                     "        var currentDomain = window.location.hostname;\n" +
                     "        // isSubdomain is used to check if 'subdomain' is a subdomain of 'domain'\n" +
                     "        function isSubdomain(subdomain, domain) {\n" +
                     "            return subdomain.endsWith(\".\" + domain) || subdomain === domain;\n" +
                     "        }\n" +
                     "        // createOptOutHandler is used to create a closure that captures the current value of item for each iteration\n" +
-                    "        function createOptOutHandler(item) { \n" +
+                    "        function createOptOutHandler(item) {\n" +
                     "           return function() {\n" +
                     "               var optOutElements = document.querySelectorAll(item.click.optOut);\n" +
                     "               for (var j = 0; j < optOutElements.length; j++) {\n" +
                     "                   optOutElements[j].click();\n" +
+                    "               }\n" +
+                    "           };\n" +
+                    "        }\n" +
+                    "        function createOptOutHandlerException(item) {\n" +
+                    "           return function() {\n" +
+                    "               var optOutElements = document.querySelectorAll(item.click.optOut);\n" +
+                    "               for (var j = 0; j < optOutElements.length; j++) {\n" +
+                    "                   var rect = optOutElements[j].getBoundingClientRect();\n" +
+                    "                   // Check if the button has an area > 0 \n" +
+                    "                   if (rect.width * rect.height > 0 ){\n"+
+                    "                       optOutElements[j].click();\n" +
+                    "                   }\n" +
                     "               }\n" +
                     "           };\n" +
                     "        }\n" +
@@ -197,11 +211,17 @@ public class BannerBlock {
                     "            // Check if the current domain is in the list of specified domains or a subdomain \n" +
                     "            if (item.domains.length === 0 || item.domains.some(domain => isSubdomain(currentDomain, domain))) {\n" +
                     "               // If there are clickable items, proceed with the presence check\n" +
-                    "               if (item.click) { \n" +
+                    "               if (item.click) {\n" +
                     "                   var presenceElements = document.querySelectorAll(item.click.presence);\n" +
                     "                   if (presenceElements.length > 0) {\n" +
-                    "                       // Introduce a short delay before clicking the opt-out button\n" +
-                    "                       setTimeout(createOptOutHandler(item), 300);\n" +
+                    "                       console.log(\"CookieBannerRuleID:\"+item.id);\n" +
+                    "                       if (exceptionIds.includes(item.id)) {\n" +
+                    "                           // Introduce a short delay before clicking the opt-out button, but only click if button has an area\n" +
+                    "                           setTimeout(createOptOutHandlerException(item), 250);\n" +
+                    "                       } else {\n" +
+                    "                           // Introduce a short delay before clicking the opt-out button\n" +
+                    "                           setTimeout(createOptOutHandler(item), 250);\n" +
+                    "                       }\n" +
                     "                   }\n" +
                     "               }\n" +
                     "            }\n" +

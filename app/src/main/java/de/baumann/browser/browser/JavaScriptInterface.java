@@ -42,7 +42,7 @@ public class JavaScriptInterface {
     @JavascriptInterface
     public void getBase64FromBlobData(String filename, String mimeType, String base64Data) throws IOException {
         File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), filename);
-        byte[] base64AsBytes = Base64.decode(base64Data.replaceFirst("^data:"+mimeType+";base64,", ""), 0);
+        byte[] base64AsBytes = Base64.decode(base64Data.substring(base64Data.indexOf("base64,") + "base64,".length()), 0);
         FileOutputStream fos = new FileOutputStream(file);
         fos.write(base64AsBytes);
         fos.flush();

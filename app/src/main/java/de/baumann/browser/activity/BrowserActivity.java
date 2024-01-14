@@ -22,6 +22,7 @@ import androidx.annotation.OptIn;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.PopupMenu;
+import androidx.core.content.ContextCompat;
 import androidx.preference.PreferenceManager;
 
 import android.os.Handler;
@@ -38,6 +39,9 @@ import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.progressindicator.CircularProgressIndicator;
+import com.google.android.material.shape.CornerFamily;
+import com.google.android.material.shape.MaterialShapeDrawable;
+import com.google.android.material.shape.ShapeAppearanceModel;
 import com.google.android.material.tabs.TabLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -561,7 +565,15 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         });
 
         bottomAppBar = findViewById(R.id.bottomAppBar);
-        bottomAppBar.setTitle(getString(R.string.app_name));
+
+        ShapeAppearanceModel shapeAppearanceModel = new ShapeAppearanceModel()
+                .toBuilder()
+                .setTopLeftCorner(CornerFamily.ROUNDED, TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,24, getResources().getDisplayMetrics()))
+                .setTopRightCorner(CornerFamily.ROUNDED, TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,24, getResources().getDisplayMetrics()))
+                .build();
+        MaterialShapeDrawable materialShapeDrawable = new MaterialShapeDrawable(shapeAppearanceModel);
+        materialShapeDrawable.setFillColor(ContextCompat.getColorStateList(this, R.color.primaryDarkColor));
+        bottomAppBar.setBackground(materialShapeDrawable);
 
         badgeDrawable = BadgeDrawable.create(context);
         badgeDrawable.setBadgeGravity(BadgeDrawable.TOP_END);
@@ -574,11 +586,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         omnibox_overflow.setOnLongClickListener(v -> {
             show_dialogFastToggle();
             return false;
-        });
-
-        ImageButton omnibox_refresh = findViewById(R.id.omnibox_refresh);
-        omnibox_refresh.setOnClickListener(v -> {
-            reloadPage();
         });
 
         omniBox_text.setOnTouchListener(new SwipeTouchListener(context) {
@@ -1297,13 +1304,16 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     @Override
     public synchronized void updateProgress(int progress) {
         CircularProgressIndicator progressBar = findViewById(R.id.main_progress_bar);
-        progressBar.setOnClickListener(v -> ninjaWebView.stopLoading());
         progressBar.setProgressCompat(progress, true);
+        ImageButton omnibox_refresh = findViewById(R.id.omnibox_refresh);
+
         if (progress != BrowserUnit.LOADING_STOPPED) updateOmniBox();
         if (progress < BrowserUnit.PROGRESS_MAX) {
             progressBar.setVisibility(View.VISIBLE);
+            omnibox_refresh.setOnClickListener(v -> ninjaWebView.stopLoading());
         } else {
             progressBar.setVisibility(View.GONE);
+            omnibox_refresh.setOnClickListener(v -> reloadPage());
         }
     }
 

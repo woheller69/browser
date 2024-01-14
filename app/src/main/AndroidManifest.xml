@@ -29,7 +29,7 @@
         android:largeHeap="true"
         android:hardwareAccelerated="true"
         android:usesCleartextTraffic="true"
-        android:resizeableActivity="false"
+        android:resizeableActivity="true"
         tools:ignore="GoogleAppIndexingWarning"
         android:supportsRtl="true"
         android:requestLegacyExternalStorage="true">

@@ -190,7 +190,7 @@
 
 
     <!-- Others setting -->
-    <string name="setting_title_others">其他</string>
+    <string name="setting_title_others">其它</string>
 
     <!-- Toast -->
     <string name="toast_add_whitelist_successful">成功地新增了域名</string>

@@ -73,7 +73,7 @@
 
     <!-- browser setting -->
     <string name="setting_title_browser">瀏覽器設定</string>
-    <string name="setting_title_start_control">Start Control</string>
+    <string name="setting_title_start_control">啟動控制</string>
 
     <string name="setting_title_search_engine">搜尋引擎</string>
     <string name="setting_summary_search_engine_google">Google</string>

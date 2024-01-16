@@ -89,7 +89,7 @@
 
     <string name="setting_title_font">字型大小</string>
 
-    <string name="setting_title_dom">DOM 儲存空間</string>
+    <string name="setting_title_dom">DOM 儲存</string>
     <string name="setting_title_dom_whitelist">DOM 白名單</string>
 
     <string name="setting_title_save_data">要求「儲存資料」</string>
@@ -143,7 +143,7 @@
 
     <string name="setting_title_fingerPrint">指紋保護</string>
     <string name="setting_title_whitelist">例外</string>
-    <string name="setting_tab">Tab</string>
+    <string name="setting_tab">分頁</string>
     <string name="setting_theme">主題</string>
     <string name="setting_theme_system">系統</string>
 

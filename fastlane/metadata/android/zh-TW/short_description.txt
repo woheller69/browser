@@ -1,0 +1,1 @@
+支援 Greasemonkey 樣式腳本與 Cookie 橫幅攔截器的隱私瀏覽器

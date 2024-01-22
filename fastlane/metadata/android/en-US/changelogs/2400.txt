@@ -1,0 +1,4 @@
+Improve GUI
+Reload button also stops loading
+Allow resizing of app (e.g. for split screen)
+Bugfix

@@ -66,20 +66,26 @@ public class ScriptUnit {
 
     @NonNull
     private static String getRegex(String pattern) {
-        String regex = pattern
-                .replace(".", "\\.")
-                .replace("*://", "(http|https)://")
-                .replace("*", ".*")
-                .replace("?", "\\?")
-                .replace("/", "\\/");
+        String regex;
+        if (pattern.startsWith("/") && pattern.endsWith("/")){
+            regex = pattern.substring(1, pattern.length() - 1);
+            return regex;
+        } else {
+            regex = pattern
+                    .replace(".", "\\.")
+                    .replace("*://", "(http|https)://")
+                    .replace("*", ".*")
+                    .replace("?", "\\?")
+                    .replace("/", "\\/");
 
-        // Path must contain at least a forward slash. The slash by itself matches any path, as if it were followed by a wildcard (/*).
-        // If the pattern ends with /, add an asterisk after it
-        // https://developer.chrome.com/docs/extensions/develop/concepts/match-patterns?hl=en
-        if (regex.endsWith("/")) {
-            regex += ".*";
+            // Path must contain at least a forward slash. The slash by itself matches any path, as if it were followed by a wildcard (/*).
+            // If the pattern ends with /, add an asterisk after it
+            // https://developer.chrome.com/docs/extensions/develop/concepts/match-patterns?hl=en
+            if (regex.endsWith("/")) {
+                regex += ".*";
+            }
+            return regex;
         }
-        return regex;
     }
 
     private static boolean matchesPattern(Context context, String url, String pattern) {

@@ -1,0 +1,3 @@
+Support for regular expressions in @match
+Support for custom domains in AdBlock
+Icon colors modified

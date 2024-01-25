@@ -56,9 +56,16 @@
         <ListPreference
             android:key="ab_hosts"
             android:defaultValue="https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts"
-            android:title="@string/setting_title_adblockHost"
+            android:title="StevenBlack"
             android:entries="@array/setting_entries_adBlock"
             android:entryValues="@array/setting_values_adBlock"/>
+
+        <org.woheller69.preferences.EditTextSwitchPreference
+            android:selectable="true"
+            app:useSimpleSummaryProvider="true"
+            android:key="sp_custom_host_list"
+            app:SwitchKey="customHostListSwitch"
+            android:title="@string/setting_title_custom_host_list" />
 
     </PreferenceCategory>
 

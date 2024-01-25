@@ -183,5 +183,6 @@
     <string name="setting_network">Netzwerkeinstellungen</string>
     <string name="summary_deny_cookie_banners">Versuche, Cookie Banner mit Mozilla\'s Cookie Banner Rules automatisch abzulehnen</string>
     <string name="setting_title_deny_cookie_banners">Cookie Banner Blocker</string>
+    <string name="setting_title_custom_host_list">Zusätzliche Domains</string>
     <!-- License changelog -->
 </resources>

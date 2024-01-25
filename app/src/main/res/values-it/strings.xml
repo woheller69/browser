@@ -183,5 +183,6 @@
     <string name="setting_network">Impostazioni di rete</string>
     <string name="summary_deny_cookie_banners">Try to automatically deny cookie banners using Mozilla\'s Cookie Banner Rules</string>
     <string name="setting_title_deny_cookie_banners">Blocco banner cookie</string>
+    <string name="setting_title_custom_host_list">Domini aggiuntivi</string>
     <!-- License changelog -->
 </resources>

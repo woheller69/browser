@@ -77,7 +77,7 @@ public class Fragment_settings_Start extends PreferenceFragmentCompat implements
 
     @Override
     public void onSharedPreferenceChanged(final SharedPreferences sp, String key) {
-        if (key.equals("ab_hosts")) {
+        if (key.equals("ab_hosts") || key.equals("sp_ad_block") || key.equals("customHostListSwitch") || key.equals("sp_custom_host_list") ) {
             AdBlock.downloadHosts(getActivity());
         } else if (key.equals("sp_deny_cookie_banners")) {
             if (sp.getBoolean("sp_deny_cookie_banners",false)) BannerBlock.downloadBanners(getActivity());

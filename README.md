@@ -107,6 +107,7 @@ If defined as "document-start" scripts run in onPageStarted() of Android WebView
 otherwise scripts run in onPageFinished.
 
 @match: At least one tag required. E.g. ```@match https://*/``` to match all https urls
+If the expression after @match starts and ends with "/" it is treated as a regex.
 
 Other tags are **NOT** supported at the moment, e.g.
 - @include
@@ -117,7 +118,7 @@ Other tags are **NOT** supported at the moment, e.g.
 ### Browser Settings
 
 In this section you can define your favourite start page, search engine, etc.
-You can select your favourite StevenBlack AdBlock list.
+You can select your favourite StevenBlack AdBlock list. You can also enter list of additional domains (one domain per line) which should be blocked.
 And this is the place to manage exceptions for cookies, javascript, and DOM storage.
 
 

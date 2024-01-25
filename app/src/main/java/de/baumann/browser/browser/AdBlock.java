@@ -73,10 +73,20 @@ public class AdBlock {
                 BufferedReader reader = new BufferedReader(in) ;
                 String line;
                 while ((line = reader.readLine()) != null) {
-                    if (line.startsWith("#"))  continue;
+                    if (line.startsWith("#") || line.isBlank())  continue;
                     hosts.add(line.toLowerCase(locale));
                 }
                 in.close();
+                SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
+                if (sp.getBoolean("customHostListSwitch", false)){
+                    String customHostsList = sp.getString("sp_custom_host_list","");
+                    Scanner scanner = new Scanner(customHostsList);
+                    while (scanner.hasNextLine()){
+                        line = scanner.nextLine();
+                        if (line.startsWith("#") || line.isBlank())  continue;
+                        hosts.add(line.toLowerCase(locale));
+                     }
+                }
             } catch (IOException i) {
                 Log.w("browser", "Error loading adBlockHosts", i);
             }
@@ -133,11 +143,13 @@ public class AdBlock {
                 File outfile = new File(context.getDir("filesdir", Context.MODE_PRIVATE) + "/"+FILE);
                 FileWriter out = new FileWriter(outfile);
                 String line;
+                boolean foundStart = false;
                 while ((line = reader.readLine()) != null) {
+                    if (line.startsWith("# Start StevenBlack")) foundStart = true;
                     if (line.startsWith("0.0.0.0 ")) {
                         line=line.substring(8);
                     }
-                    out.write(line+"\n");
+                    if (foundStart || line.startsWith("#")) out.write(line+"\n");
                 }
                 in.close();
                 out.close();

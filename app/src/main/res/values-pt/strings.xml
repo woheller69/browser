@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <resources>
+
     <!-- App -->
+																	  
     <string name="app_ok">OK</string>
     <string name="app_cancel">Cancelar</string>
     <string name="app_done">Feito</string>
     <string name="app_error">Erro</string>
-    <string name="list_empty">Lista está vazia</string>
+    <string name="list_empty">Lista vazia</string>
     <string name="album_title_bookmarks">Marcadores</string>
     <string name="album_title_tab">Separadores abertos</string>
     <string name="search_hint">Pesquisar</string>
+
     <string name="color_red">Vermelho</string>
     <string name="color_pink">Rosa</string>
     <string name="color_purple">Púrpura</string>
@@ -20,30 +24,36 @@
     <string name="color_orange">Laranja</string>
     <string name="color_brown">Castanho</string>
     <string name="color_grey">Cinzento</string>
+
     <!-- Menu -->
     <string name="main_menu_tabPreview">Abrir pré-visualização</string>
     <string name="main_menu_new_tab">Novo separador (secundário)</string>
     <string name="main_menu_new_tabOpen">Novo separador (principal)</string>
     <string name="main_omnibox_input_hint">Pesquise ou digite um endereço</string>
     <string name="menu_open_with">Abrir ligação com…</string>
+
     <string name="menu_quit">Sair</string>
-    <string name="menu_openFav">Abrir favorito</string>
-    <string name="menu_delete">Apagar</string>
+    <string name="menu_openFav">Abrir marcador</string>
+    <string name="menu_delete">Eliminar</string>
     <string name="menu_edit">Editar</string>
     <string name="menu_closeTab">Fechar separador</string>
     <string name="menu_download">Abrir descargas</string>
-    <string name="menu_fav">Guardar como favorito</string>
+    <string name="menu_fav">Guardar como marcador</string>
     <string name="menu_sc">Atalho no ecrã inicial</string>
     <string name="menu_sort">Ordenar por…</string>
     <string name="menu_filter">Filtrar por…</string>
+
     <string name="menu_share_link">Partilhar ligação</string>
+
     <string name="menu_save_home">Guardar em Início</string>
     <string name="menu_save_bookmark">Guardar como marcador</string>
     <string name="menu_save_as">Guardar como…</string>
     <string name="menu_save_pdf">Guardar como PDF</string>
     <string name="menu_shareClipboard">Copiar para a área de transferência</string>
+
     <string name="menu_other_searchSite">Pesquisar no site</string>
     <string name="menu_other_info">Acerca de \"FREE Browser\"</string>
+
     <!-- Dialog -->
     <string name="dialog_title_hint">Título:</string>
     <string name="dialog_URL_hint">URL:</string>
@@ -52,15 +62,19 @@
     <string name="dialog_sign_in_password">Palavra-passe</string>
     <string name="dialog_title_download">Descarregar ficheiro?</string>
     <string name="dialog_content_resubmission">Reenviar dados?</string>
-    <string name="dialog_content_ssl_error">O certificado deste sítio web não é fiável. Continuar?</string>
+    <string name="dialog_content_ssl_error">O certificado deste site não é fiável. Continuar?</string>
+
     <string name="dialog_sortName">Ordenar por nome</string>
     <string name="dialog_sortIcon">Ordenar por ícone</string>
     <string name="dialog_sortDate">Ordenar por data</string>
+
     <!-- Settings -->
     <string name="setting_label">Definições</string>
+
     <!-- browser setting -->
     <string name="setting_title_browser">Definições do navegador</string>
     <string name="setting_title_start_control">Controlo de arranque</string>
+
     <string name="setting_title_search_engine">Motor de pesquisa</string>
     <string name="setting_summary_search_engine_google">Google</string>
     <string name="setting_summary_search_engine_duckduckgo">DuckDuckGo</string>
@@ -72,22 +86,34 @@
     <string name="setting_summary_search_engine_qwant">Qwant</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_summary_search_engine_metager">Metager</string>
+
     <string name="setting_title_font">Tamanho da letra</string>
+
     <string name="setting_title_dom">Armazenamento DOM</string>
     <string name="setting_title_dom_whitelist">Lista branca DOM</string>
+
     <string name="setting_title_save_data">Solicitar \'Save Data\'</string>
+
+
     <!-- browser start -->
     <string name="setting_title_images">Imagens</string>
     <string name="setting_title_cookie">Cookies</string>
-    <string name="setting_summary_cookie_delete">Se ativar a opção, todos os cookies serão apagados. Os cookies de sites fiáveis também serão apagados.</string>
+    <string name="setting_summary_cookie_delete">Se ativar a opção, todos os cookies serão removidos. Os cookies de sites fiáveis também serão.</string>
     <string name="setting_title_whitelistCookie">Cookies permitidos</string>
+
     <string name="setting_title_javascript">JavaScript</string>
     <string name="setting_title_whitelistJS">Lista branca JavaScript</string>
+
     <string name="setting_title_adblock">AdBlock</string>
     <string name="setting_title_adblockHost">Conteúdo bloqueado</string>
+
     <string name="setting_title_location">Localização</string>
+
     <string name="setting_title_history">Histórico</string>
+
     <string name="setting_title_autofill">Dados do formulário</string>
+
+
     <!-- browser clear -->
     <string name="data_summary">Todos os ficheiros serão exportados para o diretório \"Documents/browser_backup /\" do seu cartão SD.</string>
     <string name="clear_title_quit">Limpar ao sair da aplicação</string>
@@ -95,30 +121,45 @@
     <string name="clear_title_cookie">Limpar cookies</string>
     <string name="clear_title_history">Limpar histórico</string>
     <string name="localData">Limpar dados armazenados no dispositivo</string>
-    <string name="clear_title_deleteDatabase">Apagar base de dados</string>
-    <string name="clear_summary_deleteDatabase">Apaga toda a base de dados (página inicial, marcadores, histórico e sites permitidos).</string>
+
+    <string name="clear_title_deleteDatabase">Eliminar base de dados</string>
+    <string name="clear_summary_deleteDatabase">Elimina toda a base de dados (página inicial, marcadores, histórico e sites permitidos).</string>
+
+
     <!-- App setting -->
     <string name="setting_title_app">Definições</string>
     <string name="setting_title_ui">Comportamento/Interface</string>
     <string name="setting_title_data">Backup</string>
+
     <string name="setting_filter">Filtro de marcadores</string>
-    <string name="setting_title_fav">Favorito</string>
-    <string name="setting_title_reload">Deslizar abaixo para recarregar</string>
+
+    <string name="setting_title_fav">Pagina inicial</string>
+    <string name="setting_title_reload">Deslize abaixo para recarregar</string>
+
     <string name="setting_title_searchEngine">Motor de pesquisa personalizado</string>
+
     <string name="setting_title_userAgent">Agente personalizado</string>
-    <string name="setting_enter_userAgent">Agente personalizado</string>
+    <string name="setting_enter_userAgent">Indique o agente personalizado</string>
+
     <string name="setting_title_fingerPrint">Proteção com impressão digital</string>
     <string name="setting_title_whitelist">Exceções</string>
     <string name="setting_tab">Separador</string>
     <string name="setting_theme">Tema</string>
     <string name="setting_theme_system">Sistema</string>
+
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">Ocultar barra de ferramentas</string>
+
     <string name="setting_title_behavior">Comportamento</string>
+
     <string name="setting_title_confirm_exit">Confirmar ao sair</string>
+
     <string name="setting_title_confirm_tab_close">Confirmar fecho do separador</string>
+
     <string name="setting_gestures">Gestos</string>
+
     <string name="setting_title_reopenLastTab">Reabrir último separador</string>
+
     <!-- gestures -->
     <string name="setting_title_toolbar">Barra de ferramentas</string>
     <string name="setting_title_toolbar_buttons">Botões da barra de ferramentas</string>
@@ -136,21 +177,25 @@
     <string name="setting_gesture_08">Mostrar Vista global</string>
     <string name="setting_gesture_09">Abrir novo separador</string>
     <string name="setting_gesture_10">Fechar separador</string>
+
     <!-- Data -->
     <string name="setting_title_export_bookmarks">Exportar marcadores para HTML</string>
     <string name="setting_title_import_bookmarks">Importar marcadores</string>
     <string name="setting_title_export_appData">Exportar dados da aplicação</string>
     <string name="setting_title_import_appData">Importar dados da aplicação</string>
-    <string name="setting_summary_export_appData">Exportar base de dados e definições personalizadas.</string>
+    <string name="setting_summary_export_appData">Exportar base de dados e definições personalizadas</string>
     <string name="title_appData">Dados da aplicação</string>
-    <string name="hint_database">Isto irá apagar os dados atuais. Continuar?</string>
+    <string name="hint_database">Isto irá eliminar os dados atuais. Continuar?</string>
     <string name="settings_data_restore">Restaurar</string>
+
+
     <!-- Others setting -->
     <string name="setting_title_others">Outras</string>
+
     <!-- Toast -->
     <string name="toast_add_whitelist_successful">Domínio adicionado com sucesso</string>
     <string name="toast_copy_successful">Copiado com sucesso</string>
-    <string name="toast_delete_successful">Apagado com sucesso</string>
+    <string name="toast_delete_successful">Eliminado com sucesso</string>
     <string name="toast_domain_already_exists">Domínio já existe</string>
     <string name="toast_input_empty">Não introduziu dados</string>
     <string name="toast_invalid_domain">Domínio inválido</string>
@@ -158,10 +203,11 @@
     <string name="toast_permission_sdCard">\"FREE Browser\" precisa da permissão para \"ler e escrever no seu armazenamento\". Esta permissão é necessária para descarregar ficheiros, obter capturas de ecrã e para criar backups.</string>
     <string name="toast_restart">Tem que reiniciar a aplicação para aplicar as alterações. Fechar agora?</string>
     <string name="toast_quit">Deseja sair da aplicação?</string>
-    <string name="toast_quit_TAB">Do you want to close the TAB?</string>
+    <string name="toast_quit_TAB">Deseja fechar o separador?</string>
     <string name="toast_downloadComplete">Descarga terminada. Abrir gestor de ficheiros?</string>
     <string name="toast_unsecured">O site utiliza uma ligação insegura (\"http\"). Deseja estabelecer uma ligação segura (\"https\")?</string>
-    <string name="toast_backup">Criar backup dos dados? Os dados antigos serão substituídos.</string>
+    <string name="toast_backup">Criar backup? Os dados antigos serão substituídos.</string>
+
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">Limpar</string>
     <string name="whitelist_edit_hint">Domínio</string>
@@ -172,17 +218,20 @@
     <string name="menu_desktopView">Vista \'desktop\'</string>
     <string name="menu_dayView">Modo diurno</string>
     <string name="menu_nightView">Modo noturno</string>
-    <string name="error_allow_camera">Permitir o uso da câmera</string>
-    <string name="hint_DRM_Media">Permitir reprodução de mídia protegida por DRM?</string>
+    <string name="error_allow_camera">Permitir o uso da câmara</string>
+    <string name="hint_DRM_Media">Permitir reprodução de multimédia protegida por DRM?</string>
+																						
+
+																																													   
     <string name="error_allow_microphone">Permitir uso do microfone</string>
     <string name="error_missing_permission">Permissão necessária:</string>
-    <string name="dialog_StarOnGitHub">Gostou deste app? Dê uma estrela no GitHub ou compre um café para o desenvolvedor via PayPal.</string>
+    <string name="dialog_StarOnGitHub">Gosta desta aplicação? Avalie-nos no GitHub ou pague um café ao programador via PayPal.</string>
     <string name="dialog_Later_button">Talvez mais tarde</string>
-    <string name="toast_delete">Exclua o arquivo e tente novamente</string>
-    <string name="metered_connection">Conexão limitada</string>
-    <string name="setting_network">Configurações de rede</string>
-    <string name="summary_deny_cookie_banners">Try to automatically deny cookie banners using Mozilla\'s Cookie Banner Rules</string>
-    <string name="setting_title_deny_cookie_banners">Bloqueador de Banner de Cookies</string>
+    <string name="toast_delete">Eliminar ficheiro e tentar novamente</string>
+    <string name="metered_connection">Ligação limitada</string>
+    <string name="setting_network">Definições de rede</string>
+    <string name="summary_deny_cookie_banners">Tentar recusar os avisos de cookies através das regras Mozilla\'s Cookie Banner</string>
+    <string name="setting_title_deny_cookie_banners">Bloqueador de cookies</string>
     <string name="setting_title_custom_host_list">Domínios adicionais</string>
     <!-- License changelog -->
 </resources>

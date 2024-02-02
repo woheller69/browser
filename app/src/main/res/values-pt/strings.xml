@@ -231,7 +231,7 @@
     <string name="metered_connection">Ligação limitada</string>
     <string name="setting_network">Definições de rede</string>
     <string name="summary_deny_cookie_banners">Tentar recusar os avisos de cookies através das regras Mozilla\'s Cookie Banner</string>
-    <string name="setting_title_deny_cookie_banners">Bloqueador de cookies</string>
+    <string name="setting_title_deny_cookie_banners">Bloqueador de avisos de cookies</string>
     <string name="setting_title_custom_host_list">Domínios adicionais</string>
     <!-- License changelog -->
 </resources>

@@ -5,8 +5,9 @@
     <color name="primaryColor">#7cb342</color>
     <color name="primaryDarkColor">#424242</color>
     <color name="secondaryColor">#7cb342</color>
-    <color name="colorSurface">#DDDDDD</color>
-    <color name="color_light">#fafafa</color>
-    <color name="color_hint">#BDBDBD</color>
+    <color name="surfaceColorDay">#DDDDDD</color>
+    <color name="surfaceColorNight">#222222</color>
+    <color name="lightColor">#fafafa</color>
+    <color name="hintColor">#BDBDBD</color>
 
 </resources>

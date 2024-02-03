@@ -17,6 +17,7 @@ import com.google.android.material.snackbar.Snackbar;
 import java.util.Objects;
 
 import de.baumann.browser.R;
+import de.baumann.browser.Utils;
 import de.baumann.browser.activity.BrowserActivity;
 import de.baumann.browser.unit.HelperUnit;
 import de.baumann.browser.view.NinjaToast;
@@ -115,7 +116,7 @@ public class NinjaWebChromeClient extends WebChromeClient {
                         if (!HelperUnit.checkPermissionsCam(activity))
                             NinjaToast.show(activity, activity.getResources().getString(R.string.error_missing_permission) + "\n" + activity.getResources().getString(R.string.error_allow_camera));
                         ninjaWebView.reload();
-                    }).setBackgroundTint(activity.getColor(R.color.color_hint)).setTextColor(activity.getColor(android.R.color.holo_red_dark)).setActionTextColor(activity.getColor(android.R.color.holo_red_dark)).show();
+                    }).setBackgroundTint(Utils.getThemeColor(activity,R.attr.colorHint)).setTextColor(activity.getColor(android.R.color.holo_red_dark)).setActionTextColor(activity.getColor(android.R.color.holo_red_dark)).show();
                 }
             } else if (PermissionRequest.RESOURCE_AUDIO_CAPTURE.equals(resource)) {
                 if (sp.getBoolean("sp_microphone", false)) {
@@ -127,7 +128,7 @@ public class NinjaWebChromeClient extends WebChromeClient {
                         if (!HelperUnit.checkPermissionsMic(activity))
                             NinjaToast.show(activity, activity.getResources().getString(R.string.error_missing_permission) + "\n" + activity.getString(R.string.error_allow_microphone));
                         ninjaWebView.reload();
-                    }).setBackgroundTint(activity.getColor(R.color.color_hint)).setTextColor(activity.getColor(android.R.color.holo_red_dark)).setActionTextColor(activity.getColor(android.R.color.holo_red_dark)).show();
+                    }).setBackgroundTint(Utils.getThemeColor(activity,R.attr.colorHint)).setTextColor(activity.getColor(android.R.color.holo_red_dark)).setActionTextColor(activity.getColor(android.R.color.holo_red_dark)).show();
                 }
             } else if (PermissionRequest.RESOURCE_PROTECTED_MEDIA_ID.equals(resource)) {
                 if (ninjaWebView.getBlockNetworkVideo()) { //if videos are blocked there is no need to allow DRM requests
@@ -145,7 +146,7 @@ public class NinjaWebChromeClient extends WebChromeClient {
                             super.onDismissed(transientBottomBar, event);
                             if (!handled[0]) { request.deny(); }
                         }
-                    }).setBackgroundTint(activity.getColor(R.color.color_hint)).setTextColor(activity.getColor(android.R.color.holo_red_dark)).setActionTextColor(activity.getColor(android.R.color.holo_red_dark)).show();
+                    }).setBackgroundTint(Utils.getThemeColor(activity,R.attr.colorHint)).setTextColor(activity.getColor(android.R.color.holo_red_dark)).setActionTextColor(activity.getColor(android.R.color.holo_red_dark)).show();
                 }
             }
         }

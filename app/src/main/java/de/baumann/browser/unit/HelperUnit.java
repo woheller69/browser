@@ -29,6 +29,7 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.pm.ShortcutInfo;
 import android.content.pm.ShortcutManager;
+import android.content.res.Configuration;
 import android.graphics.drawable.Icon;
 import android.net.Uri;
 
@@ -50,7 +51,6 @@ import android.view.inputmethod.InputMethodManager;
 import android.webkit.CookieManager;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 
 import java.io.File;
@@ -241,14 +241,23 @@ public class HelperUnit {
         sp = PreferenceManager.getDefaultSharedPreferences(context);
         switch (Objects.requireNonNull(sp.getString("sp_theme", "1"))) {
             case "2":
-                context.setTheme(R.style.AppTheme_day);
+                context.setTheme(R.style.AppThemeDay);
                 break;
             case "3":
-                context.setTheme(R.style.AppTheme_night);
+                context.setTheme(R.style.AppThemeNight);
                 break;
             default:
-                context.setTheme(R.style.AppTheme);
-                break;
+                int nightModeFlags = context.getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+
+                switch (nightModeFlags) {
+                    case Configuration.UI_MODE_NIGHT_YES:
+                        context.setTheme(R.style.AppThemeNight);
+                        break;
+                    case Configuration.UI_MODE_NIGHT_NO:
+                    case Configuration.UI_MODE_NIGHT_UNDEFINED:
+                        context.setTheme(R.style.AppThemeDay);
+                        break;
+                }
         }
     }
 

@@ -40,7 +40,7 @@
             android:launchMode="singleTask"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
             android:windowSoftInputMode="stateHidden"
-            android:theme="@style/AppTheme"
+            android:theme="@style/AppThemeDay"
             android:exported="true">
 
             <intent-filter
@@ -84,43 +84,43 @@
         <activity android:name="de.baumann.browser.activity.Settings_Activity"
             android:label="@string/setting_label"
             android:parentActivityName=".activity.BrowserActivity"
-            android:theme="@style/AppTheme"/>
+            android:theme="@style/AppThemeDay"/>
 
         <activity android:name="de.baumann.browser.activity.Whitelist_Javascript"
             android:label="@string/setting_title_whitelistJS"
-            android:theme="@style/AppTheme"/>
+            android:theme="@style/AppThemeDay"/>
 
         <activity android:name="de.baumann.browser.activity.Whitelist_Cookie"
             android:label="@string/setting_title_whitelistCookie"
-            android:theme="@style/AppTheme"/>
+            android:theme="@style/AppThemeDay"/>
 
         <activity android:name="de.baumann.browser.activity.Whitelist_DOM"
             android:label="@string/setting_title_dom_whitelist"
-            android:theme="@style/AppTheme"/>
+            android:theme="@style/AppThemeDay"/>
 
         <activity android:name="de.baumann.browser.activity.Manage_UserScripts"
             android:label="@string/setting_userScript"
-            android:theme="@style/AppTheme"/>
+            android:theme="@style/AppThemeDay"/>
 
         <activity android:name="de.baumann.browser.activity.Settings_Delete"
             android:label="@string/menu_delete"
-            android:theme="@style/AppTheme"/>
+            android:theme="@style/AppThemeDay"/>
 
         <activity android:name="de.baumann.browser.activity.Settings_StartActivity"
             android:label="@string/setting_title_browser"
-            android:theme="@style/AppTheme"/>
+            android:theme="@style/AppThemeDay"/>
 
         <activity android:name="de.baumann.browser.activity.Settings_Backup"
             android:label="@string/setting_title_data"
-            android:theme="@style/AppTheme"/>
+            android:theme="@style/AppThemeDay"/>
 
         <activity android:name="de.baumann.browser.activity.Settings_UI"
             android:label="@string/setting_title_ui"
-            android:theme="@style/AppTheme"/>
+            android:theme="@style/AppThemeDay"/>
 
         <activity android:name="de.baumann.browser.activity.Settings_Filter"
             android:label="@string/setting_filter"
-            android:theme="@style/AppTheme"/>
+            android:theme="@style/AppThemeDay"/>
 
     </application>
 

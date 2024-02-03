@@ -11,6 +11,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.media.MediaPlayer;
@@ -86,10 +87,9 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import de.baumann.browser.GithubStar;
+import de.baumann.browser.Utils;
 import de.baumann.browser.browser.AdBlock;
 import de.baumann.browser.browser.AlbumController;
 import de.baumann.browser.browser.BannerBlock;
@@ -337,6 +337,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     @Override
     public void onResume() {
         super.onResume();
+        HelperUnit.initTheme(this);
+        initTabDialog();
 
         ScriptUnit.initScripts(this);
 
@@ -572,13 +574,13 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 .setTopRightCorner(CornerFamily.ROUNDED, TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,24, getResources().getDisplayMetrics()))
                 .build();
         MaterialShapeDrawable materialShapeDrawable = new MaterialShapeDrawable(shapeAppearanceModel);
-        materialShapeDrawable.setFillColor(ContextCompat.getColorStateList(this, R.color.primaryDarkColor));
+        materialShapeDrawable.setFillColor(ColorStateList.valueOf(Utils.getThemeColor(this,R.attr.colorPrimaryDark)));
         bottomAppBar.setBackground(materialShapeDrawable);
 
         badgeDrawable = BadgeDrawable.create(context);
         badgeDrawable.setBadgeGravity(BadgeDrawable.TOP_END);
         badgeDrawable.setNumber(BrowserContainer.size());
-        badgeDrawable.setBackgroundColor(getResources().getColor(R.color.primaryColor));
+        badgeDrawable.setBackgroundColor(Utils.getThemeColor(this,R.attr.colorPrimary));
         BadgeUtils.attachBadgeDrawable(badgeDrawable, omniBox_tab, findViewById(R.id.layout));
 
         ImageButton omnibox_overflow = findViewById(R.id.omnibox_overflow);

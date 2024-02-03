@@ -20,6 +20,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Set;
 
+import de.baumann.browser.Utils;
 import de.baumann.browser.database.FaviconHelper;
 import de.baumann.browser.database.Record;
 import de.baumann.browser.R;
@@ -194,10 +195,10 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
 
         if (view == null) {
             view = LayoutInflater.from(context).inflate(layoutResId, null, false);
-            view.setBackgroundColor(ContextCompat.getColor(context, R.color.primaryDarkColor));
+            view.setBackgroundColor(Utils.getThemeColor(context, R.attr.colorPrimaryDark));
             holder = new Holder();
             holder.titleView = view.findViewById(R.id.record_item_title);
-            holder.titleView.setTextColor(ContextCompat.getColor(context, R.color.color_light));
+            holder.titleView.setTextColor(Utils.getThemeColor(context,R.attr.colorLight));
             holder.urlView = view.findViewById(R.id.record_item_url);
             holder.iconView = view.findViewById(R.id.record_item_icon);
             holder.favicon=view.findViewById(R.id.record_item_favicon);

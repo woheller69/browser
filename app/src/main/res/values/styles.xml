@@ -2,25 +2,22 @@
 
 <resources>
 
-    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="AppThemeDay" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="colorPrimary">@color/primaryColor</item>
         <item name="colorPrimaryDark">@color/primaryDarkColor</item>
         <item name="colorSecondary">@color/secondaryColor</item>
-        <item name="colorSurface">@color/colorSurface</item>
+        <item name="colorSurface">@color/surfaceColorDay</item>
+        <item name="colorLight">@color/lightColor</item>
+        <item name="colorHint">@color/hintColor</item>
     </style>
 
-    <style name="AppTheme_day" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <style name="AppThemeNight" parent="Theme.MaterialComponents.NoActionBar">
         <item name="colorPrimary">@color/primaryColor</item>
         <item name="colorPrimaryDark">@color/primaryDarkColor</item>
         <item name="colorSecondary">@color/secondaryColor</item>
-        <item name="colorSurface">@color/colorSurface</item>
-    </style>
-
-    <style name="AppTheme_night" parent="Theme.MaterialComponents.NoActionBar">
-        <item name="colorPrimary">@color/primaryColor</item>
-        <item name="colorPrimaryDark">@color/primaryDarkColor</item>
-        <item name="colorSecondary">@color/secondaryColor</item>
-        <item name="colorSurface">@color/colorSurface</item>
+        <item name="colorSurface">@color/surfaceColorNight</item>
+        <item name="colorLight">@color/lightColor</item>
+        <item name="colorHint">@color/hintColor</item>
     </style>
      
 </resources>

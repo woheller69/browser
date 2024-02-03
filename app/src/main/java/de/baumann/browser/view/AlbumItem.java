@@ -67,7 +67,10 @@ class AlbumItem {
     void deactivate(NinjaWebView ninjaWebView) {
         albumTitle.setTextColor(Utils.getThemeColor(context,android.R.attr.textColorPrimary));
         albumClose.setImageResource(R.drawable.icon_close);
-        albumView.setOnClickListener(v -> browserController.showAlbum(albumController));
+        albumView.setOnClickListener(v -> {
+            browserController.showAlbum(albumController);
+            browserController.hideTabView();
+        });
         if (ninjaWebView.getFavicon()!=null) albumFavicon.setImageBitmap(ninjaWebView.getFavicon());
         else albumFavicon.setImageResource(R.drawable.icon_image_broken);
     }

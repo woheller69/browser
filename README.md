@@ -106,7 +106,7 @@ The following tags:
 If defined as "document-start" scripts run in onPageStarted() of Android WebView, 
 otherwise scripts run in onPageFinished.
 
-@match: At least one tag required. E.g. ```@match https://*/``` to match all https urls
+@match: At least one tag required. E.g. ```@match https://*/``` to match all https urls  
 If the expression after @match starts and ends with "/" it is treated as a regex.
 
 Other tags are **NOT** supported at the moment, e.g.

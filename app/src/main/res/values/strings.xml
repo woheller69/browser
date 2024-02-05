@@ -33,12 +33,12 @@
     <string name="menu_open_with">Open link with …</string>
 
     <string name="menu_quit">Quit</string>
-    <string name="menu_openFav">Open Favorite</string>
+    <string name="menu_openFav">Open Start Page</string>
     <string name="menu_delete">Delete</string>
     <string name="menu_edit">Edit</string>
     <string name="menu_closeTab">Close tab</string>
     <string name="menu_download">Open downloads</string>
-    <string name="menu_fav">Save as favorite</string>
+    <string name="menu_fav">Save as start page</string>
     <string name="menu_sc">Shortcut on home screen</string>
     <string name="menu_sort">Sort by …</string>
     <string name="menu_filter">Filter by …</string>

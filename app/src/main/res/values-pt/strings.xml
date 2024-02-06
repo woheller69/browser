@@ -33,12 +33,12 @@
     <string name="menu_open_with">Abrir ligação com…</string>
 
     <string name="menu_quit">Sair</string>
-    <string name="menu_openFav">Abrir marcador</string>
+    <string name="menu_openFav">Abrir página inicial</string>
     <string name="menu_delete">Eliminar</string>
     <string name="menu_edit">Editar</string>
     <string name="menu_closeTab">Fechar separador</string>
     <string name="menu_download">Abrir descargas</string>
-    <string name="menu_fav">Guardar como marcador</string>
+    <string name="menu_fav">Guardar como página inicial</string>
     <string name="menu_sc">Atalho no ecrã inicial</string>
     <string name="menu_sort">Ordenar por…</string>
     <string name="menu_filter">Filtrar por…</string>

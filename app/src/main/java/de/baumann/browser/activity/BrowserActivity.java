@@ -213,13 +213,15 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         for (int i=0; i<BrowserContainer.size();i++){
             String url = ((NinjaWebView) (BrowserContainer.get(i))).getUrl();
             String settings = ((NinjaWebView) (BrowserContainer.get(i))).getSettingsBackup();
-            if (!url.equals(URL_ABOUT_BLANK)) {  //do not save empty tabs (about:blank)
-                if (currentAlbumController == BrowserContainer.get(i)) {
-                    openTabs.add(0, url);
-                    openTabSettings.add(0, settings);
-                } else {
-                    openTabs.add(url);
-                    openTabSettings.add(settings);
+            if (url != null) {
+                if (!url.equals(URL_ABOUT_BLANK)) {  //do not save empty tabs (about:blank)
+                    if (currentAlbumController == BrowserContainer.get(i)) {
+                        openTabs.add(0, url);
+                        openTabSettings.add(0, settings);
+                    } else {
+                        openTabs.add(url);
+                        openTabSettings.add(settings);
+                    }
                 }
             }
         }
@@ -339,7 +341,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         super.onResume();
         HelperUnit.initTheme(this);
         initTabDialog();
-
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         ScriptUnit.initScripts(this);
 
         //disable Microphone, Camera, and Location if permissions have been withdrawn
@@ -1361,7 +1363,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                         FrameLayout.LayoutParams.MATCH_PARENT
                 ));
 
-        customView.setKeepScreenOn(true);
         ((View) currentAlbumController).setVisibility(View.GONE);
         setCustomFullscreen(true);
 
@@ -1379,7 +1380,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         FrameLayout decorView = (FrameLayout) getWindow().getDecorView();
         decorView.removeView(fullscreenHolder);
 
-        customView.setKeepScreenOn(false);
         ((View) currentAlbumController).setVisibility(View.VISIBLE);
         setCustomFullscreen(false);
 

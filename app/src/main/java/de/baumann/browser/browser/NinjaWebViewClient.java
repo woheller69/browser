@@ -193,13 +193,13 @@ public class NinjaWebViewClient extends WebViewClient {
             //The author has given explicit written permission to use his code under GPL V3 in this project.
 
             view.evaluateJavascript("\n" +
-                    "  var config = {\n" +
+                    "  var glconfig = {\n" +
                     "    \"random\": {\n" +
                     "      \"value\": function () {\n" +
                     "        return Math.random();\n" +
                     "      },\n" +
                     "      \"item\": function (e) {\n" +
-                    "        var rand = e.length * config.random.value();\n" +
+                    "        var rand = e.length * glconfig.random.value();\n" +
                     "        return e[Math.floor(rand)];\n" +
                     "      },\n" +
                     "      \"number\": function (power) {\n" +
@@ -208,7 +208,7 @@ public class NinjaWebViewClient extends WebViewClient {
                     "          tmp.push(Math.pow(2, power[i]));\n" +
                     "        }\n" +
                     "        /*  */\n" +
-                    "        return config.random.item(tmp);\n" +
+                    "        return glconfig.random.item(tmp);\n" +
                     "      },\n" +
                     "      \"int\": function (power) {\n" +
                     "        var tmp = [];\n" +
@@ -217,7 +217,7 @@ public class NinjaWebViewClient extends WebViewClient {
                     "          tmp.push(new Int32Array([n, n]));\n" +
                     "        }\n" +
                     "        /*  */\n" +
-                    "        return config.random.item(tmp);\n" +
+                    "        return glconfig.random.item(tmp);\n" +
                     "      },\n" +
                     "      \"float\": function (power) {\n" +
                     "        var tmp = [];\n" +
@@ -226,7 +226,7 @@ public class NinjaWebViewClient extends WebViewClient {
                     "          tmp.push(new Float32Array([1, n]));\n" +
                     "        }\n" +
                     "        /*  */\n" +
-                    "        return config.random.item(tmp);\n" +
+                    "        return glconfig.random.item(tmp);\n" +
                     "      }\n" +
                     "    },\n" +
                     "    \"spoof\": {\n" +
@@ -236,8 +236,8 @@ public class NinjaWebViewClient extends WebViewClient {
                     "          const bufferData = proto.bufferData;\n" +
                     "          Object.defineProperty(proto, \"bufferData\", {\n" +
                     "            \"value\": function () {\n" +
-                    "              var index = Math.floor(config.random.value() * arguments[1].length);\n" +
-                    "              var noise = arguments[1][index] !== undefined ? 0.1 * config.random.value() * arguments[1][index] : 0;\n" +
+                    "              var index = Math.floor(glconfig.random.value() * arguments[1].length);\n" +
+                    "              var noise = arguments[1][index] !== undefined ? 0.1 * glconfig.random.value() * arguments[1][index] : 0;\n" +
                     "              //\n" +
                     "              arguments[1][index] = arguments[1][index] + noise;\n" +
                     "              window.top.postMessage(\"webgl-fingerprint-defender-alert\", '*');\n" +
@@ -259,26 +259,26 @@ public class NinjaWebViewClient extends WebViewClient {
                     "              else if (arguments[0] === 7936) return \"WebKit\";\n" +
                     "              else if (arguments[0] === 37445) return \"Google Inc.\";\n" +
                     "              else if (arguments[0] === 7937) return \"WebKit WebGL\";\n" +
-                    "              else if (arguments[0] === 3379) return config.random.number([14, 15]);\n" +
-                    "              else if (arguments[0] === 36347) return config.random.number([12, 13]);\n" +
-                    "              else if (arguments[0] === 34076) return config.random.number([14, 15]);\n" +
-                    "              else if (arguments[0] === 34024) return config.random.number([14, 15]);\n" +
-                    "              else if (arguments[0] === 3386) return config.random.int([13, 14, 15]);\n" +
-                    "              else if (arguments[0] === 3413) return config.random.number([1, 2, 3, 4]);\n" +
-                    "              else if (arguments[0] === 3412) return config.random.number([1, 2, 3, 4]);\n" +
-                    "              else if (arguments[0] === 3411) return config.random.number([1, 2, 3, 4]);\n" +
-                    "              else if (arguments[0] === 3410) return config.random.number([1, 2, 3, 4]);\n" +
-                    "              else if (arguments[0] === 34047) return config.random.number([1, 2, 3, 4]);\n" +
-                    "              else if (arguments[0] === 34930) return config.random.number([1, 2, 3, 4]);\n" +
-                    "              else if (arguments[0] === 34921) return config.random.number([1, 2, 3, 4]);\n" +
-                    "              else if (arguments[0] === 35660) return config.random.number([1, 2, 3, 4]);\n" +
-                    "              else if (arguments[0] === 35661) return config.random.number([4, 5, 6, 7, 8]);\n" +
-                    "              else if (arguments[0] === 36349) return config.random.number([10, 11, 12, 13]);\n" +
-                    "              else if (arguments[0] === 33902) return config.random.float([0, 10, 11, 12, 13]);\n" +
-                    "              else if (arguments[0] === 33901) return config.random.float([0, 10, 11, 12, 13]);\n" +
-                    "              else if (arguments[0] === 37446) return config.random.item([\"Graphics\", \"HD Graphics\", \"Intel(R) HD Graphics\"]);\n" +
-                    "              else if (arguments[0] === 7938) return config.random.item([\"WebGL 1.0\", \"WebGL 1.0 (OpenGL)\", \"WebGL 1.0 (OpenGL Chromium)\"]);\n" +
-                    "              else if (arguments[0] === 35724) return config.random.item([\"WebGL\", \"WebGL GLSL\", \"WebGL GLSL ES\", \"WebGL GLSL ES (OpenGL Chromium\"]);\n" +
+                    "              else if (arguments[0] === 3379) return glconfig.random.number([14, 15]);\n" +
+                    "              else if (arguments[0] === 36347) return glconfig.random.number([12, 13]);\n" +
+                    "              else if (arguments[0] === 34076) return glconfig.random.number([14, 15]);\n" +
+                    "              else if (arguments[0] === 34024) return glconfig.random.number([14, 15]);\n" +
+                    "              else if (arguments[0] === 3386) return glconfig.random.int([13, 14, 15]);\n" +
+                    "              else if (arguments[0] === 3413) return glconfig.random.number([1, 2, 3, 4]);\n" +
+                    "              else if (arguments[0] === 3412) return glconfig.random.number([1, 2, 3, 4]);\n" +
+                    "              else if (arguments[0] === 3411) return glconfig.random.number([1, 2, 3, 4]);\n" +
+                    "              else if (arguments[0] === 3410) return glconfig.random.number([1, 2, 3, 4]);\n" +
+                    "              else if (arguments[0] === 34047) return glconfig.random.number([1, 2, 3, 4]);\n" +
+                    "              else if (arguments[0] === 34930) return glconfig.random.number([1, 2, 3, 4]);\n" +
+                    "              else if (arguments[0] === 34921) return glconfig.random.number([1, 2, 3, 4]);\n" +
+                    "              else if (arguments[0] === 35660) return glconfig.random.number([1, 2, 3, 4]);\n" +
+                    "              else if (arguments[0] === 35661) return glconfig.random.number([4, 5, 6, 7, 8]);\n" +
+                    "              else if (arguments[0] === 36349) return glconfig.random.number([10, 11, 12, 13]);\n" +
+                    "              else if (arguments[0] === 33902) return glconfig.random.float([0, 10, 11, 12, 13]);\n" +
+                    "              else if (arguments[0] === 33901) return glconfig.random.float([0, 10, 11, 12, 13]);\n" +
+                    "              else if (arguments[0] === 37446) return glconfig.random.item([\"Graphics\", \"HD Graphics\", \"Intel(R) HD Graphics\"]);\n" +
+                    "              else if (arguments[0] === 7938) return glconfig.random.item([\"WebGL 1.0\", \"WebGL 1.0 (OpenGL)\", \"WebGL 1.0 (OpenGL Chromium)\"]);\n" +
+                    "              else if (arguments[0] === 35724) return glconfig.random.item([\"WebGL\", \"WebGL GLSL\", \"WebGL GLSL ES\", \"WebGL GLSL ES (OpenGL Chromium\"]);\n" +
                     "              //\n" +
                     "              return getParameter.apply(this, arguments);\n" +
                     "            }\n" +
@@ -288,10 +288,10 @@ public class NinjaWebViewClient extends WebViewClient {
                     "    }\n" +
                     "  };\n" +
                     "  //\n" +
-                    "  config.spoof.webgl.buffer(WebGLRenderingContext);\n" +
-                    "  config.spoof.webgl.buffer(WebGL2RenderingContext);\n" +
-                    "  config.spoof.webgl.parameter(WebGLRenderingContext);\n" +
-                    "  config.spoof.webgl.parameter(WebGL2RenderingContext);", null);
+                    "  glconfig.spoof.webgl.buffer(WebGLRenderingContext);\n" +
+                    "  glconfig.spoof.webgl.buffer(WebGL2RenderingContext);\n" +
+                    "  glconfig.spoof.webgl.parameter(WebGLRenderingContext);\n" +
+                    "  glconfig.spoof.webgl.parameter(WebGL2RenderingContext);", null);
 
             //Prevent AudioContext fingerprinting by randomizing
             //can be tested e.g. at https://webbrowsertools.com
@@ -301,15 +301,15 @@ public class NinjaWebViewClient extends WebViewClient {
             //The author has given explicit written permission to use his code under GPL V3 in this project.
 
             view.evaluateJavascript("\n" +
-                    "    const context = {\n" +
+                    "    const acontext = {\n" +
                     "    \"BUFFER\": null,\n" +
                     "    \"getChannelData\": function (e) {\n" +
                     "      const getChannelData = e.prototype.getChannelData;\n" +
                     "      Object.defineProperty(e.prototype, \"getChannelData\", {\n" +
                     "        \"value\": function () {\n" +
                     "          const results_1 = getChannelData.apply(this, arguments);\n" +
-                    "          if (context.BUFFER !== results_1) {\n" +
-                    "            context.BUFFER = results_1;\n" +
+                    "          if (acontext.BUFFER !== results_1) {\n" +
+                    "            acontext.BUFFER = results_1;\n" +
                     "            for (var i = 0; i < results_1.length; i += 100) {\n" +
                     "              let index = Math.floor(Math.random() * i);\n" +
                     "              results_1[index] = results_1[index] + Math.random() * 0.0000001;\n" +
@@ -344,10 +344,10 @@ public class NinjaWebViewClient extends WebViewClient {
                     "    }\n" +
                     "  };\n" +
                     "  //\n" +
-                    "  context.getChannelData(AudioBuffer);\n" +
-                    "  context.createAnalyser(AudioContext);\n" +
-                    "  context.getChannelData(OfflineAudioContext);\n" +
-                    "  context.createAnalyser(OfflineAudioContext);  ", null);
+                    "  acontext.getChannelData(AudioBuffer);\n" +
+                    "  acontext.createAnalyser(AudioContext);\n" +
+                    "  acontext.getChannelData(OfflineAudioContext);\n" +
+                    "  acontext.createAnalyser(OfflineAudioContext);  ", null);
 
             //Prevent Font fingerprinting by randomizing
             //can be tested e.g. at https://webbrowsertools.com

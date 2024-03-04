@@ -146,14 +146,14 @@ public class BannerBlock {
         if (configString.equals("")) return null;
         else {
             String bannerBlockScript =
-                    "        var configString = '" + configString + "';\n" +
-                    "        var config = JSON.parse(configString);\n" +
+                    "        var bbs_configString = '" + configString + "';\n" +
+                    "        var bbs_config = JSON.parse(bbs_configString);\n" +
                     "        var currentDomain = window.location.hostname;\n" +
                     "        function isSubdomain(subdomain, domain) {\n" +
                     "            return subdomain.endsWith(\".\" + domain) || subdomain === domain;\n" +
                     "        }\n" +
-                    "        for (var i = 0; i < config.length; i++) {\n" +
-                    "            var item = config[i];\n" +
+                    "        for (var i = 0; i < bbs_config.length; i++) {\n" +
+                    "            var item = bbs_config[i];\n" +
                     "            // Check if the current domain is in the list of specified domains or a subdomain \n" +
                     "            if (item.domains.some(domain => isSubdomain(currentDomain, domain))) {\n" +
                     "                  if (item.cookies) {\n"+
@@ -176,8 +176,8 @@ public class BannerBlock {
         if (configString.equals("")) return null;
         else {
             String bannerBlockScript =
-                    "        var configString = '" + configString + "';\n" +
-                    "        var config = JSON.parse(configString);\n" +
+                    "        var bbf_configString = '" + configString + "';\n" +
+                    "        var bbf_config = JSON.parse(bbf_configString);\n" +
                     "        var exceptionIds = '" + exceptionIDs + "';\n" +
                     "        var currentDomain = window.location.hostname;\n" +
                     "        // isSubdomain is used to check if 'subdomain' is a subdomain of 'domain'\n" +
@@ -206,8 +206,8 @@ public class BannerBlock {
                     "           };\n" +
                     "        }\n" +
                     "        //MAIN LOOP\n" +
-                    "        for (var i = 0; i < config.length; i++) {\n" +
-                    "            var item = config[i];\n" +
+                    "        for (var i = 0; i < bbf_config.length; i++) {\n" +
+                    "            var item = bbf_config[i];\n" +
                     "            // Check if the current domain is in the list of specified domains or a subdomain \n" +
                     "            if (item.domains.length === 0 || item.domains.some(domain => isSubdomain(currentDomain, domain))) {\n" +
                     "               // If there are clickable items, proceed with the presence check\n" +

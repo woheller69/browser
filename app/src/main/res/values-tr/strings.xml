@@ -35,7 +35,7 @@
     <string name="menu_fav">Başlangıç sitesi olarak ayarla</string>
     <string name="menu_sc">Ana ekranda kısayol</string>
     <string name="menu_sort">Sırala …</string>
-    <string name="menu_filter">Renge göre filtrele…</string>
+    <string name="menu_filter">Filtrele…</string>
     <string name="menu_share_link">Bağlantıyı paylaş</string>
     <string name="menu_save_home">Başlangıca kaydet</string>
     <string name="menu_save_bookmark">Yer imi olarak kaydet</string>
@@ -48,12 +48,12 @@
     <string name="dialog_title_hint">Başlık:</string>
     <string name="dialog_URL_hint">URL:</string>
     <string name="dialog_extension_hint">Uzantı (örneğin: \".jpg\"):</string>
-    <string name="dialog_sign_in_username">Kullancı adı</string>
+    <string name="dialog_sign_in_username">Kullanıcı adı</string>
     <string name="dialog_sign_in_password">Parola</string>
-    <string name="dialog_title_download">Dosya indir?</string>
+    <string name="dialog_title_download">Dosya indirilsin mi?</string>
     <string name="dialog_content_resubmission">Verileriniz yeniden gönderilsin mi?</string>
     <string name="dialog_content_ssl_error">Sitenin sertifikası güvenilir değil. Yine de devam edilsin mi?</string>
-    <string name="dialog_sortName">İsme göre sırala</string>
+    <string name="dialog_sortName">Ada göre sırala</string>
     <string name="dialog_sortIcon">Simgeye göre sırala</string>
     <string name="dialog_sortDate">Tarihe göre sırala</string>
     <!-- Settings -->
@@ -94,9 +94,9 @@
     <string name="clear_title_cache">Önbelleği Temizle</string>
     <string name="clear_title_cookie">Çerezleri Temizle</string>
     <string name="clear_title_history">Geçmişi Temizle</string>
-    <string name="localData">Cihazda depolanan verileri temizle</string>
-    <string name="clear_title_deleteDatabase">Veritabanını sil</string>
-    <string name="clear_summary_deleteDatabase">Veritabanının tamamını (Başlangıç sayfası, yer imleri, geçmiş ve tüm beyaz listeler) silin.</string>
+    <string name="localData">Aygıtta depolanan verileri temizle</string>
+    <string name="clear_title_deleteDatabase">Veri tabanını sil</string>
+    <string name="clear_summary_deleteDatabase">Veri tabanının tamamını (Başlangıç sayfası, yer imleri, geçmiş ve tüm beyaz listeler) silin.</string>
     <!-- App setting -->
     <string name="setting_title_app">Uygulama Ayarları</string>
     <string name="setting_title_ui">Davranış/Arayüz</string>
@@ -106,10 +106,10 @@
     <string name="setting_title_reload">Yeniden yüklemek için aşağı kaydırın</string>
     <string name="setting_title_searchEngine">Özel arama motoru</string>
     <string name="setting_title_userAgent">Özel kullanıcı aracısı</string>
-    <string name="setting_enter_userAgent">User-Agent giriniz</string>
+    <string name="setting_enter_userAgent">Kullanıcı aracısı girin</string>
     <string name="setting_title_fingerPrint">Parmak izi koruması</string>
     <string name="setting_title_whitelist">İstisnalar</string>
-    <string name="setting_tab">Tab</string>
+    <string name="setting_tab">Sekme</string>
     <string name="setting_theme">Tema</string>
     <string name="setting_theme_system">Sistem</string>
     <!-- App behavior -->
@@ -138,52 +138,52 @@
     <string name="setting_gesture_10">Sekmeyi kapat</string>
     <!-- Data -->
     <string name="setting_title_export_bookmarks">Yer imlerini HTML olarak dışa aktar</string>
-    <string name="setting_title_import_bookmarks">Yer işaretlerini içe aktar</string>
+    <string name="setting_title_import_bookmarks">Yer imlerini içe aktar</string>
     <string name="setting_title_export_appData">Uygulama verilerini dışa aktar</string>
     <string name="setting_title_import_appData">Uygulama verilerini içe aktar</string>
-    <string name="setting_summary_export_appData">Tüm veritabanını ve kişisel ayarlarınızı dışa aktarın.</string>
+    <string name="setting_summary_export_appData">Tüm veri tabanını ve kişisel ayarlarınızı dışa aktarın.</string>
     <string name="title_appData">Uygulama verileri</string>
-    <string name="hint_database">Bu, mevcut verileri siler. Devam edilsin mi?</string>
-    <string name="settings_data_restore">Onarmak</string>
+    <string name="hint_database">Bu, var olan verileri siler. Devam edilsin mi?</string>
+    <string name="settings_data_restore">Geri yükle</string>
     <!-- Others setting -->
     <string name="setting_title_others">Diğer</string>
     <!-- Toast -->
     <string name="toast_add_whitelist_successful">Başarıyla etki alanı eklendi</string>
     <string name="toast_copy_successful">Başarıyla kopyalandı</string>
     <string name="toast_delete_successful">Başarıyla silindi</string>
-    <string name="toast_domain_already_exists">Etki alanı zaten mevcut</string>
+    <string name="toast_domain_already_exists">Etki alanı zaten var</string>
     <string name="toast_input_empty">Hiçbir şey girmediniz</string>
     <string name="toast_invalid_domain">Geçersiz etki alanı</string>
     <string name="toast_webview_forward">Bir sonraki site yüklenemiyor</string>
-    <string name="toast_permission_sdCard">\"FREE Tarayıcı\" nın \"deponuzu okuma ve yazma\" iznine ihtiyacı var. Bu, dosyaları indirmek, ekran görüntüleri almak ve verilerinizin yedeğini almak için gereklidir.</string>
-    <string name="toast_restart">Değişiklikleri uygulamak için \"FREE Tarayıcı\"sını yeniden başlatmanız gerekir. Şimdi kapatılsın mı?</string>
-    <string name="toast_quit">\"FREE Tarayıcı\"sından çıkmak istiyor musunuz?</string>
-    <string name="toast_quit_TAB">Do you want to close the TAB?</string>
+    <string name="toast_permission_sdCard">\"FREE Browser\" \"deponuzu okuma ve yazma\" iznine ihtiyaç duyuyor. Bu, dosyaları indirmek, ekran görüntüleri almak ve verilerinizin yedeğini almak için gereklidir.</string>
+    <string name="toast_restart">Değişiklikleri uygulamak için \"FREE Browser\"ın yeniden başlatılması gerekiyor. Şimdi kapatılsın mı?</string>
+    <string name="toast_quit">\"FREE Browser\"dan çıkmak istiyor musunuz?</string>
+    <string name="toast_quit_TAB">Sekmeyi kapatmak istiyor musunuz?</string>
     <string name="toast_downloadComplete">İndirme tamamlandı. Dosya yöneticisi açılsın mı?</string>
     <string name="toast_unsecured">Web sitesi güvenli olmayan bir bağlantı (\"http\") kullanıyor. Güvenli bir bağlantı (\"https\") denensin mi?</string>
     <string name="toast_backup">Veri yedeklensin mi? Bu eski yedeklemenin üzerine yazacaktır.</string>
     <!-- Whitelist -->
-    <string name="whitelist_menu_clear">Temzile</string>
+    <string name="whitelist_menu_clear">Temizle</string>
     <string name="whitelist_edit_hint">Etki alanı</string>
     <string name="whitelist_add">Ekle</string>
     <!-- Dialog help -->
     <!-- Dialog changelog -->
     <string name="menu_mobileView">Mobil görünümü</string>
     <string name="menu_desktopView">Masaüstü görünümü</string>
-    <string name="menu_dayView">Gün görünümü</string>
-    <string name="menu_nightView">gece görüşü</string>
-    <string name="error_allow_camera">Allow camera usage</string>
-    <string name="hint_DRM_Media">Allow DRM protected media playback?</string>
-    <string name="error_allow_microphone">Allow microphone usage</string>
-    <string name="error_missing_permission">Permission required:</string>
+    <string name="menu_dayView">Gündüz görünümü</string>
+    <string name="menu_nightView">Gece görünümü</string>
+    <string name="error_allow_camera">Kamera kullanımına izin ver</string>
+    <string name="hint_DRM_Media">DRM korumalı medyanın oynatılmasına izin verilsin mi?</string>
+    <string name="error_allow_microphone">Mikrofon kullanımına izin ver</string>
+    <string name="error_missing_permission">İzin gerekli:</string>
     <string name="dialog_StarOnGitHub">Bu uygulamayı beğendiniz mi? Lütfen GitHub\'da bir yıldız verin veya geliştiriciye PayPal aracılığıyla bir kahve ısmarlayın.</string>
     <string name="dialog_Later_button">Belki daha sonra</string>
-    <string name="toast_delete">Delete the file and try again</string>
-    <string name="metered_connection">Metered Connection</string>
-    <string name="setting_network">Network settings</string>
-    <string name="summary_deny_cookie_banners">Try to automatically deny cookie banners using Mozilla\'s Cookie Banner Rules</string>
-    <string name="setting_title_deny_cookie_banners">Cookie Banner Blocker</string>
-    <string name="setting_title_custom_host_list">Additional domains</string>
+    <string name="toast_delete">Dosyayı silin ve tekrar deneyin</string>
+    <string name="metered_connection">Kotalı Bağlantı</string>
+    <string name="setting_network">Ağ ayarları</string>
+    <string name="summary_deny_cookie_banners">Mozilla Çerez Bildirimi Kurallarını kullanarak çerez bildirimlerini otomatik reddetmeyi dene</string>
+    <string name="setting_title_deny_cookie_banners">Çerez Bildirimi Engelleyici</string>
+    <string name="setting_title_custom_host_list">Ek etki alanları</string>
     <string name="setting_summary_search_engine_brave">Brave</string>
     <!-- License changelog -->
 </resources>

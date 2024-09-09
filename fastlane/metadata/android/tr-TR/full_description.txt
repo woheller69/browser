@@ -1,0 +1,28 @@
+"FREE Browser" en iyi gizlilik için bir internet tarayıcısıdır
+
+• tamamen açık kaynaklı
+• reklam yok, izleyiciler yok
+• gereksiz izinler yok
+
+Bu uygulama yerleşik Android WebView'e dayanır. Onu güncel tuttuğunuzdan emin olun.
+
+-------------------------------------------------
+<b>ÖZELLİKLER</b>
+-------------------------------------------------
+
+• StevenBlack sunucu listesini kullanan reklam engelleyici
+• Tarayıcı parmak izine karşı önlemler
+• Çerez Bildirimi Engelleyici: Firefox'taki Çerez Bildirimi Kurallarına göre Otomatik "Reddet"
+• Javascript, çerezler ve DOM depolama için gelişmiş ayarlar (etki alanı/yer imi tabanlı)
+• Üçüncü taraf çerezleri genel olarak desteklenmez.
+• Greasemonkey tarzı betik desteği (desteklenenler: @match, @name, @run-at)
+• Tek elle kullanım için en iyi duruma getirildi (araç çubuğu altta)
+• SEKME denetimi (geçiş, aç, kapat, sınırsız sekme)
+• En önemli ayarlar için hızlı geçiş özelliği
+• Yakınlaştır/uzaklaştır
+• Geçerli internet sitesinde ara
+• İnternet araması (içerik menüsü aracılığıyla işaretli metinden)
+• PDF olarak kaydet
+• Diğer uygulamalardaki bağlantıları aç (örneğin YouTube)
+• Yedekle
+• vb.

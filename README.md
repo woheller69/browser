@@ -32,6 +32,12 @@ FREE Browser is a web browser for optimal privacy
 - Backup
 - etc
 
+
+## Contribute
+
+For translations use https://toolate.othing.xyz/projects/free-browser/
+
+
 ## LICENSE
 
 This app is licensed under the GPLv3, © woheller69.

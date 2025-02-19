@@ -158,7 +158,7 @@
     <string name="toast_permission_sdCard">\"FREE Browser\" нуждается в разрешении на \"чтение и запись\". Это необходимо для загрузки файлов, снимков экрана и резервного копирования файлов.</string>
     <string name="toast_restart">Чтобы применить изменения, необходимо перезапустить \"FREE Browser\". Закрыть сейчас?</string>
     <string name="toast_quit">Хотите выйти из \"FREE Browser\"?</string>
-    <string name="toast_quit_TAB">Do you want to close the TAB?</string>
+    <string name="toast_quit_TAB">Вы хотите закрыть вкладку?</string>
     <string name="toast_downloadComplete">Загрузка завершена. Открыть файловый менеджер?</string>
     <string name="toast_unsecured">Сайт использует незащищенное соединение (\"http\"). Попробовать безопасное соединение (\"https\")?</string>
     <string name="toast_backup">Сохранить данные? Это перезапишет старую резервную копию.</string>
@@ -172,18 +172,18 @@
     <string name="menu_desktopView">Десктопный вид</string>
     <string name="menu_dayView">Просмотр дня</string>
     <string name="menu_nightView">Ночные Глаз</string>
-    <string name="error_allow_camera">Allow camera usage</string>
-    <string name="hint_DRM_Media">Allow DRM protected media playback?</string>
-    <string name="error_allow_microphone">Allow microphone usage</string>
-    <string name="error_missing_permission">Permission required:</string>
-    <string name="dialog_StarOnGitHub">Do you like this app? Please give a star on GitHub or buy the developer a coffee via PayPal.</string>
-    <string name="dialog_Later_button">Maybe later</string>
-    <string name="toast_delete">Delete the file and try again</string>
-    <string name="metered_connection">Metered Connection</string>
-    <string name="setting_network">Network settings</string>
-    <string name="summary_deny_cookie_banners">Try to automatically deny cookie banners using Mozilla\'s Cookie Banner Rules</string>
-    <string name="setting_title_deny_cookie_banners">Cookie Banner Blocker</string>
-    <string name="setting_title_custom_host_list">Additional domains</string>
+    <string name="error_allow_camera">Разрешить использование камеры</string>
+    <string name="hint_DRM_Media">Разрешить воспроизведение мультимедийных файлов с защитой DRM?</string>
+    <string name="error_allow_microphone">Разрешить использование микрофона</string>
+    <string name="error_missing_permission">Требуется разрешение</string>
+    <string name="dialog_StarOnGitHub">Вам нравится это приложение? Пожалуйста, поставьте звёздочку на GitHub или купите разработчику кофе через PayPal</string>
+    <string name="dialog_Later_button">Может быть попозже</string>
+    <string name="toast_delete">Удалите файл и попробуйте еще раз</string>
+    <string name="metered_connection">Соединение с ограничением</string>
+    <string name="setting_network">Сетевые настройки</string>
+    <string name="summary_deny_cookie_banners">Попробуйте автоматически запретить баннеры cookie, используя правила баннеров cookie Mozilla</string>
+    <string name="setting_title_deny_cookie_banners">Блокировщик баннеров cookie</string>
+    <string name="setting_title_custom_host_list">Дополнительные домены</string>
     <string name="setting_summary_search_engine_brave">Brave</string>
     <!-- License changelog -->
 </resources>

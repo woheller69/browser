@@ -72,10 +72,10 @@ public class NinjaWebViewClient extends WebViewClient {
 
     @Override
     public boolean onRenderProcessGone (WebView view, RenderProcessGoneDetail detail){
-        String text = context.getString(R.string.app_error) + ": onRenderProcessGone: " + detail.toString();
-        Log.d(context.getString(R.string.app_name),"onRenderProcessGone:"+text);
+        String text = context.getString(R.string.app_error) + ": onRenderProcessGone: " + "crash: " + detail.didCrash();
+        Log.d(context.getString(R.string.app_name),"onRenderProcessGone:" + text);
         if (BrowserActivity.isVisible) NinjaToast.show(context, text);
-        view.reload();
+        view.removeAllViews();
         return true;
     }
 

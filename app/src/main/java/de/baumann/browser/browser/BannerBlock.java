@@ -70,7 +70,7 @@ public class BannerBlock {
     public static void downloadBanners(final Context context) {
         Thread thread = new Thread(() -> {
 
-            String hostURL = "https://raw.githubusercontent.com/mozilla/cookie-banner-rules-list/main/cookie-banner-rules-list.json";
+            String hostURL = "https://raw.githubusercontent.com/woheller69/cookie-banner-rules-list/main/cookie-banner-rules-list.json";
 
             try {
                 URL url = new URL(hostURL);

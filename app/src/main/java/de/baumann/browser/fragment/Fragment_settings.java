@@ -1,6 +1,7 @@
 package de.baumann.browser.fragment;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.preference.EditTextPreference;
@@ -8,6 +9,8 @@ import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceGroup;
+import androidx.webkit.ProxyController;
+import androidx.webkit.WebViewFeature;
 
 import de.baumann.browser.activity.Manage_UserScripts;
 import de.baumann.browser.activity.Settings_Delete;
@@ -17,7 +20,7 @@ import de.baumann.browser.activity.Settings_StartActivity;
 import de.baumann.browser.activity.Settings_UI;
 import de.baumann.browser.R;
 
-public class Fragment_settings extends PreferenceFragmentCompat {
+public class Fragment_settings extends PreferenceFragmentCompat implements SharedPreferences.OnSharedPreferenceChangeListener{
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -97,4 +100,27 @@ public class Fragment_settings extends PreferenceFragmentCompat {
         }
     }
 
+    @Override
+    public void onSharedPreferenceChanged(final SharedPreferences sp, String key) {
+        if (key.equals("userProxy")){
+            if (!sp.getBoolean("userProxy", false)){
+                if (WebViewFeature.isFeatureSupported(WebViewFeature.PROXY_OVERRIDE)){
+                    ProxyController.getInstance().clearProxyOverride(command -> {}, () -> {});
+                }
+            }
+        }
+        updatePrefSummary(findPreference(key));
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        getPreferenceScreen().getSharedPreferences().registerOnSharedPreferenceChangeListener(this);
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        getPreferenceScreen().getSharedPreferences().unregisterOnSharedPreferenceChangeListener(this);
+    }
 }

@@ -47,6 +47,14 @@
             android:defaultValue="false"
             android:key="sp_metered"/>
 
+        <org.woheller69.preferences.EditTextSwitchPreference
+            android:selectable="true"
+            app:useSimpleSummaryProvider="true"
+            android:key="sp_proxy"
+            app:SwitchKey="userProxy"
+            android:defaultValue="socks5://12.34.56.78:9090"
+            android:title="@string/setting_title_proxy" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>

@@ -10,6 +10,8 @@ import android.os.Build;
 
 import androidx.annotation.Nullable;
 import androidx.preference.PreferenceManager;
+import androidx.webkit.ProxyConfig;
+import androidx.webkit.ProxyController;
 import androidx.webkit.WebSettingsCompat;
 import androidx.webkit.WebViewFeature;
 import androidx.webkit.WebViewMediaIntegrityApiStatusConfig;
@@ -241,6 +243,16 @@ public class NinjaWebView extends WebView implements AlbumController {
 
             setOldDomain(url);
         }
+
+        if(sp.getBoolean("userProxy", false)) setProxy(sp.getString("sp_proxy", ""));
+    }
+
+    private void setProxy(String rule) {  //e.g. from https://github.com/proxifly/free-proxy-list?tab=readme-ov-file, e.g. "socks4://199.102.104.70:4145"
+        if (WebViewFeature.isFeatureSupported(WebViewFeature.PROXY_OVERRIDE)){
+            ProxyConfig proxyConfig = new ProxyConfig.Builder().addProxyRule(rule).build();
+            ProxyController.getInstance().setProxyOverride(proxyConfig, command -> {}, () -> {});
+        }
+
     }
 
     public void setOldDomain(String url){

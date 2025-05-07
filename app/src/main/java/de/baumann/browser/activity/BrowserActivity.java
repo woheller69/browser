@@ -108,6 +108,7 @@ import de.baumann.browser.unit.HelperUnit;
 import de.baumann.browser.unit.RecordUnit;
 import de.baumann.browser.unit.ScriptUnit;
 import de.baumann.browser.view.CompleteAdapter;
+import de.baumann.browser.view.DoubleClickListener;
 import de.baumann.browser.view.GridAdapter;
 
 import de.baumann.browser.view.GridItem;
@@ -595,7 +596,18 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         BadgeUtils.attachBadgeDrawable(badgeDrawable, omniBox_tab, findViewById(R.id.layout));
 
         ImageButton omnibox_overflow = findViewById(R.id.omnibox_overflow);
-        omnibox_overflow.setOnClickListener(v -> showOverflow());
+        omnibox_overflow.setOnClickListener(new DoubleClickListener() {
+            @Override
+            public void onDoubleClick() {
+                show_dialogFastToggle();
+            }
+
+            @Override
+            public void onSingleClick() {
+                showOverflow();
+            }
+        });
+
         omnibox_overflow.setOnLongClickListener(v -> {
             show_dialogFastToggle();
             return false;

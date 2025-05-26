@@ -43,7 +43,7 @@ For translations use https://toolate.othing.xyz/projects/free-browser/
 This app is licensed under the GPLv3, © woheller69.
 
 The app uses code from:
-- FOSS-Browser, https://github.com/woheller69/browser, published under GPLv3 (at time of fork)
+- FOSS-Browser, https://codeberg.org/Gaukler_Faun/FOSS_Browser, published under GPLv3 (at time of fork)
 - Ninja, https://github.com/mthli/Ninja, published under Apache-2.0 license
 - Zip4j, https://github.com/srikanth-lingala/zip4j, published under Apache-2.0 license
 - StevenBlack hosts, https://github.com/StevenBlack/hosts, published under MIT license

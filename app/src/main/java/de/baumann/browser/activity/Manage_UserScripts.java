@@ -37,6 +37,7 @@ import java.util.List;
 import java.util.Objects;
 
 import de.baumann.browser.R;
+import de.baumann.browser.Utils;
 import de.baumann.browser.database.UserScript;
 import de.baumann.browser.database.UserScriptsHelper;
 import de.baumann.browser.unit.HelperUnit;
@@ -58,6 +59,7 @@ public class Manage_UserScripts extends AppCompatActivity {
 
         HelperUnit.initTheme(this);
         setContentView(R.layout.activity_manage_userscripts);
+        Utils.setStatusBarAppearance(this);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);

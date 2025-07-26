@@ -2,8 +2,9 @@ apply plugin: 'com.android.application'
 apply plugin: 'org.jetbrains.kotlin.android'
 
 android {
-    compileSdk 34
-
+    compileSdk 35
+    namespace 'de.baumann.browser'
+    android.buildFeatures.buildConfig true
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
@@ -15,7 +16,7 @@ android {
     defaultConfig {
         applicationId "org.woheller69.browser"
         minSdk 29
-        targetSdk 34
+        targetSdk 35
         versionCode 3200
         versionName "3.2"
         multiDexEnabled true

@@ -20,7 +20,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import java.util.Objects;
 
-import de.baumann.browser.BuildConfig;
+import de.baumann.browser.Utils;
 import de.baumann.browser.fragment.Fragment_settings;
 import de.baumann.browser.R;
 import de.baumann.browser.unit.HelperUnit;
@@ -34,6 +34,7 @@ public class Settings_Activity extends AppCompatActivity {
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
         HelperUnit.initTheme(this);
         setContentView(R.layout.activity_settings);
+        Utils.setStatusBarAppearance(this);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);

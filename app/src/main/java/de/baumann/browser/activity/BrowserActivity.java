@@ -80,7 +80,6 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.VideoView;
 
 import java.util.ArrayList;
@@ -251,6 +250,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         HelperUnit.initTheme(context);
 
         setContentView(R.layout.activity_main);
+        Utils.setStatusBarAppearance(this);
         sp = PreferenceManager.getDefaultSharedPreferences(context);
 
         if (Objects.requireNonNull(sp.getString("saved_key_ok", "no")).equals("no")) {
@@ -580,6 +580,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         });
 
         bottomAppBar = findViewById(R.id.bottomAppBar);
+        bottomAppBar.setOnApplyWindowInsetsListener(null);
 
         ShapeAppearanceModel shapeAppearanceModel = new ShapeAppearanceModel()
                 .toBuilder()
@@ -594,7 +595,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         badgeDrawable.setBadgeGravity(BadgeDrawable.TOP_END);
         badgeDrawable.setNumber(BrowserContainer.size());
         badgeDrawable.setBackgroundColor(Utils.getThemeColor(this,R.attr.colorPrimary));
-        BadgeUtils.attachBadgeDrawable(badgeDrawable, omniBox_tab, findViewById(R.id.layout));
+        BadgeUtils.attachBadgeDrawable(badgeDrawable, omniBox_tab);
 
         ImageButton omnibox_overflow = findViewById(R.id.omnibox_overflow);
         omnibox_overflow.setOnClickListener(new DoubleClickListener() {
@@ -831,6 +832,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         bottom_navigation = dialogView.findViewById(R.id.bottom_navigation);
         bottom_navigation.setOnNavigationItemSelectedListener(navListener);
+        bottom_navigation.setOnApplyWindowInsetsListener(null);
         bottom_navigation.findViewById(R.id.bookmarks).setOnLongClickListener(v -> {
             show_dialogFilter();
             return true;
@@ -1277,7 +1279,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     private void updateOmniBox() {
 
         badgeDrawable.setNumber(BrowserContainer.size());
-        BadgeUtils.attachBadgeDrawable(badgeDrawable, omniBox_tab, findViewById(R.id.layout));
+        BadgeUtils.attachBadgeDrawable(badgeDrawable, omniBox_tab);
         omniBox_text.clearFocus();
 
         ninjaWebView = (NinjaWebView) currentAlbumController;

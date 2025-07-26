@@ -23,6 +23,7 @@ import android.widget.ListView;
 import java.util.List;
 import java.util.Objects;
 
+import de.baumann.browser.Utils;
 import de.baumann.browser.browser.Javascript;
 import de.baumann.browser.database.RecordAction;
 import de.baumann.browser.R;
@@ -44,6 +45,7 @@ public class Whitelist_Javascript extends AppCompatActivity {
 
         HelperUnit.initTheme(this);
         setContentView(R.layout.activity_settings_whitelist);
+        Utils.setStatusBarAppearance(this);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);

@@ -2,8 +2,7 @@
 
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="de.baumann.browser">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Permission -->
     <uses-feature android:name="android.hardware.camera" android:required="false" />

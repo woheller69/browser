@@ -80,6 +80,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.VideoView;
 
 import java.util.ArrayList;
@@ -976,6 +977,15 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         chip_adblock_tab.setChecked(ninjaWebView.isAdBlockEnabled());
         chip_adblock_tab.setOnClickListener(v -> {
             ninjaWebView.toggleAdblockEnabled(true);
+            dialog.cancel();
+        });
+
+        Chip chip_image_tab = dialogView.findViewById(R.id.chip_image_Tab);
+        chip_image_tab.setChecked(ninjaWebView.isLoadImagesInherited());
+        chip_image_tab.setChipIconTint(getColorStateList(BrowserUnit.isUnmeteredConnection(this) ? R.color.bg_chip_state_list_wifi : R.color.bg_chip_state_list));
+        chip_image_tab.setOnClickListener(v -> {
+            ninjaWebView.setLoadImagesInherited(chip_image_tab.isChecked());
+            ninjaWebView.reload();
             dialog.cancel();
         });
 

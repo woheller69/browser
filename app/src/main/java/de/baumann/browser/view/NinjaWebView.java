@@ -23,6 +23,7 @@ import android.webkit.CookieManager;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import de.baumann.browser.browser.*;
 import de.baumann.browser.R;
@@ -82,6 +83,7 @@ public class NinjaWebView extends WebView implements AlbumController {
     private boolean fingerPrintProtection;
     private boolean javaScriptInherited;
     private boolean domStorageInherited;
+    private boolean loadImagesInherited;
     private boolean adBlockEnabled;
     private boolean stopped;
     private String oldDomain;
@@ -128,6 +130,7 @@ public class NinjaWebView extends WebView implements AlbumController {
         sp = PreferenceManager.getDefaultSharedPreferences(context);
         this.fingerPrintProtection=sp.getBoolean("sp_fingerPrintProtection",true);
         this.javaScriptInherited =sp.getBoolean("sp_javascript", true);
+        this.loadImagesInherited = sp.getBoolean("sp_images",true);
         getSettings().setJavaScriptEnabled(javaScriptInherited);
         this.domStorageInherited =sp.getBoolean("sp_dom", true);
         getSettings().setDomStorageEnabled(domStorageInherited);
@@ -180,7 +183,7 @@ public class NinjaWebView extends WebView implements AlbumController {
         webSettings.setTextZoom(Integer.parseInt(Objects.requireNonNull(sp.getString("sp_fontSize", "100"))));
 
         if (BrowserUnit.isUnmeteredConnection(context)) {webSettings.setBlockNetworkImage(false);}  //in unmetered Networks (usually WIFI) always load images
-        else webSettings.setBlockNetworkImage(!sp.getBoolean("sp_images", true)); //otherwise check setting
+        else webSettings.setBlockNetworkImage(!loadImagesInherited); //otherwise check setting
         blockNetworkVideo = webSettings.getBlockNetworkImage(); //if images are blocked, videos of any kind are not allowed either
 
         webSettings.setGeolocationEnabled(sp.getBoolean("sp_location", false));
@@ -285,6 +288,12 @@ public class NinjaWebView extends WebView implements AlbumController {
         if (!DOMHosts.isWhite(getUrl()) && !isBookmark) domStorageInherited = value;
     }
 
+    public void setLoadImagesInherited(boolean value){
+        loadImagesInherited = value;
+        if (BrowserUnit.isUnmeteredConnection(context)) {getSettings().setBlockNetworkImage(false);}  //in unmetered Networks (usually WIFI) always load images
+        else getSettings().setBlockNetworkImage(!loadImagesInherited); //otherwise check setting
+        blockNetworkVideo = getSettings().getBlockNetworkImage(); //if images are blocked, videos of any kind are not allowed either
+    }
     private synchronized void initAlbum() {
         album.setAlbumTitle(context.getString(R.string.app_name));
         album.setBrowserController(browserController);
@@ -389,6 +398,8 @@ public class NinjaWebView extends WebView implements AlbumController {
         removeAllViews();
         super.destroy();
     }
+
+    public boolean isLoadImagesInherited() {return loadImagesInherited;}
 
     public boolean isLoadFinish() {
         return getProgress() >= BrowserUnit.PROGRESS_MAX;

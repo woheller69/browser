@@ -333,8 +333,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="?android:attr/listPreferredItemHeightSmall"
-            android:layout_marginStart="16dp"
-            android:layout_marginBottom="8dp">
+            android:layout_marginStart="16dp">
 
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="wrap_content"
@@ -382,8 +381,30 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="-8dp"
-                android:layout_toStartOf="@+id/chip_dom_Tab"
+                android:layout_marginEnd="8dp"
                 app:chipIcon="@drawable/icon_desktop"
+                app:chipIconTint="@color/bg_chip_state_list"
+                app:chipIconEnabled="true"
+                app:chipStartPadding="4dp"
+                app:chipEndPadding="4dp"
+                app:textEndPadding="0dp"
+                app:textStartPadding="0dp"
+                android:layout_alignParentEnd="true" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/listPreferredItemHeightSmall"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="8dp">
+
+            <com.google.android.material.chip.Chip
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:id="@+id/chip_image_Tab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@+id/chip_dom_Tab"
+                app:chipIcon="@drawable/icon_image"
                 app:chipIconTint="@color/bg_chip_state_list"
                 app:chipIconEnabled="true"
                 app:chipStartPadding="4dp"
@@ -423,7 +444,6 @@
                 android:layout_alignParentEnd="true" />
 
         </RelativeLayout>
-
     </LinearLayout>
 
 </ScrollView>

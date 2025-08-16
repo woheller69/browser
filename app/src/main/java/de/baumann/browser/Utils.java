@@ -28,13 +28,16 @@ public class Utils {
                     // Dark mode: remove light status bar appearance (use light icons)
                     insetsController.setSystemBarsAppearance(
                             0,
-                            WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS
+                            WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS |
+                                    WindowInsetsController.APPEARANCE_LIGHT_NAVIGATION_BARS
                     );
                 } else {
                     // Light mode: enable light status bar appearance (dark icons)
                     insetsController.setSystemBarsAppearance(
-                            WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS,
-                            WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS
+                            WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS |
+                                    WindowInsetsController.APPEARANCE_LIGHT_NAVIGATION_BARS,
+                            WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS |
+                                    WindowInsetsController.APPEARANCE_LIGHT_NAVIGATION_BARS
                     );
                 }
             }

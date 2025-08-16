@@ -24,6 +24,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.PopupMenu;
 
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.preference.PreferenceManager;
 
 import android.os.Handler;
@@ -237,6 +238,15 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     @Override
     public void onConfigurationChanged(Configuration configuration) {
         super.onConfigurationChanged(configuration);
+        HelperUnit.initTheme(this);
+
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.UPSIDE_DOWN_CAKE) {
+            CoordinatorLayout main = findViewById(R.id.activity_main);
+            main.setBackgroundColor(Utils.getThemeColor(activity,R.attr.colorSurface));  //apply color for status bar (background draws behind status bar)
+            getWindow().setNavigationBarColor(Utils.getThemeColor(activity,R.attr.colorSurface)); //apply color for navigation bar
+        }
+
+        Utils.setStatusBarAppearance(this);
         initTabDialog();
     }
 
@@ -348,7 +358,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     public void onResume() {
         super.onResume();
         isVisible = true;
-        HelperUnit.initTheme(this);
         initTabDialog();
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         ScriptUnit.initScripts(this);

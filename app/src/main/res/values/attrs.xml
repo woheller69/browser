@@ -4,4 +4,5 @@
     <attr name="colorHint" format="reference|color" />
     <attr name="colorPrimary" format="reference|color" />
     <attr name="colorPrimaryDark" format="reference|color" />
+    <attr name="colorSurface" format="reference|color" />
 </resources>

@@ -79,7 +79,7 @@ public class BannerBlock {
                 SpannableStringBuilder biggerText = new SpannableStringBuilder("\u27f3 " + "cookie-banner-rules-list.json");
                 biggerText.setSpan(new RelativeSizeSpan(1.35f), 0, 1, 0);
                 ((Activity) context).runOnUiThread(() -> {
-                    Toast.makeText(context, biggerText, Toast.LENGTH_LONG).show();
+                    Toast.makeText(context, biggerText, Toast.LENGTH_SHORT).show();
                 });
                 URLConnection ucon = url.openConnection();
                 ucon.setReadTimeout(5000);
@@ -130,13 +130,13 @@ public class BannerBlock {
             Calendar time = Calendar.getInstance();
 
             if (BrowserUnit.isUnmeteredConnection(context))
-                time.add(Calendar.DAY_OF_YEAR,-3);
+                time.add(Calendar.DAY_OF_YEAR,-30);
             else
-                time.add(Calendar.DAY_OF_YEAR,-7);
+                time.add(Calendar.DAY_OF_YEAR,-30);
 
             Date lastModified = new Date(file.lastModified());
             if (lastModified.before(time.getTime())) {  //also download again if something is wrong with the file
-                //update if file is older than 7 days and Feature switched on
+                //update if file is older than 30 days and Feature switched on
                 SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
                 if (sp.getBoolean("sp_deny_cookie_banners",false)) downloadBanners(context);
             }

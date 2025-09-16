@@ -17,8 +17,8 @@ android {
         applicationId "org.woheller69.browser"
         minSdk 29
         targetSdk 35
-        versionCode 3300
-        versionName "3.3"
+        versionCode 3400
+        versionName "3.4"
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
     }
@@ -47,4 +47,5 @@ dependencies {
     implementation 'net.lingala.zip4j:zip4j:2.9.1'
     implementation 'com.github.woheller69:preferences:1.2'
     implementation 'androidx.core:core-ktx:1.12.0'
+    implementation 'com.github.woheller69:FreeDroidWarn:+'
 }

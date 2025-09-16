@@ -89,6 +89,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 
+import de.baumann.browser.BuildConfig;
 import de.baumann.browser.GithubStar;
 import de.baumann.browser.Utils;
 import de.baumann.browser.browser.AdBlock;
@@ -124,6 +125,8 @@ import static android.webkit.WebView.HitTestResult.IMAGE_TYPE;
 import static android.webkit.WebView.HitTestResult.SRC_ANCHOR_TYPE;
 import static android.webkit.WebView.HitTestResult.SRC_IMAGE_ANCHOR_TYPE;
 import static de.baumann.browser.unit.BrowserUnit.URL_ABOUT_BLANK;
+
+import org.woheller69.freeDroidWarn.FreeDroidWarn;
 
 public class BrowserActivity extends AppCompatActivity implements BrowserController {
 
@@ -323,6 +326,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 addAlbum(getString(R.string.app_name), openTabs.get(counter), BrowserContainer.size() < 1, openTabSettings.get(counter));
             }
         }
+        FreeDroidWarn.showWarningOnUpgrade(this, BuildConfig.VERSION_CODE);
         if (GithubStar.shouldShowStarDialog(this)) GithubStar.starDialog(this,"https://github.com/woheller69/browser");
     }
 

@@ -544,6 +544,18 @@ public class NinjaWebViewClient extends WebViewClient {
 
     @Override
     public WebResourceResponse shouldInterceptRequest(WebView view, WebResourceRequest request) {
+
+        if (ninjaWebView.isFingerPrintProtection()){
+            String url = request.getUrl().toString();
+            if (url.contains("api.fpjs.pro") ||
+                    url.contains("api.fpjs.io") ||
+                    url.contains("openfpcdn.io") ||
+                    url.contains("fpjscdn.net") ||
+                    url.contains("fingerprint.com")){
+                Log.d("WebViewBlock", "BLOCKED FingerprintJS request: " + url);
+                return new WebResourceResponse("text/javascript", "UTF-8", null);
+            }
+        }
 /*
         ((Activity) context).runOnUiThread(new Runnable() {
             @Override

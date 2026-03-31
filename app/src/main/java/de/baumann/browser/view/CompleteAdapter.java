@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
@@ -43,23 +44,50 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
                 return new FilterResults();
             }
 
+            String searchPrefix = prefix.toString().toLowerCase(Locale.ROOT);
+
             List<CompleteItem> workList = new ArrayList<>();
+
             for (CompleteItem item : originalList) {
-                if (item.getTitle().contains(prefix) || item.getTitle().toLowerCase(Locale.getDefault()).contains(prefix) || item.getURL().contains(prefix)) {
-                    if (item.getTitle().contains(prefix) || item.getTitle().toLowerCase(Locale.getDefault()).contains(prefix) ) {
-                        item.setIndex(item.getTitle().indexOf(prefix.toString()));
-                    } else if (item.getURL().contains(prefix)) {
-                        item.setIndex(item.getURL().indexOf(prefix.toString()));
+                String title = item.getTitle();
+                String url = item.getURL();
+
+                if (title == null && url == null) {
+                    continue;
+                }
+
+                int matchIndex = Integer.MAX_VALUE;
+                boolean matched = false;
+
+                if (title != null) {
+                    String lowerTitle = title.toLowerCase(Locale.ROOT);
+                    int titleIdx = lowerTitle.indexOf(searchPrefix);
+                    if (titleIdx != -1) {
+                        matchIndex = titleIdx;
+                        matched = true;
                     }
+                }
+
+                if (!matched && url != null) {
+                    String lowerUrl = url.toLowerCase(Locale.ROOT);
+                    int urlIdx = lowerUrl.indexOf(searchPrefix);
+                    if (urlIdx != -1) {
+                        matchIndex = urlIdx;
+                        matched = true;
+                    }
+                }
+
+                if (matched) {
+                    item.setIndex(matchIndex);
                     workList.add(item);
                 }
             }
 
-            workList.sort(Comparator.comparingInt(CompleteItem::getIndex));
+            Collections.sort(workList, Comparator.comparingInt(CompleteItem::getIndex));
 
             FilterResults results = new FilterResults();
             results.values = workList;
-            results.count =workList.size();
+            results.count = workList.size();
 
             return results;
         }

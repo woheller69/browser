@@ -783,27 +783,31 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 list = action.listBookmark(activity, filter, filterBy);
                 action.close();
 
-                adapter = new RecordAdapter(context, list){
-                    @SuppressWarnings("NullableProblems")
-                    @Override
-                    public View getView (int position, View convertView, @NonNull ViewGroup parent) {
-                        View v = super.getView(position, convertView, parent);
-                        ImageView record_item_icon = v.findViewById(R.id.record_item_icon);
-                        record_item_icon.setVisibility(View.VISIBLE);
-                        return v;
-                    }
-                };
+                // Defer adapter setup until BottomNavigationView is fully measured
+                bottom_navigation.post(() -> {
+                    adapter = new RecordAdapter(context, list) {
+                        @SuppressWarnings("NullableProblems")
+                        @Override
+                        public View getView(int position, View convertView, @NonNull ViewGroup parent) {
+                            View v = super.getView(position, convertView, parent);
+                            ImageView record_item_icon = v.findViewById(R.id.record_item_icon);
+                            record_item_icon.setVisibility(View.VISIBLE);
+                            return v;
+                        }
+                    };
 
-                listView.setAdapter(adapter);
-                adapter.notifyDataSetChanged();
-                filter = false;
-                listView.setOnItemClickListener((parent, view, position, id) -> {
-                    ninjaWebView.loadUrl(list.get(position).getURL());
-                    hideOverview();
-                });
-                listView.setOnItemLongClickListener((parent, view, position, id) -> {
-                    showContextMenuList(adapter, list, position);
-                    return true;
+                    listView.setOnItemClickListener((parent, view, position, id) -> {
+                        ninjaWebView.loadUrl(list.get(position).getURL());
+                        hideOverview();
+                    });
+
+                    listView.setOnItemLongClickListener((parent, view, position, id) -> {
+                        showContextMenuList(adapter, list, position);
+                        return true;
+                    });
+
+                    listView.setAdapter(adapter);
+                    filter = false;
                 });
             } else if (menuItem.getItemId() == R.id.menu) {
 

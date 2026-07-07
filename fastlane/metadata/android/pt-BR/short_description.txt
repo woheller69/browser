@@ -1,0 +1,1 @@
+Navegador com foco na privacidade, compatível com scripts no estilo Greasemonkey e com bloqueador de banners de cookies

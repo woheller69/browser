@@ -1,0 +1,28 @@
+O “FREE Browser” é um navegador da web que garante privacidade ideal
+
+• totalmente de código aberto
+• sem anúncios, sem rastreadores
+• sem permissões desnecessárias
+
+Este aplicativo depende do WebView integrado do Android. Certifique-se de mantê-lo atualizado.
+
+-------------------------------------------- -----
+<b>RECURSOS</b>
+-------------------------------------------------
+
+• AdBlocker usando a lista de hosts do StevenBlack
+• Medidas contra a identificação do navegador
+• Bloqueador de banners de cookies: "negar" automaticamente, com base nas regras de banners de cookies do Firefox
+• Configurações avançadas para JavaScript, cookies e armazenamento DOM (baseado em domínio/favoritos)
+• Cookies de terceiros não são suportados em geral.
+• Suporte para scripts no estilo Greasemonkey (suportados: @match, @name, @run-at)
+• Otimizado para uso com uma mão (barra de ferramentas na parte inferior)
+• Controle de abas (alternar, abrir, fechar, abas ilimitadas)
+• Alternância rápida para as configurações mais importantes
+• Aumentar/diminuir o zoom
+• Pesquisar no site atual
+• Pesquisa na web (a partir de texto marcado via menu de contexto)
+• Salvar como PDF
+• Abrir links em outros aplicativos (por exemplo, YouTube)
+• Backup
+• Etc
